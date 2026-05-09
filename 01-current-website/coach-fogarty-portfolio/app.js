@@ -40,7 +40,7 @@ const librarySections = [
         href: "./assets/documents/scouting-recruiting/automated-scouting-report-overview.pdf"
       },
       {
-        label: "Personnel Breakdown",
+        label: "Personnel Report",
         href: "./assets/documents/scouting-recruiting/scouting-report-player-personnel-breakdown.pdf"
       },
       {
@@ -54,8 +54,8 @@ const librarySections = [
     ]
   },
   {
-    type: "Defense",
-    title: "DPAT",
+    type: "DPAT",
+    title: "Defensive Performance Accountability Tracker",
     description: "Defensive grading, effort tracking and leaderboards built for accountability.",
     media: {
       src: "dpat/final-reports/player-rankings/dpat-player-rankings-report-2025-2026.png",
@@ -117,7 +117,7 @@ const librarySections = [
     },
     buttons: [
       {
-        label: "Assistant Philosophy",
+        label: "Asst Philosophy",
         href: "./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-philosophy.pdf"
       },
       {
@@ -129,7 +129,7 @@ const librarySections = [
         href: "./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-dei-statement.pdf"
       },
       {
-        label: "Head Coach Philosophy",
+        label: "HC Philosophy",
         href: "./assets/documents/coaching-philosophy/head-coach/head-coach-philosophy.pdf"
       }
     ]
@@ -137,7 +137,7 @@ const librarySections = [
   {
     type: "Innovation",
     title: "The Archer",
-    description: "A shooting-development tool for arc, release point, rhythm and repeatable reps.",
+    description: "A shooting tool for arc, release point, rhythm and repeatable reps.",
     media: {
       src: "assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
       alt: "The Archer shooting development training tool"
