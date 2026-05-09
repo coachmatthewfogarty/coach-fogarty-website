@@ -1,0 +1,51 @@
+{
+  "folders": [
+    {
+      "name": "Current Website",
+      "path": "."
+    },
+    {
+      "name": "Design Source",
+      "path": "../../02-design-source/Photoshop Website Export"
+    },
+    {
+      "name": "Source Documents",
+      "path": "../../03-source-documents"
+    }
+  ],
+  "settings": {
+    "files.watcherExclude": {
+      "**/.DS_Store": true,
+      "**/._*": true,
+      "**/__pycache__/**": true,
+      "**/node_modules/**": true,
+      "**/04-archive/**": true,
+      "**/archive/**": true,
+      "**/_archive/**": true,
+      "**/_logs/**": true,
+      "**/_contact-sheets/**": true,
+      "**/_legacy-unused/**": true,
+      "**/02-design-source/Photoshop Website Export/output/**": true,
+      "**/02-design-source/Photoshop Website Export/working/**": true
+    },
+    "search.exclude": {
+      "**/.DS_Store": true,
+      "**/._*": true,
+      "**/__pycache__/**": true,
+      "**/node_modules/**": true,
+      "**/04-archive/**": true,
+      "**/archive/**": true,
+      "**/_archive/**": true,
+      "**/_logs/**": true,
+      "**/_contact-sheets/**": true,
+      "**/_legacy-unused/**": true,
+      "**/02-design-source/Photoshop Website Export/output/**": true,
+      "**/02-design-source/Photoshop Website Export/working/**": true
+    },
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/._*": true,
+      "**/__pycache__": true
+    }
+  }
+}

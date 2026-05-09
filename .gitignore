@@ -1,0 +1,23 @@
+.vscode/
+02-design-source/
+03-source-documents/
+04-archive/
+
+node_modules/
+dist/
+build/
+.vercel/
+.env
+.env.local
+
+.DS_Store
+Thumbs.db
+EOF+
+git add .gitignore README.md 01-current-website
+
+# Large video files - keep local, do not push to GitHub
+*.mp4
+*.mov
+*.MOV
+*.avi
+*.mkv

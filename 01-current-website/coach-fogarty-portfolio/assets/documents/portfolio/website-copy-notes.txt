@@ -1,0 +1,963 @@
+﻿HOMEPAGE — NAVIGATION TABS
+
+
+About
+Systems
+Player Development
+Program Impact
+Media
+Contact
+
+
+
+
+HOMEPAGE — HERO SECTION
+
+
+Eyebrow:
+COLLEGE BASKETBALL COACHING PORTFOLIO
+
+
+Name:
+Matthew Fogarty
+
+
+Blue descriptor line:
+College Basketball Coach | Player Development | Scouting | Program Systems
+
+
+Main paragraph:
+Matthew Fogarty is a college basketball coach with 20+ years of experience across NCAA, NAIA, 3C2A, CIF and AAU. This portfolio highlights player development systems, scouting and game preparation, recruiting organization, defensive accountability, program operations and documented coaching impact.
+
+
+Buttons:
+View Coaching Systems
+View Resume
+Contact Coach Fogarty
+
+
+Hero bullet highlights:
+Skill development, post development, film feedback and measurable growth
+Scouting reports, personnel tendencies, game plans and in-game organization
+Recruiting workflow, defensive standards, staff support and program operations
+
+
+Hero image overlay:
+Portfolio Highlight
+
+
+Main title:
+Complete Coaching Portfolio
+
+
+Short description:
+Player development systems, scouting reports, recruiting structure, credentials, references and media.
+
+
+
+
+HOMEPAGE — STAT BOXES
+
+
+20+
+Years of basketball coaching and player development experience
+
+
+338-43
+Head coaching record across four programs
+
+
+26
+Championships as a head coach
+
+
+20-9
+Santa Ana College season record
+
+
+First playoff host since 2016-17
+Santa Ana College WBB
+
+
+Top 15
+State ranking
+
+
+
+
+HOMEPAGE — WHY THIS PORTFOLIO MATTERS
+
+
+Eyebrow:
+WHY THIS PORTFOLIO MATTERS
+
+
+Headline:
+A staff-ready look at how I teach, organize and build systems.
+
+
+Body:
+This portfolio gives coaches and athletic departments a clear view of how I support a college basketball program every day. It highlights my approach to player development, scouting, recruiting, defensive accountability, practice planning, film breakdown and daily operations. Each section is designed to show the systems, teaching methods and preparation habits I bring to a staff immediately.
+
+
+More than a collection of documents, this portfolio reflects how I think, teach, organize and solve problems inside a program. It shows the structure behind my work, the standards I set for players and the systems I use to help a staff stay aligned, efficient and prepared. My goal is to bring value through clear communication, detailed preparation, strong relationship-building and a staff-first mindset that supports winning and long-term program growth.
+
+
+Design note:
+Do not include the old “Key areas shown” bullet list.
+The left text card should not have a large blank gap between paragraphs. Space the paragraphs naturally so the card feels full, balanced and connected. Increase font size and line height slightly if needed.
+
+
+
+
+HOMEPAGE — CORE CREDENTIALS
+
+
+Main title:
+Core Credentials
+
+
+Degrees:
+MBA — Sport Business
+BS — Physical Education
+AA — University Studies
+
+
+Degree links:
+MBA - Sport Business:
+assets/documents/credentials/degrees/mba-sport-business-saint-leo-university.pdf
+
+
+BS - Physical Education:
+assets/documents/credentials/degrees/bs-physical-education-health-sports-management-rocky-mountain-college.pdf
+
+
+AA - University Studies:
+assets/documents/credentials/degrees/aa-university-studies-shasta-college.pdf
+
+
+Licenses:
+USA Basketball Gold Coach License
+
+
+Certifications:
+CPR / BLS “B” / AED
+Standard First Aid
+NCAA Eligibility
+NIL
+Building Positive Culture
+Sports Marketing Essentials
+Protecting Students From Abuse
+Building And Maintaining Positive Culture
+Coaching Mental Wellness
+
+
+Memberships:
+WBCA
+NABC
+CCCWBCA
+
+
+Note:
+Do not publicly list or link driver’s license, transcripts or private documents.
+Degree bubbles should be clickable links.
+Degree bubbles should open PDFs in a new tab.
+Degree bubbles should show pointer cursor on hover.
+
+
+
+
+HOMEPAGE — STAFF VALUE SECTION
+
+
+Eyebrow:
+STAFF VALUE
+
+
+Headline:
+What I bring to a college staff
+
+
+Cards:
+
+
+Individual Development Plans
+Structured skill work, individual workouts, post development, film feedback and measurable growth.
+
+
+Game Prep That Becomes Practice-Ready
+Opponent scouting reports, personnel breakdowns, game-plan preparation and film-based teaching.
+
+
+Recruiting and Roster Support
+Prospect evaluation, CRM tracking, follow-up systems, communication logs and roster support.
+
+
+Daily Program Support
+Practice planning, seasonal structure, defensive accountability, player standards and staff support.
+
+
+
+
+HOMEPAGE — PORTFOLIO SYSTEMS & RESOURCES
+
+
+Eyebrow:
+PORTFOLIO SYSTEMS
+
+
+Headline:
+Coaching systems, resources and proof of work.
+
+
+Intro:
+This section brings together the core systems I use to support player development, scouting, recruiting, defensive accountability, program organization and staff support. Each card gives a quick overview plus direct access to supporting materials.
+
+
+Design note:
+This section replaces the old separate Core Systems section and the old separate Portfolio Resources section.
+Do not keep both sections.
+Use one combined section only.
+Remove the Professional Documentation card from this section.
+
+
+Resource cards:
+
+
+Player Development Systems
+Training structure, player plans, skill-development systems, drill logs, leaderboards and measurable growth.
+
+
+Buttons:
+Overview
+Training Programs
+Drill Log
+Complete Portfolio
+
+
+Button links:
+assets/documents/player-development/player-development-overview.pdf
+assets/documents/player-development/player-development-complete-portfolio.pdf
+assets/documents/player-development/player-development-drill-log.pdf
+assets/documents/player-development/player-development-complete-portfolio.pdf
+
+
+
+
+Scouting & Recruiting
+Opponent prep, personnel tendencies, game logs, play-style data, player badges, BLOB/SLOB organization and in-game notes.
+
+
+Buttons:
+Overview
+Player Personnel Breakdown
+In-Game Notes
+Complete Portfolio
+
+
+Button links:
+assets/documents/scouting-recruiting/automated-scouting-report-overview.pdf
+assets/documents/scouting-recruiting/scouting-report-player-personnel-breakdown.pdf
+assets/documents/scouting-recruiting/scouting-report-in-game-notes-template.pdf
+assets/documents/scouting-recruiting/automated-scouting-report-complete-portfolio.pdf
+
+
+
+
+Defensive Performance Accountability Tracker
+Defensive grading, effort tracking, error tracking, performance trends and leaderboards.
+
+
+Tag:
+DPAT
+
+
+Title:
+Defensive Performance Accountability Tracker
+
+
+Important:
+Do not put “(DPAT)” in the title.
+The small tag already says DPAT, so the title should only say Defensive Performance Accountability Tracker.
+
+
+Buttons:
+Overview
+Game Breakdown Report
+Player Rankings
+Action Leaderboards
+Complete Portfolio
+
+
+Button links:
+assets/documents/program-systems/dpat/dpat-overview.pdf
+assets/documents/program-systems/dpat/dpat-game-breakdown-report.pdf
+assets/documents/program-systems/dpat/dpat-player-rankings.pdf
+assets/documents/program-systems/dpat/dpat-action-leaderboard-report.pdf
+assets/documents/program-systems/dpat/dpat-complete-portfolio.pdf
+
+
+
+
+Program Infrastructure & Support
+Operations planning, staff development, team structure, recruiting planning, fundraising and 12-month program organization.
+
+
+Buttons:
+Overview
+Operations Plan
+Staff Plan
+Fundraising Plan
+
+
+Button links:
+assets/documents/program-development/program-development-overview.pdf
+assets/documents/program-development/operations-development-plan.pdf
+assets/documents/program-development/staff-development-plan.pdf
+assets/documents/program-development/fundraising-development-plan.pdf
+
+
+
+
+Coaching Philosophy & Leadership Framework
+Assistant-coach philosophy, leadership approach, relationship building, accountability, DEI, staff support and head coach alignment.
+
+
+Buttons:
+Assistant Philosophy
+30-60-90 Plan
+DEI Statement
+
+
+Button links:
+assets/documents/coaching-philosophy/assistant-coach/assistant-coach-philosophy.pdf
+assets/documents/coaching-philosophy/assistant-coach/assistant-coach-30-60-90-day-plan.pdf
+assets/documents/coaching-philosophy/assistant-coach/assistant-coach-dei-statement.pdf
+
+
+
+
+The Archer
+Shooting-development resources focused on arc, release point, rhythm, touch and shot preparation.
+
+
+Buttons:
+Overview
+Training Visual
+
+
+Button links:
+assets/documents/the-archer/documents/archer-overview.pdf
+the-archer.html
+
+
+
+
+Remove from this section:
+Professional Documentation
+Resume, public-safe credentials, recommendation letters and professional documentation.
+View Resume
+View Credentials
+View Recommendation Letters
+
+
+Reason:
+Resume, credentials and recommendation letters already appear in the hero/contact/core credential areas, so this card is repetitive.
+
+
+
+
+HOMEPAGE — PLAYER DEVELOPMENT CASE STUDY CALLOUT
+
+
+Eyebrow:
+PLAYER DEVELOPMENT CASE STUDY
+
+
+Title:
+Anaya Beard Player Development Case Study
+
+
+Inner card title:
+Documented growth through individualized player development.
+
+
+Body:
+A detailed player-development case study showing skill progression, offseason structure, film-based feedback, measurable growth and the development process used to help Anaya Beard become one of the top players in the state.
+
+
+Button:
+View Case Study
+
+
+Button link:
+anaya-case-study.html
+
+
+
+
+HOMEPAGE — PLAYER DEVELOPMENT INNOVATION / THE ARCHER CALLOUT
+
+
+Eyebrow:
+PLAYER DEVELOPMENT INNOVATION
+
+
+Title:
+Innovation in Player Development: The Archer
+
+
+Inner card title:
+Shooting development with purpose and detail.
+
+
+Body:
+The Archer is a shooting-development tool designed to improve arc, release point, rhythm, touch and contested-shot preparation. It gives players a visual and repeatable framework for shot quality, placement and feel.
+
+
+Button:
+View The Archer
+
+
+
+
+HOMEPAGE — MEDIA SECTION
+
+
+Eyebrow:
+MEDIA
+
+
+Headline:
+Teaching, leadership and player development in action.
+
+
+Media card labels and captions:
+
+
+Sideline Leadership
+Coach Fogarty leading, directing, encouraging and reacting during game moments.
+
+
+Coaching Details
+Teaching, preparation, observation, clipboard instruction and detailed coaching work.
+
+
+Player Development
+On-court instruction, skill development, technique correction and player growth.
+
+
+Team Environment
+Team huddles, group activities, culture-building moments and team connection.
+
+
+Team Celebration
+Team energy, shared success, emotional moments and collective celebration.
+
+
+Championship Culture
+Championships, medals, awards, winning moments and program success.
+
+
+
+
+HOMEPAGE — PLAYING CAREER & ACHIEVEMENTS
+
+
+Eyebrow:
+PLAYING BACKGROUND
+
+
+Headline:
+Playing Career & Achievements
+
+
+Body:
+Before coaching, Matthew Fogarty built a competitive college playing career rooted in leadership, production and winning. His playing background shaped the standards he now brings to player development, preparation and program culture.
+
+
+Achievement cards:
+
+
+College Hall of Fame
+Shasta College
+
+
+2x First Team All-State
+College playing recognition
+
+
+3x Conference MVP
+Production and leadership
+
+
+4x Conference Champion
+Winning experience
+
+
+Full-Ride Scholarship
+Rocky Mountain College
+
+
+Team Captain
+Leadership at multiple levels
+
+
+
+
+HOMEPAGE — PLAYER & PARENT TESTIMONIALS
+
+
+Eyebrow:
+PLAYER & PARENT FEEDBACK
+
+
+Headline:
+Trusted by players and families for detailed, patient and effective development.
+
+
+Intro:
+Player and parent feedback highlights the communication, patience, teaching detail and individual attention that shape Coach Fogarty’s player-development approach.
+
+
+Testimonials:
+
+
+“Coach Matt was easy to reach, always on time, flexible with our schedule and worked hard the whole hour to improve our son's skills. He also gave us great feedback every day.”
+— Parent
+
+
+“Coach Fogarty was very thorough with his training and patient with my son. He started by asking about goals and what we hoped for my son to gain through the training experience.”
+— Parent
+
+
+“Coach Matt was great with children. He communicated effectively with my 11-year-old son and improved his technique a great deal.”
+— Parent
+
+
+“He covered a lot of fundamentals and showed great patience. I would recommend Coach Matt.”
+— Parent
+
+
+“Our son loved working with Coach Matt. He worked on different drills that he had not been exposed to before and we are excited to see his progress.”
+— Parent
+
+
+“I recently had my first session with Coach Matt and it was better than I expected. He taught me several drills I can do on my own and worked on my knowledge of the game.”
+— Player
+
+
+Design note:
+Use 4–6 testimonial cards. Keep it clean, short and professional.
+This section should appear below Playing Career & Achievements and above Contact.
+
+
+
+
+HOMEPAGE — CONTACT SECTION
+
+
+Eyebrow:
+CONTACT
+
+
+Headline:
+Connect with Coach Fogarty
+
+
+Body:
+For coaching opportunities, staff conversations, portfolio materials or professional references, please contact me directly.
+
+
+Email:
+CoachMatthewFogarty@gmail.com
+
+
+LinkedIn:
+linkedin.com/in/matthew-fogarty
+
+
+Location:
+Santa Ana, CA
+
+
+Buttons:
+Contact Coach Fogarty
+View Resume
+View Full Portfolio
+View Recommendation Letters
+
+
+Small note:
+Professional references available upon request.
+
+
+
+
+FINAL HOMEPAGE SECTION ORDER
+
+
+1. Hero
+2. Stat Boxes
+3. Why This Portfolio Matters
+4. Staff Value
+5. Portfolio Systems & Resources
+6. Anaya Beard Player Development Case Study
+7. Innovation in Player Development: The Archer
+8. Media
+9. Playing Career & Achievements
+10. Player & Parent Feedback
+11. Contact
+
+
+
+
+ARCHER PAGE — HERO SECTION
+
+
+Eyebrow:
+PLAYER DEVELOPMENT INNOVATION
+
+
+Page title:
+The Archer Training Visuals
+
+
+Intro:
+The Archer is a shooting-development framework built around arc, release point, rhythm, touch and contested-shot preparation. These visuals show how the tool supports teaching, demonstration and repeatable training standards.
+
+
+Buttons:
+View Overview PDF
+Back to Portfolio
+
+
+
+
+ARCHER PAGE — TRAINING FRAMEWORK
+
+
+Eyebrow:
+TRAINING FRAMEWORK
+
+
+Headline:
+Visual teaching points for shot quality.
+
+
+Cards:
+
+
+01
+Tool Overview
+A visual system for helping players understand shot path, placement and touch.
+
+
+02
+Standard Placement
+Close-placement visuals support proper distance, language and repeatable release targets.
+
+
+03
+Shooting Arc Training
+Arc comparison helps players see the difference between flat shots and high-quality trajectory.
+
+
+04
+Release Point Training
+Release visuals reinforce hand position, eyes, point and ball-path awareness.
+
+
+05
+Contest Simulation
+The framework can support contested-shot preparation without rushing the shot.
+
+
+06
+Drill Examples
+Free throws, floaters and hook-shot visuals create practical coaching examples.
+
+
+07
+Training Progression
+The tool can progress from stationary placement to touch drills and contested-shot preparation.
+
+
+
+
+ARCHER PAGE — VISUAL GALLERY
+
+
+Eyebrow:
+VISUAL GALLERY
+
+
+Headline:
+Archer images and teaching visuals.
+
+
+Design note:
+Use photo cards in the same website style. Captions should be short and clean.
+
+
+
+
+ARCHER PAGE — VIDEO GALLERY
+
+
+Eyebrow:
+VIDEO GALLERY
+
+
+Headline:
+Archer teaching reps and shooting examples.
+
+
+Design note:
+Use playable video cards with short captions.
+
+
+
+
+ANAYA CASE STUDY PAGE — HERO SECTION
+
+
+Page eyebrow:
+PLAYER DEVELOPMENT CASE STUDY
+
+
+Page title:
+Anaya Beard Player Development Case Study
+
+
+Page intro:
+Anaya Beard’s development is a clear example of what structured, individualized player development can produce over time. Through consistent early-morning work, film-based feedback, skill tracking and a detailed progression plan, Anaya rebuilt key parts of her game and became one of the top players in the state.
+
+
+Her growth translated directly to production, leadership and program impact. She became Orange Empire Conference Offensive Player of the Year, a two-time First Team All-Conference selection, a two-time team captain and a major part of Santa Ana College’s back-to-back state playoff appearances.
+
+
+Buttons:
+View The Journey
+View Player Portfolio
+Back to Portfolio
+
+
+
+
+ANAYA CASE STUDY PAGE — HIGHLIGHT BOXES
+
+
+350+ Hours
+Voluntary early morning development work
+
+
+OEC Offensive Player of the Year
+Orange Empire Conference recognition
+
+
+2x First Team All-Conference
+Proven production across two seasons
+
+
+DI + DII Full-Ride Opportunities
+Multiple next-level scholarship opportunities
+
+
+2x Team Captain
+Leadership and program standard setter
+
+
+2x Most Inspirational Award
+Respected for work ethic, toughness and growth
+
+
+
+
+ANAYA SECTION 1 — FOUNDATION
+
+
+Eyebrow:
+01 / FOUNDATION
+
+
+Headline:
+Building from the starting point.
+
+
+Body:
+When Anaya first entered the development process, the focus was building a strong foundation. The early stage centered on identifying habits, cleaning up footwork, improving shot preparation and creating a clear baseline for where her game needed to grow.
+
+
+This section should show the starting point: raw tools, areas for improvement, early teaching points and the beginning of a structured development plan.
+
+
+
+
+ANAYA SECTION 2 — DEVELOPMENT PROCESS
+
+
+Eyebrow:
+02 / DEVELOPMENT PROCESS
+
+
+Headline:
+The early mornings, repetition and grind behind the growth.
+
+
+Body:
+The development process was built through repetition, accountability and consistent early-morning work. Anaya completed 350+ voluntary development hours outside of team practice, with a focus on shooting form, finishing, touch, footwork, post work, film feedback and confidence through repetition.
+
+
+This section should show the grind: growing pains, mistakes, corrections, repetition, early mornings, summers, weekends and the daily work required to rebuild a game from the ground up.
+
+
+
+
+ANAYA SECTION 3 — LEADERSHIP IMPACT
+
+
+Eyebrow:
+03 / LEADERSHIP IMPACT
+
+
+Headline:
+The turning point became a program standard.
+
+
+Body:
+As the work started to click, Anaya’s growth began to impact more than her own production. Her consistency, competitiveness and work ethic helped raise the standard inside the program.
+
+
+She became a two-time team captain and helped Santa Ana College reach back-to-back state playoff appearances. Her leadership showed up through accountability, toughness and the way she influenced the team’s daily habits.
+
+
+
+
+ANAYA SECTION 4 — BREAKTHROUGH PRODUCTION
+
+
+Eyebrow:
+04 / BREAKTHROUGH PRODUCTION
+
+
+Headline:
+Growth that transferred against high-level competition.
+
+
+Body:
+Anaya’s development translated directly to production against high-level competition.
+
+
+Key performances:
+38 points, 15/20 FG, 7 rebounds vs. #1 Mt. San Antonio — State Playoffs Rd 2
+32 points, 10 rebounds vs. #19 Santa Barbara
+29 points, 19 rebounds vs. #23 LA Trade-Tech
+28 points, 9 rebounds, 2 steals vs. #10 Saddleback
+23 points, 20 rebounds vs. #2 Orange Coast, 2024 state champion
+
+
+This section should show the breakthrough: production against ranked teams, postseason performance and proof that the development translated to the game.
+
+
+
+
+ANAYA SECTION 5 — ACCOLADES RECOGNITION
+
+
+Eyebrow:
+05 / ACCOLADES RECOGNITION
+
+
+Headline:
+The recognition came from the work.
+
+
+Body:
+The work led to earned recognition.
+
+
+Accolades:
+Orange Empire Conference Offensive Player of the Year
+2x First Team All-Conference
+2x Team Captain
+2x Most Inspirational Award
+500 Point Club
+Athlete of the Week
+All-Tournament recognition
+
+
+This section should show what she earned through the process, not just awards by themselves. The recognition should connect back to the work, growth, leadership and production.
+
+
+
+
+ANAYA SECTION 6 — NEXT-LEVEL OPPORTUNITIES
+
+
+Eyebrow:
+06 / NEXT-LEVEL OPPORTUNITIES
+
+
+Headline:
+A forward/wing projection backed by growth, production and toughness.
+
+
+Body:
+Anaya’s growth created next-level opportunities. Her production, leadership, toughness, academic profile and measurable improvement helped generate multiple Division I and Division II full-ride scholarship opportunities.
+
+
+This section should show the outcome of the journey: college projection, recruiting interest, scholarship opportunities and the complete player profile that came from sustained development.
+
+
+
+
+DOWNLOAD / RESOURCE LANGUAGE
+
+
+Download Portfolio Overview
+A quick summary of the coaching portfolio, including philosophy, systems, resources and program impact.
+
+
+View Resume
+Review coaching experience, player development background, leadership roles and program results.
+
+
+View Credentials
+Review degrees, licenses, certifications, memberships and professional development.
+
+
+View Recommendation Letters
+Review public-facing recommendation letters and professional support.
+
+
+View Full Portfolio
+Review the complete coaching portfolio, including systems, player development, scouting, recruiting, credentials and references.
+
+
+Professional References Available Upon Request
+Professional references can be provided privately during the hiring process.
+
+
+
+
+HEAD COACH DOCUMENTS — SUPPORTING FILES
+
+
+These files are stored for future use but should not be featured heavily on the current homepage unless the website is later adjusted for head coach applications.
+
+
+Head Coach Philosophy:
+assets/documents/coaching-philosophy/head-coach/head-coach-philosophy.pdf
+
+
+Head Coach DEI Statement:
+assets/documents/coaching-philosophy/head-coach/head-coach-dei-statement.pdf
+
+
+Head Coach Year One Strategic Plan:
+assets/documents/coaching-philosophy/head-coach/head-coach-year-one-strategic-plan.pdf
+
+
+Note:
+The homepage should feature the Assistant Coach set first because the current website is built around staff-ready assistant coach value.
