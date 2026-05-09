@@ -2,7 +2,11 @@ const librarySections = [
   {
     type: "Development",
     title: "Player Development Systems",
-    description: "Training structure, player plans, skill-development systems, drill logs, leaderboards and measurable progress.",
+    description: "Player plans, drill logs and training systems built to track measurable growth.",
+    media: {
+      src: "assets/media/player-development/photos/player-development-on-court-instruction-01-media-card-cover-center-1200x900.avif",
+      alt: "On-court player development instruction"
+    },
     buttons: [
       {
         label: "Overview",
@@ -25,7 +29,11 @@ const librarySections = [
   {
     type: "Evaluation",
     title: "Scouting & Recruiting",
-    description: "Opponent prep, personnel tendencies, game logs, play-style breakdowns, and in-game notes for use by all staff each day.",
+    description: "Opponent prep, personnel notes and recruiting tools organized for staff use.",
+    media: {
+      src: "dpat/codex-design/game-report/dpat-game-report-current-report-overall-screenshot.png",
+      alt: "Basketball report dashboard and staff notes visual"
+    },
     buttons: [
       {
         label: "Overview",
@@ -48,7 +56,11 @@ const librarySections = [
   {
     type: "Defense",
     title: "DPAT",
-    description: "DPAT tracks defensive grades, effort, errors, trends, performance and leaderboards across games and practices.",
+    description: "Defensive grading, effort tracking and leaderboards built for accountability.",
+    media: {
+      src: "dpat/final-reports/player-rankings/dpat-player-rankings-report-2025-2026.png",
+      alt: "DPAT defensive tracking leaderboard report"
+    },
     buttons: [
       {
         label: "Overview",
@@ -71,7 +83,11 @@ const librarySections = [
   {
     type: "Operations",
     title: "Program Support",
-    description: "Operations planning, staff development, team structure, recruiting, fundraising and program support year-long for teams.",
+    description: "Operations plans, staff structure and year-round systems for program support.",
+    media: {
+      src: "assets/media/team-environment/photos/team-environment-banquet-media-card-cover-center-1200x900.avif",
+      alt: "Team environment and program operations visual"
+    },
     buttons: [
       {
         label: "Overview",
@@ -94,7 +110,11 @@ const librarySections = [
   {
     type: "Leadership",
     title: "Coaching Philosophy",
-    description: "Coaching philosophy, leadership approach, relationships, accountability, DEI and staff alignment across roles and team culture.",
+    description: "Leadership standards, staff alignment and team-culture principles in one place.",
+    media: {
+      src: "assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+      alt: "Staff leadership and team culture moment"
+    },
     buttons: [
       {
         label: "Assistant Philosophy",
@@ -107,13 +127,21 @@ const librarySections = [
       {
         label: "DEI Statement",
         href: "./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-dei-statement.pdf"
+      },
+      {
+        label: "Head Coach Philosophy",
+        href: "./assets/documents/coaching-philosophy/head-coach/head-coach-philosophy.pdf"
       }
     ]
   },
   {
     type: "Innovation",
     title: "The Archer",
-    description: "The Archer supports arc, release point, rhythm, touch, shot prep and repeatable shooting standards for drills and reps.",
+    description: "A shooting-development tool for arc, release point, rhythm and repeatable reps.",
+    media: {
+      src: "assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+      alt: "The Archer shooting development training tool"
+    },
     buttons: [
       {
         label: "Overview",
@@ -1195,6 +1223,9 @@ function renderLibrary() {
     .map(
       (section) => `
         <article class="library-card system-card" data-system-type="${systemTypeSlug(section.type)}">
+          <span class="library-card-media" aria-hidden="${section.media?.alt ? "false" : "true"}">
+            <img src="${encodeURI(section.media?.src || "")}" alt="${section.media?.alt || ""}" loading="lazy" onerror="this.closest('.library-card-media').classList.add('is-missing'); this.remove();" />
+          </span>
           <span class="library-type">${section.type}</span>
           <h3>${section.title}</h3>
           <p>${section.description}</p>
