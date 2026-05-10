@@ -9,18 +9,19 @@
   </head>
   <body>
     <div class="page-shell">
-      <header class="site-header">
+      <header class="site-header site-chrome">
+        <button class="mobile-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
         <a class="brand" href="./index.html">
           <span class="brand-mark">MF</span>
           <span class="brand-copy"><strong>Matthew Fogarty</strong></span>
         </a>
+        <a class="mobile-contact-link" href="./contact.html">Contact</a>
         <nav class="site-nav">
           <a href="./index.html">Home</a>
           <a href="./about.html">About</a>
           <a href="./systems.html">Systems</a>
           <a href="./featured-work.html">Featured</a>
-          <a href="./media.html">Media</a>
-          <a href="./credentials.html">Credentials</a>
+          <a href="./media.html">Gallery</a>
           <a href="./contact.html">Contact</a>
         </nav>
       </header>
@@ -35,245 +36,363 @@
             </p>
           </div>
           <div class="subpage-hero-visual">
-            <img src="assets/media/player-development/photos/player-development-on-court-instruction-01-media-card-cover-center-1200x900.avif" alt="On-court player development instruction" />
+            <img src="assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif" alt="Coach Fogarty preparing on court" />
           </div>
+          <nav class="systems-jump-nav" aria-label="Systems page sections">
+            <a href="#development">Development</a>
+            <a href="#evaluation">Evaluation</a>
+            <a href="#defense">DPAT</a>
+            <a href="#operations">Operations</a>
+            <a href="#leadership">Leadership</a>
+            <a href="#innovation">Innovation</a>
+          </nav>
         </section>
 
-        <section class="system-detail-section" id="player-development-systems">
+        <section class="system-detail-section" id="development">
           <div class="system-detail-grid">
             <div class="system-detail-copy">
-              <p class="eyebrow">01 — Development</p>
+              <p class="eyebrow">Development</p>
               <h2>Player Development Systems</h2>
               <p>
                 Player Development Systems organize the teaching process from evaluation to daily skill work, film feedback, drill tracking and measurable improvement. This section shows how workouts, player plans and progress tracking are built so development is clear, repeatable and staff-ready.
               </p>
-              <div class="system-detail-list" aria-label="Player development staff value">
-                <span>Individual player plans</span>
-                <span>Skill-development progressions</span>
-                <span>Drill logs and leaderboards</span>
-                <span>Film feedback and measurable growth</span>
-                <span>Practice-ready teaching structure</span>
-              </div>
-              <div class="system-detail-actions">
-                <a class="button button-secondary button-small" href="./assets/documents/player-development/player-development-overview.pdf" target="_blank" rel="noreferrer">Overview</a>
-                <a class="button button-secondary button-small" href="./assets/documents/player-development/player-development-complete-portfolio.pdf" target="_blank" rel="noreferrer">Training Programs</a>
-                <a class="button button-secondary button-small" href="./assets/documents/player-development/player-development-drill-log.pdf" target="_blank" rel="noreferrer">Drill Log</a>
-                <a class="button button-secondary button-small" href="./assets/documents/player-development/player-development-complete-portfolio.pdf" target="_blank" rel="noreferrer">Complete Portfolio</a>
-              </div>
             </div>
-            <div class="system-detail-visual">
-              <img src="assets/media/player-development/photos/player-development-on-court-instruction-01-media-card-cover-center-1200x900.avif" alt="On-court player development instruction" />
+          </div>
+          <div class="system-document-carousel has-arrows" aria-label="Player development documents" data-system-carousel>
+            <button class="system-carousel-arrow system-carousel-arrow-prev" type="button" aria-label="Previous player development documents" data-system-carousel-prev>&#8249;</button>
+            <div class="system-document-grid" data-system-carousel-track>
+              <a class="system-document-card" href="./assets/documents/player-development/shooting-development-system.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-shooting-system.webp" alt="Shooting Development System document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Shooting System</strong><small>Arc, mechanics and repeatable shot growth.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/skills-development-system.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-skills-system.webp" alt="Skills Development System document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Skills System</strong><small>Skill pathways and workout organization.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/ball-handling-development-system.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-ball-handling-system.webp" alt="Ball Handling Development System document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Ball Handling</strong><small>Handle progression and guard-skill standards.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/strength-development-system.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-strength-system.webp" alt="Strength Development System document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Strength System</strong><small>Physical development and performance habits.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/cardio-development-system.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-cardio-system.webp" alt="Cardio Development System document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Cardio System</strong><small>Conditioning structure and work capacity.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/player-development-drill-log.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-drill-log.webp" alt="Player Development Drill Log document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Drill Log</strong><small>Daily work tracking and staff-ready notes.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/player-development-drill-leaderboards.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-drill-leaderboards.webp" alt="Player Development Drill Leaderboards document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Drill Leaderboards</strong><small>Competition tracking and measurable growth.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/player-development-monthly-calendar.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-monthly-calendar.webp" alt="Player Development Monthly Calendar document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Monthly Calendar</strong><small>Training rhythm and development planning.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/player-development-complete-portfolio.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-complete-portfolio.webp" alt="Player Development complete portfolio document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Complete Portfolio</strong><small>Full player development document packet.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/player-development/player-development-overview.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/player-development-overview.webp" alt="Player Development System overview document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Overview</strong><small>System structure, progression and impact.</small></span>
+              </a>
             </div>
+            <button class="system-carousel-arrow system-carousel-arrow-next" type="button" aria-label="Next player development documents" data-system-carousel-next>&#8250;</button>
           </div>
         </section>
 
-        <section class="system-detail-section" id="scouting-recruiting">
-          <div class="system-detail-grid system-detail-grid-reverse">
+        <section class="system-detail-section" id="evaluation">
+          <div class="system-detail-grid">
             <div class="system-detail-copy">
-              <p class="eyebrow">02 — Evaluation</p>
+              <p class="eyebrow">Evaluation</p>
               <h2>Scouting &amp; Recruiting</h2>
               <p>
                 Scouting &amp; Recruiting resources show how opponent prep, personnel tendencies, roster evaluation and in-game organization are prepared for staff use. This section helps a coach understand how reports move from film study to practice planning, game prep and recruiting follow-up.
               </p>
-              <div class="system-detail-list" aria-label="Scouting and recruiting staff value">
-                <span>Opponent scouting reports</span>
-                <span>Personnel breakdowns</span>
-                <span>In-game notes template</span>
-                <span>Recruiting organization</span>
-                <span>Player evaluation support</span>
-              </div>
-              <div class="system-detail-actions">
-                <a class="button button-secondary button-small" href="./assets/documents/scouting-recruiting/automated-scouting-report-overview.pdf" target="_blank" rel="noreferrer">Overview</a>
-                <a class="button button-secondary button-small" href="./assets/documents/scouting-recruiting/scouting-report-player-personnel-breakdown.pdf" target="_blank" rel="noreferrer">Player Personnel Breakdown</a>
-                <a class="button button-secondary button-small" href="./assets/documents/scouting-recruiting/scouting-report-in-game-notes-template.pdf" target="_blank" rel="noreferrer">In-Game Notes</a>
-                <a class="button button-secondary button-small" href="./assets/documents/scouting-recruiting/automated-scouting-report-complete-portfolio.pdf" target="_blank" rel="noreferrer">Complete Portfolio</a>
-              </div>
             </div>
-            <div class="system-detail-visual">
-              <img src="dpat/codex-design/game-report/dpat-game-report-current-report-overall-screenshot.png" alt="Basketball report dashboard and staff notes visual" />
+          </div>
+          <div class="system-document-carousel has-arrows" aria-label="Scouting and recruiting documents" data-system-carousel>
+            <button class="system-carousel-arrow system-carousel-arrow-prev" type="button" aria-label="Previous scouting and recruiting documents" data-system-carousel-prev>&#8249;</button>
+            <div class="system-document-grid" data-system-carousel-track>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-matchup-cover-page.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-matchup-cover.webp" alt="Scouting matchup cover page document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Matchup Cover</strong><small>Opponent identity and game-plan setup.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-player-personnel-breakdown.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-personnel-report.webp" alt="Scouting personnel report document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Personnel Report</strong><small>Player traits, roles and matchup context.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-player-traits-badge-system.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-player-traits-badge-system.webp" alt="Scouting player traits badge system document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Trait Badges</strong><small>Fast personnel reads for staff and players.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-team-rankings-top-performers.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-team-rankings-top-performers.webp" alt="Scouting team rankings and top performers document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Team Rankings</strong><small>Top performers and production priorities.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-top-players-team-tendencies.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-top-players-tendencies.webp" alt="Scouting top players and team tendencies document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Tendencies</strong><small>Opponent trends and key personnel notes.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-play-style-keys-to-win.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-play-style-keys.webp" alt="Scouting play style and keys to win document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Keys To Win</strong><small>Style notes and game-plan priorities.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-blob-plays.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-blob-plays.webp" alt="Scouting BLOB plays document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>BLOB Plays</strong><small>Baseline out-of-bounds organization.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-game-log-trends.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-game-log-trends.webp" alt="Scouting game log trends document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Game Log Trends</strong><small>Recent form and statistical patterns.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/scouting-report-in-game-notes-template.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-in-game-notes.webp" alt="Scouting in-game notes document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>In-Game Notes</strong><small>Bench-ready organization for game flow.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/automated-scouting-report-complete-portfolio.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-complete-portfolio.webp" alt="Automated scouting report complete portfolio document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Complete Portfolio</strong><small>Full scouting and recruiting packet.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/scouting-recruiting/automated-scouting-report-overview.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/scouting-overview.webp" alt="Automated Scouting Report overview document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Overview</strong><small>Report system structure and impact.</small></span>
+              </a>
             </div>
+            <button class="system-carousel-arrow system-carousel-arrow-next" type="button" aria-label="Next scouting and recruiting documents" data-system-carousel-next>&#8250;</button>
           </div>
         </section>
 
-        <section class="system-detail-section" id="defensive-performance-accountability-tracker">
+        <section class="system-detail-section" id="defense">
           <div class="system-detail-grid">
             <div class="system-detail-copy">
-              <p class="eyebrow">03 — DPAT</p>
+              <p class="eyebrow">DPAT</p>
               <h2>Defensive Performance Accountability Tracker</h2>
               <p>
                 The Defensive Performance Accountability Tracker turns defensive effort, execution, rotations, scheme performance and accountability into measurable data. This section highlights how DPAT tracks player impact, game breakdowns, rankings and action leaderboards.
               </p>
-              <div class="system-detail-list" aria-label="DPAT staff value">
-                <span>Defensive grading and accountability</span>
-                <span>Positive and negative action tracking</span>
-                <span>Player rankings and leaderboards</span>
-                <span>Game breakdown reports</span>
-                <span>Scheme-based defensive evaluation</span>
-              </div>
-              <div class="system-detail-actions">
-                <a class="button button-secondary button-small" href="./assets/documents/program-systems/dpat/dpat-overview.pdf" target="_blank" rel="noreferrer">Overview</a>
-                <a class="button button-secondary button-small" href="./assets/documents/program-systems/dpat/dpat-game-breakdown-report.pdf" target="_blank" rel="noreferrer">Game Breakdown Report</a>
-                <a class="button button-secondary button-small" href="./assets/documents/program-systems/dpat/dpat-player-rankings.pdf" target="_blank" rel="noreferrer">Player Rankings</a>
-                <a class="button button-secondary button-small" href="./assets/documents/program-systems/dpat/dpat-action-leaderboard-report.pdf" target="_blank" rel="noreferrer">Action Leaderboards</a>
-                <a class="button button-secondary button-small" href="./assets/documents/program-systems/dpat/dpat-complete-portfolio.pdf" target="_blank" rel="noreferrer">Complete Portfolio</a>
-              </div>
             </div>
-            <div class="system-detail-visual">
-              <img src="dpat/final-reports/player-rankings/dpat-player-rankings-report-2025-2026.png" alt="DPAT defensive tracking leaderboard report" />
+          </div>
+          <div class="system-document-carousel has-arrows" aria-label="DPAT documents" data-system-carousel>
+            <button class="system-carousel-arrow system-carousel-arrow-prev" type="button" aria-label="Previous DPAT documents" data-system-carousel-prev>&#8249;</button>
+            <div class="system-document-grid" data-system-carousel-track>
+              <a class="system-document-card" href="./assets/documents/program-systems/dpat/dpat-rankings.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/dpat-rankings.webp" alt="DPAT rankings document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Team Rankings</strong><small>Player standings and accountability data.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-systems/dpat/dpat-player-rankings.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/dpat-player-rankings.webp" alt="DPAT player rankings document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Player Rankings</strong><small>Player impact and defensive scoring.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-systems/dpat/dpat-action-leaderboard-report.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/dpat-action-leaderboard.webp" alt="DPAT action leaderboard report document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Action Leaderboard</strong><small>Positive and negative action tracking.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-systems/dpat/dpat-season-summary.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/dpat-season-summary.webp" alt="DPAT season summary document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Season Summary</strong><small>Long-view defensive accountability data.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-systems/dpat/dpat-game-breakdown-report.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/dpat-game-report.webp" alt="DPAT game report document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Game Report</strong><small>Possession-level defensive breakdown.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-systems/dpat/dpat-action-analysis.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/dpat-action-analysis.webp" alt="DPAT action analysis document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Action Analysis</strong><small>Scheme actions and possession outcomes.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-systems/dpat/dpat-complete-portfolio.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/dpat-complete-portfolio.webp" alt="DPAT complete portfolio document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Complete Portfolio</strong><small>Full defensive tracking packet.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-systems/dpat/dpat-overview.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/dpat-overview.webp" alt="DPAT overview document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Overview</strong><small>System purpose, scoring and staff use.</small></span>
+              </a>
             </div>
+            <button class="system-carousel-arrow system-carousel-arrow-next" type="button" aria-label="Next DPAT documents" data-system-carousel-next>&#8250;</button>
           </div>
         </section>
 
-        <section class="system-detail-section" id="program-support">
-          <div class="system-detail-grid system-detail-grid-reverse">
+        <section class="system-detail-section" id="operations">
+          <div class="system-detail-grid">
             <div class="system-detail-copy">
-              <p class="eyebrow">04 — Operations</p>
+              <p class="eyebrow">Operations</p>
               <h2>Program Support</h2>
               <p>
                 Program Support organizes the behind-the-scenes structure that helps a staff operate efficiently. This section covers operations planning, staff development, fundraising, recruiting calendars, year-round organization and daily program systems.
               </p>
-              <div class="system-detail-list" aria-label="Program support staff value">
-                <span>Operations planning</span>
-                <span>Staff development plan</span>
-                <span>12-month program structure</span>
-                <span>Fundraising plan</span>
-                <span>Recruiting and communication support</span>
-              </div>
-              <div class="system-detail-actions">
-                <a class="button button-secondary button-small" href="./assets/documents/program-development/program-development-overview.pdf" target="_blank" rel="noreferrer">Overview</a>
-                <a class="button button-secondary button-small" href="./assets/documents/program-development/operations-development-plan.pdf" target="_blank" rel="noreferrer">Operations Plan</a>
-                <a class="button button-secondary button-small" href="./assets/documents/program-development/staff-development-plan.pdf" target="_blank" rel="noreferrer">Staff Plan</a>
-                <a class="button button-secondary button-small" href="./assets/documents/program-development/fundraising-development-plan.pdf" target="_blank" rel="noreferrer">Fundraising Plan</a>
-              </div>
             </div>
-            <div class="system-detail-visual">
-              <img src="assets/media/team-environment/photos/team-environment-banquet-media-card-cover-center-1200x900.avif" alt="Team environment and program operations visual" />
+          </div>
+          <div class="system-document-carousel has-arrows" aria-label="Program support documents" data-system-carousel>
+            <button class="system-carousel-arrow system-carousel-arrow-prev" type="button" aria-label="Previous program support documents" data-system-carousel-prev>&#8249;</button>
+            <div class="system-document-grid" data-system-carousel-track>
+              <a class="system-document-card" href="./assets/documents/program-development/operations-development-plan.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/operations-development-plan.webp" alt="Operations development plan document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Operations Plan</strong><small>Staff calendars, process and logistics.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-development/staff-development-plan.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/staff-development-plan.webp" alt="Staff development plan document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Staff Plan</strong><small>Staff alignment and growth structure.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-development/fundraising-development-plan.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/fundraising-development-plan.webp" alt="Fundraising development plan document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Fundraising Plan</strong><small>Resource-building and support systems.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-development/recruiting-development-plan.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/recruiting-development-plan.webp" alt="Recruiting development plan document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Recruiting Plan</strong><small>Roster-building and recruiting calendar.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-development/team-development-plan.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/team-development-plan.webp" alt="Team development plan document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Team Plan</strong><small>Program standards and team growth.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-development/player-development-plan.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/program-player-development-plan.webp" alt="Program player development plan document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Player Plan</strong><small>Individual development inside program flow.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/program-development/program-development-overview.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/program-development-overview.webp" alt="Program development overview document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Overview</strong><small>Program structure and year-round system.</small></span>
+              </a>
             </div>
+            <button class="system-carousel-arrow system-carousel-arrow-next" type="button" aria-label="Next program support documents" data-system-carousel-next>&#8250;</button>
           </div>
         </section>
 
-        <section class="system-detail-section" id="coaching-philosophy">
+        <section class="system-detail-section" id="leadership">
           <div class="system-detail-grid">
             <div class="system-detail-copy">
-              <p class="eyebrow">05 — Leadership</p>
+              <p class="eyebrow">Leadership</p>
               <h2>Coaching Philosophy</h2>
               <p>
                 Coaching Philosophy resources explain how Coach Fogarty approaches leadership, relationship-building, accountability, staff alignment and player standards. This section shows the values and daily behaviors behind the systems.
               </p>
-              <div class="system-detail-list" aria-label="Coaching philosophy staff value">
-                <span>Assistant coach philosophy</span>
-                <span>Leadership framework</span>
-                <span>Staff alignment</span>
-                <span>DEI statement</span>
-                <span>Player relationships and accountability</span>
-              </div>
-              <div class="system-detail-actions">
-                <a class="button button-secondary button-small" href="./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-philosophy.pdf" target="_blank" rel="noreferrer">Assistant Philosophy</a>
-                <a class="button button-secondary button-small" href="./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-30-60-90-day-plan.pdf" target="_blank" rel="noreferrer">30-60-90 Plan</a>
-                <a class="button button-secondary button-small" href="./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-dei-statement.pdf" target="_blank" rel="noreferrer">DEI Statement</a>
-                <a class="button button-secondary button-small" href="./assets/documents/coaching-philosophy/head-coach/head-coach-philosophy.pdf" target="_blank" rel="noreferrer">HC Philosophy</a>
-              </div>
             </div>
-            <div class="system-detail-visual">
-              <img src="assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif" alt="Staff leadership and team culture moment" />
+          </div>
+          <div class="system-document-carousel has-arrows" aria-label="Coaching philosophy documents" data-system-carousel>
+            <button class="system-carousel-arrow system-carousel-arrow-prev" type="button" aria-label="Previous coaching philosophy documents" data-system-carousel-prev>&#8249;</button>
+            <div class="system-document-grid" data-system-carousel-track>
+              <a class="system-document-card" href="./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-philosophy.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/assistant-coach-philosophy.webp" alt="Assistant coach philosophy document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Assistant Philosophy</strong><small>Role clarity, values and staff impact.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-30-60-90-day-plan.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/assistant-coach-30-60-90.webp" alt="Assistant coach 30-60-90 day plan document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>30-60-90 Plan</strong><small>First-season integration and priorities.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-dei-statement.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/assistant-coach-dei.webp" alt="Assistant coach DEI statement document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Assistant DEI</strong><small>Inclusive leadership and program standards.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/coaching-philosophy/head-coach/head-coach-philosophy.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/head-coach-philosophy.webp" alt="Head coach philosophy document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>HC Philosophy</strong><small>Program leadership and competitive identity.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/coaching-philosophy/head-coach/head-coach-year-one-strategic-plan.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/head-coach-year-one-plan.webp" alt="Head coach year one strategic plan document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>Year One Plan</strong><small>Head-coach priorities and implementation.</small></span>
+              </a>
+              <a class="system-document-card" href="./assets/documents/coaching-philosophy/head-coach/head-coach-dei-statement.pdf" target="_blank" rel="noreferrer">
+                <span class="system-document-preview"><img src="assets/documents/system-previews/head-coach-dei.webp" alt="Head coach DEI statement document preview" /></span>
+                <span class="system-document-copy"><span>PDF</span><strong>HC DEI</strong><small>Program culture and belonging standards.</small></span>
+              </a>
             </div>
+            <button class="system-carousel-arrow system-carousel-arrow-next" type="button" aria-label="Next coaching philosophy documents" data-system-carousel-next>&#8250;</button>
           </div>
         </section>
 
-        <section class="system-detail-section" id="the-archer">
-          <div class="system-detail-grid system-detail-grid-reverse">
+        <section class="system-detail-section" id="innovation">
+          <div class="system-detail-grid">
             <div class="system-detail-copy">
-              <p class="eyebrow">06 — Innovation</p>
+              <p class="eyebrow">Innovation</p>
               <h2>The Archer</h2>
               <p>
                 The Archer is a player-development innovation designed to improve shooting arc, release point, rhythm, touch and contested-shot preparation. This section connects the product to Coach Fogarty's teaching system and shows visual examples of how it is used.
               </p>
-              <div class="system-detail-list" aria-label="The Archer staff value">
-                <span>Shooting arc development</span>
-                <span>Release point training</span>
-                <span>Touch and rhythm work</span>
-                <span>Visual teaching tool</span>
-                <span>Repeatable shot-quality framework</span>
-              </div>
-              <div class="system-detail-actions">
-                <a class="button button-secondary button-small" href="./assets/the-archer/documents/player-development-innovation-the-archer-overview.pdf" target="_blank" rel="noreferrer">Overview</a>
-                <a class="button button-secondary button-small" href="./assets/the-archer/documents/player-development-innovation-the-archer-diagram.png" target="_blank" rel="noreferrer">Training Visual</a>
-                <a class="button button-secondary button-small" href="./archer-visuals.html#photos">Photos</a>
-                <a class="button button-secondary button-small" href="./archer-visuals.html#videos">Videos</a>
-              </div>
             </div>
-            <div class="system-detail-visual">
-              <img src="assets/the-archer/photos/archer-shooting-development-wide-01.jpg" alt="The Archer shooting development training tool" />
-            </div>
+          </div>
+          <div class="system-document-grid" aria-label="The Archer documents and media">
+            <a class="system-document-card" href="./assets/the-archer/documents/player-development-innovation-the-archer-product-overview.pdf" target="_blank" rel="noreferrer">
+              <span class="system-document-preview"><img src="assets/documents/system-previews/archer-product-overview.webp" alt="The Archer product overview document preview" /></span>
+              <span class="system-document-copy"><span>PDF</span><strong>Product Overview</strong><small>Training tool design and use cases.</small></span>
+            </a>
+            <a class="system-document-card system-document-card-media" href="./archer-visuals.html#photos">
+              <span class="system-document-preview"><img src="assets/the-archer/thumbnails/archer-thumbnail.jpg" alt="The Archer photo library preview" /></span>
+              <span class="system-document-copy"><span>Media</span><strong>Photos</strong><small>Training examples and product visuals.</small></span>
+            </a>
+            <a class="system-document-card system-document-card-media" href="./archer-visuals.html#videos">
+              <span class="system-document-preview"><img src="assets/the-archer/photos/archer-shooting-development-wide-01.jpg" alt="The Archer video library preview" /></span>
+              <span class="system-document-copy"><span>Media</span><strong>Videos</strong><small>Movement examples and teaching clips.</small></span>
+            </a>
+            <a class="system-document-card" href="./assets/the-archer/documents/player-development-innovation-the-archer-overview.pdf" target="_blank" rel="noreferrer">
+              <span class="system-document-preview"><img src="assets/documents/system-previews/archer-overview.webp" alt="The Archer overview document preview" /></span>
+              <span class="system-document-copy"><span>PDF</span><strong>Overview</strong><small>Teaching purpose and development value.</small></span>
+            </a>
           </div>
         </section>
 
-        <footer class="site-footer">
-          <div class="footer-grid">
-            <section class="footer-brand" aria-label="Matthew Fogarty portfolio">
-              <h2>Matthew Fogarty</h2>
-              <div class="footer-profile-details">
-                <a href="mailto:CoachMatthewFogarty@gmail.com">CoachMatthewFogarty@gmail.com</a>
-                <a href="https://www.coachfogarty.com" target="_blank" rel="noreferrer">www.coachfogarty.com</a>
-                <span>Santa Ana, CA</span>
-                <div class="footer-socials" aria-label="Social links">
-                <a href="mailto:CoachMatthewFogarty@gmail.com" aria-label="Email Coach Fogarty">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5A2.5 2.5 0 0 1 6 4h12a2.5 2.5 0 0 1 2.5 2.5v11A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5v-11Zm2.2-.5 6.3 5.2L18.3 6H5.7Zm12.8 2.1-5.7 4.7a1.25 1.25 0 0 1-1.6 0L5.5 8.1v9.4c0 .3.2.5.5.5h12c.3 0 .5-.2.5-.5V8.1Z" /></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/matthew-fogarty" target="_blank" rel="noreferrer" aria-label="Matthew Fogarty on LinkedIn">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.86V20h3.08V8.98ZM5.4 4a1.78 1.78 0 1 0 0 3.56A1.78 1.78 0 0 0 5.4 4Zm14.74 9.88c0-3.04-1.62-5-4.26-5-1.9 0-2.75 1.04-3.22 1.77V8.98H9.7V20h3.08v-5.46c0-1.44.27-2.84 2.06-2.84 1.76 0 1.78 1.65 1.78 2.93V20h3.52v-6.12Z" /></svg>
-                </a>
-                <a href="https://www.instagram.com/coachfogarty" target="_blank" rel="noreferrer" aria-label="Coach Fogarty on Instagram">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 2a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm5.05-2.8a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z" /></svg>
-                </a>
-                </div>
-              </div>
-              <div class="footer-profile-actions">
-                <a class="button button-secondary button-small" href="assets/documents/portfolio/matthew-fogarty-portfolio-overview.pdf" target="_blank" rel="noreferrer">Download Portfolio</a>
-                <a class="button button-secondary button-small" href="assets/documents/resume/matthew-fogarty-resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-                <a class="button button-secondary button-small" href="assets/documents/references/matthew-fogarty-recommendation-letters.pdf" target="_blank" rel="noreferrer">References</a>
-                <a class="button button-secondary button-small" href="assets/documents/credentials/professional-credentials-matthew-fogarty.pdf" target="_blank" rel="noreferrer">View Credentials</a>
-              </div>
-            </section>
-            <nav class="footer-links" aria-label="Site pages">
-              <h3>Site</h3>
-              <a href="./index.html">Home</a>
-              <a href="./about.html">About</a>
-              <a href="./systems.html">Systems</a>
-              <a href="./featured-work.html">Featured</a>
-              <a href="./media.html">Media</a>
-              <a href="./credentials.html">Credentials</a>
-              <a href="./contact.html">Contact</a>
-            </nav>
-            <nav class="footer-links footer-links-wide" aria-label="Professional credentials">
-              <h3>Credentials</h3>
-              <a href="assets/documents/resume/matthew-fogarty-resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-              <a href="assets/documents/credentials/degrees/degrees-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Degrees</a>
-              <a href="assets/documents/credentials/licenses/licenses-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Licenses</a>
-              <a href="assets/documents/credentials/certifications/certifications-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Certifications</a>
-              <a href="assets/documents/credentials/memberships/memberships-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Memberships</a>
-              <a href="assets/documents/references/matthew-fogarty-recommendation-letters.pdf" target="_blank" rel="noreferrer">References</a>
-            </nav>
-            <nav class="footer-links" aria-label="Coaching systems">
-              <h3>Systems</h3>
-              <a href="./systems.html#player-development-systems">Player Development</a>
-              <a href="./systems.html#scouting-recruiting">Scouting &amp; Recruiting</a>
-              <a href="./systems.html#defensive-performance-accountability-tracker">DPAT</a>
-              <a href="./systems.html#program-support">Program Support</a>
-              <a href="./systems.html#coaching-philosophy">Coaching Philosophy</a>
-              <a href="./systems.html#the-archer">The Archer</a>
-            </nav>
-            <nav class="footer-links" aria-label="Featured portfolio work">
-              <h3>Featured</h3>
-              <a href="./featured-work.html#program-turnaround">Pacific Academy Turnaround</a>
-              <a href="./featured-work.html#collegiate-impact">Santa Ana College Impact</a>
-              <a href="./anaya-case-study.html"><span class="footer-label-full">Anaya Beard Case Study</span><span class="footer-label-short">Anaya Case Study</span></a>
-              <a href="./archer-visuals.html">The Archer Training Tool</a>
-            </nav>
-          </div>
-          <div class="footer-bottom"><p>&copy; 2026 Matthew Fogarty. All rights reserved.</p></div>
-        </footer>
+        <footer class="site-footer site-chrome">
+  <div class="footer-grid">
+    <nav class="footer-links footer-accordion" aria-label="Site pages">
+      <button class="footer-accordion-toggle" type="button" aria-expanded="false" aria-controls="footer-site-links">Site<span class="footer-accordion-caret" aria-hidden="true"></span></button>
+      <div class="footer-link-list" id="footer-site-links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./systems.html">Systems</a>
+        <a href="./featured-work.html">Featured</a>
+        <a href="./media.html">Gallery</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </nav>
+    <nav class="footer-links footer-links-wide footer-accordion" aria-label="Professional credentials">
+      <button class="footer-accordion-toggle" type="button" aria-expanded="false" aria-controls="footer-credentials-links">Credentials<span class="footer-accordion-caret" aria-hidden="true"></span></button>
+      <div class="footer-link-list" id="footer-credentials-links">
+        <a href="assets/documents/resume/matthew-fogarty-resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="assets/documents/credentials/degrees/degrees-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Degrees</a>
+        <a href="assets/documents/credentials/licenses/licenses-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Licenses</a>
+        <a href="assets/documents/credentials/certifications/certifications-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Certifications</a>
+        <a href="assets/documents/credentials/memberships/memberships-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Memberships</a>
+        <a href="assets/documents/references/matthew-fogarty-recommendation-letters.pdf" target="_blank" rel="noreferrer">References</a>
+      </div>
+    </nav>
+    <nav class="footer-links footer-accordion" aria-label="Coaching systems">
+      <button class="footer-accordion-toggle" type="button" aria-expanded="false" aria-controls="footer-systems-links">Systems<span class="footer-accordion-caret" aria-hidden="true"></span></button>
+      <div class="footer-link-list" id="footer-systems-links">
+        <a href="./systems.html#development">Player Development</a>
+        <a href="./systems.html#evaluation">Scouting &amp; Recruiting</a>
+        <a href="./systems.html#defense">DPAT</a>
+        <a href="./systems.html#operations">Program Support</a>
+        <a href="./systems.html#leadership">Coaching Philosophy</a>
+        <a href="./systems.html#innovation">The Archer</a>
+      </div>
+    </nav>
+    <nav class="footer-links footer-accordion" aria-label="Featured portfolio work">
+      <button class="footer-accordion-toggle" type="button" aria-expanded="false" aria-controls="footer-featured-links">Featured<span class="footer-accordion-caret" aria-hidden="true"></span></button>
+      <div class="footer-link-list" id="footer-featured-links">
+        <a href="./featured-work.html#program-turnaround">Pacific Academy Turnaround</a>
+        <a href="./featured-work.html#collegiate-impact">Santa Ana College Impact</a>
+        <a href="./anaya-case-study.html">Anaya Beard Case Study</a>
+        <a href="./archer-visuals.html">The Archer Training Tool</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">&copy; 2026 Matthew Fogarty. All rights reserved.</p>
+    <div class="footer-socials" aria-label="Footer social links">
+      <a href="mailto:CoachMatthewFogarty@gmail.com" aria-label="Email Coach Fogarty"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5A2.5 2.5 0 0 1 6 4h12a2.5 2.5 0 0 1 2.5 2.5v11A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5v-11Zm2.2-.5 6.3 5.2L18.3 6H5.7Zm12.8 2.1-5.7 4.7a1.25 1.25 0 0 1-1.6 0L5.5 8.1v9.4c0 .3.2.5.5.5h12c.3 0 .5-.2.5-.5V8.1Z" /></svg></a>
+      <a href="https://www.linkedin.com/in/matthew-fogarty" target="_blank" rel="noreferrer" aria-label="Matthew Fogarty on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.86V20h3.08V8.98ZM5.4 4a1.78 1.78 0 1 0 0 3.56A1.78 1.78 0 0 0 5.4 4Zm14.74 9.88c0-3.04-1.62-5-4.26-5-1.9 0-2.75 1.04-3.22 1.77V8.98H9.7V20h3.08v-5.46c0-1.44.27-2.84 2.06-2.84 1.76 0 1.78 1.65 1.78 2.93V20h3.52v-6.12Z" /></svg></a>
+      <a href="https://www.instagram.com/coachfogarty" target="_blank" rel="noreferrer" aria-label="Coach Fogarty on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 2a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm5.05-2.8a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z" /></svg></a>
+    </div>
+  </div>
+</footer>
       </main>
     </div>
+    <script src="./systems.js"></script>
+    <script src="./footer.js"></script>
   </body>
 </html>

@@ -359,7 +359,7 @@ const mediaAlbums = [
         fullSrc: mediaPhotoPath("player-development", "player-development-on-court-instruction-01-portrait-cover-bottom-1800x2400.avif"),
         orientation: "portrait",
         alt: "On-court player development instruction",
-        caption: "On-court player development instruction"
+        caption: "Player Development Instruction"
       }
     ]
   },
@@ -1327,7 +1327,6 @@ const libraryGrid = document.querySelector("#libraryGrid");
 const galleryGrid = document.querySelector("#galleryGrid");
 const mediaCategoryGrid = document.querySelector("#mediaCategoryGrid");
 const mediaAlbumSections = document.querySelector("#mediaAlbumSections");
-const mediaPhotoGrid = document.querySelector("#mediaPhotoGrid");
 const mediaVideoGrid = document.querySelector("#mediaVideoGrid");
 const mediaPlayingCareerGrid = document.querySelector("#mediaPlayingCareerGrid");
 const mediaPlayingAwardsGrid = document.querySelector("#mediaPlayingAwardsGrid");
@@ -1424,7 +1423,7 @@ function renderGallery() {
   });
 }
 
-function mediaLibraryAlbum(album, eyebrow = "Media") {
+function mediaLibraryAlbum(album, eyebrow = "Gallery") {
   return {
     ...album,
     eyebrow: album.eyebrow || eyebrow,
@@ -1433,7 +1432,7 @@ function mediaLibraryAlbum(album, eyebrow = "Media") {
   };
 }
 
-function mediaLibraryCardMarkup(albumIndex, itemIndex, item, label = "Media", titleOverride = "") {
+function mediaLibraryCardMarkup(albumIndex, itemIndex, item, label = "Gallery", titleOverride = "") {
   const isVideo = item.type === "video";
   const title = titleOverride || mediaItemTitle(item, mediaLibraryAlbums[albumIndex]);
   const thumb = isVideo ? mediaItemPoster(item) : mediaItemCardSrc(item);
@@ -1478,7 +1477,7 @@ function renderMediaLibraryPage() {
     return;
   }
 
-  const coachingAlbums = mediaAlbums.map((album) => mediaLibraryAlbum(album, "Coaching Media"));
+  const coachingAlbums = mediaAlbums.map((album) => mediaLibraryAlbum(album, "Coaching Gallery"));
   const archerAlbum = mediaLibraryAlbum(archerMediaAlbum, "Player Development Innovation");
   const anayaAlbums = anayaSections.map((section) => mediaLibraryAlbum(section, "Player Development Case Study"));
   const playingAlbum = mediaLibraryAlbum(playingCareerAlbums[0], "Playing Background");
@@ -1510,7 +1509,7 @@ function renderMediaLibraryPage() {
   );
   const anayaFullAlbum = mediaLibraryAlbum(
     {
-      title: "Anaya Beard Development Media",
+      title: "Anaya Beard Development Gallery",
       items: anayaSections.flatMap((section) =>
         activeAlbumItemsFor(section).map((item) => ({
           ...item,
@@ -1540,6 +1539,25 @@ function renderMediaLibraryPage() {
     const item = activeAlbumItemsFor(album)[itemIndex];
     return mediaLibraryCardMarkup(albumIndex, itemIndex, item, label, titleOverride);
   };
+  const previewCarousels = {};
+  const visiblePreviewCards = (cards, start = 0) => {
+    const count = Math.min(3, cards.length);
+    return Array.from({ length: count }, (_, offset) => cards[(start + offset) % cards.length]);
+  };
+  const previewCarouselMarkup = (key, cards, renderCard = previewCard) => {
+    previewCarousels[key] = { cards, start: 0, renderCard };
+    const hasArrows = cards.length > 3;
+
+    return `
+      <div class="media-preview-carousel" data-media-preview-carousel="${key}">
+        <button class="media-carousel-arrow media-carousel-arrow-prev" type="button" data-media-carousel-direction="-1" aria-label="Previous gallery cards"${hasArrows ? "" : " hidden"}>&lsaquo;</button>
+        <div class="media-section-grid" data-media-carousel-track>
+          ${visiblePreviewCards(cards).map(renderCard).join("")}
+        </div>
+        <button class="media-carousel-arrow media-carousel-arrow-next" type="button" data-media-carousel-direction="1" aria-label="Next gallery cards"${hasArrows ? "" : " hidden"}>&rsaquo;</button>
+      </div>
+    `;
+  };
 
   const categoryCards = [
     { title: "Sideline Leadership", desc: "Game energy, staff presence and leadership moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[0]) },
@@ -1554,8 +1572,7 @@ function renderMediaLibraryPage() {
     { title: "Playing Career Awards", desc: "Awards, plaques and playing recognition.", href: "#playing-awards-media", albumIndex: albumIndexFor(awardsAlbum) }
   ];
 
-  mediaCategoryGrid.innerHTML = categoryCards
-    .map((card) => {
+  const categoryCardMarkup = (card) => {
       const album = mediaLibraryAlbums[card.albumIndex];
       const firstItem = activeAlbumItemsFor(album)[0];
       const thumb = firstItem ? mediaItemCardSrc(firstItem) : album.thumbnail;
@@ -1568,112 +1585,89 @@ function renderMediaLibraryPage() {
           <span class="library-type">${card.title}</span>
           <h3>${card.title}</h3>
           <p>${card.desc}</p>
-          <button class="button button-secondary button-small" type="button" data-open-media-gallery="${card.albumIndex}">View Gallery</button>
+          <button class="button button-secondary button-small" type="button" data-open-media-gallery="${card.albumIndex}">Gallery</button>
         </article>
       `;
-    })
-    .join("");
+  };
+
+  mediaCategoryGrid.innerHTML = previewCarouselMarkup("featured", categoryCards, categoryCardMarkup);
 
   if (mediaAlbumSections) {
     const coachingPreview = coachingAlbums.map((album) => ({
       albumIndex: albumIndexFor(album),
       itemIndex: 0,
-      label: album.category || "Coaching Media"
+      label: album.category || "Coaching Gallery"
     }));
 
     mediaAlbumSections.innerHTML = `
-      <section class="media-album-section media-preview-section">
-        <div class="media-album-heading">
-          <p class="eyebrow">Coaching Media Preview</p>
-          <h3>Strongest Coaching and Team Culture Moments</h3>
-          <p>A concise preview from sideline leadership, coaching details, player development, team environment, team celebration and championship culture albums.</p>
-        </div>
-        <div class="media-section-grid">
-          ${coachingPreview.map(previewCard).join("")}
-        </div>
-        <div class="media-gallery-button-row">
-          ${coachingAlbums.map((album) => galleryButton(albumIndexFor(album), album.title)).join("")}
-        </div>
-      </section>
+      ${previewCarouselMarkup("coaching", coachingPreview)}
+      <div class="media-gallery-button-row">
+        ${coachingAlbums.map((album) => galleryButton(albumIndexFor(album), album.title)).join("")}
+      </div>
     `;
-  }
-
-  if (mediaPhotoGrid) {
-    mediaPhotoGrid.innerHTML = coachingAlbums
-      .map((album) => {
-        const albumIndex = albumIndexFor(album);
-        const item = activeAlbumItemsFor(album)[0];
-        return `
-          <article class="media-category-card media-directory-card">
-            <span class="media-category-frame">
-              <img src="${encodeURI(mediaItemCardSrc(item))}" alt="${album.title}" loading="lazy" />
-            </span>
-            <span class="library-type">${album.category || "Photos"}</span>
-            <h3>${album.title}</h3>
-            <p>${mediaAlbumDescription(album.title)}</p>
-            ${galleryButton(albumIndex, "Open Gallery")}
-          </article>
-        `;
-      })
-      .join("");
   }
 
   if (mediaVideoGrid) {
     const archerVideoAlbumIndex = albumIndexFor(archerVideoAlbum);
     const anayaVideoAlbumIndex = albumIndexFor(anayaVideoAlbum);
     const videoPreviewItems = [
-      ...archerVideoAlbum.items.slice(0, 3).map((item, itemIndex) => ({ albumIndex: archerVideoAlbumIndex, itemIndex, item, label: "The Archer Video" })),
-      ...anayaVideoAlbum.items.slice(0, 3).map((item, itemIndex) => ({ albumIndex: anayaVideoAlbumIndex, itemIndex, item, label: "Development Video" }))
+      ...archerVideoAlbum.items.map((item, itemIndex) => ({ albumIndex: archerVideoAlbumIndex, itemIndex, item, label: "The Archer Video" })),
+      ...anayaVideoAlbum.items.map((item, itemIndex) => ({ albumIndex: anayaVideoAlbumIndex, itemIndex, item, label: "Development Video" }))
     ];
 
-    mediaVideoGrid.innerHTML = videoPreviewItems
-      .map(({ albumIndex, itemIndex, item, label }) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, label))
-      .join("");
+    mediaVideoGrid.innerHTML = previewCarouselMarkup(
+      "videos",
+      videoPreviewItems,
+      ({ albumIndex, itemIndex, item, label }) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, label)
+    );
   }
 
   if (mediaVideoActions) {
     mediaVideoActions.innerHTML = `
-      ${galleryButton(albumIndexFor(archerVideoAlbum), "View All Archer Videos")}
-      ${galleryButton(albumIndexFor(anayaVideoAlbum), "View All Training Clips")}
+      ${galleryButton(albumIndexFor(archerVideoAlbum), "All Archer Videos")}
+      ${galleryButton(albumIndexFor(anayaVideoAlbum), "All Training Clips")}
     `;
   }
 
   if (mediaPlayingCareerGrid) {
     const albumIndex = albumIndexFor(playingAlbum);
-    mediaPlayingCareerGrid.innerHTML = playingAlbum.items
-      .slice(0, 6)
-      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "Playing Career"))
-      .join("");
+    mediaPlayingCareerGrid.innerHTML = previewCarouselMarkup(
+      "playing-career",
+      playingAlbum.items.map((item, itemIndex) => ({ albumIndex, itemIndex, item, label: "Playing Career" })),
+      ({ albumIndex, itemIndex, item, label }) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, label)
+    );
   }
 
   if (mediaPlayingAwardsGrid) {
     const albumIndex = albumIndexFor(awardsAlbum);
-    mediaPlayingAwardsGrid.innerHTML = awardsAlbum.items
-      .slice(0, 6)
-      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "Awards"))
-      .join("");
+    mediaPlayingAwardsGrid.innerHTML = previewCarouselMarkup(
+      "playing-awards",
+      awardsAlbum.items.map((item, itemIndex) => ({ albumIndex, itemIndex, item, label: "Awards" })),
+      ({ albumIndex, itemIndex, item, label }) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, label)
+    );
   }
 
   if (mediaArcherFeatured) {
     const albumIndex = albumIndexFor(archerAlbum);
-    mediaArcherFeatured.innerHTML = archerAlbum.items
-      .slice(0, 1)
-      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "The Archer"))
-      .join("");
+    mediaArcherFeatured.innerHTML = previewCarouselMarkup(
+      "archer",
+      archerAlbum.items.map((item, itemIndex) => ({ albumIndex, itemIndex, item, label: item.type === "video" ? "The Archer Video" : "The Archer" })),
+      ({ albumIndex, itemIndex, item, label }) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, label)
+    );
   }
 
   if (mediaArcherPhotoGrid) {
     const albumIndex = albumIndexFor(archerPhotoAlbum);
     mediaArcherPhotoGrid.innerHTML = archerPhotoAlbum.items
-      .slice(0, 6)
-      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "The Archer"))
+      .slice(1, 2)
+      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex + 1, item, "The Archer"))
       .join("");
   }
 
   if (mediaArcherVideoGrid) {
     const albumIndex = albumIndexFor(archerVideoAlbum);
     mediaArcherVideoGrid.innerHTML = archerVideoAlbum.items
-      .slice(0, 3)
+      .slice(0, 1)
       .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "The Archer Video"))
       .join("");
   }
@@ -1687,18 +1681,23 @@ function renderMediaLibraryPage() {
     }));
 
     mediaAnayaSections.innerHTML = `
-      <section class="media-album-section media-preview-section">
-        <div class="media-album-heading">
-          <p class="eyebrow">Case Study Preview</p>
-          <h3>Six Stops in the Development Journey</h3>
-          <p>A short preview from each case-study phase: foundation, development process, leadership, production, recognition and next-level opportunities.</p>
-        </div>
-        <div class="media-section-grid">
-          ${anayaPreview.map(previewCard).join("")}
-        </div>
-      </section>
+      ${previewCarouselMarkup("anaya", anayaPreview)}
     `;
   }
+
+  Object.entries(previewCarousels).forEach(([key, state]) => {
+    const carousel = document.querySelector(`[data-media-preview-carousel="${key}"]`);
+    const track = carousel?.querySelector("[data-media-carousel-track]");
+
+    carousel?.querySelectorAll("[data-media-carousel-direction]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const direction = Number(button.dataset.mediaCarouselDirection || 1);
+        state.start = (state.start + direction + state.cards.length) % state.cards.length;
+        track.innerHTML = visiblePreviewCards(state.cards, state.start).map(state.renderCard).join("");
+        connectMediaLibraryCards(carousel);
+      });
+    });
+  });
 
   if (mediaPlayingCareerButton) {
     mediaPlayingCareerButton.dataset.openMediaGallery = String(albumIndexFor(playingAlbum));
@@ -1837,7 +1836,7 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   mediaOverlay.classList.toggle("is-award-landscape", isAwardsOverlay && awardOrientation !== "portrait");
 
   if (mediaOverlayEyebrow) {
-    mediaOverlayEyebrow.textContent = album.eyebrow || "Media";
+    mediaOverlayEyebrow.textContent = album.eyebrow || "Gallery";
   }
 
   mediaOverlayTitle.textContent = album.title || album.category;
