@@ -1898,19 +1898,9 @@ a.credential-static[href] {
 }
 
 .contact-page .contact-hero {
-  min-height: 210px;
-  padding-block: 18px;
-}
-
-.contact-page .contact-hero .subpage-hero-visual {
-  min-height: 170px;
-  height: 170px;
-  border-radius: 24px;
-}
-
-.contact-page .contact-hero .subpage-hero-visual img {
-  min-height: 170px;
-  object-position: center;
+  display: block;
+  min-height: 0;
+  padding-block: 22px 24px;
 }
 
 .about-hero h1 {
@@ -5824,7 +5814,11 @@ main:not(#top) .anaya-hero h1 {
 }
 
 .contact-page .contact-section {
-  padding-top: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .contact-section .contact-card {
@@ -6178,6 +6172,19 @@ main:not(#top) .anaya-hero h1 {
 
 .contact-info-panel .contact-socials {
   margin-top: 26px;
+}
+
+.contact-page .contact-link-cluster {
+  display: grid;
+  gap: 26px;
+  margin-block: auto;
+  padding-block: 18px;
+}
+
+.contact-page .contact-link-cluster .contact-detail-list,
+.contact-page .contact-link-cluster .contact-socials,
+.contact-page .contact-document-actions {
+  margin-top: 0;
 }
 
 .contact-document-actions {
