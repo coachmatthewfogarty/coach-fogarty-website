@@ -1184,8 +1184,163 @@ const playingCareerAwardAlbums = [
   }
 ];
 
+const archerMediaAlbum = {
+  eyebrow: "Player Development Innovation",
+  title: "The Archer Training Visuals",
+  showCounter: true,
+  items: [
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+      alt: "The Archer shooting development wide view",
+      caption: "Shooting development wide view"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-arc-comparison-low-vs-high-01.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-arc-comparison-low-vs-high-01.jpg",
+      alt: "Arc comparison low versus high",
+      caption: "Shooting Arc Training - low versus high arc"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-free-throw-set-position-close-placement-01.png",
+      thumbSrc: "assets/the-archer/photos/archer-free-throw-set-position-close-placement-01.png",
+      alt: "Free throw set position close placement",
+      caption: "Standard Placement - free throw set position"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-free-throw-shooting-motion-close-placement-01.png",
+      thumbSrc: "assets/the-archer/photos/archer-free-throw-shooting-motion-close-placement-01.png",
+      alt: "Free throw shooting motion close placement",
+      caption: "Release Point Training - shooting motion"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-free-throw-release-close-placement-01.png",
+      thumbSrc: "assets/the-archer/photos/archer-free-throw-release-close-placement-01.png",
+      alt: "Free throw release close placement",
+      caption: "Release Point Training - release position"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-free-throw-close-placement-01.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-free-throw-close-placement-01.jpg",
+      alt: "Free throw close placement",
+      caption: "Standard Placement - free throw close placement"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-free-throw-set-position-01.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-free-throw-set-position-01.jpg",
+      alt: "Free throw set position",
+      caption: "Standard Placement - set position reference"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-free-throw-group-demonstration-01.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-free-throw-group-demonstration-01.jpg",
+      alt: "Free throw group demonstration",
+      caption: "Drill Examples - group demonstration"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-coach-demonstration-close-placement-01.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-coach-demonstration-close-placement-01.jpg",
+      alt: "Coach demonstration close placement",
+      caption: "Drill Examples - coach demonstration"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-release-high-arc-close-placement-01.png",
+      thumbSrc: "assets/the-archer/photos/archer-release-high-arc-close-placement-01.png",
+      alt: "Release high arc close placement",
+      caption: "Shooting Arc Training - high arc release"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-jump-hook-apex-point-01.png",
+      thumbSrc: "assets/the-archer/photos/archer-jump-hook-apex-point-01.png",
+      alt: "Jump hook apex point",
+      caption: "Training Progressions - jump hook apex point"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-cut-and-floater-close-placement-01.mov",
+      poster: "assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+      caption: "Cut and floater close placement"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-floater-touch-arc-training-01.mov",
+      poster: "assets/the-archer/photos/archer-arc-comparison-low-vs-high-01.jpg",
+      caption: "Floater touch arc training"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-prototype-push-shot-01.mov",
+      poster: "assets/the-archer/photos/archer-free-throw-set-position-01.jpg",
+      caption: "Prototype push shot"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-prototype-push-shot-02.mov",
+      poster: "assets/the-archer/photos/archer-free-throw-set-position-01.jpg",
+      caption: "Prototype push shot variation"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-standard-placement-free-throw-high-arc-01.mov",
+      poster: "assets/the-archer/photos/archer-free-throw-release-close-placement-01.png",
+      caption: "Standard placement free throw high arc"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-fadeaway-close-placement-01.mov",
+      poster: "assets/the-archer/photos/archer-release-high-arc-close-placement-01.png",
+      caption: "Fadeaway close placement"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-free-throw-close-placement-demonstration-01.mov",
+      poster: "assets/the-archer/photos/archer-free-throw-close-placement-01.jpg",
+      caption: "Free throw close placement demonstration"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-three-point-shooting-close-placement-01.mov",
+      poster: "assets/the-archer/photos/archer-coach-demonstration-close-placement-01.jpg",
+      caption: "Three-point shooting close placement"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-jump-hook-close-placement-01.mov",
+      poster: "assets/the-archer/photos/archer-jump-hook-apex-point-01.png",
+      caption: "Jump hook close placement"
+    }
+  ]
+};
+
 const libraryGrid = document.querySelector("#libraryGrid");
 const galleryGrid = document.querySelector("#galleryGrid");
+const mediaCategoryGrid = document.querySelector("#mediaCategoryGrid");
+const mediaAlbumSections = document.querySelector("#mediaAlbumSections");
+const mediaPhotoGrid = document.querySelector("#mediaPhotoGrid");
+const mediaVideoGrid = document.querySelector("#mediaVideoGrid");
+const mediaPlayingCareerGrid = document.querySelector("#mediaPlayingCareerGrid");
+const mediaPlayingAwardsGrid = document.querySelector("#mediaPlayingAwardsGrid");
+const mediaArcherFeatured = document.querySelector("#mediaArcherFeatured");
+const mediaArcherPhotoGrid = document.querySelector("#mediaArcherPhotoGrid");
+const mediaArcherVideoGrid = document.querySelector("#mediaArcherVideoGrid");
+const mediaAnayaSections = document.querySelector("#mediaAnayaSections");
+const mediaVideoActions = document.querySelector("#mediaVideoActions");
+const mediaPlayingCareerButton = document.querySelector("#mediaPlayingCareerButton");
+const mediaPlayingAwardsButton = document.querySelector("#mediaPlayingAwardsButton");
+const mediaArcherPhotoButton = document.querySelector("#mediaArcherPhotoButton");
+const mediaArcherVideoButton = document.querySelector("#mediaArcherVideoButton");
+const mediaAnayaGalleryButton = document.querySelector("#mediaAnayaGalleryButton");
 const playingCareerTrack = document.querySelector("#playingCareerTrack");
 const playingCareerPrev = document.querySelector("#playingCareerPrev");
 const playingCareerNext = document.querySelector("#playingCareerNext");
@@ -1205,6 +1360,7 @@ let activeOverlayAlbums = mediaAlbums;
 let activeAlbumIndex = 0;
 let activeItemIndex = 0;
 let playingCareerResizeTimer;
+let mediaLibraryAlbums = [];
 
 function linkTarget(button) {
   return button.internal ? "" : ' target="_blank" rel="noreferrer"';
@@ -1266,6 +1422,333 @@ function renderGallery() {
       openMediaAlbum(Number(card.dataset.albumIndex));
     });
   });
+}
+
+function mediaLibraryAlbum(album, eyebrow = "Media") {
+  return {
+    ...album,
+    eyebrow: album.eyebrow || eyebrow,
+    showCounter: true,
+    mediaLibrary: true
+  };
+}
+
+function mediaLibraryCardMarkup(albumIndex, itemIndex, item, label = "Media", titleOverride = "") {
+  const isVideo = item.type === "video";
+  const title = titleOverride || mediaItemTitle(item, mediaLibraryAlbums[albumIndex]);
+  const thumb = isVideo ? mediaItemPoster(item) : mediaItemCardSrc(item);
+
+  return `
+    <button class="media-library-card ${isVideo ? "media-video-card" : "media-photo-card"}" type="button" data-media-library-album="${albumIndex}" data-media-library-item="${itemIndex}" aria-label="Open ${item.alt || title}">
+      <span class="media-library-frame">
+        ${
+          isVideo
+            ? `<video src="${encodeURI(item.src)}"${thumb ? ` poster="${encodeURI(thumb)}"` : ""} muted playsinline preload="metadata"></video><span class="media-card-kind">Video</span>`
+            : `<img src="${encodeURI(thumb)}" alt="${item.alt || title}" loading="lazy" />`
+        }
+      </span>
+      <span class="media-library-meta">
+        <span class="library-type">${label}</span>
+        <strong>${title}</strong>
+      </span>
+    </button>
+  `;
+}
+
+function connectMediaLibraryCards(root = document) {
+  root.querySelectorAll("[data-media-library-album]").forEach((card) => {
+    card.addEventListener("click", () => {
+      openMediaAlbum(
+        Number(card.dataset.mediaLibraryAlbum),
+        mediaLibraryAlbums,
+        Number(card.dataset.mediaLibraryItem || 0)
+      );
+    });
+  });
+
+  root.querySelectorAll("[data-open-media-gallery]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openMediaAlbum(Number(button.dataset.openMediaGallery), mediaLibraryAlbums);
+    });
+  });
+}
+
+function renderMediaLibraryPage() {
+  if (!mediaCategoryGrid) {
+    return;
+  }
+
+  const coachingAlbums = mediaAlbums.map((album) => mediaLibraryAlbum(album, "Coaching Media"));
+  const archerAlbum = mediaLibraryAlbum(archerMediaAlbum, "Player Development Innovation");
+  const anayaAlbums = anayaSections.map((section) => mediaLibraryAlbum(section, "Player Development Case Study"));
+  const playingAlbum = mediaLibraryAlbum(playingCareerAlbums[0], "Playing Background");
+  const awardsAlbum = mediaLibraryAlbum(playingCareerAwardAlbums[0], "Playing Background");
+  const archerPhotoAlbum = mediaLibraryAlbum(
+    {
+      title: "The Archer Photos",
+      items: archerMediaAlbum.items.filter((item) => item.type !== "video")
+    },
+    "Player Development Innovation"
+  );
+  const archerVideoAlbum = mediaLibraryAlbum(
+    {
+      title: "The Archer Videos",
+      items: archerMediaAlbum.items.filter((item) => item.type === "video")
+    },
+    "Player Development Innovation"
+  );
+  const anayaVideoAlbum = mediaLibraryAlbum(
+    {
+      title: "Anaya Beard Development Videos",
+      items: anayaSections.flatMap((section) =>
+        (section.items || [])
+          .filter((item) => item.type === "video")
+          .map((item) => ({ ...item, caption: `${section.title} - ${item.caption || "Video"}` }))
+      )
+    },
+    "Player Development Case Study"
+  );
+  const anayaFullAlbum = mediaLibraryAlbum(
+    {
+      title: "Anaya Beard Development Media",
+      items: anayaSections.flatMap((section) =>
+        activeAlbumItemsFor(section).map((item) => ({
+          ...item,
+          caption: `${section.title} - ${item.caption || mediaItemTitle(item, section)}`
+        }))
+      )
+    },
+    "Player Development Case Study"
+  );
+
+  mediaLibraryAlbums = [
+    ...coachingAlbums,
+    archerAlbum,
+    ...anayaAlbums,
+    playingAlbum,
+    awardsAlbum,
+    archerPhotoAlbum,
+    archerVideoAlbum,
+    anayaVideoAlbum,
+    anayaFullAlbum
+  ];
+
+  const albumIndexFor = (album) => mediaLibraryAlbums.indexOf(album);
+  const galleryButton = (albumIndex, label) => `<button class="button button-secondary button-small" type="button" data-open-media-gallery="${albumIndex}">${label}</button>`;
+  const previewCard = ({ albumIndex, itemIndex, label, titleOverride }) => {
+    const album = mediaLibraryAlbums[albumIndex];
+    const item = activeAlbumItemsFor(album)[itemIndex];
+    return mediaLibraryCardMarkup(albumIndex, itemIndex, item, label, titleOverride);
+  };
+
+  const categoryCards = [
+    { title: "Sideline Leadership", desc: "Game energy, staff presence and leadership moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[0]) },
+    { title: "Coaching Details", desc: "Teaching, preparation and game-day coaching details.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[1]) },
+    { title: "Player Development", desc: "On-court teaching and player-development work.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[2]) },
+    { title: "Team Environment", desc: "Huddles, program culture and team connection.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[3]) },
+    { title: "Team Celebration", desc: "Big shots, reactions and team moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[4]) },
+    { title: "Championship Culture", desc: "Championship history and program standards.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[5]) },
+    { title: "The Archer", desc: "Shooting-development photos and training clips.", href: "#archer-media", albumIndex: albumIndexFor(archerAlbum) },
+    { title: "Anaya Beard Case Study", desc: "Development journey media and proof of growth.", href: "#anaya-media", albumIndex: albumIndexFor(anayaFullAlbum) },
+    { title: "Playing Career", desc: "College and high school playing-career photos.", href: "#playing-career-media", albumIndex: albumIndexFor(playingAlbum) },
+    { title: "Playing Career Awards", desc: "Awards, plaques and playing recognition.", href: "#playing-awards-media", albumIndex: albumIndexFor(awardsAlbum) }
+  ];
+
+  mediaCategoryGrid.innerHTML = categoryCards
+    .map((card) => {
+      const album = mediaLibraryAlbums[card.albumIndex];
+      const firstItem = activeAlbumItemsFor(album)[0];
+      const thumb = firstItem ? mediaItemCardSrc(firstItem) : album.thumbnail;
+
+      return `
+        <article class="media-category-card">
+          <span class="media-category-frame">
+            <img src="${encodeURI(thumb)}" alt="${card.title}" loading="lazy" />
+          </span>
+          <span class="library-type">${card.title}</span>
+          <h3>${card.title}</h3>
+          <p>${card.desc}</p>
+          <button class="button button-secondary button-small" type="button" data-open-media-gallery="${card.albumIndex}">View Gallery</button>
+        </article>
+      `;
+    })
+    .join("");
+
+  if (mediaAlbumSections) {
+    const coachingPreview = coachingAlbums.map((album) => ({
+      albumIndex: albumIndexFor(album),
+      itemIndex: 0,
+      label: album.category || "Coaching Media"
+    }));
+
+    mediaAlbumSections.innerHTML = `
+      <section class="media-album-section media-preview-section">
+        <div class="media-album-heading">
+          <p class="eyebrow">Coaching Media Preview</p>
+          <h3>Strongest Coaching and Team Culture Moments</h3>
+          <p>A concise preview from sideline leadership, coaching details, player development, team environment, team celebration and championship culture albums.</p>
+        </div>
+        <div class="media-section-grid">
+          ${coachingPreview.map(previewCard).join("")}
+        </div>
+        <div class="media-gallery-button-row">
+          ${coachingAlbums.map((album) => galleryButton(albumIndexFor(album), album.title)).join("")}
+        </div>
+      </section>
+    `;
+  }
+
+  if (mediaPhotoGrid) {
+    mediaPhotoGrid.innerHTML = coachingAlbums
+      .map((album) => {
+        const albumIndex = albumIndexFor(album);
+        const item = activeAlbumItemsFor(album)[0];
+        return `
+          <article class="media-category-card media-directory-card">
+            <span class="media-category-frame">
+              <img src="${encodeURI(mediaItemCardSrc(item))}" alt="${album.title}" loading="lazy" />
+            </span>
+            <span class="library-type">${album.category || "Photos"}</span>
+            <h3>${album.title}</h3>
+            <p>${mediaAlbumDescription(album.title)}</p>
+            ${galleryButton(albumIndex, "Open Gallery")}
+          </article>
+        `;
+      })
+      .join("");
+  }
+
+  if (mediaVideoGrid) {
+    const archerVideoAlbumIndex = albumIndexFor(archerVideoAlbum);
+    const anayaVideoAlbumIndex = albumIndexFor(anayaVideoAlbum);
+    const videoPreviewItems = [
+      ...archerVideoAlbum.items.slice(0, 3).map((item, itemIndex) => ({ albumIndex: archerVideoAlbumIndex, itemIndex, item, label: "The Archer Video" })),
+      ...anayaVideoAlbum.items.slice(0, 3).map((item, itemIndex) => ({ albumIndex: anayaVideoAlbumIndex, itemIndex, item, label: "Development Video" }))
+    ];
+
+    mediaVideoGrid.innerHTML = videoPreviewItems
+      .map(({ albumIndex, itemIndex, item, label }) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, label))
+      .join("");
+  }
+
+  if (mediaVideoActions) {
+    mediaVideoActions.innerHTML = `
+      ${galleryButton(albumIndexFor(archerVideoAlbum), "View All Archer Videos")}
+      ${galleryButton(albumIndexFor(anayaVideoAlbum), "View All Training Clips")}
+    `;
+  }
+
+  if (mediaPlayingCareerGrid) {
+    const albumIndex = albumIndexFor(playingAlbum);
+    mediaPlayingCareerGrid.innerHTML = playingAlbum.items
+      .slice(0, 6)
+      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "Playing Career"))
+      .join("");
+  }
+
+  if (mediaPlayingAwardsGrid) {
+    const albumIndex = albumIndexFor(awardsAlbum);
+    mediaPlayingAwardsGrid.innerHTML = awardsAlbum.items
+      .slice(0, 6)
+      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "Awards"))
+      .join("");
+  }
+
+  if (mediaArcherFeatured) {
+    const albumIndex = albumIndexFor(archerAlbum);
+    mediaArcherFeatured.innerHTML = archerAlbum.items
+      .slice(0, 1)
+      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "The Archer"))
+      .join("");
+  }
+
+  if (mediaArcherPhotoGrid) {
+    const albumIndex = albumIndexFor(archerPhotoAlbum);
+    mediaArcherPhotoGrid.innerHTML = archerPhotoAlbum.items
+      .slice(0, 6)
+      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "The Archer"))
+      .join("");
+  }
+
+  if (mediaArcherVideoGrid) {
+    const albumIndex = albumIndexFor(archerVideoAlbum);
+    mediaArcherVideoGrid.innerHTML = archerVideoAlbum.items
+      .slice(0, 3)
+      .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "The Archer Video"))
+      .join("");
+  }
+
+  if (mediaAnayaSections) {
+    const anayaPreview = anayaAlbums.map((album) => ({
+      albumIndex: albumIndexFor(album),
+      itemIndex: 0,
+      label: "Anaya Beard",
+      titleOverride: album.title
+    }));
+
+    mediaAnayaSections.innerHTML = `
+      <section class="media-album-section media-preview-section">
+        <div class="media-album-heading">
+          <p class="eyebrow">Case Study Preview</p>
+          <h3>Six Stops in the Development Journey</h3>
+          <p>A short preview from each case-study phase: foundation, development process, leadership, production, recognition and next-level opportunities.</p>
+        </div>
+        <div class="media-section-grid">
+          ${anayaPreview.map(previewCard).join("")}
+        </div>
+      </section>
+    `;
+  }
+
+  if (mediaPlayingCareerButton) {
+    mediaPlayingCareerButton.dataset.openMediaGallery = String(albumIndexFor(playingAlbum));
+  }
+
+  if (mediaPlayingAwardsButton) {
+    mediaPlayingAwardsButton.dataset.openMediaGallery = String(albumIndexFor(awardsAlbum));
+  }
+
+  if (mediaArcherPhotoButton) {
+    mediaArcherPhotoButton.dataset.openMediaGallery = String(albumIndexFor(archerPhotoAlbum));
+  }
+
+  if (mediaArcherVideoButton) {
+    mediaArcherVideoButton.dataset.openMediaGallery = String(albumIndexFor(archerVideoAlbum));
+  }
+
+  if (mediaAnayaGalleryButton) {
+    mediaAnayaGalleryButton.dataset.openMediaGallery = String(albumIndexFor(anayaFullAlbum));
+  }
+
+  connectMediaLibraryCards(document);
+}
+
+function activeAlbumItemsFor(album) {
+  return album.items && album.items.length ? album.items : [{ type: "image", src: album.thumbnail, caption: album.caption || album.title }];
+}
+
+function mediaAlbumDescription(title) {
+  const descriptions = {
+    "Sideline Leadership": "Sideline energy, staff presence and leadership moments from competition.",
+    "Coaching Details": "Teaching, game preparation and detail-oriented coaching moments.",
+    "Player Development": "On-court instruction and player-development teaching moments.",
+    "Team Environment": "Team culture, huddles and program environment visuals.",
+    "Team Celebration": "Bench reactions, big shots and program momentum moments.",
+    "Championship Culture": "Championship standards, team success and program history."
+  };
+  return descriptions[title] || "Portfolio media organized for quick review.";
+}
+
+function anayaSectionDescription(title) {
+  const descriptions = {
+    "Foundation": "Early development work, baseline skill clips and foundation media.",
+    "Development Process": "Training progressions, shooting work and teaching feedback.",
+    "Leadership Impact": "Team connection, leadership moments and competitive presence.",
+    "Breakthrough Production": "Game production, role growth and on-court confidence.",
+    "Accolades Recognition": "Awards, recognition and performance milestones.",
+    "Next-Level Opportunities": "Recruiting momentum and next-level opportunity media."
+  };
+  return descriptions[title] || "Case study media from the player-development journey.";
 }
 
 function activeAlbumItems() {
@@ -1344,7 +1827,7 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   const itemTitle = mediaItemTitle(item, album);
   const itemSrc = mediaItemSrc(item);
   const isAwardsOverlay = album.title === "Playing Career Awards";
-  const isGalleryOverlay = activeOverlayAlbums === mediaAlbums || activeOverlayAlbums === anayaSections;
+  const isGalleryOverlay = activeOverlayAlbums === mediaAlbums || activeOverlayAlbums === anayaSections || activeOverlayAlbums.some?.((album) => album.mediaLibrary);
   const awardOrientation = item.orientation || "landscape";
   const isPortraitOverlay = item.type !== "video" && item.orientation === "portrait";
   mediaOverlay.classList.toggle("is-gallery-overlay", isGalleryOverlay);
@@ -1743,5 +2226,6 @@ if (contactForm) {
 
 renderLibrary();
 renderGallery();
+renderMediaLibraryPage();
 renderAnayaGalleries();
 renderPlayingCareerCarousel();
