@@ -2,7 +2,7 @@ document.querySelectorAll(".footer-accordion-toggle").forEach((toggle) => {
   toggle.addEventListener("click", () => {
     const group = toggle.closest(".footer-links");
 
-    if (!group || !window.matchMedia("(max-width: 720px)").matches) {
+    if (!group || !window.matchMedia("(max-width: 820px)").matches) {
       return;
     }
 

@@ -1361,6 +1361,151 @@ let activeItemIndex = 0;
 let playingCareerResizeTimer;
 let mediaLibraryAlbums = [];
 
+function enableDragScroll(track) {
+  if (!track || track.dataset.dragScrollReady === "true") {
+    return;
+  }
+
+  track.dataset.dragScrollReady = "true";
+
+  let pointerId = null;
+  let startX = 0;
+  let startY = 0;
+  let startScrollLeft = 0;
+  let didDrag = false;
+  let suppressClickUntil = 0;
+
+  const finishDrag = () => {
+    if (pointerId === null) {
+      return;
+    }
+
+    if (track.hasPointerCapture?.(pointerId)) {
+      track.releasePointerCapture(pointerId);
+    }
+
+    pointerId = null;
+
+    if (didDrag) {
+      suppressClickUntil = window.performance.now() + 350;
+    }
+  };
+
+  track.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0 || track.scrollWidth <= track.clientWidth) {
+      return;
+    }
+
+    pointerId = event.pointerId;
+    startX = event.clientX;
+    startY = event.clientY;
+    startScrollLeft = track.scrollLeft;
+    didDrag = false;
+    track.setPointerCapture?.(pointerId);
+  });
+
+  track.addEventListener("pointermove", (event) => {
+    if (event.pointerId !== pointerId) {
+      return;
+    }
+
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
+
+    if (Math.abs(deltaX) > 6 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      didDrag = true;
+      track.scrollLeft = startScrollLeft - deltaX;
+      event.preventDefault();
+    }
+  });
+
+  track.addEventListener("pointerup", finishDrag);
+  track.addEventListener("pointercancel", finishDrag);
+  track.addEventListener(
+    "click",
+    (event) => {
+      if (didDrag || window.performance.now() < suppressClickUntil) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    },
+    true
+  );
+}
+
+function enableSwipeCarousel(surface, onSwipe) {
+  if (!surface || surface.dataset.swipeCarouselReady === "true") {
+    return;
+  }
+
+  surface.dataset.swipeCarouselReady = "true";
+
+  let pointerId = null;
+  let startX = 0;
+  let startY = 0;
+  let didSwipe = false;
+  let suppressClickUntil = 0;
+
+  const finishSwipe = (event) => {
+    if (event.pointerId !== pointerId) {
+      return;
+    }
+
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
+
+    if (Math.abs(deltaX) > 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25) {
+      didSwipe = true;
+      suppressClickUntil = window.performance.now() + 350;
+      onSwipe(deltaX < 0 ? 1 : -1);
+    }
+
+    if (surface.hasPointerCapture?.(pointerId)) {
+      surface.releasePointerCapture(pointerId);
+    }
+
+    pointerId = null;
+  };
+
+  surface.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0) {
+      return;
+    }
+
+    pointerId = event.pointerId;
+    startX = event.clientX;
+    startY = event.clientY;
+    didSwipe = false;
+    surface.setPointerCapture?.(pointerId);
+  });
+
+  surface.addEventListener("pointermove", (event) => {
+    if (event.pointerId !== pointerId) {
+      return;
+    }
+
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
+
+    if (Math.abs(deltaX) > 10 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      event.preventDefault();
+    }
+  });
+
+  surface.addEventListener("pointerup", finishSwipe);
+  surface.addEventListener("pointercancel", finishSwipe);
+  surface.addEventListener(
+    "click",
+    (event) => {
+      if (didSwipe || window.performance.now() < suppressClickUntil) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    },
+    true
+  );
+}
+
 function linkTarget(button) {
   return button.internal ? "" : ' target="_blank" rel="noreferrer"';
 }
@@ -1689,14 +1834,26 @@ function renderMediaLibraryPage() {
     const carousel = document.querySelector(`[data-media-preview-carousel="${key}"]`);
     const track = carousel?.querySelector("[data-media-carousel-track]");
 
+    const moveCarousel = (direction) => {
+      if (!track) {
+        return;
+      }
+
+      state.start = (state.start + direction + state.cards.length) % state.cards.length;
+      track.innerHTML = visiblePreviewCards(state.cards, state.start).map(state.renderCard).join("");
+      connectMediaLibraryCards(carousel);
+    };
+
     carousel?.querySelectorAll("[data-media-carousel-direction]").forEach((button) => {
       button.addEventListener("click", () => {
         const direction = Number(button.dataset.mediaCarouselDirection || 1);
-        state.start = (state.start + direction + state.cards.length) % state.cards.length;
-        track.innerHTML = visiblePreviewCards(state.cards, state.start).map(state.renderCard).join("");
-        connectMediaLibraryCards(carousel);
+        moveCarousel(direction);
       });
     });
+
+    if (state.cards.length > 3) {
+      enableSwipeCarousel(track, moveCarousel);
+    }
   });
 
   if (mediaPlayingCareerButton) {
@@ -1826,7 +1983,7 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   const itemTitle = mediaItemTitle(item, album);
   const itemSrc = mediaItemSrc(item);
   const isAwardsOverlay = album.title === "Playing Career Awards";
-  const isGalleryOverlay = activeOverlayAlbums === mediaAlbums || activeOverlayAlbums === anayaSections || activeOverlayAlbums.some?.((album) => album.mediaLibrary);
+  const isGalleryOverlay = items.length > 1 && !isAwardsOverlay;
   const awardOrientation = item.orientation || "landscape";
   const isPortraitOverlay = item.type !== "video" && item.orientation === "portrait";
   mediaOverlay.classList.toggle("is-gallery-overlay", isGalleryOverlay);
@@ -2228,3 +2385,5 @@ renderGallery();
 renderMediaLibraryPage();
 renderAnayaGalleries();
 renderPlayingCareerCarousel();
+enableDragScroll(mediaOverlayStrip);
+enableDragScroll(playingCareerTrack);
