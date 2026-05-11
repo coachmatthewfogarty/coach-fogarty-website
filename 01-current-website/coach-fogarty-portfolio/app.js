@@ -1516,7 +1516,6 @@ function renderLibrary() {
           <span class="library-card-media" aria-hidden="${section.media?.alt ? "false" : "true"}">
             <img src="${encodeURI(section.media?.src || "")}" alt="${section.media?.alt || ""}" loading="lazy" onerror="this.closest('.library-card-media').classList.add('is-missing'); this.remove();" />
           </span>
-          <span class="library-type">${section.type}</span>
           <h3>${section.title}</h3>
           <div class="library-actions">
             ${section.buttons

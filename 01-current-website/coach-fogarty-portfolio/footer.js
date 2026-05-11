@@ -16,19 +16,29 @@ const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 
 if (siteHeader) {
   let lastScrollY = window.scrollY;
+  let distanceScrolledDown = 0;
   let ticking = false;
-  const revealThreshold = 12;
+  const hideThreshold = 16;
+  const revealThreshold = 2;
 
   const updateHeaderVisibility = () => {
-    const currentScrollY = window.scrollY;
+    const currentScrollY = Math.max(window.scrollY, 0);
     const scrollDelta = currentScrollY - lastScrollY;
 
     if (currentScrollY <= 24) {
       siteHeader.classList.remove("header-hidden");
-    } else if (scrollDelta > revealThreshold) {
-      siteHeader.classList.add("header-hidden");
-    } else if (scrollDelta < -revealThreshold) {
+      distanceScrolledDown = 0;
+    } else if (scrollDelta > 0) {
+      distanceScrolledDown += scrollDelta;
+
+      if (distanceScrolledDown > hideThreshold && !siteHeader.classList.contains("nav-open")) {
+        siteHeader.classList.add("header-hidden");
+      }
+    }
+
+    if (scrollDelta < -revealThreshold) {
       siteHeader.classList.remove("header-hidden");
+      distanceScrolledDown = 0;
     }
 
     lastScrollY = currentScrollY;
@@ -102,6 +112,7 @@ const compactTitleSelector = [
   ".media-final-cta h2",
   ".contact-info-copy > h2"
 ].join(",");
+const compactCardTitleSelector = ".library-card.system-card h3";
 const compactHeroSelector = ".hero, .subpage-hero, .anaya-hero, .contact-hero, .media-hero, .media-overlay";
 
 function compactHeadingElements() {
@@ -111,14 +122,22 @@ function compactHeadingElements() {
       sizeProperty: "--mobile-fit-eyebrow-size",
       lineProperty: "--mobile-fit-eyebrow-line",
       baseSize: 11,
-      baseLine: 14,
+      baseLine: 11,
       minSize: 8
     })),
     ...Array.from(document.querySelectorAll(compactTitleSelector)).map((element) => ({
       element,
       sizeProperty: "--mobile-fit-title-size",
       lineProperty: "--mobile-fit-title-line",
-      baseSize: 22,
+      baseSize: 24,
+      baseLine: 28,
+      minSize: 5
+    })),
+    ...Array.from(document.querySelectorAll(compactCardTitleSelector)).map((element) => ({
+      element,
+      sizeProperty: "--mobile-fit-card-title-size",
+      lineProperty: "--mobile-fit-card-title-line",
+      baseSize: 20,
       baseLine: 24,
       minSize: 5
     }))
@@ -150,7 +169,7 @@ function fitCompactHeading(heading) {
 
   const fitRatio = (availableWidth / element.scrollWidth) * 0.98;
   const fittedSize = Math.max(minSize, Math.floor(baseSize * fitRatio * 100) / 100);
-  const fittedLine = Math.max(Math.ceil(fittedSize * (baseLine / baseSize)), fittedSize + 2);
+  const fittedLine = baseLine;
 
   element.style.setProperty(sizeProperty, `${fittedSize}px`);
   element.style.setProperty(lineProperty, `${fittedLine}px`);
@@ -162,7 +181,7 @@ function fitCompactHeading(heading) {
   if (element.scrollWidth > element.clientWidth) {
     const tightRatio = (element.clientWidth / element.scrollWidth) * 0.98;
     const tightSize = Math.max(minSize, Math.floor(fittedSize * tightRatio * 100) / 100);
-    const tightLine = Math.max(Math.ceil(tightSize * (baseLine / baseSize)), tightSize + 2);
+    const tightLine = baseLine;
 
     element.style.setProperty(sizeProperty, `${tightSize}px`);
     element.style.setProperty(lineProperty, `${tightLine}px`);

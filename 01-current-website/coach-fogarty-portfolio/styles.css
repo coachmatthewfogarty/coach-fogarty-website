@@ -641,7 +641,7 @@ main#top #impact.hero-stat-band article span {
   position: relative;
   overflow: hidden;
   border-color: rgba(152, 105, 31, 0.62);
-  background: #f7ecd9;
+  background: #fbf1e2;
   box-shadow:
     inset 0 1px 0 rgba(236, 198, 119, 0.78),
     0 10px 24px rgba(52, 36, 24, 0.08);
@@ -666,6 +666,14 @@ main#top #impact.hero-stat-band article span {
   border-color: transparent;
   background: transparent;
   box-shadow: none;
+}
+
+#featured-work .innovation-panel .button {
+  border: 1px solid rgba(226, 177, 84, 0.95);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 231, 174, 0.68),
+    0 0 0 1px rgba(152, 105, 31, 0.18),
+    0 8px 18px rgba(143, 45, 30, 0.14);
 }
 
 #featured-work .innovation-section .section-heading {
@@ -1024,8 +1032,8 @@ a.credential-static[href] {
   gap: 10px;
 }
 
-.system-card .library-type + h3 + .library-actions {
-  margin-top: 8px;
+.system-card .library-card-media + h3 + .library-actions {
+  margin-top: 0;
   padding-top: 0;
 }
 
@@ -1195,7 +1203,7 @@ a.credential-static[href] {
 
 .library-card.system-card h3 {
   min-height: 1.16em;
-  margin: 0 0 4px;
+  margin: 0 0 10px;
   font-size: 0.83rem;
   line-height: 1.16;
   overflow-wrap: normal;
@@ -4502,10 +4510,10 @@ a.credential-static[href] {
   position: absolute;
   right: 18px;
   bottom: 16px;
-  width: 10px;
-  height: 10px;
-  border-right: 3px solid var(--red);
-  border-bottom: 3px solid var(--red);
+  width: 8px;
+  height: 8px;
+  border-right: 2.5px solid var(--red);
+  border-bottom: 2.5px solid var(--red);
   pointer-events: none;
   transform: rotate(45deg);
 }
@@ -4519,6 +4527,8 @@ a.credential-static[href] {
   background: rgba(255, 255, 252, 0.86);
   color: var(--text);
   font: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
   letter-spacing: 0;
   outline: none;
   padding: 11px 14px;
@@ -8386,7 +8396,7 @@ main:not(#top) .anaya-hero h1 {
   main:not(#top) .anaya-hero .eyebrow {
     margin-bottom: 4px;
     font-size: 11px;
-    line-height: 14px;
+    line-height: 11px;
     letter-spacing: 0.1em;
   }
 
@@ -8396,8 +8406,8 @@ main:not(#top) .anaya-hero h1 {
   main#top .innovation-section .section-heading h2,
   main#top #media .section-heading h2,
   main#top .contact-section .section-heading h2 {
-    font-size: 1.34rem;
-    line-height: 1.08;
+    font-size: 24px;
+    line-height: 28px;
     white-space: normal;
     overflow-wrap: normal;
   }
@@ -8558,13 +8568,15 @@ main:not(#top) .anaya-hero h1 {
 
   .library-card-media {
     height: 174px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     border-radius: var(--mobile-inner-radius);
   }
 
   .library-card.system-card h3 {
-    font-size: 1.38rem;
-    line-height: 1.08;
+    margin-bottom: 10px;
+    font-size: var(--mobile-fit-card-title-size, 20px);
+    line-height: var(--mobile-fit-card-title-line, 24px);
+    white-space: nowrap;
   }
 
   .system-card p {
@@ -8574,14 +8586,15 @@ main:not(#top) .anaya-hero h1 {
 
   .system-card .library-type {
     margin-bottom: 8px;
-    font-size: 0.75rem;
+    font-size: var(--mobile-fit-eyebrow-size, 11px);
+    line-height: var(--mobile-fit-eyebrow-line, 11px);
   }
 
   .system-card .library-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     min-height: 0;
     gap: 9px;
-    margin-top: 10px;
+    margin-top: 0;
     padding-top: 0;
   }
 
@@ -8757,7 +8770,14 @@ main:not(#top) .anaya-hero h1 {
     min-width: 0;
     border-radius: 14px;
     padding: 8px 10px;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .contact-form .select-field::after,
+  main#top .contact-form .select-field::after {
+    right: 18px;
+    bottom: 14px;
   }
 
   .contact-form select,
@@ -9201,6 +9221,7 @@ main#top > .hero .hero-mobile-credentials {
     gap: 4px;
     width: 100%;
     min-width: 0;
+    margin-top: 5px;
     padding: 7px 13px 8px;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 14px;
@@ -9356,7 +9377,7 @@ main#top > .hero .hero-mobile-credentials {
     max-width: 100%;
     overflow: hidden;
     font-size: var(--mobile-fit-eyebrow-size, 11px) !important;
-    line-height: var(--mobile-fit-eyebrow-line, 14px) !important;
+    line-height: var(--mobile-fit-eyebrow-line, 11px) !important;
     text-overflow: clip;
     white-space: nowrap !important;
   }
@@ -9373,11 +9394,19 @@ main#top > .hero .hero-mobile-credentials {
   .media-final-cta h2,
   .contact-info-copy > h2 {
     max-width: 100%;
-    overflow: hidden;
-    font-size: var(--mobile-fit-title-size, 22px) !important;
-    line-height: var(--mobile-fit-title-line, 24px) !important;
+    overflow: visible;
+    font-size: var(--mobile-fit-title-size, 24px) !important;
+    line-height: var(--mobile-fit-title-line, 28px) !important;
     overflow-wrap: normal;
-    text-overflow: clip;
+    white-space: nowrap !important;
+  }
+
+  .library-card.system-card h3 {
+    max-width: 100%;
+    overflow: visible;
+    font-size: var(--mobile-fit-card-title-size, 20px) !important;
+    line-height: var(--mobile-fit-card-title-line, 24px) !important;
+    overflow-wrap: normal;
     white-space: nowrap !important;
   }
 }
@@ -9396,6 +9425,20 @@ main#top .credentials-card {
   box-shadow:
     0 18px 42px rgba(52, 36, 24, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+main#top .credentials-card .credential-document-heading {
+  margin-bottom: 10px !important;
+}
+
+main#top .credentials-card .credential-document-heading .eyebrow {
+  margin-bottom: 4px;
+}
+
+main#top .credentials-card .credential-document-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Palatino Linotype", serif;
+  line-height: 1.05;
 }
 
 main#top .credentials-card .credential-link-grid {
