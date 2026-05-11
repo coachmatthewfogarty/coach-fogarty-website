@@ -27,12 +27,12 @@ const librarySections = [
     ]
   },
   {
-    type: "Evaluation",
-    title: "Scouting & Recruiting",
-    description: "Opponent prep, personnel notes and recruiting tools organized for staff use.",
+    type: "Scouting",
+    title: "Scouting",
+    description: "Opponent prep, personnel notes and game-plan tools organized for staff use.",
     media: {
-      src: "dpat/codex-design/game-report/dpat-game-report-current-report-overall-screenshot.png",
-      alt: "Basketball report dashboard and staff notes visual"
+      src: "assets/documents/system-previews/scouting-overview.webp",
+      alt: "Scouting report overview document preview"
     },
     buttons: [
       {
@@ -50,6 +50,25 @@ const librarySections = [
       {
         label: "Complete Portfolio",
         href: "./assets/documents/scouting-recruiting/automated-scouting-report-complete-portfolio.pdf"
+      }
+    ]
+  },
+  {
+    type: "Recruiting",
+    title: "Recruiting",
+    description: "Roster-building, recruiting calendars and program-fit evaluation organized for staff use.",
+    media: {
+      src: "assets/documents/system-previews/recruiting-development-plan.webp",
+      alt: "Recruiting development plan document preview"
+    },
+    buttons: [
+      {
+        label: "Recruiting Plan",
+        href: "./assets/documents/program-development/recruiting-development-plan.pdf"
+      },
+      {
+        label: "Program Overview",
+        href: "./assets/documents/program-development/program-development-overview.pdf"
       }
     ]
   },
@@ -131,35 +150,6 @@ const librarySections = [
       {
         label: "HC Philosophy",
         href: "./assets/documents/coaching-philosophy/head-coach/head-coach-philosophy.pdf"
-      }
-    ]
-  },
-  {
-    type: "Innovation",
-    title: "The Archer",
-    description: "A shooting tool for arc, release point, rhythm and repeatable reps.",
-    media: {
-      src: "assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
-      alt: "The Archer shooting development training tool"
-    },
-    buttons: [
-      {
-        label: "Overview",
-        href: "./assets/the-archer/documents/player-development-innovation-the-archer-overview.pdf"
-      },
-      {
-        label: "Product Overview",
-        href: "./assets/the-archer/documents/player-development-innovation-the-archer-product-overview.pdf"
-      },
-      {
-        label: "Photos",
-        href: "./archer-visuals.html#photos",
-        internal: true
-      },
-      {
-        label: "Videos",
-        href: "./archer-visuals.html#videos",
-        internal: true
       }
     ]
   }
