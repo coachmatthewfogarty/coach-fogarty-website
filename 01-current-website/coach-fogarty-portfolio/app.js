@@ -1983,7 +1983,15 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   const itemTitle = mediaItemTitle(item, album);
   const itemSrc = mediaItemSrc(item);
   const isAwardsOverlay = album.title === "Playing Career Awards";
-  const isGalleryOverlay = items.length > 1 && !isAwardsOverlay;
+  const isPhotoAlbumOverlay =
+    !isAwardsOverlay &&
+    item.type !== "video" &&
+    (items.length > 1 ||
+      activeOverlayAlbums === mediaAlbums ||
+      activeOverlayAlbums === anayaSections ||
+      activeOverlayAlbums === playingCareerAlbums ||
+      activeOverlayAlbums.some?.((overlayAlbum) => overlayAlbum.mediaLibrary));
+  const isGalleryOverlay = isPhotoAlbumOverlay;
   const awardOrientation = item.orientation || "landscape";
   const isPortraitOverlay = item.type !== "video" && item.orientation === "portrait";
   mediaOverlay.classList.toggle("is-gallery-overlay", isGalleryOverlay);
@@ -2037,7 +2045,9 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   });
 
   const hasMultipleItems = items.length > 1;
-  mediaOverlayStrip.hidden = !hasMultipleItems;
+  const showThumbnailStrip = hasMultipleItems || isPhotoAlbumOverlay;
+  mediaOverlayStrip.hidden = !showThumbnailStrip;
+  mediaOverlayStrip.classList.toggle("has-single-thumb", showThumbnailStrip && items.length === 1);
   mediaOverlayPrev.hidden = !hasMultipleItems;
   mediaOverlayNext.hidden = !hasMultipleItems;
   queueActiveMediaThumbnailScroll(thumbScrollBehavior);

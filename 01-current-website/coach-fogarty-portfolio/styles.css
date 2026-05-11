@@ -264,6 +264,11 @@ main#top .section-heading .eyebrow {
   text-underline-offset: 4px;
 }
 
+.hero-link-row {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
 .hero-text {
   max-width: 720px;
   margin: 22px 0 0;
@@ -1681,7 +1686,7 @@ a.credential-static[href] {
 }
 
 .media-overlay.is-gallery-overlay.is-overlay-portrait:not(.is-awards-overlay) .media-overlay-viewer {
-  width: min(100%, 420px, calc((100vh - 252px) * 3 / 4));
+  width: min(100%, 360px, calc((100vh - 252px) * 3 / 4));
   height: auto;
   max-height: none;
   aspect-ratio: 3 / 4;
@@ -1810,6 +1815,10 @@ a.credential-static[href] {
   display: none;
 }
 
+.media-overlay-strip.has-single-thumb {
+  justify-content: center;
+}
+
 .media-thumb {
   position: relative;
   flex: 0 0 120px;
@@ -1917,7 +1926,7 @@ a.credential-static[href] {
 @media (max-width: 1024px) {
   .media-overlay.is-gallery-overlay {
     align-items: flex-end;
-    padding-bottom: clamp(120px, 20vh, 210px);
+    padding-bottom: clamp(165px, 26vh, 255px);
   }
 }
 
@@ -1973,7 +1982,43 @@ a.credential-static[href] {
 .contact-page .contact-hero {
   display: block;
   min-height: 0;
-  padding-block: 22px 24px;
+  padding: 22px 24px 24px;
+}
+
+.contact-page .contact-hero .subpage-hero-copy {
+  display: grid;
+  gap: 0;
+}
+
+.contact-page .contact-hero h1 {
+  margin-bottom: 14px;
+}
+
+.contact-page .contact-hero .contact-link-cluster {
+  gap: 12px;
+  margin-block: 0;
+  padding-block: 16px 0;
+}
+
+.contact-page .contact-hero .contact-detail-list {
+  margin-top: 0;
+}
+
+.contact-page .contact-hero .contact-socials {
+  margin-top: 0;
+}
+
+.contact-page .contact-section .contact-card {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.contact-page .contact-form {
+  order: 1;
+}
+
+.contact-page .contact-document-actions {
+  order: 2;
 }
 
 .about-hero h1 {
@@ -5381,6 +5426,11 @@ a.credential-static[href] {
     font-size: 0.96rem;
   }
 
+  .hero-link-row {
+    column-gap: 6px;
+    font-size: clamp(0.82rem, 3.6vw, 0.96rem);
+  }
+
   .hero-kicker a {
     min-height: 34px;
     padding: 5px 0;
@@ -5756,7 +5806,7 @@ a.credential-static[href] {
 
   .media-overlay.is-gallery-overlay {
     align-items: flex-end;
-    padding-bottom: clamp(132px, 21vh, 190px);
+    padding-bottom: clamp(185px, 27vh, 235px);
   }
 
   .media-overlay-panel {
@@ -5793,7 +5843,7 @@ a.credential-static[href] {
   }
 
   .media-overlay.is-gallery-overlay.is-overlay-portrait:not(.is-awards-overlay) .media-overlay-viewer {
-    width: min(100%, calc((100vh - 238px) * 3 / 4));
+    width: min(100%, 300px, calc((100vh - 238px) * 3 / 4));
     height: auto;
     max-height: none;
   }
@@ -6769,6 +6819,110 @@ main:not(#top) .anaya-hero h1 {
 }
 
 @media (max-width: 720px) {
+  .contact-page .contact-hero {
+    padding: 18px 20px 19px;
+    border-radius: 28px;
+  }
+
+  .contact-page .contact-hero .eyebrow {
+    margin-bottom: 8px;
+  }
+
+  main.contact-page:not(#top) .contact-hero h1 {
+    font-size: clamp(1.72rem, 7.1vw, 2.05rem);
+    line-height: 1.04;
+    white-space: nowrap;
+  }
+
+  .contact-page .contact-section {
+    margin-top: 18px;
+    padding: 0;
+  }
+
+  .contact-page .contact-section .contact-card {
+    gap: 13px;
+    padding: 15px 14px 14px;
+    border-radius: 24px;
+  }
+
+  .contact-page .contact-info-panel {
+    padding: 0 0 13px;
+    border-bottom: 1px solid rgba(158, 111, 53, 0.18);
+  }
+
+  .contact-page .contact-info-copy p:not(.eyebrow) {
+    line-height: 1.45;
+  }
+
+  .contact-page .contact-link-cluster {
+    gap: 11px;
+    margin-block: 0;
+    padding-block: 10px 11px;
+  }
+
+  .contact-page .contact-detail-list {
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .contact-page .contact-detail-list a,
+  .contact-page .contact-detail-list > span {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .contact-page .contact-detail-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-page .contact-detail-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-page .contact-info-panel .contact-socials {
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .contact-page .contact-socials a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-page .contact-socials svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-page .contact-document-actions {
+    gap: 6px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .contact-page .contact-document-actions .button {
+    min-height: 39px;
+  }
+
+  .contact-page .contact-form {
+    gap: 7px;
+    padding-top: 2px;
+  }
+
+  .contact-page .contact-name-row {
+    gap: 7px;
+  }
+
+  .contact-page .contact-form label {
+    gap: 5px;
+  }
+
+  .contact-page .contact-form .button {
+    margin-top: 0;
+  }
+
   .media-library-page .media-hero {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -7487,25 +7641,55 @@ main:not(#top) .anaya-hero h1 {
 
   main#top .playing-career-section .achievement-highlights {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px;
+    grid-auto-rows: 1fr;
+    gap: 12px 18px;
+    margin-bottom: 24px;
   }
 
   main#top .playing-career-section .achievement-chip {
-    min-height: 52px;
-    padding: 8px 7px;
+    min-height: 72px;
+    height: 100%;
+    padding: 10px 8px;
     text-align: center;
+    align-content: center;
+    justify-items: center;
   }
 
   main#top .playing-career-section .achievement-chip strong {
-    font-size: clamp(0.56rem, 2.4vw, 0.82rem);
+    font-size: clamp(0.6rem, 2.1vw, 0.76rem);
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1.1;
     white-space: nowrap;
   }
 
   main#top .playing-career-section .achievement-chip span {
-    font-size: 0.66rem;
-    line-height: 1.12;
+    color: rgba(72, 63, 54, 0.68);
+    font-size: 0.64rem;
+    line-height: 1.16;
+  }
+
+  main#top .playing-career-section .playing-career-actions {
+    justify-content: center;
+    margin: 0 0 26px;
+  }
+
+  main#top .playing-career-section .playing-career-carousel {
+    margin-top: 0;
+  }
+
+  main#top .playing-career-section .playing-career-arrow {
+    width: 34px;
+    height: 40px;
+    font-size: 1.55rem;
+    background: rgba(255, 250, 243, 0.72);
+  }
+
+  main#top .playing-career-section .playing-career-arrow-prev {
+    left: 5px;
+  }
+
+  main#top .playing-career-section .playing-career-arrow-next {
+    right: 5px;
   }
 }
 
@@ -7529,6 +7713,126 @@ main:not(#top) .anaya-hero h1 {
 }
 
 @media (max-width: 820px) {
+  .contact-page .contact-section {
+    padding: 0;
+  }
+
+  .contact-page .contact-section .contact-card {
+    gap: 16px;
+    padding: 15px 14px 8px;
+  }
+
+  .contact-page .contact-info-panel {
+    display: contents;
+    padding: 0;
+    border: 0;
+  }
+
+  .contact-page .contact-hero {
+    padding: 18px 20px 19px;
+  }
+
+  .contact-page .contact-hero h1 {
+    margin-bottom: 12px;
+  }
+
+  .contact-page .contact-hero .contact-link-cluster {
+    display: grid;
+    gap: 10px;
+    margin-block: 0;
+    padding-block: 12px 0;
+  }
+
+  .contact-page .contact-info-copy {
+    order: 1;
+  }
+
+  .contact-page .contact-detail-list {
+    order: 2;
+    gap: 10px;
+    margin-top: -8px;
+  }
+
+  .contact-page .contact-detail-list a,
+  .contact-page .contact-detail-list > span {
+    grid-template-columns: 39px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .contact-page .contact-detail-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .contact-page .contact-detail-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-page .contact-socials {
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .contact-page .contact-socials a {
+    width: 39px;
+    height: 39px;
+  }
+
+  .contact-page .contact-socials svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-page .contact-form {
+    order: 4;
+    gap: 6px;
+    padding-top: 0;
+  }
+
+  .contact-page .contact-name-row {
+    gap: 6px;
+  }
+
+  .contact-page .contact-form label {
+    gap: 4px;
+  }
+
+  .contact-page .contact-form input,
+  .contact-page .contact-form select,
+  .contact-page .contact-form textarea {
+    padding-block: 8px;
+  }
+
+  .contact-page .contact-form input,
+  .contact-page .contact-form select {
+    min-height: 39px;
+  }
+
+  .contact-page .contact-form textarea {
+    min-height: 82px;
+    height: 82px;
+  }
+
+  .contact-page .contact-form .button {
+    min-height: 44px;
+    margin-top: -2px;
+  }
+
+  .contact-page .contact-document-actions {
+    order: 5;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-top: -12px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(158, 111, 53, 0.14);
+  }
+
+  .contact-page .contact-document-actions .button {
+    min-height: 39px;
+    font-weight: 650;
+  }
+
   main#top .contact-section .contact-card {
     gap: 16px;
     padding: 15px 14px 8px;
