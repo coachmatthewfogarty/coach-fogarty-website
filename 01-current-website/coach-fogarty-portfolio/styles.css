@@ -228,7 +228,8 @@ main#top .section-heading .eyebrow {
 .hero-kicker {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  column-gap: 8px;
+  row-gap: 4px;
   align-items: center;
   max-width: 760px;
   margin: 20px 0 0;
@@ -240,32 +241,27 @@ main#top .section-heading .eyebrow {
 
 .hero-kicker a {
   display: inline-flex;
-  min-height: 36px;
+  min-height: 32px;
   align-items: center;
-  justify-content: center;
-  padding: 7px 12px;
-  border: 1px solid rgba(36, 79, 115, 0.2);
-  border-radius: 999px;
+  padding: 4px 0;
   color: var(--blue);
-  background: rgba(255, 253, 249, 0.68);
-  box-shadow: 0 10px 24px rgba(52, 36, 24, 0.08);
   text-decoration: none;
   transition:
-    background 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
+    color 180ms ease,
+    text-decoration-color 180ms ease;
+}
+
+.hero-kicker span {
+  color: rgba(36, 79, 115, 0.52);
+  font-weight: 600;
 }
 
 .hero-kicker a:hover,
 .hero-kicker a:focus-visible {
-  border-color: rgba(36, 79, 115, 0.42);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 14px 28px rgba(52, 36, 24, 0.12);
+  color: #163d5f;
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 4px;
-  transform: translateY(-1px);
 }
 
 .hero-text {
@@ -4926,6 +4922,56 @@ a.credential-static[href] {
 }
 
 @media (max-width: 900px) {
+  .innovation-section,
+  .innovation-panel,
+  .innovation-panel > div,
+  .innovation-thumbnail {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .innovation-section .section-heading,
+  .innovation-section .eyebrow,
+  .innovation-section .section-heading h2,
+  .innovation-panel h3,
+  .innovation-panel p {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .innovation-panel {
+    gap: 14px;
+    overflow: hidden;
+    padding: 18px;
+  }
+
+  .innovation-panel > div {
+    display: grid;
+    gap: 10px;
+  }
+
+  .innovation-panel h3 {
+    margin: 0;
+    font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+    line-height: 1.18;
+  }
+
+  .innovation-panel p {
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .innovation-panel img,
+  .innovation-panel .button {
+    max-width: 100%;
+  }
+
+  .innovation-panel .button {
+    margin-top: 0;
+  }
+
   .footer-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: clamp(12px, 2.2vw, 18px);
@@ -5037,11 +5083,18 @@ a.credential-static[href] {
     max-width: 100%;
     font-size: clamp(1rem, 4.15vw, 1.08rem);
     line-height: 1.08;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .innovation-panel h3 {
-    font-size: clamp(0.78rem, 3.2vw, 1.36rem);
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    font-size: clamp(0.82rem, 3.1vw, 1rem);
+    line-height: 1.18;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .innovation-panel,
@@ -5049,6 +5102,52 @@ a.credential-static[href] {
   .innovation-thumbnail {
     min-width: 0;
     max-width: 100%;
+  }
+
+  .innovation-section {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .innovation-section .section-heading,
+  .innovation-section .eyebrow {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .innovation-panel {
+    gap: 10px;
+    justify-items: stretch;
+    overflow: hidden;
+    padding: 16px 14px 18px;
+  }
+
+  .innovation-panel > div {
+    display: grid;
+    gap: 8px;
+  }
+
+  .innovation-panel p {
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .innovation-panel img,
+  .innovation-panel .button {
+    max-width: 100%;
+  }
+
+  .innovation-panel .button {
+    justify-self: end;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: normal;
   }
 
   .system-detail-section {
@@ -5193,14 +5292,15 @@ a.credential-static[href] {
   }
 
   .hero-kicker {
-    gap: 9px;
+    column-gap: 7px;
+    row-gap: 3px;
     margin-top: 17px;
     font-size: 0.96rem;
   }
 
   .hero-kicker a {
-    min-height: 38px;
-    padding: 8px 12px;
+    min-height: 34px;
+    padding: 5px 0;
   }
 
   .hero-text {
@@ -5444,7 +5544,8 @@ a.credential-static[href] {
   }
 
   .achievement-highlights {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .portfolio-matters-card p {
@@ -5494,6 +5595,18 @@ a.credential-static[href] {
 
   .achievement-chip {
     min-width: 0;
+    min-height: 68px;
+    padding: 12px 10px;
+  }
+
+  .achievement-chip strong {
+    font-size: 0.92rem;
+    line-height: 1.12;
+  }
+
+  .achievement-chip span {
+    font-size: 0.74rem;
+    line-height: 1.2;
   }
 
   .playing-career-carousel {
@@ -7186,6 +7299,27 @@ main:not(#top) .anaya-hero h1 {
 @media (max-width: 720px) {
   :root {
     --site-chrome-gutter: 16px;
+  }
+
+  main#top .playing-career-section .achievement-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  main#top .playing-career-section .achievement-chip {
+    min-height: 68px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+
+  main#top .playing-career-section .achievement-chip strong {
+    font-size: 0.92rem;
+    line-height: 1.12;
+  }
+
+  main#top .playing-career-section .achievement-chip span {
+    font-size: 0.74rem;
+    line-height: 1.2;
   }
 
   .page-shell {
