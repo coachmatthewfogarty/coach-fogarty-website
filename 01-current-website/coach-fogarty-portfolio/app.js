@@ -1,7 +1,7 @@
 const librarySections = [
   {
     type: "Development",
-    title: "Player Development Systems",
+    title: "Player Development",
     description: "Player plans, drill logs and training systems built to track measurable growth.",
     media: {
       src: "assets/media/player-development/photos/player-development-on-court-instruction-01-media-card-cover-center-1200x900.avif",
@@ -55,7 +55,7 @@ const librarySections = [
   },
   {
     type: "DPAT",
-    title: "Defensive Performance Accountability Tracker",
+    title: "Defensive Tracker",
     description: "Defensive grading, effort tracking and leaderboards built for accountability.",
     media: {
       src: "dpat/final-reports/player-rankings/dpat-player-rankings-report-2025-2026.png",
@@ -1555,7 +1555,10 @@ function renderGallery() {
           <span class="gallery-media">
             <img src="${encodeURI(item.thumbnail)}" data-image-role="${item.thumbnailRole || "thumb"}" alt="${item.caption}" />
           </span>
-          <span>${item.caption}</span>
+          <span class="gallery-card-caption">
+            <span class="gallery-card-title">${item.caption}</span>
+            <span class="gallery-card-arrow" aria-hidden="true">&rsaquo;</span>
+          </span>
         </button>
       `
     )
