@@ -1528,7 +1528,6 @@ function renderLibrary() {
           </span>
           <span class="library-type">${section.type}</span>
           <h3>${section.title}</h3>
-          <p>${section.description}</p>
           <div class="library-actions">
             ${section.buttons
               .map(
