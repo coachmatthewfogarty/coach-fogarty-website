@@ -636,23 +636,22 @@ main#top #impact.hero-stat-band article span {
 #featured-work .innovation-section {
   position: relative;
   overflow: hidden;
-  border-color: rgba(184, 135, 47, 0.46);
+  border-color: rgba(152, 105, 31, 0.62);
   background:
-    linear-gradient(145deg, rgba(255, 251, 244, 0.86), rgba(255, 244, 224, 0.62)),
+    linear-gradient(145deg, rgba(255, 249, 238, 0.9), rgba(241, 222, 184, 0.7)),
     rgba(255, 248, 240, 0.66);
   box-shadow:
-    inset 0 1px 0 rgba(255, 235, 184, 0.72),
-    0 18px 46px rgba(184, 135, 47, 0.12),
-    var(--shadow);
+    inset 0 1px 0 rgba(236, 198, 119, 0.78),
+    0 10px 24px rgba(52, 36, 24, 0.08);
 }
 
 #featured-work .innovation-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(255, 220, 146, 0.62);
+  border: 1px solid rgba(210, 158, 63, 0.72);
   border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(184, 135, 47, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(152, 105, 31, 0.22);
   pointer-events: none;
 }
 
@@ -661,15 +660,19 @@ main#top #impact.hero-stat-band article span {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(255, 226, 162, 0.22), transparent 34%, transparent 72%, rgba(184, 135, 47, 0.12));
+  background: linear-gradient(135deg, rgba(226, 177, 84, 0.28), transparent 34%, transparent 72%, rgba(152, 105, 31, 0.16));
   pointer-events: none;
 }
 
 #featured-work .innovation-panel {
-  border-color: rgba(184, 135, 47, 0.34);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 235, 184, 0.58),
-    0 12px 30px rgba(184, 135, 47, 0.1);
+  padding: 0;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+#featured-work .innovation-section .section-heading {
+  margin-bottom: 13px;
 }
 
 .section-split .split-layout,
@@ -4493,6 +4496,23 @@ a.credential-static[href] {
   text-transform: uppercase;
 }
 
+.contact-form .select-field {
+  position: relative;
+}
+
+.contact-form .select-field::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid var(--red);
+  border-bottom: 3px solid var(--red);
+  pointer-events: none;
+  transform: rotate(45deg);
+}
+
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
@@ -4512,27 +4532,20 @@ a.credential-static[href] {
 .contact-form select {
   appearance: none;
   min-height: 43px;
-  background-image:
-    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
-    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
-  background-position:
-    calc(100% - 18px) 50%,
-    calc(100% - 13px) 50%;
-  background-size: 5px 5px, 5px 5px;
-  background-repeat: no-repeat;
-  padding-right: 38px;
+  background-image: none;
+  padding-right: 48px;
 }
 
 .contact-form textarea {
-  min-height: 0;
-  height: 82px;
+  min-height: 132px;
+  height: 132px;
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
   border-color: rgba(170, 62, 35, 0.74);
-  background: #fffefa;
+  background-color: #fffefa;
   box-shadow: 0 0 0 4px rgba(194, 138, 53, 0.14);
 }
 
@@ -5634,19 +5647,26 @@ a.credential-static[href] {
   main#top > .hero .hero-mobile-highlight div {
     display: flex;
     flex-wrap: nowrap;
-    gap: 6px;
+    justify-content: space-between;
+    gap: 0;
     align-items: center;
+    width: 100%;
     min-width: 0;
     color: rgba(255, 246, 230, 0.42);
-    font-size: clamp(0.68rem, 2.75vw, 0.8rem);
+    font-size: 0.76rem;
     font-weight: 800;
     line-height: 1.1;
     white-space: nowrap;
   }
 
   main#top > .hero .hero-mobile-highlight a {
+    flex: 0 0 auto;
     color: #8bb8e8;
     text-decoration: none;
+  }
+
+  main#top > .hero .hero-mobile-highlight span {
+    flex: 0 0 auto;
   }
 
   main#top > .hero-mobile-credentials {
@@ -6207,7 +6227,7 @@ a.credential-static[href] {
 
   .contact-form select {
     min-height: 37px;
-    padding-right: 31px;
+    padding-right: 44px;
   }
 
   .contact-form textarea {
@@ -6576,13 +6596,18 @@ main:not(#top) .anaya-hero h1 {
   min-height: 44px;
   border-color: rgba(158, 111, 53, 0.26);
   border-radius: 17px;
-  background: rgba(255, 255, 252, 0.9);
+  background-color: rgba(255, 255, 252, 0.9);
   padding: 11px 14px;
 }
 
+.contact-form select {
+  background-image: none;
+  padding-right: 54px;
+}
+
 .contact-form textarea {
-  min-height: 104px;
-  height: 104px;
+  min-height: 140px;
+  height: 140px;
 }
 
 .contact-form .button {
@@ -7274,8 +7299,8 @@ main:not(#top) .anaya-hero h1 {
   }
 
   .contact-form textarea {
-    min-height: 108px;
-    height: 108px;
+    min-height: 140px;
+    height: 140px;
   }
 
   .contact-form .button {
@@ -8109,8 +8134,8 @@ main:not(#top) .anaya-hero h1 {
   }
 
   .contact-page .contact-form textarea {
-    min-height: 82px;
-    height: 82px;
+    min-height: 132px;
+    height: 132px;
   }
 
   .contact-page .contact-form .button {
@@ -8195,8 +8220,8 @@ main:not(#top) .anaya-hero h1 {
   }
 
   main#top .contact-form textarea {
-    min-height: 82px;
-    height: 82px;
+    min-height: 132px;
+    height: 132px;
   }
 
   main#top .contact-form .button {
@@ -8738,6 +8763,12 @@ main:not(#top) .anaya-hero h1 {
     font-size: 0.9rem;
   }
 
+  .contact-form select,
+  main#top .contact-form select {
+    background-image: none;
+    padding-right: 52px;
+  }
+
   .contact-form input,
   .contact-form select,
   main#top .contact-form input,
@@ -8747,8 +8778,8 @@ main:not(#top) .anaya-hero h1 {
 
   .contact-form textarea,
   main#top .contact-form textarea {
-    min-height: 84px;
-    height: 84px;
+    min-height: 132px;
+    height: 132px;
   }
 
   .contact-detail-list a,
@@ -9114,6 +9145,10 @@ main#top #media .gallery-section-title {
 
 /* Final mobile override: keep featured copy at natural four-line lengths. */
 @media (max-width: 430px) {
+  main#top #featured-work .innovation-section .section-heading {
+    margin-bottom: 15px;
+  }
+
   main#top #featured-work .innovation-panel p {
     width: 100%;
     max-width: none;
@@ -9189,21 +9224,28 @@ main#top > .hero .hero-mobile-credentials {
   main#top > .hero .hero-mobile-highlight div {
     display: flex;
     flex-wrap: nowrap;
-    gap: 6px;
+    justify-content: space-between;
+    gap: 0;
     align-items: center;
+    width: 100%;
     min-width: 0;
     overflow: hidden;
     color: rgba(255, 246, 230, 0.44);
-    font-size: clamp(0.68rem, 2.75vw, 0.8rem);
+    font-size: 0.76rem;
     font-weight: 800;
     line-height: 1.1;
     white-space: nowrap;
   }
 
   main#top > .hero .hero-mobile-highlight a {
+    flex: 0 0 auto;
     min-width: 0;
     color: #8bb8e8;
     text-decoration: none;
+  }
+
+  main#top > .hero .hero-mobile-highlight span {
+    flex: 0 0 auto;
   }
 
   main#top > .hero .hero-stat-band {
@@ -9267,6 +9309,39 @@ main#top > .hero .hero-mobile-credentials {
 
   main#top .portfolio-matters-grid > .credentials-card {
     display: none !important;
+  }
+}
+
+@media (max-width: 430px) {
+  main#top > .hero .hero-mobile-highlight {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 360px) {
+  main#top > .hero .hero-mobile-highlight {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 330px) {
+  main#top > .hero .hero-mobile-highlight {
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    font-size: 0.56rem;
   }
 }
 
@@ -9394,4 +9469,10 @@ main#top .credentials-card .credential-link-grid .button:focus-visible {
 
 .portfolio-matters-card > p {
   margin-bottom: 10px;
+}
+
+@media (max-width: 430px) {
+  main#top #featured-work .innovation-section .section-heading {
+    margin-bottom: 15px !important;
+  }
 }

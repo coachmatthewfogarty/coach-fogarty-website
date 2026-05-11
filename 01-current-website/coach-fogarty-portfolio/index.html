@@ -80,13 +80,15 @@
           <nav class="hero-mobile-highlight" aria-label="Portfolio highlight links">
             <p>Portfolio Highlight</p>
             <div>
-              <a href="#about">Portfolio</a>
+              <a href="#mobile-credentials">Credentials</a>
               <span aria-hidden="true">|</span>
               <a href="#systems">Systems</a>
               <span aria-hidden="true">|</span>
-              <a href="#featured-work">Featured Work</a>
+              <a href="#featured-work">Featured</a>
               <span aria-hidden="true">|</span>
               <a href="#media">Gallery</a>
+              <span aria-hidden="true">|</span>
+              <a href="#contact">Contact</a>
             </div>
           </nav>
           <section class="stat-band hero-stat-band" id="impact">
@@ -117,7 +119,7 @@
           </section>
         </section>
 
-        <section class="section hero-mobile-credentials credentials-card" aria-label="Credentials">
+        <section class="section hero-mobile-credentials credentials-card" id="mobile-credentials" aria-label="Credentials">
           <div class="credential-link-grid">
             <a class="button button-secondary credential-priority-link" href="assets/documents/resume/matthew-fogarty-resume.pdf" target="_blank" rel="noreferrer">Resume</a>
             <a class="button button-secondary" href="assets/documents/credentials/degrees/degrees-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Degrees</a>
@@ -300,7 +302,7 @@
                 Phone Number
                 <input type="tel" name="phone" autocomplete="tel" />
               </label>
-              <label>
+              <label class="select-field">
                 Reason for Contact
                 <select name="reason">
                   <option value="Coaching Opportunity">Coaching Opportunity</option>
@@ -313,7 +315,7 @@
               </label>
               <label>
                 Message
-                <textarea name="message" rows="5" required></textarea>
+                <textarea name="message" rows="7" required></textarea>
               </label>
               <button class="button button-primary" type="submit">Send Message</button>
             </form>
