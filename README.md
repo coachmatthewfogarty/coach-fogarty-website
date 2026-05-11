@@ -17,6 +17,12 @@ Open or serve the site from:
 01-current-website/coach-fogarty-portfolio/
 ```
 
+Read the current website implementation and brand memory before making new site changes:
+
+```text
+01-current-website/coach-fogarty-portfolio/README.md
+```
+
 The website expects live assets under:
 
 ```text
@@ -24,6 +30,23 @@ The website expects live assets under:
 ```
 
 Keep website images, documents, videos, generated web assets, and helper JS inside that `assets/` tree unless you are intentionally changing the site code.
+
+## 2026-05-10 Website Updates To Remember
+
+Today's active website upgrades are centered on the public coaching portfolio experience:
+
+- Homepage messaging now presents Matthew Fogarty as a college basketball coach, player development coach, scouting/program systems builder, and staff-ready contributor.
+- Header and footer use the current `site-chrome` treatment: wider full-bleed chrome, compact `MF` mark, Matthew Fogarty wordmark, desktop nav, mobile hamburger nav, mobile Contact shortcut, and footer accordion link groups.
+- The site uses a warm editorial coaching-portfolio brand palette: parchment background, black/brown text, gold accent, deep red, blue, green, and sand support colors. Core CSS variables live at the top of `styles.css`.
+- `about.html` is now a personal letter-style About page with a coaching statement, image collage, and the custom signature asset at `assets/media/signature-matthew-fogarty.svg`.
+- `systems.html` is now the deep Staff Systems page with document-preview carousels for Player Development, Scouting & Recruiting, DPAT, Program Support, Coaching Philosophy, and The Archer.
+- `assets/documents/system-previews/` now contains the live WebP preview thumbnails used by the Systems document cards.
+- `systems.js` powers horizontal document carousel arrows on the Systems page.
+- `media.html` is now the Gallery Hub, with category previews, coaching galleries, video galleries, Playing Career, Awards, The Archer, and Anaya Beard media sections.
+- `app.js` remains the central data/rendering file for homepage system cards, gallery/media albums, media overlays, playing-career carousels, and contact form mailto behavior.
+- `contact.html` and the homepage contact section use the direct email `CoachMatthewFogarty@gmail.com`, location `Santa Ana, CA`, website `www.coachfogarty.com`, social links, and document quick actions.
+
+For future edits, preserve the current brand direction and system architecture unless intentionally redesigning the portfolio.
 
 ## DPAT Direction
 

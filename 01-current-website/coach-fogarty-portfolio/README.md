@@ -1,0 +1,113 @@
+# Coach Fogarty Portfolio Website
+
+This is the active public coaching portfolio site for Matthew Fogarty.
+
+Open the site from this folder:
+
+```text
+01-current-website/coach-fogarty-portfolio/
+```
+
+The site is a static HTML/CSS/JS portfolio. There is no package build step required for normal editing.
+
+## Current Page Map
+
+- `index.html`: homepage, hero, impact stats, systems preview, featured work, gallery preview, playing career, and contact section.
+- `about.html`: personal letter-style About page with coaching statement, signature, and image collage.
+- `systems.html`: deep Staff Systems page with document-preview carousels.
+- `featured-work.html`: featured coaching work and proof-of-impact stories.
+- `media.html`: Gallery Hub for coaching photos, videos, Playing Career, Awards, The Archer, and Anaya Beard media.
+- `anaya-case-study.html`: Anaya Beard player-development case study.
+- `archer-visuals.html`: The Archer visual and video page.
+- `credentials.html`: professional credentials and supporting documents.
+- `contact.html`: contact form, direct contact details, social links, and quick document actions.
+
+## Current Code Map
+
+- `styles.css`: main visual system, responsive layout, mobile navigation, system/document cards, media library, about page, contact page, and footer chrome.
+- `app.js`: homepage system-card data, gallery/media album data, gallery rendering, media overlay behavior, playing-career carousel, Anaya gallery rendering, and contact form mailto behavior.
+- `systems.js`: horizontal carousel controls for system document rows on `systems.html`.
+- `footer.js`: footer accordion and shared footer interaction behavior.
+- `assets/js/image-fallbacks.js`: image fallback behavior for site images.
+
+## Current Brand Memory
+
+The active website brand should feel like a polished basketball coaching portfolio: warm, credible, organized, staff-ready, and proof-driven.
+
+Core brand identity:
+
+- Name: Matthew Fogarty.
+- Short site brand: `MF` mark plus `Matthew Fogarty`.
+- Primary positioning: College Basketball Coach | Player Development | Scouting | Program Systems.
+- Core proof themes: player development systems, scouting and recruiting preparation, defensive accountability, program operations, staff support, credentials, references, and documented coaching impact.
+- Voice: direct, professional, detailed, coach-to-coach, and staff-ready.
+
+Core CSS palette:
+
+- Background: `#f4efe7`
+- Panel: `rgba(255, 250, 243, 0.82)`
+- Strong panel: `#fff9f0`
+- Text: `#1f1b16`
+- Muted text: `#6a5f53`
+- Gold accent: `#b8872f`
+- Deep red: `#8f2d1e`
+- Blue: `#244f73`
+- Green: `#315c43`
+- Sand: `#d7b377`
+- Ink: `#2f3148`
+
+Do not drift the public website into the black/gold DPAT report look. DPAT reports have their own brand system inside `dpat/`.
+
+## 2026-05-10 Updates To Remember
+
+Today's active website updates and upgrades:
+
+- Added the custom signature asset at `assets/media/signature-matthew-fogarty.svg` and used it on the About page.
+- Reworked `about.html` into a letter-style coaching introduction with personal positioning, staff-ready contribution language, and an image collage.
+- Expanded `systems.html` into a full Staff Systems page with sections for Development, Evaluation, DPAT, Operations, Leadership, and Innovation.
+- Added system document cards that link directly to PDFs and show WebP previews from `assets/documents/system-previews/`.
+- Added `systems.js` so long document rows scroll by card width with previous/next arrows.
+- Built the `media.html` Gallery Hub with category previews, coaching photo groups, video galleries, Playing Career, Awards, The Archer, and Anaya Beard media.
+- Upgraded `app.js` media behavior to support reusable media-library albums, preview carousels, overlay counters, overlay thumbnails, video cards, and direct gallery-opening buttons.
+- Updated the homepage to foreground Staff-Ready Systems, coaching proof, credential links, featured Anaya and Archer work, media previews, Playing Career, and direct contact.
+- Updated the contact experience with first/last name fields, email, phone, reason selector, message, direct mailto generation, contact details, social links, and document quick actions.
+- Refined `styles.css` for full-bleed site chrome, responsive mobile navigation, footer accordion behavior, media-library layouts, system document cards, contact layout, and mobile-safe spacing.
+
+## Important Paths
+
+System preview images:
+
+```text
+assets/documents/system-previews/
+```
+
+Signature:
+
+```text
+assets/media/signature-matthew-fogarty.svg
+```
+
+Portfolio documents:
+
+```text
+assets/documents/
+```
+
+DPAT report design and source memory:
+
+```text
+dpat/README.md
+dpat/report-designs/README-dpat-report-design-system.md
+```
+
+## Editing Rules
+
+- Keep public website assets under this folder's `assets/` tree.
+- Use relative paths in HTML, CSS, JS, and README files.
+- Keep generated system preview thumbnails in `assets/documents/system-previews/`.
+- Keep DPAT report design files under `dpat/`; do not mix report source/build files into public website pages unless linking to final PDFs.
+- Preserve the current page names and nav labels: Home, About, Systems, Featured, Gallery, Contact.
+- Preserve the direct contact email: `CoachMatthewFogarty@gmail.com`.
+- Preserve `Santa Ana, CA`, `www.coachfogarty.com`, LinkedIn, and Instagram links unless the real contact information changes.
+- When adding new media, update the album data in `app.js` and place the files in the matching `assets/media/`, `anaya/`, or `assets/the-archer/` folder.
+- When adding a new system document, add the PDF under `assets/documents/`, add a WebP preview under `assets/documents/system-previews/`, then link both from `systems.html`.

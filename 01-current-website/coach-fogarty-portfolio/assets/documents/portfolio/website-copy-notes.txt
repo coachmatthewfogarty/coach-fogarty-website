@@ -935,6 +935,41 @@ View Full Portfolio
 Review the complete coaching portfolio, including systems, player development, scouting, recruiting, credentials and references.
 
 
+2026-05-10 WEBSITE SYSTEM MEMORY
+
+Current active website direction:
+
+Matthew Fogarty is presented as a college basketball coach, player development coach and program-systems builder. The site should keep emphasizing staff-ready systems, player development, scouting preparation, recruiting organization, defensive accountability, program operations, credentials, references and documented coaching impact.
+
+Brand memory:
+
+Use the warm editorial coaching-portfolio look for the public website. The main palette is parchment background, dark text, gold accent, deep red, blue, green and sand support colors. Keep the public website separate from the black/gold DPAT report design system.
+
+Today updates to remember:
+
+- Homepage now foregrounds Matthew Fogarty, Staff-Ready Systems, coaching proof, credentials, featured Anaya Beard and Archer work, media previews, Playing Career and contact.
+- About page is a personal letter-style coaching introduction with a custom Matthew Fogarty signature SVG and coaching image collage.
+- Systems page is the deep Staff Systems page with document-preview cards and horizontal carousels for Development, Evaluation, DPAT, Operations, Leadership and Innovation.
+- System preview thumbnails live in assets/documents/system-previews/.
+- Media page is now the Gallery Hub with category previews, coaching galleries, videos, Playing Career, Awards, The Archer and Anaya Beard sections.
+- app.js controls homepage systems, media albums, media overlay behavior, playing-career carousel, Anaya gallery rendering and contact mailto behavior.
+- systems.js controls the Systems document carousel arrows.
+- Contact uses CoachMatthewFogarty@gmail.com, Santa Ana, CA, www.coachfogarty.com, LinkedIn, Instagram and quick links to Portfolio, Resume, References and Credentials.
+
+Important active files:
+
+- index.html
+- about.html
+- systems.html
+- media.html
+- contact.html
+- styles.css
+- app.js
+- systems.js
+- assets/media/signature-matthew-fogarty.svg
+- assets/documents/system-previews/
+
+
 Professional References Available Upon Request
 Professional references can be provided privately during the hiring process.
 
