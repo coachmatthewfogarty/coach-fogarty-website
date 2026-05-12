@@ -29,6 +29,7 @@ The site is a static HTML/CSS/JS portfolio. There is no package build step requi
 - `systems.js`: horizontal carousel controls for system document rows on `systems.html`.
 - `footer.js`: footer accordion and shared footer interaction behavior.
 - `assets/js/image-fallbacks.js`: image fallback behavior for site images.
+- `RESPONSIVE-DESIGN-SYSTEM.md`: current mobile/tablet/desktop rules for font specs, heading fitting, layout behavior, section/card padding, header/footer sizing, contact form sizing, and homepage hero breakpoints.
 
 ## Current Brand Memory
 
@@ -57,6 +58,33 @@ Core CSS palette:
 - Ink: `#2f3148`
 
 Do not drift the public website into the black/gold DPAT report look. DPAT reports have their own brand system inside `dpat/`.
+
+## Responsive Design System
+
+Use `RESPONSIVE-DESIGN-SYSTEM.md` as the current source of truth before changing typography, spacing, tablet behavior, page grids, the homepage hero, header, footer, pills, mini boxes, cards, or forms.
+
+Current global responsive rules:
+
+- `<=430px`: small mobile, tightest spacing and compact cards.
+- `431-720px`: mobile, stacked layout.
+- `721-767px`: bridge range, tablet layout shell with mobile type scale.
+- `768-1024px`: tablet, mobile structure with roomier spacing.
+- `1025px+`: desktop structure starts.
+
+Tablet design rule:
+
+- Tablet should feel like mobile structure with desktop breathing room.
+- `721-899px` should remain tablet portrait/stacked.
+- `900-1024px` can gain desktop polish, but should still stay stacked for the homepage hero.
+- The homepage hero switches from stacked to split layout at `1025px+`.
+
+Heading fit rule:
+
+- Eyebrows, section titles, and card titles try to stay one line.
+- If a title cannot stay one line without becoming too small, it wraps instead of shrinking into unreadable text.
+- Readable floors are: section title `18px` mobile, `20px` tablet, `25px` desktop; card title `18px` mobile, `20px` tablet, `22px` desktop; eyebrow `8px` all breakpoints.
+
+When changing global responsive rules, verify representative widths: `360`, `390`, `430`, `768`, `900`, `1024`, `1280`, and `1440`.
 
 ## 2026-05-10 Updates To Remember
 
@@ -91,6 +119,12 @@ Portfolio documents:
 
 ```text
 assets/documents/
+```
+
+Responsive design system:
+
+```text
+RESPONSIVE-DESIGN-SYSTEM.md
 ```
 
 DPAT report design and source memory:

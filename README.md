@@ -23,6 +23,12 @@ Read the current website implementation and brand memory before making new site 
 01-current-website/coach-fogarty-portfolio/README.md
 ```
 
+Read the current responsive design system before changing typography, tablet/mobile behavior, cards, section spacing, the homepage hero, header, or footer:
+
+```text
+01-current-website/coach-fogarty-portfolio/RESPONSIVE-DESIGN-SYSTEM.md
+```
+
 The website expects live assets under:
 
 ```text
@@ -30,6 +36,13 @@ The website expects live assets under:
 ```
 
 Keep website images, documents, videos, generated web assets, and helper JS inside that `assets/` tree unless you are intentionally changing the site code.
+
+## Current Responsive Design System
+
+- Use `01-current-website/coach-fogarty-portfolio/RESPONSIVE-DESIGN-SYSTEM.md` as the source of truth for font specs, responsive layout behavior, cards, section spacing, the homepage hero, header, footer, pills, mini boxes, and contact form sizing.
+- Mobile and tablet stay stacked through `1024px`; desktop structure starts at `1025px+`.
+- Tablet should be treated as mobile structure with desktop breathing room: `721-899px` tablet portrait, `900-1024px` large tablet/tablet landscape, and `1025px+` desktop.
+- Global heading/card-title fitting is handled by `footer.js`: keep one-line rules when readable, but wrap long titles instead of shrinking below the readable floors.
 
 ## 2026-05-10 Website Updates To Remember
 

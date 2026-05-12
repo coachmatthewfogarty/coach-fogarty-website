@@ -966,8 +966,57 @@ Important active files:
 - styles.css
 - app.js
 - systems.js
+- RESPONSIVE-DESIGN-SYSTEM.md
 - assets/media/signature-matthew-fogarty.svg
 - assets/documents/system-previews/
+
+
+RESPONSIVE DESIGN SYSTEM MEMORY
+
+Use RESPONSIVE-DESIGN-SYSTEM.md as the source of truth for new pages, typography, tablet/mobile behavior, cards, section spacing, the homepage hero, header, footer, contact form sizing, pills and mini boxes.
+
+Breakpoints:
+
+- <=430px: small mobile, tightest spacing and compact cards.
+- 431-720px: mobile, stacked layout.
+- 721-767px: bridge range, tablet layout shell with mobile type scale.
+- 768-1024px: tablet, mobile structure with roomier spacing.
+- 1025px+: desktop structure starts.
+
+Tablet design rule:
+
+Tablet should be mobile structure with desktop breathing room. Use stacked layouts through 1024px unless a section has a clear reason and enough room to split. Add desktop polish around 900px, but switch the homepage hero and other major split layouts at 1025px+.
+
+Core type scale:
+
+- Eyebrow: mobile 10.88px, tablet 11.2px -> 12.16px, desktop 12.16px.
+- Section title: mobile 24.8px, tablet 25.6px -> 35.2px, desktop 35.2px -> 40px.
+- Card title: mobile 22.72px, tablet 23.36px -> 25.6px, desktop 25.6px -> 29.6px.
+- Hero title: mobile 34.4px, tablet 37.6px -> 48px, desktop 52px -> 71.2px.
+- Paragraphs: mobile 14.72px-16px, tablet mostly 16px, desktop mostly 16px.
+- Form input text: 16px across all breakpoints.
+
+Heading fit rule:
+
+Eyebrows, section titles and card titles try to stay one line. If a title cannot stay one line above the readable floor, it wraps instead of shrinking into tiny text.
+
+Readable floors:
+
+- Section title: 18px mobile, 20px tablet, 25px desktop.
+- Card title: 18px mobile, 20px tablet, 22px desktop.
+- Eyebrow: 8px all breakpoints.
+
+Spacing and padding:
+
+- Page gutter: 12px small mobile/mobile, 16px -> 28px tablet, max page width 1200px desktop.
+- Section gap: 18px small mobile, 32px mobile typical, 24px tablet, 28px desktop typical.
+- Section/card padding: 16px small mobile, 18px mobile, 18px -> 28px tablet, 34px sections and 22px cards desktop.
+- Hero padding: 14px 16px 13px small mobile, 14px 20px 12px mobile, 18px -> 28px tablet, 36px 42px 22px desktop.
+- Card radius: 22px small mobile, 22-28px mobile, 26px tablet, 24-34px desktop.
+
+Verification widths for responsive changes:
+
+360, 390, 430, 768, 900, 1024, 1280, 1440.
 
 
 Professional References Available Upon Request

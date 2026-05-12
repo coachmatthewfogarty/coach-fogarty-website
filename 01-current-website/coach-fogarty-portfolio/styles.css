@@ -946,6 +946,14 @@ a.credential-static[href] {
   margin-top: 4px;
 }
 
+.portfolio-systems-intro {
+  max-width: 760px;
+  margin: -4px 0 14px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
 .playing-career-grid {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
@@ -966,6 +974,10 @@ a.credential-static[href] {
     box-shadow 180ms ease,
     border-color 180ms ease,
     background 180ms ease;
+}
+
+.system-card[id] {
+  scroll-margin-top: 96px;
 }
 
 .system-card:hover,
@@ -1032,7 +1044,7 @@ a.credential-static[href] {
   gap: 10px;
 }
 
-.system-card .library-card-media + h3 + .library-actions {
+.system-card h3 + .library-card-media + .library-actions {
   margin-top: 0;
   padding-top: 0;
 }
@@ -8566,22 +8578,34 @@ main:not(#top) .anaya-hero h1 {
     margin-top: 0;
   }
 
+  .portfolio-systems-intro {
+    margin: -4px 0 12px;
+    font-size: 0.9rem;
+    line-height: 1.34;
+  }
+
   .library-card-media {
-    height: 174px;
+    height: 196px;
     margin-bottom: 12px;
     border-radius: var(--mobile-inner-radius);
   }
 
   .library-card.system-card h3 {
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     font-size: var(--mobile-fit-card-title-size, 20px);
     line-height: var(--mobile-fit-card-title-line, 24px);
     white-space: nowrap;
   }
 
   .system-card p {
-    font-size: 0.94rem;
-    line-height: 1.38;
+    min-height: 0;
+    margin-bottom: 9px;
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.18;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .system-card .library-type {
@@ -9514,5 +9538,595 @@ main#top .credentials-card .credential-link-grid .credential-priority-link {
 @media (max-width: 430px) {
   main#top #featured-work .innovation-section .section-heading {
     margin-bottom: 15px !important;
+  }
+}
+
+/* Final responsive type scale: hero, section titles, card titles and eyebrows. */
+:root {
+  --type-hero-title-size: clamp(3.25rem, 5vw, 4.45rem);
+  --type-hero-title-line: 0.98;
+  --type-section-title-size: clamp(2.2rem, 3vw, 2.5rem);
+  --type-section-title-line: 1.04;
+  --type-card-title-size: clamp(1.6rem, 2vw, 1.85rem);
+  --type-card-title-line: 1.08;
+  --type-eyebrow-size: 0.76rem;
+  --type-eyebrow-line: 1.15;
+  --type-heading-white-space: nowrap;
+  --type-card-title-white-space: nowrap;
+  --type-eyebrow-white-space: nowrap;
+}
+
+main#top > .hero h1 {
+  font-size: var(--type-hero-title-size) !important;
+  line-height: var(--type-hero-title-line) !important;
+}
+
+.section-heading h2,
+main#top .section-heading h2,
+main:not(#top) .section-heading h2,
+main:not(#top) .about-letter-heading > h1,
+main:not(#top) .subpage-hero h1,
+main:not(#top) .anaya-hero h1,
+main:not(#top) .featured-pillar-copy > h2,
+main:not(#top) .featured-strategy-panel > h2,
+main:not(#top) .featured-final-cta h2,
+main:not(#top) .system-detail-copy > h2,
+main:not(#top) .credential-section-copy > h2,
+main:not(#top) .credential-packet-cta h2,
+main:not(#top) .about-foundation-strip > h2,
+main:not(#top) .media-final-cta h2,
+main#top .credentials-card .credential-document-heading h2,
+main#top .contact-section .section-heading h2,
+.contact-info-copy h2 {
+  overflow: visible !important;
+  font-size: var(--mobile-fit-title-size, var(--type-section-title-size)) !important;
+  line-height: var(--mobile-fit-title-line, var(--type-section-title-line)) !important;
+  text-overflow: clip !important;
+  white-space: var(--type-heading-white-space, normal) !important;
+}
+
+.library-card h3,
+.library-card.system-card h3,
+.system-card h3,
+.story-card h3,
+.quote-panel h3,
+.innovation-panel h3,
+.media-subsection-heading h3,
+.achievement-card strong {
+  overflow: visible !important;
+  font-size: var(--mobile-fit-card-title-size, var(--type-card-title-size)) !important;
+  line-height: var(--mobile-fit-card-title-line, var(--type-card-title-line)) !important;
+  text-overflow: clip !important;
+  white-space: var(--type-card-title-white-space, normal) !important;
+}
+
+.eyebrow,
+.section-heading .eyebrow,
+main#top .section-heading .eyebrow,
+main:not(#top) .subpage-hero .eyebrow,
+main:not(#top) .anaya-hero .eyebrow,
+.innovation-section .eyebrow,
+.featured-pillar-copy > .eyebrow,
+.featured-strategy-panel > .eyebrow,
+.featured-final-cta > div > .eyebrow,
+.system-detail-copy > .eyebrow,
+.credential-section-copy > .eyebrow,
+.credential-packet-cta > .eyebrow,
+.about-foundation-strip > .eyebrow,
+.media-final-cta .eyebrow,
+.contact-info-copy > .eyebrow,
+main#top .credentials-card .credential-document-heading .eyebrow {
+  overflow: visible !important;
+  font-size: var(--mobile-fit-eyebrow-size, var(--type-eyebrow-size)) !important;
+  line-height: var(--mobile-fit-eyebrow-line, var(--type-eyebrow-line)) !important;
+  letter-spacing: 0.12em;
+  text-overflow: clip !important;
+  white-space: var(--type-eyebrow-white-space, normal) !important;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --type-hero-title-size: clamp(2.35rem, calc(4.0625vw + 0.4rem), 3rem);
+    --type-section-title-size: clamp(1.6rem, calc(3.75vw - 0.2rem), 2.2rem);
+    --type-section-title-line: 1.05;
+    --type-card-title-size: clamp(1.46rem, calc(0.875vw + 1.04rem), 1.6rem);
+    --type-card-title-line: 1.08;
+    --type-eyebrow-size: clamp(0.7rem, calc(0.375vw + 0.52rem), 0.76rem);
+    --type-heading-white-space: nowrap;
+    --type-card-title-white-space: nowrap;
+    --type-eyebrow-white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --type-hero-title-size: 2.15rem;
+    --type-hero-title-line: 1;
+    --type-section-title-size: 1.55rem;
+    --type-section-title-line: 1.08;
+    --type-card-title-size: 1.42rem;
+    --type-card-title-line: 1.1;
+    --type-eyebrow-size: 0.68rem;
+    --type-eyebrow-line: 1.2;
+    --type-heading-white-space: nowrap;
+    --type-card-title-white-space: nowrap;
+    --type-eyebrow-white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --type-hero-title-size: 2rem;
+    --type-section-title-size: 1.46rem;
+    --type-card-title-size: 1.34rem;
+    --type-eyebrow-size: 0.64rem;
+  }
+}
+
+@media (max-width: 430px) {
+  #libraryGrid .library-card.system-card h3 {
+    overflow: visible !important;
+    font-size: var(--mobile-fit-card-title-size, 20px) !important;
+    line-height: var(--mobile-fit-card-title-line, 24px) !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Tablet follows the mobile layout, with roomier spacing for the larger screen. */
+@media (min-width: 721px) and (max-width: 1024px) {
+  :root {
+    --mobile-page-gutter: clamp(16px, 3vw, 28px);
+    --mobile-section-gap: 24px;
+    --mobile-section-pad: clamp(18px, 3vw, 28px);
+    --mobile-section-radius: 26px;
+    --mobile-grid-gap: 14px;
+  }
+
+  html {
+    scroll-padding-top: 28px;
+  }
+
+  section[id],
+  #about,
+  #systems,
+  #featured-work,
+  #credentials,
+  #player-development,
+  #program-impact,
+  #impact,
+  #media,
+  #playing-career,
+  #contact {
+    scroll-margin-top: 28px;
+  }
+
+  .page-shell {
+    width: calc(100% - (var(--mobile-page-gutter) * 2));
+    max-width: none;
+  }
+
+  .site-header.site-chrome,
+  .site-footer.site-chrome {
+    padding-right: var(--mobile-page-gutter);
+    padding-left: var(--mobile-page-gutter);
+  }
+
+  .site-header {
+    position: static;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 22px;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    justify-self: start;
+  }
+
+  .mobile-nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 3px 0;
+    border-radius: 999px;
+    background: currentColor;
+    transition:
+      transform 180ms ease,
+      opacity 160ms ease;
+  }
+
+  .site-header.nav-open .mobile-nav-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .site-header.nav-open .mobile-nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header.nav-open .mobile-nav-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .site-header .brand {
+    gap: 0;
+    justify-self: center;
+  }
+
+  .site-header .brand-copy {
+    display: none;
+  }
+
+  .site-header .brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+  }
+
+  .mobile-contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 4px;
+    color: var(--text);
+    font-family: Georgia, "Palatino Linotype", serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    justify-self: end;
+  }
+
+  .site-header .site-nav {
+    position: fixed;
+    top: 72px;
+    left: var(--mobile-page-gutter);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    width: min(282px, calc(100vw - (var(--mobile-page-gutter) * 2)));
+    padding: 8px 0;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(255, 249, 240, 0.97);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+    transform: translateX(calc(-100% - 28px));
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 220ms ease,
+      opacity 180ms ease;
+  }
+
+  .site-header.nav-open .site-nav {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-header .site-nav a {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(158, 111, 53, 0.18);
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .site-header .site-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .hero,
+  .subpage-hero,
+  .section,
+  .system-detail-section,
+  .about-letter-section,
+  .credential-section,
+  .credential-packet-cta,
+  .featured-pillar,
+  .featured-strategy-panel,
+  .featured-final-cta,
+  .media-final-cta,
+  .media-album-section,
+  .media-library-page .media-library-section,
+  .contact-page .contact-hero,
+  .contact-page .contact-section .contact-card,
+  main#top .contact-section .contact-card {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--mobile-section-pad);
+    border-radius: var(--mobile-section-radius);
+  }
+
+  .section,
+  .stat-band,
+  .system-detail-section,
+  .media-library-page .media-library-section,
+  .contact-page .contact-section,
+  main#top .contact-section {
+    margin-top: var(--mobile-section-gap);
+  }
+
+  .hero,
+  .subpage-hero,
+  .anaya-hero,
+  .split-layout,
+  .portfolio-matters-grid,
+  .contact-card,
+  .innovation-panel,
+  .systems-grid,
+  .story-grid,
+  .testimonial-grid,
+  .impact-grid,
+  .library-grid,
+  .system-detail-grid,
+  .system-document-grid,
+  .media-final-cta,
+  .media-category-grid,
+  .media-section-grid,
+  .media-feature-grid,
+  .case-study-section,
+  .production-link-grid,
+  .timeline-grid,
+  .playing-career-grid,
+  .asset-grid,
+  .about-journey-grid,
+  .achievement-highlights,
+  .anaya-gallery-preview,
+  .gallery-grid,
+  .credential-summary-grid,
+  .credential-document-grid,
+  .credential-document-grid-compact,
+  .credential-document-grid-feature,
+  .credential-section-grid,
+  .credential-license-feature,
+  .credential-reference-feature,
+  .credential-packet-cta {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .gallery-grid,
+  .library-grid,
+  .systems-grid,
+  .story-grid,
+  .testimonial-grid,
+  .media-category-grid,
+  .media-section-grid,
+  .media-feature-grid,
+  .credential-summary-grid,
+  .credential-document-grid,
+  .credential-link-grid,
+  .contact-document-actions,
+  .credential-actions,
+  .credential-section-actions,
+  .featured-actions,
+  .featured-hero-actions,
+  .credentials-hero-actions {
+    display: grid;
+    gap: var(--mobile-grid-gap);
+  }
+
+  .credential-link-grid,
+  .contact-document-actions,
+  .credential-actions,
+  .credential-section-actions,
+  .featured-actions,
+  .featured-hero-actions,
+  .credentials-hero-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .button,
+  button.button,
+  .button-small,
+  .credential-link-grid .button,
+  .contact-document-actions .button,
+  .credential-actions .button,
+  .credential-section-actions .button,
+  .featured-actions .button,
+  .featured-hero-actions .button,
+  .credentials-hero-actions .button {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero h1,
+  .subpage-hero h1,
+  .anaya-hero h1 {
+    white-space: normal !important;
+  }
+
+  main#top > .hero {
+    gap: 16px;
+    overflow: hidden;
+  }
+
+  main#top > .hero .hero-kicker,
+  main#top > .hero .hero-actions,
+  main#top > .hero .proof-card {
+    display: none !important;
+  }
+
+  main#top > .hero .hero-copy {
+    gap: 0;
+    transform: none;
+  }
+
+  main#top > .hero .hero-text {
+    max-width: 100%;
+    margin-top: 14px;
+  }
+
+  main#top > .hero .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin-top: 2px;
+  }
+
+  main#top > .hero .hero-mobile-highlight {
+    display: grid;
+    gap: 4px;
+    width: 100%;
+    min-width: 0;
+    margin-top: 5px;
+    padding: 7px 13px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    background: rgba(32, 28, 24, 0.94);
+    box-shadow: 0 16px 34px rgba(18, 14, 10, 0.2);
+  }
+
+  main#top > .hero .hero-mobile-highlight p {
+    margin: 0;
+    color: var(--gold);
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    color: rgba(255, 246, 230, 0.44);
+    font-size: 0.76rem;
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  main#top > .hero .hero-mobile-highlight a,
+  main#top > .hero .hero-mobile-highlight span {
+    flex: 0 0 auto;
+  }
+
+  main#top > .hero .hero-mobile-highlight a {
+    color: #8bb8e8;
+    text-decoration: none;
+  }
+
+  main#top > .hero-mobile-credentials {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    margin-top: 18px;
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background:
+      linear-gradient(180deg, rgba(255, 253, 248, 0.9), rgba(252, 243, 230, 0.74)),
+      rgba(255, 250, 243, 0.8);
+    box-shadow: 0 16px 34px rgba(52, 36, 24, 0.1);
+  }
+
+  main#top > .hero-mobile-credentials .credential-link-grid,
+  main#top .credentials-card .credential-link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 8px;
+  }
+
+  main#top > .hero-mobile-credentials .button,
+  main#top .credentials-card .credential-link-grid .button {
+    min-height: 30px;
+    padding-right: 9px;
+    padding-left: 9px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  main#top .portfolio-matters-grid > .credentials-card {
+    display: none !important;
+  }
+
+  .credentials-hero-visual,
+  .subpage-hero-visual,
+  .subpage-hero-visual img {
+    min-height: 0;
+  }
+
+  .credentials-hero-visual {
+    padding: 18px;
+  }
+
+  .credential-hero-bundle {
+    width: min(100%, 300px);
+    height: 280px;
+    margin-inline: auto;
+  }
+
+  .credential-hero-sheet {
+    width: 160px;
+  }
+
+  .credential-hero-sheet-packet {
+    left: 68px;
+  }
+
+  .credential-section,
+  .credential-packet-cta {
+    padding: var(--mobile-section-pad);
+    border-radius: var(--mobile-section-radius);
+  }
+
+  .credential-summary-card,
+  .credential-document-card {
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .credential-preview,
+  #resume .credential-feature-card .credential-preview,
+  .credential-reference-feature .credential-feature-card .credential-preview,
+  .credential-preview-packet {
+    min-height: 320px;
+  }
+
+  #certifications .credential-preview,
+  #memberships .credential-preview,
+  #licenses .credential-feature-card .credential-preview {
+    min-height: 205px;
+  }
+
+  .credential-preview-packet {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .credential-reference-feature .credential-section-copy {
+    padding: 18px;
+    border-radius: 22px;
   }
 }

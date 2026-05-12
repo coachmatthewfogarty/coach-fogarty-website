@@ -2,7 +2,7 @@ const librarySections = [
   {
     type: "Development",
     title: "Player Development",
-    description: "Player plans, drill logs and training systems built to track measurable growth.",
+    description: "Player plans, drill logs and measurable growth.",
     media: {
       src: "assets/media/player-development/photos/player-development-on-court-instruction-01-media-card-cover-center-1200x900.avif",
       alt: "On-court player development instruction"
@@ -29,7 +29,7 @@ const librarySections = [
   {
     type: "Scouting",
     title: "Scouting",
-    description: "Opponent prep, personnel notes and game-plan tools organized for staff use.",
+    description: "Opponent prep and game-ready staff tools.",
     media: {
       src: "assets/documents/system-previews/scouting-overview.webp",
       alt: "Scouting report overview document preview"
@@ -56,7 +56,7 @@ const librarySections = [
   {
     type: "Recruiting",
     title: "Recruiting",
-    description: "Roster-building, recruiting calendars and program-fit evaluation organized for staff use.",
+    description: "Recruiting plans and program workflow.",
     media: {
       src: "assets/documents/system-previews/recruiting-development-plan.webp",
       alt: "Recruiting development plan document preview"
@@ -69,13 +69,21 @@ const librarySections = [
       {
         label: "Program Overview",
         href: "./assets/documents/program-development/program-development-overview.pdf"
+      },
+      {
+        label: "Team Plan",
+        href: "./assets/documents/program-development/team-development-plan.pdf"
+      },
+      {
+        label: "Staff Plan",
+        href: "./assets/documents/program-development/staff-development-plan.pdf"
       }
     ]
   },
   {
     type: "DPAT",
     title: "Defensive Tracker",
-    description: "Defensive grading, effort tracking and leaderboards built for accountability.",
+    description: "DPAT grading and accountability tracking.",
     media: {
       src: "dpat/final-reports/player-rankings/dpat-player-rankings-report-2025-2026.png",
       alt: "DPAT defensive tracking leaderboard report"
@@ -102,7 +110,7 @@ const librarySections = [
   {
     type: "Operations",
     title: "Program Support",
-    description: "Operations plans, staff structure and year-round systems for program support.",
+    description: "Operations plans and year-round organization.",
     media: {
       src: "assets/media/team-environment/photos/team-environment-banquet-media-card-cover-center-1200x900.avif",
       alt: "Team environment and program operations visual"
@@ -129,7 +137,7 @@ const librarySections = [
   {
     type: "Leadership",
     title: "Coaching Philosophy",
-    description: "Leadership standards, staff alignment and team-culture principles in one place.",
+    description: "Leadership, alignment and program standards.",
     media: {
       src: "assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
       alt: "Staff leadership and team culture moment"
@@ -1512,11 +1520,12 @@ function renderLibrary() {
   libraryGrid.innerHTML = librarySections
     .map(
       (section) => `
-        <article class="library-card system-card" data-system-type="${systemTypeSlug(section.type)}">
+        <article class="library-card system-card" id="system-${systemTypeSlug(section.type)}" data-system-type="${systemTypeSlug(section.type)}">
+          <h3>${section.title}</h3>
+          <p>${section.description}</p>
           <span class="library-card-media" aria-hidden="${section.media?.alt ? "false" : "true"}">
             <img src="${encodeURI(section.media?.src || "")}" alt="${section.media?.alt || ""}" loading="lazy" onerror="this.closest('.library-card-media').classList.add('is-missing'); this.remove();" />
           </span>
-          <h3>${section.title}</h3>
           <div class="library-actions">
             ${section.buttons
               .map(
