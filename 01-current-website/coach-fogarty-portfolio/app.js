@@ -2189,13 +2189,65 @@ function connectPlayingCareerCards() {
   }
 
   playingCareerTrack.dataset.overlayReady = "true";
+  let pendingCard = null;
+  let pendingPointerId = null;
+  let pointerStartX = 0;
+  let pointerStartY = 0;
+  let suppressNextClickUntil = 0;
+
+  playingCareerTrack.addEventListener(
+    "pointerdown",
+    (event) => {
+      const card = event.target.closest("[data-playing-career-index]");
+
+      if (event.button !== 0 || !card || !playingCareerTrack.contains(card)) {
+        pendingCard = null;
+        pendingPointerId = null;
+        return;
+      }
+
+      pendingCard = card;
+      pendingPointerId = event.pointerId;
+      pointerStartX = event.clientX;
+      pointerStartY = event.clientY;
+    },
+    true
+  );
+
+  playingCareerTrack.addEventListener(
+    "pointerup",
+    (event) => {
+      const card = pendingCard;
+      const deltaX = Math.abs(event.clientX - pointerStartX);
+      const deltaY = Math.abs(event.clientY - pointerStartY);
+
+      pendingCard = null;
+
+      if (!card || event.pointerId !== pendingPointerId || deltaX > 8 || deltaY > 8) {
+        pendingPointerId = null;
+        return;
+      }
+
+      pendingPointerId = null;
+      suppressNextClickUntil = window.performance.now() + 450;
+      openPlayingCareerAlbum(card);
+    },
+    true
+  );
+
   playingCareerTrack.addEventListener(
     "click",
     (event) => {
       const card = event.target.closest("[data-playing-career-index]");
       const suppressUntil = Number(playingCareerTrack.dataset.dragScrollSuppressUntil || 0);
 
-      if (!card || !playingCareerTrack.contains(card) || window.performance.now() < suppressUntil) {
+      if (!card || !playingCareerTrack.contains(card)) {
+        return;
+      }
+
+      if (window.performance.now() < suppressUntil || window.performance.now() < suppressNextClickUntil) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
         return;
       }
 
@@ -2377,17 +2429,70 @@ if (mediaOverlayViewer) {
 }
 
 if (mediaOverlayStrip) {
+  let pendingOverlayThumb = null;
+  let pendingOverlayThumbPointerId = null;
+  let overlayThumbStartX = 0;
+  let overlayThumbStartY = 0;
+  let suppressOverlayThumbClickUntil = 0;
+
+  mediaOverlayStrip.addEventListener(
+    "pointerdown",
+    (event) => {
+      const thumb = event.target.closest(".media-thumb");
+
+      if (event.button !== 0 || !thumb || !mediaOverlayStrip.contains(thumb)) {
+        pendingOverlayThumb = null;
+        pendingOverlayThumbPointerId = null;
+        return;
+      }
+
+      pendingOverlayThumb = thumb;
+      pendingOverlayThumbPointerId = event.pointerId;
+      overlayThumbStartX = event.clientX;
+      overlayThumbStartY = event.clientY;
+    },
+    true
+  );
+
+  mediaOverlayStrip.addEventListener(
+    "pointerup",
+    (event) => {
+      const thumb = pendingOverlayThumb;
+      const deltaX = Math.abs(event.clientX - overlayThumbStartX);
+      const deltaY = Math.abs(event.clientY - overlayThumbStartY);
+
+      pendingOverlayThumb = null;
+
+      if (!thumb || event.pointerId !== pendingOverlayThumbPointerId || deltaX > 8 || deltaY > 8) {
+        pendingOverlayThumbPointerId = null;
+        return;
+      }
+
+      pendingOverlayThumbPointerId = null;
+      suppressOverlayThumbClickUntil = window.performance.now() + 450;
+      selectMediaItem(Number(thumb.dataset.mediaIndex));
+    },
+    true
+  );
+
   mediaOverlayStrip.addEventListener(
     "click",
     (event) => {
       const thumb = event.target.closest(".media-thumb");
       const suppressUntil = Number(mediaOverlayStrip.dataset.dragScrollSuppressUntil || 0);
 
-      if (!thumb || !mediaOverlayStrip.contains(thumb) || window.performance.now() < suppressUntil) {
+      if (!thumb || !mediaOverlayStrip.contains(thumb)) {
+        return;
+      }
+
+      if (window.performance.now() < suppressUntil || window.performance.now() < suppressOverlayThumbClickUntil) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
         return;
       }
 
       event.preventDefault();
+      event.stopImmediatePropagation();
       selectMediaItem(Number(thumb.dataset.mediaIndex));
     },
     true
