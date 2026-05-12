@@ -13,7 +13,7 @@ The site is a static HTML/CSS/JS portfolio. There is no package build step requi
 ## Current Page Map
 
 - `index.html`: homepage, hero, impact stats, systems preview, featured work, gallery preview, playing career, and contact section.
-- `about.html`: personal letter-style About page with coaching statement, signature, and image collage.
+- `about.html`: personal cover-letter style About page with coaching statement, signature, and responsive image collage.
 - `systems.html`: deep Staff Systems page with document-preview carousels.
 - `featured-work.html`: featured coaching work and proof-of-impact stories.
 - `media.html`: Gallery Hub for coaching photos, videos, Playing Career, Awards, The Archer, and Anaya Beard media.
@@ -30,6 +30,19 @@ The site is a static HTML/CSS/JS portfolio. There is no package build step requi
 - `footer.js`: footer accordion and shared footer interaction behavior.
 - `assets/js/image-fallbacks.js`: image fallback behavior for site images.
 - `RESPONSIVE-DESIGN-SYSTEM.md`: current mobile/tablet/desktop rules for font specs, heading fitting, layout behavior, section/card padding, header/footer sizing, contact form sizing, and homepage hero breakpoints.
+
+## About Page Layout Memory
+
+Current as of May 12:
+
+- `about.html` uses one unified `.about-letter-section` panel. Do not split the message and images into separate cards.
+- The four paragraphs are grouped into `.about-letter-text` with two `.about-letter-text-column` wrappers. Desktop uses those as real columns; mobile/tablet display them as normal stacked text.
+- The signature lives inside `.about-letter-copy` after the text so it follows the letter, not the image grid.
+- The photo collage is `.about-letter-gallery`; images should stay in a two-column grid and use the approved `1200x900` AVIF card crops unless a future slot needs a larger crop.
+- The final override rules for this page live near the end of `styles.css` under `About page final pass`. Start there before editing older About rules earlier in the stylesheet.
+- Desktop `1120px+` should feel like one clean cover letter: two text columns, signature below the left copy, and the image grid on the right.
+- Tablet and phone should read as letter first, signature, then the image grid. The images should resize by slot width/height, not force horizontal scrolling.
+- Verification widths for this page: `320`, `375`, `430`, `820`, `1120`, `1280`, `1365`, `1600`, `1920`.
 
 ## Current Brand Memory
 

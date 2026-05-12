@@ -120,6 +120,9 @@ const compactCardTitleSelector = [
   ".quote-panel h3",
   ".innovation-panel h3",
   ".media-subsection-heading h3",
+  ".media-album-heading h3",
+  ".media-category-card h3",
+  ".media-library-meta strong",
   ".achievement-card strong"
 ].join(",");
 const compactHeroSelector = ".hero, .subpage-hero, .anaya-hero, .contact-hero, .media-hero, .media-overlay";
@@ -135,20 +138,30 @@ function compactHeadingElements() {
       minSize: 8,
       allowWrap: false
     })),
-    ...Array.from(document.querySelectorAll(compactTitleSelector)).map((element) => ({
-      element,
-      sizeProperty: "--mobile-fit-title-size",
-      lineProperty: "--mobile-fit-title-line",
-      wrapProperty: "--type-heading-white-space",
-      fallbackSize: 24,
-      fallbackLine: 28,
-      minSize: {
-        mobile: 18,
-        tablet: 20,
-        desktop: 25
-      },
-      allowWrap: true
-    })),
+    ...Array.from(document.querySelectorAll(compactTitleSelector)).map((element) => {
+      const isAboutCoverTitle = element.matches(".about-cover-page .about-letter-heading > h1");
+
+      return {
+        element,
+        sizeProperty: "--mobile-fit-title-size",
+        lineProperty: "--mobile-fit-title-line",
+        wrapProperty: "--type-heading-white-space",
+        fallbackSize: 24,
+        fallbackLine: 28,
+        minSize: isAboutCoverTitle
+          ? {
+            mobile: 14,
+            tablet: 18,
+            desktop: 25
+          }
+          : {
+            mobile: 18,
+            tablet: 20,
+            desktop: 25
+          },
+        allowWrap: !isAboutCoverTitle
+      };
+    }),
     ...Array.from(document.querySelectorAll(compactCardTitleSelector)).map((element) => ({
       element,
       sizeProperty: "--mobile-fit-card-title-size",

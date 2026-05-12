@@ -25,6 +25,8 @@
       "**/_logs/**": true,
       "**/_contact-sheets/**": true,
       "**/_legacy-unused/**": true,
+      "**/output/**": true,
+      "**/working/**": true,
       "**/02-design-source/Photoshop Website Export/output/**": true,
       "**/02-design-source/Photoshop Website Export/working/**": true
     },
@@ -39,6 +41,8 @@
       "**/_logs/**": true,
       "**/_contact-sheets/**": true,
       "**/_legacy-unused/**": true,
+      "**/output/**": true,
+      "**/working/**": true,
       "**/02-design-source/Photoshop Website Export/output/**": true,
       "**/02-design-source/Photoshop Website Export/working/**": true
     },

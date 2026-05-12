@@ -59,6 +59,19 @@ These are the current rules from the May 11 cleanup and should guide work tomorr
 - Alignment should be full-width and stable: sections align to the shared page shell, cards use `minmax(0, 1fr)`, and long words/URLs must wrap instead of pushing layout sideways.
 - Crop decisions must be traceable in filenames with the crop label and `q98` quality marker before being wired into the website.
 
+## 2026-05-12 About Page Handoff
+
+Use this when reopening the project at work:
+
+- The live About page is `01-current-website/coach-fogarty-portfolio/about.html`.
+- The About layout rules are at the bottom of `01-current-website/coach-fogarty-portfolio/styles.css` under the `About page final pass` comment.
+- The page is intentionally one unified letter/card, not separate text and image cards.
+- Desktop `1120px+` uses the cover-letter composition: two text columns, signature underneath the copy, and a two-column image grid on the right.
+- Tablet and phone stay letter-first, then image grid. This keeps the text readable before the photos.
+- Images use `object-fit: cover` and responsive row heights so the collage adjusts to the available slot instead of stretching or creating horizontal scroll.
+- If changing this page, verify at `320`, `375`, `430`, `820`, `1120`, `1280`, `1365`, `1600`, and `1920` widths.
+- Watch specifically for horizontal overflow, signature/text collision, cropped image subjects, and footer clipping below the About panel.
+
 ## 2026-05-10 Website Updates To Remember
 
 Today's active website upgrades are centered on the public coaching portfolio experience:

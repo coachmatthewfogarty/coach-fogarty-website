@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Matthew Fogarty</title>
     <meta name="description" content="About Matthew Fogarty's playing foundation, player development background, program building and college staff impact." />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=footer-responsive-20260512" />
   </head>
   <body>
     <div class="page-shell">
@@ -57,13 +57,13 @@
             </div>
             <div class="about-letter-gallery" aria-label="Coaching profile images">
               <img src="anaya/photos/2d/dp-coaching-feedback-card-q98-1200x900.avif" alt="Coach Fogarty giving Anaya Beard development feedback" />
+              <img src="assets/media/championship-culture/photos/championship-culture-magic-elite-championship-media-card-1200x900.avif" alt="Magic Elite championship coaches with trophy" />
               <img src="assets/media/championship-culture/photos/championship-culture-pacific-academy-three-peat-media-card-1200x900.avif" alt="Pacific Academy three-peat championship culture" />
               <img src="assets/media/championship-culture/photos/championship-culture-pacific-academy-1st-school-championship-media-card-1200x900.avif" alt="First school championship" />
               <img src="assets/media/sideline-leadership/photos/sideline-leadership-hyped-media-card-cover-bottom-mid-1200x900.avif" alt="Sideline leadership hyped moment" />
               <img src="assets/media/sideline-leadership/photos/sideline-leadership-high-five-media-card-cover-bottom-mid-1200x900.avif" alt="Sideline high five during competition" />
               <img src="assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif" alt="Coach Fogarty celebrating with staff" />
               <img src="assets/media/coaching-details/photos/coaching-details-santa-ana-college-pregame-warmup-media-card-1200x900.avif" alt="Pregame warmup coaching detail" />
-              <img src="assets/media/coaching-details/photos/coaching-details-santa-ana-college-ball-handling-media-card-1200x900.avif" alt="Ball-handling coaching detail" />
               <img src="assets/media/coaching-details/photos/coaching-details-santa-ana-college-coaching-observation-01-media-card-cover-bottom-center-mid-1200x900.avif" alt="Coach Fogarty observing Santa Ana College practice" />
               <img src="assets/media/team-celebration/photos/team-celebration-santa-ana-playoff-win-sideline-reaction-media-card-cover-upper-q98-1200x900.avif" alt="Santa Ana College playoff win sideline reaction" />
               <img src="assets/media/team-celebration/photos/team-celebration-santa-ana-bench-cheering-03-media-card-cover-bottom-mid-q98-1200x900.avif" alt="Bench cheering celebration" />
@@ -128,6 +128,28 @@
 </footer>
       </main>
     </div>
+    <script>
+      (() => {
+        const page = document.querySelector(".about-cover-page");
+        const text = document.querySelector(".about-letter-text");
+        if (!page || !text) return;
+
+        const syncAboutGalleryHeight = () => {
+          if (window.matchMedia("(min-width: 1025px)").matches) {
+            page.style.setProperty("--about-letter-text-height", `${text.getBoundingClientRect().height}px`);
+          } else {
+            page.style.removeProperty("--about-letter-text-height");
+          }
+        };
+
+        syncAboutGalleryHeight();
+        window.addEventListener("load", syncAboutGalleryHeight, { once: true });
+        window.addEventListener("resize", syncAboutGalleryHeight);
+        if ("ResizeObserver" in window) {
+          new ResizeObserver(syncAboutGalleryHeight).observe(text);
+        }
+      })();
+    </script>
     <script src="./footer.js"></script>
   </body>
 </html>

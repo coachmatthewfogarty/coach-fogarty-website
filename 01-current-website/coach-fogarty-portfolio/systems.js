@@ -11,6 +11,7 @@ function enableSystemDragScroll(track) {
   let startScrollLeft = 0;
   let didDrag = false;
   let suppressClickUntil = 0;
+  let pendingClickAnchor = null;
 
   const finishDrag = () => {
     if (pointerId === null) {
@@ -38,6 +39,7 @@ function enableSystemDragScroll(track) {
     startY = event.clientY;
     startScrollLeft = track.scrollLeft;
     didDrag = false;
+    pendingClickAnchor = event.target.closest?.("a[href]") || null;
     track.setPointerCapture?.(pointerId);
   });
 
@@ -62,8 +64,24 @@ function enableSystemDragScroll(track) {
     "click",
     (event) => {
       if (didDrag || window.performance.now() < suppressClickUntil) {
+        pendingClickAnchor = null;
         event.preventDefault();
         event.stopPropagation();
+        return;
+      }
+
+      const anchor = pendingClickAnchor;
+      pendingClickAnchor = null;
+
+      if (anchor && !event.target.closest?.("a[href]")) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (anchor.target === "_blank") {
+          window.open(anchor.href, "_blank", "noopener");
+        } else {
+          window.location.href = anchor.href;
+        }
       }
     },
     true

@@ -1,8 +1,18 @@
+# Do not upload workspace/design/archive folders
 .vscode/
+.edge-qa/
 02-design-source/
 03-source-documents/
 04-archive/
 
+# Large video files
+*.mp4
+*.mov
+*.MOV
+*.avi
+*.mkv
+
+# Dependencies/build/cache
 node_modules/
 dist/
 build/
@@ -10,14 +20,6 @@ build/
 .env
 .env.local
 
+# OS files
 .DS_Store
 Thumbs.db
-EOF+
-git add .gitignore README.md 01-current-website
-
-# Large video files - keep local, do not push to GitHub
-*.mp4
-*.mov
-*.MOV
-*.avi
-*.mkv

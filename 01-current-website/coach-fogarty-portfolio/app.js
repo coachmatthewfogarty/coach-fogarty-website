@@ -502,11 +502,20 @@ const mediaAlbums = [
   {
     title: "Championship Culture",
     category: "Championship Culture",
-    thumbnail: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-three-peat-media-card-1200x900.avif"),
+    thumbnail: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-media-card-1200x900.avif"),
     thumbnailRole: "media-card",
     caption: "Championship Culture",
     crop: "culture",
     items: [
+      {
+        type: "image",
+        mediaCardSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-media-card-1200x900.avif"),
+        thumbSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-overlay-thumb-600x400.webp"),
+        fullSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-landscape-2400x1800.avif"),
+        orientation: "landscape",
+        alt: "Magic Elite championship coaches with trophy",
+        caption: "Magic Elite championship"
+      },
       {
         type: "image",
         mediaCardSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-three-peat-media-card-1200x900.avif"),
@@ -1037,6 +1046,15 @@ const playingCareerAlbums = [
         orientation: "portrait",
         carouselPosition: "50% 35%",
         alt: "Matthew Fogarty Rocky Mountain College portrait"
+      },
+      {
+        title: "Rocky Mountain College Point",
+        carouselSrc: playingCareerPhoto("playing-career-rocky-mountain-college-point-carousel-1200x900.avif"),
+        thumbSrc: playingCareerPhoto("playing-career-rocky-mountain-college-point-overlay-thumb-600x400.webp"),
+        fullSrc: playingCareerPhoto("playing-career-rocky-mountain-college-point-landscape-2400x1800.avif"),
+        orientation: "landscape",
+        carouselPosition: "50% 45%",
+        alt: "Matthew Fogarty pointing during his Rocky Mountain College playing career"
       },
       {
         title: "Foothill High School Fadeaway",
@@ -1634,24 +1652,24 @@ function renderMediaLibraryPage() {
     return;
   }
 
-  const coachingAlbums = mediaAlbums.map((album) => mediaLibraryAlbum(album, "COACHING GALLERY"));
-  const archerAlbum = mediaLibraryAlbum(archerMediaAlbum, "PLAYER DEVELOPMENT INNOVATION");
-  const anayaAlbums = anayaSections.map((section) => mediaLibraryAlbum(section, "PLAYER DEVELOPMENT CASE STUDY"));
-  const playingAlbum = mediaLibraryAlbum(playingCareerAlbums[0], "PLAYING BACKGROUND");
-  const awardsAlbum = mediaLibraryAlbum(playingCareerAwardAlbums[0], "PLAYING BACKGROUND");
+  const coachingAlbums = mediaAlbums.map((album) => mediaLibraryAlbum(album, "COACHING PHOTOS"));
+  const archerAlbum = mediaLibraryAlbum({ ...archerMediaAlbum, eyebrow: "THE ARCHER" }, "THE ARCHER");
+  const anayaAlbums = anayaSections.map((section) => mediaLibraryAlbum(section, "ANAYA BEARD CASE STUDY"));
+  const playingAlbum = mediaLibraryAlbum({ ...playingCareerAlbums[0], eyebrow: "PLAYING CAREER" }, "PLAYING CAREER");
+  const awardsAlbum = mediaLibraryAlbum({ ...playingCareerAwardAlbums[0], eyebrow: "PLAYING AWARDS" }, "PLAYING AWARDS");
   const archerPhotoAlbum = mediaLibraryAlbum(
     {
       title: "The Archer Photos",
       items: archerMediaAlbum.items.filter((item) => item.type !== "video")
     },
-    "PLAYER DEVELOPMENT INNOVATION"
+    "THE ARCHER"
   );
   const archerVideoAlbum = mediaLibraryAlbum(
     {
       title: "The Archer Videos",
       items: archerMediaAlbum.items.filter((item) => item.type === "video")
     },
-    "PLAYER DEVELOPMENT INNOVATION"
+    "THE ARCHER"
   );
   const anayaVideoAlbum = mediaLibraryAlbum(
     {
@@ -1662,7 +1680,7 @@ function renderMediaLibraryPage() {
           .map((item) => ({ ...item, caption: `${section.title} - ${item.caption || "Video"}` }))
       )
     },
-    "PLAYER DEVELOPMENT CASE STUDY"
+    "ANAYA BEARD CASE STUDY"
   );
   const anayaFullAlbum = mediaLibraryAlbum(
     {
@@ -1674,7 +1692,7 @@ function renderMediaLibraryPage() {
         }))
       )
     },
-    "PLAYER DEVELOPMENT CASE STUDY"
+    "ANAYA BEARD CASE STUDY"
   );
 
   mediaLibraryAlbums = [
