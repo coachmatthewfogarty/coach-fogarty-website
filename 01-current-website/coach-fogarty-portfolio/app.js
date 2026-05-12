@@ -1697,13 +1697,20 @@ function renderMediaLibraryPage() {
     return mediaLibraryCardMarkup(albumIndex, itemIndex, item, label, titleOverride);
   };
   const previewCarousels = {};
+  const previewCardCount = () => {
+    if (window.matchMedia("(max-width: 720px)").matches) {
+      return 1;
+    }
+
+    return 3;
+  };
   const visiblePreviewCards = (cards, start = 0) => {
-    const count = Math.min(3, cards.length);
+    const count = Math.min(previewCardCount(), cards.length);
     return Array.from({ length: count }, (_, offset) => cards[(start + offset) % cards.length]);
   };
   const previewCarouselMarkup = (key, cards, renderCard = previewCard) => {
     previewCarousels[key] = { cards, start: 0, renderCard };
-    const hasArrows = cards.length > 3;
+    const hasArrows = cards.length > previewCardCount();
 
     return `
       <div class="media-preview-carousel" data-media-preview-carousel="${key}">
