@@ -470,7 +470,7 @@ main#top #impact.hero-stat-band article span {
     grid-template-columns: minmax(0, 1fr) clamp(330px, 33vw, 410px);
     grid-template-areas:
       "copy portrait"
-      "proof portrait";
+      "stats stats";
     gap: 14px 34px;
     align-items: center;
     padding: 26px 42px;
@@ -479,7 +479,7 @@ main#top #impact.hero-stat-band article span {
   .hero-copy {
     grid-area: copy;
     transform: none;
-    align-self: end;
+    align-self: center;
     padding-top: 0;
   }
 
@@ -539,6 +539,7 @@ main#top #impact.hero-stat-band article span {
   }
 
   .hero-stat-band {
+    grid-area: stats;
     margin-top: 2px;
   }
 }
@@ -7911,8 +7912,8 @@ main:not(#top) .anaya-hero h1 {
 
 /* Full-bleed header/footer chrome with wider content than the page cards. */
 :root {
-  --site-card-width: 1200px;
-  --site-chrome-content-width: 1360px;
+  --site-card-width: 2560px;
+  --site-chrome-content-width: 2560px;
   --site-chrome-gutter: 44px;
 }
 
@@ -10164,16 +10165,16 @@ main#top .credentials-card .credential-document-heading .eyebrow {
 
   main#top > .hero .hero-mobile-highlight {
     position: absolute;
-    right: clamp(10px, 2.2vw, 18px);
-    bottom: clamp(10px, 2vw, 16px);
-    left: clamp(10px, 2.2vw, 18px);
+    right: clamp(10px, 2.75vw, 24px);
+    bottom: clamp(10px, 2.75vw, 24px);
+    left: clamp(10px, 2.75vw, 24px);
     z-index: 2;
     width: auto;
     margin-top: 0;
     padding:
-      clamp(7px, 1.05vw, 10px)
-      clamp(10px, 2vw, 18px)
-      clamp(8px, 1.15vw, 11px);
+      clamp(7px, 1.8vw, 14px)
+      clamp(10px, 2.55vw, 24px)
+      clamp(8px, 2vw, 16px);
     border-color: rgba(255, 255, 255, 0.2);
     background: rgba(32, 28, 24, 0.74);
     box-shadow:
@@ -10184,20 +10185,20 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   }
 
   main#top > .hero .hero-mobile-highlight p {
-    font-size: clamp(0.66rem, 1.15vw, 0.78rem);
+    font-size: clamp(0.66rem, 2.2vw, 1.02rem);
   }
 
   main#top > .hero .hero-mobile-highlight div {
     display: grid !important;
     grid-template-columns:
-      minmax(0, 1.22fr) auto
-      minmax(0, 1fr) auto
-      minmax(0, 1fr) auto
-      minmax(0, 1fr) auto
-      minmax(0, 1fr);
-    column-gap: clamp(4px, 1.25vw, 14px);
+      minmax(clamp(48px, 14.5vw, 112px), 1.22fr) auto
+      minmax(clamp(36px, 11vw, 92px), 1fr) auto
+      minmax(clamp(36px, 11vw, 92px), 1fr) auto
+      minmax(clamp(36px, 11vw, 92px), 1fr) auto
+      minmax(clamp(36px, 11vw, 92px), 1fr);
+    column-gap: clamp(3px, 1.1vw, 14px);
     align-items: center;
-    font-size: clamp(0.68rem, 1.35vw, 0.86rem);
+    font-size: clamp(0.68rem, 2.2vw, 1rem);
   }
 
   main#top > .hero .hero-mobile-highlight a {
@@ -10245,6 +10246,179 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   }
 }
 
+@media (max-width: 399px) {
+  main#top > .hero .hero-mobile-highlight p {
+    font-size: 0.64rem;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    column-gap: 3px;
+    font-size: 0.64rem;
+  }
+}
+
+/* Final mobile hero overlay fit: preserve whole link labels on narrow image cards. */
+@media (max-width: 1024px) {
+  main#top > .hero .hero-mobile-highlight {
+    container-type: inline-size;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px clamp(4px, 1.8cqw, 12px);
+    overflow: visible;
+    font-size: clamp(0.64rem, 3.25cqw, 1rem);
+    line-height: 1.15;
+    white-space: normal;
+  }
+
+  main#top > .hero .hero-mobile-highlight a {
+    flex: 0 0 auto;
+    min-width: max-content;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 430px) {
+  main#top > .hero .hero-mobile-highlight div {
+    row-gap: 3px;
+    column-gap: clamp(3px, 1.2cqw, 5px);
+    font-size: clamp(0.64rem, 3.15cqw, 0.72rem);
+  }
+
+  main#top > .hero .hero-mobile-highlight span {
+    display: inline;
+  }
+}
+
+@media (min-width: 1025px) {
+  main#top > .hero .portrait-card {
+    position: relative;
+  }
+
+  main#top > .hero .hero-mobile-highlight {
+    display: grid;
+    container-type: inline-size;
+    position: absolute;
+    right: clamp(10px, 1.4vw, 28px);
+    bottom: clamp(10px, 1.4vw, 28px);
+    left: clamp(10px, 1.4vw, 28px);
+    z-index: 2;
+    gap: clamp(3px, 0.38vw, 8px);
+    width: auto;
+    margin: 0;
+    padding:
+      clamp(8px, 0.9vw, 18px)
+      clamp(10px, 1.15vw, 28px)
+      clamp(9px, 0.95vw, 20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    background: rgba(32, 28, 24, 0.74);
+    box-shadow:
+      0 14px 30px rgba(18, 14, 10, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+  }
+
+  main#top > .hero .hero-mobile-highlight p {
+    margin: 0;
+    color: var(--gold);
+    font-size: clamp(0.76rem, calc(0.55rem + 0.25vw), 1rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0 clamp(4px, 0.48vw, 12px);
+    overflow: visible;
+    color: rgba(255, 246, 230, 0.44);
+    font-size: clamp(0.7rem, calc(0.54rem + 0.18vw), 0.9rem);
+    font-weight: 800;
+    line-height: 1.15;
+    white-space: normal;
+  }
+
+  main#top > .hero .hero-mobile-highlight a {
+    flex: 0 0 auto;
+    min-width: max-content;
+    color: #8bb8e8;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  main#top > .hero .hero-mobile-highlight span {
+    display: inline;
+    flex: 0 0 auto;
+  }
+}
+
+/* Desktop hero stats sit under the intro copy in a responsive 3 x 2 pill grid. */
+@media (min-width: 1025px) {
+  main#top > .hero {
+    grid-template-columns: minmax(0, 1fr) var(--hero-portrait-width);
+    grid-template-areas:
+      "copy portrait"
+      "stats portrait";
+    column-gap: var(--hero-desktop-gap);
+    row-gap: clamp(16px, 1.75vw, 34px);
+    align-items: center;
+    padding:
+      clamp(26px, 2.2vw, 56px)
+      clamp(42px, 3.4vw, 88px);
+  }
+
+  main#top > .hero .hero-copy {
+    align-self: end;
+  }
+
+  main#top > .hero .portrait-card {
+    align-self: center;
+    width: 100%;
+    height: var(--hero-portrait-height);
+  }
+
+  main#top > .hero .hero-text {
+    max-width: clamp(720px, 44vw, 980px);
+  }
+
+  main#top > .hero .hero-stat-band {
+    grid-area: stats;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(8px, 1vw, 18px);
+    align-self: start;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  main#top > .hero #impact.hero-stat-band article {
+    min-height: clamp(56px, 4.2vw, 92px);
+    padding:
+      clamp(8px, 0.9vw, 18px)
+      clamp(6px, 1vw, 24px);
+    border-radius: 999px;
+    text-align: center;
+  }
+
+  main#top > .hero #impact.hero-stat-band article strong {
+    font-size: clamp(0.88rem, 1.05vw, 1.18rem);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  main#top > .hero #impact.hero-stat-band article span {
+    font-size: clamp(0.51rem, 0.62vw, 0.7rem);
+    line-height: 1.08;
+    white-space: nowrap;
+  }
+}
+
 /* Locked copy-width rules: section intros use the full content lane; compact card subtext stays one line. */
 .section-heading + .section-intro,
 .section-heading + .portfolio-systems-intro,
@@ -10263,4 +10437,297 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   text-overflow: ellipsis;
   text-wrap: nowrap;
   white-space: nowrap;
+}
+
+/* Final container-based heading scale: headings follow the actual card/section width. */
+main#top > .hero,
+main:not(#top) .subpage-hero,
+main:not(#top) .anaya-hero,
+.section-heading,
+.about-letter-heading,
+.featured-pillar-copy,
+.featured-strategy-panel,
+.featured-final-cta,
+.system-detail-copy,
+.credential-section-copy,
+.credential-packet-cta,
+.about-foundation-strip,
+.media-final-cta,
+.contact-info-copy {
+  container-type: inline-size;
+}
+
+@media (max-width: 767px) {
+  .section-heading,
+  .about-letter-heading,
+  .featured-pillar-copy,
+  .featured-strategy-panel,
+  .featured-final-cta,
+  .system-detail-copy,
+  .credential-section-copy,
+  .credential-packet-cta,
+  .about-foundation-strip,
+  .media-final-cta,
+  .contact-info-copy {
+    --type-section-title-size: clamp(1.46rem, 6.1cqw, 1.55rem);
+    --type-section-title-line: 1.08;
+    --type-eyebrow-size: clamp(0.64rem, 2.6cqw, 0.68rem);
+    --type-eyebrow-line: 1.2;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section-heading,
+  .about-letter-heading,
+  .featured-pillar-copy,
+  .featured-strategy-panel,
+  .featured-final-cta,
+  .system-detail-copy,
+  .credential-section-copy,
+  .credential-packet-cta,
+  .about-foundation-strip,
+  .media-final-cta,
+  .contact-info-copy {
+    --type-section-title-size: clamp(1.6rem, 5cqw, 2.2rem);
+    --type-section-title-line: 1.05;
+    --type-eyebrow-size: clamp(0.7rem, 1.7cqw, 0.76rem);
+    --type-eyebrow-line: 1.15;
+  }
+}
+
+@media (max-width: 1024px) {
+  main#top > .hero h1,
+  main:not(#top) .subpage-hero h1,
+  main:not(#top) .anaya-hero h1 {
+    font-size: clamp(2rem, 8.6cqw, 3rem) !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+  }
+
+  main#top > .hero .eyebrow,
+  main:not(#top) .subpage-hero .eyebrow,
+  main:not(#top) .anaya-hero .eyebrow {
+    font-size: clamp(0.64rem, 2.6cqw, 0.76rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: clamp(0.08em, 0.32cqw, 0.12em);
+    white-space: nowrap;
+  }
+
+  .section-heading h2,
+  main#top .section-heading h2,
+  main:not(#top) .section-heading h2,
+  main:not(#top) .about-letter-heading > h1,
+  main:not(#top) .featured-pillar-copy > h2,
+  main:not(#top) .featured-strategy-panel > h2,
+  main:not(#top) .featured-final-cta h2,
+  main:not(#top) .system-detail-copy > h2,
+  main:not(#top) .credential-section-copy > h2,
+  main:not(#top) .credential-packet-cta h2,
+  main:not(#top) .about-foundation-strip > h2,
+  main:not(#top) .media-final-cta h2,
+  main#top .credentials-card .credential-document-heading h2,
+  main#top .contact-section .section-heading h2,
+  .contact-info-copy h2 {
+    font-size: var(--mobile-fit-title-size, var(--type-section-title-size)) !important;
+    line-height: var(--mobile-fit-title-line, var(--type-section-title-line)) !important;
+    white-space: var(--type-heading-white-space, nowrap) !important;
+  }
+
+  .eyebrow,
+  .section-heading .eyebrow,
+  main#top .section-heading .eyebrow,
+  .innovation-section .eyebrow,
+  main:not(#top) .featured-pillar-copy > .eyebrow,
+  main:not(#top) .featured-strategy-panel > .eyebrow,
+  main:not(#top) .featured-final-cta > div > .eyebrow,
+  main:not(#top) .system-detail-copy > .eyebrow,
+  main:not(#top) .credential-section-copy > .eyebrow,
+  main:not(#top) .credential-packet-cta > .eyebrow,
+  main:not(#top) .about-foundation-strip > .eyebrow,
+  main:not(#top) .media-final-cta .eyebrow,
+  .contact-info-copy > .eyebrow,
+  main#top .credentials-card .credential-document-heading .eyebrow {
+    font-size: var(--mobile-fit-eyebrow-size, var(--type-eyebrow-size)) !important;
+    line-height: var(--mobile-fit-eyebrow-line, var(--type-eyebrow-line)) !important;
+    letter-spacing: clamp(0.08em, 0.32cqw, 0.12em);
+    white-space: var(--type-eyebrow-white-space, nowrap) !important;
+  }
+}
+
+/* Desktop cap type scale: grows with the expanded 2560px content canvas. */
+@media (min-width: 1025px) {
+  :root {
+    --type-hero-title-size: clamp(3.65rem, calc(2.2rem + 2.55vw), 6.7rem);
+    --type-hero-title-line: 0.95;
+    --type-section-title-size: clamp(2.15rem, calc(1.45rem + 1.12vw), 3.25rem);
+    --type-section-title-line: 1.02;
+    --type-card-title-size: clamp(1.7rem, calc(1.14rem + 0.8vw), 2.35rem);
+    --type-card-title-line: 1.06;
+    --type-eyebrow-size: clamp(0.76rem, calc(0.57rem + 0.22vw), 1.1rem);
+    --type-eyebrow-line: 1.15;
+    --type-body-size: clamp(0.98rem, calc(0.76rem + 0.25vw), 1.18rem);
+    --type-small-body-size: clamp(0.9rem, calc(0.72rem + 0.18vw), 1.02rem);
+    --type-stat-value-size: clamp(1.18rem, calc(0.82rem + 0.68vw), 1.72rem);
+    --type-stat-label-size: clamp(0.68rem, calc(0.5rem + 0.28vw), 0.88rem);
+    --hero-portrait-width: clamp(320px, 28vw, 720px);
+    --hero-portrait-height: clamp(410px, 27vw, 650px);
+    --hero-desktop-gap: clamp(24px, 3.2vw, 72px);
+  }
+
+  .hero h1,
+  main#top > .hero h1 {
+    font-size: var(--type-hero-title-size) !important;
+    line-height: var(--type-hero-title-line) !important;
+  }
+
+  .section-heading h2,
+  main#top .section-heading h2,
+  main:not(#top) .section-heading h2,
+  main:not(#top) .about-letter-heading > h1,
+  main:not(#top) .subpage-hero h1,
+  main:not(#top) .anaya-hero h1,
+  main:not(#top) .featured-pillar-copy > h2,
+  main:not(#top) .featured-strategy-panel > h2,
+  main:not(#top) .featured-final-cta h2,
+  main:not(#top) .system-detail-copy > h2,
+  main:not(#top) .credential-section-copy > h2,
+  main:not(#top) .credential-packet-cta h2,
+  main:not(#top) .about-foundation-strip > h2,
+  main:not(#top) .media-final-cta h2,
+  main#top .credentials-card .credential-document-heading h2,
+  main#top .contact-section .section-heading h2,
+  .contact-info-copy h2 {
+    font-size: var(--type-section-title-size) !important;
+    line-height: var(--type-section-title-line) !important;
+  }
+
+  .library-card h3,
+  .library-card.system-card h3,
+  .system-card h3,
+  .story-card h3,
+  .quote-panel h3,
+  .innovation-panel h3,
+  .media-subsection-heading h3,
+  .achievement-card strong,
+  .contact-card h2,
+  .portfolio-matters-card .section-heading h2,
+  .credentials-card h3,
+  .media-category-card h3,
+  .credential-summary-card h3,
+  .credential-document-card h3,
+  .featured-summary-card h3 {
+    font-size: var(--type-card-title-size) !important;
+    line-height: var(--type-card-title-line) !important;
+  }
+
+  main#top .credentials-card .credential-document-heading h2 {
+    max-width: 100%;
+    font-size: clamp(1.55rem, calc(1.04rem + 0.7vw), 2.25rem) !important;
+    line-height: 1.02 !important;
+    white-space: nowrap !important;
+  }
+
+  .eyebrow,
+  .section-heading .eyebrow,
+  main#top .section-heading .eyebrow,
+  main:not(#top) .subpage-hero .eyebrow,
+  main:not(#top) .anaya-hero .eyebrow,
+  .innovation-section .eyebrow,
+  .featured-pillar-copy > .eyebrow,
+  .featured-strategy-panel > .eyebrow,
+  .featured-final-cta > div > .eyebrow,
+  .system-detail-copy > .eyebrow,
+  .credential-section-copy > .eyebrow,
+  .credential-packet-cta > .eyebrow,
+  .about-foundation-strip > .eyebrow,
+  .media-final-cta .eyebrow,
+  .contact-info-copy > .eyebrow,
+  main#top .credentials-card .credential-document-heading .eyebrow {
+    font-size: var(--type-eyebrow-size) !important;
+    line-height: var(--type-eyebrow-line) !important;
+    letter-spacing: 0.14em;
+  }
+
+  .hero-text,
+  .section-intro,
+  .copy-panel p,
+  .story-card p,
+  .testimonial-card p,
+  .system-card p,
+  .innovation-panel p,
+  .contact-card p,
+  .library-card p,
+  .media-category-card p,
+  .contact-info-copy p:not(.eyebrow),
+  main:not(#top) .subpage-hero p:not(.eyebrow),
+  main:not(#top) .anaya-hero p:not(.eyebrow) {
+    font-size: var(--type-body-size) !important;
+    line-height: 1.62;
+  }
+
+  .button,
+  .button-small,
+  .site-nav a,
+  .credential-link-grid .button,
+  .contact-document-actions .button,
+  .credential-actions .button,
+  .credential-section-actions .button,
+  .featured-actions .button,
+  .featured-hero-actions .button,
+  .credentials-hero-actions .button {
+    font-size: var(--type-small-body-size);
+  }
+
+  .brand-copy strong {
+    font-size: clamp(1.08rem, calc(0.88rem + 0.22vw), 1.28rem);
+  }
+
+  main#top > .hero #impact.hero-stat-band article strong,
+  main#top #impact.hero-stat-band article strong,
+  main#top #impact.stat-band article strong {
+    font-size: var(--type-stat-value-size) !important;
+    line-height: 1;
+  }
+
+  main#top > .hero #impact.hero-stat-band article span,
+  main#top #impact.hero-stat-band article span,
+  main#top #impact.stat-band article span {
+    font-size: var(--type-stat-label-size) !important;
+    line-height: 1.1;
+  }
+}
+
+/* System cards keep the description attached to the title, then separate it from the image. */
+.system-card > h3,
+.library-card.system-card > h3 {
+  margin-bottom: 3px !important;
+}
+
+.system-card > p,
+.library-card.system-card > p {
+  flex: 0 0 auto;
+  min-height: 0;
+  margin: 0 0 clamp(10px, 0.9vw, 14px) !important;
+  overflow: hidden;
+  line-height: 1.25 !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.system-card > p + .library-card-media {
+  margin-top: 0;
+}
+
+@media (max-width: 430px) {
+  .system-card > h3,
+  .library-card.system-card > h3 {
+    margin-bottom: 2px !important;
+  }
+
+  .system-card > p,
+  .library-card.system-card > p {
+    margin-bottom: 8px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.18 !important;
+  }
 }

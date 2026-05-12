@@ -57,6 +57,8 @@ Smallest phones at `<=360px` can tighten further:
 | Section title token | `23.36px` |
 | Card title token | `21.44px` |
 
+Hero titles, section titles, and eyebrows should scale from their actual card or heading container width, not only from the viewport. Use the table above as the ceiling range, then tighten toward the readable floors when a card/image/section is narrow. The heading fitter in `footer.js` remains the final guard: it can shrink long headings to the readable floor and then allow wrapping when needed.
+
 ## Heading Fit Rules
 
 The fitter runs across all viewport widths.
