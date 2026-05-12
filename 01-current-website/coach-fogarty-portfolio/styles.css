@@ -5716,7 +5716,8 @@ a.credential-static[href] {
   }
 
   .site-header {
-    position: static;
+    position: relative;
+    z-index: 1000;
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
@@ -10073,7 +10074,8 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   }
 
   .site-header {
-    position: static;
+    position: relative;
+    z-index: 1000;
     display: grid;
     grid-template-columns: 44px minmax(0, 1fr) auto;
     align-items: center;
@@ -10157,7 +10159,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
     position: fixed;
     top: 72px;
     left: var(--mobile-page-gutter);
-    z-index: 60;
+    z-index: 1001;
     display: flex;
     flex-direction: column;
     width: min(282px, calc(100vw - (var(--mobile-page-gutter) * 2)));
@@ -10635,7 +10637,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1025px) {
   main#top > .hero .portrait-card {
     position: relative;
   }
@@ -11280,7 +11282,7 @@ main#top #systems .library-card.system-card > p {
 }
 
 /* Desktop hero: let the text use its full column and keep the portrait crop head-safe. */
-@media (min-width: 1000px) {
+@media (min-width: 1025px) {
   main#top > .hero {
     --hero-portrait-width: clamp(390px, 28vw, 620px);
     --hero-portrait-height: clamp(390px, 20vw, 520px);
@@ -11343,24 +11345,24 @@ main#top #systems .library-card.system-card > p {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1180px) {
+@media (min-width: 1025px) and (max-width: 1240px) {
   main#top > .hero {
-    --hero-portrait-width: clamp(410px, 41vw, 470px);
-    --hero-portrait-height: clamp(318px, 31vw, 360px);
-    --hero-desktop-gap: clamp(8px, 1.2vw, 14px);
+    --hero-portrait-width: clamp(380px, 34vw, 430px);
+    --hero-portrait-height: clamp(320px, 28vw, 370px);
+    --hero-desktop-gap: clamp(12px, 1.6vw, 22px);
     padding:
-      clamp(18px, 1.7vw, 22px)
-      clamp(20px, 2.4vw, 28px);
+      clamp(20px, 1.9vw, 28px)
+      clamp(28px, 2.8vw, 42px);
   }
 
   main#top > .hero h1 {
-    font-size: clamp(2.05rem, 4vw, 2.75rem) !important;
+    font-size: clamp(2.25rem, 4.2vw, 3.05rem) !important;
   }
 
   main#top > .hero .hero-text {
-    margin-top: clamp(10px, 1vw, 14px);
-    font-size: clamp(0.82rem, 1vw, 0.9rem) !important;
-    line-height: 1.4;
+    margin-top: clamp(10px, 1vw, 16px);
+    font-size: clamp(0.86rem, 1.06vw, 0.96rem) !important;
+    line-height: 1.42;
   }
 
   main#top > .hero .eyebrow {
@@ -11382,7 +11384,7 @@ main#top #systems .library-card.system-card > p {
 }
 
 /* Desktop hero highlight bar: one measured scale for label, links, spacing and fit. */
-@media (min-width: 1000px) {
+@media (min-width: 1025px) {
   main#top > .hero .hero-mobile-highlight {
     right: clamp(10px, 0.85vw, 14px);
     bottom: clamp(10px, 0.9vw, 18px);
@@ -11587,6 +11589,11 @@ main#top #systems .library-card.system-card {
   min-height: 0;
 }
 
+main#top #systems .system-card > h3,
+main#top #systems .library-card.system-card > h3 {
+  color: var(--red);
+}
+
 main#top #systems .library-card-media {
   aspect-ratio: 4 / 3;
   height: auto;
@@ -11659,6 +11666,7 @@ main#top #systems .system-card .library-actions {
 
   main#top #systems .system-card > h3,
   main#top #systems .library-card.system-card > h3 {
+    color: var(--red);
     max-width: 100%;
     overflow: visible !important;
     font-size: clamp(1.34rem, calc(0.8rem + 3.75cqw), 2.35rem) !important;
@@ -11737,6 +11745,7 @@ main#top #systems .system-card .library-actions {
 .about-cover-page .about-letter-body,
 .about-cover-page .about-letter-copy,
 .about-cover-page .about-letter-text,
+.about-cover-page .about-letter-text-column,
 .about-cover-page .about-letter-gallery {
   min-width: 0;
 }
@@ -11755,9 +11764,9 @@ main#top #systems .system-card .library-actions {
     display: grid;
     grid-template-rows: auto minmax(0, 1fr);
     width: min(1700px, calc(100vw - clamp(84px, 9vw, 180px)));
-    height: calc(100svh - clamp(96px, 9vh, 126px));
-    min-height: 650px;
-    max-height: 860px;
+    height: auto;
+    min-height: 0;
+    max-height: none;
     margin-top: clamp(18px, 2.2vh, 32px);
     padding:
       clamp(28px, 3.6vh, 50px)
@@ -11781,21 +11790,30 @@ main#top #systems .system-card .library-actions {
   .about-cover-page .about-letter-body {
     display: grid;
     grid-template-columns: minmax(620px, 1fr) clamp(380px, 28vw, 520px);
-    height: 100%;
+    height: auto;
     min-height: 0;
     gap: clamp(34px, 4.4vw, 78px);
-    align-items: stretch;
+    align-items: start;
   }
 
   .about-cover-page .about-letter-copy {
     display: grid;
-    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-content: start;
     min-height: 0;
-    gap: clamp(10px, 1.1vh, 16px);
+    gap: clamp(14px, 1.7vh, 26px);
   }
 
   .about-cover-page .about-letter-text {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 1vh, 14px) clamp(22px, 2.4vw, 34px);
     min-height: 0;
+  }
+
+  .about-cover-page .about-letter-text-column,
+  .about-cover-page .about-letter-text p {
+    min-width: 0;
   }
 
   .about-cover-page .about-cover-copy p:not(.eyebrow) {
@@ -11810,18 +11828,18 @@ main#top #systems .system-card .library-actions {
   }
 
   .about-cover-page .about-signature {
-    width: clamp(270px, 25vw, 440px);
+    width: clamp(250px, 23vw, 390px);
     margin-top: 0;
   }
 
   .about-cover-page .about-letter-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(6, minmax(0, 1fr));
-    height: 100%;
+    grid-template-rows: repeat(6, clamp(68px, 8.4vh, 104px));
+    height: auto;
     min-height: 0;
     gap: clamp(8px, 1.15vh, 14px) clamp(10px, 0.95vw, 16px);
-    align-self: stretch;
+    align-self: start;
   }
 
   .about-cover-page .about-letter-gallery img {
@@ -11833,8 +11851,8 @@ main#top #systems .system-card .library-actions {
 
 @media (min-width: 1120px) and (max-height: 780px) {
   .about-cover-page .about-letter-section {
-    height: calc(100svh - 86px);
-    min-height: 590px;
+    height: auto;
+    min-height: 0;
     padding:
       clamp(22px, 2.8vh, 34px)
       clamp(30px, 3.6vw, 60px);
@@ -11856,7 +11874,11 @@ main#top #systems .system-card .library-actions {
   }
 
   .about-cover-page .about-signature {
-    width: clamp(240px, 22vw, 360px);
+    width: clamp(220px, 20vw, 320px);
+  }
+
+  .about-cover-page .about-letter-gallery {
+    grid-template-rows: repeat(6, clamp(58px, 7.5vh, 78px));
   }
 }
 
@@ -11867,13 +11889,7 @@ main#top #systems .system-card .library-actions {
   }
 
   .about-cover-page .about-letter-text {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(8px, 1vh, 14px) clamp(22px, 2.4vw, 34px);
-  }
-
-  .about-cover-page .about-letter-text p {
-    min-width: 0;
   }
 
   .about-cover-page .about-cover-copy p:not(.eyebrow) {
@@ -11886,7 +11902,7 @@ main#top #systems .system-card .library-actions {
   }
 
   .about-cover-page .about-signature {
-    width: clamp(220px, 20vw, 330px);
+    width: clamp(210px, 18vw, 300px);
   }
 }
 
@@ -11899,9 +11915,13 @@ main#top #systems .system-card .library-actions {
     grid-template-columns: minmax(820px, 1fr) clamp(430px, 25vw, 560px);
   }
 
+  .about-cover-page .about-letter-gallery {
+    grid-template-rows: repeat(6, clamp(78px, 8.6vh, 112px));
+  }
+
   .about-cover-page .about-cover-copy p:not(.eyebrow) {
-    font-size: clamp(1.02rem, 0.62vw, 1.22rem) !important;
-    line-height: 1.5 !important;
+    font-size: clamp(0.98rem, 0.58vw, 1.12rem) !important;
+    line-height: 1.42 !important;
   }
 }
 
@@ -11957,10 +11977,24 @@ main#top #systems .system-card .library-actions {
 }
 
 @media (max-width: 560px) {
+  .about-cover-page {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .about-cover-page .about-letter-section {
-    width: calc(100vw - 24px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
     padding: 18px;
     border-radius: 24px;
+  }
+
+  .about-cover-page .about-letter-text,
+  .about-cover-page .about-letter-text-column,
+  .about-cover-page .about-cover-copy p:not(.eyebrow) {
+    width: 100%;
+    max-width: 100%;
   }
 
   .about-cover-page .about-letter-heading h1 {
@@ -11975,8 +12009,9 @@ main#top #systems .system-card .library-actions {
   }
 
   .about-cover-page .about-cover-copy p:not(.eyebrow) {
-    font-size: clamp(0.88rem, 3.72vw, 0.96rem) !important;
-    line-height: 1.48 !important;
+    overflow-wrap: break-word;
+    font-size: clamp(0.82rem, 3.45vw, 0.92rem) !important;
+    line-height: 1.42 !important;
   }
 
   .about-cover-page .about-letter-gallery {
@@ -11992,8 +12027,8 @@ main#top #systems .system-card .library-actions {
 /* Largest desktop cap: keep 2560px screens from scaling the page past the intended reading rhythm. */
 @media (min-width: 1025px) {
   :root {
-    --site-card-width: 1920px;
-    --site-chrome-content-width: 1920px;
+    --site-card-width: 1680px;
+    --site-chrome-content-width: 1680px;
     --site-chrome-gutter: 36px;
     --type-hero-title-size: clamp(3.3rem, calc(2.35rem + 1.7vw), 4.45rem);
     --type-section-title-size: clamp(2.1rem, calc(1.72rem + 0.62vw), 2.5rem);
@@ -12095,7 +12130,7 @@ main#top #systems .system-card .library-actions {
 }
 
 .contact-section .section-heading {
-  width: min(100%, 880px);
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -12104,8 +12139,8 @@ main#top #systems .system-card .library-actions {
 .contact-page .contact-section .contact-card,
 main#top .contact-section .contact-card {
   display: grid !important;
-  width: min(100%, 880px) !important;
-  max-width: 880px !important;
+  width: 100% !important;
+  max-width: none !important;
   grid-template-columns: 1fr !important;
   gap: 14px !important;
   margin-right: auto;
@@ -12122,8 +12157,8 @@ main#top .contact-section .contact-card {
 }
 
 .contact-page .contact-hero {
-  width: min(100%, 880px) !important;
-  max-width: 880px !important;
+  width: 100% !important;
+  max-width: none !important;
   margin-right: auto;
   margin-left: auto;
   padding: clamp(18px, 2.6vw, 24px) clamp(20px, 3vw, 28px) !important;
@@ -12215,5 +12250,161 @@ main#top .contact-form .button {
   .contact-page .contact-hero h1 {
     font-size: clamp(1.48rem, 7vw, 1.65rem) !important;
     line-height: 1.05 !important;
+  }
+}
+
+@media (min-width: 821px) {
+  .contact-form,
+  .contact-page .contact-form,
+  main#top .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px 16px !important;
+  }
+
+  .contact-name-row,
+  .contact-page .contact-name-row,
+  main#top .contact-name-row {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .contact-form .select-field,
+  .contact-page .contact-form .select-field,
+  main#top .contact-form .select-field {
+    grid-column: 1 / -1;
+    width: min(40%, 520px);
+  }
+
+  .contact-form label:has(textarea),
+  .contact-page .contact-form label:has(textarea),
+  main#top .contact-form label:has(textarea),
+  .contact-form .button,
+  .contact-page .contact-form .button,
+  main#top .contact-form .button {
+    grid-column: 1 / -1;
+  }
+}
+
+.contact-page {
+  display: flex;
+  min-height: calc(100vh - 58px);
+  flex-direction: column;
+}
+
+.contact-page .site-footer {
+  margin-top: auto;
+}
+
+.contact-page .contact-page-panel {
+  display: none !important;
+}
+
+@media (min-width: 821px) {
+  .contact-page .contact-section .contact-card {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr) !important;
+    gap: clamp(22px, 2.4vw, 36px) !important;
+    align-items: stretch;
+  }
+
+  .contact-page .contact-form {
+    align-content: start;
+  }
+
+  .contact-page .contact-page-panel {
+    order: 2;
+    display: flex !important;
+    padding: clamp(6px, 0.9vw, 12px) 0 clamp(6px, 0.9vw, 12px) clamp(22px, 2.2vw, 34px);
+    border-right: 0;
+    border-left: 1px solid rgba(158, 111, 53, 0.18);
+  }
+
+  .contact-page .contact-page-panel .contact-info-copy h2 {
+    font-size: clamp(1.45rem, 2.1vw, 2rem) !important;
+    line-height: 1.06 !important;
+  }
+
+  .contact-page .contact-page-panel .contact-info-copy p:not(.eyebrow) {
+    max-width: 34ch;
+    font-size: 0.96rem;
+    line-height: 1.48;
+  }
+
+  .contact-page .contact-page-panel .contact-detail-list {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .contact-page .contact-page-panel .contact-detail-list a,
+  .contact-page .contact-page-panel .contact-detail-list > span {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 10px;
+    white-space: normal;
+  }
+
+  .contact-page .contact-page-panel .contact-detail-list a > span:last-child,
+  .contact-page .contact-page-panel .contact-detail-list > span > span:last-child {
+    overflow-wrap: anywhere;
+  }
+
+  .contact-page .contact-page-panel .contact-detail-list strong {
+    margin-bottom: 1px;
+    font-size: 0.66rem;
+  }
+
+  .contact-page .contact-page-panel .contact-detail-list small {
+    display: block;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-page .contact-page-panel .contact-detail-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-page .contact-page-panel .contact-detail-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .contact-page .contact-page-panel .contact-socials {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .contact-page .contact-page-panel .contact-socials a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-page .contact-page-panel .contact-document-actions {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 22px;
+  }
+
+  .contact-page .contact-page-panel .contact-document-actions .button {
+    justify-content: center;
+    min-height: 40px;
+  }
+
+  .contact-page .contact-form textarea {
+    min-height: clamp(180px, 18vh, 260px) !important;
+    height: clamp(180px, 18vh, 260px) !important;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1100px) {
+  .contact-page .contact-section .contact-card {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 0.32fr) !important;
+  }
+
+  .contact-page .contact-form .select-field {
+    width: min(48%, 420px);
   }
 }

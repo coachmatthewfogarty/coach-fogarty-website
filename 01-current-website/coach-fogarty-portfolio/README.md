@@ -59,6 +59,19 @@ Core CSS palette:
 
 Do not drift the public website into the black/gold DPAT report look. DPAT reports have their own brand system inside `dpat/`.
 
+## Alignment And Branding Rules
+
+These rules are current as of the May 11 responsive cleanup:
+
+- Keep the public site warm, editorial, proof-driven, and staff-ready. The site should read like a serious college basketball coaching portfolio, not a generic landing page or a DPAT report.
+- Use the shared page shell for alignment. Major sections, cards, contact forms, systems grids, and media previews should line up to the same content edge unless a full-bleed header/footer treatment is intentional.
+- Do not add floating section cards inside other cards. Individual repeated cards are fine; page sections should remain clean bands or framed modules.
+- Keep the `MF` mark, Matthew Fogarty wordmark, current nav labels, and direct contact information stable unless the real brand/contact information changes.
+- Use `minmax(0, 1fr)` for responsive grids so text, buttons, tables, and image captions can shrink without creating horizontal overflow.
+- Long headings try to stay one line, then wrap at readable floors. Do not force brand or section titles into tiny text.
+- Buttons and document actions should stay visually aligned and equal-height when they are presented as a group.
+- Image crops should protect the subject first, then the composition. Faces, bodies, document text, and basketball action should not be accidentally cut off by a desktop-only crop rule.
+
 ## Responsive Design System
 
 Use `RESPONSIVE-DESIGN-SYSTEM.md` as the current source of truth before changing typography, spacing, tablet behavior, page grids, the homepage hero, header, footer, pills, mini boxes, cards, or forms.
@@ -71,6 +84,12 @@ Current global responsive rules:
 - `768-1024px`: tablet, mobile structure with roomier spacing.
 - `1025px+`: desktop structure starts.
 
+Current desktop cap:
+
+- Active desktop content cap is `1680px` through `--site-card-width` and `--site-chrome-content-width`.
+- Older `1200px` width notes are legacy defaults for narrow reading sections, not the global website cap.
+- Very large monitors should show more breathing room, not oversized typography or stretched cards.
+
 Tablet design rule:
 
 - Tablet should feel like mobile structure with desktop breathing room.
@@ -78,13 +97,29 @@ Tablet design rule:
 - `900-1024px` can gain desktop polish, but should still stay stacked for the homepage hero.
 - The homepage hero switches from stacked to split layout at `1025px+`.
 
+Crop-size ladder:
+
+- `600x400 overlay-thumb` WebP: smallest crop for overlay thumbnails, compact preview tiles, and fallback thumbnail use.
+- `1200x900 media-card` AVIF: standard card crop for homepage/media cards and most responsive previews.
+- `1800x2400 portrait` AVIF: tall portrait/detail slots where vertical framing is intentional.
+- `2400x1800 landscape` AVIF: largest crop for desktop detail views, large media displays, and wide/hero-style placements.
+- Do not wire a smaller crop into a larger desktop slot when a larger approved `q98` crop exists.
+- Keep crop labels in filenames so final website assets can be traced back to the approved crop decision.
+
+Table and structured-grid rule:
+
+- Mobile uses stacked cards/rows first.
+- Tablet can use two-column grids only when labels, numbers, buttons, and captions remain readable.
+- Desktop can use denser grids at `1025px+`, with compact desktop tuning around `1025px-1240px`.
+- Tables should scroll or stack before text becomes unreadable. Keep public website table/body copy at readable size; DPAT PDF reports have their own separate table sizing rules under `dpat/`.
+
 Heading fit rule:
 
 - Eyebrows, section titles, and card titles try to stay one line.
 - If a title cannot stay one line without becoming too small, it wraps instead of shrinking into unreadable text.
 - Readable floors are: section title `18px` mobile, `20px` tablet, `25px` desktop; card title `18px` mobile, `20px` tablet, `22px` desktop; eyebrow `8px` all breakpoints.
 
-When changing global responsive rules, verify representative widths: `360`, `390`, `430`, `768`, `900`, `1024`, `1280`, and `1440`.
+When changing global responsive rules, verify representative widths: `360`, `390`, `430`, `768`, `900`, `1024`, `1280`, `1440`, and `1680`.
 
 ## 2026-05-10 Updates To Remember
 

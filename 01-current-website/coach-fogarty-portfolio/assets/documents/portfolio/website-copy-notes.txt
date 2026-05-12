@@ -987,6 +987,33 @@ Tablet design rule:
 
 Tablet should be mobile structure with desktop breathing room. Use stacked layouts through 1024px unless a section has a clear reason and enough room to split. Add desktop polish around 900px, but switch the homepage hero and other major split layouts at 1025px+.
 
+May 11 responsive cleanup:
+
+- RESPONSIVE-DESIGN-SYSTEM.md is the source of truth when older notes conflict.
+- Desktop starts at 1025px. Do not revive older 1000px hero or desktop-switch rules.
+- Compact desktop tuning lives around 1025px-1240px.
+- Active wide-desktop cap is 1680px through --site-card-width and --site-chrome-content-width.
+- Older 1200px width notes are narrow-section defaults only, not the global site cap.
+- Keep alignment on the shared page shell; use minmax(0, 1fr) for grids so cards, tables, document titles and buttons do not overflow.
+- Public website stays warm editorial coaching portfolio. DPAT black/gold styling stays inside dpat/ report builds.
+
+Crop-size ladder from smallest mobile/thumbnail to biggest desktop/detail:
+
+- 600x400 overlay-thumb WebP: smallest crop for thumbnails and compact mobile preview tiles.
+- 1200x900 media-card AVIF: standard responsive card crop.
+- 1800x2400 portrait AVIF: tall portrait/detail slot crop.
+- 2400x1800 landscape AVIF: largest crop for desktop detail, wide media and hero-style placements.
+- Use the smallest crop that matches the rendered slot, but do not stretch a 600x400 crop into desktop detail space when a larger approved q98 crop exists.
+- Keep q98 and the crop label in live filenames.
+
+Tables and structured grids:
+
+- Mobile stacks cards and rows first.
+- Tablet keeps mobile structure with more breathing room; use two columns only when labels, values, buttons and captions remain readable.
+- Desktop grids/tables start at 1025px+.
+- Tables should scroll or stack before text becomes unreadable.
+- Long URLs, emails, filenames and document titles must wrap instead of pushing the page sideways.
+
 Core type scale:
 
 - Eyebrow: mobile 10.88px, tablet 11.2px -> 12.16px, desktop 12.16px.
@@ -1008,7 +1035,7 @@ Readable floors:
 
 Spacing and padding:
 
-- Page gutter: 12px small mobile/mobile, 16px -> 28px tablet, max page width 1200px desktop.
+- Page gutter: 12px small mobile/mobile, 16px -> 28px tablet, active desktop cap 1680px with 36px+ gutters.
 - Section gap: 18px small mobile, 32px mobile typical, 24px tablet, 28px desktop typical.
 - Section/card padding: 16px small mobile, 18px mobile, 18px -> 28px tablet, 34px sections and 22px cards desktop.
 - Hero padding: 14px 16px 13px small mobile, 14px 20px 12px mobile, 18px -> 28px tablet, 36px 42px 22px desktop.
@@ -1016,7 +1043,7 @@ Spacing and padding:
 
 Verification widths for responsive changes:
 
-360, 390, 430, 768, 900, 1024, 1280, 1440.
+360, 390, 430, 768, 900, 1024, 1280, 1440, 1680.
 
 
 Professional References Available Upon Request

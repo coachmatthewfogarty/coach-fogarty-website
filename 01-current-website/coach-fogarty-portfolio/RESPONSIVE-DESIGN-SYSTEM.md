@@ -33,6 +33,38 @@ Use this decision model:
 
 For the homepage hero, keep the mobile/tablet stacked structure through `1024px`. Switch to the split desktop hero at `1025px+`.
 
+## 2026-05-11 Source-Of-Truth Cleanup
+
+If older notes conflict with this file, use this file.
+
+- Desktop begins at `1025px`. Do not bring back older `1000px` desktop-switch rules.
+- The active wide-desktop content cap is `1680px`, not the older `1200px` default. Use narrower widths only when a specific reading section needs them.
+- Compact desktop tuning lives around `1025px-1240px`; this range should be desktop, but tighter and more carefully cropped than large desktop.
+- Mobile/tablet structure stays stacked through `1024px` unless a component has a very specific, tested reason to split earlier.
+- The public website and DPAT reports have separate design systems. Public website typography and table rules should not be copied into DPAT PDF tables, and DPAT black/gold report styling should not leak into the public site.
+
+## Crop Size Ladder
+
+Use this ladder from smallest mobile/thumbnail crop to largest desktop/detail crop:
+
+| Crop | Size | Format | Use |
+|---|---:|---|---|
+| `overlay-thumb` | `600x400` | WebP | Smallest crop for overlay thumbnails, compact preview tiles, and light mobile thumbnail use |
+| `media-card` | `1200x900` | AVIF | Default responsive card crop for homepage cards, media cards, system previews, and most gallery cards |
+| `portrait` | `1800x2400` | AVIF | Tall portrait slots and detail views where vertical framing is the point |
+| `landscape` | `2400x1800` | AVIF | Largest desktop/detail crop for wide displays, large media, and hero-style placements |
+
+Crop rules:
+
+- Start with the smallest crop that matches the actual rendered slot, then step up as the slot gets larger.
+- Do not stretch a `600x400` thumbnail into desktop detail space when a `1200x900` or `2400x1800` approved crop exists.
+- Keep `q98` and the crop label in the final filename so the live website can be traced back to the approved crop.
+- Use `object-fit: cover` for photographic cards unless the asset is text-heavy or document-like. Use `contain` only for document previews or graphics that must remain fully visible.
+- Do not solve mismatched image ratios with black bars, blurred fill, transparent padding, or fake borders.
+- Protect faces, bodies, document text, basketball action, and logos before decorative composition.
+- On mobile, prefer subject-safe crops and stable card height over dramatic desktop composition.
+- On desktop, use the larger crop to show more context, but keep the subject readable inside the card or hero frame.
+
 ## Type Scale
 
 | Item | Mobile | Tablet | Desktop |
@@ -91,15 +123,36 @@ Homepage stat pills use the stat band as their sizing container, so the type fol
 | Homepage hero | stacked | stacked | split image/copy |
 | Hero layout switch | mobile/tablet through `1024px` | desktop at `1025px+` | desktop |
 | Header | mobile drawer | mobile drawer | full nav |
-| Page width | full minus gutters | full minus larger gutters | max `1200px` |
+| Page width | full minus gutters | full minus larger gutters | max `1680px` site cap |
 | Section grids | mostly `1fr` | mostly `1fr` or `2-col` | `2-4 col` as needed |
 | Mini cards | compact on small mobile | desktop-like | desktop-like |
+
+## Tables And Structured Data
+
+For the public website, "table" also includes stats rows, credential/document grids, contact/document action groups, and other structured card layouts.
+
+| Range | Table/Grid Behavior | Type Behavior |
+|---|---|---|
+| `<=430px` | Stack rows/cards; keep one primary action per row when possible | Do not shrink body/table text below readable mobile floors |
+| `431-720px` | Stack first; use short two-column groups only for tiny action sets | Labels can tighten, but values and buttons stay readable |
+| `721-899px` | Tablet portrait remains mostly stacked; two-column only when content is short | Use tablet floors, not desktop density |
+| `900-1024px` | Add spacing and polish; still avoid major desktop table layouts | Keep headings and table labels readable before adding columns |
+| `1025px-1240px` | Compact desktop; columns allowed, but reduce gaps/crop sizes carefully | Use compact desktop type, never tiny forced-fit type |
+| `1241px+` | Full desktop grids/tables allowed within the `1680px` cap | Let columns breathe; do not scale text endlessly upward |
+
+Rules:
+
+- Prefer stacking or horizontal scrolling over unreadable table text.
+- Use `minmax(0, 1fr)` in grids so text can wrap and the page avoids horizontal overflow.
+- Keep buttons equal-height inside action groups.
+- Use `overflow-wrap: anywhere` for long URLs, emails, filenames, and document titles.
+- DPAT PDF reports are the exception; use the DPAT report design guide for those table sizes.
 
 ## Spacing And Padding
 
 | Item | Small mobile `<=430px` | Mobile `431-720px` | Tablet `721-1024px` | Desktop |
 |---|---:|---:|---:|---:|
-| Page gutter | `12px` | `12px` each side | `16px -> 28px` | `16px+`, max page `1200px` |
+| Page gutter | `12px` | `12px` each side | `16px -> 28px` | `36px+`, max page `1680px` |
 | Section gap | `18px` | `32px` typical | `24px` | `28px` typical |
 | Section/card padding | `16px` | `18px` | `18px -> 28px` | `34px` sections, `22px` cards |
 | Hero padding | `14px 16px 13px` | `14px 20px 12px` | `18px -> 28px` | `36px 42px 22px` |
@@ -127,13 +180,15 @@ Homepage stat pills use the stat band as their sizing container, so the type fol
 - For new repeated cards, preserve the existing card rhythm: compact on mobile, roomier on tablet, dense only on desktop.
 - Keep form input text at `16px` across all breakpoints.
 - Keep public website visuals warm, editorial, parchment-based, and separate from the black/gold DPAT report design system.
+- Keep section edges aligned to the shared page shell unless the component is intentionally full-bleed site chrome.
+- Do not use a desktop crop, table, or grid rule as the reason text becomes unreadable; change structure before shrinking type below the floor.
 
 ## Verification Standard
 
 When changing global type/layout rules, test representative widths:
 
 ```text
-360, 390, 430, 768, 900, 1024, 1280, 1440
+360, 390, 430, 768, 900, 1024, 1280, 1440, 1680
 ```
 
 Check for:
@@ -143,3 +198,5 @@ Check for:
 - no card titles below their readable floors,
 - tablet hero still stacked through `1024px`,
 - desktop hero split at `1025px+`.
+- compact desktop hero/table/card behavior still works from `1025px-1240px`,
+- wide desktop remains capped and readable at `1680px+`.

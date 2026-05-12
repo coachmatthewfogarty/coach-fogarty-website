@@ -43,6 +43,21 @@ Keep website images, documents, videos, generated web assets, and helper JS insi
 - Mobile and tablet stay stacked through `1024px`; desktop structure starts at `1025px+`.
 - Tablet should be treated as mobile structure with desktop breathing room: `721-899px` tablet portrait, `900-1024px` large tablet/tablet landscape, and `1025px+` desktop.
 - Global heading/card-title fitting is handled by `footer.js`: keep one-line rules when readable, but wrap long titles instead of shrinking below the readable floors.
+- Current desktop max content cap is `1680px` for the active public site. Older `1200px` notes are legacy defaults unless a page section explicitly opts into a narrower reading width.
+- Image crop sizes move from smallest to largest as `600x400 overlay-thumb`, `1200x900 media-card`, `1800x2400 portrait`, and `2400x1800 landscape`. Use the smallest crop only for thumbnails/compact mobile previews; use the largest appropriate crop for desktop hero/detail slots.
+- Tables and structured grids should adapt to available crop/container width: stack on mobile, use two-column tablet grids only when readable, and move into desktop grids at `1025px+`. Do not shrink table or card text below the readable floors just to force a row to fit.
+
+## 2026-05-11 Laptop Handoff Rules
+
+These are the current rules from the May 11 cleanup and should guide work tomorrow on another laptop:
+
+- Keep `README.md`, `01-current-website/coach-fogarty-portfolio/README.md`, and `01-current-website/coach-fogarty-portfolio/RESPONSIVE-DESIGN-SYSTEM.md` aligned. If a rule conflicts, `RESPONSIVE-DESIGN-SYSTEM.md` wins for layout and typography.
+- Public website brand stays warm, editorial, parchment-based, coach-to-coach, and staff-ready. Do not mix in the black/gold DPAT report look except inside `dpat/` report builds.
+- Desktop begins at `1025px`. Do not revive older `1000px` desktop hero rules.
+- The homepage hero stays stacked through `1024px` and splits at `1025px+`. Compact desktop hero tuning lives in the `1025px-1240px` range.
+- Wide desktop pages should feel polished but not oversized. The active cap is `1680px`, with page gutters protecting readability on very large monitors.
+- Alignment should be full-width and stable: sections align to the shared page shell, cards use `minmax(0, 1fr)`, and long words/URLs must wrap instead of pushing layout sideways.
+- Crop decisions must be traceable in filenames with the crop label and `q98` quality marker before being wired into the website.
 
 ## 2026-05-10 Website Updates To Remember
 
