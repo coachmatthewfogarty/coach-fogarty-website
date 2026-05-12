@@ -1004,7 +1004,7 @@ const playingCareerAlbums = [
   {
     title: "Playing Career & Achievements",
     category: "Playing Career",
-    eyebrow: "Playing Background",
+    eyebrow: "PLAYING BACKGROUND",
     caption: "Playing career photo album",
     showCounter: true,
     thumbnail: playingCareerPhoto("playing-career-shasta-college-jump-shot-carousel-1200x900.avif"),
@@ -1125,7 +1125,7 @@ const playingCareerAwardAlbums = [
   {
     title: "Playing Career Awards",
     category: "Awards",
-    eyebrow: "Playing Background",
+    eyebrow: "PLAYING BACKGROUND",
     caption: "Playing career awards",
     showCounter: true,
     thumbnail: playingCareerAward("playing-awards-shasta-college-hall-of-fame-overlay-thumb-600x400.webp"),
@@ -1183,7 +1183,7 @@ const playingCareerAwardAlbums = [
 ];
 
 const archerMediaAlbum = {
-  eyebrow: "Player Development Innovation",
+  eyebrow: "PLAYER DEVELOPMENT INNOVATION",
   title: "The Archer Training Visuals",
   showCounter: true,
   items: [
@@ -1568,7 +1568,7 @@ function renderGallery() {
   });
 }
 
-function mediaLibraryAlbum(album, eyebrow = "Gallery") {
+function mediaLibraryAlbum(album, eyebrow = "GALLERY") {
   return {
     ...album,
     eyebrow: album.eyebrow || eyebrow,
@@ -1622,24 +1622,24 @@ function renderMediaLibraryPage() {
     return;
   }
 
-  const coachingAlbums = mediaAlbums.map((album) => mediaLibraryAlbum(album, "Coaching Gallery"));
-  const archerAlbum = mediaLibraryAlbum(archerMediaAlbum, "Player Development Innovation");
-  const anayaAlbums = anayaSections.map((section) => mediaLibraryAlbum(section, "Player Development Case Study"));
-  const playingAlbum = mediaLibraryAlbum(playingCareerAlbums[0], "Playing Background");
-  const awardsAlbum = mediaLibraryAlbum(playingCareerAwardAlbums[0], "Playing Background");
+  const coachingAlbums = mediaAlbums.map((album) => mediaLibraryAlbum(album, "COACHING GALLERY"));
+  const archerAlbum = mediaLibraryAlbum(archerMediaAlbum, "PLAYER DEVELOPMENT INNOVATION");
+  const anayaAlbums = anayaSections.map((section) => mediaLibraryAlbum(section, "PLAYER DEVELOPMENT CASE STUDY"));
+  const playingAlbum = mediaLibraryAlbum(playingCareerAlbums[0], "PLAYING BACKGROUND");
+  const awardsAlbum = mediaLibraryAlbum(playingCareerAwardAlbums[0], "PLAYING BACKGROUND");
   const archerPhotoAlbum = mediaLibraryAlbum(
     {
       title: "The Archer Photos",
       items: archerMediaAlbum.items.filter((item) => item.type !== "video")
     },
-    "Player Development Innovation"
+    "PLAYER DEVELOPMENT INNOVATION"
   );
   const archerVideoAlbum = mediaLibraryAlbum(
     {
       title: "The Archer Videos",
       items: archerMediaAlbum.items.filter((item) => item.type === "video")
     },
-    "Player Development Innovation"
+    "PLAYER DEVELOPMENT INNOVATION"
   );
   const anayaVideoAlbum = mediaLibraryAlbum(
     {
@@ -1650,7 +1650,7 @@ function renderMediaLibraryPage() {
           .map((item) => ({ ...item, caption: `${section.title} - ${item.caption || "Video"}` }))
       )
     },
-    "Player Development Case Study"
+    "PLAYER DEVELOPMENT CASE STUDY"
   );
   const anayaFullAlbum = mediaLibraryAlbum(
     {
@@ -1662,7 +1662,7 @@ function renderMediaLibraryPage() {
         }))
       )
     },
-    "Player Development Case Study"
+    "PLAYER DEVELOPMENT CASE STUDY"
   );
 
   mediaLibraryAlbums = [
@@ -2001,7 +2001,7 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   mediaOverlay.classList.toggle("is-award-landscape", isAwardsOverlay && awardOrientation !== "portrait");
 
   if (mediaOverlayEyebrow) {
-    mediaOverlayEyebrow.textContent = album.eyebrow || "Gallery";
+    mediaOverlayEyebrow.textContent = album.eyebrow || "GALLERY";
   }
 
   mediaOverlayTitle.textContent = album.title || album.category;

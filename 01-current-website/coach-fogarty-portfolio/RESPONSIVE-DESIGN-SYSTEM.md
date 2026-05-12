@@ -43,6 +43,8 @@ For the homepage hero, keep the mobile/tablet stacked structure through `1024px`
 | Section title line-height | `26.78px` | `26.88px -> 36.96px` | `36.61px -> 41.6px` |
 | Card title | `22.72px` | `23.36px -> 25.6px` | `25.6px -> 29.6px` |
 | Card title line-height | `24.99px` | `25.23px -> 27.65px` | `27.65px -> 31.97px` |
+| Stat pill value | `12.16px -> 20px` | `12.16px -> 20px` | `15.2px -> 20px` |
+| Stat pill label | `8.32px -> 12.48px` | `8.32px -> 12.48px` | `10.24px -> 12.48px` |
 | Hero title | `34.4px` | `37.6px -> 48px` | `52px -> 71.2px` |
 | Paragraphs | `14.72px-16px` | mostly `16px` | mostly `16px` |
 | Form input text | `16px` | `16px` | `16px` |
@@ -71,9 +73,13 @@ Readable floors:
 |---|---:|---:|---:|
 | Section title | `18px` | `20px` | `25px` |
 | Card title | `18px` | `20px` | `22px` |
+| Stat pill value | `11.52px` | `12.16px` | `15.2px` |
+| Stat pill label | `8px` | `8.32px` | `10.24px` |
 | Eyebrow | `8px` | `8px` | `8px` |
 
 Do not force long titles to become microscopic just to keep one line. If they cannot fit above the floor, allow wrapping.
+
+Homepage stat pills use the stat band as their sizing container, so the type follows the available card/image width instead of only the viewport. Keep the ceiling at `20px` for values and `12.48px` for labels; tighten toward the floors only on narrow cards.
 
 ## Layout Rules
 
