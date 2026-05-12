@@ -1817,6 +1817,10 @@ a.credential-static[href] {
   object-position: center center;
 }
 
+.media-overlay.has-multiple-media .media-overlay-viewer > img {
+  cursor: pointer;
+}
+
 .media-overlay.is-overlay-portrait:not(.is-awards-overlay) .media-overlay-viewer {
   height: clamp(340px, 60vh, 620px);
   max-height: calc(100vh - 280px);
@@ -10336,10 +10340,10 @@ main#top .credentials-card .credential-document-heading .eyebrow {
     display: flex !important;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 0 clamp(4px, 0.48vw, 12px);
+    gap: 0 clamp(3px, 2.2cqw, 12px);
     overflow: visible;
     color: rgba(255, 246, 230, 0.44);
-    font-size: clamp(0.7rem, calc(0.54rem + 0.18vw), 0.9rem);
+    font-size: clamp(0.62rem, 2.6cqw, 0.9rem);
     font-weight: 800;
     line-height: 1.15;
     white-space: normal;
@@ -10356,6 +10360,37 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   main#top > .hero .hero-mobile-highlight span {
     display: inline;
     flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1180px) {
+  main#top > .hero {
+    padding:
+      clamp(22px, 2.1vw, 28px)
+      clamp(24px, 3vw, 34px);
+  }
+
+  main#top > .hero h1 {
+    font-size: clamp(2.35rem, 8.2cqw, 3.35rem) !important;
+  }
+
+  main#top > .hero .hero-mobile-highlight {
+    right: 10px;
+    left: 10px;
+    padding: 8px 10px 9px;
+  }
+
+  main#top > .hero #impact.hero-stat-band article {
+    min-height: 50px;
+    padding: 6px 5px;
+  }
+
+  main#top > .hero #impact.hero-stat-band article strong {
+    font-size: clamp(0.98rem, 2.1vw, 1.22rem) !important;
+  }
+
+  main#top > .hero #impact.hero-stat-band article span {
+    font-size: clamp(0.52rem, 1.1vw, 0.66rem) !important;
   }
 }
 
@@ -10376,6 +10411,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
 
   main#top > .hero .hero-copy {
     align-self: end;
+    container-type: inline-size;
   }
 
   main#top > .hero .portrait-card {
@@ -10569,14 +10605,14 @@ main:not(#top) .anaya-hero,
     --type-small-body-size: clamp(0.9rem, calc(0.72rem + 0.18vw), 1.02rem);
     --type-stat-value-size: clamp(1.18rem, calc(0.82rem + 0.68vw), 1.72rem);
     --type-stat-label-size: clamp(0.68rem, calc(0.5rem + 0.28vw), 0.88rem);
-    --hero-portrait-width: clamp(320px, 28vw, 720px);
+    --hero-portrait-width: clamp(390px, 30vw, 720px);
     --hero-portrait-height: clamp(410px, 27vw, 650px);
-    --hero-desktop-gap: clamp(24px, 3.2vw, 72px);
+    --hero-desktop-gap: clamp(16px, 2.6vw, 72px);
   }
 
   .hero h1,
   main#top > .hero h1 {
-    font-size: var(--type-hero-title-size) !important;
+    font-size: clamp(3.35rem, 9.1cqw, var(--type-hero-title-size)) !important;
     line-height: var(--type-hero-title-line) !important;
   }
 
@@ -10729,5 +10765,112 @@ main:not(#top) .anaya-hero,
     margin-bottom: 8px !important;
     font-size: 0.78rem !important;
     line-height: 1.18 !important;
+  }
+}
+
+/* Final narrow-desktop handoff: keep the right portrait/bar visible without clipping left copy. */
+@media (min-width: 1025px) and (max-width: 1180px) {
+  main#top > .hero h1 {
+    font-size: clamp(2.25rem, 8cqw, 3.2rem) !important;
+    line-height: 0.98 !important;
+  }
+
+  main#top > .hero #impact.hero-stat-band article {
+    min-height: 50px !important;
+    padding: 6px 5px !important;
+  }
+
+  main#top > .hero #impact.hero-stat-band article strong {
+    font-size: clamp(0.92rem, 2vw, 1.12rem) !important;
+  }
+
+  main#top > .hero #impact.hero-stat-band article span {
+    font-size: clamp(0.5rem, 1.05vw, 0.62rem) !important;
+  }
+}
+
+/* Systems & Proof Of Work: responsive fit for intro and mini-card text. */
+main#top #systems.library-section {
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+main#top #systems .section-heading {
+  max-width: 100%;
+  margin-bottom: clamp(8px, 1.1cqw, 14px);
+}
+
+main#top #systems .section-heading .eyebrow {
+  font-size: clamp(0.64rem, calc(0.53rem + 0.42cqw), 1.02rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: clamp(0.08em, 0.16cqw, 0.14em);
+  white-space: nowrap !important;
+}
+
+main#top #systems .section-heading h2 {
+  font-size: clamp(1.3rem, calc(0.95rem + 2.45cqw), 3.1rem) !important;
+  line-height: 1.03 !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal;
+}
+
+main#top #systems .portfolio-systems-intro {
+  max-width: 100%;
+  margin: clamp(-4px, -0.2cqw, -1px) 0 clamp(12px, 1.1cqw, 20px);
+  font-size: clamp(0.74rem, calc(0.62rem + 0.55cqw), 1.04rem) !important;
+  line-height: 1.32;
+  text-wrap: pretty;
+  overflow-wrap: normal;
+}
+
+main#top #systems .system-card {
+  container-type: inline-size;
+  min-width: 0;
+}
+
+main#top #systems .system-card > p,
+main#top #systems .library-card.system-card > p {
+  font-size: clamp(0.68rem, calc(0.54rem + 1cqw), 0.94rem) !important;
+  line-height: 1.22 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 1025px) and (max-width: 1180px) {
+  main#top #systems .library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1181px) {
+  main#top #systems .library-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  main#top #systems .portfolio-systems-intro {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 720px) {
+  main#top #systems .section-heading {
+    margin-bottom: 9px;
+  }
+
+  main#top #systems .portfolio-systems-intro {
+    font-size: clamp(0.76rem, 3.35cqw, 0.9rem) !important;
+    line-height: 1.34;
+  }
+}
+
+@media (max-width: 360px) {
+  main#top #systems .section-heading h2 {
+    font-size: clamp(1.18rem, 6.4cqw, 1.3rem) !important;
+  }
+
+  main#top #systems .system-card > p,
+  main#top #systems .library-card.system-card > p {
+    font-size: clamp(0.64rem, 3.75cqw, 0.7rem) !important;
   }
 }

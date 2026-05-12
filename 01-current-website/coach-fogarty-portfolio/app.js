@@ -2,7 +2,7 @@ const librarySections = [
   {
     type: "Development",
     title: "Player Development",
-    description: "Player plans, drill logs and measurable growth.",
+    description: "Player plans, drill logs, measurable growth.",
     media: {
       src: "assets/media/player-development/photos/player-development-on-court-instruction-01-media-card-cover-center-1200x900.avif",
       alt: "On-court player development instruction"
@@ -137,7 +137,7 @@ const librarySections = [
   {
     type: "Leadership",
     title: "Coaching Philosophy",
-    description: "Leadership, alignment and program standards.",
+    description: "Leadership, alignment, program standards.",
     media: {
       src: "assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
       alt: "Staff leadership and team culture moment"
@@ -1386,6 +1386,7 @@ function enableDragScroll(track) {
 
     if (didDrag) {
       suppressClickUntil = window.performance.now() + 350;
+      track.dataset.dragScrollSuppressUntil = String(suppressClickUntil);
     }
   };
 
@@ -1972,6 +1973,17 @@ function queueActiveMediaThumbnailScroll(behavior = "smooth") {
   });
 }
 
+function selectMediaItem(index, { thumbScrollBehavior = "smooth" } = {}) {
+  const items = activeAlbumItems();
+
+  if (!Number.isInteger(index) || index < 0 || index >= items.length) {
+    return;
+  }
+
+  activeItemIndex = index;
+  renderMediaOverlay({ thumbScrollBehavior });
+}
+
 function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   if (!mediaOverlay || !mediaOverlayTitle || !mediaOverlayCaption || !mediaOverlayViewer || !mediaOverlayStrip) {
     return;
@@ -1994,11 +2006,13 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   const isGalleryOverlay = isPhotoAlbumOverlay;
   const awardOrientation = item.orientation || "landscape";
   const isPortraitOverlay = item.type !== "video" && item.orientation === "portrait";
+  const hasMultipleItems = items.length > 1;
   mediaOverlay.classList.toggle("is-gallery-overlay", isGalleryOverlay);
   mediaOverlay.classList.toggle("is-awards-overlay", isAwardsOverlay);
   mediaOverlay.classList.toggle("is-overlay-portrait", isPortraitOverlay);
   mediaOverlay.classList.toggle("is-award-portrait", isAwardsOverlay && awardOrientation === "portrait");
   mediaOverlay.classList.toggle("is-award-landscape", isAwardsOverlay && awardOrientation !== "portrait");
+  mediaOverlay.classList.toggle("has-multiple-media", hasMultipleItems);
 
   if (mediaOverlayEyebrow) {
     mediaOverlayEyebrow.textContent = album.eyebrow || "GALLERY";
@@ -2037,14 +2051,6 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
     })
     .join("");
 
-  mediaOverlayStrip.querySelectorAll(".media-thumb").forEach((thumb) => {
-    thumb.addEventListener("click", () => {
-      activeItemIndex = Number(thumb.dataset.mediaIndex);
-      renderMediaOverlay();
-    });
-  });
-
-  const hasMultipleItems = items.length > 1;
   const showThumbnailStrip = hasMultipleItems || isPhotoAlbumOverlay;
   mediaOverlayStrip.hidden = !showThumbnailStrip;
   mediaOverlayStrip.classList.toggle("has-single-thumb", showThumbnailStrip && items.length === 1);
@@ -2082,8 +2088,7 @@ function closeMediaOverlay() {
 
 function showMediaItem(direction) {
   const items = activeAlbumItems();
-  activeItemIndex = (activeItemIndex + direction + items.length) % items.length;
-  renderMediaOverlay();
+  selectMediaItem((activeItemIndex + direction + items.length) % items.length);
 }
 
 function renderAnayaGalleries() {
@@ -2163,7 +2168,7 @@ function renderPlayingCareerCarousel() {
   playingCareerTrack.innerHTML = items
     .map(
       (item, index) => `
-        <button class="achievement-card" type="button" data-playing-career-index="${index}" aria-label="Open ${mediaItemTitle(item, playingCareerAlbums[0])}">
+        <button class="achievement-card" type="button" data-playing-career-index="${index}" data-overlay-trigger="playing-career" aria-label="Open ${mediaItemTitle(item, playingCareerAlbums[0])}">
           <img
             src="${encodeURI(mediaItemCarouselSrc(item))}"
             data-image-role="carousel"
@@ -2175,13 +2180,41 @@ function renderPlayingCareerCarousel() {
     )
     .join("");
 
-  playingCareerTrack.querySelectorAll("[data-playing-career-index]").forEach((card) => {
-    card.addEventListener("click", openCardAlbum);
-  });
+  connectPlayingCareerCards();
 }
 
-function openCardAlbum(event) {
-  openMediaAlbum(0, playingCareerAlbums, Number(event.currentTarget.dataset.playingCareerIndex));
+function connectPlayingCareerCards() {
+  if (!playingCareerTrack || playingCareerTrack.dataset.overlayReady === "true") {
+    return;
+  }
+
+  playingCareerTrack.dataset.overlayReady = "true";
+  playingCareerTrack.addEventListener(
+    "click",
+    (event) => {
+      const card = event.target.closest("[data-playing-career-index]");
+      const suppressUntil = Number(playingCareerTrack.dataset.dragScrollSuppressUntil || 0);
+
+      if (!card || !playingCareerTrack.contains(card) || window.performance.now() < suppressUntil) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openPlayingCareerAlbum(card);
+    },
+    true
+  );
+}
+
+function openPlayingCareerAlbum(card) {
+  const itemIndex = Number(card.dataset.playingCareerIndex);
+
+  if (!Number.isInteger(itemIndex)) {
+    return;
+  }
+
+  openMediaAlbum(0, playingCareerAlbums, itemIndex);
 }
 
 function playingCareerPageSize() {
@@ -2331,6 +2364,34 @@ if (mediaOverlayPrev) {
 
 if (mediaOverlayNext) {
   mediaOverlayNext.addEventListener("click", () => showMediaItem(1));
+}
+
+if (mediaOverlayViewer) {
+  mediaOverlayViewer.addEventListener("click", (event) => {
+    if (event.target.closest("video") || !mediaOverlayNext || mediaOverlayNext.hidden) {
+      return;
+    }
+
+    showMediaItem(1);
+  });
+}
+
+if (mediaOverlayStrip) {
+  mediaOverlayStrip.addEventListener(
+    "click",
+    (event) => {
+      const thumb = event.target.closest(".media-thumb");
+      const suppressUntil = Number(mediaOverlayStrip.dataset.dragScrollSuppressUntil || 0);
+
+      if (!thumb || !mediaOverlayStrip.contains(thumb) || window.performance.now() < suppressUntil) {
+        return;
+      }
+
+      event.preventDefault();
+      selectMediaItem(Number(thumb.dataset.mediaIndex));
+    },
+    true
+  );
 }
 
 if (mediaOverlay) {
