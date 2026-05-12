@@ -371,6 +371,12 @@ main#top .section-heading .eyebrow {
   box-shadow: var(--shadow);
 }
 
+.portrait-card picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .portrait-card img {
   width: 100%;
   height: 100%;
@@ -679,6 +685,72 @@ main#top #impact.hero-stat-band article span {
 
 #featured-work .innovation-section .section-heading {
   margin-bottom: 13px;
+}
+
+@media (min-width: 1025px) {
+  main#top #featured-work {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    width: 100%;
+    max-width: none;
+    margin: 28px auto 0;
+    gap: clamp(24px, 2.2vw, 42px);
+  }
+
+  main#top #featured-work .innovation-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    min-height: 100%;
+    margin: 0;
+    padding:
+      clamp(30px, 2.6vw, 52px)
+      clamp(28px, 2.5vw, 54px);
+  }
+
+  main#top #featured-work .innovation-section .section-heading {
+    flex: 0 0 auto;
+    margin-bottom: clamp(18px, 1.6vw, 24px);
+  }
+
+  main#top #featured-work .innovation-panel {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: clamp(16px, 1.45vw, 22px);
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  main#top #featured-work .innovation-thumbnail {
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    box-shadow: 0 16px 34px rgba(52, 36, 24, 0.13);
+  }
+
+  main#top #featured-work .innovation-panel p {
+    width: 100%;
+    max-width: 68ch;
+    margin: 0;
+    font-size: clamp(1rem, 0.82rem + 0.18vw, 1.12rem) !important;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  main#top #featured-work .innovation-panel > div {
+    flex: 1 1 auto;
+    align-self: stretch;
+  }
+
+  main#top #featured-work .innovation-panel .button {
+    width: 100%;
+    min-height: 52px;
+    padding-right: 24px;
+    padding-left: 24px;
+    font-size: clamp(0.98rem, 0.84rem + 0.18vw, 1.08rem);
+  }
 }
 
 .section-split .split-layout,
@@ -7764,8 +7836,8 @@ main:not(#top) .anaya-hero h1 {
 /* Short About page */
 .about-letter-section {
   display: grid;
-  gap: 30px;
-  padding: 34px 36px;
+  gap: clamp(22px, 2.4vw, 34px);
+  padding: clamp(24px, 3.1vw, 46px);
   background: linear-gradient(135deg, rgba(255, 248, 237, 0.92), rgba(247, 238, 224, 0.72));
   box-shadow: var(--shadow);
 }
@@ -7779,16 +7851,16 @@ main:not(#top) .anaya-hero h1 {
 
 .about-letter-body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
-  gap: 30px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, clamp(360px, 34vw, 460px));
+  gap: clamp(24px, 3vw, 42px);
   align-items: start;
 }
 
 .about-letter-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  grid-auto-rows: 153px;
+  gap: clamp(10px, 1vw, 14px);
+  grid-auto-rows: clamp(132px, 11.5vw, 156px);
 }
 
 .about-letter-gallery img {
@@ -7823,14 +7895,25 @@ main:not(#top) .anaya-hero h1 {
 .about-signature {
   display: block;
   width: min(430px, 88%);
-  margin-top: 20px;
+  margin-top: clamp(20px, 2.4vw, 34px);
   height: auto;
 }
 
 @media (max-width: 1024px) {
   .about-letter-body {
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
     gap: 22px;
+  }
+}
+
+@media (max-width: 880px) {
+  .about-letter-body {
+    grid-template-columns: 1fr;
+  }
+
+  .about-letter-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: clamp(132px, 24vw, 180px);
   }
 }
 
@@ -7840,13 +7923,9 @@ main:not(#top) .anaya-hero h1 {
     padding: 22px;
   }
 
-  .about-letter-body {
-    grid-template-columns: 1fr;
-  }
-
   .about-letter-gallery {
     gap: 10px;
-    grid-auto-rows: clamp(112px, 28vw, 148px);
+    grid-auto-rows: clamp(110px, 28vw, 148px);
   }
 
   .about-letter-heading h1 {
@@ -7857,6 +7936,154 @@ main:not(#top) .anaya-hero h1 {
   .about-cover-copy p:not(.eyebrow) {
     font-size: 0.98rem;
     line-height: 1.62;
+  }
+
+  .about-signature {
+    width: min(360px, 100%);
+  }
+}
+
+/* Homepage gallery: mobile/tablet 2 x 3, desktop 3 x 2, scaled to keep all six cards in view. */
+main#top #media {
+  --gallery-section-pad: clamp(28px, 3vw, 42px);
+  --gallery-heading-gap: clamp(12px, 1.3vw, 18px);
+  --gallery-grid-gap: clamp(14px, 1.35vw, 22px);
+  --gallery-media-height: clamp(168px, 15.5vw, 230px);
+  --gallery-caption-pad-y: clamp(10px, 0.8vw, 14px);
+  --gallery-caption-pad-x: clamp(12px, 1vw, 16px);
+  --gallery-title-size: clamp(0.86rem, calc(0.68rem + 0.34vw), 1rem);
+  --gallery-arrow-size: clamp(20px, 1.7vw, 24px);
+  overflow: hidden;
+  padding: var(--gallery-section-pad) !important;
+}
+
+main#top #media .section-heading {
+  margin-bottom: var(--gallery-heading-gap) !important;
+}
+
+main#top #media .section-heading .eyebrow {
+  font-size: clamp(0.68rem, calc(0.52rem + 0.28vw), 0.78rem) !important;
+  line-height: 1.12 !important;
+}
+
+main#top #media .gallery-section-title {
+  font-size: clamp(1.7rem, calc(1.08rem + 1.28vw), 2.35rem) !important;
+  line-height: 1.03 !important;
+  white-space: nowrap !important;
+}
+
+main#top #media .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--gallery-grid-gap) !important;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+main#top #media .gallery-card {
+  display: grid;
+  grid-template-rows: var(--gallery-media-height) auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 0 !important;
+  border-radius: clamp(16px, 1.35vw, 22px);
+}
+
+main#top #media .gallery-card .gallery-media {
+  width: 100%;
+  height: var(--gallery-media-height);
+  min-height: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+
+main#top #media .gallery-card > span.gallery-card-caption,
+main#top #media .gallery-card figcaption,
+main#top #media .gallery-card > span:not(.gallery-media) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--gallery-arrow-size);
+  align-items: center;
+  gap: clamp(5px, 0.75vw, 9px);
+  min-height: 0;
+  padding:
+    var(--gallery-caption-pad-y)
+    var(--gallery-caption-pad-x)
+    calc(var(--gallery-caption-pad-y) + 1px) !important;
+  border-top: 1px solid rgba(31, 27, 22, 0.08);
+  background: rgba(255, 250, 243, 0.92);
+}
+
+main#top #media .gallery-card > span.gallery-card-caption > span.gallery-card-title,
+main#top #media .gallery-card .gallery-card-title {
+  min-width: 0;
+  overflow: hidden;
+  color: #2a2118;
+  font-size: var(--gallery-title-size) !important;
+  line-height: 1.12;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+main#top #media .gallery-card > span.gallery-card-caption > span.gallery-card-arrow,
+main#top #media .gallery-card .gallery-card-arrow {
+  width: var(--gallery-arrow-size);
+  height: var(--gallery-arrow-size);
+  font-size: calc(var(--gallery-arrow-size) * 0.62);
+}
+
+@media (max-width: 1024px) {
+  main#top #media .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  main#top #media {
+    --gallery-media-height: clamp(260px, 12.5vw, 330px);
+  }
+
+  main#top #media .gallery-grid {
+    max-width: 2040px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1024px) {
+  main#top #media {
+    --gallery-section-pad: clamp(18px, 3vw, 28px);
+    --gallery-heading-gap: clamp(10px, 1.55vw, 16px);
+    --gallery-grid-gap: clamp(14px, 2vw, 22px);
+    --gallery-media-height: clamp(145px, 16vw, 178px);
+    --gallery-caption-pad-y: clamp(9px, 1.15vw, 13px);
+    --gallery-caption-pad-x: clamp(11px, 1.55vw, 15px);
+    --gallery-title-size: clamp(0.82rem, calc(0.63rem + 0.42vw), 0.94rem);
+    --gallery-arrow-size: clamp(19px, 2.4vw, 23px);
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1024px) and (min-height: 900px) {
+  main#top #media {
+    --gallery-media-height: clamp(170px, 22vw, 230px);
+  }
+}
+
+@media (max-width: 720px) {
+  main#top #media {
+    --gallery-section-pad: clamp(12px, 4vw, 20px);
+    --gallery-heading-gap: clamp(8px, 2.1vw, 12px);
+    --gallery-grid-gap: clamp(8px, 2.6vw, 14px);
+    --gallery-media-height: clamp(92px, 29vw, 142px);
+    --gallery-caption-pad-y: clamp(6px, 1.7vw, 9px);
+    --gallery-caption-pad-x: clamp(7px, 2.1vw, 10px);
+    --gallery-title-size: clamp(0.72rem, 2.55vw, 0.84rem);
+    --gallery-arrow-size: clamp(16px, 4.8vw, 20px);
+  }
+
+  main#top #media .gallery-section-title {
+    font-size: clamp(1.18rem, 5.5vw, 1.7rem) !important;
+    white-space: normal !important;
   }
 }
 
@@ -9432,7 +9659,7 @@ main#top > .hero .hero-mobile-credentials {
     min-width: 0;
     height: auto;
     margin-top: 18px;
-    padding: 11px 14px;
+    padding: 11px var(--mobile-section-pad, 16px);
     border: 1px solid var(--line);
     border-radius: 22px;
     background:
@@ -10174,7 +10401,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
     min-width: 0;
     height: auto;
     margin-top: 18px;
-    padding: 11px 14px;
+    padding: 11px var(--mobile-section-pad, 16px);
     border: 1px solid var(--line);
     border-radius: 22px;
     background:
@@ -10408,7 +10635,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1000px) {
   main#top > .hero .portrait-card {
     position: relative;
   }
@@ -10507,6 +10734,10 @@ main#top .credentials-card .credential-document-heading .eyebrow {
 
 /* Desktop hero stats sit under the intro copy in a responsive 3 x 2 pill grid. */
 @media (min-width: 1025px) {
+  .section {
+    padding-inline: clamp(42px, 3.4vw, 88px);
+  }
+
   main#top > .hero {
     grid-template-columns: minmax(0, 1fr) var(--hero-portrait-width);
     grid-template-areas:
@@ -10604,6 +10835,24 @@ main:not(#top) .anaya-hero,
   container-type: inline-size;
 }
 
+.section-heading,
+.about-letter-heading,
+.featured-pillar-copy,
+.featured-strategy-panel,
+.featured-final-cta,
+.system-detail-copy,
+.credential-section-copy,
+.credential-packet-cta,
+.about-foundation-strip,
+.media-final-cta,
+.contact-info-copy {
+  --type-section-title-size: clamp(1.25rem, calc(1rem + 1.8cqw), 2.72rem);
+  --type-section-title-line: 1.03;
+  --type-eyebrow-size: clamp(0.62rem, calc(0.54rem + 0.26cqw), 0.84rem);
+  --type-eyebrow-line: 1.15;
+  --type-eyebrow-letter-spacing: clamp(0.08em, 0.16cqw, 0.14em);
+}
+
 @media (max-width: 767px) {
   .section-heading,
   .about-letter-heading,
@@ -10616,10 +10865,11 @@ main:not(#top) .anaya-hero,
   .about-foundation-strip,
   .media-final-cta,
   .contact-info-copy {
-    --type-section-title-size: clamp(1.46rem, 6.1cqw, 1.55rem);
-    --type-section-title-line: 1.08;
-    --type-eyebrow-size: clamp(0.64rem, 2.6cqw, 0.68rem);
-    --type-eyebrow-line: 1.2;
+    --type-section-title-size: clamp(1.25rem, calc(1rem + 1.8cqw), 2.72rem);
+    --type-section-title-line: 1.03;
+    --type-eyebrow-size: clamp(0.62rem, calc(0.54rem + 0.26cqw), 0.84rem);
+    --type-eyebrow-line: 1.15;
+    --type-eyebrow-letter-spacing: clamp(0.08em, 0.16cqw, 0.14em);
   }
 }
 
@@ -10635,10 +10885,11 @@ main:not(#top) .anaya-hero,
   .about-foundation-strip,
   .media-final-cta,
   .contact-info-copy {
-    --type-section-title-size: clamp(1.6rem, 5cqw, 2.2rem);
-    --type-section-title-line: 1.05;
-    --type-eyebrow-size: clamp(0.7rem, 1.7cqw, 0.76rem);
+    --type-section-title-size: clamp(1.25rem, calc(1rem + 1.8cqw), 2.72rem);
+    --type-section-title-line: 1.03;
+    --type-eyebrow-size: clamp(0.62rem, calc(0.54rem + 0.26cqw), 0.84rem);
     --type-eyebrow-line: 1.15;
+    --type-eyebrow-letter-spacing: clamp(0.08em, 0.16cqw, 0.14em);
   }
 }
 
@@ -10696,7 +10947,7 @@ main:not(#top) .anaya-hero,
   main#top .credentials-card .credential-document-heading .eyebrow {
     font-size: var(--mobile-fit-eyebrow-size, var(--type-eyebrow-size)) !important;
     line-height: var(--mobile-fit-eyebrow-line, var(--type-eyebrow-line)) !important;
-    letter-spacing: clamp(0.08em, 0.32cqw, 0.12em);
+    letter-spacing: var(--type-eyebrow-letter-spacing, clamp(0.08em, 0.16cqw, 0.14em));
     white-space: var(--type-eyebrow-white-space, nowrap) !important;
   }
 }
@@ -10769,8 +11020,8 @@ main:not(#top) .anaya-hero,
 
   main#top .credentials-card .credential-document-heading h2 {
     max-width: 100%;
-    font-size: clamp(1.55rem, calc(1.04rem + 0.7vw), 2.25rem) !important;
-    line-height: 1.02 !important;
+    font-size: var(--type-section-title-size) !important;
+    line-height: var(--type-section-title-line) !important;
     white-space: nowrap !important;
   }
 
@@ -10792,7 +11043,7 @@ main:not(#top) .anaya-hero,
   main#top .credentials-card .credential-document-heading .eyebrow {
     font-size: var(--type-eyebrow-size) !important;
     line-height: var(--type-eyebrow-line) !important;
-    letter-spacing: 0.14em;
+    letter-spacing: var(--type-eyebrow-letter-spacing, clamp(0.08em, 0.16cqw, 0.14em));
   }
 
   .hero-text,
@@ -10936,14 +11187,14 @@ main#top #systems .section-heading {
 }
 
 main#top #systems .section-heading .eyebrow {
-  font-size: clamp(0.64rem, calc(0.53rem + 0.42cqw), 1.02rem) !important;
+  font-size: clamp(0.62rem, calc(0.54rem + 0.26cqw), 0.84rem) !important;
   line-height: 1.15 !important;
   letter-spacing: clamp(0.08em, 0.16cqw, 0.14em);
   white-space: nowrap !important;
 }
 
 main#top #systems .section-heading h2 {
-  font-size: clamp(1.3rem, calc(0.95rem + 2.45cqw), 3.1rem) !important;
+  font-size: clamp(1.25rem, calc(1rem + 1.8cqw), 2.72rem) !important;
   line-height: 1.03 !important;
   white-space: nowrap !important;
   overflow-wrap: normal;
@@ -11000,6 +11251,24 @@ main#top #systems .library-card.system-card > p {
 }
 
 @media (max-width: 360px) {
+  .section-heading,
+  .about-letter-heading,
+  .featured-pillar-copy,
+  .featured-strategy-panel,
+  .featured-final-cta,
+  .system-detail-copy,
+  .credential-section-copy,
+  .credential-packet-cta,
+  .about-foundation-strip,
+  .media-final-cta,
+  .contact-info-copy {
+    --type-section-title-size: clamp(1.18rem, 6.4cqw, 1.3rem);
+    --type-section-title-line: 1.05;
+    --type-eyebrow-size: clamp(0.6rem, 2.35cqw, 0.64rem);
+    --type-eyebrow-line: 1.15;
+    --type-eyebrow-letter-spacing: clamp(0.07em, 0.16cqw, 0.12em);
+  }
+
   main#top #systems .section-heading h2 {
     font-size: clamp(1.18rem, 6.4cqw, 1.3rem) !important;
   }
@@ -11011,23 +11280,28 @@ main#top #systems .library-card.system-card > p {
 }
 
 /* Desktop hero: let the text use its full column and keep the portrait crop head-safe. */
-@media (min-width: 1025px) {
+@media (min-width: 1000px) {
   main#top > .hero {
     --hero-portrait-width: clamp(390px, 28vw, 620px);
-    --hero-portrait-height: clamp(440px, 31vw, 680px);
+    --hero-portrait-height: clamp(390px, 20vw, 520px);
     --hero-desktop-gap: clamp(24px, 3vw, 72px);
     grid-template-columns: minmax(0, 1fr) var(--hero-portrait-width);
+    grid-template-areas:
+      "copy portrait"
+      "stats portrait";
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-items: stretch;
   }
 
   main#top > .hero .hero-copy {
     width: 100%;
     max-width: none;
-    align-self: center;
+    align-self: start;
   }
 
   main#top > .hero .eyebrow {
     margin-bottom: clamp(10px, 0.75vw, 18px);
-    font-size: clamp(0.76rem, calc(0.58rem + 0.2vw), 1.05rem) !important;
+    font-size: clamp(0.82rem, calc(0.62rem + 0.24vw), 1.12rem) !important;
     line-height: 1.15 !important;
     letter-spacing: clamp(0.12em, 0.18vw, 0.16em);
   }
@@ -11057,6 +11331,7 @@ main#top #systems .library-card.system-card > p {
   }
 
   main#top > .hero .hero-stat-band {
+    align-self: end;
     gap: clamp(10px, 1.15vw, 20px);
   }
 
@@ -11068,25 +11343,46 @@ main#top #systems .library-card.system-card > p {
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1180px) {
+@media (min-width: 1000px) and (max-width: 1180px) {
   main#top > .hero {
-    --hero-portrait-width: clamp(360px, 34vw, 400px);
-    --hero-portrait-height: clamp(405px, 38vw, 450px);
-    --hero-desktop-gap: clamp(14px, 2vw, 24px);
+    --hero-portrait-width: clamp(410px, 41vw, 470px);
+    --hero-portrait-height: clamp(318px, 31vw, 360px);
+    --hero-desktop-gap: clamp(8px, 1.2vw, 14px);
+    padding:
+      clamp(18px, 1.7vw, 22px)
+      clamp(20px, 2.4vw, 28px);
   }
 
   main#top > .hero h1 {
-    font-size: clamp(2.45rem, 4.7vw, 3.45rem) !important;
+    font-size: clamp(2.05rem, 4vw, 2.75rem) !important;
   }
 
   main#top > .hero .hero-text {
-    font-size: clamp(0.92rem, 1.2vw, 1rem) !important;
-    line-height: 1.45;
+    margin-top: clamp(10px, 1vw, 14px);
+    font-size: clamp(0.82rem, 1vw, 0.9rem) !important;
+    line-height: 1.4;
+  }
+
+  main#top > .hero .eyebrow {
+    font-size: clamp(0.72rem, 1.08vw, 0.8rem) !important;
+  }
+
+  main#top > .hero #impact.hero-stat-band article {
+    min-height: 44px !important;
+    padding: 4px !important;
+  }
+
+  main#top > .hero #impact.hero-stat-band article strong {
+    font-size: clamp(0.78rem, 1.55vw, 0.95rem) !important;
+  }
+
+  main#top > .hero #impact.hero-stat-band article span {
+    font-size: clamp(0.44rem, 0.86vw, 0.54rem) !important;
   }
 }
 
 /* Desktop hero highlight bar: one measured scale for label, links, spacing and fit. */
-@media (min-width: 1025px) {
+@media (min-width: 1000px) {
   main#top > .hero .hero-mobile-highlight {
     right: clamp(10px, 0.85vw, 14px);
     bottom: clamp(10px, 0.9vw, 18px);
@@ -11199,34 +11495,58 @@ main#top #systems .library-card.system-card > p {
   }
 }
 
+/* Tablet credentials pills: scale between mobile compactness and desktop stat-pill sizing. */
+@media (min-width: 721px) and (max-width: 1024px) {
+  main#top > .hero-mobile-credentials.credentials-card {
+    gap: clamp(8px, 1.1vw, 12px);
+    padding:
+      clamp(14px, 1.65vw, 20px)
+      clamp(22px, 3vw, 36px);
+  }
+
+  main#top > .hero-mobile-credentials .credential-link-grid {
+    gap: clamp(8px, 1.3vw, 14px) clamp(10px, 1.8vw, 18px);
+  }
+
+  main#top > .hero-mobile-credentials .credential-link-grid .button {
+    min-height: clamp(34px, 4.4vw, 46px);
+    padding-inline: clamp(12px, 1.75vw, 20px);
+    font-size: clamp(0.82rem, calc(0.61rem + 0.45vw), 0.9rem);
+    line-height: 1.08;
+  }
+}
+
 /* Desktop credentials band: use the full card instead of leaving an empty right side. */
 @media (min-width: 1025px) {
   main#top > .hero-mobile-credentials.credentials-card {
+    --credential-heading-inset: clamp(42px, 3.4vw, 88px);
+    --credential-pill-inset: max(0px, calc(clamp(42px, 4.2vw, 96px) - var(--credential-heading-inset)));
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     align-items: start;
-    gap: clamp(12px, 1.25vw, 24px);
+    gap: clamp(9px, 0.9vw, 18px);
     min-height: 0;
     padding:
-      clamp(24px, 2.1vw, 42px)
-      clamp(42px, 4.2vw, 96px);
+      clamp(20px, 1.65vw, 34px)
+      var(--credential-heading-inset);
   }
 
   main#top > .hero-mobile-credentials .credential-document-heading {
-    container-type: normal;
+    container-type: inline-size;
     min-width: 0;
     margin-bottom: 0 !important;
   }
 
   main#top > .hero-mobile-credentials .credential-document-heading .eyebrow {
-    font-size: clamp(0.74rem, calc(0.58rem + 0.2vw), 1rem) !important;
-    line-height: 1.15 !important;
+    font-size: var(--type-eyebrow-size) !important;
+    line-height: var(--type-eyebrow-line) !important;
+    letter-spacing: var(--type-eyebrow-letter-spacing, clamp(0.08em, 0.16cqw, 0.14em));
     white-space: nowrap;
   }
 
   main#top > .hero-mobile-credentials .credential-document-heading h2 {
-    font-size: clamp(1.65rem, calc(1rem + 1vw), 2.5rem) !important;
-    line-height: 1.04 !important;
+    font-size: var(--type-section-title-size) !important;
+    line-height: var(--type-section-title-line) !important;
     white-space: nowrap;
   }
 
@@ -11234,8 +11554,9 @@ main#top #systems .library-card.system-card > p {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
-    width: 100%;
+    width: calc(100% - (var(--credential-pill-inset) * 2));
     min-width: 0;
+    margin-inline: var(--credential-pill-inset);
     gap: clamp(8px, 0.95vw, 16px);
   }
 
@@ -11366,5 +11687,533 @@ main#top #systems .system-card .library-actions {
     line-height: 1.05;
     text-overflow: clip;
     white-space: nowrap;
+  }
+}
+
+/* About page final fit: keep the letter title from widening narrow screens. */
+@media (max-width: 520px) {
+  .page-shell {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  .about-letter-section,
+  .about-letter-body,
+  .about-letter-copy,
+  .about-cover-copy {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .about-letter-section {
+    overflow: hidden;
+  }
+
+  main:not(#top) .about-letter-heading > h1 {
+    font-size: clamp(1.48rem, 6.8vw, 1.92rem) !important;
+    line-height: 1.06 !important;
+    white-space: normal !important;
+  }
+
+  .about-cover-copy p:not(.eyebrow) {
+    overflow-wrap: break-word;
+  }
+}
+
+/* About page cover-letter layout: desktop is one composed sheet; tablet/phone read letter first, gallery next. */
+.about-cover-page {
+  display: grid;
+  align-items: start;
+}
+
+.about-cover-page .about-letter-section {
+  width: 100%;
+  max-width: none;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.about-cover-page .about-letter-body,
+.about-cover-page .about-letter-copy,
+.about-cover-page .about-letter-text,
+.about-cover-page .about-letter-gallery {
+  min-width: 0;
+}
+
+.about-cover-page .about-letter-gallery img {
+  min-width: 0;
+  object-position: center;
+}
+
+@media (min-width: 1120px) {
+  .about-cover-page {
+    min-height: calc(100svh - 60px);
+  }
+
+  .about-cover-page .about-letter-section {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    width: min(1700px, calc(100vw - clamp(84px, 9vw, 180px)));
+    height: calc(100svh - clamp(96px, 9vh, 126px));
+    min-height: 650px;
+    max-height: 860px;
+    margin-top: clamp(18px, 2.2vh, 32px);
+    padding:
+      clamp(28px, 3.6vh, 50px)
+      clamp(34px, 4.3vw, 72px);
+    gap: clamp(20px, 2.2vh, 34px);
+  }
+
+  .about-cover-page .about-letter-heading h1 {
+    max-width: 100%;
+    font-size: clamp(2.1rem, calc(1.05rem + 1.45vw), 3.7rem) !important;
+    line-height: 1.02 !important;
+    white-space: nowrap !important;
+  }
+
+  .about-cover-page .about-letter-heading .eyebrow {
+    margin-bottom: clamp(7px, 0.9vh, 12px);
+    font-size: clamp(0.68rem, calc(0.46rem + 0.25vw), 0.92rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .about-cover-page .about-letter-body {
+    display: grid;
+    grid-template-columns: minmax(620px, 1fr) clamp(380px, 28vw, 520px);
+    height: 100%;
+    min-height: 0;
+    gap: clamp(34px, 4.4vw, 78px);
+    align-items: stretch;
+  }
+
+  .about-cover-page .about-letter-copy {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    min-height: 0;
+    gap: clamp(10px, 1.1vh, 16px);
+  }
+
+  .about-cover-page .about-letter-text {
+    min-height: 0;
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) {
+    max-width: none;
+    font-size: clamp(0.9rem, calc(0.55rem + 0.42vw), 1.14rem) !important;
+    line-height: clamp(1.34, calc(1.24 + 0.12vw), 1.5) !important;
+    text-wrap: pretty;
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) + p {
+    margin-top: clamp(8px, 1.05vh, 14px);
+  }
+
+  .about-cover-page .about-signature {
+    width: clamp(270px, 25vw, 440px);
+    margin-top: 0;
+  }
+
+  .about-cover-page .about-letter-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    height: 100%;
+    min-height: 0;
+    gap: clamp(8px, 1.15vh, 14px) clamp(10px, 0.95vw, 16px);
+    align-self: stretch;
+  }
+
+  .about-cover-page .about-letter-gallery img {
+    width: 100%;
+    height: 100%;
+    border-radius: clamp(12px, 1vw, 17px);
+  }
+}
+
+@media (min-width: 1120px) and (max-height: 780px) {
+  .about-cover-page .about-letter-section {
+    height: calc(100svh - 86px);
+    min-height: 590px;
+    padding:
+      clamp(22px, 2.8vh, 34px)
+      clamp(30px, 3.6vw, 60px);
+    gap: clamp(14px, 1.8vh, 24px);
+  }
+
+  .about-cover-page .about-letter-heading h1 {
+    font-size: clamp(1.9rem, calc(1rem + 1.25vw), 3.05rem) !important;
+  }
+
+  .about-cover-page .about-letter-body {
+    grid-template-columns: minmax(620px, 1fr) clamp(340px, 26vw, 470px);
+    gap: clamp(28px, 3.4vw, 60px);
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) {
+    font-size: clamp(0.82rem, calc(0.52rem + 0.34vw), 1rem) !important;
+    line-height: 1.32 !important;
+  }
+
+  .about-cover-page .about-signature {
+    width: clamp(240px, 22vw, 360px);
+  }
+}
+
+@media (min-width: 1120px) and (max-width: 1499px), (min-width: 1120px) and (max-height: 840px) {
+  .about-cover-page .about-letter-body {
+    grid-template-columns: minmax(650px, 1fr) clamp(310px, 25vw, 410px);
+    gap: clamp(24px, 3.2vw, 48px);
+  }
+
+  .about-cover-page .about-letter-text {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 1vh, 14px) clamp(22px, 2.4vw, 34px);
+  }
+
+  .about-cover-page .about-letter-text p {
+    min-width: 0;
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) {
+    font-size: clamp(0.82rem, calc(0.5rem + 0.28vw), 0.94rem) !important;
+    line-height: 1.38 !important;
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) + p {
+    margin-top: clamp(7px, 0.85vh, 12px);
+  }
+
+  .about-cover-page .about-signature {
+    width: clamp(220px, 20vw, 330px);
+  }
+}
+
+@media (min-width: 1120px) and (min-width: 1720px) {
+  .about-cover-page .about-letter-section {
+    width: min(1780px, calc(100vw - 220px));
+  }
+
+  .about-cover-page .about-letter-body {
+    grid-template-columns: minmax(820px, 1fr) clamp(430px, 25vw, 560px);
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) {
+    font-size: clamp(1.02rem, 0.62vw, 1.22rem) !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 1119px) {
+  .about-cover-page .about-letter-section {
+    height: auto;
+    min-height: 0;
+    margin-top: clamp(18px, 4vw, 28px);
+    padding: clamp(20px, 4vw, 34px);
+    gap: clamp(18px, 3.2vw, 28px);
+  }
+
+  .about-cover-page .about-letter-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: clamp(28px, 5vw, 42px);
+  }
+
+  .about-cover-page .about-letter-copy {
+    max-width: 72ch;
+  }
+
+  .about-cover-page .about-letter-text {
+    display: block;
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) {
+    font-size: clamp(0.95rem, 1.15vw, 1.08rem) !important;
+    line-height: 1.56 !important;
+  }
+
+  .about-cover-page .about-letter-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: clamp(100px, 15vw, 138px);
+    gap: clamp(9px, 2vw, 14px);
+  }
+
+  .about-cover-page .about-signature {
+    width: min(390px, 92%);
+    margin-top: clamp(18px, 4vw, 28px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1119px) {
+  .about-cover-page .about-letter-section {
+    width: min(880px, calc(100vw - 56px));
+  }
+
+  .about-cover-page .about-letter-copy {
+    max-width: 76ch;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-cover-page .about-letter-section {
+    width: calc(100vw - 24px) !important;
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .about-cover-page .about-letter-heading h1 {
+    font-size: clamp(1.48rem, 6.8vw, 1.9rem) !important;
+    line-height: 1.06 !important;
+    white-space: normal !important;
+  }
+
+  .about-cover-page .about-letter-heading .eyebrow {
+    font-size: clamp(0.62rem, 2.5vw, 0.72rem) !important;
+    letter-spacing: 0.1em;
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) {
+    font-size: clamp(0.88rem, 3.72vw, 0.96rem) !important;
+    line-height: 1.48 !important;
+  }
+
+  .about-cover-page .about-letter-gallery {
+    grid-auto-rows: clamp(92px, 24vw, 118px);
+    gap: 9px;
+  }
+
+  .about-cover-page .about-letter-gallery img {
+    border-radius: 12px;
+  }
+}
+
+/* Largest desktop cap: keep 2560px screens from scaling the page past the intended reading rhythm. */
+@media (min-width: 1025px) {
+  :root {
+    --site-card-width: 1920px;
+    --site-chrome-content-width: 1920px;
+    --site-chrome-gutter: 36px;
+    --type-hero-title-size: clamp(3.3rem, calc(2.35rem + 1.7vw), 4.45rem);
+    --type-section-title-size: clamp(2.1rem, calc(1.72rem + 0.62vw), 2.5rem);
+    --type-card-title-size: clamp(1.62rem, calc(1.26rem + 0.48vw), 1.95rem);
+    --type-eyebrow-size: clamp(0.74rem, calc(0.66rem + 0.14vw), 0.86rem);
+    --type-body-size: clamp(0.95rem, calc(0.86rem + 0.14vw), 1.02rem);
+    --type-small-body-size: clamp(0.86rem, calc(0.78rem + 0.12vw), 0.94rem);
+  }
+
+  .page-shell {
+    width: min(var(--site-card-width), calc(100% - 88px));
+  }
+
+  .section {
+    padding-inline: clamp(36px, 2.4vw, 58px);
+  }
+
+  main#top > .hero {
+    padding:
+      clamp(24px, 1.7vw, 42px)
+      clamp(36px, 2.4vw, 58px);
+  }
+
+  main#top > .hero h1 {
+    font-size: var(--type-hero-title-size) !important;
+  }
+
+  main#top #systems .section-heading h2,
+  main#top #featured-work .section-heading h2 {
+    font-size: var(--type-section-title-size) !important;
+  }
+
+  main#top #systems .portfolio-systems-intro {
+    font-size: var(--type-body-size) !important;
+    line-height: 1.35;
+  }
+
+  main#top #systems .library-grid {
+    gap: clamp(14px, 1.15vw, 22px) !important;
+  }
+
+  main#top #systems .system-card,
+  main#top #systems .library-card.system-card {
+    padding: clamp(12px, 2.6cqw, 18px);
+  }
+
+  main#top #systems .system-card > h3,
+  main#top #systems .library-card.system-card > h3,
+  main#top #featured-work .innovation-panel h3 {
+    font-size: var(--type-card-title-size) !important;
+  }
+
+  main#top #systems .system-card > p,
+  main#top #systems .library-card.system-card > p {
+    font-size: clamp(0.76rem, calc(0.68rem + 0.55cqw), 0.88rem) !important;
+    line-height: 1.22 !important;
+  }
+
+  main#top #systems .system-card .library-actions {
+    gap: clamp(6px, 1.4cqw, 10px);
+    padding-top: clamp(7px, 1.45cqw, 10px);
+  }
+
+  main#top #systems .system-card .library-actions .button,
+  main#top #systems .system-card .button-small {
+    min-height: clamp(36px, 7cqw, 42px);
+    font-size: clamp(0.72rem, calc(0.58rem + 0.9cqw), 0.86rem);
+  }
+
+  main#top #featured-work {
+    gap: clamp(22px, 1.5vw, 32px);
+  }
+
+  main#top #featured-work .innovation-section {
+    padding:
+      clamp(28px, 2vw, 40px)
+      clamp(28px, 2vw, 44px);
+  }
+
+  main#top #featured-work .innovation-panel {
+    gap: clamp(14px, 1vw, 18px);
+  }
+
+  main#top #featured-work .innovation-panel p {
+    font-size: var(--type-body-size) !important;
+    line-height: 1.5;
+  }
+
+  main#top #featured-work .innovation-panel .button {
+    min-height: 48px;
+    font-size: var(--type-small-body-size);
+  }
+}
+
+/* Contact pages and sections use the same compact form-first layout at every viewport. */
+.contact-section {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-section .section-heading {
+  width: min(100%, 880px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.contact-section .contact-card,
+.contact-page .contact-section .contact-card,
+main#top .contact-section .contact-card {
+  display: grid !important;
+  width: min(100%, 880px) !important;
+  max-width: 880px !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding: clamp(14px, 2.4vw, 20px) !important;
+  border-radius: clamp(24px, 2.4vw, 30px) !important;
+}
+
+.contact-page .contact-section {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.contact-page .contact-hero {
+  width: min(100%, 880px) !important;
+  max-width: 880px !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding: clamp(18px, 2.6vw, 24px) clamp(20px, 3vw, 28px) !important;
+  border-radius: clamp(28px, 2.6vw, 34px) !important;
+}
+
+.contact-page .contact-hero p:not(.eyebrow),
+.contact-page .contact-hero .contact-link-cluster,
+main#top .contact-info-panel {
+  display: none !important;
+}
+
+.contact-page .contact-hero h1 {
+  margin-bottom: 0 !important;
+  white-space: nowrap !important;
+}
+
+.contact-form,
+.contact-name-row,
+.contact-page .contact-form,
+.contact-page .contact-name-row,
+main#top .contact-form,
+main#top .contact-name-row {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 7px !important;
+}
+
+.contact-form label,
+.contact-page .contact-form label,
+main#top .contact-form label {
+  gap: 5px !important;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.contact-page .contact-form input,
+.contact-page .contact-form select,
+.contact-page .contact-form textarea,
+main#top .contact-form input,
+main#top .contact-form select,
+main#top .contact-form textarea {
+  min-width: 0;
+  border-radius: 17px !important;
+  padding: 10px 14px !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-page .contact-form input,
+.contact-page .contact-form select,
+main#top .contact-form input,
+main#top .contact-form select {
+  min-height: 39px !important;
+}
+
+.contact-form textarea,
+.contact-page .contact-form textarea,
+main#top .contact-form textarea {
+  min-height: 132px !important;
+  height: 132px !important;
+}
+
+.contact-form select,
+.contact-page .contact-form select,
+main#top .contact-form select {
+  padding-right: 52px !important;
+}
+
+.contact-form .select-field::after,
+.contact-page .contact-form .select-field::after,
+main#top .contact-form .select-field::after {
+  right: 18px !important;
+  bottom: 15px !important;
+}
+
+.contact-form .button,
+.contact-page .contact-form .button,
+main#top .contact-form .button {
+  min-height: 44px !important;
+  margin-top: 0 !important;
+  border-radius: 999px !important;
+}
+
+@media (max-width: 430px) {
+  .contact-page .contact-hero h1 {
+    font-size: clamp(1.48rem, 7vw, 1.65rem) !important;
+    line-height: 1.05 !important;
   }
 }

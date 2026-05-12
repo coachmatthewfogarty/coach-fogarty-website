@@ -163,6 +163,17 @@ const librarySections = [
   }
 ];
 
+const systemDisplayOrder = [
+  "Player Development",
+  "Defensive Tracker",
+  "Coaching Philosophy",
+  "Recruiting",
+  "Program Support",
+  "Scouting"
+];
+
+librarySections.sort((left, right) => systemDisplayOrder.indexOf(left.title) - systemDisplayOrder.indexOf(right.title));
+
 const mediaPath = (category, type, fileName) => `assets/media/${category}/${type}/${fileName}`;
 const mediaPhotoPath = (category, fileName) => mediaPath(category, "photos", fileName);
 const playingCareerPhoto = (fileName) => `assets/images/playing-career/photos/${fileName}`;
