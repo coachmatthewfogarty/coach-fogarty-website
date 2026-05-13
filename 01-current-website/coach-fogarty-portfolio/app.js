@@ -1609,8 +1609,10 @@ function mediaLibraryAlbum(album, eyebrow = "GALLERY") {
 
 function mediaLibraryCardMarkup(albumIndex, itemIndex, item, label = "Gallery", titleOverride = "") {
   const isVideo = item.type === "video";
-  const title = titleOverride || mediaItemTitle(item, mediaLibraryAlbums[albumIndex]);
-  const thumb = isVideo ? mediaItemPoster(item) : mediaItemCardSrc(item);
+  const album = mediaLibraryAlbums[albumIndex];
+  const title = titleOverride || mediaItemTitle(item, album);
+  const isAwardsCard = album?.title === "Playing Career Awards";
+  const thumb = isVideo ? mediaItemPoster(item) : isAwardsCard ? mediaItemSrc(item) : mediaItemCardSrc(item);
 
   return `
     <button class="media-library-card ${isVideo ? "media-video-card" : "media-photo-card"}" type="button" data-media-library-album="${albumIndex}" data-media-library-item="${itemIndex}" aria-label="Open ${item.alt || title}">
@@ -1834,7 +1836,7 @@ function renderMediaLibraryPage() {
           <span class="library-type">${card.title}</span>
           <h3>${card.title}</h3>
           <p>${card.desc}</p>
-          <button class="button button-secondary button-small" type="button" data-open-media-gallery="${card.albumIndex}">Gallery</button>
+          <button class="button button-secondary button-small" type="button" data-open-media-gallery="${card.albumIndex}" data-open-media-gallery-item="${thumbnailItemIndex}">Gallery</button>
         </article>
       `;
   };
