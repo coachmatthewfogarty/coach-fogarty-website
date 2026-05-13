@@ -66,7 +66,7 @@ Use this when reopening the project at work:
 - The live About page is `01-current-website/coach-fogarty-portfolio/about.html`.
 - The About layout rules are at the bottom of `01-current-website/coach-fogarty-portfolio/styles.css` under the `About page final pass` comment.
 - The page is intentionally one unified letter/card, not separate text and image cards.
-- Desktop `1181px+` uses the cover-letter composition: one continuous text column that flows down the page, signature directly after the final line of copy, and a face-safe image grid on the right. Do not split the About copy into two text columns.
+- Desktop `1025px+` uses the cover-letter composition: one continuous text column that flows down the page, signature directly after the final line of copy, and a face-safe image grid on the right. The body text top aligns with the first image row top, and the signature bottom aligns with the last image row bottom. Do not split the About copy into two text columns.
 - Tablet and phone stay letter-first, then image grid. This keeps the text readable before the photos.
 - Images use `object-fit: cover` and responsive row heights so the collage adjusts to the available slot instead of stretching or creating horizontal scroll.
 - If changing this page, verify at `320`, `375`, `430`, `820`, `1120`, `1280`, `1365`, `1600`, and `1920` widths.

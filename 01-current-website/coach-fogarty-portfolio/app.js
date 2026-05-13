@@ -58,8 +58,9 @@ const librarySections = [
     title: "Recruiting",
     description: "Recruiting plans and program workflow.",
     media: {
-      src: "assets/documents/system-previews/recruiting-development-plan.webp",
-      alt: "Recruiting development plan document preview"
+      src: "assets/documents/system-previews/Ready - Q98/systems-recruiting-overview-sheet-media-card-q98-1200x900.webp",
+      alt: "Recruiting overview sheet document preview",
+      role: "media-card"
     },
     buttons: [
       {
@@ -85,8 +86,9 @@ const librarySections = [
     title: "Defensive Tracker",
     description: "DPAT grading and accountability tracking.",
     media: {
-      src: "dpat/final-reports/player-rankings/dpat-player-rankings-report-2025-2026.png",
-      alt: "DPAT defensive tracking leaderboard report"
+      src: "assets/documents/system-previews/Ready - Q98/systems-dpat-dashboard-preview-media-card-q98-1448x1086.webp",
+      alt: "DPAT defensive performance accountability dashboard preview",
+      role: "media-card"
     },
     buttons: [
       {
@@ -1194,6 +1196,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-portrait-1800x2400.avif"),
+        mediaCardSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-card-1200x900.avif"),
         thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-overlay-thumb-600x400.webp"),
         alt: "Rocky Mountain College MVP award",
         caption: "Rocky Mountain College MVP",
@@ -1554,7 +1557,7 @@ function renderLibrary() {
           <h3>${section.title}</h3>
           <p>${section.description}</p>
           <span class="library-card-media" aria-hidden="${section.media?.alt ? "false" : "true"}">
-            <img src="${encodeURI(section.media?.src || "")}" alt="${section.media?.alt || ""}" loading="lazy" onerror="this.closest('.library-card-media').classList.add('is-missing'); this.remove();" />
+            <img src="${encodeURI(section.media?.src || "")}" alt="${section.media?.alt || ""}"${section.media?.role ? ` data-image-role="${section.media.role}"` : ""} loading="lazy" onerror="this.closest('.library-card-media').classList.add('is-missing'); this.remove();" />
           </span>
           <div class="library-actions">
             ${section.buttons
@@ -1612,7 +1615,8 @@ function mediaLibraryCardMarkup(albumIndex, itemIndex, item, label = "Gallery", 
   const album = mediaLibraryAlbums[albumIndex];
   const title = titleOverride || mediaItemTitle(item, album);
   const isAwardsCard = album?.title === "Playing Career Awards";
-  const thumb = isVideo ? mediaItemPoster(item) : isAwardsCard ? mediaItemSrc(item) : mediaItemCardSrc(item);
+  const awardsThumb = item.mediaCardSrc || mediaItemSrc(item);
+  const thumb = isVideo ? mediaItemPoster(item) : isAwardsCard ? awardsThumb : mediaItemCardSrc(item);
 
   return `
     <button class="media-library-card ${isVideo ? "media-video-card" : "media-photo-card"}" type="button" data-media-library-album="${albumIndex}" data-media-library-item="${itemIndex}" aria-label="Open ${item.alt || title}">

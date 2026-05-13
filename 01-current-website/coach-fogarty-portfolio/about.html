@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Matthew Fogarty</title>
     <meta name="description" content="About Matthew Fogarty's playing foundation, player development background, program building and college staff impact." />
-    <link rel="stylesheet" href="./styles.css?v=footer-responsive-20260512" />
+    <link rel="stylesheet" href="./styles.css?v=about-gallery-image-rules-20260512" />
   </head>
   <body>
     <div class="page-shell">
@@ -36,22 +36,18 @@
           <div class="about-letter-body">
             <div class="about-letter-copy about-cover-copy">
               <div class="about-letter-text">
-                <div class="about-letter-text-column">
-                  <p>
-                    I am a college basketball coach, player development coach and program builder with 20+ years of experience across NCAA, NAIA, 3C2A, CIF and AAU basketball. My work is built around player development, scouting preparation, recruiting organization, defensive accountability and staff-ready systems. My basketball background has been shaped through every side of the game: college player, player development coach, club coach, high school head coach and college assistant. That path gives me a practical view of teaching, communication, roster development and daily program structure.
-                  </p>
-                  <p>
-                    My experience includes Redding Heat, OC Magic, Magic Elite, Connected Sports, Pacific Academy and Santa Ana College, with each stop adding to how I teach, organize and support a team. I have worked with developing players, building competitive habits and helping programs create clearer standards for preparation and accountability. Today, my value is rooted in staff support: individual development plans, scouting preparation, recruiting organization, defensive tracking, film feedback and clear communication. My goal is to help a college program operate with structure, detail and consistency every day while giving players direct coaching they can understand and apply.
-                  </p>
-                </div>
-                <div class="about-letter-text-column">
-                  <p>
-                    I bring a detail-driven approach to the daily work of a staff: preparing players for what they will see, organizing information so it is useful, and reinforcing habits that carry from practice to games. I am comfortable serving the needs of the program, teaching on the floor, building resources behind the scenes and helping create a steady environment where players know the standard. My coaching style is built on relationships, preparation and daily follow-through. Whether I am leading a workout, reviewing film, helping organize a scouting report or supporting a head coach's vision, I bring steady energy to the work that keeps a program moving. The goal is always bigger than one drill, one report or one game plan. I want to be part of a staff that helps players grow as competitors, teammates and people while building a program that is organized, connected and difficult to play against.
-                  </p>
-                  <p>
-                    What I am looking for is an opportunity to contribute every day: to help prepare a team, develop players, support the staff and add value wherever the program needs it. I care about the unseen work that makes a season function: clean communication, organized details, consistent standards, positive energy and the willingness to do the small things well. I believe those habits build trust inside a program, and I want my work to reflect that every day.
-                  </p>
-                </div>
+                <p>
+                  I am a college basketball coach, player development coach and program builder with 20+ years of experience across NCAA, NAIA, 3C2A, CIF and AAU basketball. My work is built around player development, scouting preparation, recruiting organization, defensive accountability and staff-ready systems. My basketball background has been shaped through every side of the game: college player, player development coach, club coach, high school head coach and college assistant. That path gives me a practical view of teaching, communication, roster development and daily program structure.
+                </p>
+                <p>
+                  My experience includes Redding Heat, OC Magic, Magic Elite, Connected Sports, Pacific Academy and Santa Ana College, with each stop adding to how I teach, organize and support a team. I have worked with developing players, building competitive habits and helping programs create clearer standards for preparation and accountability. Today, my value is rooted in staff support: individual development plans, scouting preparation, recruiting organization, defensive tracking, film feedback and clear communication. My goal is to help a college program operate with structure, detail and consistency every day while giving players direct coaching they can understand and apply.
+                </p>
+                <p>
+                  I bring a detail-driven approach to the daily work of a staff: preparing players for what they will see, organizing information so it is useful, and reinforcing habits that carry from practice to games. I am comfortable serving the needs of the program, teaching on the floor, building resources behind the scenes and helping create a steady environment where players know the standard. My coaching style is built on relationships, preparation and daily follow-through. Whether I am leading a workout, reviewing film, helping organize a scouting report or supporting a head coach's vision, I bring steady energy to the work that keeps a program moving. The goal is always bigger than one drill, one report or one game plan. I want to be part of a staff that helps players grow as competitors, teammates and people while building a program that is organized, connected and difficult to play against.
+                </p>
+                <p>
+                  What I am looking for is an opportunity to contribute every day: to help prepare a team, develop players, support the staff and add value wherever the program needs it. I care about the unseen work that makes a season function: clean communication, organized details, consistent standards, positive energy and the willingness to do the small things well. I believe those habits build trust inside a program, and I want my work to reflect that every day.
+                </p>
               </div>
               <img class="about-signature" src="assets/media/signature-matthew-fogarty.svg" alt="Matthew Fogarty signature" />
             </div>
@@ -131,14 +127,31 @@
     <script>
       (() => {
         const page = document.querySelector(".about-cover-page");
-        const text = document.querySelector(".about-letter-text");
-        if (!page || !text) return;
+        const section = document.querySelector(".about-letter-section");
+        const copy = document.querySelector(".about-letter-copy");
+        const body = document.querySelector(".about-letter-body");
+        const eyebrow = document.querySelector(".about-letter-heading .eyebrow");
+        const signature = document.querySelector(".about-signature");
+        if (!page || !section || !copy || !body || !eyebrow || !signature) return;
 
         const syncAboutGalleryHeight = () => {
           if (window.matchMedia("(min-width: 1025px)").matches) {
-            page.style.setProperty("--about-letter-text-height", `${text.getBoundingClientRect().height}px`);
+            const copyHeight = copy.getBoundingClientRect().height;
+            const sectionTop = section.getBoundingClientRect().top;
+            const bodyTop = body.getBoundingClientRect().top;
+            const eyebrowTop = eyebrow.getBoundingClientRect().top;
+            const signatureBottom = signature.getBoundingClientRect().bottom;
+            page.style.setProperty("--about-letter-copy-height", `${copyHeight}px`);
+            page.style.setProperty("--about-letter-text-height", `${copyHeight}px`);
+            page.style.setProperty("--about-section-edge-gap", `${eyebrowTop - sectionTop}px`);
+            page.style.setProperty("--about-gallery-top-offset", `${eyebrowTop - bodyTop}px`);
+            page.style.setProperty("--about-gallery-target-height", `${signatureBottom - eyebrowTop - 16}px`);
           } else {
+            page.style.removeProperty("--about-letter-copy-height");
             page.style.removeProperty("--about-letter-text-height");
+            page.style.removeProperty("--about-section-edge-gap");
+            page.style.removeProperty("--about-gallery-top-offset");
+            page.style.removeProperty("--about-gallery-target-height");
           }
         };
 
@@ -146,7 +159,7 @@
         window.addEventListener("load", syncAboutGalleryHeight, { once: true });
         window.addEventListener("resize", syncAboutGalleryHeight);
         if ("ResizeObserver" in window) {
-          new ResizeObserver(syncAboutGalleryHeight).observe(text);
+          new ResizeObserver(syncAboutGalleryHeight).observe(copy);
         }
       })();
     </script>
