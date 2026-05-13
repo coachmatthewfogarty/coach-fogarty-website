@@ -58,8 +58,8 @@ const librarySections = [
     title: "Recruiting",
     description: "Recruiting plans and program workflow.",
     media: {
-      src: "assets/documents/system-previews/Ready - Q98/systems-recruiting-overview-sheet-media-card-q98-1200x900.webp",
-      alt: "Recruiting overview sheet document preview",
+      src: "assets/documents/recruiting/Ready - Q98/systems-recruiting-workflow-dashboard-media-card-q98-1200x900.webp",
+      alt: "Recruiting system and workflow dashboard preview",
       role: "media-card"
     },
     buttons: [

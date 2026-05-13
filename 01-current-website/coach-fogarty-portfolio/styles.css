@@ -17596,7 +17596,7 @@ main:not(#top) > .anaya-hero.hero .hero-mobile-highlight a {
     --hero-portrait-width: clamp(390px, 28vw, 520px) !important;
     --hero-portrait-height: clamp(370px, 28vw, 430px) !important;
     --hero-desktop-gap: clamp(26px, 2.6vw, 48px) !important;
-    width: min(var(--site-card-width), calc(100% - 88px)) !important;
+    width: 100% !important;
     max-width: none !important;
     margin-inline: auto !important;
     grid-template-columns: minmax(0, 1fr) var(--hero-portrait-width) !important;
@@ -17621,6 +17621,25 @@ main:not(#top) > .anaya-hero.hero .hero-mobile-highlight a {
     max-width: min(100%, 980px) !important;
   }
 
+  main:not(#top) > .anaya-hero.hero .hero-copy > p.eyebrow {
+    margin: 0 0 clamp(10px, 0.75vw, 16px) !important;
+    font-size: clamp(0.74rem, calc(0.62rem + 0.14vw), 0.797rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  main:not(#top) > .anaya-hero.hero .hero-copy > h1 {
+    margin: 0 !important;
+    line-height: 0.95 !important;
+  }
+
+  main:not(#top) > .anaya-hero.hero .hero-copy > p.hero-text:not(.eyebrow) {
+    max-width: min(100%, 920px) !important;
+    margin-top: clamp(16px, 1.25vw, 24px) !important;
+    font-size: clamp(0.95rem, calc(0.78rem + 0.18vw), 1.02rem) !important;
+    line-height: 1.52 !important;
+  }
+
   main:not(#top) > .anaya-hero.hero .hero-visual {
     grid-area: portrait !important;
     display: block !important;
@@ -17642,9 +17661,25 @@ main:not(#top) > .anaya-hero.hero .hero-mobile-highlight a {
   main:not(#top) > .anaya-hero.hero .hero-stat-band {
     grid-area: stats !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: clamp(8px, 0.8vw, 14px) !important;
     align-self: end !important;
     width: 100% !important;
     margin-top: 0 !important;
+  }
+
+  main:not(#top) > .anaya-hero.hero .hero-stat-band article {
+    min-height: 76px !important;
+    height: 76px !important;
+    padding: 12px 18px !important;
+  }
+
+  main:not(#top) > .anaya-hero.hero .hero-stat-band article strong {
+    line-height: 1 !important;
+  }
+
+  main:not(#top) > .anaya-hero.hero .hero-stat-band article span {
+    font-size: clamp(0.64rem, calc(0.5rem + 0.2vw), 0.756rem) !important;
+    line-height: 1.1 !important;
   }
 
   main:not(#top) > .anaya-hero.hero .hero-mobile-highlight {
@@ -17666,7 +17701,7 @@ main:not(#top) > .anaya-hero.hero .hero-mobile-highlight a {
     --hero-portrait-width: clamp(440px, 22vw, 520px) !important;
     --hero-portrait-height: clamp(370px, 16vw, 430px) !important;
     --hero-desktop-gap: clamp(24px, 2vw, 48px) !important;
-    width: min(1540px, 100%) !important;
+    width: 100% !important;
     grid-template-rows: auto auto !important;
     align-content: stretch !important;
   }
@@ -17685,8 +17720,8 @@ main:not(#top) > .anaya-hero.hero .hero-mobile-highlight a {
   }
 
   main:not(#top) > .anaya-hero.hero .hero-mobile-highlight div {
-    gap: 0 clamp(6px, 0.55vw, 14px) !important;
-    font-size: clamp(0.7rem, calc(0.2rem + 0.62vw), 1.02rem) !important;
+    gap: 0 clamp(5px, 0.36vw, 9px) !important;
+    font-size: clamp(0.74rem, calc(0.42rem + 0.36vw), 1rem) !important;
   }
 }
 
