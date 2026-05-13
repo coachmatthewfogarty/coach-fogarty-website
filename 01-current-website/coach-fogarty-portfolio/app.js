@@ -31,8 +31,8 @@ const librarySections = [
     title: "Scouting",
     description: "Opponent prep and game-ready staff tools.",
     media: {
-      src: "assets/documents/system-previews/scouting-overview.webp",
-      alt: "Scouting report overview document preview"
+      src: "assets/documents/system-previews/scouting-personnel-report.webp",
+      alt: "Bakersfield personnel report document preview"
     },
     buttons: [
       {
@@ -247,7 +247,7 @@ const mediaAlbums = [
   {
     title: "Coaching Details",
     category: "Coaching Details",
-    thumbnail: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif"),
+    thumbnail: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-media-card-1200x900.avif"),
     thumbnailRole: "media-card",
     caption: "Coaching Details",
     crop: "teaching",
@@ -502,7 +502,7 @@ const mediaAlbums = [
   {
     title: "Championship Culture",
     category: "Championship Culture",
-    thumbnail: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-media-card-1200x900.avif"),
+    thumbnail: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-three-peat-media-card-1200x900.avif"),
     thumbnailRole: "media-card",
     caption: "Championship Culture",
     crop: "culture",
@@ -1504,7 +1504,6 @@ function enableSwipeCarousel(surface, onSwipe) {
     startX = event.clientX;
     startY = event.clientY;
     didSwipe = false;
-    surface.setPointerCapture?.(pointerId);
   });
 
   surface.addEventListener("pointermove", (event) => {
@@ -1516,6 +1515,7 @@ function enableSwipeCarousel(surface, onSwipe) {
     const deltaY = event.clientY - startY;
 
     if (Math.abs(deltaX) > 10 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      surface.setPointerCapture?.(pointerId);
       event.preventDefault();
     }
   });
@@ -1630,20 +1630,80 @@ function mediaLibraryCardMarkup(albumIndex, itemIndex, item, label = "Gallery", 
 }
 
 function connectMediaLibraryCards(root = document) {
-  root.querySelectorAll("[data-media-library-album]").forEach((card) => {
-    card.addEventListener("click", () => {
-      openMediaAlbum(
-        Number(card.dataset.mediaLibraryAlbum),
-        mediaLibraryAlbums,
-        Number(card.dataset.mediaLibraryItem || 0)
-      );
-    });
+  if (!root || root.dataset?.mediaGalleryReady === "true") {
+    return;
+  }
+
+  if (root.dataset) {
+    root.dataset.mediaGalleryReady = "true";
+  }
+
+  let suppressGalleryClickUntil = 0;
+
+  const openGalleryTrigger = (trigger) => {
+    const itemIndex = Number(trigger.dataset.openMediaGalleryItem || 0);
+    openMediaAlbum(Number(trigger.dataset.openMediaGallery), mediaLibraryAlbums, Number.isInteger(itemIndex) ? itemIndex : 0);
+  };
+
+  const openMediaLibraryItem = (card) => {
+    openMediaAlbum(
+      Number(card.dataset.mediaLibraryAlbum),
+      mediaLibraryAlbums,
+      Number(card.dataset.mediaLibraryItem || 0)
+    );
+  };
+
+  const handleMediaLibraryActivation = (event) => {
+    const itemCard = event.target.closest("[data-media-library-album]");
+    const galleryTrigger = event.target.closest("[data-open-media-gallery]");
+
+    if (itemCard && root.contains(itemCard)) {
+      event.preventDefault();
+      event.stopPropagation();
+      suppressGalleryClickUntil = window.performance.now() + 450;
+      openMediaLibraryItem(itemCard);
+      return;
+    }
+
+    if (galleryTrigger && root.contains(galleryTrigger)) {
+      event.preventDefault();
+      event.stopPropagation();
+      suppressGalleryClickUntil = window.performance.now() + 450;
+      openGalleryTrigger(galleryTrigger);
+    }
+  };
+
+  root.addEventListener("pointerup", (event) => {
+    if (event.button !== 0) {
+      return;
+    }
+
+    handleMediaLibraryActivation(event);
   });
 
-  root.querySelectorAll("[data-open-media-gallery]").forEach((button) => {
-    button.addEventListener("click", () => {
-      openMediaAlbum(Number(button.dataset.openMediaGallery), mediaLibraryAlbums);
-    });
+  root.addEventListener("click", (event) => {
+    if (window.performance.now() < suppressGalleryClickUntil) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
+    handleMediaLibraryActivation(event);
+  });
+
+  root.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    const galleryTrigger = event.target.closest("[data-open-media-gallery]");
+
+    if (!galleryTrigger || !root.contains(galleryTrigger)) {
+      return;
+    }
+
+    event.preventDefault();
+    openGalleryTrigger(galleryTrigger);
   });
 }
 
@@ -1742,12 +1802,12 @@ function renderMediaLibraryPage() {
   };
 
   const categoryCards = [
-    { title: "Sideline Leadership", desc: "Game energy, staff presence and leadership moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[0]) },
-    { title: "Coaching Details", desc: "Teaching, preparation and game-day coaching details.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[1]) },
-    { title: "Player Development", desc: "On-court teaching and player-development work.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[2]) },
     { title: "Team Environment", desc: "Huddles, program culture and team connection.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[3]) },
     { title: "Team Celebration", desc: "Big shots, reactions and team moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[4]) },
     { title: "Championship Culture", desc: "Championship history and program standards.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[5]) },
+    { title: "Sideline Leadership", desc: "Game energy, staff presence and leadership moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[0]) },
+    { title: "Coaching Details", desc: "Teaching, preparation and game-day coaching details.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[1]) },
+    { title: "Player Development", desc: "On-court teaching and player-development work.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[2]) },
     { title: "The Archer", desc: "Shooting-development photos and training clips.", href: "#archer-media", albumIndex: albumIndexFor(archerAlbum) },
     { title: "Anaya Beard Case Study", desc: "Development journey media and proof of growth.", href: "#anaya-media", albumIndex: albumIndexFor(anayaFullAlbum) },
     { title: "Playing Career", desc: "College and high school playing-career photos.", href: "#playing-career-media", albumIndex: albumIndexFor(playingAlbum) },
@@ -1756,11 +1816,18 @@ function renderMediaLibraryPage() {
 
   const categoryCardMarkup = (card) => {
       const album = mediaLibraryAlbums[card.albumIndex];
-      const firstItem = activeAlbumItemsFor(album)[0];
-      const thumb = firstItem ? mediaItemCardSrc(firstItem) : album.thumbnail;
+      const items = activeAlbumItemsFor(album);
+      const firstItem = items[0];
+      const thumb = album.thumbnail || (firstItem ? mediaItemCardSrc(firstItem) : "");
+      const thumbnailItemIndex = Math.max(
+        0,
+        items.findIndex((item) =>
+          [mediaItemCardSrc(item), mediaItemThumb(item), mediaItemSrc(item), item.src].includes(thumb)
+        )
+      );
 
       return `
-        <article class="media-category-card">
+        <article class="media-category-card" data-gallery-category="${systemTypeSlug(card.title)}" data-open-media-gallery="${card.albumIndex}" data-open-media-gallery-item="${thumbnailItemIndex}" role="button" tabindex="0" aria-label="Open ${card.title} gallery">
           <span class="media-category-frame">
             <img src="${encodeURI(thumb)}" alt="${card.title}" loading="lazy" />
           </span>

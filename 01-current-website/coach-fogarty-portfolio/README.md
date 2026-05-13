@@ -40,7 +40,7 @@ Current as of May 12:
 - The signature lives inside `.about-letter-copy` after the text so it follows the letter, not the image grid.
 - The photo collage is `.about-letter-gallery`; images should stay in a two-column grid and use the approved `1200x900` AVIF card crops unless a future slot needs a larger crop.
 - The final override rules for this page live near the end of `styles.css` under `About page final pass`. Start there before editing older About rules earlier in the stylesheet.
-- Desktop `1120px+` should feel like one clean cover letter: two text columns, signature below the left copy, and the image grid on the right.
+- Desktop `1181px+` should feel like one clean cover letter: one continuous text column, signature directly after the final line of copy, and the face-safe image grid on the right. Do not split the About copy into two text columns.
 - Tablet and phone should read as letter first, signature, then the image grid. The images should resize by slot width/height, not force horizontal scrolling.
 - Verification widths for this page: `320`, `375`, `430`, `820`, `1120`, `1280`, `1365`, `1600`, `1920`.
 
