@@ -2,7 +2,7 @@
 
 Generated: 2026-05-14
 
-Status: planning only. No live design changes have been made.
+Status: historical/reference. This plan has been implemented and superseded by the locked source of truth at `coach-fogarty-portfolio/docs/responsive/HOME-MEDIA-SECTION-LOCK-README.md`. Some line numbers in this plan reflect the pre-cleanup code and should not be used as active anchors.
 
 ## Executive Decision
 
@@ -285,4 +285,3 @@ Recommended approval path:
 - Approve removing `--gallery-media-height`.
 - Approve unifying Anaya overlay markup with the shared shell.
 - Approve keeping thumbnail arrows visible on both sides of the thumbnail carousel, including mobile, with one-thumbnail scroll and wrapping.
-

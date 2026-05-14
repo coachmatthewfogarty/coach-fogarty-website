@@ -2239,9 +2239,12 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
     .join("");
 
   const showThumbnailStrip = hasMultipleItems || isPhotoAlbumOverlay;
+  const isSingleItemStrip = showThumbnailStrip && items.length === 1;
+  mediaOverlay.classList.toggle("media-overlay--single-item", isSingleItemStrip);
   mediaOverlayStrip.hidden = !showThumbnailStrip;
   if (mediaOverlayStripShell) {
     mediaOverlayStripShell.hidden = !showThumbnailStrip;
+    mediaOverlayStripShell.classList.toggle("is-single-item", isSingleItemStrip);
   }
   if (mediaOverlayThumbPrev) {
     mediaOverlayThumbPrev.hidden = !showThumbnailStrip || items.length <= 1;
@@ -2249,7 +2252,7 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   if (mediaOverlayThumbNext) {
     mediaOverlayThumbNext.hidden = !showThumbnailStrip || items.length <= 1;
   }
-  mediaOverlayStrip.classList.toggle("has-single-thumb", showThumbnailStrip && items.length === 1);
+  mediaOverlayStrip.classList.toggle("has-single-thumb", isSingleItemStrip);
   mediaOverlayPrev.hidden = !hasMultipleItems;
   mediaOverlayNext.hidden = !hasMultipleItems;
   queueActiveMediaThumbnailScroll(thumbScrollBehavior);
@@ -2277,12 +2280,14 @@ function closeMediaOverlay() {
   }
 
   mediaOverlay.classList.remove("is-open");
+  mediaOverlay.classList.remove("media-overlay--single-item");
   mediaOverlay.setAttribute("aria-hidden", "true");
   document.body.classList.remove("media-overlay-open");
   mediaOverlayViewer.innerHTML = "";
   mediaOverlayStrip.innerHTML = "";
   if (mediaOverlayStripShell) {
     mediaOverlayStripShell.hidden = true;
+    mediaOverlayStripShell.classList.remove("is-single-item");
   }
 }
 
@@ -2470,7 +2475,15 @@ function openPlayingCareerAlbum(card) {
 }
 
 function playingCareerPageSize() {
-  return window.matchMedia("(max-width: 720px)").matches ? 1 : 3;
+  if (window.matchMedia("(max-width: 720px)").matches) {
+    return 1;
+  }
+
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    return 2;
+  }
+
+  return 3;
 }
 
 function playingCareerCards() {

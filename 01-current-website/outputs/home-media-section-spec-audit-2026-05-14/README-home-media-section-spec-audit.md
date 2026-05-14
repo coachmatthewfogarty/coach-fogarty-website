@@ -2,6 +2,8 @@
 
 Generated: 2026-05-14
 
+Historical/reference note: this audit was used during the cleanup and design-lock process. It is no longer the active source of truth, and some line numbers reflect pre-cleanup code. Use `coach-fogarty-portfolio/docs/responsive/HOME-MEDIA-SECTION-LOCK-README.md` for the locked Home Media specs. The CSV/XLSX in this folder should also be treated as historical audit inputs.
+
 Audit folder: `outputs/home-media-section-spec-audit-2026-05-14`
 
 ## Scope

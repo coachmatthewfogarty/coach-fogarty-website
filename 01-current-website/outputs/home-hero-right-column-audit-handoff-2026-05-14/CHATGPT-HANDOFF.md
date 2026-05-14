@@ -1,5 +1,7 @@
 # ChatGPT Handoff: Home Hero Right Column Audit
 
+Superseded note: this handoff captured the pre-lock right-column audit. The current source of truth is `coach-fogarty-portfolio/docs/responsive/HOME-HERO-DESKTOP-MASTER-LOCK.md`, where the desktop right-column system is locked through `.hero-right-system`, `.hero-portrait-card`, `.hero-portrait-picture`, `.hero-portrait-image`, and `.hero-portrait-overlay`.
+
 Use this as the source-of-truth summary for checking the current Home hero right-column image system.
 
 ## Goal

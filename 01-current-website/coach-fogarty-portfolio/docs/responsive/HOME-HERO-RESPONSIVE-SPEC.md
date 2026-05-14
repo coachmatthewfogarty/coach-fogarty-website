@@ -74,10 +74,10 @@ Current hero tokens:
 --hero-eyebrow-size: clamp(11.84px, calc(10.56px + 0.12vw), 13.76px);
 --hero-eyebrow-line: 1.15;
 
---hero-wide-gap: 0px;
+--hero-wide-gap: 0px; /* legacy token; Home desktop master lock overrides 2200px+ gap */
 --hero-wide-copy-max: 1180px;
 --hero-wide-paragraph-max: 1120px;
---hero-wide-support-max: 1354px;
+--hero-wide-support-max: 1354px; /* legacy/shared token; Home desktop master lock fills the grid track at 1920px+ */
 --hero-wide-title-size: clamp(76px, 3.1vw, 82px);
 --hero-wide-portrait-width: clamp(660px, 28vw, 740px);
 --hero-wide-portrait-height: clamp(480px, 20vw, 540px);
@@ -93,8 +93,8 @@ Later approved locks override paragraph max-width to `100%` for the Home hero bo
 | `1280x800` | `28.2px 36px 23px` | left lane + `390px` | `33.28px` | about `390px x 380.5px` |
 | `1440x900` | `31.7px 36px 25.9px` | left lane + `390px` | `37.44px` | about `390px x 389.5px` |
 | `1600x900` | `31.7px 36px 25.9px` | left lane + right portrait | `37.44px` | about `370px` tall |
-| `1920x1080` | `36px 46.1px 30px` | left lane + `480px` | `38.4px` | about `480px x 380.6px` |
-| `2560x1440` | `36px 58px 30px` | left lane + wide portrait | `0px` | about `716.8px x 512px` |
+| `1920x1080` | `36px 46.1px 30px` | full left lane + `480px` | `38.4px` | about `480px x 380.6px` |
+| `2560x1440` | `36px 58px 30px` | left lane + wide portrait | grid gap `0px`; visual right-column offset `51.2px` | about `716.8px x 500px` |
 
 Guardrails:
 
@@ -122,8 +122,8 @@ Approved body behavior:
 | `1350-1419px` | `100%` | `17.25px` | `29px` | fills left lane |
 | `1420-1599px` | `100%` | `17.25px` | `28px` | fills left lane |
 | `1600-1919px` | `100%` | `17.5px` | `30px` | fills left lane |
-| `1920-2199px` | `100%` | `17.5px` | `27.5px` | fills left lane |
-| `2200px+` | `100%` | `22px` | `46px` | wide desktop rhythm |
+| `1920-2199px` | `100%` | `17.5px` | `27.5px` | fills full left grid track |
+| `2200px+` | `100%` | `22px` | `46px` | wide desktop rhythm; body margin-top uses `clamp(28px, calc(-166px + 8.8vw), 48px)` |
 
 Copy rules:
 
@@ -149,7 +149,8 @@ Approved stat pill system:
 - Pills stay in the left support area.
 - Pills never run underneath the right portrait.
 - Pill colors, border radius, padding, type, and gaps match the Home hero system.
-- Wide desktop pills are capped.
+- Wide desktop pills are not capped narrower than the left copy lane.
+- At `2200px+`, the pill group keeps `--home-hero-pill-lift: 0px` so the 2-row group bottom-aligns with the right portrait card.
 
 Current sizing targets:
 
@@ -159,24 +160,29 @@ Current sizing targets:
 | `1350-1499px` | `3 x 2` | about `273.9px` | `63.9px` | about `12px` | about `22.9px` | about `12px` |
 | `1500-1719px` | `3 x 2` | about `306px` | `70px` | about `12px` | about `22.6px` | about `12px` |
 | `1720-2199px` | `3 x 2` | about `346.5px` | `76px` | about `12px` | about `22.3px` | about `11.8px` |
-| `2200px+` | `3 x 2` | capped around `364px` | `72px` | about `12px` | `23px` | `12.5px` |
+| `2200px+` | `3 x 2` | stretches with full left grid track | `82px` | about `12px` | `26px` | `13.5px` |
 
 Wide desktop guardrail:
 
 ```css
-main#top > .hero .hero-stat-band {
-  width: min(100%, 1120px);
-  max-width: min(100%, 1120px);
+main#top > .hero .hero-left-system,
+main#top > .hero .hero-pill-system {
+  width: min(100%, var(--home-hero-left-system-max));
+  max-width: min(100%, var(--home-hero-left-system-max));
 }
+
+/* 1920px+ sets --home-hero-left-system-max: 100% */
 ```
 
 ## Right Image
 
-Selectors:
+Scoped desktop selectors:
 
 ```text
-main#top > .hero .portrait-card
-main#top > .hero .portrait-card img
+main#top > .hero .hero-right-system
+main#top > .hero .hero-portrait-card
+main#top > .hero .hero-portrait-picture
+main#top > .hero .hero-portrait-image
 ```
 
 Image rules:
@@ -188,17 +194,18 @@ Image rules:
 
 ## Portfolio Highlight Overlay
 
-Selectors:
+Scoped desktop selectors:
 
 ```text
-main#top > .hero .hero-mobile-highlight
-main#top > .hero .hero-mobile-highlight p
-main#top > .hero .hero-mobile-highlight div
+main#top > .hero .hero-portrait-overlay
+main#top > .hero .hero-portrait-overlay-title
+main#top > .hero .hero-portrait-overlay-text
 ```
 
 Overlay rules:
 
 - Keep the overlay attached to the right portrait.
+- `.hero-mobile-highlight` is retained as a legacy/tablet/mobile compatibility class, but desktop lock work should target `.hero-portrait-overlay`.
 - Keep the approved right-column formatting.
 - Keep approved overlay text on one line.
 - Wide desktop overlay should be capped so it does not stretch too far.
@@ -209,8 +216,8 @@ Current wide desktop overlay cap:
 
 ```css
 main#top > .hero .hero-mobile-highlight {
-  width: min(calc(100% - 26px), 560px);
-  max-width: min(calc(100% - 26px), 560px);
+  width: min(calc(100% - 26px), clamp(560px, 25vw, 680px));
+  max-width: min(calc(100% - 26px), clamp(560px, 25vw, 680px));
 }
 ```
 

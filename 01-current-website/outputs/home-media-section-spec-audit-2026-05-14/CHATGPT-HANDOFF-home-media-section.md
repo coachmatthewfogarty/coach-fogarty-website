@@ -2,6 +2,8 @@
 
 Generated: 2026-05-14
 
+Historical/reference note: this handoff captured the pre-lock audit state. It is no longer the active source of truth, and some line numbers reflect pre-cleanup code. Use `coach-fogarty-portfolio/docs/responsive/HOME-MEDIA-SECTION-LOCK-README.md` for the locked Home Media specs.
+
 ## Current Source Of Truth
 
 The Home Page Media section lives at `coach-fogarty-portfolio/index.html:170-175`. The visible cards are rendered into `#galleryGrid` by `renderGallery()` in `coach-fogarty-portfolio/app.js:1625-1655`.

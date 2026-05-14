@@ -1,5 +1,7 @@
 # ChatGPT Handoff: Home Hero Left Column Lock
 
+Superseded note: this handoff captured an earlier left-column lock pass. The current source of truth is `coach-fogarty-portfolio/docs/responsive/HOME-HERO-DESKTOP-MASTER-LOCK.md`.
+
 Use this as the source-of-truth summary for the Home hero left-column system.
 
 ## Goal
@@ -27,8 +29,10 @@ The Home hero now locks eyebrow, title, body text, and stat-pill grid to the sam
 | 1350-1499px | 980px | 760.56-909.56px | 760.56-909.56px | 760.56-909.56px |
 | 1500-1599px | 980px | 910.56-980px | 910.56-980px | 910.56-980px |
 | 1600-1919px | 980px | 980px | 980px | 980px |
-| 1920-2199px | 980px | 980px | 980px | 980px |
-| 2200px+ | var(--hero-wide-support-max), currently 1354px | 1102px at 2200px; 1290px at 2400px | same | same |
+| 1920-2199px | 100% of safe left grid track | about 1067.42px at 1920px | same | same |
+| 2200px+ | 100% of safe left grid track | 1102px at 2200px; 1290px at 2400px; about 1405.2px at 2560px | same | same |
+
+Current final 2200px+ stat-pill scale: `82px` height, `26px` main text, `13.5px` sub-label text, and `--home-hero-pill-lift: 0px`.
 
 ## Confirmation
 

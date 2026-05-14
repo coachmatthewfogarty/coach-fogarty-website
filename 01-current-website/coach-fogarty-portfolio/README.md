@@ -19,6 +19,7 @@ These are the only active website rule documents. If an archived note or old aud
 | Website map, editing rules, and doc index | `README.md` |
 | Global responsive, heading, body text, card, pill, overlay, and page-layout rules | `RESPONSIVE-DESIGN-SYSTEM.md` |
 | Measured Home hero desktop system | `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` |
+| Locked Home Media cards, carousel, and shared overlay behavior | `docs/responsive/HOME-MEDIA-SECTION-LOCK-README.md` |
 | Responsive-doc index and verification sizes | `docs/responsive/README.md` |
 | Locked image export, crop, naming, and asset rules | `docs/image-export/README.md` |
 
@@ -85,6 +86,21 @@ Locked Homepage Systems section:
 - Layout: desktop `3` columns at `>=1025px`, tablet `2` columns from `721px` through `1024px`, mobile `1` column through `720px`.
 - Preserve the cream section background, red card titles, rounded cards, image-forward layout, `4 / 3` media ratio, `object-fit: cover`, and pill button structure.
 - Do not redesign or change colors, typography, image ratio, spacing, card structure, or button style unless fixing a true bug.
+
+Locked Homepage Media section:
+
+- Status: visually approved and locked as of May 14, 2026.
+- Active source of truth: `docs/responsive/HOME-MEDIA-SECTION-LOCK-README.md`.
+- Section target: `#media.media-section`.
+- Cards render from `mediaAlbums` in `app.js` through `renderGallery()`.
+- Card thumbnails stay aligned with the first intended overlay image, and card clicks open the overlay at that matching first item.
+- Layout: desktop `3` columns, tablet `2` columns, mobile `1` column.
+- Preserve the `4 / 3` image frame, `object-fit: cover`, and title-below-image caption bar.
+- Captions keep the 1280px/1440px behavior and use the locked 1600px+ title/padding/arrow scaling.
+- Home Media, Media page, and Anaya use the shared media overlay shell.
+- Multi-image thumbnail arrows move one image at a time, wrap both directions, and remain draggable/clickable.
+- Single-image albums use the single-item overlay state: centered normal-size active thumbnail, thumbnail arrows hidden.
+- Do not reintroduce `--gallery-media-height`, duplicate late Home Media overrides, or old overlay rules that hide thumbnail arrows with `!important`.
 
 ## Responsive Verification
 

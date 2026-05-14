@@ -2,6 +2,8 @@
 
 Date: 2026-05-14
 
+Superseded note: this package captured the pre-lock right-column audit. The current source of truth is `coach-fogarty-portfolio/docs/responsive/HOME-HERO-DESKTOP-MASTER-LOCK.md`, where `.hero-right-system`, `.hero-portrait-card`, `.hero-portrait-picture`, `.hero-portrait-image`, and `.hero-portrait-overlay` are the locked desktop hooks.
+
 This package contains the current Home hero right-column audit handoff. No code was changed for this audit.
 
 ## Files

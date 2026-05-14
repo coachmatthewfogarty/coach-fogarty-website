@@ -1,0 +1,479 @@
+{
+  "player": [
+    {
+      "width": 820,
+      "data": {
+        "open": true,
+        "overlaySingleClass": true,
+        "shellSingleClass": true,
+        "title": "Player Growth",
+        "caption": "Player Development Instruction",
+        "thumbCount": 1,
+        "activeIndex": "0",
+        "prevHidden": true,
+        "nextHidden": true,
+        "prevDisplay": "none",
+        "nextDisplay": "none",
+        "shellColumns": "761.219px",
+        "thumbWidth": 86.1,
+        "thumbHeight": 57.4,
+        "stripWidth": 90.1,
+        "shellWidth": 761.2,
+        "thumbCentered": true,
+        "stripCollapsed": false
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/player-growth-overlay-820.png"
+    },
+    {
+      "width": 1280,
+      "data": {
+        "open": true,
+        "overlaySingleClass": true,
+        "shellSingleClass": true,
+        "title": "Player Growth",
+        "caption": "Player Development Instruction",
+        "thumbCount": 1,
+        "activeIndex": "0",
+        "prevHidden": true,
+        "nextHidden": true,
+        "prevDisplay": "none",
+        "nextDisplay": "none",
+        "shellColumns": "806px",
+        "thumbWidth": 120,
+        "thumbHeight": 80,
+        "stripWidth": 124,
+        "shellWidth": 806,
+        "thumbCentered": true,
+        "stripCollapsed": false
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/player-growth-overlay-1280.png"
+    },
+    {
+      "width": 1440,
+      "data": {
+        "open": true,
+        "overlaySingleClass": true,
+        "shellSingleClass": true,
+        "title": "Player Growth",
+        "caption": "Player Development Instruction",
+        "thumbCount": 1,
+        "activeIndex": "0",
+        "prevHidden": true,
+        "nextHidden": true,
+        "prevDisplay": "none",
+        "nextDisplay": "none",
+        "shellColumns": "806px",
+        "thumbWidth": 120,
+        "thumbHeight": 80,
+        "stripWidth": 124,
+        "shellWidth": 806,
+        "thumbCentered": true,
+        "stripCollapsed": false
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/player-growth-overlay-1440.png"
+    },
+    {
+      "width": 1600,
+      "data": {
+        "open": true,
+        "overlaySingleClass": true,
+        "shellSingleClass": true,
+        "title": "Player Growth",
+        "caption": "Player Development Instruction",
+        "thumbCount": 1,
+        "activeIndex": "0",
+        "prevHidden": true,
+        "nextHidden": true,
+        "prevDisplay": "none",
+        "nextDisplay": "none",
+        "shellColumns": "806px",
+        "thumbWidth": 120,
+        "thumbHeight": 80,
+        "stripWidth": 124,
+        "shellWidth": 806,
+        "thumbCentered": true,
+        "stripCollapsed": false
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/player-growth-overlay-1600.png"
+    },
+    {
+      "width": 1920,
+      "data": {
+        "open": true,
+        "overlaySingleClass": true,
+        "shellSingleClass": true,
+        "title": "Player Growth",
+        "caption": "Player Development Instruction",
+        "thumbCount": 1,
+        "activeIndex": "0",
+        "prevHidden": true,
+        "nextHidden": true,
+        "prevDisplay": "none",
+        "nextDisplay": "none",
+        "shellColumns": "806px",
+        "thumbWidth": 120,
+        "thumbHeight": 80,
+        "stripWidth": 124,
+        "shellWidth": 806,
+        "thumbCentered": true,
+        "stripCollapsed": false
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/player-growth-overlay-1920.png"
+    },
+    {
+      "width": 2560,
+      "data": {
+        "open": true,
+        "overlaySingleClass": true,
+        "shellSingleClass": true,
+        "title": "Player Growth",
+        "caption": "Player Development Instruction",
+        "thumbCount": 1,
+        "activeIndex": "0",
+        "prevHidden": true,
+        "nextHidden": true,
+        "prevDisplay": "none",
+        "nextDisplay": "none",
+        "shellColumns": "806px",
+        "thumbWidth": 120,
+        "thumbHeight": 80,
+        "stripWidth": 124,
+        "shellWidth": 806,
+        "thumbCentered": true,
+        "stripCollapsed": false
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/player-growth-overlay-2560.png"
+    }
+  ],
+  "cards": [
+    {
+      "width": 1280,
+      "data": {
+        "cardCount": 6,
+        "columns": 3,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 44.2,
+        "captionPadding": "10.24px 12.8px 11.24px 12.8px",
+        "titleFontSize": "15.232px",
+        "arrowSize": "21.8x21.8",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-1280.png"
+    },
+    {
+      "width": 1440,
+      "data": {
+        "cardCount": 6,
+        "columns": 3,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 49,
+        "captionPadding": "11.52px 14.4px 12.52px 14.4px",
+        "titleFontSize": "15.776px",
+        "arrowSize": "24x24",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-1440.png"
+    },
+    {
+      "width": 1600,
+      "data": {
+        "cardCount": 6,
+        "columns": 3,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 50,
+        "captionPadding": "12px 14px 13px 14px",
+        "titleFontSize": "16.64px",
+        "arrowSize": "24x24",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-1600.png"
+    },
+    {
+      "width": 1920,
+      "data": {
+        "cardCount": 6,
+        "columns": 3,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 53.6,
+        "captionPadding": "13.824px 15.744px 14.824px 15.744px",
+        "titleFontSize": "17.344px",
+        "arrowSize": "24x24",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-1920.png"
+    },
+    {
+      "width": 2560,
+      "data": {
+        "cardCount": 6,
+        "columns": 3,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 62,
+        "captionPadding": "16px 18px 17px 18px",
+        "titleFontSize": "18.752px",
+        "arrowSize": "28x28",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-2560.png"
+    }
+  ],
+  "smoke": [
+    {
+      "width": 375,
+      "data": {
+        "cardCount": 6,
+        "columns": 1,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 31,
+        "captionPadding": "6px 6px 8px 6px",
+        "titleFontSize": "11.52px",
+        "arrowSize": "16x16",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-375.png"
+    },
+    {
+      "width": 430,
+      "data": {
+        "cardCount": 6,
+        "columns": 1,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 31,
+        "captionPadding": "6px 6px 8px 6px",
+        "titleFontSize": "11.52px",
+        "arrowSize": "16x16",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-430.png"
+    },
+    {
+      "width": 720,
+      "data": {
+        "cardCount": 6,
+        "columns": 1,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 40,
+        "captionPadding": "9px 10px 10px 10px",
+        "titleFontSize": "13.44px",
+        "arrowSize": "20x20",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-720.png"
+    },
+    {
+      "width": 768,
+      "data": {
+        "cardCount": 6,
+        "columns": 2,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 39,
+        "captionPadding": "9px 11.904px 10px 11.904px",
+        "titleFontSize": "13.3056px",
+        "arrowSize": "19x19",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-768.png"
+    },
+    {
+      "width": 820,
+      "data": {
+        "cardCount": 6,
+        "columns": 2,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 40.5,
+        "captionPadding": "9.43px 12.71px 10.43px 12.71px",
+        "titleFontSize": "13.524px",
+        "arrowSize": "19.7x19.7",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-820.png"
+    },
+    {
+      "width": 1024,
+      "data": {
+        "cardCount": 6,
+        "columns": 2,
+        "ratios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "objectFitCover": true,
+        "titlesBelowImages": true,
+        "captionHeight": 48.5,
+        "captionPadding": "11.776px 15px 12.776px 15px",
+        "titleFontSize": "14.3808px",
+        "arrowSize": "23x23",
+        "captionsClean": true
+      },
+      "screenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14-refinement/home-cards-1024.png"
+    }
+  ],
+  "multi": [
+    {
+      "width": 375,
+      "initial": {
+        "thumbCount": 10,
+        "activeIndex": "0",
+        "arrowsVisible": true,
+        "thumbWidth": 82.5,
+        "gap": 10
+      },
+      "nextDelta": 93,
+      "expectedStep": 92.5,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true
+    },
+    {
+      "width": 820,
+      "initial": {
+        "thumbCount": 10,
+        "activeIndex": "0",
+        "arrowsVisible": true,
+        "thumbWidth": 86.09375,
+        "gap": 10
+      },
+      "nextDelta": 96,
+      "expectedStep": 96.1,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true
+    },
+    {
+      "width": 1280,
+      "initial": {
+        "thumbCount": 10,
+        "activeIndex": "0",
+        "arrowsVisible": true,
+        "thumbWidth": 120,
+        "gap": 10
+      },
+      "nextDelta": 130,
+      "expectedStep": 130,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true
+    },
+    {
+      "width": 1920,
+      "initial": {
+        "thumbCount": 10,
+        "activeIndex": "0",
+        "arrowsVisible": true,
+        "thumbWidth": 120,
+        "gap": 10
+      },
+      "nextDelta": 130,
+      "expectedStep": 130,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true
+    }
+  ],
+  "anaya": {
+    "open": true,
+    "title": "Foundation",
+    "thumbCount": 9,
+    "hasShell": true,
+    "prevExists": true,
+    "nextExists": true
+  },
+  "mediaPage": {
+    "open": true,
+    "title": "Program Standards",
+    "thumbCount": 2,
+    "hasShell": true,
+    "prevExists": true,
+    "nextExists": true
+  }
+}

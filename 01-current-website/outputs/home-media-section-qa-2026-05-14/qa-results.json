@@ -1,0 +1,422 @@
+{
+  "results": [
+    {
+      "width": 375,
+      "home": {
+        "cardCount": 6,
+        "columns": 1,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "9.75px",
+        "sectionPaddingTop": "15px",
+        "sectionPaddingBottom": "15px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 919,
+        "stripClientWidth": 256,
+        "thumbWidth": 82.5,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 93,
+      "expectedThumbStep": 92.5,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-375.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-375.png"
+      }
+    },
+    {
+      "width": 720,
+      "home": {
+        "cardCount": 6,
+        "columns": 1,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "14px",
+        "sectionPaddingTop": "20px",
+        "sectionPaddingBottom": "20px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 1014,
+        "stripClientWidth": 350,
+        "thumbWidth": 92,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 102,
+      "expectedThumbStep": 102,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-720.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-720.png"
+      }
+    },
+    {
+      "width": 768,
+      "home": {
+        "cardCount": 6,
+        "columns": 2,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "15.36px",
+        "sectionPaddingTop": "23.04px",
+        "sectionPaddingBottom": "23.04px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 900,
+        "stripClientWidth": 619,
+        "thumbWidth": 80.625,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 91,
+      "expectedThumbStep": 90.6,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-768.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-768.png"
+      }
+    },
+    {
+      "width": 1024,
+      "home": {
+        "cardCount": 6,
+        "columns": 2,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "20.48px",
+        "sectionPaddingTop": "28px",
+        "sectionPaddingBottom": "28px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 1169,
+        "stripClientWidth": 725,
+        "thumbWidth": 107.515625,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 118,
+      "expectedThumbStep": 117.5,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-1024.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-1024.png"
+      }
+    },
+    {
+      "width": 1280,
+      "home": {
+        "cardCount": 6,
+        "columns": 3,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "17.28px",
+        "sectionPaddingTop": "34px",
+        "sectionPaddingBottom": "38.4px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 1294,
+        "stripClientWidth": 714,
+        "thumbWidth": 120,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 130,
+      "expectedThumbStep": 130,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-1280.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-1280.png"
+      }
+    },
+    {
+      "width": 1440,
+      "home": {
+        "cardCount": 6,
+        "columns": 3,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "19.44px",
+        "sectionPaddingTop": "34px",
+        "sectionPaddingBottom": "42px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 1294,
+        "stripClientWidth": 714,
+        "thumbWidth": 120,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 130,
+      "expectedThumbStep": 130,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-1440.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-1440.png"
+      }
+    },
+    {
+      "width": 1600,
+      "home": {
+        "cardCount": 6,
+        "columns": 3,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "21.6px",
+        "sectionPaddingTop": "34px",
+        "sectionPaddingBottom": "42px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 1294,
+        "stripClientWidth": 714,
+        "thumbWidth": 120,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 130,
+      "expectedThumbStep": 130,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-1600.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-1600.png"
+      }
+    },
+    {
+      "width": 1920,
+      "home": {
+        "cardCount": 6,
+        "columns": 3,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "22px",
+        "sectionPaddingTop": "34px",
+        "sectionPaddingBottom": "42px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 1294,
+        "stripClientWidth": 714,
+        "thumbWidth": 120,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 130,
+      "expectedThumbStep": 130,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-1920.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-1920.png"
+      }
+    },
+    {
+      "width": 2560,
+      "home": {
+        "cardCount": 6,
+        "columns": 3,
+        "mediaRatios": [
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333,
+          1.333
+        ],
+        "allObjectFitCover": true,
+        "captionsClean": true,
+        "gridGap": "22px",
+        "sectionPaddingTop": "34px",
+        "sectionPaddingBottom": "42px",
+        "sectionTitle": "Program Moments",
+        "eyebrow": "Media"
+      },
+      "modal": {
+        "isOpen": true,
+        "activeIndex": "0",
+        "thumbCount": 10,
+        "stripScrollable": true,
+        "stripScrollWidth": 1294,
+        "stripClientWidth": 714,
+        "thumbWidth": 120,
+        "gap": 10,
+        "prevVisible": true,
+        "nextVisible": true,
+        "counter": "1 / 10",
+        "title": "Celebration Moments",
+        "caption": "Three-point celebration"
+      },
+      "thumbNextDelta": 130,
+      "expectedThumbStep": 130,
+      "wrapNextNearStart": true,
+      "wrapPrevNearEnd": true,
+      "screenshots": {
+        "home": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-2560.png",
+        "modal": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/home-media-modal-2560.png"
+      }
+    }
+  ],
+  "anaya": {
+    "overlayOpen": true,
+    "hasCounter": true,
+    "hasStripShell": true,
+    "hasThumbPrev": true,
+    "hasThumbNext": true,
+    "prevVisible": true,
+    "nextVisible": true,
+    "activeIndex": "0",
+    "title": "Foundation",
+    "eyebrow": "GALLERY"
+  },
+  "anayaScreenshot": "/Users/Fogg/Desktop/Coach Fogarty Website/01-current-website/outputs/home-media-section-qa-2026-05-14/anaya-modal-1280.png"
+}

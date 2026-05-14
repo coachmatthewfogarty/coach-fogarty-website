@@ -2,6 +2,8 @@
 
 Date: 2026-05-14
 
+Superseded note: this package captured the first left-column lock pass. The current source of truth is `coach-fogarty-portfolio/docs/responsive/HOME-HERO-DESKTOP-MASTER-LOCK.md`, which now sets `1920px+` left/copy/pill width to the full safe left grid track and uses the final `2200px+` pill scale.
+
 This package contains the locked Home hero left-column system handoff.
 
 ## Files
@@ -27,8 +29,9 @@ This package contains the locked Home hero left-column system handoff.
 
 ## Width Contract
 
-- `1025px` through `2199px`: copy and stat pills share `--home-hero-left-system-max: 980px`.
-- `2200px+`: copy and stat pills expand together through `--home-hero-left-system-max: var(--hero-wide-support-max)`.
+- Current final lock: `1025px` through `1919px` use `--home-hero-left-system-max: 980px`.
+- Current final lock: `1920px+` copy and stat pills share `--home-hero-left-system-max: 100%` and fill the safe left grid track.
+- Current final lock: `2200px+` stat pills use `82px` height, `26px` main text, `13.5px` sub-label text, and `--home-hero-pill-lift: 0px`.
 - Body text, eyebrow, title, and stat-pill grid now share the same left-column width on desktop.
 - Tablet, mobile, right-column image sizing, and text content were not changed.
 
