@@ -14379,13 +14379,6 @@ main.featured-page > .featured-hero .page-highlight-bar a {
     gap: 16px !important;
   }
 
-  .contact-form .select-field,
-  .contact-page .contact-form .select-field,
-  main#top .contact-form .select-field {
-    grid-column: 1 / -1;
-    width: min(40%, 520px);
-  }
-
   .contact-form label:has(textarea),
   .contact-page .contact-form label:has(textarea),
   main#top .contact-form label:has(textarea),
@@ -14512,10 +14505,6 @@ main.featured-page > .featured-hero .page-highlight-bar a {
 @media (min-width: 821px) and (max-width: 1100px) {
   .contact-page .contact-section .contact-card {
     grid-template-columns: minmax(0, 1fr) minmax(230px, 0.32fr) !important;
-  }
-
-  .contact-page .contact-form .select-field {
-    width: min(48%, 420px);
   }
 }
 
@@ -19475,47 +19464,30 @@ main#top .contact-form-card {
 main#top .document-card {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
-  gap: 22px;
-  padding: clamp(18px, 2.1vw, 24px);
+  gap: 16px;
+  padding: 34px clamp(36px, 2.4vw, 58px);
 }
 
 main#top .contact-form-card {
   display: grid;
   gap: 16px;
   align-items: start;
-  padding: clamp(14px, 2.4vw, 20px);
+  padding: 34px clamp(36px, 2.4vw, 58px);
 }
 
-main#top .contact-form-card .section-heading {
-  margin: 0;
-}
-
-main#top .contact-form-card .section-heading h2 {
+main#top .home-closeout-heading {
+  display: block !important;
+  container-type: normal !important;
   margin: 0;
 }
 
 main#top .document-card-copy {
-  display: grid;
-  gap: 10px;
+  gap: 0;
 }
 
-main#top .document-card-copy .eyebrow {
+main#top .document-card-copy h2,
+main#top .home-closeout-heading h2 {
   margin: 0;
-}
-
-main#top .document-card-copy h3 {
-  margin: 0;
-  color: var(--text);
-  font-family: Georgia, "Palatino Linotype", serif;
-  font-size: var(--type-card-title-size, clamp(1.62rem, calc(1.26rem + 0.48vw), 1.95rem));
-  line-height: 1.06;
-}
-
-main#top .document-card-copy p:not(.eyebrow) {
-  margin: 0;
-  color: var(--muted);
-  font-size: var(--type-body-size, 1rem);
-  line-height: 1.5;
 }
 
 main#top .document-actions {
@@ -19530,6 +19502,8 @@ main#top .document-actions .button {
   min-height: 44px;
   justify-content: center;
   padding-inline: 16px;
+  font-size: inherit;
+  line-height: inherit;
   text-align: center;
   white-space: normal;
 }
@@ -19554,6 +19528,109 @@ main#top .contact-form-card .contact-form {
   }
 }
 
+/* Home desktop type lock: keep hero separate, make every other section predictable. */
+@media (min-width: 1025px) {
+  main#top {
+    --home-section-top-pad: 34px;
+    --home-heading-content-gap: 22px;
+    --home-section-eyebrow-size: 12px;
+    --home-section-eyebrow-line: 15px;
+    --home-section-title-size: 36px;
+    --home-section-title-line: 37px;
+  }
+
+  main#top > .hero .hero-copy > .eyebrow {
+    font-size: 13px !important;
+    line-height: 15px !important;
+  }
+
+  main#top > .hero h1 {
+    font-size: 60px !important;
+    line-height: 57px !important;
+  }
+
+  main#top > .hero .hero-text {
+    font-size: 16.5px !important;
+  }
+
+  main#top > .section:not(.contact-section),
+  main#top #featured-work > .innovation-section,
+  main#top .document-card,
+  main#top .contact-form-card {
+    padding-top: var(--home-section-top-pad) !important;
+  }
+
+  main#top .section-heading,
+  main#top #systems .section-heading,
+  main#top #media .section-heading,
+  main#top .playing-career-section .section-heading,
+  main#top #featured-work .innovation-section .section-heading,
+  main#top .home-closeout-heading {
+    container-type: normal !important;
+    margin: 0 !important;
+  }
+
+  main#top .section-heading .eyebrow,
+  main#top #featured-work .innovation-section .eyebrow,
+  main#top .home-closeout-heading .eyebrow {
+    margin: 0 0 2px !important;
+    font-size: var(--home-section-eyebrow-size) !important;
+    line-height: var(--home-section-eyebrow-line) !important;
+    letter-spacing: 0.12em !important;
+    white-space: nowrap !important;
+  }
+
+  main#top .section-heading h2,
+  main#top #featured-work .innovation-section .section-heading h2,
+  main#top .home-closeout-heading h2 {
+    margin: 0 !important;
+    font-size: var(--home-section-title-size) !important;
+    line-height: var(--home-section-title-line) !important;
+    font-family: Georgia, "Palatino Linotype", serif !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+  }
+
+  main#top .section-heading + .portfolio-systems-intro,
+  main#top #systems .section-heading + .library-grid,
+  main#top #media .section-heading + .gallery-grid,
+  main#top .playing-career-section .section-heading + .achievement-highlights {
+    margin-top: var(--home-heading-content-gap) !important;
+  }
+
+  main#top #featured-work .innovation-card-copy {
+    gap: var(--home-heading-content-gap) !important;
+  }
+
+  main#top .document-card,
+  main#top .contact-form-card {
+    gap: var(--home-heading-content-gap) !important;
+  }
+
+  main#top #systems .system-card > h3,
+  main#top #systems .library-card.system-card > h3 {
+    font-size: 26px !important;
+    line-height: 28px !important;
+  }
+
+  main#top .portfolio-systems-intro,
+  main#top #featured-work .innovation-panel p {
+    font-size: 16px !important;
+  }
+
+  main#top #systems .system-card > p,
+  main#top #systems .library-card.system-card > p {
+    font-size: 14px !important;
+  }
+
+  main#top .button,
+  main#top #systems .system-card .button-small,
+  main#top .document-actions .button,
+  main#top .contact-form .button {
+    font-size: 14px !important;
+  }
+}
+
 /* Phase 8 Home hero spacing trial: lock the measured edge lanes and align the 1920 image bottom rhythm. */
 @media (min-width: 1025px) {
   body .page-shell main#top > .hero {
@@ -19571,6 +19648,12 @@ main#top .contact-form-card .contact-form {
 
   body .page-shell main#top > .hero .portrait-card {
     height: var(--home-hero-image-height, var(--hero-portrait-height)) !important;
+  }
+
+  body .page-shell main#top > .hero .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 25.5px !important;
   }
 
   body .page-shell main#top > .hero .hero-stat-band {
@@ -19615,5 +19698,46 @@ main#top .contact-form-card .contact-form {
     --home-hero-bottom-inset: 30px;
     --home-hero-column-gap: 0px;
     --home-hero-image-height: 512px;
+  }
+}
+
+/* Phase 9 Home hero body typography: fill the locked title-to-pill lane without moving anchors. */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  body .page-shell main#top > .hero .hero-text {
+    max-width: 100% !important;
+    font-size: 17.5px !important;
+    line-height: 32px !important;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .page-shell main#top > .hero .hero-text {
+    max-width: 100% !important;
+    font-size: 17.5px !important;
+    line-height: 30px !important;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .page-shell main#top > .hero .hero-text {
+    max-width: 100% !important;
+    font-size: 17.5px !important;
+    line-height: 30px !important;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2199px) {
+  body .page-shell main#top > .hero .hero-text {
+    max-width: 100% !important;
+    font-size: 17.5px !important;
+    line-height: 27.5px !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  body .page-shell main#top > .hero .hero-text {
+    max-width: 100% !important;
+    font-size: 21px !important;
+    line-height: 1.72 !important;
   }
 }
