@@ -1,0 +1,37 @@
+Viewport,Page,Shell Width,Hero Width,Main Section Width,Left Gutter,Right Gutter,Overflow,Notes
+1280x800,Home,1192,1192,1192,44,44,No,Home uses 1540px wide-desktop lane at 1720px+.
+1280x800,Systems,1192,1192,1192,44,44,No,Standard page shell lane.
+1280x800,Featured Work,1192,1192,1192,44,44,No,Featured Work uses 1600px page-specific lane at desktop.
+1280x800,Gallery / Media,1192,1192,1192,44,44,No,Standard page shell lane.
+1280x800,Archer,1192,1192,1192,44,44,No,Standard page shell lane.
+1280x800,Anaya Case Study,1192,1192,1192,44,44,No,Standard page shell lane.
+1280x800,Credentials,1192,1192,1192,44,44,No,Standard page shell lane.
+1280x800,Contact,1192,1192,1192,44,44,No,Standard page shell lane.
+1280x800,About,1192,1203.2,N/A,44,32.8,Yes,About uses custom editorial card width; no separate below-hero section.
+1440x900,Home,1352,1352,1352,44,44,No,Home uses 1540px wide-desktop lane at 1720px+.
+1440x900,Systems,1352,1352,1352,44,44,No,Standard page shell lane.
+1440x900,Featured Work,1352,1352,1352,44,44,No,Featured Work uses 1600px page-specific lane at desktop.
+1440x900,Gallery / Media,1352,1352,1352,44,44,No,Standard page shell lane.
+1440x900,Archer,1352,1352,1352,44,44,No,Standard page shell lane.
+1440x900,Anaya Case Study,1352,1352,1352,44,44,No,Standard page shell lane.
+1440x900,Credentials,1352,1352,1352,44,44,No,Standard page shell lane.
+1440x900,Contact,1352,1352,1352,44,44,No,Standard page shell lane.
+1440x900,About,1352,1353.6,N/A,44,42.4,No,About uses custom editorial card width; no separate below-hero section.
+1920x1080,Home,1680,1540,1540,190,190,No,Home uses 1540px wide-desktop lane at 1720px+.
+1920x1080,Systems,1680,1680,1680,120,120,No,Standard page shell lane.
+1920x1080,Featured Work,1680,1600,1600,160,160,No,Featured Work uses 1600px page-specific lane at desktop.
+1920x1080,Gallery / Media,1680,1680,1680,120,120,No,Standard page shell lane.
+1920x1080,Archer,1680,1680,1680,120,120,No,Standard page shell lane.
+1920x1080,Anaya Case Study,1680,1680,1680,120,120,No,Standard page shell lane.
+1920x1080,Credentials,1680,1680,1680,120,120,No,Standard page shell lane.
+1920x1080,Contact,1680,1680,1680,120,120,No,Standard page shell lane.
+1920x1080,About,1680,1804.8,N/A,120,-4.8,Yes,About uses custom editorial card width; no separate below-hero section.
+2560x1440,Home,1680,1540,1540,510,510,No,Home uses 1540px wide-desktop lane at 1720px+.
+2560x1440,Systems,1680,1680,1680,440,440,No,Standard page shell lane.
+2560x1440,Featured Work,1680,1600,1600,480,480,No,Featured Work uses 1600px page-specific lane at desktop.
+2560x1440,Gallery / Media,1680,1680,1680,440,440,No,Standard page shell lane.
+2560x1440,Archer,1680,1680,1680,440,440,No,Standard page shell lane.
+2560x1440,Anaya Case Study,1680,1680,1680,440,440,No,Standard page shell lane.
+2560x1440,Credentials,1680,1680,1680,440,440,No,Standard page shell lane.
+2560x1440,Contact,1680,1680,1680,440,440,No,Standard page shell lane.
+2560x1440,About,1680,2240,N/A,160,160,No,About uses custom editorial card width; no separate below-hero section.

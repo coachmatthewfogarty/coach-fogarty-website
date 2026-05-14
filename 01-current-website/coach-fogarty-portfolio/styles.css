@@ -3598,7 +3598,7 @@ a.credential-static[href] {
 
 @media (min-width: 1025px) {
   .featured-page {
-    --featured-max-width: 1600px;
+    --featured-max-width: var(--page-shell-width);
     --featured-section-gap: 24px;
     --featured-section-padding: clamp(34px, 2.15vw, 44px);
     --featured-radius: 30px;
@@ -8149,7 +8149,7 @@ main:not(#top) .anaya-hero h1 {
 
   .site-footer.site-chrome .footer-grid,
   .site-footer.site-chrome .footer-bottom {
-    width: min(var(--site-card-width), calc(100% - 88px));
+    width: var(--page-shell-width);
     margin-right: auto;
     margin-left: auto;
   }
@@ -8601,6 +8601,31 @@ main#top #media .gallery-card .gallery-card-arrow {
 
 /* Full-bleed header/footer chrome with wider content than the page cards. */
 :root {
+  --page-gutter: 44px;
+  --page-max-desktop: 1680px;
+  --page-max-wide: 2240px;
+  --page-shell-width: min(var(--page-max-desktop), calc(100vw - 88px));
+  --hero-media-portrait-width: clamp(390px, 25vw, 660px);
+  --hero-media-portrait-height: clamp(370px, 18.5vw, 500px);
+  --hero-media-landscape-width: clamp(410px, 26vw, 680px);
+  --hero-media-landscape-ratio: 4 / 3;
+  --hero-title-size: clamp(59.2px, 3.15vw, 76px);
+  --hero-title-line: 0.95;
+  --hero-body-size: clamp(16px, calc(13.12px + 0.28vw), 18px);
+  --hero-body-line: 1.52;
+  --hero-copy-max: 980px;
+  --hero-paragraph-max: 920px;
+  --hero-eyebrow-size: clamp(11.84px, calc(10.56px + 0.12vw), 13.76px);
+  --hero-eyebrow-line: 1.15;
+  --hero-kicker-size: clamp(15.2px, calc(13.12px + 0.2vw), 17.28px);
+  --hero-wide-gap: 0px;
+  --hero-wide-copy-max: 1180px;
+  --hero-wide-paragraph-max: 1120px;
+  --hero-wide-support-max: 1354px;
+  --hero-wide-title-size: clamp(76px, 3.1vw, 82px);
+  --hero-wide-portrait-width: clamp(660px, 28vw, 740px);
+  --hero-wide-portrait-height: clamp(480px, 20vw, 540px);
+  --hero-wide-landscape-width: clamp(680px, 29vw, 760px);
   --site-card-width: 2560px;
   --site-chrome-content-width: 2560px;
   --site-chrome-gutter: 44px;
@@ -11738,31 +11763,34 @@ main#top #systems .library-card.system-card > p {
 /* Desktop hero highlight bar: one measured scale for label, links, spacing and fit. */
 @media (min-width: 1025px) {
   main#top > .hero .hero-mobile-highlight {
+    --home-highlight-row-balance: 0px;
+    --home-highlight-row-offset: 0px;
     right: clamp(10px, 0.85vw, 14px);
     bottom: clamp(10px, 0.9vw, 18px);
     left: clamp(10px, 0.85vw, 14px);
-    gap: clamp(6px, 0.65vw, 12px);
+    gap: clamp(8px, 0.52vw, 10px);
     overflow: hidden;
     padding:
       clamp(10px, 0.75vw, 16px)
-      clamp(12px, 0.8vw, 18px)
-      clamp(11px, 0.85vw, 18px);
+      clamp(12px, 0.8vw, 18px);
   }
 
   main#top > .hero .hero-mobile-highlight p {
-    font-size: clamp(0.82rem, calc(0.68rem + 0.18vw), 1.06rem);
+    font-size: clamp(12.5px, calc(11.1px + 0.13vw), 13px);
     line-height: 1;
   }
 
   main#top > .hero .hero-mobile-highlight div {
     display: flex !important;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-between;
+    width: calc(100% + var(--home-highlight-row-balance));
     min-width: 0;
-    max-width: 100%;
-    gap: 0 clamp(6px, 0.55vw, 14px);
+    max-width: none;
+    margin-inline: var(--home-highlight-row-offset);
+    gap: 0;
     overflow: hidden;
-    font-size: clamp(0.7rem, calc(0.2rem + 0.62vw), 1.02rem);
+    font-size: clamp(13.1px, calc(12.46px + 0.04vw), 13.32px);
     line-height: 1.15;
     white-space: nowrap;
   }
@@ -11775,6 +11803,51 @@ main#top #systems .library-card.system-card > p {
   main#top > .hero .hero-mobile-highlight span {
     flex: 0 0 auto;
     color: rgba(255, 246, 230, 0.56);
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1349px) {
+  main#top > .hero .hero-mobile-highlight {
+    --home-highlight-row-balance: -6px;
+    --home-highlight-row-offset: 3px;
+  }
+
+  main#top > .hero .hero-mobile-highlight p {
+    font-size: 11.8px;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    font-size: 12.1px;
+  }
+}
+
+@media (min-width: 1350px) and (max-width: 1719px) {
+  main#top > .hero .hero-mobile-highlight {
+    --home-highlight-row-balance: -6px;
+    --home-highlight-row-offset: 3px;
+  }
+
+  main#top > .hero .hero-mobile-highlight p {
+    font-size: 12px;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    font-size: 12.1px;
+  }
+}
+
+@media (min-width: 1720px) and (max-width: 2199px) {
+  main#top > .hero .hero-mobile-highlight {
+    --home-highlight-row-balance: -8px;
+    --home-highlight-row-offset: 4px;
+  }
+
+  main#top > .hero .hero-mobile-highlight p {
+    font-size: 13.2px;
+  }
+
+  main#top > .hero .hero-mobile-highlight div {
+    font-size: 14.25px;
   }
 }
 
@@ -12385,9 +12458,9 @@ main#top #systems .system-card .library-actions {
 /* Largest desktop cap: keep 2560px screens from scaling the page past the intended reading rhythm. */
 @media (min-width: 1025px) {
   :root {
-    --site-card-width: 1680px;
-    --site-chrome-content-width: 1680px;
-    --site-chrome-gutter: 36px;
+    --site-card-width: var(--page-shell-width);
+    --site-chrome-content-width: var(--page-shell-width);
+    --site-chrome-gutter: var(--page-gutter);
     --type-hero-title-size: clamp(3.3rem, calc(2.35rem + 1.7vw), 4.45rem);
     --type-section-title-size: clamp(2.1rem, calc(1.72rem + 0.62vw), 2.5rem);
     --type-card-title-size: clamp(1.62rem, calc(1.26rem + 0.48vw), 1.95rem);
@@ -12397,7 +12470,11 @@ main#top #systems .system-card .library-actions {
   }
 
   .page-shell {
-    width: min(var(--site-card-width), calc(100% - 88px));
+    width: var(--page-shell-width);
+  }
+
+  .site-header.site-chrome {
+    padding-inline: calc((100vw - var(--page-shell-width)) / 2);
   }
 
   .section {
@@ -12478,6 +12555,12 @@ main#top #systems .system-card .library-actions {
   main#top #featured-work .innovation-panel .button {
     min-height: 48px;
     font-size: var(--type-small-body-size);
+  }
+}
+
+@media (min-width: 2200px) {
+  :root {
+    --page-shell-width: min(var(--page-max-wide), calc(100vw - 320px));
   }
 }
 
@@ -13420,7 +13503,7 @@ main:not(#top) > .anaya-hero .hero-stat-band article {
 
 @media (min-width: 1720px) {
   main:not(#top) > .anaya-hero {
-    width: min(1540px, 100%);
+    width: min(var(--page-shell-width), 100%);
     --hero-portrait-width: clamp(440px, 22vw, 520px);
     --hero-portrait-height: clamp(370px, 16vw, 430px);
   }
@@ -13662,7 +13745,7 @@ main.featured-page > .featured-hero,
 main.media-library-page > .media-hero,
 main.archer-page > .subpage-hero,
 main:not(#top) > .anaya-hero {
-  width: min(1540px, 100%);
+  width: min(var(--page-shell-width), 100%);
   margin: 24px auto 32px;
   padding: clamp(38px, 3vw, 52px) clamp(44px, 3.4vw, 56px);
   border: 1px solid var(--line);
@@ -15260,7 +15343,7 @@ main.featured-page > .featured-hero .page-highlight-bar a {
   main#top > .hero,
   main#top > .section,
   main#top > #featured-work {
-    width: min(1540px, 100%);
+    width: min(var(--page-shell-width), 100%);
     margin-inline: auto;
   }
 
@@ -15285,18 +15368,17 @@ main.featured-page > .featured-hero .page-highlight-bar a {
     left: clamp(10px, 0.65vw, 12px);
     right: clamp(10px, 0.65vw, 12px);
     padding:
-      clamp(9px, 0.62vw, 13px)
-      clamp(10px, 0.62vw, 14px)
-      clamp(10px, 0.68vw, 14px);
+      clamp(10px, 0.62vw, 12px)
+      clamp(10px, 0.62vw, 14px);
   }
 
   main#top > .hero .hero-mobile-highlight p {
-    font-size: clamp(0.76rem, calc(0.62rem + 0.12vw), 0.9rem);
+    font-size: 13.2px;
   }
 
   main#top > .hero .hero-mobile-highlight div {
-    gap: 0 clamp(5px, 0.36vw, 9px);
-    font-size: clamp(0.68rem, calc(0.36rem + 0.36vw), 0.92rem);
+    gap: 0;
+    font-size: 14.25px;
   }
 
   main#top > .hero #impact.hero-stat-band article {
@@ -16537,7 +16619,7 @@ main:not(#top) > .anaya-hero.hero .hero-stat-band article {
 
 @media (min-width: 1720px) {
   main:not(#top) > .anaya-hero.hero {
-    width: min(1540px, 100%);
+    width: min(var(--page-shell-width), 100%);
     --hero-portrait-width: clamp(440px, 22vw, 520px);
     --hero-portrait-height: clamp(370px, 16vw, 430px);
   }
@@ -16636,7 +16718,7 @@ main:not(#top) > .anaya-hero.hero .hero-stat-band article {
 
 @media (min-width: 1720px) {
   main#top > .hero {
-    width: min(1540px, 100%);
+    width: min(var(--page-shell-width), 100%);
     --hero-portrait-width: clamp(440px, 22vw, 520px);
     --hero-portrait-height: clamp(370px, 16vw, 430px);
     --hero-desktop-gap: clamp(24px, 2vw, 48px);
@@ -17116,7 +17198,7 @@ main:not(#top) > .anaya-hero.hero .hero-stat-band article {
 
 @media (min-width: 1720px) {
   main:not(#top) > .anaya-hero.hero {
-    width: min(1540px, 100%);
+    width: min(var(--page-shell-width), 100%);
     --hero-portrait-width: clamp(440px, 22vw, 520px);
     --hero-portrait-height: clamp(370px, 16vw, 430px);
   }
@@ -17261,26 +17343,20 @@ main:not(#top) > .anaya-hero.hero .hero-mobile-highlight a {
 
 @media (min-width: 2200px) {
   .site-header.site-chrome {
-    padding-inline: calc((100vw - min(2240px, calc(100vw - clamp(80px, 7vw, 190px)))) / 2);
+    padding-inline: calc((100vw - var(--page-shell-width)) / 2);
   }
 }
 
 @media (min-width: 1720px) {
-  .page-shell:has(> main#top) > .site-header.site-chrome {
-    padding-inline: calc((100vw - 1540px) / 2);
-  }
-
-  .page-shell:has(> main.featured-page) > .site-header.site-chrome {
-    padding-inline: calc((100vw - 1600px) / 2);
-  }
-
+  .page-shell:has(> main#top) > .site-header.site-chrome,
+  .page-shell:has(> main.featured-page) > .site-header.site-chrome,
   .page-shell:has(> main.contact-page) > .site-header.site-chrome,
   .page-shell:has(> main.systems-detail-page) > .site-header.site-chrome,
   .page-shell:has(> main.archer-page) > .site-header.site-chrome,
   .page-shell:has(> main.media-library-page) > .site-header.site-chrome,
   .page-shell:has(> main.credentials-page) > .site-header.site-chrome,
   .page-shell:has(> main > .anaya-hero) > .site-header.site-chrome {
-    padding-inline: calc((100vw - min(var(--site-card-width), calc(100vw - 88px))) / 2);
+    padding-inline: calc((100vw - var(--page-shell-width)) / 2);
   }
 }
 
@@ -17296,7 +17372,7 @@ main:not(#top) > .anaya-hero.hero .hero-mobile-highlight a {
 
   .site-footer.site-chrome .footer-grid,
   .site-footer.site-chrome .footer-bottom {
-    width: min(var(--site-card-width), calc(100% - 88px));
+    width: var(--page-shell-width);
     margin-right: auto;
     margin-left: auto;
   }
@@ -17749,5 +17825,1309 @@ main:not(#top) > .anaya-hero.hero .hero-mobile-highlight a {
 @media (min-width: 2200px) {
   .about-cover-page .about-cover-copy p:not(.eyebrow) + p {
     margin-top: 11.15px !important;
+  }
+}
+
+/* Systems hero: final homepage-matched treatment. */
+main.systems-detail-page > .subpage-hero {
+  display: grid !important;
+  width: 100%;
+  margin: 22px auto 28px !important;
+  border: 1px solid var(--line);
+  border-radius: 34px !important;
+  background: linear-gradient(135deg, rgba(255, 248, 237, 0.92), rgba(246, 236, 219, 0.76)) !important;
+  box-shadow: var(--shadow);
+  overflow: visible;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-copy {
+  min-width: 0;
+  max-width: none !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-copy > .eyebrow {
+  margin: 0 0 clamp(10px, 0.72vw, 14px) !important;
+}
+
+main.systems-detail-page > .subpage-hero h1 {
+  margin: 0 !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow) {
+  width: min(100%, 920px);
+  max-width: 920px !important;
+  margin-top: clamp(18px, 1.45vw, 26px) !important;
+  margin-bottom: 0 !important;
+  line-height: 1.52 !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-visual {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 28px !important;
+  background: #d8c3a6 !important;
+  box-shadow: var(--shadow) !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  min-height: 0 !important;
+  border-radius: 0 !important;
+  object-fit: cover !important;
+  object-position: 52% 56% !important;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar {
+  position: absolute;
+  z-index: 2;
+  display: grid !important;
+  height: auto;
+  min-height: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 14px !important;
+  background: rgba(32, 28, 24, 0.74) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 12px 26px rgba(0, 0, 0, 0.28) !important;
+  backdrop-filter: blur(12px);
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar p {
+  margin: 0 !important;
+  color: var(--gold) !important;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1 !important;
+  text-transform: uppercase;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  color: rgba(255, 246, 230, 0.56) !important;
+  font-weight: 800;
+  line-height: 1.15 !important;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar a {
+  flex: 0 0 auto;
+  min-height: auto !important;
+  color: #8bb8e8 !important;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar a:hover,
+main.systems-detail-page > .subpage-hero .page-highlight-bar a:focus-visible {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar a:not(:first-child)::before {
+  content: none !important;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar span {
+  display: inline !important;
+  flex: 0 0 auto;
+  color: rgba(255, 246, 230, 0.56) !important;
+}
+
+main.systems-detail-page > .subpage-hero .systems-jump-nav {
+  display: grid !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+  width: 100%;
+  min-width: 0;
+  border: 1.5px solid rgba(184, 135, 47, 0.58) !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 247, 0.94), rgba(250, 237, 218, 0.78)),
+    rgba(255, 250, 243, 0.86) !important;
+  color: var(--text) !important;
+  font-weight: 800;
+  text-align: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 0 0 1px rgba(255, 246, 229, 0.72),
+    0 14px 34px rgba(52, 36, 24, 0.1);
+}
+
+main.systems-detail-page > .subpage-hero .systems-jump-nav a:hover,
+main.systems-detail-page > .subpage-hero .systems-jump-nav a:focus-visible {
+  border-color: rgba(170, 67, 40, 0.42) !important;
+  background: linear-gradient(135deg, var(--red), #c4542c) !important;
+  color: #fffaf1 !important;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 1025px) {
+  main.systems-detail-page > .subpage-hero {
+    --systems-hero-image-width: clamp(390px, 28vw, 520px);
+    --systems-hero-image-height: clamp(370px, 28vw, 430px);
+    --systems-hero-gap: clamp(26px, 2.6vw, 48px);
+    grid-template-columns: minmax(0, 1fr) var(--systems-hero-image-width) !important;
+    grid-template-rows: minmax(0, 1fr) auto !important;
+    grid-template-areas:
+      "copy portrait"
+      "jump portrait" !important;
+    column-gap: var(--systems-hero-gap) !important;
+    row-gap: clamp(14px, 1.35vw, 24px) !important;
+    align-content: center !important;
+    align-items: stretch !important;
+    padding:
+      clamp(28px, 2.2vw, 36px)
+      clamp(36px, 2.4vw, 58px)
+      clamp(22px, 1.8vw, 30px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy {
+    grid-area: copy !important;
+    display: flex !important;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: start !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > .eyebrow {
+    font-size: clamp(0.76rem, calc(0.66rem + 0.14vw), 0.86rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: clamp(0.12em, 0.18vw, 0.16em) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero h1 {
+    font-size: clamp(3.35rem, 9.1cqw, var(--type-hero-title-size)) !important;
+    line-height: var(--type-hero-title-line, 0.95) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow) {
+    font-size: var(--type-body-size) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-visual {
+    grid-area: portrait !important;
+    align-self: stretch !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: var(--systems-hero-image-height) !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar {
+    right: clamp(10px, 0.85vw, 14px) !important;
+    bottom: clamp(10px, 0.9vw, 18px) !important;
+    left: clamp(10px, 0.85vw, 14px) !important;
+    gap: clamp(4px, 0.32vw, 7px) !important;
+    padding:
+      clamp(7px, 0.5vw, 10px)
+      clamp(10px, 0.62vw, 14px)
+      clamp(8px, 0.54vw, 11px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar p {
+    font-size: clamp(0.66rem, 0.68vw, 0.76rem) !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+    flex-wrap: nowrap !important;
+    gap: 0 clamp(5px, 0.36vw, 9px) !important;
+    overflow: hidden;
+    font-size: clamp(0.62rem, calc(0.34rem + 0.32vw), 0.82rem) !important;
+    white-space: nowrap !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-area: jump !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-self: end !important;
+    gap: clamp(10px, 1vw, 16px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+    min-height: clamp(48px, 4vw, 58px);
+    padding:
+      clamp(7px, 0.72vw, 12px)
+      clamp(10px, 1vw, 18px);
+    font-size: clamp(0.78rem, calc(0.68rem + 0.18vw), 0.94rem);
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1240px) {
+  main.systems-detail-page > .subpage-hero {
+    --systems-hero-image-width: clamp(360px, 34vw, 420px);
+    --systems-hero-image-height: clamp(320px, 31vw, 380px);
+    --systems-hero-gap: clamp(16px, 2vw, 28px);
+    padding:
+      clamp(22px, 1.9vw, 30px)
+      clamp(28px, 2.6vw, 42px)
+      clamp(18px, 1.6vw, 24px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero h1 {
+    font-size: clamp(2.85rem, 7.2cqw, 3.2rem) !important;
+    line-height: 1 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow) {
+    margin-top: clamp(12px, 1.15vw, 18px) !important;
+    font-size: clamp(0.9rem, 1.06vw, 0.98rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+    min-height: clamp(48px, 4.4vw, 58px);
+    padding: 5px 8px;
+  }
+}
+
+@media (min-width: 1720px) {
+  main.systems-detail-page > .subpage-hero {
+    width: 100% !important;
+    --systems-hero-image-width: clamp(440px, 22vw, 520px);
+    --systems-hero-image-height: clamp(370px, 16vw, 430px);
+    --systems-hero-gap: clamp(24px, 2vw, 48px);
+  }
+}
+
+@media (max-width: 1024px) {
+  main.systems-detail-page > .subpage-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "copy"
+      "jump"
+      "portrait" !important;
+    gap: 16px !important;
+    padding: 14px var(--mobile-card-padding, 20px) 13px !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy {
+    grid-area: copy !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-area: jump !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+    min-height: 42px;
+    padding: 7px 10px;
+    font-size: clamp(0.76rem, 2.1vw, 0.9rem);
+    line-height: 1.1;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-visual {
+    grid-area: portrait !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    margin-top: 2px;
+    aspect-ratio: 1.13 / 1 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar {
+    right: clamp(10px, 2.75vw, 24px) !important;
+    bottom: clamp(10px, 2.75vw, 24px) !important;
+    left: clamp(10px, 2.75vw, 24px) !important;
+    gap: clamp(4px, 0.95cqw, 8px) !important;
+    padding:
+      clamp(7px, 1.45cqw, 14px)
+      clamp(10px, 2.15cqw, 22px)
+      clamp(8px, 1.55cqw, 15px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar p {
+    font-size: clamp(0.64rem, 2.2cqw, 1rem) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+    flex-wrap: wrap !important;
+    gap: 2px clamp(4px, 1.8cqw, 12px) !important;
+    overflow: visible;
+    font-size: clamp(0.64rem, 3.25cqw, 1rem) !important;
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 720px) {
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  main.systems-detail-page > .subpage-hero {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    overflow: hidden;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  main.systems-detail-page > .subpage-hero {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    padding: 16px !important;
+    border-radius: 22px !important;
+    overflow: hidden;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 7px !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+    min-height: 38px;
+    padding-inline: 8px;
+    font-size: clamp(0.72rem, 3.5vw, 0.82rem);
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar {
+    padding-inline: clamp(7px, 2.2cqw, 10px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+    column-gap: clamp(3px, 1.2cqw, 5px) !important;
+    font-size: clamp(0.56rem, 2.55cqw, 0.68rem) !important;
+  }
+}
+
+/* Systems hero desktop tune: align hero lane and connect the action grid to the image highlight. */
+@media (min-width: 1025px) {
+  main.systems-detail-page > .subpage-hero {
+    --systems-hero-image-width: clamp(390px, 28vw, 520px);
+    --systems-hero-image-height: clamp(370px, 28vw, 430px);
+    --systems-hero-gap: clamp(26px, 2.6vw, 48px);
+    --systems-hero-row-gap: clamp(24px, 1.9vw, 38px);
+    width: 100% !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    grid-template-columns: minmax(0, 1fr) var(--systems-hero-image-width) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: var(--systems-hero-gap) !important;
+    row-gap: var(--systems-hero-row-gap) !important;
+    align-content: center !important;
+    align-items: center !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy {
+    align-self: end !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow) {
+    margin-top: clamp(22px, 1.55vw, 30px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    align-self: start !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-visual {
+    align-self: center !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar {
+    display: block !important;
+    bottom: clamp(16px, 1.45vw, 28px) !important;
+    height: clamp(78px, 4.35vw, 92px) !important;
+    gap: clamp(4px, 0.32vw, 7px) !important;
+    padding:
+      clamp(8px, 0.58vw, 11px)
+      clamp(12px, 0.9vw, 18px)
+      clamp(9px, 0.64vw, 12px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar p {
+    position: absolute;
+    top: clamp(11px, 0.82vw, 16px);
+    right: clamp(12px, 0.9vw, 18px);
+    left: clamp(12px, 0.9vw, 18px);
+    width: auto;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: clamp(0.7rem, 0.52vw, 0.84rem) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+    position: absolute;
+    right: clamp(12px, 0.9vw, 18px);
+    bottom: clamp(11px, 0.72vw, 14px);
+    left: clamp(12px, 0.9vw, 18px);
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center;
+    gap: 0 clamp(6px, 0.45vw, 12px) !important;
+    width: auto !important;
+    max-width: none !important;
+    overflow: hidden;
+    font-size: clamp(0.78rem, 0.55vw, 1rem) !important;
+    white-space: nowrap !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar a,
+  main.systems-detail-page > .subpage-hero .page-highlight-bar span {
+    display: inline-flex !important;
+    flex: 0 0 auto;
+    align-items: center;
+    font-size: inherit !important;
+    line-height: 1.1 !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1240px) {
+  main.systems-detail-page > .subpage-hero {
+    --systems-hero-row-gap: clamp(18px, 1.75vw, 24px);
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow) {
+    margin-top: clamp(18px, 1.35vw, 22px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar {
+    bottom: clamp(14px, 1.25vw, 18px) !important;
+    height: clamp(74px, 5.8vw, 80px) !important;
+  }
+}
+
+@media (min-width: 1720px) {
+  main.systems-detail-page > .subpage-hero {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* Systems hero: homepage-parity lock. Keep this after earlier Systems hero experiments. */
+main.systems-detail-page > .subpage-hero {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 22px 0 28px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 34px !important;
+  background: linear-gradient(135deg, rgba(255, 248, 237, 0.92), rgba(246, 236, 219, 0.76)) !important;
+  box-shadow: var(--shadow) !important;
+  overflow: visible !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-copy {
+  min-width: 0;
+  max-width: min(100%, 980px) !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-copy > .eyebrow {
+  margin: 0 0 clamp(10px, 0.72vw, 14px) !important;
+  color: var(--red) !important;
+  font-size: clamp(0.76rem, calc(0.66rem + 0.14vw), 0.86rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: clamp(0.12em, 0.18vw, 0.16em) !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase;
+}
+
+main.systems-detail-page > .subpage-hero h1 {
+  margin: 0 !important;
+  font-family: Georgia, "Palatino Linotype", serif !important;
+  font-size: clamp(3.35rem, 9.1cqw, var(--type-hero-title-size)) !important;
+  line-height: var(--type-hero-title-line, 0.95) !important;
+  white-space: nowrap !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow) {
+  width: min(100%, 920px) !important;
+  max-width: 920px !important;
+  margin: clamp(18px, 1.45vw, 26px) 0 0 !important;
+  color: var(--muted) !important;
+  font-size: var(--type-body-size, 1rem) !important;
+  line-height: 1.52 !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-visual {
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 28px !important;
+  background: #d8c3a6 !important;
+  box-shadow: var(--shadow) !important;
+}
+
+main.systems-detail-page > .subpage-hero .subpage-hero-visual img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: 52% 56% !important;
+}
+
+main.systems-detail-page > .subpage-hero .systems-jump-nav {
+  display: grid !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+  display: inline-flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(184, 135, 47, 0.58) !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 247, 0.94), rgba(250, 237, 218, 0.78)),
+    rgba(255, 250, 243, 0.86) !important;
+  color: var(--text) !important;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 0 0 1px rgba(255, 246, 229, 0.72),
+    0 14px 34px rgba(52, 36, 24, 0.1);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+main.systems-detail-page > .subpage-hero .systems-jump-nav a:hover,
+main.systems-detail-page > .subpage-hero .systems-jump-nav a:focus-visible {
+  border-color: rgba(170, 67, 40, 0.42) !important;
+  background: linear-gradient(135deg, var(--red), #c4542c) !important;
+  color: #fffaf1 !important;
+  transform: translateY(-2px);
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar {
+  position: absolute !important;
+  right: clamp(10px, 0.85vw, 14px) !important;
+  bottom: clamp(14px, 0.8vw, 18px) !important;
+  left: clamp(10px, 0.85vw, 14px) !important;
+  z-index: 2;
+  display: grid !important;
+  align-content: center;
+  gap: clamp(5px, 0.46vw, 8px) !important;
+  width: auto !important;
+  height: clamp(58px, 4vw, 74px) !important;
+  min-height: 0 !important;
+  max-height: 28% !important;
+  padding:
+    clamp(6px, 0.46vw, 9px)
+    clamp(10px, 0.62vw, 14px)
+    clamp(7px, 0.52vw, 10px) !important;
+  overflow: visible;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 14px !important;
+  background: rgba(32, 28, 24, 0.74) !important;
+  box-shadow:
+    0 14px 30px rgba(18, 14, 10, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(12px);
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar p {
+  position: static !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  color: var(--gold) !important;
+  font-size: clamp(0.78rem, 2.6cqw, 1.05rem) !important;
+  font-weight: 800;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
+  text-transform: uppercase;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+  position: static !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between;
+  column-gap: clamp(3px, 0.42cqw, 8px) !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow: visible;
+  color: rgba(255, 246, 230, 0.56) !important;
+  font-size: clamp(0.86rem, 0.75vw, 1.08rem) !important;
+  font-weight: 800;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar a,
+main.systems-detail-page > .subpage-hero .page-highlight-bar span {
+  display: inline-flex !important;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: auto !important;
+  font-size: inherit !important;
+  line-height: 1.1 !important;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar a {
+  color: #8bb8e8 !important;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+main.systems-detail-page > .subpage-hero .page-highlight-bar span {
+  color: rgba(255, 246, 230, 0.56) !important;
+}
+
+@media (min-width: 1025px) {
+  main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+    display: grid !important;
+    grid-template-columns:
+      minmax(0, 1fr) auto
+      minmax(0, 1fr) auto
+      minmax(0, 1fr) auto
+      minmax(0, 1fr) auto
+      minmax(0, 1fr) auto
+      minmax(0, 1fr);
+    column-gap: 0 !important;
+    align-items: center;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar a,
+  main.systems-detail-page > .subpage-hero .page-highlight-bar span {
+    justify-content: center;
+    min-width: 0;
+    text-align: center;
+  }
+}
+
+main.systems-detail-page:not(#top) > .subpage-hero .page-highlight-bar > p:not(.eyebrow) {
+  position: static !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  color: var(--gold) !important;
+  font-size: clamp(0.86rem, 0.7vw, 1.05rem) !important;
+  font-weight: 800;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1025px) {
+  main.systems-detail-page > .subpage-hero {
+    --systems-hero-image-width: clamp(390px, 28vw, 520px);
+    --systems-hero-image-height: clamp(370px, 28vw, 430px);
+    --systems-hero-gap: clamp(26px, 2.6vw, 48px);
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) var(--systems-hero-image-width) !important;
+    grid-template-areas:
+      "copy portrait"
+      "jump portrait" !important;
+    grid-template-rows: minmax(0, 1fr) auto !important;
+    column-gap: var(--systems-hero-gap) !important;
+    row-gap: clamp(14px, 1.15vw, 20px) !important;
+    align-content: stretch !important;
+    align-items: stretch !important;
+    padding:
+      clamp(28px, 2.2vw, 36px)
+      clamp(36px, 2.4vw, 58px)
+      clamp(22px, 1.8vw, 30px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy {
+    grid-area: copy !important;
+    align-self: start !important;
+    container-type: inline-size;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-area: jump !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-self: end !important;
+    gap: clamp(8px, 0.7vw, 12px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+    min-height: clamp(54px, 3.4vw, 62px) !important;
+    padding:
+      clamp(7px, 0.62vw, 10px)
+      clamp(12px, 0.95vw, 18px) !important;
+    font-size: clamp(0.9rem, 0.82vw, 1rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.08 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-visual {
+    grid-area: portrait !important;
+    align-self: stretch !important;
+    justify-self: stretch !important;
+    height: var(--systems-hero-image-height) !important;
+    max-width: none !important;
+    aspect-ratio: auto !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1240px) {
+  main.systems-detail-page > .subpage-hero {
+    --systems-hero-image-width: clamp(360px, 32vw, 420px);
+    --systems-hero-image-height: clamp(360px, 31vw, 410px);
+    --systems-hero-gap: clamp(20px, 2.1vw, 34px);
+    row-gap: clamp(10px, 1vw, 16px) !important;
+    padding:
+      clamp(24px, 2vw, 30px)
+      clamp(30px, 2.7vw, 42px)
+      clamp(20px, 1.8vw, 26px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero h1 {
+    font-size: clamp(2.85rem, 7.2cqw, 3.05rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow) {
+    margin-top: clamp(14px, 1.2vw, 18px) !important;
+    font-size: clamp(0.86rem, 1.06vw, 0.96rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+    min-height: 52px !important;
+    padding: 7px 10px !important;
+    font-size: clamp(0.84rem, 0.95vw, 0.92rem) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar {
+    min-height: 0 !important;
+  }
+}
+
+@media (min-width: 1720px) {
+  main.systems-detail-page > .subpage-hero {
+    --systems-hero-image-width: clamp(440px, 22vw, 520px);
+    --systems-hero-image-height: clamp(370px, 16vw, 430px);
+    --systems-hero-gap: clamp(24px, 2vw, 48px);
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  main.systems-detail-page > .subpage-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "copy"
+      "jump"
+      "portrait" !important;
+    gap: 16px !important;
+    padding: 14px var(--mobile-card-padding, 20px) 13px !important;
+    border-radius: 26px !important;
+    overflow: hidden !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy {
+    grid-area: copy !important;
+    max-width: none !important;
+  }
+
+  main.systems-detail-page > .subpage-hero h1 {
+    font-size: clamp(2rem, 8.6cqw, 3rem) !important;
+    line-height: 1 !important;
+    white-space: normal !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > .eyebrow {
+    font-size: clamp(0.64rem, 2.6cqw, 0.76rem) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow) {
+    max-width: 100% !important;
+    margin-top: 14px !important;
+    font-size: 0.92rem !important;
+    line-height: 1.46 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-area: jump !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+    min-height: 42px !important;
+    padding: 7px 10px !important;
+    font-size: clamp(0.76rem, 2.1vw, 0.9rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .subpage-hero-visual {
+    grid-area: portrait !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    margin-top: 2px;
+    aspect-ratio: 1.13 / 1 !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar {
+    right: clamp(10px, 2.75vw, 24px) !important;
+    bottom: clamp(10px, 2.75vw, 24px) !important;
+    left: clamp(10px, 2.75vw, 24px) !important;
+    min-height: 0 !important;
+    max-height: 34% !important;
+    padding:
+      clamp(7px, 1.45cqw, 14px)
+      clamp(10px, 2.15cqw, 22px)
+      clamp(8px, 1.55cqw, 15px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar p {
+    font-size: clamp(0.64rem, 2.2cqw, 1rem) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+    flex-wrap: wrap !important;
+    gap: 2px clamp(4px, 1.8cqw, 12px) !important;
+    overflow: visible;
+    font-size: clamp(0.64rem, 3.25cqw, 1rem) !important;
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 720px) {
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  main.systems-detail-page > .subpage-hero {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  main.systems-detail-page > .subpage-hero {
+    padding: 16px !important;
+    border-radius: 22px !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav {
+    gap: 7px !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .systems-jump-nav a {
+    min-height: 38px !important;
+    padding-inline: 8px !important;
+    font-size: clamp(0.72rem, 3.5vw, 0.82rem) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero .page-highlight-bar div {
+    column-gap: clamp(3px, 1.2cqw, 5px) !important;
+    font-size: clamp(0.56rem, 2.55cqw, 0.68rem) !important;
+  }
+}
+
+/* Phase 2 desktop hero media scaling: shared portrait and landscape image tokens. */
+@media (min-width: 1025px) {
+  main#top > .hero,
+  main:not(#top) > .anaya-hero.hero {
+    --hero-portrait-width: var(--hero-media-portrait-width) !important;
+    --hero-portrait-height: var(--hero-media-portrait-height) !important;
+  }
+
+  main.systems-detail-page > .subpage-hero {
+    --systems-hero-image-width: var(--hero-media-portrait-width) !important;
+    --systems-hero-image-height: var(--hero-media-portrait-height) !important;
+  }
+
+  main.featured-page > .featured-hero,
+  main.media-library-page > .media-hero,
+  main.archer-page > .subpage-hero {
+    grid-template-columns: minmax(0, 1fr) var(--hero-media-landscape-width) !important;
+  }
+
+  main.featured-page > .featured-hero .subpage-hero-visual,
+  main.media-library-page > .media-hero .subpage-hero-visual,
+  main.archer-page > .subpage-hero .subpage-hero-visual {
+    width: 100% !important;
+    max-width: var(--hero-media-landscape-width) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: var(--hero-media-landscape-ratio) !important;
+  }
+
+  main.featured-page > .featured-hero .subpage-hero-visual img,
+  main.media-library-page > .media-hero .subpage-hero-visual img,
+  main.archer-page > .subpage-hero .subpage-hero-visual img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+}
+
+/* Phase 3 desktop hero typography: shared title/body rhythm and readable line lengths. */
+@media (min-width: 1025px) {
+  main#top > .hero,
+  main.systems-detail-page > .subpage-hero,
+  main.featured-page > .featured-hero,
+  main.media-library-page > .media-hero,
+  main.archer-page > .subpage-hero,
+  main:not(#top) > .anaya-hero.hero,
+  main.credentials-page > .credentials-hero,
+  main.contact-page > .contact-hero {
+    --type-hero-title-size: var(--hero-title-size) !important;
+    --type-hero-title-line: var(--hero-title-line) !important;
+    --type-body-size: var(--hero-body-size) !important;
+    --type-eyebrow-size: var(--hero-eyebrow-size) !important;
+    --type-eyebrow-line: var(--hero-eyebrow-line) !important;
+  }
+
+  main#top > .hero .hero-copy,
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy,
+  main.featured-page > .featured-hero .subpage-hero-copy,
+  main.media-library-page > .media-hero .subpage-hero-copy,
+  main.archer-page > .subpage-hero .subpage-hero-copy,
+  main:not(#top) > .anaya-hero.hero .hero-copy,
+  main.credentials-page > .credentials-hero .subpage-hero-copy,
+  main.contact-page > .contact-hero .subpage-hero-copy {
+    max-width: min(100%, var(--hero-copy-max)) !important;
+  }
+
+  main#top > .hero h1,
+  main.systems-detail-page > .subpage-hero h1,
+  main.featured-page > .featured-hero h1,
+  main.media-library-page > .media-hero h1,
+  main.archer-page > .subpage-hero h1,
+  main:not(#top) > .anaya-hero.hero h1,
+  main.credentials-page > .credentials-hero h1,
+  main.contact-page > .contact-hero h1 {
+    max-width: 100% !important;
+    font-size: var(--hero-title-size) !important;
+    line-height: var(--hero-title-line) !important;
+  }
+
+  main#top > .hero .eyebrow,
+  main.systems-detail-page > .subpage-hero .eyebrow,
+  main.featured-page > .featured-hero .eyebrow,
+  main.media-library-page > .media-hero .eyebrow,
+  main.archer-page > .subpage-hero .eyebrow,
+  main:not(#top) > .anaya-hero.hero .eyebrow,
+  main.credentials-page > .credentials-hero .eyebrow,
+  main.contact-page > .contact-hero .eyebrow {
+    font-size: var(--hero-eyebrow-size) !important;
+    line-height: var(--hero-eyebrow-line) !important;
+  }
+
+  main#top > .hero .hero-text,
+  main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),
+  main.featured-page > .featured-hero .subpage-hero-copy > p:not(.eyebrow),
+  main.media-library-page > .media-hero .subpage-hero-copy > p:not(.eyebrow),
+  main.archer-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),
+  main:not(#top) > .anaya-hero.hero .hero-text,
+  main.credentials-page > .credentials-hero .subpage-hero-copy > p:not(.eyebrow),
+  main.contact-page > .contact-hero .subpage-hero-copy > p:not(.eyebrow) {
+    max-width: min(100%, var(--hero-paragraph-max)) !important;
+    font-size: var(--hero-body-size) !important;
+    line-height: var(--hero-body-line) !important;
+  }
+
+  main#top > .hero .hero-kicker,
+  main:not(#top) > .anaya-hero.hero .hero-kicker,
+  main.featured-page > .featured-hero .featured-hero-subline {
+    max-width: min(100%, var(--hero-paragraph-max)) !important;
+    font-size: var(--hero-kicker-size) !important;
+    line-height: var(--hero-body-line) !important;
+  }
+}
+
+/* Phase 3 cascade lock: keep late page-specific hero rules on the shared text scale. */
+@media (min-width: 1025px) {
+  body .page-shell main#top > .hero h1,
+  body .page-shell main.systems-detail-page > .subpage-hero h1,
+  body .page-shell main.featured-page > .featured-hero h1,
+  body .page-shell main.media-library-page > .media-hero h1,
+  body .page-shell main.archer-page > .subpage-hero h1,
+  body .page-shell main:not(#top) > .anaya-hero.hero h1,
+  body .page-shell main.credentials-page > .credentials-hero h1,
+  body .page-shell main.contact-page > .contact-hero h1 {
+    max-width: 100% !important;
+    font-size: var(--hero-title-size) !important;
+    line-height: var(--hero-title-line) !important;
+  }
+
+  body .page-shell main#top > .hero .hero-copy,
+  body .page-shell main.systems-detail-page > .subpage-hero .subpage-hero-copy,
+  body .page-shell main.featured-page > .featured-hero .subpage-hero-copy,
+  body .page-shell main.media-library-page > .media-hero .subpage-hero-copy,
+  body .page-shell main.archer-page > .subpage-hero .subpage-hero-copy,
+  body .page-shell main:not(#top) > .anaya-hero.hero .hero-copy,
+  body .page-shell main.credentials-page > .credentials-hero .subpage-hero-copy,
+  body .page-shell main.contact-page > .contact-hero .subpage-hero-copy {
+    max-width: min(100%, var(--hero-copy-max)) !important;
+  }
+
+  body .page-shell main#top > .hero .hero-text,
+  body .page-shell main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.featured-page > .featured-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.media-library-page > .media-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.archer-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main:not(#top) > .anaya-hero.hero .hero-copy > p.hero-text:not(.eyebrow),
+  body .page-shell main.credentials-page > .credentials-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.contact-page > .contact-hero .subpage-hero-copy > p:not(.eyebrow) {
+    max-width: min(100%, var(--hero-paragraph-max)) !important;
+    font-size: var(--hero-body-size) !important;
+    line-height: var(--hero-body-line) !important;
+  }
+
+  body .page-shell main#top > .hero .eyebrow,
+  body .page-shell main.systems-detail-page > .subpage-hero .eyebrow,
+  body .page-shell main.featured-page > .featured-hero .eyebrow,
+  body .page-shell main.media-library-page > .media-hero .eyebrow,
+  body .page-shell main.archer-page > .subpage-hero .eyebrow,
+  body .page-shell main:not(#top) > .anaya-hero.hero .eyebrow,
+  body .page-shell main.credentials-page > .credentials-hero .eyebrow,
+  body .page-shell main.contact-page > .contact-hero .eyebrow {
+    font-size: var(--hero-eyebrow-size) !important;
+    line-height: var(--hero-eyebrow-line) !important;
+  }
+
+  body .page-shell main#top > .hero .hero-kicker,
+  body .page-shell main:not(#top) > .anaya-hero.hero .hero-kicker,
+  body .page-shell main.featured-page > .featured-hero .featured-hero-subline {
+    max-width: min(100%, var(--hero-paragraph-max)) !important;
+    font-size: var(--hero-kicker-size) !important;
+    line-height: var(--hero-body-line) !important;
+  }
+}
+
+/* Phase 3 subpage specificity lock: match older main:not(#top) hero rules. */
+@media (min-width: 1025px) {
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero h1,
+  body .page-shell main.featured-page:not(#top) > .featured-hero h1,
+  body .page-shell main.media-library-page:not(#top) > .media-hero h1,
+  body .page-shell main.archer-page:not(#top) > .subpage-hero h1,
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero h1,
+  body .page-shell main.contact-page:not(#top) > .contact-hero h1 {
+    font-size: var(--hero-title-size) !important;
+    line-height: var(--hero-title-line) !important;
+  }
+
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.featured-page:not(#top) > .featured-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.media-library-page:not(#top) > .media-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.archer-page:not(#top) > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.contact-page:not(#top) > .contact-hero .subpage-hero-copy > p:not(.eyebrow) {
+    max-width: min(100%, var(--hero-paragraph-max)) !important;
+    font-size: var(--hero-body-size) !important;
+    line-height: var(--hero-body-line) !important;
+  }
+
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero .eyebrow,
+  body .page-shell main.featured-page:not(#top) > .featured-hero .eyebrow,
+  body .page-shell main.media-library-page:not(#top) > .media-hero .eyebrow,
+  body .page-shell main.archer-page:not(#top) > .subpage-hero .eyebrow,
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .eyebrow,
+  body .page-shell main.contact-page:not(#top) > .contact-hero .eyebrow {
+    font-size: var(--hero-eyebrow-size) !important;
+    line-height: var(--hero-eyebrow-line) !important;
+  }
+}
+
+/* Wide desktop hero layout: use the full card interior while capping only readable/support blocks. */
+@media (min-width: 2200px) {
+  body .page-shell main#top > .hero,
+  body .page-shell main:not(#top) > .anaya-hero.hero {
+    --hero-portrait-width: var(--hero-wide-portrait-width) !important;
+    --hero-portrait-height: var(--hero-wide-portrait-height) !important;
+    grid-template-columns: minmax(0, 1fr) var(--hero-wide-portrait-width) !important;
+    grid-template-areas:
+      "copy portrait"
+      "stats portrait" !important;
+    column-gap: var(--hero-wide-gap) !important;
+  }
+
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero {
+    --systems-hero-image-width: var(--hero-wide-portrait-width) !important;
+    --systems-hero-image-height: var(--hero-wide-portrait-height) !important;
+    grid-template-columns: minmax(0, 1fr) var(--hero-wide-portrait-width) !important;
+    grid-template-areas:
+      "copy portrait"
+      "jump portrait" !important;
+    column-gap: var(--hero-wide-gap) !important;
+  }
+
+  body .page-shell main.featured-page:not(#top) > .featured-hero,
+  body .page-shell main.media-library-page:not(#top) > .media-hero,
+  body .page-shell main.archer-page:not(#top) > .subpage-hero {
+    grid-template-columns: minmax(0, 1fr) var(--hero-wide-landscape-width) !important;
+    grid-template-areas: "copy portrait" !important;
+    column-gap: var(--hero-wide-gap) !important;
+  }
+
+  body .page-shell main.featured-page:not(#top) > .featured-hero .subpage-hero-visual,
+  body .page-shell main.media-library-page:not(#top) > .media-hero .subpage-hero-visual,
+  body .page-shell main.archer-page:not(#top) > .subpage-hero .subpage-hero-visual {
+    max-width: var(--hero-wide-landscape-width) !important;
+  }
+
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero {
+    grid-template-columns: minmax(0, 1fr) clamp(600px, 26vw, 680px) !important;
+    grid-template-areas: "copy portrait" !important;
+    column-gap: var(--hero-wide-gap) !important;
+  }
+
+  body .page-shell main#top > .hero .hero-copy,
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero .subpage-hero-copy,
+  body .page-shell main.featured-page:not(#top) > .featured-hero .subpage-hero-copy,
+  body .page-shell main.media-library-page:not(#top) > .media-hero .subpage-hero-copy,
+  body .page-shell main.archer-page:not(#top) > .subpage-hero .subpage-hero-copy,
+  body .page-shell main:not(#top) > .anaya-hero.hero .hero-copy,
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .subpage-hero-copy {
+    grid-area: copy !important;
+    width: 100% !important;
+    max-width: min(100%, var(--hero-wide-support-max)) !important;
+    justify-self: start !important;
+  }
+
+  body .page-shell main#top > .hero .hero-visual,
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero .subpage-hero-visual,
+  body .page-shell main.featured-page:not(#top) > .featured-hero .subpage-hero-visual,
+  body .page-shell main.media-library-page:not(#top) > .media-hero .subpage-hero-visual,
+  body .page-shell main.archer-page:not(#top) > .subpage-hero .subpage-hero-visual,
+  body .page-shell main:not(#top) > .anaya-hero.hero .hero-visual,
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .credentials-hero-visual {
+    grid-area: portrait !important;
+  }
+
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .credentials-hero-visual {
+    min-height: var(--hero-wide-portrait-height) !important;
+  }
+
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .credential-hero-bundle {
+    width: min(100%, 460px) !important;
+    height: 390px !important;
+  }
+
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .credential-hero-sheet {
+    width: 240px !important;
+  }
+
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .credential-hero-sheet-packet {
+    left: 110px !important;
+  }
+
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .credential-hero-sheet-references {
+    top: 78px !important;
+  }
+
+  body .page-shell main#top > .hero h1,
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero h1,
+  body .page-shell main.featured-page:not(#top) > .featured-hero h1,
+  body .page-shell main.media-library-page:not(#top) > .media-hero h1,
+  body .page-shell main.archer-page:not(#top) > .subpage-hero h1,
+  body .page-shell main:not(#top) > .anaya-hero.hero h1,
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero h1 {
+    max-width: min(100%, var(--hero-wide-copy-max)) !important;
+    font-size: var(--hero-wide-title-size) !important;
+  }
+
+  body .page-shell main#top > .hero .hero-text,
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.featured-page:not(#top) > .featured-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.media-library-page:not(#top) > .media-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main.archer-page:not(#top) > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),
+  body .page-shell main:not(#top) > .anaya-hero.hero .hero-copy > p.hero-text:not(.eyebrow),
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .subpage-hero-copy > p:not(.eyebrow) {
+    width: min(100%, var(--hero-wide-paragraph-max)) !important;
+    max-width: min(100%, var(--hero-wide-paragraph-max)) !important;
+  }
+
+  body .page-shell main.featured-page:not(#top) > .featured-hero .featured-hero-subline {
+    max-width: min(100%, var(--hero-wide-paragraph-max)) !important;
+  }
+
+  body .page-shell main#top > .hero .hero-stat-band,
+  body .page-shell main:not(#top) > .anaya-hero.hero .hero-stat-band {
+    grid-area: stats !important;
+    width: min(100%, var(--hero-wide-support-max)) !important;
+    max-width: min(100%, var(--hero-wide-support-max)) !important;
+    justify-self: start !important;
+  }
+
+  body .page-shell main.systems-detail-page:not(#top) > .subpage-hero .systems-jump-nav {
+    grid-area: jump !important;
+    width: min(100%, var(--hero-wide-support-max)) !important;
+    max-width: min(100%, var(--hero-wide-support-max)) !important;
+    justify-self: start !important;
+  }
+
+  body .page-shell main.featured-page:not(#top) > .featured-hero .featured-hero-actions,
+  body .page-shell main.media-library-page:not(#top) > .media-hero .media-filter-row,
+  body .page-shell main.archer-page:not(#top) > .subpage-hero .hero-actions,
+  body .page-shell main.credentials-page:not(#top) > .credentials-hero .credentials-hero-actions {
+    width: min(100%, var(--hero-wide-support-max)) !important;
+    max-width: min(100%, var(--hero-wide-support-max)) !important;
+    justify-self: start !important;
+  }
+
+  body .page-shell main#top > .hero .hero-mobile-highlight {
+    bottom: 17px !important;
+    gap: 10px !important;
+    padding: 15px 18px !important;
+  }
+
+  body .page-shell main#top > .hero .hero-mobile-highlight p {
+    font-size: 17px !important;
+    line-height: 1 !important;
+  }
+
+  body .page-shell main#top > .hero .hero-mobile-highlight div {
+    justify-content: space-between !important;
+    width: calc(100% - 18px) !important;
+    margin-inline: auto !important;
+    gap: 0 !important;
+    font-size: 19px !important;
+    line-height: 1.15 !important;
   }
 }

@@ -1,0 +1,60 @@
+Page,Selector,Element,1280 Value,1440 Value,1920 Value,2560 Value,CSS Rule,Notes
+Home,main#top > .hero,Hero/card width,1192,1352,1540,1540,"1720px+: width: min(1540px, 100%)",Compare this with main section width in Tab 1.
+Home,main#top > .hero,Hero grid columns,694.734px 390px,837.375px 403.188px,967.453px 440px,854px 520px,"minmax(0, 1fr) var(--hero/media-width)",Shows whether the media column grows or caps.
+Home,main#top > .hero .portrait-card,Hero image/frame size,390 x 370,403.2 x 403.2,440 x 370,520 x 409.6,various clamp/max-width rules by page,"Frame size, not always the raw img crop."
+Home,main#top > .hero h1,Hero/title font,59.36px,62.08px,70.24px,71.2px,hero/title clamp and global desktop type vars,Rendered font-size.
+Home,main#top > .hero .hero-text,Hero paragraph font / line-height,15.552px / 23.639px,15.776px / 23.9795px,16.32px / 24.8064px,16.32px / 24.8064px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.
+Home,main#top > .hero .hero-mobile-highlight,Hero overlay size,366.3 x 57.4,376.7 x 61.8,414 x 65.7,494 x 70.9,absolute highlight overlay with clamp insets/padding,Overlay is constrained by image/frame width.
+Home,main#top > .hero .hero-mobile-highlight div,Hero overlay link font,11.2px,12.128px,12.672px,14.72px,overlay div font-size clamp,Rendered link-row font.
+Home,main#top > .hero #impact.hero-stat-band article,Hero stat pill size,223 x 60,269.5 x 63.9,313.1 x 76,275.3 x 76,stat-band grid pill sizing,Only on Home and Anaya.
+Systems,main.systems-detail-page > .subpage-hero,Hero/card width,1192,1352,1680,1680,width: 100% inside page shell,Compare this with main section width in Tab 1.
+Systems,main.systems-detail-page > .subpage-hero,Hero grid columns,694.734px 390px,837.375px 403.188px,1107.45px 440px,994px 520px,"minmax(0, 1fr) var(--hero/media-width)",Shows whether the media column grows or caps.
+Systems,main.systems-detail-page > .subpage-hero .subpage-hero-visual,Hero image/frame size,390 x 370,403.2 x 403.2,440 x 370,520 x 409.6,various clamp/max-width rules by page,"Frame size, not always the raw img crop."
+Systems,main.systems-detail-page > .subpage-hero h1,Hero/title font,59.36px,62.08px,70.24px,71.2px,hero/title clamp and global desktop type vars,Rendered font-size.
+Systems,main.systems-detail-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),Hero paragraph font / line-height,16.128px / 24.192px,16.704px / 25.056px,18.432px / 27.648px,19.52px / 29.28px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.
+Systems,main.systems-detail-page > .subpage-hero .page-highlight-bar,Hero overlay size,366.3 x 58,376.7 x 58,410 x 74,490 x 74,absolute highlight overlay with clamp insets/padding,Overlay is constrained by image/frame width.
+Systems,main.systems-detail-page > .subpage-hero .page-highlight-bar div,Hero overlay link font,13.76px,13.76px,14.4px,17.28px,overlay div font-size clamp,Rendered link-row font.
+Systems,main.systems-detail-page > .subpage-hero .systems-jump-nav a,Systems jump pill size,225.6 x 54,272.4 x 54,361.1 x 62,323.3 x 62,min-height/font clamp on .systems-jump-nav a,Systems-specific control row.
+Featured Work,main.featured-page > .featured-hero,Hero/card width,1192,1352,1600,1600,"width: min(var(--featured-max-width), 100%)",Compare this with main section width in Tab 1.
+Featured Work,main.featured-page > .featured-hero,Hero grid columns,662px 410px,822px 410px,1070px 410px,1070px 410px,standard subpage grid or page-specific layout,Shows whether the media column grows or caps.
+Featured Work,main.featured-page > .featured-hero .subpage-hero-visual,Hero image/frame size,410 x 307.5,410 x 307.5,410 x 307.5,410 x 307.5,various clamp/max-width rules by page,"Frame size, not always the raw img crop."
+Featured Work,main.featured-page > .featured-hero h1,Hero/title font,59.36px,62.08px,70.24px,71.2px,hero/title clamp and global desktop type vars,Rendered font-size.
+Featured Work,main.featured-page > .featured-hero .subpage-hero-copy > p:not(.eyebrow),Hero paragraph font / line-height,16.128px / 24.192px,16.704px / 25.056px,18.432px / 27.648px,19.52px / 29.28px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.
+Featured Work,main.featured-page > .featured-hero .page-highlight-bar,Hero overlay size,340 x 15,340 x 15,340 x 15,340 x 15,absolute highlight overlay with clamp insets/padding,Overlay is constrained by image/frame width.
+Featured Work,main.featured-page > .featured-hero .page-highlight-bar div,Hero overlay link font,6.08px,6.08px,6.08px,6.08px,overlay div font-size clamp,Rendered link-row font.
+Gallery / Media,main.media-library-page > .media-hero,Hero/card width,1192,1352,1680,1680,width: 100% inside page shell,Compare this with main section width in Tab 1.
+Gallery / Media,main.media-library-page > .media-hero,Hero grid columns,662px 410px,822px 410px,1150px 410px,1150px 410px,standard subpage grid or page-specific layout,Shows whether the media column grows or caps.
+Gallery / Media,main.media-library-page > .media-hero .subpage-hero-visual,Hero image/frame size,410 x 307.5,410 x 307.5,410 x 307.5,410 x 307.5,various clamp/max-width rules by page,"Frame size, not always the raw img crop."
+Gallery / Media,main.media-library-page > .media-hero h1,Hero/title font,59.36px,62.08px,70.24px,71.2px,hero/title clamp and global desktop type vars,Rendered font-size.
+Gallery / Media,main.media-library-page > .media-hero .subpage-hero-copy > p:not(.eyebrow),Hero paragraph font / line-height,16.128px / 24.192px,16.704px / 25.056px,18.432px / 27.648px,19.52px / 29.28px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.
+Gallery / Media,main.media-library-page > .media-hero .page-highlight-bar,Hero overlay size,386.3 x 93.5,383.5 x 98.5,380 x 143.5,380 x 152.3,absolute highlight overlay with clamp insets/padding,Overlay is constrained by image/frame width.
+Gallery / Media,main.media-library-page > .media-hero .page-highlight-bar div,Hero overlay link font,11.2px,12.128px,15.104px,16.32px,overlay div font-size clamp,Rendered link-row font.
+Archer,main.archer-page > .subpage-hero,Hero/card width,1192,1352,1680,1680,width: 100% inside page shell,Compare this with main section width in Tab 1.
+Archer,main.archer-page > .subpage-hero,Hero grid columns,662px 410px,822px 410px,1150px 410px,1150px 410px,standard subpage grid or page-specific layout,Shows whether the media column grows or caps.
+Archer,main.archer-page > .subpage-hero .subpage-hero-visual,Hero image/frame size,410 x 307.5,410 x 307.5,410 x 307.5,410 x 307.5,various clamp/max-width rules by page,"Frame size, not always the raw img crop."
+Archer,main.archer-page > .subpage-hero h1,Hero/title font,59.36px,62.08px,70.24px,71.2px,hero/title clamp and global desktop type vars,Rendered font-size.
+Archer,main.archer-page > .subpage-hero .subpage-hero-copy > p:not(.eyebrow),Hero paragraph font / line-height,16px / 24px,16px / 24px,18.432px / 27.648px,19.52px / 29.28px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.
+Archer,main.archer-page > .subpage-hero .page-highlight-bar,Hero overlay size,388.3 x 93.3,385.5 x 97.5,382 x 116.5,382 x 125.3,absolute highlight overlay with clamp insets/padding,Overlay is constrained by image/frame width.
+Archer,main.archer-page > .subpage-hero .page-highlight-bar div,Hero overlay link font,11.2px,12.128px,15.104px,16.32px,overlay div font-size clamp,Rendered link-row font.
+Anaya Case Study,main > .anaya-hero,Hero/card width,1192,1352,1680,1680,width: 100% inside page shell,Compare this with main section width in Tab 1.
+Anaya Case Study,main > .anaya-hero,Hero grid columns,694.734px 390px,837.375px 403.188px,1107.45px 440px,994px 520px,"minmax(0, 1fr) var(--hero/media-width)",Shows whether the media column grows or caps.
+Anaya Case Study,main > .anaya-hero .portrait-card,Hero image/frame size,390 x 370,403.2 x 403.2,440 x 370,520 x 409.6,various clamp/max-width rules by page,"Frame size, not always the raw img crop."
+Anaya Case Study,main > .anaya-hero h1,Hero/title font,59.36px,62.08px,70.24px,71.2px,hero/title clamp and global desktop type vars,Rendered font-size.
+Anaya Case Study,main > .anaya-hero .hero-text,Hero paragraph font / line-height,15.2px / 23.104px,15.2px / 23.104px,15.936px / 24.2227px,16.32px / 24.8064px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.
+Anaya Case Study,main > .anaya-hero .hero-mobile-highlight,Hero overlay size,366.3 x 57.4,376.7 x 61.8,414 x 66.8,494 x 72.3,absolute highlight overlay with clamp insets/padding,Overlay is constrained by image/frame width.
+Anaya Case Study,main > .anaya-hero .hero-mobile-highlight div,Hero overlay link font,11.2px,12.128px,13.632px,15.936px,overlay div font-size clamp,Rendered link-row font.
+Anaya Case Study,main > .anaya-hero .hero-stat-band article,Hero stat pill size,224.8 x 76,271.4 x 76,359.8 x 76,322 x 76,stat-band grid pill sizing,Only on Home and Anaya.
+Credentials,main.credentials-page > .credentials-hero,Hero/card width,1192,1352,1680,1680,width: 100% inside page shell,Compare this with main section width in Tab 1.
+Credentials,main.credentials-page > .credentials-hero,Hero grid columns,718px 360px,847.938px 390.062px,1072.59px 493.391px,1072.59px 493.391px,standard subpage grid or page-specific layout,Shows whether the media column grows or caps.
+Credentials,main.credentials-page > .credentials-hero .credentials-hero-visual,Hero image/frame size,360 x 366,390.1 x 366,493.4 x 366,493.4 x 366,various clamp/max-width rules by page,"Frame size, not always the raw img crop."
+Credentials,main.credentials-page > .credentials-hero h1,Hero/title font,59.36px,62.08px,70.24px,71.2px,hero/title clamp and global desktop type vars,Rendered font-size.
+Credentials,main.credentials-page > .credentials-hero .subpage-hero-copy > p:not(.eyebrow),Hero paragraph font / line-height,16.128px / 24.192px,16.704px / 25.056px,18.432px / 27.648px,19.52px / 29.28px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.
+Contact,main.contact-page > .contact-hero,Hero/card width,1192,1352,1680,1680,width: 100% inside page shell,Compare this with main section width in Tab 1.
+Contact,main.contact-page > .contact-hero,Hero grid columns,"minmax(0px, 1fr) 340px","minmax(0px, 1fr) 340px","minmax(0px, 1fr) 340px","minmax(0px, 1fr) 340px",standard subpage grid or page-specific layout,Shows whether the media column grows or caps.
+Contact,main.contact-page > .contact-hero h1,Hero/title font,59.36px,62.08px,70.24px,71.2px,hero/title clamp and global desktop type vars,Rendered font-size.
+Contact,main.contact-page > .contact-hero .subpage-hero-copy > p:not(.eyebrow),Hero paragraph font / line-height,16.128px / 24.192px,16.704px / 25.056px,18.432px / 27.648px,19.52px / 29.28px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.
+About,main.about-cover-page > .about-letter-section,Hero/card width,1203.2,1353.6,1804.8,2240,custom about-letter-section width,Compare this with main section width in Tab 1.
+About,main.about-cover-page > .about-letter-section,Hero grid columns,1109.03px,1247.94px,1658.8px,2066px,standard subpage grid or page-specific layout,Shows whether the media column grows or caps.
+About,main.about-cover-page .about-letter-gallery,Hero image/frame size,533.2 x 938.6,631.6 x 930,871.6 x 1031.8,1153.2 x 902.2,various clamp/max-width rules by page,"Frame size, not always the raw img crop."
+About,main.about-cover-page .about-letter-heading h1,Hero/title font,35.9626px,38.4629px,43.52px,43.52px,hero/title clamp and global desktop type vars,Rendered font-size.
+About,main.about-cover-page .about-letter-text p,Hero paragraph font / line-height,15.36px / 21.8112px,15.36px / 21.8112px,16.96px / 26.7968px,18.88px / 23.4112px,var(--type-body-size) or page-specific clamp,Rendered font-size and line-height.

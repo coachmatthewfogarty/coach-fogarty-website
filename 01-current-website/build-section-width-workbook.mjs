@@ -1,0 +1,94 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { SpreadsheetFile, Workbook } from "@oai/artifact-tool";
+
+const outputDir = path.resolve("outputs/section-width-measurements");
+const csvPath = path.join(outputDir, "section-width-measurements.csv");
+const xlsxPath = path.join(outputDir, "section-width-measurements.xlsx");
+
+const rows = [
+  ["1280x800", "Home", 1192, 1192, 1192, 44, 44, "No", "Matches shell"],
+  ["1280x800", "Systems", 1192, 1192, 1192, 44, 44, "No", "Matches shell"],
+  ["1280x800", "Featured Work", 1192, 1192, 1192, 44, 44, "No", "Matches shell at this size"],
+  ["1280x800", "Gallery / Media", 1192, 1192, 1192, 44, 44, "No", "Matches shell"],
+  ["1280x800", "Archer", 1192, 1192, 1192, 44, 44, "No", "Matches shell"],
+  ["1280x800", "Anaya Case Study", 1192, 1192, 1192, 44, 44, "No", "Matches shell"],
+  ["1280x800", "Credentials", 1192, 1192, 1192, 44, 44, "No", "Matches shell"],
+  ["1280x800", "Contact", 1192, 1192, 1192, 44, 44, "No", "Matches shell"],
+  ["1280x800", "About", 1192, 1203.2, "", 44, 32.8, "Yes", "About card wider than shell; document overflow about 6px"],
+  ["1440x900", "Home", 1352, 1352, 1352, 44, 44, "No", "Matches shell"],
+  ["1440x900", "Systems", 1352, 1352, 1352, 44, 44, "No", "Matches shell"],
+  ["1440x900", "Featured Work", 1352, 1352, 1352, 44, 44, "No", "Matches shell at this size"],
+  ["1440x900", "Gallery / Media", 1352, 1352, 1352, 44, 44, "No", "Matches shell"],
+  ["1440x900", "Archer", 1352, 1352, 1352, 44, 44, "No", "Matches shell"],
+  ["1440x900", "Anaya Case Study", 1352, 1352, 1352, 44, 44, "No", "Matches shell"],
+  ["1440x900", "Credentials", 1352, 1352, 1352, 44, 44, "No", "Matches shell"],
+  ["1440x900", "Contact", 1352, 1352, 1352, 44, 44, "No", "Matches shell"],
+  ["1440x900", "About", 1352, 1353.6, "", 44, 42.4, "No", "About card slightly wider than shell"],
+  ["1920x1080", "Home", 1680, 1540, 1540, 190, 190, "No", "Homepage uses narrower 1540px lane"],
+  ["1920x1080", "Systems", 1680, 1680, 1680, 120, 120, "No", "Matches shell"],
+  ["1920x1080", "Featured Work", 1680, 1600, 1600, 160, 160, "No", "Featured Work uses narrower 1600px lane"],
+  ["1920x1080", "Gallery / Media", 1680, 1680, 1680, 120, 120, "No", "Matches shell"],
+  ["1920x1080", "Archer", 1680, 1680, 1680, 120, 120, "No", "Matches shell"],
+  ["1920x1080", "Anaya Case Study", 1680, 1680, 1680, 120, 120, "No", "Matches shell"],
+  ["1920x1080", "Credentials", 1680, 1680, 1680, 120, 120, "No", "Matches shell"],
+  ["1920x1080", "Contact", 1680, 1680, 1680, 120, 120, "No", "Matches shell"],
+  ["1920x1080", "About", 1680, 1804.8, "", 120, -4.8, "Yes", "About card exceeds viewport edge; document overflow about 62px"],
+  ["2560x1440", "Home", 1680, 1540, 1540, 510, 510, "No", "Homepage stays capped at 1540px"],
+  ["2560x1440", "Systems", 1680, 1680, 1680, 440, 440, "No", "Matches shell"],
+  ["2560x1440", "Featured Work", 1680, 1600, 1600, 480, 480, "No", "Featured Work stays capped at 1600px"],
+  ["2560x1440", "Gallery / Media", 1680, 1680, 1680, 440, 440, "No", "Matches shell"],
+  ["2560x1440", "Archer", 1680, 1680, 1680, 440, 440, "No", "Matches shell"],
+  ["2560x1440", "Anaya Case Study", 1680, 1680, 1680, 440, 440, "No", "Matches shell"],
+  ["2560x1440", "Credentials", 1680, 1680, 1680, 440, 440, "No", "Matches shell"],
+  ["2560x1440", "Contact", 1680, 1680, 1680, 440, 440, "No", "Matches shell"],
+  ["2560x1440", "About", 1680, 2240, "", 160, 160, "No", "About uses a much wider page-specific card"],
+];
+
+const headers = [
+  "Viewport size",
+  "Page",
+  "Page shell width",
+  "Hero/card width",
+  "Main content section width below hero",
+  "Left gutter",
+  "Right gutter",
+  "Any overflow?",
+  "Notes",
+];
+
+const escapeCsv = (value) => {
+  if (value === null || value === undefined) return "";
+  const text = String(value);
+  return /[",\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+};
+
+await fs.mkdir(outputDir, { recursive: true });
+const csv = [headers, ...rows].map((row) => row.map(escapeCsv).join(",")).join("\n") + "\n";
+await fs.writeFile(csvPath, csv, "utf8");
+
+const workbook = await Workbook.fromCSV(csv, { sheetName: "Rendered Measurements" });
+
+const errors = await workbook.inspect({
+  kind: "match",
+  searchTerm: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A",
+  options: { useRegex: true, maxResults: 300 },
+  summary: "final formula error scan",
+});
+console.log(errors.ndjson);
+
+const preview = await workbook.inspect({
+  kind: "table",
+  range: "Rendered Measurements!A1:I12",
+  include: "values",
+  tableMaxRows: 12,
+  tableMaxCols: 9,
+});
+console.log(preview.ndjson);
+
+await workbook.render({ sheetName: "Rendered Measurements", range: "A1:I20", scale: 2 });
+
+const output = await SpreadsheetFile.exportXlsx(workbook);
+await output.save(xlsxPath);
+
+console.log(JSON.stringify({ csvPath, xlsxPath }, null, 2));

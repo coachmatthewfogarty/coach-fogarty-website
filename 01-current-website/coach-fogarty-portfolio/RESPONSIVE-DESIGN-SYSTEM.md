@@ -2,6 +2,10 @@
 
 This is the source-of-truth responsive system for the public Coach Fogarty portfolio website. Use it for new page sections, typography, spacing, cards, header/footer decisions, and responsive layout work.
 
+Current companion specs:
+
+- `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` is the measured Home hero reference for the desktop shell, hero media, stat pills, and Portfolio Highlight overlay.
+
 The implementation lives primarily in:
 
 ```text
@@ -33,12 +37,25 @@ Use this decision model:
 
 For the homepage hero, keep the mobile/tablet stacked structure through `1024px`. Switch to the split desktop hero at `1025px+`.
 
+## 2026-05-13 Desktop Width And Hero Source-Of-Truth
+
+If older audit sheets conflict with this file or `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md`, use the current docs.
+
+- Desktop begins at `1025px`. Do not bring back older `1000px` desktop-switch rules.
+- Standard desktop uses the shared shell lane: `--page-shell-width: min(var(--page-max-desktop), calc(100vw - 88px))`.
+- Wide desktop begins at `2200px+` and uses the wide shell lane: `--page-shell-width: min(var(--page-max-wide), calc(100vw - 320px))`.
+- Current page width tokens are `--page-gutter: 44px`, `--page-max-desktop: 1680px`, and `--page-max-wide: 2240px`.
+- Target desktop shell widths are `1192px` at `1280`, `1352px` at `1440`, `1680px` at `1920`, and `2240px` at `2560`.
+- `2560x1440` is a real design tier. Do not treat it as a centered `1920` layout with large gutters.
+- Home hero overlay and stat pill rules are captured in the Home hero spec. Keep label/link typography, overlay padding, and row spacing responsive rather than copying one fixed desktop value to all sizes.
+- Old responsive audit CSV/XLSX files are historical and archived under `outputs/archive/2026-05-13-responsive-audits-superseded/`.
+
 ## 2026-05-11 Source-Of-Truth Cleanup
 
 If older notes conflict with this file, use this file.
 
 - Desktop begins at `1025px`. Do not bring back older `1000px` desktop-switch rules.
-- The active wide-desktop content cap is `1680px`, not the older `1200px` default. Use narrower widths only when a specific reading section needs them.
+- The standard desktop content cap is `1680px`, and the wide desktop tier is `2240px` at `2200px+`. Use narrower widths only when a specific reading section needs them.
 - Compact desktop tuning lives around `1025px-1240px`; this range should be desktop, but tighter and more carefully cropped than large desktop.
 - Mobile/tablet structure stays stacked through `1024px` unless a component has a very specific, tested reason to split earlier.
 - The public website and DPAT reports have separate design systems. Public website typography and table rules should not be copied into DPAT PDF tables, and DPAT black/gold report styling should not leak into the public site.
@@ -123,7 +140,7 @@ Homepage stat pills use the stat band as their sizing container, so the type fol
 | Homepage hero | stacked | stacked | split image/copy |
 | Hero layout switch | mobile/tablet through `1024px` | desktop at `1025px+` | desktop |
 | Header | mobile drawer | mobile drawer | full nav |
-| Page width | full minus gutters | full minus larger gutters | max `1680px` site cap |
+| Page width | full minus gutters | full minus larger gutters | `1680px` standard cap, `2240px` wide tier |
 | Section grids | mostly `1fr` | mostly `1fr` or `2-col` | `2-4 col` as needed |
 | Mini cards | compact on small mobile | desktop-like | desktop-like |
 
@@ -152,7 +169,7 @@ Rules:
 
 | Item | Small mobile `<=430px` | Mobile `431-720px` | Tablet `721-1024px` | Desktop |
 |---|---:|---:|---:|---:|
-| Page gutter | `12px` | `12px` each side | `16px -> 28px` | `36px+`, max page `1680px` |
+| Page gutter | `12px` | `12px` each side | `16px -> 28px` | `44px` base gutter; `1680px` standard cap, `2240px` wide tier |
 | Section gap | `18px` | `32px` typical | `24px` | `28px` typical |
 | Section/card padding | `16px` | `18px` | `18px -> 28px` | `34px` sections, `22px` cards |
 | Hero padding | `14px 16px 13px` | `14px 20px 12px` | `18px -> 28px` | `36px 42px 22px` |
@@ -188,7 +205,7 @@ Rules:
 When changing global type/layout rules, test representative widths:
 
 ```text
-360, 390, 430, 768, 900, 1024, 1280, 1440, 1680
+360, 390, 430, 768, 900, 1024, 1280, 1440, 1920, 2560
 ```
 
 Check for:
@@ -199,4 +216,5 @@ Check for:
 - tablet hero still stacked through `1024px`,
 - desktop hero split at `1025px+`.
 - compact desktop hero/table/card behavior still works from `1025px-1240px`,
-- wide desktop remains capped and readable at `1680px+`.
+- standard desktop remains composed at `1920x1080`,
+- wide desktop remains intentional and readable at `2560x1440`.

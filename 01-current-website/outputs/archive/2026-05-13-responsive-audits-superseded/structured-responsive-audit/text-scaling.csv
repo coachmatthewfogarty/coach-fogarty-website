@@ -1,0 +1,29 @@
+Page,Element,1280 Font,1440 Font,1920 Font,2560 Font,Line Height,Max Width,Notes
+Home,Hero/title,59.36px,62.08px,70.24px,71.2px,66.728px,100%,Primary title rendered font-size.
+Home,Hero/body paragraph,15.552px,15.776px,16.32px,16.32px,24.8064px,"min(100%, 920px)",Primary hero/body copy rendered font-size.
+Home,Hero overlay links,11.2px,12.128px,12.672px,14.72px,14.5728px,100%,Rendered link-row font-size.
+Home,Hero stat value,21.824px,22.912px,22.336px,24.32px,22.336px,100%,Rendered stat value font-size.
+Systems,Hero/title,59.36px,62.08px,70.24px,71.2px,67.4304px,100%,Primary title rendered font-size.
+Systems,Hero/body paragraph,16.128px,16.704px,18.432px,19.52px,27.648px,920px,Primary hero/body copy rendered font-size.
+Systems,Hero overlay links,13.76px,13.76px,14.4px,17.28px,16.56px,none,Rendered link-row font-size.
+Systems,Systems jump pill,14.4px,14.4px,15.744px,16px,17.0035px,none,Rendered jump-pill font-size.
+Featured Work,Hero/title,59.36px,62.08px,70.24px,71.2px,67.4304px,100%,Primary title rendered font-size.
+Featured Work,Hero/body paragraph,16.128px,16.704px,18.432px,19.52px,27.648px,780px,Primary hero/body copy rendered font-size.
+Featured Work,Hero overlay links,6.08px,6.08px,6.08px,6.08px,6.08px,100%,Rendered link-row font-size.
+Featured Work,Featured pillar title,26.4864px,27.9883px,30.24px,30.1871px,31.1472px,none,Featured Work content section title.
+Gallery / Media,Hero/title,59.36px,62.08px,70.24px,71.2px,67.4304px,100%,Primary title rendered font-size.
+Gallery / Media,Hero/body paragraph,16.128px,16.704px,18.432px,19.52px,27.648px,780px,Primary hero/body copy rendered font-size.
+Gallery / Media,Hero overlay links,11.2px,12.128px,15.104px,16.32px,17.3696px,100%,Rendered link-row font-size.
+Archer,Hero/title,59.36px,62.08px,70.24px,71.2px,66.728px,100%,Primary title rendered font-size.
+Archer,Hero/body paragraph,16px,16px,18.432px,19.52px,27.648px,780px,Primary hero/body copy rendered font-size.
+Archer,Hero overlay links,11.2px,12.128px,15.104px,16.32px,17.3696px,100%,Rendered link-row font-size.
+Anaya Case Study,Hero/title,59.36px,62.08px,70.24px,71.2px,66.728px,100%,Primary title rendered font-size.
+Anaya Case Study,Hero/body paragraph,15.2px,15.2px,15.936px,16.32px,24.2227px,"min(100%, 920px)",Primary hero/body copy rendered font-size.
+Anaya Case Study,Hero overlay links,11.2px,12.128px,13.632px,15.936px,15.6768px,none,Rendered link-row font-size.
+Anaya Case Study,Hero stat value,21.824px,22.912px,22.336px,24.32px,22.336px,100%,Rendered stat value font-size.
+Credentials,Hero/title,59.36px,62.08px,70.24px,71.2px,67.4304px,780px,Primary title rendered font-size.
+Credentials,Hero/body paragraph,16.128px,16.704px,18.432px,19.52px,27.648px,760px,Primary hero/body copy rendered font-size.
+Contact,Hero/title,59.36px,62.08px,70.24px,71.2px,67.4304px,none,Primary title rendered font-size.
+Contact,Hero/body paragraph,16.128px,16.704px,18.432px,19.52px,27.648px,760px,Primary hero/body copy rendered font-size.
+About,Hero/title,35.9626px,38.4629px,43.52px,43.52px,44.8256px,100%,Primary title rendered font-size.
+About,Hero/body paragraph,15.36px,15.36px,16.96px,18.88px,26.7968px,none,Primary hero/body copy rendered font-size.

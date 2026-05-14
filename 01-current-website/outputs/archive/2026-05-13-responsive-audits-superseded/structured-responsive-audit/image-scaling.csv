@@ -1,0 +1,11 @@
+Page,Image Selector,1280 Size,1440 Size,1920 Size,2560 Size,Object Fit,Object Position,Notes
+Home,main#top > .hero .portrait-card img,388 x 368,401.2 x 401.2,438 x 368,518 x 407.6,cover,50% 0%,Primary hero image measurement.
+Systems,main.systems-detail-page > .subpage-hero .subpage-hero-visual img,388 x 368,401.2 x 401.2,438 x 368,518 x 407.6,cover,52% 56%,Primary hero image measurement.
+Featured Work,main.featured-page > .featured-hero .subpage-hero-visual img,410 x 307.5,410 x 307.5,410 x 307.5,410 x 307.5,cover,50% 50%,Standard subpage hero frame caps early at about 410px wide.
+Featured Work,main.featured-page .featured-pillar-visual img,501 x 375.8,572.8 x 429.6,680.4 x 510.3,677.8 x 508.4,cover,50% 50%,"Featured content banner/pillar image, not the hero image."
+Gallery / Media,main.media-library-page > .media-hero .subpage-hero-visual img,408 x 305.5,408 x 305.5,408 x 305.5,408 x 305.5,cover,50% 46%,Standard subpage hero frame caps early at about 410px wide.
+Archer,main.archer-page > .subpage-hero .subpage-hero-visual img,410 x 307.5,410 x 307.5,410 x 307.5,410 x 307.5,cover,48% 50%,Standard subpage hero frame caps early at about 410px wide.
+Anaya Case Study,main > .anaya-hero .portrait-card img,388 x 368,401.2 x 401.2,438 x 368,518 x 407.6,cover,50% 50%,Primary hero image measurement.
+Credentials,main.credentials-page > .credentials-hero .credentials-hero-visual img,203.4 x 309.4,203.4 x 309.4,203.4 x 309.4,203.4 x 309.4,cover,50% 0%,Primary hero image measurement.
+Contact,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No primary hero image on this page.
+About,main.about-cover-page .about-letter-gallery img,170.9 x 227,202.9 x 223.9,280.5 x 246.7,374.4 x 214.3,cover,50% 50%,"About uses a custom gallery, not a standard hero image."
