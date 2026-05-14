@@ -20729,6 +20729,7 @@ body .page-shell :is(
   }
 
   body .page-shell main#top > .hero .hero-portrait-card {
+    grid-area: auto !important;
     position: relative !important;
     width: 100% !important;
     height: var(--home-hero-image-height, var(--hero-portrait-height)) !important;
