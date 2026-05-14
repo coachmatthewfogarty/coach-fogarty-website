@@ -1,39 +1,40 @@
 # Home Hero Responsive Design Spec
 
-Last updated: 2026-05-13
+Last updated: 2026-05-14
 
-This is the current source of truth for the Home page hero desktop system after the site-wide responsive scaling cleanup. Use this when continuing the hero work, tuning other hero pages, or checking whether future CSS changes preserve the established Home hero rhythm.
+This is the measured source of truth for the approved Home hero desktop system. Use it when changing the Home hero, tuning inherited page hero left columns, or checking whether future CSS preserves the approved body, pill, portrait, and overlay rhythm.
 
 Scope:
+
 - Page: `index.html`
 - Primary CSS: `styles.css`
 - Component: `main#top > .hero`
-- Desktop verification sizes: `1280x800`, `1440x900`, `1920x1080`, `2560x1440`
-- Mobile/tablet are intentionally not redefined here.
+- Desktop starts: `1025px`
+- Required desktop verification sizes: `1025x768`, `1280x800`, `1440x900`, `1600x900`, `1920x1080`, `2560x1440`
 
-Do not use older responsive audit sheets as current specs. They are archived under `outputs/archive/2026-05-13-responsive-audits-superseded/`.
+Older responsive audit sheets and copy notes are archived. Do not use them as current specs.
 
-## Current Design Intent
+## Approved Desktop Intent
 
-The Home hero uses the shared desktop page lane, scales up to a true `2560x1440` wide tier, and keeps the content feeling composed rather than centered in large gutters.
+The Home hero uses the shared desktop/wide-desktop page shell, a two-column grid, left copy/stats, and a right portrait. The hero should feel composed at compact desktop, standard desktop, and true wide desktop.
 
-Rules established today:
-- Use the shared page shell token for the hero/card lane.
-- Keep `2560x1440` as a real design tier with a `2240px` page shell.
-- Keep the hero image in the right column.
-- Keep copy, paragraph, stats, and overlay readable through max-widths and explicit row rules.
-- Do not cap the entire hero inner layout to a narrow centered lane.
-- The overlay link row starts slightly inside the label lane at every desktop size.
+Rules:
 
-## Global Desktop Width System
+- Desktop begins at `1025px`.
+- Use the shared desktop and wide-desktop page shell widths.
+- Keep eyebrow, H1, body text, and six stat pills in the left column.
+- Keep the portrait image in the right column.
+- Do not let left-column pills run under the right image.
+- Keep body `max-width: 100%`.
+- Let body text fill the left copy lane.
+- Change body typography by breakpoint instead of adding a narrow paragraph cap.
+- Use the approved six-pill `3 x 2` grid.
+- Cap wide desktop pills so they do not become long bars.
+- Do not change right-column image sizes/crops or overlay styling when the request is left-column formatting.
 
-Source selectors:
-- `:root`
-- `.page-shell`
-- `@media (min-width: 1025px)`
-- `@media (min-width: 2200px)`
+## Page Shell
 
-Current tokens:
+Current shell tokens:
 
 ```css
 --page-gutter: 44px;
@@ -46,21 +47,18 @@ Current tokens:
 }
 ```
 
-Rendered page shell:
+Rendered targets:
 
-| Viewport | Shell Width | Left Gutter | Right Gutter | Horizontal Overflow |
-|---|---:|---:|---:|---|
-| `1280x800` | `1192px` | `44px` | `44px` | no |
-| `1440x900` | `1352px` | `44px` | `44px` | no |
-| `1920x1080` | `1680px` | `120px` | `120px` | no |
-| `2560x1440` | `2240px` | `160px` | `160px` | no |
+| Viewport | Shell width | Notes |
+|---|---:|---|
+| `1025x768` | compact desktop lane | desktop structure begins |
+| `1280x800` | `1192px` | standard shell with `44px` gutters |
+| `1440x900` | `1352px` | standard shell with `44px` gutters |
+| `1600x900` | `1512px` | standard shell |
+| `1920x1080` | `1680px` | standard desktop cap |
+| `2560x1440` | `2240px` | wide desktop tier |
 
-## Hero Layout Tokens
-
-Source selectors:
-- `:root`
-- `@media (min-width: 1025px)`
-- `@media (min-width: 2200px)`
+## Layout Tokens
 
 Current hero tokens:
 
@@ -85,244 +83,171 @@ Current hero tokens:
 --hero-wide-portrait-height: clamp(480px, 20vw, 540px);
 ```
 
-Wide desktop rule:
+Later approved locks override paragraph max-width to `100%` for the Home hero body and cap wide stat pills.
 
-```css
-@media (min-width: 2200px) {
-  body .page-shell main#top > .hero {
-    --hero-portrait-width: var(--hero-wide-portrait-width) !important;
-    --hero-portrait-height: var(--hero-wide-portrait-height) !important;
-    grid-template-columns: minmax(0, 1fr) var(--hero-wide-portrait-width) !important;
-    grid-template-areas:
-      "copy portrait"
-      "stats portrait" !important;
-    column-gap: var(--hero-wide-gap) !important;
-  }
-}
-```
+## Two-Column Grid
 
-## Hero Card Measurements
-
-Selector: `main#top > .hero`
-
-| Viewport | Hero Size | Padding | Grid Columns | Column Gap | Row Gap | Copy Left Inset | Image Right Inset |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| `1280x800` | `1192px x 423.2px` | `28.16px 36px 23.04px` | `694.734px 390px` | `33.28px` | `14.08px` | `37px` | `37px` |
-| `1440x900` | `1352px x 429.6px` | `31.68px 36px 25.92px` | `850.562px 390px` | `37.44px` | `15.84px` | `37px` | `37px` |
-| `1920x1080` | `1680px x 446.7px` | `36px 46.08px 30px` | `1067.45px 480px` | `38.4px` | `20px` | `47.1px` | `47.1px` |
-| `2560x1440` | `2240px x 580px` | `36px 58px 30px` | `1405.2px 716.797px` | `0px` | `20px` | `59px` | `59px` |
-
-Notes:
-- At `2560x1440`, the visible left-support-to-image spacing is controlled by the copy/support max-widths and the `0px` column gap.
-- The left content remains anchored to the normal hero left inset. It grows rightward through max-width and support widths.
-
-## Hero Copy And Typography
-
-Selectors:
-- `main#top > .hero .hero-copy`
-- `main#top > .hero .eyebrow`
-- `main#top > .hero h1`
-- `main#top > .hero .hero-text`
-
-| Viewport | Copy Box | Eyebrow Font / Line | Title Font / Line | Paragraph Font / Line | Paragraph Width | Paragraph Max |
-|---|---:|---:|---:|---:|---:|---:|
-| `1280x800` | `694.7px x 172.3px` | `12.096px / 13.9104px` | `59.2px / 56.24px` | `16.704px / 25.3901px` | `694.7px` | `min(100%, 920px)` |
-| `1440x900` | `850.6px x 177.3px` | `12.288px / 14.1312px` | `59.2px / 56.24px` | `17.152px / 26.071px` | `850.6px` | `min(100%, 920px)` |
-| `1920x1080` | `980px x 192.7px` | `12.864px / 14.7936px` | `60.48px / 57.456px` | `18px / 27.36px` | `920px` | `min(100%, 920px)` |
-| `2560x1440` | `1354px x 185.8px` | `13.632px / 15.6768px` | `79.36px / 75.392px` | `18px / 27.36px` | `1120px` | `min(100%, 1120px)` |
-
-Paragraph vertical placement:
-
-| Viewport | Title Top From Hero | Paragraph Top From Hero | Paragraph Margin Top |
-|---|---:|---:|---:|
-| `1280x800` | `53.1px` | `125.3px` | `16px` |
-| `1440x900` | `57.6px` | `131.8px` | `18px` |
-| `1920x1080` | `66.2px` | `147.6px` | `24px` |
-| `2560x1440` | `68.7px` | `168px` | `24px` |
-
-## Hero Image
-
-Selectors:
-- `main#top > .hero .portrait-card`
-- `main#top > .hero .portrait-card img`
-
-| Viewport | Image Frame | Image Left / Top | Object Fit | Object Position |
-|---|---:|---:|---|---|
-| `1280x800` | `390px x 370px` | `809px / 95.2px` | `cover` | `50% 0%` |
-| `1440x900` | `390px x 370px` | `969px / 98.7px` | `cover` | `50% 0%` |
-| `1920x1080` | `480px x 370px` | `1272.9px / 103px` | `cover` | `50% 0%` |
-| `2560x1440` | `716.8px x 512px` | `1624.2px / 103px` | `cover` | `50% 0%` |
-
-Image rules:
-- Do not change image file, crop, or object-position without an explicit visual reason.
-- At wide desktop, the right image column stays where the grid places it.
-- The overlay is positioned inside this image frame and should not drive image sizing.
-
-## Portfolio Highlight Overlay
-
-Selectors:
-- `main#top > .hero .hero-mobile-highlight`
-- `main#top > .hero .hero-mobile-highlight p`
-- `main#top > .hero .hero-mobile-highlight div`
-
-Purpose:
-- The overlay is a compact image-attached navigation strip.
-- It should remain low on the image.
-- The label line starts at the overlay padding lane.
-- The blue link row starts slightly inside the label lane at every desktop size.
-- Links stay on one line.
-
-Current desktop row-balance rules:
-
-```css
-main#top > .hero .hero-mobile-highlight {
-  --home-highlight-row-balance: 0px;
-  --home-highlight-row-offset: 0px;
-}
-
-main#top > .hero .hero-mobile-highlight div {
-  justify-content: space-between;
-  width: calc(100% + var(--home-highlight-row-balance));
-  margin-inline: var(--home-highlight-row-offset);
-  gap: 0;
-}
-
-@media (min-width: 1025px) and (max-width: 1349px) {
-  --home-highlight-row-balance: -6px;
-  --home-highlight-row-offset: 3px;
-}
-
-@media (min-width: 1350px) and (max-width: 1719px) {
-  --home-highlight-row-balance: -6px;
-  --home-highlight-row-offset: 3px;
-}
-
-@media (min-width: 1720px) and (max-width: 2199px) {
-  --home-highlight-row-balance: -8px;
-  --home-highlight-row-offset: 4px;
-}
-
-@media (min-width: 2200px) {
-  width: calc(100% - 18px);
-  margin-inline: auto;
-}
-```
-
-Overlay measurements:
-
-| Viewport | Overlay Size | Padding | Gap Between Lines | Bottom From Image | Left / Right From Image |
-|---|---:|---:|---:|---:|---:|
-| `1280x800` | `366.3px x 55.7px` | `10px 12px` | `8px` | `12.5px` | `11.9px / 11.9px` |
-| `1440x900` | `363.5px x 57.5px` | `10.8px 12px` | `8px` | `14px` | `13.2px / 13.2px` |
-| `1920x1080` | `454px x 65.3px` | `11.904px` | `9.984px` | `18.3px` | `13px / 13px` |
-| `2560x1440` | `690.8px x 80.8px` | `15px 18px` | `10px` | `18px` | `13px / 13px` |
-
-Overlay type:
-
-| Viewport | Label Font / Line | Link Font / Line | Links One Line |
-|---|---:|---:|---|
-| `1280x800` | `11.8px / 11.8px` | `12.1px / 13.915px` | yes |
-| `1440x900` | `12px / 12px` | `12.1px / 13.915px` | yes |
-| `1920x1080` | `13.2px / 13.2px` | `14.25px / 16.3875px` | yes |
-| `2560x1440` | `17px / 17px` | `19px / 21.85px` | yes |
-
-Overlay vertical rhythm:
-
-| Viewport | Label Top From Overlay | Gap Between Label And Links | Links Bottom From Overlay |
-|---|---:|---:|---:|
-| `1280x800` | `11px` | `8px` | `11px` |
-| `1440x900` | `11.8px` | `8px` | `11.8px` |
-| `1920x1080` | `12.9px` | `10px` | `12.9px` |
-| `2560x1440` | `16px` | `10px` | `16px` |
-
-Overlay horizontal rhythm:
-
-| Viewport | Label Left | Link Left | Link Right | Link Indent From Label |
+| Viewport | Hero padding | Grid columns | Column gap | Right image frame |
 |---|---:|---:|---:|---:|
-| `1280x800` | `13px` | `16px` | `16px` | `+3px` |
-| `1440x900` | `13px` | `16px` | `16px` | `+3px` |
-| `1920x1080` | `12.9px` | `16.9px` | `16.9px` | `+4px` |
-| `2560x1440` | `19px` | `28px` | `28px` | `+9px` |
+| `1025x768` | compact desktop tuned | left lane + right portrait | compact | protected portrait column |
+| `1280x800` | `28.2px 36px 23px` | left lane + `390px` | `33.28px` | about `390px x 380.5px` |
+| `1440x900` | `31.7px 36px 25.9px` | left lane + `390px` | `37.44px` | about `390px x 389.5px` |
+| `1600x900` | `31.7px 36px 25.9px` | left lane + right portrait | `37.44px` | about `370px` tall |
+| `1920x1080` | `36px 46.1px 30px` | left lane + `480px` | `38.4px` | about `480px x 380.6px` |
+| `2560x1440` | `36px 58px 30px` | left lane + wide portrait | `0px` | about `716.8px x 512px` |
 
-Overlay guardrails:
-- The link row should not start left of the label lane.
-- The link row should remain a little inset from the label line, not heavily centered.
-- Do not use fixed `gap` between every link/divider at wide desktop; use the distributed row.
-- Do not allow wrapping, clipping, or horizontal overflow.
+Guardrails:
+
+- The right image column stays where the grid places it.
+- The image frame is not changed to fix left-column text or pills.
+- At wide desktop, spacing is controlled by left support widths and capped components, not by stretching pills into the image lane.
+
+## Copy And Typography
+
+Selectors:
+
+```text
+main#top > .hero .hero-copy
+main#top > .hero .eyebrow
+main#top > .hero h1
+main#top > .hero .hero-text
+```
+
+Approved body behavior:
+
+| Range | Body max-width | Body size | Line-height | Notes |
+|---|---:|---:|---:|---|
+| `1025-1199px` | `100%` | compact desktop tuned | compact desktop tuned | protect two-column fit |
+| `1200-1349px` | `100%` | `17.5px` | `32px` | fills left lane |
+| `1350-1419px` | `100%` | `17.25px` | `29px` | fills left lane |
+| `1420-1599px` | `100%` | `17.25px` | `28px` | fills left lane |
+| `1600-1919px` | `100%` | `17.5px` | `30px` | fills left lane |
+| `1920-2199px` | `100%` | `17.5px` | `27.5px` | fills left lane |
+| `2200px+` | `100%` | `22px` | `46px` | wide desktop rhythm |
+
+Copy rules:
+
+- Body text should be balanced enough to fill the hero lane.
+- Avoid one-word orphan lines through copy edits first.
+- Keep the title-to-body gap approved by the current CSS locks.
+- Do not add a new paragraph max-width cap unless a page has an approved exception.
 
 ## Stat Pills
 
 Selectors:
-- `main#top > .hero .hero-stat-band`
-- `main#top > .hero #impact.hero-stat-band article`
-- `main#top > .hero #impact.hero-stat-band article strong`
-- `main#top > .hero #impact.hero-stat-band article span`
-
-| Viewport | Stat Band | Grid Columns | Gap | Pill Size | Pill Padding | Value Font / Line | Label Font / Line |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| `1280x800` | `694.7px x 132.7px` | `223.047px 223.047px 223.047px` | `12.8px` | `223px x 60px` | `9.216px 12.8px` | `21.824px / 21.824px` | `11.584px / 12.7424px` |
-| `1440x900` | `850.6px x 142.1px` | `273.922px 273.922px 273.938px` | `14.4px` | `273.9px x 63.9px` | `10.368px 14.4px` | `22.912px / 22.912px` | `12.032px / 13.2352px` |
-| `1920x1080` | `1067.5px x 166px` | `346.484px 346.484px 346.484px` | `14px` | `346.5px x 76px` | `12px 18px` | `22.336px / 22.336px` | `11.84px / 13.024px` |
-| `2560x1440` | `1354px x 166px` | `442px 442px 442px` | `14px` | `442px x 76px` | `12px 18px` | `24.32px / 24.32px` | `12.8px / 14.08px` |
-
-Stat pill guardrails:
-- Keep the stat grid inside the left content/support area.
-- Do not let stat pills run under the image column.
-- At `2560`, the stat grid should fill the left column intentionally without moving the left content group right.
-
-## CSS Selector Map
-
-Primary rules to inspect before editing:
 
 ```text
-:root
-@media (min-width: 1025px)
-@media (min-width: 1720px)
-@media (min-width: 2200px)
-main#top > .hero
-main#top > .hero .hero-copy
-main#top > .hero h1
-main#top > .hero .hero-text
+main#top > .hero .hero-stat-band
+main#top > .hero #impact.hero-stat-band article
+main#top > .hero #impact.hero-stat-band article strong
+main#top > .hero #impact.hero-stat-band article span
+```
+
+Approved stat pill system:
+
+- Six pills use `3` columns x `2` rows.
+- Pills stay in the left support area.
+- Pills never run underneath the right portrait.
+- Pill colors, border radius, padding, type, and gaps match the Home hero system.
+- Wide desktop pills are capped.
+
+Current sizing targets:
+
+| Range | Grid | Pill width | Pill height | Gap | Value size | Label size |
+|---|---|---:|---:|---:|---:|---:|
+| `1025-1349px` | `3 x 2` | about `223px` | `60px` | about `12px` | about `21.8px` | about `11.6px` |
+| `1350-1499px` | `3 x 2` | about `273.9px` | `63.9px` | about `12px` | about `22.9px` | about `12px` |
+| `1500-1719px` | `3 x 2` | about `306px` | `70px` | about `12px` | about `22.6px` | about `12px` |
+| `1720-2199px` | `3 x 2` | about `346.5px` | `76px` | about `12px` | about `22.3px` | about `11.8px` |
+| `2200px+` | `3 x 2` | capped around `364px` | `72px` | about `12px` | `23px` | `12.5px` |
+
+Wide desktop guardrail:
+
+```css
+main#top > .hero .hero-stat-band {
+  width: min(100%, 1120px);
+  max-width: min(100%, 1120px);
+}
+```
+
+## Right Image
+
+Selectors:
+
+```text
 main#top > .hero .portrait-card
+main#top > .hero .portrait-card img
+```
+
+Image rules:
+
+- Do not change image file, crop, frame size, or object-position without a specific visual request.
+- Keep the portrait in the right column.
+- Keep image crop rules aligned with `docs/image-export/README.md`.
+- Overlay positioning should not drive image sizing.
+
+## Portfolio Highlight Overlay
+
+Selectors:
+
+```text
 main#top > .hero .hero-mobile-highlight
 main#top > .hero .hero-mobile-highlight p
 main#top > .hero .hero-mobile-highlight div
-main#top > .hero .hero-stat-band
-main#top > .hero #impact.hero-stat-band article
 ```
+
+Overlay rules:
+
+- Keep the overlay attached to the right portrait.
+- Keep the approved right-column formatting.
+- Keep approved overlay text on one line.
+- Wide desktop overlay should be capped so it does not stretch too far.
+- Do not alter overlay text or overlay styling when updating left-column hero rules.
+- Link rows should stay distributed and aligned, not forced by fixed large gaps.
+
+Current wide desktop overlay cap:
+
+```css
+main#top > .hero .hero-mobile-highlight {
+  width: min(calc(100% - 26px), 560px);
+  max-width: min(calc(100% - 26px), 560px);
+}
+```
+
+## Inherited Page Heroes
+
+Systems, Featured, Gallery, Anaya, Archer, and Credentials should inherit the approved left-column body and pill/action rhythm.
+
+Rules:
+
+- Keep the page hero left-column body `max-width: 100%`.
+- Use the Home-like body rhythm by breakpoint.
+- Use `3` desktop columns for pill/action rows.
+- Use `3 x 2` for six stat-pill groups.
+- Keep right-column image and overlay formatting unchanged unless requested.
+- About and Contact are excluded where existing approved rules say not to touch them.
 
 ## Verification Checklist
 
-Run visual and measurement checks at:
+Run checks at:
 
 ```text
+1025x768
 1280x800
 1440x900
+1600x900
 1920x1080
 2560x1440
 ```
 
 Check:
-- page shell width matches the target lane,
-- hero card matches the shell width,
-- image remains in the right column,
-- text remains readable and paragraph max-width is respected,
-- stat pills stay inside the left support area,
-- overlay label and link row keep their established alignment,
-- overlay links stay on one line,
+
+- page shell matches the target lane,
+- hero is split at `1025px+`,
+- body text fills the left lane,
+- no paragraph cap prevents approved rhythm,
+- stat pills stay in the left column,
+- wide desktop pills do not become long bars,
+- right portrait remains in the right column,
+- overlay stays attached to the right image and keeps approved formatting,
 - no horizontal overflow.
-
-## Superseded Files
-
-The previous audit outputs were useful during diagnosis, but their numbers predate the current desktop lane, hero media, typography, and overlay tuning. They are archived in:
-
-```text
-outputs/archive/2026-05-13-responsive-audits-superseded/
-```
-
-Archived groups:
-- `structured-responsive-audit`
-- `section-width-measurements`
-- `responsive-scaling-audit`
-
-Use this spec and `RESPONSIVE-DESIGN-SYSTEM.md` for current implementation decisions.

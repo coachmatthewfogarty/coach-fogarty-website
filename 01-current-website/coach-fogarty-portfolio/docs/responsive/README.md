@@ -1,18 +1,33 @@
 # Responsive Specs
 
-Use these docs as the current responsive source of truth for the Coach Fogarty portfolio site.
+Use this folder for active responsive specs only.
 
 ## Current Specs
 
-- `HOME-HERO-RESPONSIVE-SPEC.md`: measured Home hero desktop spec, including shell width, hero card, copy, media, stat pills, and Portfolio Highlight overlay values at `1280x800`, `1440x900`, `1920x1080`, and `2560x1440`.
-- `../../RESPONSIVE-DESIGN-SYSTEM.md`: site-wide responsive rules, breakpoints, width tokens, type floors, crop guidance, spacing, and verification standards.
+- `HOME-HERO-RESPONSIVE-SPEC.md`: measured Home hero desktop source of truth for the page shell, two-column hero, body rhythm, right portrait, stat pills, and Portfolio Highlight overlay.
+- `../../RESPONSIVE-DESIGN-SYSTEM.md`: global source of truth for breakpoints, page hero left-column rules, headings, eyebrows, body text, pills, cards, overlays, responsive color consistency, and verification.
+- `../image-export/README.md`: locked image export, crop, naming, and asset rules.
+
+## Required Desktop Checks
+
+```text
+1025x768
+1280x800
+1440x900
+1600x900
+1920x1080
+2560x1440
+```
+
+Desktop starts at `1025px`. The `1025-1199px` range is the small-desktop / large-tablet transition range and should be tested as desktop.
 
 ## Archived Inputs
 
-Older responsive audit CSV/XLSX files were kept for history but are no longer the active source of truth. They live in:
+Older responsive audit CSV/XLSX files and conflicting notes were kept for history but are no longer active. They live in:
 
 ```text
+../../docs/archive/
 ../../../outputs/archive/2026-05-13-responsive-audits-superseded/
 ```
 
-If an archived sheet conflicts with the current docs, use the current docs.
+If an archived sheet or note conflicts with the current docs, use the current docs.

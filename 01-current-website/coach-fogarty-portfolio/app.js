@@ -210,11 +210,12 @@ const caseStudySectionPath = (playerName, sectionName) => `case-study/${playerNa
 
 const mediaAlbums = [
   {
-    title: "Sideline Leadership",
-    category: "Sideline Leadership",
+    title: "Leadership in Action",
+    category: "SIDELINE",
+    eyebrow: "SIDELINE",
     thumbnail: mediaPhotoPath("sideline-leadership", "sideline-leadership-hyped-media-card-cover-bottom-mid-1200x900.avif"),
     thumbnailRole: "media-card",
-    caption: "Sideline Leadership",
+    caption: "Leadership in Action",
     crop: "sideline",
     items: [
       {
@@ -247,11 +248,12 @@ const mediaAlbums = [
     ]
   },
   {
-    title: "Coaching Details",
-    category: "Coaching Details",
+    title: "Teaching Moments",
+    category: "COURTSIDE",
+    eyebrow: "COURTSIDE",
     thumbnail: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-media-card-1200x900.avif"),
     thumbnailRole: "media-card",
-    caption: "Coaching Details",
+    caption: "Teaching Moments",
     crop: "teaching",
     items: [
       {
@@ -356,11 +358,12 @@ const mediaAlbums = [
     ]
   },
   {
-    title: "Player Development",
-    category: "Player Development",
+    title: "Player Growth",
+    category: "DEVELOPMENT",
+    eyebrow: "DEVELOPMENT",
     thumbnail: mediaPhotoPath("player-development", "player-development-on-court-instruction-01-media-card-cover-center-1200x900.avif"),
     thumbnailRole: "media-card",
-    caption: "Player Development",
+    caption: "Player Growth",
     crop: "oncourt",
     items: [
       {
@@ -375,11 +378,12 @@ const mediaAlbums = [
     ]
   },
   {
-    title: "Team Environment",
-    category: "Team Environment",
+    title: "Program Standards",
+    category: "LOCKER ROOM",
+    eyebrow: "LOCKER ROOM",
     thumbnail: mediaPhotoPath("team-environment", "team-environment-huddle-media-card-cover-bottom-center-1200x900.avif"),
     thumbnailRole: "media-card",
-    caption: "Team Environment",
+    caption: "Program Standards",
     crop: "huddle",
     items: [
       {
@@ -403,10 +407,11 @@ const mediaAlbums = [
     ]
   },
   {
-    title: "Team Celebration",
-    category: "Team Celebration",
+    title: "Celebration Moments",
+    category: "ENERGY",
+    eyebrow: "ENERGY",
     thumbnail: mediaPhotoPath("team-celebration", "team-celebration-santa-ana-3-pointer-01-media-card-cover-upper-mid-zoom-out-3-q98-1200x900.avif"),
-    caption: "Team Celebration",
+    caption: "Celebration Moments",
     crop: "celebration",
     items: [
       {
@@ -502,11 +507,12 @@ const mediaAlbums = [
     ]
   },
   {
-    title: "Championship Culture",
-    category: "Championship Culture",
+    title: "Winning Standard",
+    category: "CHAMPIONSHIP",
+    eyebrow: "CHAMPIONSHIP",
     thumbnail: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-three-peat-media-card-1200x900.avif"),
     thumbnailRole: "media-card",
-    caption: "Championship Culture",
+    caption: "Winning Standard",
     crop: "culture",
     items: [
       {
@@ -1573,6 +1579,46 @@ function renderLibrary() {
     .join("");
 }
 
+function normalizeMediaSource(source) {
+  return decodeURI(String(source || ""))
+    .replace(/\\/g, "/")
+    .replace(/^\.\//, "")
+    .replace(/[?#].*$/, "");
+}
+
+function mediaItemSourceList(mediaItem) {
+  return [
+    mediaItem.mediaCardSrc,
+    mediaItem.gallerySrc,
+    mediaItem.featuredSrc,
+    mediaItem.carouselSrc,
+    mediaItem.carouselThumb,
+    mediaItem.thumbSrc,
+    mediaItem.thumbnailSrc,
+    mediaItem.thumb,
+    mediaItem.thumbnail,
+    mediaItem.posterSrc,
+    mediaItem.poster,
+    mediaItem.fullSrc,
+    mediaItem.src
+  ]
+    .filter(Boolean)
+    .map(normalizeMediaSource);
+}
+
+function albumItemIndexForSource(album, source) {
+  const items = activeAlbumItemsFor(album);
+  const target = normalizeMediaSource(source);
+
+  if (!target) {
+    return 0;
+  }
+
+  const exactMatch = items.findIndex((item) => mediaItemSourceList(item).includes(target));
+
+  return exactMatch >= 0 ? exactMatch : 0;
+}
+
 function renderGallery() {
   if (!galleryGrid) {
     return;
@@ -1580,8 +1626,11 @@ function renderGallery() {
 
   galleryGrid.innerHTML = mediaAlbums
     .map(
-      (item, index) => `
-        <button class="gallery-card${item.crop ? ` gallery-card-${item.crop}` : ""}" type="button" data-album-index="${index}">
+      (item, index) => {
+        const itemIndex = albumItemIndexForSource(item, item.thumbnail);
+
+        return `
+        <button class="gallery-card${item.crop ? ` gallery-card-${item.crop}` : ""}" type="button" data-album-index="${index}" data-album-item-index="${itemIndex}">
           <span class="gallery-media">
             <img src="${encodeURI(item.thumbnail)}" data-image-role="${item.thumbnailRole || "thumb"}" alt="${item.caption}" />
           </span>
@@ -1590,13 +1639,14 @@ function renderGallery() {
             <span class="gallery-card-arrow" aria-hidden="true">&rsaquo;</span>
           </span>
         </button>
-      `
+      `;
+      }
     )
     .join("");
 
   galleryGrid.querySelectorAll(".gallery-card").forEach((card) => {
     card.addEventListener("click", () => {
-      openMediaAlbum(Number(card.dataset.albumIndex));
+      openMediaAlbum(Number(card.dataset.albumIndex), mediaAlbums, Number(card.dataset.albumItemIndex || 0));
     });
   });
 }
@@ -1808,12 +1858,12 @@ function renderMediaLibraryPage() {
   };
 
   const categoryCards = [
-    { title: "Team Environment", desc: "Huddles, program culture and team connection.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[3]) },
-    { title: "Team Celebration", desc: "Big shots, reactions and team moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[4]) },
-    { title: "Championship Culture", desc: "Championship history and program standards.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[5]) },
-    { title: "Sideline Leadership", desc: "Game energy, staff presence and leadership moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[0]) },
-    { title: "Coaching Details", desc: "Teaching, preparation and game-day coaching details.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[1]) },
-    { title: "Player Development", desc: "On-court teaching and player-development work.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[2]) },
+    { title: "Program Standards", slug: "team-environment", desc: "Huddles, program culture and team connection.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[3]) },
+    { title: "Celebration Moments", slug: "team-celebration", desc: "Big shots, reactions and team moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[4]) },
+    { title: "Winning Standard", slug: "championship-culture", desc: "Championship history and program standards.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[5]) },
+    { title: "Leadership in Action", slug: "sideline-leadership", desc: "Game energy, staff presence and leadership moments.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[0]) },
+    { title: "Teaching Moments", slug: "coaching-details", desc: "Teaching, preparation and game-day coaching details.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[1]) },
+    { title: "Player Growth", slug: "player-development", desc: "On-court teaching and player-development work.", href: "#coaching-media", albumIndex: albumIndexFor(coachingAlbums[2]) },
     { title: "The Archer", desc: "Shooting-development photos and training clips.", href: "#archer-media", albumIndex: albumIndexFor(archerAlbum) },
     { title: "Anaya Beard Case Study", desc: "Development journey media and proof of growth.", href: "#anaya-media", albumIndex: albumIndexFor(anayaFullAlbum) },
     { title: "Playing Career", desc: "College and high school playing-career photos.", href: "#playing-career-media", albumIndex: albumIndexFor(playingAlbum) },
@@ -1825,15 +1875,10 @@ function renderMediaLibraryPage() {
       const items = activeAlbumItemsFor(album);
       const firstItem = items[0];
       const thumb = album.thumbnail || (firstItem ? mediaItemCardSrc(firstItem) : "");
-      const thumbnailItemIndex = Math.max(
-        0,
-        items.findIndex((item) =>
-          [mediaItemCardSrc(item), mediaItemThumb(item), mediaItemSrc(item), item.src].includes(thumb)
-        )
-      );
+      const thumbnailItemIndex = albumItemIndexForSource(album, thumb);
 
       return `
-        <article class="media-category-card" data-gallery-category="${systemTypeSlug(card.title)}" data-open-media-gallery="${card.albumIndex}" data-open-media-gallery-item="${thumbnailItemIndex}" role="button" tabindex="0" aria-label="Open ${card.title} gallery">
+        <article class="media-category-card" data-gallery-category="${card.slug || systemTypeSlug(card.title)}" data-open-media-gallery="${card.albumIndex}" data-open-media-gallery-item="${thumbnailItemIndex}" role="button" tabindex="0" aria-label="Open ${card.title} gallery">
           <span class="media-category-frame">
             <img src="${encodeURI(thumb)}" alt="${card.title}" loading="lazy" />
           </span>
@@ -2174,8 +2219,9 @@ function openMediaAlbum(albumIndex, albums = mediaAlbums, itemIndex = 0) {
   }
 
   activeOverlayAlbums = albums;
-  activeAlbumIndex = albumIndex;
-  activeItemIndex = itemIndex;
+  activeAlbumIndex = Number.isInteger(albumIndex) && albumIndex >= 0 && albumIndex < activeOverlayAlbums.length ? albumIndex : 0;
+  const items = activeAlbumItems();
+  activeItemIndex = Number.isInteger(itemIndex) && itemIndex >= 0 && itemIndex < items.length ? itemIndex : 0;
   renderMediaOverlay({ thumbScrollBehavior: "auto" });
   mediaOverlay.classList.add("is-open");
   mediaOverlay.setAttribute("aria-hidden", "false");

@@ -1,19 +1,18 @@
 # Responsive Design System
 
-This is the source-of-truth responsive system for the public Coach Fogarty portfolio website. Use it for new page sections, typography, spacing, cards, header/footer decisions, and responsive layout work.
+This is the global source of truth for the public Coach Fogarty portfolio website responsive and layout system. Use it before changing typography, spacing, page heroes, body text, pills, cards, overlays, or breakpoint behavior.
 
-Current companion specs:
+Companion active specs:
 
-- `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` is the measured Home hero reference for the desktop shell, hero media, stat pills, and Portfolio Highlight overlay.
+- `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md`: measured Home hero desktop system.
+- `docs/image-export/README.md`: locked image export, crop, naming, and asset rules.
 
-The implementation lives primarily in:
+Implementation lives primarily in:
 
 ```text
 styles.css
 footer.js
 ```
-
-`styles.css` defines the responsive type tokens, layout breakpoints, spacing, card dimensions, and component treatments. `footer.js` runs the heading/card-title fitter that protects one-line rules without letting text become unreadably small.
 
 ## Breakpoints
 
@@ -23,100 +22,102 @@ footer.js
 | `431-720px` | mobile | Stacked layout, mobile drawer header, compact sections |
 | `721-767px` | bridge | Tablet layout shell with mobile type scale |
 | `768-1024px` | tablet | Mobile structure with roomier spacing and tablet type scale |
-| `1025px+` | desktop | Desktop structure, desktop nav, split hero/column layouts allowed |
+| `1025-1199px` | small desktop / large tablet transition | Desktop begins; keep layout compact and protect image/text balance |
+| `1200-2199px` | desktop | Desktop nav, split heroes, approved desktop page shell |
+| `2200px+` | wide desktop | Wide shell and capped wide components |
 
-## Design Rule
+Desktop starts at `1025px`. Do not bring back older `1000px` desktop-switch rules.
 
-Tablet should be mobile structure with desktop breathing room.
+## Page Shell
 
-Use this decision model:
+Use the shared shell for major sections, page heroes, cards, contact modules, systems grids, and media previews.
 
-- `721-899px`: tablet portrait; keep stacked layouts.
-- `900-1024px`: large tablet/tablet landscape; keep stacked layout, but add more desktop polish and spacing.
-- `1025px+`: desktop structure begins.
+```css
+--page-gutter: 44px;
+--page-max-desktop: 1680px;
+--page-max-wide: 2240px;
+--page-shell-width: min(var(--page-max-desktop), calc(100vw - 88px));
 
-For the homepage hero, keep the mobile/tablet stacked structure through `1024px`. Switch to the split desktop hero at `1025px+`.
+@media (min-width: 2200px) {
+  --page-shell-width: min(var(--page-max-wide), calc(100vw - 320px));
+}
+```
 
-## 2026-05-13 Desktop Width And Hero Source-Of-Truth
+Target shell widths:
 
-If older audit sheets conflict with this file or `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md`, use the current docs.
-
-- Desktop begins at `1025px`. Do not bring back older `1000px` desktop-switch rules.
-- Standard desktop uses the shared shell lane: `--page-shell-width: min(var(--page-max-desktop), calc(100vw - 88px))`.
-- Wide desktop begins at `2200px+` and uses the wide shell lane: `--page-shell-width: min(var(--page-max-wide), calc(100vw - 320px))`.
-- Current page width tokens are `--page-gutter: 44px`, `--page-max-desktop: 1680px`, and `--page-max-wide: 2240px`.
-- Target desktop shell widths are `1192px` at `1280`, `1352px` at `1440`, `1680px` at `1920`, and `2240px` at `2560`.
-- `2560x1440` is a real design tier. Do not treat it as a centered `1920` layout with large gutters.
-- Home hero overlay and stat pill rules are captured in the Home hero spec. Keep label/link typography, overlay padding, and row spacing responsive rather than copying one fixed desktop value to all sizes.
-- Old responsive audit CSV/XLSX files are historical and archived under `outputs/archive/2026-05-13-responsive-audits-superseded/`.
-
-## 2026-05-11 Source-Of-Truth Cleanup
-
-If older notes conflict with this file, use this file.
-
-- Desktop begins at `1025px`. Do not bring back older `1000px` desktop-switch rules.
-- The standard desktop content cap is `1680px`, and the wide desktop tier is `2240px` at `2200px+`. Use narrower widths only when a specific reading section needs them.
-- Compact desktop tuning lives around `1025px-1240px`; this range should be desktop, but tighter and more carefully cropped than large desktop.
-- Mobile/tablet structure stays stacked through `1024px` unless a component has a very specific, tested reason to split earlier.
-- The public website and DPAT reports have separate design systems. Public website typography and table rules should not be copied into DPAT PDF tables, and DPAT black/gold report styling should not leak into the public site.
-
-## Crop Size Ladder
-
-Use this ladder from smallest mobile/thumbnail crop to largest desktop/detail crop:
-
-| Crop | Size | Format | Use |
-|---|---:|---|---|
-| `overlay-thumb` | `600x400` | WebP | Smallest crop for overlay thumbnails, compact preview tiles, and light mobile thumbnail use |
-| `media-card` | `1200x900` | AVIF | Default responsive card crop for homepage cards, media cards, system previews, and most gallery cards |
-| `portrait` | `1800x2400` | AVIF | Tall portrait slots and detail views where vertical framing is the point |
-| `landscape` | `2400x1800` | AVIF | Largest desktop/detail crop for wide displays, large media, and hero-style placements |
-
-Crop rules:
-
-- Start with the smallest crop that matches the actual rendered slot, then step up as the slot gets larger.
-- Do not stretch a `600x400` thumbnail into desktop detail space when a `1200x900` or `2400x1800` approved crop exists.
-- Keep `q98` and the crop label in the final filename so the live website can be traced back to the approved crop.
-- Use `object-fit: cover` for photographic cards unless the asset is text-heavy or document-like. Use `contain` only for document previews or graphics that must remain fully visible.
-- Do not solve mismatched image ratios with black bars, blurred fill, transparent padding, or fake borders.
-- Protect faces, bodies, document text, basketball action, and logos before decorative composition.
-- On mobile, prefer subject-safe crops and stable card height over dramatic desktop composition.
-- On desktop, use the larger crop to show more context, but keep the subject readable inside the card or hero frame.
-
-## Type Scale
-
-| Item | Mobile | Tablet | Desktop |
-|---|---:|---:|---:|
-| Eyebrow | `10.88px` | `11.2px -> 12.16px` | `12.16px` |
-| Eyebrow line-height | `13.06px` | `12.88px -> 13.98px` | `13.98px` |
-| Section title | `24.8px` | `25.6px -> 35.2px` | `35.2px -> 40px` |
-| Section title line-height | `26.78px` | `26.88px -> 36.96px` | `36.61px -> 41.6px` |
-| Card title | `22.72px` | `23.36px -> 25.6px` | `25.6px -> 29.6px` |
-| Card title line-height | `24.99px` | `25.23px -> 27.65px` | `27.65px -> 31.97px` |
-| Stat pill value | `12.16px -> 20px` | `12.16px -> 20px` | `15.2px -> 20px` |
-| Stat pill label | `8.32px -> 12.48px` | `8.32px -> 12.48px` | `10.24px -> 12.48px` |
-| Hero title | `34.4px` | `37.6px -> 48px` | `52px -> 71.2px` |
-| Paragraphs | `14.72px-16px` | mostly `16px` | mostly `16px` |
-| Form input text | `16px` | `16px` | `16px` |
-
-Smallest phones at `<=360px` can tighten further:
-
-| Item | `<=360px` |
+| Viewport | Target shell |
 |---|---:|
-| Eyebrow | `10.24px` |
-| Section title token | `23.36px` |
-| Card title token | `21.44px` |
+| `1025x768` | compact desktop shell with `44px` base gutter when possible |
+| `1280x800` | `1192px` |
+| `1440x900` | `1352px` |
+| `1600x900` | `1512px` |
+| `1920x1080` | `1680px` |
+| `2560x1440` | `2240px` |
 
-Hero titles, section titles, and eyebrows should scale from their actual card or heading container width, not only from the viewport. Use the table above as the ceiling range, then tighten toward the readable floors when a card/image/section is narrow. The heading fitter in `footer.js` remains the final guard: it can shrink long headings to the readable floor and then allow wrapping when needed.
+## Home Hero Desktop System
 
-## Heading Fit Rules
+The Home hero is the approved desktop reference.
 
-The fitter runs across all viewport widths.
+- Desktop starts at `1025px`.
+- Use a two-column grid with left copy/stats and right portrait.
+- Left column holds eyebrow, H1, body text, and six stat pills.
+- Right column holds the portrait image only.
+- Do not let the left-column pills run under the right image.
+- Body text uses `max-width: 100%` and fills the left copy lane.
+- Body typography changes by breakpoint to keep the lane balanced.
+- Six stat pills use the approved `3 x 2` grid and approved sizing.
+- Wide desktop pills are capped so they do not become long bars.
+- Do not cap the whole hero to a narrow centered lane.
 
-| Element | Rule |
-|---|---|
-| Eyebrows | Stay on one line; may shrink to `8px` minimum |
-| Section titles | Try one line; shrink to a readable floor; then wrap if needed |
-| Card titles | Try one line; shrink to a readable floor; then wrap if needed |
+Use `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` for measured Home hero values.
+
+## Page Hero Left Column
+
+Systems, Featured, Gallery, Anaya, Archer, and Credentials hero pages inherit the approved Home hero left-column rules where applicable.
+
+Left-column rules:
+
+- Copy container is `width: 100%`, `max-width: 100%`, and `min-width: 0`.
+- Body text is `width: 100%` and `max-width: 100%`.
+- Body text uses the approved Home hero rhythm by breakpoint.
+- Pill/action rows use the Home hero pill sizing and `3` desktop columns.
+- Six-pill stat groups must form `3 x 2`.
+- Pills stay inside the left column and never slide under the right media column.
+
+Protected areas:
+
+- Do not change eyebrow, title, right image, right-column image crop, or overlay styling when the request is only left-column formatting.
+- About and Contact are excluded from broad hero-left/body changes where the page already has approved custom rules.
+
+## Eyebrows
+
+Use one consistent eyebrow system across desktop pages.
+
+- Color: `var(--red)`.
+- Transform: uppercase.
+- Letter spacing: use the approved desktop system value; current desktop section system uses `0.15em`.
+- Font weight: `700`.
+- Desktop size/line: current section system uses `12px / 15px`.
+- Keep eyebrow-to-title spacing consistent; current desktop section system uses `10px`.
+- Mobile/tablet may adjust spacing and size, but should keep the same color family and should not drift into a separate palette.
+
+## Titles And Headers
+
+Use one consistent section-title system across desktop pages.
+
+- Desktop section titles use Georgia/Palatino serif styling.
+- Current desktop section title size: `clamp(36px, 2.1vw, 42px)`.
+- Current desktop line-height: `1.05`.
+- Keep title line-height tight and premium.
+- Keep spacing between eyebrow and title consistent.
+- Keep spacing from title to body/content consistent.
+- Hero H1 rules are separate from section H2 rules and follow the hero system.
+
+Heading fit rules:
+
+- Eyebrows try to stay on one line.
+- Section titles and card titles try to stay one line, then wrap at readable floors.
+- Do not force headings into tiny type to avoid wrapping.
 
 Readable floors:
 
@@ -124,97 +125,130 @@ Readable floors:
 |---|---:|---:|---:|
 | Section title | `18px` | `20px` | `25px` |
 | Card title | `18px` | `20px` | `22px` |
-| Stat pill value | `11.52px` | `12.16px` | `15.2px` |
-| Stat pill label | `8px` | `8.32px` | `10.24px` |
 | Eyebrow | `8px` | `8px` | `8px` |
 
-Do not force long titles to become microscopic just to keep one line. If they cannot fit above the floor, allow wrapping.
+## Body Text
 
-Homepage stat pills use the stat band as their sizing container, so the type follows the available card/image width instead of only the viewport. Keep the ceiling at `20px` for values and `12.48px` for labels; tighten toward the floors only on narrow cards.
+Use the approved Home hero body rhythm where applicable.
 
-## Layout Rules
+- Body copy should be long enough to feel balanced in its lane.
+- Avoid orphan one-word lines through copy editing first, then layout tuning.
+- Do not cap hero body max-width unless a page has its own approved exception.
+- Home hero body stays `max-width: 100%`.
+- Page hero left-column body text should fill the left copy lane.
+- About and Contact are excluded where existing approved page rules say not to touch them.
 
-| Area | Mobile | Tablet | Desktop |
-|---|---|---|---|
-| Overall structure | stacked | stacked, roomier | split/columns allowed |
-| Homepage hero | stacked | stacked | split image/copy |
-| Hero layout switch | mobile/tablet through `1024px` | desktop at `1025px+` | desktop |
-| Header | mobile drawer | mobile drawer | full nav |
-| Page width | full minus gutters | full minus larger gutters | `1680px` standard cap, `2240px` wide tier |
-| Section grids | mostly `1fr` | mostly `1fr` or `2-col` | `2-4 col` as needed |
-| Mini cards | compact on small mobile | desktop-like | desktop-like |
+Desktop body rhythm for inherited page heroes:
 
-## Tables And Structured Data
+| Range | Body size | Line-height |
+|---|---:|---:|
+| `1025-1349px` | about `17.5px` | `32px` |
+| `1350-1499px` | about `17.5px` | `32px` |
+| `1500-1719px` | about `17.5px` | `30px` |
+| `1720-2199px` | about `17.5px` | `27.5px` |
+| `2200px+` | `22px` | `46px` |
 
-For the public website, "table" also includes stats rows, credential/document grids, contact/document action groups, and other structured card layouts.
+## Pills
 
-| Range | Table/Grid Behavior | Type Behavior |
-|---|---|---|
-| `<=430px` | Stack rows/cards; keep one primary action per row when possible | Do not shrink body/table text below readable mobile floors |
-| `431-720px` | Stack first; use short two-column groups only for tiny action sets | Labels can tighten, but values and buttons stay readable |
-| `721-899px` | Tablet portrait remains mostly stacked; two-column only when content is short | Use tablet floors, not desktop density |
-| `900-1024px` | Add spacing and polish; still avoid major desktop table layouts | Keep headings and table labels readable before adding columns |
-| `1025px-1240px` | Compact desktop; columns allowed, but reduce gaps/crop sizes carefully | Use compact desktop type, never tiny forced-fit type |
-| `1241px+` | Full desktop grids/tables allowed within the `1680px` cap | Let columns breathe; do not scale text endlessly upward |
+Hero stat/action pills use the Home hero system.
 
-Rules:
+- Use `3` columns on desktop for hero pill rows.
+- Six hero pills must be `3` columns x `2` rows.
+- Pills stay inside the left column.
+- Wide desktop pills are capped.
+- Pill colors, border radius, padding, font sizes, and gaps should match the Home hero system.
+- Use `minmax(0, ...)` grid tracks so labels can stay inside the pill.
 
-- Prefer stacking or horizontal scrolling over unreadable table text.
-- Use `minmax(0, 1fr)` in grids so text can wrap and the page avoids horizontal overflow.
-- Keep buttons equal-height inside action groups.
-- Use `overflow-wrap: anywhere` for long URLs, emails, filenames, and document titles.
-- DPAT PDF reports are the exception; use the DPAT report design guide for those table sizes.
+Current desktop pill rhythm:
 
-## Spacing And Padding
-
-| Item | Small mobile `<=430px` | Mobile `431-720px` | Tablet `721-1024px` | Desktop |
-|---|---:|---:|---:|---:|
-| Page gutter | `12px` | `12px` each side | `16px -> 28px` | `44px` base gutter; `1680px` standard cap, `2240px` wide tier |
-| Section gap | `18px` | `32px` typical | `24px` | `28px` typical |
-| Section/card padding | `16px` | `18px` | `18px -> 28px` | `34px` sections, `22px` cards |
-| Hero padding | `14px 16px 13px` | `14px 20px 12px` | `18px -> 28px` | `36px 42px 22px` |
-| Card radius | `22px` | `22-28px` | `26px` | `24-34px` |
-| Inner media radius | `16px` | `16-18px` | `16-18px` | `18px` |
-
-## Component Specs
-
-| Component | Mobile | Tablet | Desktop |
+| Range | Pill width | Pill height | Gap |
 |---|---:|---:|---:|
-| Form labels | `11.2px-11.84px` | `11.84px` | `11.84px` |
-| Form input height | `40px` | `44px` | `44px` |
-| Textarea height | `132px` | `140px` | `140px` |
-| Footer headings | `11.52px` | `12.16px` | `12.16px` |
-| Footer links | `14.4px` | `14.08px-15.2px` | `14.72px` |
-| Header nav | `16px` drawer | `14.72px` drawer behavior | `15.68px` full nav |
-| Mini-card title | `15.68px` small mobile | `16.32px` | `16.32px` |
-| Mini-card subtext | `12.16px` small mobile | `13.44px` | `13.44px` |
+| `1025-1349px` | `223px` | `60px` | `12px` |
+| `1350-1499px` | `273.9px` | `63.9px` | `12px` |
+| `1500-1719px` | `306px` | `70px` | `12px` |
+| `1720-2199px` | `346.5px` | `76px` | `12px` |
+| `2200px+` | capped around `364px` | `72px` | `12px` |
 
-## Page-Building Guidance
+## Featured Cards
 
-- Start mobile first.
-- Keep tablet stacked unless a section clearly has enough width and content balance to split.
-- Add desktop polish around `900px`, but do not force desktop structure before `1025px`.
-- For new repeated cards, preserve the existing card rhythm: compact on mobile, roomier on tablet, dense only on desktop.
-- Keep form input text at `16px` across all breakpoints.
-- Keep public website visuals warm, editorial, parchment-based, and separate from the black/gold DPAT report design system.
-- Keep section edges aligned to the shared page shell unless the component is intentionally full-bleed site chrome.
-- Do not use a desktop crop, table, or grid rule as the reason text becomes unreadable; change structure before shrinking type below the floor.
+Featured cards and panels should feel like part of the website design system, not separate landing-page components.
+
+- Keep card rhythm compact, readable, and aligned to the shared shell.
+- Avoid nesting cards inside cards.
+- Use stable media dimensions and `minmax(0, 1fr)` grid tracks.
+- Keep button groups aligned and equal-height when presented as a group.
+- Preserve approved proof chips/stat card sizing unless a specific card task asks for a change.
+
+## Gallery Cards
+
+Gallery cards use the locked image/card pattern.
+
+- Media frame uses a stable `4 / 3` aspect ratio unless a page-specific approved slot says otherwise.
+- Images use approved crops and object-position rules from the image/export system.
+- Captions stay readable and should not push the card wider than its grid track.
+- Card title rows may truncate only where the current gallery pattern already approves it.
+- Mobile/tablet card color should match desktop card color; do not introduce a separate mobile palette.
+
+## Images And Right Columns
+
+Do not modify right-column image sizes, crops, object-position, or export assets unless specifically requested.
+
+- Right-column hero images stay in the right column.
+- The image frame is not resized to solve left-column copy or pill issues.
+- Overlay boxes should not drive image sizing.
+- Use the locked crop ladder and naming rules in `docs/image-export/README.md`.
+- Protect faces, bodies, document text, basketball action, and logos before decorative composition.
+
+## Overlay Boxes
+
+Overlay boxes keep their approved right-column formatting.
+
+- Keep overlays attached to the image/right column.
+- Wide desktop overlay pills/cards should not stretch too far.
+- Keep overlay text on one line where approved.
+- Do not alter overlay text or right-column overlay styling when updating left-column hero rules.
+- Overlay link rows should use distributed spacing at desktop/wide desktop instead of fixed gaps that create uneven rows.
+
+## Tablet And Mobile Color Consistency
+
+Tablet/mobile may change spacing, stack order, and size, but they should keep the approved color system.
+
+- Eyebrows stay in the same red color family.
+- Cards keep the same warm panel system.
+- Buttons and pill accents stay consistent with desktop.
+- Mobile/tablet structure stays stacked through `1024px` unless a component has a tested exception.
 
 ## Verification Standard
 
-When changing global type/layout rules, test representative widths:
+For hero, page shell, body rhythm, pill, overlay, and image-column work, test:
 
 ```text
-360, 390, 430, 768, 900, 1024, 1280, 1440, 1920, 2560
+1025x768
+1280x800
+1440x900
+1600x900
+1920x1080
+2560x1440
+```
+
+Also check representative mobile/tablet widths:
+
+```text
+360
+390
+430
+768
+900
+1024
 ```
 
 Check for:
 
-- no horizontal heading overflow,
-- no section titles below their readable floors,
-- no card titles below their readable floors,
-- tablet hero still stacked through `1024px`,
-- desktop hero split at `1025px+`.
-- compact desktop hero/table/card behavior still works from `1025px-1240px`,
-- standard desktop remains composed at `1920x1080`,
-- wide desktop remains intentional and readable at `2560x1440`.
+- desktop begins at `1025px`,
+- no horizontal overflow,
+- tablet/mobile colors match the approved desktop palette,
+- hero body text fills the left lane without unwanted max-width caps,
+- stat pills stay inside the left column,
+- wide desktop pills/cards/overlays do not stretch into long bars,
+- right-column images and overlays remain unchanged unless requested,
+- About and Contact exclusions remain respected.

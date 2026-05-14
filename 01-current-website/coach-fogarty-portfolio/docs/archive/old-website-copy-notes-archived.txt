@@ -1,4 +1,15 @@
-﻿HOMEPAGE — NAVIGATION TABS
+﻿Archived note: this file is no longer active website documentation.
+
+Use these current source-of-truth docs instead:
+
+- `../../README.md`
+- `../../RESPONSIVE-DESIGN-SYSTEM.md`
+- `../responsive/HOME-HERO-RESPONSIVE-SPEC.md`
+- `../image-export/README.md`
+
+This file is preserved only as historical copy/design memory and may contain older rules that conflict with the approved Home hero, body text, eyebrow, heading, pill, image, overlay, or responsive systems.
+
+HOMEPAGE — NAVIGATION TABS
 
 
 About
