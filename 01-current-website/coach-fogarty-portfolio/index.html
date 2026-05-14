@@ -33,7 +33,7 @@
 
       <main id="top">
         <section class="hero">
-          <div class="hero-copy">
+          <div class="hero-copy hero-left-system">
             <p class="eyebrow">COLLEGE BASKETBALL COACHING PORTFOLIO</p>
             <h1>Matthew Fogarty</h1>
             <p class="hero-text">
@@ -43,22 +43,23 @@
               Built to show how Coach Fogarty teaches, organizes, prepares and supports a staff.
             </p>
           </div>
-          <div class="hero-visual">
-            <div class="portrait-card">
-              <picture>
+          <div class="hero-visual hero-right-system">
+            <div class="portrait-card hero-portrait-card">
+              <picture class="hero-portrait-picture">
                 <source
                   media="(min-width: 1025px)"
                   srcset="assets/images/hero/Cropped/home-matthew-fogarty-main-hero-2000x1333.avif"
                 />
                 <img
+                  class="hero-portrait-image"
                   src="assets/images/hero/hero-matthew-fogarty-main-hero-cover-center-upper-1800x1980.avif"
                   data-image-role="hero"
                   alt="Matthew Fogarty headshot"
                 />
               </picture>
-              <nav class="hero-mobile-highlight" aria-label="Portfolio highlight links">
-                <p>PORTFOLIO HIGHLIGHT</p>
-                <div>
+              <nav class="hero-mobile-highlight hero-portrait-overlay" aria-label="Portfolio highlight links">
+                <p class="hero-portrait-overlay-title">PORTFOLIO HIGHLIGHT</p>
+                <div class="hero-portrait-overlay-text">
                   <a href="#contact">Credentials</a>
                   <span aria-hidden="true">|</span>
                   <a href="#systems">Systems</a>
@@ -72,30 +73,30 @@
               </nav>
             </div>
           </div>
-          <section class="stat-band hero-stat-band" id="impact">
-            <article>
-              <strong>20+ Years</strong>
-              <span>Coaching Experience</span>
+          <section class="stat-band hero-stat-band hero-pill-system" id="impact">
+            <article class="hero-pill">
+              <strong class="hero-pill-main">20+ Years</strong>
+              <span class="hero-pill-sub">Coaching Experience</span>
             </article>
-            <article>
-              <strong>26</strong>
-              <span>Championships</span>
+            <article class="hero-pill">
+              <strong class="hero-pill-main">26</strong>
+              <span class="hero-pill-sub">Championships</span>
             </article>
-            <article>
-              <strong>20+ Wins</strong>
-              <span>Santa Ana College 24-25</span>
+            <article class="hero-pill">
+              <strong class="hero-pill-main">20+ Wins</strong>
+              <span class="hero-pill-sub">Santa Ana College 24-25</span>
             </article>
-            <article>
-              <strong>Top 5 Defense</strong>
-              <span>Tracked Performance</span>
+            <article class="hero-pill">
+              <strong class="hero-pill-main">Top 5 Defense</strong>
+              <span class="hero-pill-sub">Tracked Performance</span>
             </article>
-            <article>
-              <strong>Top 15</strong>
-              <span>State Ranking</span>
+            <article class="hero-pill">
+              <strong class="hero-pill-main">Top 15</strong>
+              <span class="hero-pill-sub">State Ranking</span>
             </article>
-            <article>
-              <strong>DI/DII</strong>
-              <span>Player Development</span>
+            <article class="hero-pill">
+              <strong class="hero-pill-main">DI/DII</strong>
+              <span class="hero-pill-sub">Player Development</span>
             </article>
           </section>
         </section>
@@ -103,7 +104,7 @@
         <section class="section library-section" id="systems">
           <div class="section-heading">
             <p class="eyebrow">COACHING SYSTEMS</p>
-            <h2>Systems &amp; Proof Of Work</h2>
+            <h2>Systems &amp; Proof of Work</h2>
           </div>
           <div id="libraryGrid" class="library-grid"></div>
         </section>
@@ -351,14 +352,18 @@
           <p class="media-overlay-counter" id="mediaOverlayCounter" hidden></p>
           <div class="media-overlay-viewer" id="mediaOverlayViewer"></div>
           <p class="media-overlay-caption" id="mediaOverlayCaption"></p>
-          <div class="media-overlay-strip" id="mediaOverlayStrip" aria-label="Album thumbnails"></div>
+          <div class="media-overlay-strip-shell" id="mediaOverlayStripShell" hidden>
+            <button class="media-overlay-thumb-nav media-overlay-thumb-prev" id="mediaOverlayThumbPrev" type="button" aria-label="Scroll thumbnails left">&lsaquo;</button>
+            <div class="media-overlay-strip" id="mediaOverlayStrip" aria-label="Album thumbnails"></div>
+            <button class="media-overlay-thumb-nav media-overlay-thumb-next" id="mediaOverlayThumbNext" type="button" aria-label="Scroll thumbnails right">&rsaquo;</button>
+          </div>
         </div>
         <button class="media-overlay-nav media-overlay-next" id="mediaOverlayNext" type="button" aria-label="Next media">&rsaquo;</button>
       </div>
     </div>
 
     <script src="./assets/js/image-fallbacks.js"></script>
-    <script src="./app.js?v=recruiting-workflow-q98-20260513"></script>
+    <script src="./app.js?v=home-systems-copy-cleanup-20260514"></script>
     <script src="./footer.js"></script>
   </body>
 </html>

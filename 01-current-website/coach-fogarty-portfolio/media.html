@@ -205,7 +205,11 @@
           <p class="media-overlay-counter" id="mediaOverlayCounter" hidden></p>
           <div class="media-overlay-viewer" id="mediaOverlayViewer"></div>
           <p class="media-overlay-caption" id="mediaOverlayCaption"></p>
-          <div class="media-overlay-strip" id="mediaOverlayStrip" aria-label="Album thumbnails"></div>
+          <div class="media-overlay-strip-shell" id="mediaOverlayStripShell" hidden>
+            <button class="media-overlay-thumb-nav media-overlay-thumb-prev" id="mediaOverlayThumbPrev" type="button" aria-label="Scroll thumbnails left">&lsaquo;</button>
+            <div class="media-overlay-strip" id="mediaOverlayStrip" aria-label="Album thumbnails"></div>
+            <button class="media-overlay-thumb-nav media-overlay-thumb-next" id="mediaOverlayThumbNext" type="button" aria-label="Scroll thumbnails right">&rsaquo;</button>
+          </div>
         </div>
         <button class="media-overlay-nav media-overlay-next" id="mediaOverlayNext" type="button" aria-label="Next media">&rsaquo;</button>
       </div>

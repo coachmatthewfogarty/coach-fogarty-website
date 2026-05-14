@@ -74,6 +74,18 @@ Typography and components:
 - Stat pills use Home hero colors, radius, padding, font sizes, and gaps.
 - Featured cards and gallery cards keep the current card rhythm: clear media, stable crop, readable caption/title, and no card-inside-card layouts.
 
+Locked Homepage Systems section:
+
+- Status: visually approved and locked as of May 14, 2026.
+- Section target: `#systems.section.library-section`.
+- Eyebrow: `COACHING SYSTEMS`.
+- Heading: `Systems & Proof of Work`.
+- Cards: Player Development, Defensive Tracker, Coaching Philosophy, Recruiting, Program Support, Scouting.
+- Coaching Philosophy buttons: Assistant Philosophy, 30-60-90 Plan, DEI Statement, Head Coach Alignment.
+- Layout: desktop `3` columns at `>=1025px`, tablet `2` columns from `721px` through `1024px`, mobile `1` column through `720px`.
+- Preserve the cream section background, red card titles, rounded cards, image-forward layout, `4 / 3` media ratio, `object-fit: cover`, and pill button structure.
+- Do not redesign or change colors, typography, image ratio, spacing, card structure, or button style unless fixing a true bug.
+
 ## Responsive Verification
 
 Use these key sizes for hero/layout work:

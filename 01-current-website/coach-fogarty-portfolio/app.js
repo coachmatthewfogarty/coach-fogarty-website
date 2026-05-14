@@ -37,19 +37,19 @@ const librarySections = [
     buttons: [
       {
         label: "Overview",
-        href: "./assets/documents/scouting-recruiting/automated-scouting-report-overview.pdf"
+        href: "./assets/documents/scouting/automated-scouting-report-overview.pdf"
       },
       {
         label: "Personnel Report",
-        href: "./assets/documents/scouting-recruiting/scouting-report-player-personnel-breakdown.pdf"
+        href: "./assets/documents/scouting/scouting-report-player-personnel-breakdown.pdf"
       },
       {
         label: "In-Game Notes",
-        href: "./assets/documents/scouting-recruiting/scouting-report-in-game-notes-template.pdf"
+        href: "./assets/documents/scouting/scouting-report-in-game-notes-template.pdf"
       },
       {
         label: "Complete Portfolio",
-        href: "./assets/documents/scouting-recruiting/automated-scouting-report-complete-portfolio.pdf"
+        href: "./assets/documents/scouting/automated-scouting-report-complete-portfolio.pdf"
       }
     ]
   },
@@ -146,7 +146,7 @@ const librarySections = [
     },
     buttons: [
       {
-        label: "Asst Philosophy",
+        label: "Assistant Philosophy",
         href: "./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-philosophy.pdf"
       },
       {
@@ -158,7 +158,7 @@ const librarySections = [
         href: "./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-dei-statement.pdf"
       },
       {
-        label: "HC Philosophy",
+        label: "Head Coach Alignment",
         href: "./assets/documents/coaching-philosophy/head-coach/head-coach-philosophy.pdf"
       }
     ]
@@ -220,21 +220,21 @@ const mediaAlbums = [
     items: [
       {
         type: "image",
-        mediaCardSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-high-five-media-card-cover-bottom-mid-1200x900.avif"),
-        thumbSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-high-five-overlay-thumb-cover-bottom-mid-600x400.webp"),
-        fullSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-high-five-landscape-cover-bottom-mid-2400x1800.avif"),
-        orientation: "landscape",
-        alt: "Sideline leadership high five",
-        caption: "Sideline leadership high five"
-      },
-      {
-        type: "image",
         mediaCardSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-hyped-media-card-cover-bottom-mid-1200x900.avif"),
         thumbSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-hyped-overlay-thumb-cover-center-600x400.webp"),
         fullSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-hyped-up-landscape-cover-bottom-mid-2400x1800.avif"),
         orientation: "landscape",
         alt: "Sideline leadership hyped moment",
         caption: "Sideline leadership hyped moment"
+      },
+      {
+        type: "image",
+        mediaCardSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-high-five-media-card-cover-bottom-mid-1200x900.avif"),
+        thumbSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-high-five-overlay-thumb-cover-bottom-mid-600x400.webp"),
+        fullSrc: mediaPhotoPath("sideline-leadership", "sideline-leadership-high-five-landscape-cover-bottom-mid-2400x1800.avif"),
+        orientation: "landscape",
+        alt: "Sideline leadership high five",
+        caption: "Sideline leadership high five"
       },
       {
         type: "image",
@@ -256,6 +256,15 @@ const mediaAlbums = [
     caption: "Teaching Moments",
     crop: "teaching",
     items: [
+      {
+        type: "image",
+        mediaCardSrc: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-media-card-1200x900.avif"),
+        thumbSrc: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-overlay-thumb-600x400.webp"),
+        fullSrc: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-portrait-cover-upper-1800x2400.avif"),
+        orientation: "portrait",
+        alt: "Pregame warmup coaching detail",
+        caption: "Pregame warmup coaching detail"
+      },
       {
         type: "image",
         mediaCardSrc: mediaPhotoPath("coaching-details", "coaching-details-pacific-academy-bench-instruction-01-media-card-1200x900.avif"),
@@ -300,15 +309,6 @@ const mediaAlbums = [
         orientation: "portrait",
         alt: "Pregame talk coaching detail",
         caption: "Pregame talk coaching detail"
-      },
-      {
-        type: "image",
-        mediaCardSrc: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-media-card-1200x900.avif"),
-        thumbSrc: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-overlay-thumb-600x400.webp"),
-        fullSrc: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-portrait-cover-upper-1800x2400.avif"),
-        orientation: "portrait",
-        alt: "Pregame warmup coaching detail",
-        caption: "Pregame warmup coaching detail"
       },
       {
         type: "image",
@@ -517,15 +517,6 @@ const mediaAlbums = [
     items: [
       {
         type: "image",
-        mediaCardSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-media-card-1200x900.avif"),
-        thumbSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-overlay-thumb-600x400.webp"),
-        fullSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-landscape-2400x1800.avif"),
-        orientation: "landscape",
-        alt: "Magic Elite championship coaches with trophy",
-        caption: "Magic Elite championship"
-      },
-      {
-        type: "image",
         mediaCardSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-three-peat-media-card-1200x900.avif"),
         thumbSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-three-peat-overlay-thumb-600x400.webp"),
         fullSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-three-peat-landscape-2400x1800.avif"),
@@ -568,6 +559,15 @@ const mediaAlbums = [
         orientation: "landscape",
         alt: "Fifth school championship",
         caption: "Fifth school championship"
+      },
+      {
+        type: "image",
+        mediaCardSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-media-card-1200x900.avif"),
+        thumbSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-overlay-thumb-600x400.webp"),
+        fullSrc: mediaPhotoPath("championship-culture", "championship-culture-magic-elite-championship-landscape-2400x1800.avif"),
+        orientation: "landscape",
+        alt: "Magic Elite championship coaches with trophy",
+        caption: "Magic Elite championship"
       }
     ]
   }
@@ -1387,7 +1387,10 @@ const mediaOverlayTitle = document.querySelector("#mediaOverlayTitle");
 const mediaOverlayCounter = document.querySelector("#mediaOverlayCounter");
 const mediaOverlayCaption = document.querySelector("#mediaOverlayCaption");
 const mediaOverlayViewer = document.querySelector("#mediaOverlayViewer");
+const mediaOverlayStripShell = document.querySelector("#mediaOverlayStripShell");
 const mediaOverlayStrip = document.querySelector("#mediaOverlayStrip");
+const mediaOverlayThumbPrev = document.querySelector("#mediaOverlayThumbPrev");
+const mediaOverlayThumbNext = document.querySelector("#mediaOverlayThumbNext");
 const mediaOverlayClose = document.querySelector("#mediaOverlayClose");
 const mediaOverlayPrev = document.querySelector("#mediaOverlayPrev");
 const mediaOverlayNext = document.querySelector("#mediaOverlayNext");
@@ -2127,6 +2130,36 @@ function queueActiveMediaThumbnailScroll(behavior = "smooth") {
   });
 }
 
+function scrollMediaThumbnails(direction) {
+  if (!mediaOverlayStrip || mediaOverlayStrip.hidden) {
+    return;
+  }
+
+  const maxScrollLeft = mediaOverlayStrip.scrollWidth - mediaOverlayStrip.clientWidth;
+
+  if (maxScrollLeft <= 0) {
+    return;
+  }
+
+  const firstThumb = mediaOverlayStrip.querySelector(".media-thumb");
+  const stripStyles = window.getComputedStyle(mediaOverlayStrip);
+  const thumbnailGap = Number.parseFloat(stripStyles.columnGap || stripStyles.gap || "0") || 0;
+  const scrollStep = firstThumb ? firstThumb.getBoundingClientRect().width + thumbnailGap : 160;
+  const currentLeft = mediaOverlayStrip.scrollLeft;
+  let nextLeft = currentLeft + direction * scrollStep;
+
+  if (direction < 0 && currentLeft <= 2) {
+    nextLeft = maxScrollLeft;
+  } else if (direction > 0 && currentLeft >= maxScrollLeft - 2) {
+    nextLeft = 0;
+  }
+
+  mediaOverlayStrip.scrollTo({
+    left: Math.max(0, Math.min(nextLeft, maxScrollLeft)),
+    behavior: "smooth"
+  });
+}
+
 function selectMediaItem(index, { thumbScrollBehavior = "smooth" } = {}) {
   const items = activeAlbumItems();
 
@@ -2207,6 +2240,15 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
 
   const showThumbnailStrip = hasMultipleItems || isPhotoAlbumOverlay;
   mediaOverlayStrip.hidden = !showThumbnailStrip;
+  if (mediaOverlayStripShell) {
+    mediaOverlayStripShell.hidden = !showThumbnailStrip;
+  }
+  if (mediaOverlayThumbPrev) {
+    mediaOverlayThumbPrev.hidden = !showThumbnailStrip || items.length <= 1;
+  }
+  if (mediaOverlayThumbNext) {
+    mediaOverlayThumbNext.hidden = !showThumbnailStrip || items.length <= 1;
+  }
   mediaOverlayStrip.classList.toggle("has-single-thumb", showThumbnailStrip && items.length === 1);
   mediaOverlayPrev.hidden = !hasMultipleItems;
   mediaOverlayNext.hidden = !hasMultipleItems;
@@ -2239,6 +2281,9 @@ function closeMediaOverlay() {
   document.body.classList.remove("media-overlay-open");
   mediaOverlayViewer.innerHTML = "";
   mediaOverlayStrip.innerHTML = "";
+  if (mediaOverlayStripShell) {
+    mediaOverlayStripShell.hidden = true;
+  }
 }
 
 function showMediaItem(direction) {
@@ -2571,6 +2616,14 @@ if (mediaOverlayPrev) {
 
 if (mediaOverlayNext) {
   mediaOverlayNext.addEventListener("click", () => showMediaItem(1));
+}
+
+if (mediaOverlayThumbPrev) {
+  mediaOverlayThumbPrev.addEventListener("click", () => scrollMediaThumbnails(-1));
+}
+
+if (mediaOverlayThumbNext) {
+  mediaOverlayThumbNext.addEventListener("click", () => scrollMediaThumbnails(1));
 }
 
 if (mediaOverlayViewer) {

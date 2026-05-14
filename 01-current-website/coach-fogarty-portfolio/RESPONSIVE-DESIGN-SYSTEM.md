@@ -71,6 +71,23 @@ The Home hero is the approved desktop reference.
 
 Use `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` for measured Home hero values.
 
+## Locked Homepage Systems Section
+
+The Home page Systems section is visually approved and locked as of May 14, 2026.
+
+- Section target: `#systems.section.library-section`.
+- Grid target: `#libraryGrid.library-grid`.
+- Card target: `.library-card.system-card`.
+- Image target: `.library-card-media`.
+- Button target: `.library-actions`.
+- Desktop: `3` columns at `>=1025px`.
+- Tablet: `2` columns from `721px` through `1024px`.
+- Mobile: `1` column through `720px`.
+- Media ratio: `4 / 3`.
+- Image fit: `cover`.
+- Desktop card title: `26px / 28px`.
+- Keep the approved content, cream background, red card titles, rounded cards, image-forward rhythm, and pill button structure unless fixing a true bug.
+
 ## Page Hero Left Column
 
 Systems, Featured, Gallery, Anaya, Archer, and Credentials hero pages inherit the approved Home hero left-column rules where applicable.

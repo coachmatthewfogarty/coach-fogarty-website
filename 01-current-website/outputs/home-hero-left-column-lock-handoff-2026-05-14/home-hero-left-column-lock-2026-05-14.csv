@@ -1,0 +1,8 @@
+Breakpoint,Final left-column max-width,Measured left-column width,Final stat-pill grid width,Final body paragraph width,Alignment confirmed,Notes
+1025-1199px,980px,439.73-613.73px,439.73-613.73px,439.73-613.73px,Yes,Left grid track is narrower than the 980px cap at this range.
+1200-1349px,980px,614.73-763.73px,614.73-763.73px,614.73-763.73px,Yes,Copy and pill grid share the same computed width.
+1350-1499px,980px,760.56-909.56px,760.56-909.56px,760.56-909.56px,Yes,Copy and pill grid share the same computed width.
+1500-1599px,980px,910.56-980px,910.56-980px,910.56-980px,Yes,The system reaches the 980px cap by the top of this range.
+1600-1919px,980px,980px,980px,980px,Yes,Resolves the previous mismatch where pills could follow a wider grid track.
+1920-2199px,980px,980px,980px,980px,Yes,Desktop lock keeps current Home hero look while aligning copy and pills.
+2200px+,"var(--hero-wide-support-max), currently 1354px",1102px at 2200px; 1290px at 2400px,1102px at 2200px; 1290px at 2400px,1102px at 2200px; 1290px at 2400px,Yes,Copy and pill grid expand together only when the grid track allows it.
