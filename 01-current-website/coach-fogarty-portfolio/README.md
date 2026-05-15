@@ -20,6 +20,10 @@ These are the only active website rule documents. If an archived note or old aud
 | Global responsive, heading, body text, card, pill, overlay, and page-layout rules | `RESPONSIVE-DESIGN-SYSTEM.md` |
 | Measured Home hero desktop system | `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` |
 | Locked Home Media cards, carousel, and shared overlay behavior | `docs/responsive/HOME-MEDIA-SECTION-LOCK-README.md` |
+| Locked Gallery / Media page specs, image inventory, interactions, cleanup, and QA | `docs/gallery/GALLERY-PAGE-FINAL-SPEC.md` |
+| Locked Systems page hero, library, details, image, button, and QA rules | `docs/responsive/SYSTEMS-PAGE-LOCK-README.md` |
+| Locked Featured Work detailed section page | `docs/responsive/FEATURED-WORK-PAGE-LOCK-README.md` |
+| Locked The Archer product case study page | `docs/responsive/ARCHER-PAGE-LOCK-README.md` |
 | Responsive-doc index and verification sizes | `docs/responsive/README.md` |
 | Locked image export, crop, naming, and asset rules | `docs/image-export/README.md` |
 
@@ -29,11 +33,11 @@ Archived or superseded notes live under `docs/archive/` or `../outputs/archive/`
 
 - `index.html`: Home page, approved desktop hero, impact stats, systems preview, featured work, gallery preview, playing career, and contact closeout.
 - `about.html`: excluded from global hero-left/body changes where noted; uses its own letter-style layout and image collage.
-- `systems.html`: Staff Systems page; inherits the approved hero left-column body and pill rhythm.
-- `featured-work.html`: Featured coaching work page; inherits the approved hero left-column body and pill rhythm.
-- `media.html`: Gallery Hub; inherits the approved hero left-column body and pill rhythm.
+- `systems.html`: Staff Systems page; inherits the approved internal page hero and includes the locked six-card systems library plus detail carousels.
+- `featured-work.html`: Featured Work detailed section page; locked as a shared hero with six Home-style stat pills, impact summary, detailed feature sections, strategy panel, CTA, and footer.
+- `media.html`: Gallery Hub; inherits the approved hero left-column body and pill rhythm; active page-specific source of truth is `docs/gallery/GALLERY-PAGE-FINAL-SPEC.md`.
 - `anaya-case-study.html`: Anaya Beard case study; inherits the approved hero left-column body and six-stat-pill rhythm.
-- `archer-visuals.html`: The Archer visual/video page; inherits the approved hero left-column body and pill rhythm.
+- `archer-visuals.html`: The Archer innovation/product case study page; inherits the approved page hero, pill, card, media, and section rhythm.
 - `credentials.html`: Credentials and supporting documents; follows the current page hero and pill rhythm where applicable.
 - `contact.html`: excluded from global hero-left/body changes where noted; preserve existing approved Contact formatting.
 
@@ -58,7 +62,7 @@ Home hero desktop rules:
 - Do not let left-column pills run under the right image.
 - Keep hero body `max-width: 100%` so body copy fills the left copy lane.
 - Use the approved six-pill `3 x 2` grid.
-- Cap wide desktop pills so they do not become long bars.
+- Let wide desktop pills fill the safe left grid track through `.hero-pill-system`; do not reintroduce old narrow pill caps.
 
 Global page hero rules:
 
@@ -66,6 +70,24 @@ Global page hero rules:
 - Do not change eyebrow/title/right image/overlay when only left-column formatting is requested.
 - Do not modify right-column image sizes, crops, or overlay formatting unless specifically requested.
 - About and Contact are excluded from broad global changes where existing approved page rules say not to touch them.
+
+The Archer page:
+
+- Status: product case study lock added May 14, 2026.
+- Active source of truth: `docs/responsive/ARCHER-PAGE-LOCK-README.md`.
+- Structure: shared `.page-hero-system`, product overview, how-it-works cards, player development connection, photo cards, video cards, innovation value, and CTA.
+- Keep the page technical and player-development focused; do not turn it into a separate product microsite.
+- Preserve the approved colors, card treatment, button/pill style, shadows, radii, and page shell.
+
+Featured Work page:
+
+- Status: detailed section lock corrected May 14, 2026.
+- Active source of truth: `docs/responsive/FEATURED-WORK-PAGE-LOCK-README.md`.
+- Structure: shared `.page-hero-system`, Homepage-style six stat-pill hero grid, Impact Summary, Pacific Academy, Santa Ana College, Anaya Beard, The Archer, Complete Coaching Profile, and Explore the Work CTA.
+- Featured Work uses the shared page hero system with the Homepage-style 6 stat-pill grid, while the page body preserves the original detailed Featured Work section layout. Do not replace the body with a simplified 4-card grid.
+- Preserve the approved cream background, navy/dark text, red accents, image-forward section system, soft shadow, rounded cards, and responsive shell.
+- Hero overlay: use the shared approved `page-highlight-bar hero-portrait-overlay` treatment. Do not add Featured-only hero overlay card rules or local overlay overrides.
+- Cleanup: the simplified 4-card rebuild was removed/reverted, and the wrong Featured-only white hero caption card rules were removed.
 
 Typography and components:
 
@@ -86,6 +108,21 @@ Locked Homepage Systems section:
 - Layout: desktop `3` columns at `>=1025px`, tablet `2` columns from `721px` through `1024px`, mobile `1` column through `720px`.
 - Preserve the cream section background, red card titles, rounded cards, image-forward layout, `4 / 3` media ratio, `object-fit: cover`, and pill button structure.
 - Do not redesign or change colors, typography, image ratio, spacing, card structure, or button style unless fixing a true bug.
+
+Final Locked Systems page:
+
+- Status: FINAL LOCKED as of May 14, 2026.
+- Active source of truth: `docs/responsive/SYSTEMS-PAGE-LOCK-README.md`.
+- Page target: `systems.html`.
+- Hero target: `.page-hero-system`.
+- Library target: `#systems-library.systems-core-library`.
+- Core library cards: Player Development Systems, Scouting & Recruiting, DPAT, Program Support, Coaching Philosophy, The Archer.
+- Layout: desktop library `3` columns at `>=1025px`, tablet `2` columns from `721px` through `1024px`, mobile `1` column through `720px`.
+- Detail sections keep the staff workflow carousels for Player Development, Scouting, Recruiting, DPAT, Program Support and Coaching Philosophy, plus The Archer resource cards.
+- DPAT copy must include Defensive Performance Accountability Tracker.
+- Preserve the shared hero, cream card system, red titles, `4 / 3` media frames, approved crops, and pill/button style.
+- Do not continue Systems-specific cleanup or redesign unless a future bug appears.
+- Keep only `1025px` on the Systems watch list because it is the tightest desktop breakpoint; do not redesign it unless there is real overflow, ugly wrapping or button/image collision.
 
 Locked Homepage Media section:
 

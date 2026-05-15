@@ -30,7 +30,7 @@
         <section class="section about-letter-section">
           <div class="about-letter-heading">
             <p class="eyebrow">ABOUT COACH FOGARTY</p>
-            <h1>College Coach &amp; Program Builder</h1>
+            <h1>Developing Players Building Programs</h1>
           </div>
 
           <div class="about-letter-body">
@@ -127,31 +127,18 @@
     <script>
       (() => {
         const page = document.querySelector(".about-cover-page");
-        const section = document.querySelector(".about-letter-section");
         const copy = document.querySelector(".about-letter-copy");
-        const body = document.querySelector(".about-letter-body");
-        const eyebrow = document.querySelector(".about-letter-heading .eyebrow");
-        const signature = document.querySelector(".about-signature");
-        if (!page || !section || !copy || !body || !eyebrow || !signature) return;
+        if (!page || !copy) return;
 
         const syncAboutGalleryHeight = () => {
-          if (window.matchMedia("(min-width: 1025px)").matches) {
+          const isDesktop = window.matchMedia("(min-width: 1025px)").matches;
+          const isCompactStack = window.matchMedia("(min-width: 1025px) and (max-width: 1199px)").matches;
+
+          if (isDesktop && !isCompactStack) {
             const copyHeight = copy.getBoundingClientRect().height;
-            const sectionTop = section.getBoundingClientRect().top;
-            const bodyTop = body.getBoundingClientRect().top;
-            const eyebrowTop = eyebrow.getBoundingClientRect().top;
-            const signatureBottom = signature.getBoundingClientRect().bottom;
             page.style.setProperty("--about-letter-copy-height", `${copyHeight}px`);
-            page.style.setProperty("--about-letter-text-height", `${copyHeight}px`);
-            page.style.setProperty("--about-section-edge-gap", `${eyebrowTop - sectionTop}px`);
-            page.style.setProperty("--about-gallery-top-offset", `${eyebrowTop - bodyTop}px`);
-            page.style.setProperty("--about-gallery-target-height", `${signatureBottom - eyebrowTop - 16}px`);
           } else {
             page.style.removeProperty("--about-letter-copy-height");
-            page.style.removeProperty("--about-letter-text-height");
-            page.style.removeProperty("--about-section-edge-gap");
-            page.style.removeProperty("--about-gallery-top-offset");
-            page.style.removeProperty("--about-gallery-target-height");
           }
         };
 

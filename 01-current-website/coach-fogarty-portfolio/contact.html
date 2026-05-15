@@ -27,113 +27,72 @@
       </header>
 
       <main class="contact-page">
-        <section class="subpage-hero contact-hero">
-          <div class="subpage-hero-copy">
-            <p class="eyebrow">COACHING INQUIRIES</p>
-            <h1>Contact Coach Fogarty</h1>
-            <p>
-              For coaching opportunities, portfolio materials, or references, please reach out directly.
-            </p>
-            <div class="contact-link-cluster">
-              <div class="contact-detail-list">
-                <a href="mailto:CoachMatthewFogarty@gmail.com">
-                  <span class="contact-detail-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M3.5 6.5A2.5 2.5 0 0 1 6 4h12a2.5 2.5 0 0 1 2.5 2.5v11A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5v-11Zm2.2-.5 6.3 5.2L18.3 6H5.7Zm12.8 2.1-5.7 4.7a1.25 1.25 0 0 1-1.6 0L5.5 8.1v9.4c0 .3.2.5.5.5h12c.3 0 .5-.2.5-.5V8.1Z" /></svg>
-                  </span>
-                  <span>CoachMatthewFogarty@gmail.com</span>
-                </a>
-                <span>
-                  <span class="contact-detail-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2Z" /></svg>
-                  </span>
-                  <span>Santa Ana, CA 92707</span>
-                </span>
+        <section class="section contact-section" id="contact" aria-label="Contact information and message form">
+          <div class="contact-closeout-grid contact-page-grid">
+            <article class="document-card contact-materials-card" aria-labelledby="contact-materials-title">
+              <div class="home-closeout-heading document-card-copy">
+                <p class="eyebrow">DOCUMENTS &amp; REFERENCES</p>
+                <h2 id="contact-materials-title">Portfolio Materials</h2>
               </div>
-              <div class="contact-socials" aria-label="Social links">
-                <a href="https://www.linkedin.com/in/matthew-fogarty" target="_blank" rel="noreferrer" aria-label="Matthew Fogarty on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.86V20h3.08V8.98ZM5.4 4a1.78 1.78 0 1 0 0 3.56A1.78 1.78 0 0 0 5.4 4Zm14.74 9.88c0-3.04-1.62-5-4.26-5-1.9 0-2.75 1.04-3.22 1.77V8.98H9.7V20h3.08v-5.46c0-1.44.27-2.84 2.06-2.84 1.76 0 1.78 1.65 1.78 2.93V20h3.52v-6.12Z" /></svg></a>
-                <a href="https://www.instagram.com/coachbballmatt/" target="_blank" rel="noreferrer" aria-label="Coach Fogarty on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 2a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm5.05-2.8a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z" /></svg></a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section contact-section" id="contact">
-          <div class="contact-card">
-            <form class="contact-form" id="contactForm" action="mailto:CoachMatthewFogarty@gmail.com" method="post" enctype="text/plain">
-              <div class="contact-name-row">
-                <label>
-                  First Name
-                  <input type="text" name="first-name" autocomplete="given-name" required />
-                </label>
-                <label>
-                  Last Name
-                  <input type="text" name="last-name" autocomplete="family-name" required />
-                </label>
-              </div>
-              <label>
-                Email
-                <input type="email" name="email" autocomplete="email" required />
-              </label>
-              <label>
-                Phone Number
-                <input type="tel" name="phone" autocomplete="tel" />
-              </label>
-              <label class="select-field">
-                Reason for Contact
-                <select name="reason">
-                  <option value="">Select Contact Reason</option>
-                  <option value="Coaching Opportunity">Coaching Opportunity</option>
-                  <option value="Staff Conversation">Staff Conversation</option>
-                  <option value="Player Development">Player Development</option>
-                  <option value="Recruiting / Evaluation">Recruiting / Evaluation</option>
-                  <option value="Portfolio Materials">Portfolio Materials</option>
-                  <option value="Speaking / Clinic">Speaking / Clinic</option>
-                  <option value="Other">Other</option>
-                </select>
-              </label>
-              <label>
-                School / Organization
-                <input type="text" name="school-organization" autocomplete="organization" />
-              </label>
-              <label>
-                Message
-                <textarea name="message" rows="7" required></textarea>
-              </label>
-              <button class="button button-primary" type="submit">Send Message</button>
-            </form>
-            <aside class="contact-info-panel contact-page-panel" aria-label="Direct contact information">
-              <div class="contact-info-copy">
-                <p class="eyebrow">DIRECT CONTACT</p>
-                <h2>Start the conversation.</h2>
-                <p>
-                  For coaching opportunities, portfolio materials, references, or staff conversations, reach out directly.
-                </p>
-              </div>
-              <div class="contact-detail-list">
-                <a href="mailto:CoachMatthewFogarty@gmail.com">
-                  <span class="contact-detail-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M3.5 6.5A2.5 2.5 0 0 1 6 4h12a2.5 2.5 0 0 1 2.5 2.5v11A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5v-11Zm2.2-.5 6.3 5.2L18.3 6H5.7Zm12.8 2.1-5.7 4.7a1.25 1.25 0 0 1-1.6 0L5.5 8.1v9.4c0 .3.2.5.5.5h12c.3 0 .5-.2.5-.5V8.1Z" /></svg>
-                  </span>
-                  <span class="contact-panel-text">CoachMatthewFogarty@gmail.com</span>
-                </a>
-                <span>
-                  <span class="contact-detail-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2Z" /></svg>
-                  </span>
-                  <span class="contact-panel-text contact-location-text">Santa Ana, CA 92707</span>
-                </span>
-              </div>
-              <div class="contact-socials" aria-label="Social links">
-                <a href="https://www.linkedin.com/in/matthew-fogarty" target="_blank" rel="noreferrer" aria-label="Matthew Fogarty on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.86V20h3.08V8.98ZM5.4 4a1.78 1.78 0 1 0 0 3.56A1.78 1.78 0 0 0 5.4 4Zm14.74 9.88c0-3.04-1.62-5-4.26-5-1.9 0-2.75 1.04-3.22 1.77V8.98H9.7V20h3.08v-5.46c0-1.44.27-2.84 2.06-2.84 1.76 0 1.78 1.65 1.78 2.93V20h3.52v-6.12Z" /></svg></a>
-                <a href="https://www.instagram.com/coachbballmatt/" target="_blank" rel="noreferrer" aria-label="Coach Fogarty on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 2a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm5.05-2.8a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z" /></svg></a>
-              </div>
-              <div class="contact-document-actions">
+              <div class="document-actions contact-document-actions" aria-label="Portfolio material links">
                 <a class="button button-secondary" href="assets/documents/resume/matthew-fogarty-resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+                <a class="button button-secondary" href="assets/documents/credentials/degrees/degrees-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Degrees</a>
+                <a class="button button-secondary" href="assets/documents/credentials/licenses/licenses-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Licenses</a>
+                <a class="button button-secondary" href="assets/documents/credentials/certifications/certifications-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Certifications</a>
+                <a class="button button-secondary" href="assets/documents/credentials/memberships/memberships-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Memberships</a>
                 <a class="button button-secondary" href="assets/documents/references/matthew-fogarty-recommendation-letters.pdf" target="_blank" rel="noreferrer">References</a>
-                <a class="button button-secondary" href="assets/documents/credentials/matthew-fogarty-professional-credentials.pdf" target="_blank" rel="noreferrer">Credentials</a>
-                <a class="button button-secondary" href="./systems.html">Systems</a>
+                <a class="button button-primary" href="assets/documents/portfolio/matthew-fogarty-portfolio-overview.pdf" target="_blank" rel="noreferrer">Full Portfolio</a>
               </div>
-            </aside>
+            </article>
+            <div class="contact-form-card">
+              <div class="home-closeout-heading">
+                <p class="eyebrow">CONTACT</p>
+                <h2>Coach Matthew Fogarty</h2>
+              </div>
+              <form class="contact-form" id="contactForm" action="mailto:CoachMatthewFogarty@gmail.com" method="post" enctype="text/plain">
+                <div class="contact-name-row">
+                  <label>
+                    First Name
+                    <input type="text" name="first-name" autocomplete="given-name" required />
+                  </label>
+                  <label>
+                    Last Name
+                    <input type="text" name="last-name" autocomplete="family-name" required />
+                  </label>
+                </div>
+                <div class="contact-method-row">
+                  <label>
+                    Email Address
+                    <input type="email" name="email" autocomplete="email" required />
+                  </label>
+                  <label>
+                    Phone Number (Optional)
+                    <input type="tel" name="phone" autocomplete="tel" />
+                  </label>
+                </div>
+                <label>
+                  Subject
+                  <input type="text" name="subject" required />
+                </label>
+                <label class="select-field">
+                  Reason for Contact
+                  <select name="reason">
+                    <option value="">Select Contact Reason</option>
+                    <option value="Coaching Opportunity">Coaching Opportunity</option>
+                    <option value="Staff Conversation">Staff Conversation</option>
+                    <option value="Portfolio Materials">Portfolio Materials</option>
+                    <option value="References">References</option>
+                    <option value="Player Development">Player Development</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+                <label>
+                  Message
+                  <textarea name="message" rows="6" required></textarea>
+                </label>
+                <button class="button button-primary" type="submit">Send Message</button>
+              </form>
+            </div>
           </div>
         </section>
 

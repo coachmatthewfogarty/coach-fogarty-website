@@ -50,6 +50,22 @@ When adding a system document:
 - Add the approved preview image under `assets/documents/system-previews/`.
 - Link both from `systems.html`.
 
+Systems page card slots:
+
+- Core systems library cards use `media-card` style `1200x900` crops where possible.
+- Document carousel previews use `system-previews` crops and fill a `4 / 3` frame.
+- Overlay/thumb exports remain `600x400` WebP when a compact preview is needed.
+- The Archer logo/card art may use the approved The Archer featured/logo asset and must not be stretched or padded.
+- DPAT and recruiting dashboard previews should use the approved Q98 exports already in `Ready - Q98`.
+
+The Archer page slots:
+
+- Hero/social preview uses a strong product/training visual from `assets/the-archer/photos/`.
+- Product diagram may remain PNG when graphic clarity matters.
+- Photo gallery cards use the current `4 / 3` card frame; future approved exports should move to `media-card` `1200x900` AVIF crops.
+- Video cards should include poster images from the Archer photo set.
+- Do not replace the live JPG/PNG originals with new Ready assets until those crops are approved.
+
 ## Asset Locations
 
 Common public website image locations:

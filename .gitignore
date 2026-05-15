@@ -28,3 +28,12 @@ Thumbs.db
 # Local Codex/Chrome runtime files
 01-current-website/.chrome-codex-body-rhythm/
 .chrome-codex-body-rhythm/
+
+# Ignore Codex/Chrome QA runtime profiles
+**/chrome-profile*/
+**/.chrome-codex*/
+
+# Ignore browser runtime folders from QA/Codex
+**/chrome-profile*/
+**/.chrome-codex*/
+**/outputs/**/Default/

@@ -30,7 +30,7 @@ Rules:
 - Let body text fill the left copy lane.
 - Change body typography by breakpoint instead of adding a narrow paragraph cap.
 - Use the approved six-pill `3 x 2` grid.
-- Keep wide desktop pills matched to the approved left lane; do not reintroduce the old `1120px` pill cap.
+- Keep wide desktop pills matched to the approved left lane; do not reintroduce old narrow pill caps.
 - Do not change right-column image sizes/crops or overlay styling when the request is left-column formatting.
 
 ## Page Shell
@@ -101,7 +101,7 @@ Guardrails:
 
 - The right image column stays where the grid places it.
 - The image frame is not changed to fix left-column text or pills.
-- At wide desktop, spacing is controlled by left support widths and capped components, not by stretching pills into the image lane.
+- At wide desktop, the pill group fills the safe left grid track; spacing is controlled by the grid and scoped right-column visual offset, not by the old narrow pill cap.
 
 ## Copy And Typography
 

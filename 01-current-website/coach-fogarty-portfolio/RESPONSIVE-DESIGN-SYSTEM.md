@@ -6,6 +6,10 @@ Companion active specs:
 
 - `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md`: measured Home hero desktop system.
 - `docs/responsive/HOME-CONTACT-CLOSEOUT-LOCK-README.md`: measured Home Portfolio Materials + Contact closeout system.
+- `docs/responsive/SYSTEMS-PAGE-LOCK-README.md`: locked Systems page hero, library, details, image, button and QA rules.
+- `docs/responsive/FEATURED-WORK-PAGE-LOCK-README.md`: locked Featured Work detailed section page rules.
+- `docs/responsive/ARCHER-PAGE-LOCK-README.md`: locked The Archer product case study page rules.
+- `docs/gallery/GALLERY-PAGE-FINAL-SPEC.md`: locked Gallery / Media page spec, image inventory, interaction spec, cleanup log, and responsive QA packet.
 - `docs/image-export/README.md`: locked image export, crop, naming, and asset rules.
 
 Implementation lives primarily in:
@@ -82,6 +86,41 @@ Current reusable page-hero coverage:
 
 About and Contact are excluded from the reusable page-hero lock.
 
+## Locked Featured Work Page
+
+Featured Work is locked as a detailed section-based Featured Work page.
+
+- Page target: `featured-work.html`.
+- Main target: `main.featured-page`.
+- Hero target: `.featured-hero.page-hero-system`.
+- Hero stats target: `.featured-hero-actions.hero-pill-system`.
+- Featured Work uses the shared page hero system with the Homepage-style 6 stat-pill grid, while the page body preserves the original detailed Featured Work section layout.
+- Do not replace the body with a simplified 4-card grid.
+- Required body sections: Impact Summary, Pacific Academy program turnaround, Santa Ana College collegiate impact, Anaya Beard case study, The Archer innovation, Complete Coaching Profile strategy panel, and Explore the Work CTA.
+- Hero pills: `20+ / Years Coaching Experience`, `338-43 / Head Coaching Record`, `26 / Championships`, `College / Player Development`, `Staff / Recruiting Systems`, `Program / Operations`.
+- Desktop: hero pills use the approved `3 x 2` Homepage-style stat-pill grid from `1025px`.
+- Tablet/mobile: hero pills follow the shared responsive `.hero-pill-system` behavior without horizontal overflow.
+- Use approved cream background, navy/dark ink type, red accents, warm card panels, soft borders, soft shadows, image crops, pills/buttons, and footer/header systems.
+- Featured Work uses the shared approved Home/Page Hero image overlay treatment: `page-highlight-bar hero-portrait-overlay`.
+- Do not reintroduce Featured-only hero overlay card selectors or local overlay overrides for position, size, padding, radius, typography, background, or shadow.
+- Cleanup note: the simplified 4-card rebuild was removed/reverted.
+- Cleanup note: the wrong Featured-only white hero caption card rules were removed.
+- Use `docs/responsive/FEATURED-WORK-PAGE-LOCK-README.md` for final page-specific QA.
+
+## Locked The Archer Page
+
+The Archer page is locked as a product case study inside the coaching portfolio, not a standalone sales page.
+
+- Page target: `archer-visuals.html`.
+- Main target: `main.archer-page`.
+- Hero target: `.page-hero-system`.
+- Final scoped CSS block: `Archer Page Final Lock`.
+- Sections: hero, product overview, how-it-works cards, player development connection, photo gallery cards, video cards, innovation value, and CTA.
+- The page uses the shared shell, section rhythm, cards, buttons, pills, overlay treatment, typography, colors, shadows, and radii.
+- Product diagram imagery may use `object-fit: contain` inside the approved image frame so the tool graphic stays readable.
+- No Archer-specific JavaScript overlay is required; the Gallery page keeps the site-wide media overlay experience.
+- Use `docs/responsive/ARCHER-PAGE-LOCK-README.md` for final page-specific QA and image roles.
+
 ## Locked Homepage Systems Section
 
 The Home page Systems section is visually approved and locked as of May 14, 2026.
@@ -98,6 +137,31 @@ The Home page Systems section is visually approved and locked as of May 14, 2026
 - Image fit: `cover`.
 - Desktop card title: `26px / 28px`.
 - Keep the approved content, cream background, red card titles, rounded cards, image-forward rhythm, and pill button structure unless fixing a true bug.
+
+## Final Locked Systems Page
+
+The Systems page is FINAL LOCKED as of May 14, 2026. It is visually approved through the shared internal page hero, six-card library and detail section system. Do not continue redesigning it unless a future bug appears.
+
+- Page target: `systems.html`.
+- Main target: `main.systems-detail-page`.
+- Hero target: `.page-hero-system`.
+- Library target: `#systems-library.systems-core-library`.
+- Card target: `.systems-core-card.system-card`.
+- Detail target: `.system-detail-section`.
+- Carousel target: `.system-document-carousel`.
+- Desktop: hero and library start at `1025px`; library uses `3` columns.
+- Tablet: library uses `2` columns from `721px` through `1024px`.
+- Mobile: library stacks to `1` column through `720px`.
+- Six core library cards are Player Development Systems, Scouting & Recruiting, DPAT, Program Support, Coaching Philosophy and The Archer.
+- DPAT text must include Defensive Performance Accountability Tracker.
+- Detail sections may keep Scouting and Recruiting separated for staff workflow clarity, while the top library treats them as one core system group.
+- The Archer is included as a Systems detail section and links to the existing Archer page, gallery and feature proof.
+- Use `docs/responsive/SYSTEMS-PAGE-LOCK-README.md` for final page-specific QA.
+- Keep the current shared internal hero, Staff Systems eyebrow/title/body spacing, desktop `3 x 2` hero pill layout, right image/card crop and Page Highlight overlay.
+- Keep the current desktop shell behavior at `1280`, `1440`, `1600`, `1920` and `2560`.
+- Keep the current `3 / 2 / 1` Systems library behavior across desktop/tablet/mobile.
+- Only keep `1025px` on the watch list for future regressions because it is the tightest desktop breakpoint. Do not redesign it unless there is actual overflow, ugly wrapping or button/image collision.
+- No further Systems-specific cleanup is needed unless a future bug appears.
 
 ## Locked Homepage Contact Closeout
 
@@ -203,19 +267,21 @@ Hero stat/action pills use the Home hero system.
 - Use `3` columns on desktop for hero pill rows.
 - Six hero pills must be `3` columns x `2` rows.
 - Pills stay inside the left column.
-- Wide desktop pills are capped.
+- Wide desktop hero pills fill the safe left grid track through `.hero-pill-system`.
+- Do not reintroduce old narrow pill caps or the old active `364px / 72px` wide-pill sizing.
+- Any old narrow pill cap values are legacy/shared only, not the active Home or reusable page-hero rule.
 - Pill colors, border radius, padding, font sizes, and gaps should match the Home hero system.
 - Use `minmax(0, ...)` grid tracks so labels can stay inside the pill.
 
 Current desktop pill rhythm:
 
-| Range | Pill width | Pill height | Gap |
-|---|---:|---:|---:|
-| `1025-1349px` | `223px` | `60px` | `12px` |
-| `1350-1499px` | `273.9px` | `63.9px` | `12px` |
-| `1500-1719px` | `306px` | `70px` | `12px` |
-| `1720-2199px` | `346.5px` | `76px` | `12px` |
-| `2200px+` | capped around `364px` | `72px` | `12px` |
+| Range | Active width behavior | Pill height | Main text | Sub-label |
+|---|---|---:|---:|---:|
+| `1025-1349px` | fills the safe left lane | Home-scaled compact desktop | Home-scaled | Home-scaled |
+| `1350-1499px` | fills the safe left lane | Home-scaled desktop | Home-scaled | Home-scaled |
+| `1500-1719px` | fills the safe left lane | Home-scaled desktop | Home-scaled | Home-scaled |
+| `1720-2199px` | fills the safe left lane | Home-scaled large desktop | Home-scaled | Home-scaled |
+| `2200px+` | fills the safe left grid track | `82px` | `26px` | `13.5px` |
 
 ## Featured Cards
 

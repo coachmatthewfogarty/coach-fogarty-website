@@ -18,7 +18,7 @@ This file documents the locked Home hero left-column system created from the Hom
 - `1920px+`: copy and stat pills share `--home-hero-left-system-max: 100%` and fill the safe left grid track.
 - Eyebrow, title, body text, and stat-pill grid share the same locked width on desktop.
 - The body paragraph is reset to `width: 100%` and `max-width: 100%` inside `.hero-left-system`, so it cannot cap narrower than the stat-pill grid.
-- The old `1120px` wide-desktop stat-pill cap has been removed from the active Home hero lock; `.hero-pill-system` now follows the same width as `.hero-left-system` at `1920px+` and `2200px+`.
+- The old narrow wide-desktop stat-pill cap has been removed from the active Home hero lock; `.hero-pill-system` now follows the same width as `.hero-left-system` at `1920px+` and `2200px+`.
 - `1200px` through `1499px`: the approved live body rhythm is `17.5px / 32px`.
 - At `2200px+`, the body paragraph uses `margin-top: clamp(28px, calc(-166px + 8.8vw), 48px)`. The stat-pill grid does not use a lift transform; bottom alignment comes from the right-column grid item aligning to the pill group.
 - The locked `2200px+` stat-pill scale is `82px` height, `26px` main value text, and `13.5px` sub-label text.

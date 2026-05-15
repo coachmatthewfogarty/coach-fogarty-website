@@ -84,6 +84,7 @@ Today's active website upgrades are centered on the public coaching portfolio ex
 - `assets/documents/system-previews/` now contains the live WebP preview thumbnails used by the Systems document cards.
 - `systems.js` powers horizontal document carousel arrows on the Systems page.
 - `media.html` is now the Gallery Hub, with category previews, coaching galleries, video galleries, Playing Career, Awards, The Archer, and Anaya Beard media sections.
+- `archer-visuals.html` is now The Archer product case study page, using the locked shared page hero plus overview, mechanics, development connection, media, innovation value, and CTA sections.
 - `app.js` remains the central data/rendering file for homepage system cards, gallery/media albums, media overlays, playing-career carousels, and contact form mailto behavior.
 - `contact.html` and the homepage contact section use the direct email `CoachMatthewFogarty@gmail.com`, location `Santa Ana, CA`, website `www.coachfogarty.com`, social links, and document quick actions.
 

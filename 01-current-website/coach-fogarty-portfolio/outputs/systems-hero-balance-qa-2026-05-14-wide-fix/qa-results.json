@@ -1,0 +1,608 @@
+[
+  {
+    "width": 1025,
+    "height": 768,
+    "ok": true,
+    "metrics": {
+      "viewport": [
+        1025,
+        768
+      ],
+      "overflow": 0,
+      "hero": {
+        "x": 44,
+        "y": 68,
+        "width": 937,
+        "height": 434,
+        "right": 981,
+        "bottom": 502
+      },
+      "heroStyle": {
+        "gridTemplateColumns": "494.297px 340px",
+        "columnGap": "28.7px",
+        "maxWidth": "none",
+        "width": "937px",
+        "height": "433.688px",
+        "sysWidth": "340px",
+        "sysGap": "clamp(26px, 2.8vw, 32px)",
+        "sysLeft": "calc(100% - clamp(26px, 2.8vw, 32px) - 340px)",
+        "sysBody": "100%",
+        "sysPill": "100%",
+        "homeGap": "33.28px"
+      },
+      "left": {
+        "x": 81,
+        "y": 108,
+        "width": 494,
+        "height": 251,
+        "right": 575,
+        "bottom": 359
+      },
+      "body": {
+        "x": 81,
+        "y": 213,
+        "width": 494,
+        "height": 146,
+        "right": 575,
+        "bottom": 359
+      },
+      "pills": {
+        "x": 81,
+        "y": 370,
+        "width": 494,
+        "height": 108,
+        "right": 575,
+        "bottom": 478
+      },
+      "pillStyle": {
+        "gridTemplateColumns": "156.766px 156.766px 156.766px",
+        "columnGap": "12px",
+        "maxWidth": "min(100%, 980px)",
+        "width": "494.297px",
+        "height": "108px",
+        "sysWidth": "340px",
+        "sysGap": "clamp(26px, 2.8vw, 32px)",
+        "sysLeft": "calc(100% - clamp(26px, 2.8vw, 32px) - 340px)",
+        "sysBody": "100%",
+        "sysPill": "100%",
+        "homeGap": "33.28px"
+      },
+      "media": {
+        "x": 604,
+        "y": 97,
+        "width": 340,
+        "height": 381,
+        "right": 944,
+        "bottom": 478
+      },
+      "overlay": {
+        "x": 615,
+        "y": 410,
+        "width": 316,
+        "height": 57,
+        "right": 931,
+        "bottom": 467
+      },
+      "library": {
+        "x": 44,
+        "y": 534,
+        "width": 937,
+        "height": 1071,
+        "right": 981,
+        "bottom": 1605
+      },
+      "libraryColumns": 3,
+      "brokenImages": [],
+      "heroButtonOverflow": 0,
+      "gapActual": 29,
+      "bodyGapActual": 29,
+      "pillGapActual": 29,
+      "overlayContained": true
+    }
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "ok": true,
+    "metrics": {
+      "viewport": [
+        1280,
+        800
+      ],
+      "overflow": 0,
+      "hero": {
+        "x": 44,
+        "y": 68,
+        "width": 1192,
+        "height": 453,
+        "right": 1236,
+        "bottom": 521
+      },
+      "heroStyle": {
+        "gridTemplateColumns": "657.031px 420px",
+        "columnGap": "40.96px",
+        "maxWidth": "none",
+        "width": "1192px",
+        "height": "452.891px",
+        "sysWidth": "420px",
+        "sysGap": "clamp(38px, 3.2vw, 48px)",
+        "sysLeft": "min(690px, calc(100% - clamp(38px, 3.2vw, 48px) - 420px))",
+        "sysBody": "690px",
+        "sysPill": "690px",
+        "homeGap": "33.28px"
+      },
+      "left": {
+        "x": 81,
+        "y": 97,
+        "width": 657,
+        "height": 266,
+        "right": 738,
+        "bottom": 363
+      },
+      "body": {
+        "x": 81,
+        "y": 203,
+        "width": 657,
+        "height": 160,
+        "right": 738,
+        "bottom": 363
+      },
+      "pills": {
+        "x": 81,
+        "y": 363,
+        "width": 657,
+        "height": 134,
+        "right": 738,
+        "bottom": 497
+      },
+      "pillStyle": {
+        "gridTemplateColumns": "211px 211.016px 211.016px",
+        "columnGap": "12px",
+        "maxWidth": "min(100%, 980px)",
+        "width": "657.031px",
+        "height": "134.062px",
+        "sysWidth": "420px",
+        "sysGap": "clamp(38px, 3.2vw, 48px)",
+        "sysLeft": "min(690px, calc(100% - clamp(38px, 3.2vw, 48px) - 420px))",
+        "sysBody": "690px",
+        "sysPill": "690px",
+        "homeGap": "33.28px"
+      },
+      "media": {
+        "x": 779,
+        "y": 107,
+        "width": 420,
+        "height": 381,
+        "right": 1199,
+        "bottom": 487
+      },
+      "overlay": {
+        "x": 791,
+        "y": 418,
+        "width": 396,
+        "height": 57,
+        "right": 1187,
+        "bottom": 475
+      },
+      "library": {
+        "x": 44,
+        "y": 553,
+        "width": 1192,
+        "height": 1152,
+        "right": 1236,
+        "bottom": 1705
+      },
+      "libraryColumns": 3,
+      "brokenImages": [],
+      "heroButtonOverflow": 0,
+      "gapActual": 41,
+      "bodyGapActual": 41,
+      "pillGapActual": 41,
+      "overlayContained": true
+    }
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "ok": true,
+    "metrics": {
+      "viewport": [
+        1440,
+        900
+      ],
+      "overflow": 0,
+      "hero": {
+        "x": 44,
+        "y": 68,
+        "width": 1352,
+        "height": 444,
+        "right": 1396,
+        "bottom": 512
+      },
+      "heroStyle": {
+        "gridTemplateColumns": "740px 460px",
+        "columnGap": "57.6px",
+        "maxWidth": "none",
+        "width": "1352px",
+        "height": "444.172px",
+        "sysWidth": "460px",
+        "sysGap": "clamp(52px, 4vw, 62px)",
+        "sysLeft": "min(740px, calc(100% - clamp(52px, 4vw, 62px) - 460px))",
+        "sysBody": "740px",
+        "sysPill": "740px",
+        "homeGap": "37.44px"
+      },
+      "left": {
+        "x": 91,
+        "y": 107,
+        "width": 740,
+        "height": 234,
+        "right": 831,
+        "bottom": 341
+      },
+      "body": {
+        "x": 91,
+        "y": 213,
+        "width": 740,
+        "height": 128,
+        "right": 831,
+        "bottom": 341
+      },
+      "pills": {
+        "x": 91,
+        "y": 347,
+        "width": 740,
+        "height": 139,
+        "right": 831,
+        "bottom": 485
+      },
+      "pillStyle": {
+        "gridTemplateColumns": "238.656px 238.672px 238.672px",
+        "columnGap": "12px",
+        "maxWidth": "min(100%, 980px)",
+        "width": "740px",
+        "height": "138.531px",
+        "sysWidth": "460px",
+        "sysGap": "clamp(52px, 4vw, 62px)",
+        "sysLeft": "min(740px, calc(100% - clamp(52px, 4vw, 62px) - 460px))",
+        "sysBody": "740px",
+        "sysPill": "740px",
+        "homeGap": "37.44px"
+      },
+      "media": {
+        "x": 889,
+        "y": 101,
+        "width": 460,
+        "height": 385,
+        "right": 1349,
+        "bottom": 485
+      },
+      "overlay": {
+        "x": 902,
+        "y": 412,
+        "width": 436,
+        "height": 59,
+        "right": 1338,
+        "bottom": 471
+      },
+      "library": {
+        "x": 44,
+        "y": 544,
+        "width": 1352,
+        "height": 1242,
+        "right": 1396,
+        "bottom": 1786
+      },
+      "libraryColumns": 3,
+      "brokenImages": [],
+      "heroButtonOverflow": 0,
+      "gapActual": 58,
+      "bodyGapActual": 58,
+      "pillGapActual": 58,
+      "overlayContained": true
+    }
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "ok": true,
+    "metrics": {
+      "viewport": [
+        1600,
+        900
+      ],
+      "overflow": 0,
+      "hero": {
+        "x": 44,
+        "y": 68,
+        "width": 1512,
+        "height": 435,
+        "right": 1556,
+        "bottom": 503
+      },
+      "heroStyle": {
+        "gridTemplateColumns": "830px 520px",
+        "columnGap": "70.4px",
+        "maxWidth": "none",
+        "width": "1512px",
+        "height": "434.688px",
+        "sysWidth": "520px",
+        "sysGap": "clamp(66px, 4.4vw, 76px)",
+        "sysLeft": "830px",
+        "sysBody": "830px",
+        "sysPill": "830px",
+        "homeGap": "37.44px"
+      },
+      "left": {
+        "x": 90,
+        "y": 101,
+        "width": 830,
+        "height": 226,
+        "right": 920,
+        "bottom": 327
+      },
+      "body": {
+        "x": 90,
+        "y": 207,
+        "width": 830,
+        "height": 120,
+        "right": 920,
+        "bottom": 327
+      },
+      "pills": {
+        "x": 90,
+        "y": 327,
+        "width": 830,
+        "height": 149,
+        "right": 920,
+        "bottom": 476
+      },
+      "pillStyle": {
+        "gridTemplateColumns": "268.656px 268.672px 268.656px",
+        "columnGap": "12px",
+        "maxWidth": "min(100%, 980px)",
+        "width": "830px",
+        "height": "149.031px",
+        "sysWidth": "520px",
+        "sysGap": "clamp(66px, 4.4vw, 76px)",
+        "sysLeft": "830px",
+        "sysBody": "830px",
+        "sysPill": "830px",
+        "homeGap": "37.44px"
+      },
+      "media": {
+        "x": 990,
+        "y": 103,
+        "width": 520,
+        "height": 370,
+        "right": 1510,
+        "bottom": 473
+      },
+      "overlay": {
+        "x": 1005,
+        "y": 399,
+        "width": 496,
+        "height": 59,
+        "right": 1501,
+        "bottom": 458
+      },
+      "library": {
+        "x": 44,
+        "y": 535,
+        "width": 1512,
+        "height": 1269,
+        "right": 1556,
+        "bottom": 1804
+      },
+      "libraryColumns": 3,
+      "brokenImages": [],
+      "heroButtonOverflow": 0,
+      "gapActual": 70,
+      "bodyGapActual": 70,
+      "pillGapActual": 70,
+      "overlayContained": true
+    }
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "ok": true,
+    "metrics": {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "overflow": 0,
+      "hero": {
+        "x": 120,
+        "y": 68,
+        "width": 1680,
+        "height": 449,
+        "right": 1800,
+        "bottom": 517
+      },
+      "heroStyle": {
+        "gridTemplateColumns": "943.812px 560px",
+        "columnGap": "82px",
+        "maxWidth": "none",
+        "width": "1680px",
+        "height": "448.594px",
+        "sysWidth": "560px",
+        "sysGap": "82px",
+        "sysLeft": "1040px",
+        "sysBody": "1040px",
+        "sysPill": "1040px",
+        "homeGap": "38.4px"
+      },
+      "left": {
+        "x": 167,
+        "y": 118,
+        "width": 944,
+        "height": 190,
+        "right": 1111,
+        "bottom": 308
+      },
+      "body": {
+        "x": 167,
+        "y": 226,
+        "width": 944,
+        "height": 83,
+        "right": 1111,
+        "bottom": 308
+      },
+      "pills": {
+        "x": 167,
+        "y": 322,
+        "width": 944,
+        "height": 164,
+        "right": 1111,
+        "bottom": 486
+      },
+      "pillStyle": {
+        "gridTemplateColumns": "306.594px 306.609px 306.594px",
+        "columnGap": "12px",
+        "maxWidth": "100%",
+        "width": "943.812px",
+        "height": "164px",
+        "sysWidth": "560px",
+        "sysGap": "82px",
+        "sysLeft": "1040px",
+        "sysBody": "1040px",
+        "sysPill": "1040px",
+        "homeGap": "38.4px"
+      },
+      "media": {
+        "x": 1193,
+        "y": 105,
+        "width": 560,
+        "height": 381,
+        "right": 1753,
+        "bottom": 486
+      },
+      "overlay": {
+        "x": 1208,
+        "y": 401,
+        "width": 536,
+        "height": 66,
+        "right": 1744,
+        "bottom": 467
+      },
+      "library": {
+        "x": 120,
+        "y": 549,
+        "width": 1680,
+        "height": 1357,
+        "right": 1800,
+        "bottom": 1906
+      },
+      "libraryColumns": 3,
+      "brokenImages": [],
+      "heroButtonOverflow": 0,
+      "gapActual": 82,
+      "bodyGapActual": 82,
+      "pillGapActual": 82,
+      "overlayContained": true
+    }
+  },
+  {
+    "width": 2560,
+    "height": 1440,
+    "ok": true,
+    "metrics": {
+      "viewport": [
+        2560,
+        1440
+      ],
+      "overflow": 0,
+      "hero": {
+        "x": 160,
+        "y": 68,
+        "width": 2240,
+        "height": 568,
+        "right": 2400,
+        "bottom": 636
+      },
+      "heroStyle": {
+        "gridTemplateColumns": "1120px 665.594px",
+        "columnGap": "102.4px",
+        "maxWidth": "none",
+        "width": "2240px",
+        "height": "568px",
+        "sysWidth": "clamp(620px, 26vw, 680px)",
+        "sysGap": "clamp(88px, 4vw, 104px)",
+        "sysLeft": "1120px",
+        "sysBody": "1120px",
+        "sysPill": "1120px",
+        "homeGap": "clamp(88px, 4vw, 104px)"
+      },
+      "left": {
+        "x": 336,
+        "y": 135,
+        "width": 1120,
+        "height": 264,
+        "right": 1456,
+        "bottom": 399
+      },
+      "body": {
+        "x": 336,
+        "y": 261,
+        "width": 1120,
+        "height": 138,
+        "right": 1456,
+        "bottom": 399
+      },
+      "pills": {
+        "x": 336,
+        "y": 429,
+        "width": 1120,
+        "height": 176,
+        "right": 1456,
+        "bottom": 605
+      },
+      "pillStyle": {
+        "gridTemplateColumns": "365.328px 365.328px 365.344px",
+        "columnGap": "12px",
+        "maxWidth": "min(100%, 1120px)",
+        "width": "1120px",
+        "height": "176px",
+        "sysWidth": "clamp(620px, 26vw, 680px)",
+        "sysGap": "clamp(88px, 4vw, 104px)",
+        "sysLeft": "1120px",
+        "sysBody": "1120px",
+        "sysPill": "1120px",
+        "homeGap": "clamp(88px, 4vw, 104px)"
+      },
+      "media": {
+        "x": 1558,
+        "y": 105,
+        "width": 666,
+        "height": 500,
+        "right": 2224,
+        "bottom": 605
+      },
+      "overlay": {
+        "x": 1571,
+        "y": 511,
+        "width": 640,
+        "height": 75,
+        "right": 2211,
+        "bottom": 586
+      },
+      "library": {
+        "x": 160,
+        "y": 668,
+        "width": 2240,
+        "height": 1631,
+        "right": 2400,
+        "bottom": 2299
+      },
+      "libraryColumns": 3,
+      "brokenImages": [],
+      "heroButtonOverflow": 0,
+      "gapActual": 102,
+      "bodyGapActual": 102,
+      "pillGapActual": 102,
+      "overlayContained": true
+    }
+  }
+]
