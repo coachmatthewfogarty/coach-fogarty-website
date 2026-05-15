@@ -36,4 +36,5 @@ Thumbs.db
 # Ignore browser runtime folders from QA/Codex
 **/chrome-profile*/
 **/.chrome-codex*/
+outputs/
 **/outputs/**/Default/
