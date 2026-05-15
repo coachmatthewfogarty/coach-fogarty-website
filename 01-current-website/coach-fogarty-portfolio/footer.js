@@ -118,7 +118,6 @@ const compactCardTitleSelector = [
   ".system-card h3",
   ".story-card h3",
   ".quote-panel h3",
-  ".innovation-panel h3",
   ".media-subsection-heading h3",
   ".media-album-heading h3",
   ".media-category-card h3",

@@ -5,6 +5,7 @@ This is the global source of truth for the public Coach Fogarty portfolio websit
 Companion active specs:
 
 - `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md`: measured Home hero desktop system.
+- `docs/responsive/HOME-CONTACT-CLOSEOUT-LOCK-README.md`: measured Home Portfolio Materials + Contact closeout system.
 - `docs/image-export/README.md`: locked image export, crop, naming, and asset rules.
 
 Implementation lives primarily in:
@@ -56,7 +57,7 @@ Target shell widths:
 
 ## Home Hero Desktop System
 
-The Home hero is the approved desktop reference.
+The Home hero is the approved desktop reference and the source for the reusable `.page-hero-system`.
 
 - Desktop starts at `1025px`.
 - Use a two-column grid with left copy/stats and right portrait.
@@ -66,10 +67,20 @@ The Home hero is the approved desktop reference.
 - Body text uses `max-width: 100%` and fills the left copy lane.
 - Body typography changes by breakpoint to keep the lane balanced.
 - Six stat pills use the approved `3 x 2` grid and approved sizing.
-- Wide desktop pills are capped so they do not become long bars.
+- Wide desktop pills fill the safe left grid track; do not reintroduce old narrow pill caps.
 - Do not cap the whole hero to a narrow centered lane.
 
 Use `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` for measured Home hero values.
+
+Current reusable page-hero coverage:
+
+- Systems: `systems.html`
+- Featured: `featured-work.html`
+- Gallery/Media: `media.html`
+- Anaya Beard Case Study: `anaya-case-study.html`
+- The Archer: `archer-visuals.html`
+
+About and Contact are excluded from the reusable page-hero lock.
 
 ## Locked Homepage Systems Section
 
@@ -88,12 +99,30 @@ The Home page Systems section is visually approved and locked as of May 14, 2026
 - Desktop card title: `26px / 28px`.
 - Keep the approved content, cream background, red card titles, rounded cards, image-forward rhythm, and pill button structure unless fixing a true bug.
 
+## Locked Homepage Contact Closeout
+
+The Home page Portfolio Materials + Contact closeout is visually approved and locked as of May 14, 2026.
+
+- Section target: `main#top > #contact.contact-section`.
+- Grid target: `.contact-closeout-grid`.
+- Left card: `.document-card`.
+- Right card: `.contact-form-card`.
+- Desktop: `2` columns from `1025px`, using `minmax(0, 2fr) minmax(0, 3fr)`.
+- Tablet/mobile: `1` stacked column through `1024px`.
+- Gap between cards: `28px`.
+- Card treatment: cream gradient card, `1px` warm ink border, `clamp(24px, 2.4vw, 30px)` radius, and `0 18px 42px rgba(52, 36, 24, 0.1)` shadow.
+- Document pills: two-column stack through `1024px`, single-column stack from `1025px`.
+- Form: one column through `820px`, two columns from `821px`; textarea and submit span full width.
+- Use `docs/responsive/HOME-CONTACT-CLOSEOUT-LOCK-README.md` for measured values, colors, typography, and breakpoint QA.
+
 ## Page Hero Left Column
 
-Systems, Featured, Gallery, Anaya, Archer, and Credentials hero pages inherit the approved Home hero left-column rules where applicable.
+Systems, Featured, Gallery/Media, Anaya Beard Case Study, and The Archer inherit the approved Home hero desktop system through `.page-hero-system`. Credentials keeps the older shared fallback. About and Contact are excluded.
 
 Left-column rules:
 
+- Use `.hero-left-system` for the copy lane.
+- Use `.hero-pill-system`, `.hero-pill`, `.hero-pill-main`, and `.hero-pill-sub` for stat/action pills.
 - Copy container is `width: 100%`, `max-width: 100%`, and `min-width: 0`.
 - Body text is `width: 100%` and `max-width: 100%`.
 - Body text uses the approved Home hero rhythm by breakpoint.
@@ -103,6 +132,7 @@ Left-column rules:
 
 Protected areas:
 
+- Do not rely on `#impact`, `main#top`, or old page-specific hero hacks for reusable page heroes.
 - Do not change eyebrow, title, right image, right-column image crop, or overlay styling when the request is only left-column formatting.
 - About and Contact are excluded from broad hero-left/body changes where the page already has approved custom rules.
 
@@ -159,9 +189,10 @@ Desktop body rhythm for inherited page heroes:
 
 | Range | Body size | Line-height |
 |---|---:|---:|
-| `1025-1349px` | about `17.5px` | `32px` |
-| `1350-1499px` | about `17.5px` | `32px` |
-| `1500-1719px` | about `17.5px` | `30px` |
+| `1025-1199px` | `16px` | `24.32px` |
+| `1200-1499px` | `17.5px` | `32px` |
+| `1500-1599px` | `17.25px` | `28px` |
+| `1600-1719px` | about `17.5px` | `30px` |
 | `1720-2199px` | about `17.5px` | `27.5px` |
 | `2200px+` | `22px` | `46px` |
 

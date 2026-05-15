@@ -2,13 +2,14 @@
 
 Last updated: 2026-05-14
 
-This is the measured source of truth for the approved Home hero desktop system. Use it when changing the Home hero, tuning inherited page hero left columns, or checking whether future CSS preserves the approved body, pill, portrait, and overlay rhythm.
+This is the measured source of truth for the approved Home hero desktop system and the reusable page-hero system inherited from it. Use it when changing the Home hero, tuning inherited page hero left columns, or checking whether future CSS preserves the approved body, pill, portrait, and overlay rhythm.
 
 Scope:
 
 - Page: `index.html`
 - Primary CSS: `styles.css`
 - Component: `main#top > .hero`
+- Reusable page-hero hook: `.page-hero-system`
 - Desktop starts: `1025px`
 - Required desktop verification sizes: `1025x768`, `1280x800`, `1440x900`, `1600x900`, `1920x1080`, `2560x1440`
 
@@ -29,7 +30,7 @@ Rules:
 - Let body text fill the left copy lane.
 - Change body typography by breakpoint instead of adding a narrow paragraph cap.
 - Use the approved six-pill `3 x 2` grid.
-- Cap wide desktop pills so they do not become long bars.
+- Keep wide desktop pills matched to the approved left lane; do not reintroduce the old `1120px` pill cap.
 - Do not change right-column image sizes/crops or overlay styling when the request is left-column formatting.
 
 ## Page Shell
@@ -83,7 +84,7 @@ Current hero tokens:
 --hero-wide-portrait-height: clamp(480px, 20vw, 540px);
 ```
 
-Later approved locks override paragraph max-width to `100%` for the Home hero body and cap wide stat pills.
+Later approved locks override paragraph max-width to `100%` for the Home hero body and make the stat-pill grid follow `.hero-left-system` / `.hero-pill-system` width.
 
 ## Two-Column Grid
 
@@ -118,9 +119,8 @@ Approved body behavior:
 | Range | Body max-width | Body size | Line-height | Notes |
 |---|---:|---:|---:|---|
 | `1025-1199px` | `100%` | compact desktop tuned | compact desktop tuned | protect two-column fit |
-| `1200-1349px` | `100%` | `17.5px` | `32px` | fills left lane |
-| `1350-1419px` | `100%` | `17.25px` | `29px` | fills left lane |
-| `1420-1599px` | `100%` | `17.25px` | `28px` | fills left lane |
+| `1200-1499px` | `100%` | `17.5px` | `32px` | approved live rhythm |
+| `1500-1599px` | `100%` | `17.25px` | `28px` | fills left lane |
 | `1600-1919px` | `100%` | `17.5px` | `30px` | fills left lane |
 | `1920-2199px` | `100%` | `17.5px` | `27.5px` | fills full left grid track |
 | `2200px+` | `100%` | `22px` | `46px` | wide desktop rhythm; body margin-top uses `clamp(28px, calc(-166px + 8.8vw), 48px)` |
@@ -137,10 +137,10 @@ Copy rules:
 Selectors:
 
 ```text
-main#top > .hero .hero-stat-band
-main#top > .hero #impact.hero-stat-band article
-main#top > .hero #impact.hero-stat-band article strong
-main#top > .hero #impact.hero-stat-band article span
+main#top > .hero .hero-pill-system
+main#top > .hero .hero-pill-system > .hero-pill
+main#top > .hero .hero-pill-main
+main#top > .hero .hero-pill-sub
 ```
 
 Approved stat pill system:
@@ -150,7 +150,8 @@ Approved stat pill system:
 - Pills never run underneath the right portrait.
 - Pill colors, border radius, padding, type, and gaps match the Home hero system.
 - Wide desktop pills are not capped narrower than the left copy lane.
-- At `2200px+`, the pill group keeps `--home-hero-pill-lift: 0px` so the 2-row group bottom-aligns with the right portrait card.
+- At `2200px+`, the pill group uses no lift transform. The right-column grid item bottom-aligns so the 2-row group aligns with the right portrait card.
+- `#impact` remains the Home section id/anchor and may appear in legacy selectors, but it is not part of the reusable page-hero system.
 
 Current sizing targets:
 
@@ -215,7 +216,7 @@ Overlay rules:
 Current wide desktop overlay cap:
 
 ```css
-main#top > .hero .hero-mobile-highlight {
+main#top > .hero .hero-portrait-overlay {
   width: min(calc(100% - 26px), clamp(560px, 25vw, 680px));
   max-width: min(calc(100% - 26px), clamp(560px, 25vw, 680px));
 }
@@ -223,15 +224,17 @@ main#top > .hero .hero-mobile-highlight {
 
 ## Inherited Page Heroes
 
-Systems, Featured, Gallery, Anaya, Archer, and Credentials should inherit the approved left-column body and pill/action rhythm.
+Systems, Featured, Gallery/Media, Anaya Beard Case Study, and The Archer now inherit the approved Home hero desktop system through `.page-hero-system`. Credentials keeps its prior shared fallback. About and Contact are excluded.
 
 Rules:
 
+- Reuse `.hero-left-system`, `.hero-pill-system`, `.hero-pill`, `.hero-pill-main`, `.hero-pill-sub`, `.hero-right-system`, `.hero-portrait-card`, `.hero-portrait-picture`, `.hero-portrait-image`, `.hero-portrait-overlay`, `.hero-portrait-overlay-title`, and `.hero-portrait-overlay-text`.
+- Do not rely on `#impact`, `main#top`, `.hero-visual display: contents`, old pill caps, or page-specific hero hacks for reusable subpage heroes.
 - Keep the page hero left-column body `max-width: 100%`.
 - Use the Home-like body rhythm by breakpoint.
 - Use `3` desktop columns for pill/action rows.
 - Use `3 x 2` for six stat-pill groups.
-- Keep right-column image and overlay formatting unchanged unless requested.
+- Keep right-column image and overlay formatting matched to Home unless a page-specific crop is explicitly approved.
 - About and Contact are excluded where existing approved rules say not to touch them.
 
 ## Verification Checklist

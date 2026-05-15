@@ -4,8 +4,9 @@ Use this folder for active responsive specs only.
 
 ## Current Specs
 
-- `HOME-HERO-RESPONSIVE-SPEC.md`: measured Home hero desktop source of truth for the page shell, two-column hero, body rhythm, right portrait, stat pills, and Portfolio Highlight overlay.
+- `HOME-HERO-RESPONSIVE-SPEC.md`: measured Home hero desktop source of truth and reusable `.page-hero-system` spec for Systems, Featured, Gallery/Media, Anaya Beard Case Study, and The Archer. About and Contact are excluded.
 - `HOME-MEDIA-SECTION-LOCK-README.md`: locked Home Media source of truth for card layout, responsive grid behavior, title-below-image captions, 1600px+ caption scaling, shared overlay structure, thumbnail arrows, and single-image overlay state.
+- `HOME-CONTACT-CLOSEOUT-LOCK-README.md`: locked Home Portfolio Materials + Contact closeout source of truth for the two-card grid, document pills, contact form, colors, typography, and breakpoint QA.
 - `../../RESPONSIVE-DESIGN-SYSTEM.md`: global source of truth for breakpoints, page hero left-column rules, headings, eyebrows, body text, pills, cards, overlays, responsive color consistency, and verification.
 - `../image-export/README.md`: locked image export, crop, naming, and asset rules.
 

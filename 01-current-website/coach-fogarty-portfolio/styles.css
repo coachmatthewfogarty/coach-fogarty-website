@@ -28,7 +28,6 @@ section[id],
 #systems,
 #featured-work,
 #credentials,
-#player-development,
 #program-impact,
 #impact,
 #media,
@@ -123,7 +122,6 @@ main {
 .story-card h3,
 .system-card h3,
 .quote-panel h3,
-.innovation-panel h3,
 .achievement-card strong,
 .contact-card h2 {
   font-family: Georgia, "Palatino Linotype", serif;
@@ -225,6 +223,9 @@ main#top .section-heading .eyebrow {
   white-space: nowrap;
 }
 
+/* Legacy/shared hero utilities. The current Home desktop hero does not render
+   .hero-kicker, .hero-actions, or .proof-card, but subpage and older hero
+   variants still use these classes. */
 .hero-kicker {
   display: flex;
   flex-wrap: wrap;
@@ -452,6 +453,9 @@ main#top .section-heading .eyebrow {
   white-space: normal;
 }
 
+/* Legacy Home #impact stat selectors retained for tablet/mobile fallback and
+   historical shared styling. Desktop reuse should target .hero-pill,
+   .hero-pill-main, and .hero-pill-sub instead. */
 main#top #impact.hero-stat-band article strong {
   max-width: 100%;
   margin-bottom: 0;
@@ -644,115 +648,6 @@ main#top #impact.hero-stat-band article span {
   background: rgba(255, 248, 240, 0.58);
 }
 
-#featured-work .innovation-section {
-  position: relative;
-  overflow: hidden;
-  border-color: rgba(152, 105, 31, 0.62);
-  background: #fbf1e2;
-  box-shadow:
-    inset 0 1px 0 rgba(236, 198, 119, 0.78),
-    0 10px 24px rgba(52, 36, 24, 0.08);
-}
-
-#featured-work .innovation-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(210, 158, 63, 0.72);
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(152, 105, 31, 0.22);
-  pointer-events: none;
-}
-
-#featured-work .innovation-section::after {
-  display: none;
-}
-
-#featured-work .innovation-panel {
-  padding: 0;
-  border-color: transparent;
-  background: transparent;
-  box-shadow: none;
-}
-
-#featured-work .innovation-panel .button {
-  border: 1px solid rgba(226, 177, 84, 0.95);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 231, 174, 0.68),
-    0 0 0 1px rgba(152, 105, 31, 0.18),
-    0 8px 18px rgba(143, 45, 30, 0.14);
-}
-
-#featured-work .innovation-section .section-heading {
-  margin-bottom: 13px;
-}
-
-@media (min-width: 1025px) {
-  main#top #featured-work {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-    width: 100%;
-    max-width: none;
-    margin: 28px auto 0;
-    gap: clamp(24px, 2.2vw, 42px);
-  }
-
-  main#top #featured-work .innovation-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: none;
-    min-height: 100%;
-    margin: 0;
-    padding:
-      clamp(30px, 2.6vw, 52px)
-      clamp(28px, 2.5vw, 54px);
-  }
-
-  main#top #featured-work .innovation-section .section-heading {
-    flex: 0 0 auto;
-    margin-bottom: clamp(18px, 1.6vw, 24px);
-  }
-
-  main#top #featured-work .innovation-panel {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    gap: clamp(16px, 1.45vw, 22px);
-    min-height: 0;
-    align-items: stretch;
-  }
-
-  main#top #featured-work .innovation-thumbnail {
-    aspect-ratio: 4 / 3;
-    border-radius: 20px;
-    box-shadow: 0 16px 34px rgba(52, 36, 24, 0.13);
-  }
-
-  main#top #featured-work .innovation-panel p {
-    width: 100%;
-    max-width: 68ch;
-    margin: 0;
-    font-size: clamp(1rem, 0.82rem + 0.18vw, 1.12rem) !important;
-    line-height: 1.55;
-    text-wrap: pretty;
-  }
-
-  main#top #featured-work .innovation-panel > div {
-    flex: 1 1 auto;
-    align-self: stretch;
-  }
-
-  main#top #featured-work .innovation-panel .button {
-    width: 100%;
-    min-height: 52px;
-    padding-right: 24px;
-    padding-left: 24px;
-    font-size: clamp(0.98rem, 0.84rem + 0.18vw, 1.08rem);
-  }
-}
-
 .section-split .split-layout,
 .contact-card {
   display: grid;
@@ -905,8 +800,7 @@ main#top #impact.hero-stat-band article span {
   font-family: Georgia, "Palatino Linotype", serif;
 }
 
-.quote-panel h3,
-.innovation-panel h3 {
+.quote-panel h3 {
   margin: 0 0 14px;
   font-size: 1.45rem;
 }
@@ -1241,8 +1135,7 @@ a.credential-static[href] {
 }
 
 .innovation-section .eyebrow,
-.innovation-section .section-heading h2,
-.innovation-panel h3 {
+.innovation-section .section-heading h2 {
   white-space: nowrap;
   overflow-wrap: normal;
 }
@@ -1250,10 +1143,6 @@ a.credential-static[href] {
 .innovation-section .section-heading h2 {
   font-size: 25px;
   line-height: 27px;
-}
-
-.innovation-panel h3 {
-  font-size: clamp(1.05rem, 1.45vw, 1.32rem);
 }
 
 .innovation-panel > div {
@@ -5343,13 +5232,6 @@ a.credential-static[href] {
     overflow-wrap: anywhere;
   }
 
-  .innovation-panel h3 {
-    min-width: 0;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow-wrap: normal;
-  }
-
   .innovation-panel {
     overflow: hidden;
   }
@@ -5363,7 +5245,6 @@ a.credential-static[href] {
   #systems,
   #featured-work,
   #credentials,
-  #player-development,
   #program-impact,
   #impact,
   #media,
@@ -5686,13 +5567,6 @@ a.credential-static[href] {
     overflow-wrap: anywhere;
   }
 
-  .innovation-panel h3 {
-    min-width: 0;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow-wrap: normal;
-  }
-
   .innovation-panel {
     gap: 14px;
     overflow: hidden;
@@ -5702,13 +5576,6 @@ a.credential-static[href] {
   .innovation-panel > div {
     display: grid;
     gap: 10px;
-  }
-
-  .innovation-panel h3 {
-    margin: 0;
-    font-size: clamp(0.72rem, 2.05vw, 0.96rem);
-    font-weight: 700;
-    line-height: 1.18;
   }
 
   .innovation-panel p {
@@ -5766,7 +5633,6 @@ a.credential-static[href] {
   #systems,
   #featured-work,
   #credentials,
-  #player-development,
   #program-impact,
   #impact,
   #media,
@@ -5843,17 +5709,6 @@ a.credential-static[href] {
     line-height: 1.08;
     white-space: normal;
     overflow-wrap: anywhere;
-  }
-
-  .innovation-panel h3 {
-    max-width: 100%;
-    min-width: 0;
-    margin: 0;
-    font-size: clamp(1.02rem, 4.35vw, 1.16rem);
-    font-weight: 700;
-    line-height: 1.18;
-    white-space: nowrap;
-    overflow-wrap: normal;
   }
 
   .innovation-panel,
@@ -6653,10 +6508,6 @@ a.credential-static[href] {
   .hero-link-row {
     column-gap: 3px;
     font-size: clamp(0.62rem, 3.45vw, 0.72rem);
-  }
-
-  main#top .innovation-panel h3 {
-    font-size: clamp(1.02rem, 4.35vw, 1.16rem);
   }
 
   main#top .library-section .section-heading h2 {
@@ -8429,6 +8280,10 @@ main#top #media .gallery-card .gallery-card-arrow {
   --hero-eyebrow-size: clamp(11.84px, calc(10.56px + 0.12vw), 13.76px);
   --hero-eyebrow-line: 1.15;
   --hero-kicker-size: clamp(15.2px, calc(13.12px + 0.2vw), 17.28px);
+  /* Legacy/shared wide tokens retained for older subpage variants.
+     The Home desktop master lock overrides support width through
+     .hero-left-system/.hero-pill-system and creates its visual right gap
+     by offsetting .hero-right-system, not by shrinking the left track. */
   --hero-wide-gap: 0px;
   --hero-wide-copy-max: 1180px;
   --hero-wide-paragraph-max: 1120px;
@@ -9138,12 +8993,6 @@ main#top #media .gallery-card .gallery-card-arrow {
     border-radius: var(--mobile-inner-radius);
   }
 
-  .innovation-panel h3,
-  main#top .innovation-panel h3 {
-    font-size: 1.08rem;
-    line-height: 1.14;
-  }
-
   .innovation-panel .button {
     width: 100%;
     justify-self: stretch;
@@ -9836,7 +9685,6 @@ main#top .contact-section .section-heading h2,
 .system-card h3,
 .story-card h3,
 .quote-panel h3,
-.innovation-panel h3,
 .media-subsection-heading h3,
 .media-album-heading h3,
 .media-category-card h3,
@@ -9940,10 +9788,9 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   #systems,
   #featured-work,
   #credentials,
-  #player-development,
-  #program-impact,
-  #impact,
-  #media,
+    #program-impact,
+    #impact,
+    #media,
   #playing-career,
   #contact {
     scroll-margin-top: 28px;
@@ -10891,7 +10738,6 @@ main:not(#top) .anaya-hero,
   .system-card h3,
   .story-card h3,
   .quote-panel h3,
-  .innovation-panel h3,
   .media-subsection-heading h3,
   .media-album-heading h3,
   .media-category-card h3,
@@ -12000,8 +11846,7 @@ main#top #systems .system-card .library-actions {
     font-size: var(--type-hero-title-size) !important;
   }
 
-  main#top #systems .section-heading h2,
-  main#top #featured-work .section-heading h2 {
+  main#top #systems .section-heading h2 {
     font-size: var(--type-section-title-size) !important;
   }
 
@@ -12020,8 +11865,7 @@ main#top #systems .system-card .library-actions {
   }
 
   main#top #systems .system-card > h3,
-  main#top #systems .library-card.system-card > h3,
-  main#top #featured-work .innovation-panel h3 {
+  main#top #systems .library-card.system-card > h3 {
     font-size: var(--type-card-title-size) !important;
   }
 
@@ -12042,29 +11886,6 @@ main#top #systems .system-card .library-actions {
     font-size: clamp(0.72rem, calc(0.58rem + 0.9cqw), 0.86rem);
   }
 
-  main#top #featured-work {
-    gap: clamp(22px, 1.5vw, 32px);
-  }
-
-  main#top #featured-work .innovation-section {
-    padding:
-      clamp(28px, 2vw, 40px)
-      clamp(28px, 2vw, 44px);
-  }
-
-  main#top #featured-work .innovation-panel {
-    gap: clamp(14px, 1vw, 18px);
-  }
-
-  main#top #featured-work .innovation-panel p {
-    font-size: var(--type-body-size) !important;
-    line-height: 1.5;
-  }
-
-  main#top #featured-work .innovation-panel .button {
-    min-height: 48px;
-    font-size: var(--type-small-body-size);
-  }
 }
 
 @media (min-width: 2200px) {
@@ -13248,7 +13069,8 @@ main:not(#top) .subpage-hero p:not(.eyebrow) {
   padding-inline: 2px;
 }
 
-/* Portfolio subpage hero alignment: Systems, Featured, Gallery, Archer, and Case Study. */
+/* Legacy/shared subpage hero alignment fallback.
+   Upgraded page heroes use .page-hero-system and the Home hero class hooks below. */
 main.systems-detail-page > .subpage-hero,
 main.featured-page > .featured-hero,
 main.media-library-page > .media-hero,
@@ -14920,69 +14742,6 @@ main.featured-page > .featured-hero .page-highlight-bar a {
   }
 }
 
-/* Homepage featured cards: full-width rows that keep the same card treatment across sizes. */
-main#top > #featured-work {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-}
-
-main#top #featured-work .innovation-section {
-  width: 100%;
-}
-
-main#top #featured-work .innovation-card-copy {
-  display: grid;
-  gap: clamp(8px, 0.85vw, 14px);
-  align-content: center;
-  min-width: 0;
-}
-
-main#top #featured-work .innovation-card-copy .section-heading {
-  margin: 0;
-}
-
-@media (min-width: 760px) {
-  main#top > #featured-work,
-  main#top #featured-work {
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: clamp(18px, 1.4vw, 28px);
-  }
-
-  main#top #featured-work .innovation-section {
-    display: block;
-    min-height: 0;
-    padding:
-      clamp(20px, 1.55vw, 30px)
-      clamp(22px, 2vw, 38px);
-  }
-
-  main#top #featured-work .innovation-panel {
-    display: grid !important;
-    grid-template-columns: minmax(230px, 34%) minmax(0, 1fr);
-    gap: clamp(18px, 1.65vw, 32px);
-    align-items: center;
-  }
-
-  main#top #featured-work .innovation-thumbnail {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 16 / 9;
-    align-self: center;
-  }
-
-  main#top #featured-work .innovation-panel p {
-    max-width: 64ch;
-  }
-
-  main#top #featured-work .innovation-panel .button {
-    align-self: start;
-    justify-self: start;
-    width: min(100%, 460px);
-    max-width: 460px;
-    min-height: clamp(40px, 2.6vw, 46px);
-  }
-}
-
 /* Anaya and Archer detail heroes inherit the homepage hero rhythm. */
 @media (min-width: 1025px) {
   main:not(#top) .anaya-hero h1,
@@ -15277,26 +15036,49 @@ main:not(#top) .anaya-hero p.hero-text:not(.eyebrow),
   }
 }
 
-/* Homepage featured cards: responsive ad units with safe media framing. */
+/* Homepage Featured cards lock: two reusable full-width cards with explicit modifiers. */
 main#top #featured-work {
+  --featured-card-bg: #fbf1e2;
+  --featured-card-radius: 30px;
+  --featured-card-border: rgba(152, 105, 31, 0.62);
+  --featured-copy-max: 820px;
+  --featured-body-max: 680px;
+  --featured-cta-width: 380px;
+  --featured-media-width: minmax(0, 1fr);
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) !important;
   gap: clamp(18px, 2vw, 30px);
   min-width: 0;
 }
 
-main#top #featured-work .innovation-section {
+main#top #featured-work .featured-card {
+  position: relative;
   container-type: inline-size;
   width: 100%;
   min-width: 0;
   overflow: hidden;
   padding: clamp(18px, 4cqw, 34px);
-  border-radius: clamp(22px, 3cqw, 30px);
+  border: 1px solid var(--featured-card-border);
+  border-radius: clamp(22px, 3cqw, var(--featured-card-radius));
+  background: var(--featured-card-bg);
+  box-shadow:
+    inset 0 1px 0 rgba(236, 198, 119, 0.78),
+    0 10px 24px rgba(52, 36, 24, 0.08);
+}
+
+main#top #featured-work .featured-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(210, 158, 63, 0.72);
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(152, 105, 31, 0.22);
+  pointer-events: none;
 }
 
 main#top #featured-work .innovation-panel {
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) !important;
   gap: clamp(14px, 4cqw, 22px);
   align-items: center;
   min-width: 0;
@@ -15321,6 +15103,10 @@ main#top #featured-work .innovation-thumbnail {
   overflow: hidden;
 }
 
+main#top #featured-work .featured-card--anaya .innovation-thumbnail {
+  background: #211a15;
+}
+
 main#top #featured-work .innovation-thumbnail img {
   position: absolute;
   inset: 0;
@@ -15330,12 +15116,7 @@ main#top #featured-work .innovation-thumbnail img {
   object-position: center center !important;
 }
 
-main#top #featured-work .innovation-section:first-child .innovation-thumbnail {
-  background: #211a15;
-}
-
-main#top #featured-work .innovation-section:first-child .innovation-thumbnail img {
-  object-fit: cover !important;
+main#top #featured-work .featured-card--anaya .innovation-thumbnail img {
   object-position: center 50% !important;
 }
 
@@ -15372,14 +15153,14 @@ main#top #featured-work .innovation-proof-chips span {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
-main#top #featured-work .innovation-section .section-heading {
+main#top #featured-work .featured-card .section-heading {
   width: 100%;
   max-width: none;
   margin: 0;
   min-width: 0;
 }
 
-main#top #featured-work .innovation-section .eyebrow {
+main#top #featured-work .featured-card .eyebrow {
   max-width: 100%;
   font-size: clamp(0.72rem, 2.2cqw, 0.96rem) !important;
   line-height: 1.15 !important;
@@ -15389,8 +15170,7 @@ main#top #featured-work .innovation-section .eyebrow {
   white-space: normal !important;
 }
 
-main#top #featured-work .innovation-section .section-heading h2,
-main#top #featured-work .innovation-panel h3 {
+main#top #featured-work .featured-card .section-heading h2 {
   max-width: 100%;
   font-size: var(--mobile-fit-title-size, clamp(1.8rem, 7.8cqw, 2.8rem)) !important;
   line-height: 1 !important;
@@ -15399,7 +15179,7 @@ main#top #featured-work .innovation-panel h3 {
   white-space: normal !important;
 }
 
-main#top #featured-work .innovation-panel p {
+main#top #featured-work .innovation-card-copy > p {
   max-width: 64ch;
   margin: 0;
   font-size: clamp(0.94rem, 3.2cqw, 1.08rem) !important;
@@ -15414,26 +15194,37 @@ main#top #featured-work .innovation-panel .button {
   max-width: none !important;
   min-height: clamp(42px, 10cqw, 50px);
   padding-inline: clamp(16px, 5cqw, 24px);
+  border: 1px solid rgba(226, 177, 84, 0.95);
   font-size: clamp(0.86rem, 2.8cqw, 0.98rem);
   white-space: normal;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 231, 174, 0.68),
+    0 0 0 1px rgba(152, 105, 31, 0.18),
+    0 8px 18px rgba(143, 45, 30, 0.14);
 }
 
 @media (min-width: 760px) {
-  main#top #featured-work .innovation-section {
+  main#top #featured-work {
+    --featured-media-width: clamp(300px, 34cqw, 440px) minmax(0, 1fr);
+  }
+
+  main#top #featured-work .innovation-panel {
+    grid-template-columns: clamp(300px, 34cqw, 440px) minmax(0, 1fr) !important;
+  }
+
+  main#top #featured-work .featured-card {
     padding:
       clamp(20px, 2.1vw, 34px)
       clamp(28px, 3.2vw, 52px);
   }
 
   main#top #featured-work .innovation-panel {
-    grid-template-columns: clamp(300px, 34cqw, 440px) minmax(0, 1fr) !important;
     gap: clamp(28px, 3.2vw, 48px);
   }
 
   main#top #featured-work .innovation-thumbnail {
     justify-self: start;
     align-self: center;
-    aspect-ratio: 4 / 3;
   }
 
   main#top #featured-work .innovation-card-copy {
@@ -15442,16 +15233,15 @@ main#top #featured-work .innovation-panel .button {
     align-content: center;
   }
 
-  main#top #featured-work .innovation-section .eyebrow {
+  main#top #featured-work .featured-card .eyebrow {
     font-size: clamp(0.72rem, 0.9vw, 0.92rem) !important;
   }
 
-  main#top #featured-work .innovation-section .section-heading h2,
-  main#top #featured-work .innovation-panel h3 {
+  main#top #featured-work .featured-card .section-heading h2 {
     font-size: clamp(1.9rem, 2.6vw, 2.85rem) !important;
   }
 
-  main#top #featured-work .innovation-panel p {
+  main#top #featured-work .innovation-card-copy > p {
     max-width: 58ch;
     font-size: clamp(0.95rem, 1.18vw, 1.12rem) !important;
   }
@@ -15464,40 +15254,44 @@ main#top #featured-work .innovation-panel .button {
 }
 
 @media (min-width: 1025px) {
-  main#top #featured-work .innovation-section {
+  main#top #featured-work {
+    --featured-media-width: clamp(330px, calc(537px - 17.27vw), 430px) minmax(0, 1fr);
+    margin: 28px auto 0;
+  }
+
+  main#top #featured-work .innovation-panel {
+    grid-template-columns: clamp(330px, calc(537px - 17.27vw), 430px) minmax(0, 1fr) !important;
+  }
+
+  main#top #featured-work .featured-card {
+    margin: 0;
     padding:
       clamp(18px, 1.8cqw, 28px)
       clamp(36px, 4.2cqw, 64px);
   }
 
   main#top #featured-work .innovation-panel {
-    grid-template-columns: clamp(330px, 28cqw, 430px) minmax(0, 1fr) !important;
     gap: clamp(32px, 3.8cqw, 62px);
   }
 
-  main#top #featured-work .innovation-section:first-child .innovation-panel {
-    grid-template-columns: clamp(330px, 28cqw, 430px) minmax(0, 1fr) !important;
-  }
-
   main#top #featured-work .innovation-card-copy {
-    width: min(100%, 820px);
+    width: min(100%, var(--featured-copy-max));
     gap: clamp(14px, 1.15cqw, 18px);
   }
 
-  main#top #featured-work .innovation-section .eyebrow {
+  main#top #featured-work .featured-card .eyebrow {
     color: var(--red);
     font-size: clamp(0.76rem, 0.58rem + 0.18vw, 0.82rem) !important;
     letter-spacing: 0.15em;
   }
 
-  main#top #featured-work .innovation-section .section-heading h2,
-  main#top #featured-work .innovation-panel h3 {
+  main#top #featured-work .featured-card .section-heading h2 {
     font-size: clamp(2rem, 2.8vw, 3rem) !important;
     line-height: 0.98 !important;
   }
 
-  main#top #featured-work .innovation-panel p {
-    max-width: 680px;
+  main#top #featured-work .innovation-card-copy > p {
+    max-width: var(--featured-body-max);
     font-size: clamp(1rem, 0.86rem + 0.18vw, 1.08rem) !important;
     line-height: 1.6 !important;
   }
@@ -15515,45 +15309,61 @@ main#top #featured-work .innovation-panel .button {
   }
 
   main#top #featured-work .innovation-panel .button {
-    width: min(100%, 380px) !important;
+    width: min(100%, var(--featured-cta-width)) !important;
     min-height: 44px;
     margin-top: 4px;
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1180px) {
-  main#top #featured-work .innovation-panel,
-  main#top #featured-work .innovation-section:first-child .innovation-panel {
-    grid-template-columns: clamp(360px, 35cqw, 430px) minmax(0, 1fr) !important;
-    gap: clamp(26px, 3cqw, 42px);
+@media (min-width: 1025px) and (max-width: 1199px) {
+  main#top #featured-work {
+    --featured-cta-width: 360px;
   }
+}
 
-  main#top #featured-work .innovation-section {
+@media (min-width: 1025px) and (max-width: 1180px) {
+
+  main#top #featured-work .featured-card {
     padding:
       clamp(28px, 3cqw, 38px)
       clamp(30px, 3.8cqw, 48px);
   }
 
+  main#top #featured-work .innovation-panel {
+    gap: clamp(26px, 3cqw, 42px);
+  }
+
   main#top #featured-work .innovation-card-copy {
     width: min(100%, 740px);
   }
+}
 
-  main#top #featured-work .innovation-panel .button {
-    width: min(100%, 360px) !important;
+@media (min-width: 1181px) {
+  main#top #featured-work {
+    --featured-media-width: clamp(330px, 28cqw, 430px) minmax(0, 1fr);
+  }
+
+  main#top #featured-work .innovation-panel {
+    grid-template-columns: clamp(330px, 28cqw, 430px) minmax(0, 1fr) !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  main#top #featured-work {
+    --featured-media-width: 430px minmax(0, 1fr);
+  }
+
+  main#top #featured-work .innovation-panel {
+    grid-template-columns: 430px minmax(0, 1fr) !important;
   }
 }
 
 @media (max-width: 520px) {
-  main#top #featured-work .innovation-section {
+  main#top #featured-work .featured-card {
     padding: clamp(16px, 5vw, 20px);
   }
 
-  main#top #featured-work .innovation-thumbnail {
-    aspect-ratio: 4 / 3;
-  }
-
-  main#top #featured-work .innovation-section .section-heading h2,
-  main#top #featured-work .innovation-panel h3 {
+  main#top #featured-work .featured-card .section-heading h2 {
     font-size: var(--mobile-fit-title-size, clamp(1.72rem, 9vw, 2.35rem)) !important;
   }
 
@@ -18950,112 +18760,6 @@ main.systems-detail-page:not(#top) > .subpage-hero .page-highlight-bar > p:not(.
   }
 }
 
-/* Home contact closeout: portfolio documents paired with the contact form. */
-main#top > .contact-section {
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-main#top .contact-closeout-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-  gap: 28px;
-  align-items: stretch;
-  width: 100%;
-}
-
-main#top .document-card,
-main#top .contact-form-card {
-  height: 100%;
-  min-width: 0;
-  border: 1px solid rgba(31, 27, 22, 0.1);
-  border-radius: clamp(24px, 2.4vw, 30px);
-  background:
-    linear-gradient(180deg, rgba(255, 253, 248, 0.9), rgba(252, 243, 230, 0.74)),
-    rgba(255, 250, 243, 0.8);
-  box-shadow: 0 18px 42px rgba(52, 36, 24, 0.1);
-}
-
-main#top .document-card {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 16px;
-  padding: 34px clamp(36px, 2.4vw, 58px);
-}
-
-main#top .contact-form-card {
-  display: grid;
-  gap: 16px;
-  align-items: start;
-  padding: 34px clamp(36px, 2.4vw, 58px);
-}
-
-main#top .home-closeout-heading {
-  display: block !important;
-  container-type: normal !important;
-  margin: 0;
-}
-
-main#top .document-card-copy {
-  gap: 0;
-}
-
-main#top .document-card-copy h2,
-main#top .home-closeout-heading h2 {
-  margin: 0;
-}
-
-main#top .document-actions {
-  display: grid;
-  grid-template-rows: repeat(7, minmax(44px, 1fr));
-  gap: 12px;
-  min-height: 0;
-}
-
-main#top .document-actions .button {
-  width: 100%;
-  min-height: 44px;
-  justify-content: center;
-  padding-inline: 16px;
-  font-size: inherit;
-  line-height: inherit;
-  text-align: center;
-  white-space: normal;
-}
-
-main#top .contact-form-card .contact-form {
-  order: initial;
-  align-self: start;
-  width: 100%;
-}
-
-@media (max-width: 1024px) {
-  main#top .contact-closeout-grid {
-    grid-template-columns: 1fr;
-  }
-
-  main#top .document-card {
-    grid-template-rows: auto auto;
-  }
-
-  main#top .document-actions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(44px, auto)) auto;
-    gap: 10px;
-  }
-
-  main#top .document-actions .button {
-    min-width: 0;
-    padding-inline: 12px;
-  }
-
-  main#top .document-actions .button-primary {
-    grid-column: 1 / -1;
-  }
-}
-
 /* Home desktop type lock: keep hero separate, make every other section predictable. */
 @media (min-width: 1025px) {
   main#top {
@@ -19165,7 +18869,7 @@ main#top #featured-work .innovation-section .eyebrow {
   color: var(--red) !important;
 }
 
-/* Phase 8 Home hero spacing trial: lock the measured edge lanes and align the 1920 image bottom rhythm. */
+/* Home hero desktop spacing lock: measured edge lanes and image heights. */
 @media (min-width: 1025px) {
   body .page-shell main#top > .hero {
     column-gap: var(--home-hero-column-gap) !important;
@@ -19632,28 +19336,6 @@ body .page-shell :is(
   }
 }
 
-/* Home hero wide-desktop legacy/shared overlay internals.
-   Final pill width and scale are controlled by the scoped .hero-pill-system/.hero-pill-* master lock. */
-@media (min-width: 2200px) {
-  body .page-shell main#top > .hero .hero-mobile-highlight {
-    left: 50% !important;
-    right: auto !important;
-    gap: 8px !important;
-    width: min(calc(100% - 26px), clamp(560px, 25vw, 680px)) !important;
-    max-width: min(calc(100% - 26px), clamp(560px, 25vw, 680px)) !important;
-    padding: 13px 16px !important;
-    transform: translateX(-50%);
-  }
-
-  body .page-shell main#top > .hero .hero-mobile-highlight p {
-    font-size: 15px !important;
-  }
-
-  body .page-shell main#top > .hero .hero-mobile-highlight div {
-    font-size: 17px !important;
-  }
-}
-
 /* Phase 10 desktop body rhythm: match the approved Home hero feel on major site copy. */
 @media (min-width: 1025px) {
   body .page-shell :is(
@@ -19937,7 +19619,8 @@ body .page-shell :is(
   }
 }
 
-/* Approved Home hero left-column system: shared desktop body rhythm and pill sizing. */
+/* Legacy/shared subpage left-column fallback.
+   The reusable desktop page-hero lock now uses .hero-left-system and .hero-pill-system. */
 @media (min-width: 1025px) {
   body .page-shell :is(
     main.systems-detail-page > .subpage-hero,
@@ -20261,14 +19944,6 @@ body .page-shell :is(
   }
 }
 
-@media (min-width: 1350px) and (max-width: 1499px) {
-  body .page-shell main#top:not(#approved-hero-left-lock) > .hero .hero-text {
-    max-width: 100% !important;
-    font-size: 17.5px !important;
-    line-height: 32px !important;
-  }
-}
-
 @media (min-width: 1500px) and (max-width: 1719px) {
   body .page-shell :is(
     main.systems-detail-page:not(#approved-hero-left-lock) > .subpage-hero .systems-jump-nav,
@@ -20332,6 +20007,11 @@ body .page-shell :is(
 @media (min-width: 1025px) {
   body .page-shell main#top > .hero {
     --home-hero-left-system-max: var(--hero-copy-max, 980px);
+    --home-hero-pill-min-height: clamp(58px, 4vw, 76px);
+    --home-hero-pill-pad-y: clamp(7px, 0.72vw, 12px);
+    --home-hero-pill-pad-x: clamp(10px, 1vw, 18px);
+    --home-hero-pill-main-size: var(--type-stat-value-size);
+    --home-hero-pill-sub-size: var(--type-stat-label-size);
   }
 
   body .page-shell main#top > .hero .hero-left-system,
@@ -20366,11 +20046,13 @@ body .page-shell :is(
     box-shadow: none !important;
   }
 
-  body .page-shell main#top > .hero .hero-pill-system > .hero-pill {
+  body .page-shell main#top:not(#home-hero-pill-class-lock) > .hero .hero-pill-system > .hero-pill {
     display: grid !important;
     min-width: 0 !important;
+    min-height: var(--home-hero-pill-min-height) !important;
     place-items: center !important;
     gap: 5px !important;
+    padding: var(--home-hero-pill-pad-y) var(--home-hero-pill-pad-x) !important;
     border-color: rgba(184, 135, 47, 0.58) !important;
     border-radius: 999px !important;
     background:
@@ -20383,26 +20065,50 @@ body .page-shell :is(
       0 14px 34px rgba(52, 36, 24, 0.1) !important;
   }
 
-  body .page-shell main#top > .hero .hero-pill-main {
+  body .page-shell main#top:not(#home-hero-pill-class-lock) > .hero .hero-pill-system > .hero-pill > .hero-pill-main {
     display: block !important;
     max-width: 100% !important;
     color: var(--ink) !important;
-    font-size: clamp(18px, 1.4vw, 28px) !important;
+    font-size: var(--home-hero-pill-main-size) !important;
     font-weight: 800 !important;
     line-height: 1 !important;
     overflow-wrap: normal !important;
     white-space: nowrap !important;
   }
 
-  body .page-shell main#top > .hero .hero-pill-sub {
+  body .page-shell main#top:not(#home-hero-pill-class-lock) > .hero .hero-pill-system > .hero-pill > .hero-pill-sub {
     display: block !important;
     max-width: 100% !important;
     color: var(--muted) !important;
-    font-size: clamp(11px, 0.8vw, 15px) !important;
+    font-size: var(--home-hero-pill-sub-size) !important;
     font-weight: 700 !important;
     line-height: 1 !important;
     overflow-wrap: normal !important;
     white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1240px) {
+  body .page-shell main#top > .hero {
+    --home-hero-pill-min-height: clamp(48px, 4.4vw, 58px);
+    --home-hero-pill-pad-y: 5px;
+    --home-hero-pill-pad-x: 8px;
+    --home-hero-pill-main-size: 15.2px;
+    --home-hero-pill-sub-size: 8.64px;
+  }
+}
+
+@media (min-width: 1350px) and (max-width: 1499px) {
+  body .page-shell main#top > .hero .hero-left-system > .hero-text {
+    font-size: 17.5px !important;
+    line-height: 32px !important;
+  }
+}
+
+@media (min-width: 1720px) and (max-width: 2199px) {
+  body .page-shell main#top > .hero {
+    --home-hero-pill-main-size: clamp(1.08rem, calc(0.82rem + 0.48vw), 1.52rem);
+    --home-hero-pill-sub-size: clamp(0.64rem, calc(0.5rem + 0.2vw), 0.8rem);
   }
 }
 
@@ -20433,9 +20139,9 @@ body .page-shell :is(
     display: grid !important;
     width: 100% !important;
     min-width: 0 !important;
-    align-self: start !important;
+    align-self: end !important;
     justify-self: stretch !important;
-    align-content: start !important;
+    align-content: end !important;
     margin: 0 !important;
   }
 
@@ -20446,7 +20152,7 @@ body .page-shell :is(
     height: var(--home-hero-image-height, var(--hero-portrait-height)) !important;
     min-height: 0 !important;
     margin: 0 !important;
-    align-self: start !important;
+    align-self: end !important;
     overflow: hidden !important;
     border-radius: 28px !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
@@ -20487,7 +20193,11 @@ body .page-shell :is(
   body .page-shell main#top > .hero {
     --home-hero-column-gap: 0px;
     --home-hero-image-height: clamp(500px, calc(644px - 6vw), 512px);
-    --home-hero-pill-lift: 0px;
+    --home-hero-pill-min-height: 82px;
+    --home-hero-pill-pad-y: 10px;
+    --home-hero-pill-pad-x: 16px;
+    --home-hero-pill-main-size: 26px;
+    --home-hero-pill-sub-size: 13.5px;
     --home-hero-right-visual-gap: clamp(32px, 2vw, 56px);
   }
 
@@ -20496,25 +20206,834 @@ body .page-shell :is(
   }
 
   body .page-shell main#top > .hero .hero-portrait-overlay {
+    left: 50% !important;
+    right: auto !important;
+    gap: 8px !important;
     width: min(calc(100% - 26px), clamp(560px, 25vw, 680px)) !important;
     max-width: min(calc(100% - 26px), clamp(560px, 25vw, 680px)) !important;
+    padding: 13px 16px !important;
+    transform: translateX(-50%) !important;
   }
 
-  body .page-shell main#top > .hero .hero-pill-system {
-    transform: translateY(calc(var(--home-hero-pill-lift) * -1)) !important;
+  body .page-shell main#top > .hero .hero-portrait-overlay-title {
+    font-size: 15px !important;
   }
 
-  body .page-shell main#top > .hero #impact.hero-pill-system > .hero-pill {
-    min-height: 82px !important;
-    padding: 10px 16px !important;
+  body .page-shell main#top > .hero .hero-portrait-overlay-text {
+    font-size: 17px !important;
+  }
+}
+
+/* Reusable Page Hero Desktop Master Lock
+   Source: approved Home Hero Desktop Master Lock. Scoped to Systems, Featured,
+   Gallery/Media, Anaya Case Study, and The Archer only. About and Contact are
+   intentionally excluded. Legacy .subpage-hero/.page-highlight-bar/button rules
+   remain as shared fallback for tablet/mobile and older page variants. */
+@media (min-width: 1025px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --hero-portrait-width: var(--hero-media-portrait-width);
+    --hero-portrait-height: var(--hero-media-portrait-height);
+    --home-hero-top-inset: 28.2px;
+    --home-hero-side-inset: 36px;
+    --home-hero-bottom-inset: 23px;
+    --home-hero-column-gap: 33.28px;
+    --home-hero-image-height: 380.5px;
+    --home-hero-left-system-max: var(--hero-copy-max, 980px);
+    --home-hero-pill-min-height: clamp(58px, 4vw, 76px);
+    --home-hero-pill-pad-y: clamp(7px, 0.72vw, 12px);
+    --home-hero-pill-pad-x: clamp(10px, 1vw, 18px);
+    --home-hero-pill-main-size: var(--type-stat-value-size);
+    --home-hero-pill-sub-size: var(--type-stat-label-size);
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) var(--hero-portrait-width) !important;
+    grid-template-areas:
+      "copy portrait"
+      "stats portrait" !important;
+    grid-template-rows: minmax(0, 1fr) auto !important;
+    align-items: stretch !important;
+    width: min(var(--page-shell-width), 100%) !important;
+    min-height: 0 !important;
+    margin: 24px auto 32px !important;
+    padding:
+      var(--home-hero-top-inset)
+      var(--home-hero-side-inset)
+      var(--home-hero-bottom-inset) !important;
+    column-gap: var(--home-hero-column-gap) !important;
+    row-gap: 0 !important;
+    overflow: visible !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 32px !important;
+    background: linear-gradient(135deg, rgba(255, 248, 237, 0.94), rgba(246, 236, 219, 0.78)) !important;
+    box-shadow: var(--shadow) !important;
   }
 
-  body .page-shell main#top > .hero #impact.hero-pill-system > .hero-pill > .hero-pill-main {
-    font-size: 26px !important;
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-left-system,
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system {
+    justify-self: start !important;
+    width: min(100%, var(--home-hero-left-system-max)) !important;
+    max-width: min(100%, var(--home-hero-left-system-max)) !important;
+    min-width: 0 !important;
   }
 
-  body .page-shell main#top > .hero #impact.hero-pill-system > .hero-pill > .hero-pill-sub {
-    font-size: 13.5px !important;
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-left-system {
+    grid-area: copy !important;
+    align-self: start !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > :is(.eyebrow, h1, .hero-text) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > .hero-text {
+    margin: 25.5px 0 0 !important;
+    color: var(--muted) !important;
+    font-size: var(--hero-body-size) !important;
+    font-weight: 500 !important;
+    line-height: var(--hero-body-line) !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > .eyebrow {
+    font-size: var(--hero-eyebrow-size) !important;
+    line-height: var(--hero-eyebrow-line) !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > h1 {
+    font-size: var(--hero-title-size) !important;
+    line-height: var(--hero-title-line) !important;
+    white-space: normal !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system {
+    grid-area: stats !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-self: end !important;
+    gap: var(--approved-hero-pill-gap, 12px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system > .hero-pill {
+    box-sizing: border-box !important;
+    display: grid !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: var(--home-hero-pill-min-height) !important;
+    place-items: center !important;
+    gap: 5px !important;
+    padding: var(--home-hero-pill-pad-y) var(--home-hero-pill-pad-x) !important;
+    border: 1.5px solid rgba(184, 135, 47, 0.58) !important;
+    border-radius: 999px !important;
+    background:
+      linear-gradient(180deg, rgba(255, 252, 247, 0.94), rgba(250, 237, 218, 0.78)),
+      rgba(255, 250, 243, 0.86) !important;
+    color: var(--text) !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.75),
+      0 0 0 1px rgba(255, 246, 229, 0.72),
+      0 14px 34px rgba(52, 36, 24, 0.1) !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system > .hero-pill > .hero-pill-main {
+    display: block !important;
+    max-width: 100% !important;
+    color: var(--ink) !important;
+    font-size: var(--home-hero-pill-main-size) !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    overflow-wrap: normal !important;
+    white-space: normal !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system > .hero-pill > .hero-pill-sub {
+    display: block !important;
+    max-width: 100% !important;
+    color: var(--muted) !important;
+    font-size: var(--home-hero-pill-sub-size) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    overflow-wrap: normal !important;
+    white-space: normal !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-right-system {
+    grid-area: portrait !important;
+    display: grid !important;
+    grid-template: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    align-self: end !important;
+    justify-self: stretch !important;
+    align-content: end !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-card {
+    position: relative !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: var(--home-hero-image-height, var(--hero-portrait-height)) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    align-self: end !important;
+    overflow: hidden !important;
+    aspect-ratio: auto !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 28px !important;
+    background: #d8c3a6 !important;
+    box-shadow: var(--shadow) !important;
+    transform: none !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-picture {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-image {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    object-position: 50% 0% !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay {
+    position: absolute !important;
+    right: clamp(10px, 0.85vw, 14px) !important;
+    bottom: clamp(10px, 0.9vw, 18px) !important;
+    left: clamp(10px, 0.85vw, 14px) !important;
+    display: grid !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    pointer-events: auto !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 14px !important;
+    background: rgba(32, 28, 24, 0.82) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 14px 30px rgba(18, 14, 10, 0.24) !important;
+    backdrop-filter: blur(12px);
+    transform: none !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-title {
+    margin: 0 !important;
+    color: var(--gold) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-text {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: calc(100% - var(--overlay-link-row-inset, 6px)) !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    color: rgba(255, 246, 230, 0.56) !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Page hero class-authority lock: keep old ID-based subpage fallbacks from
+   narrowing pills or insetting the image card after the reusable hooks are present. */
+@media (min-width: 1025px) {
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system {
+    grid-area: stats !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: min(100%, var(--home-hero-left-system-max)) !important;
+    max-width: min(100%, var(--home-hero-left-system-max)) !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system > .hero-pill {
+    height: auto !important;
+    min-height: var(--home-hero-pill-min-height) !important;
+    padding: var(--home-hero-pill-pad-y) var(--home-hero-pill-pad-x) !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system > .hero-pill > .hero-pill-main {
+    font-size: var(--home-hero-pill-main-size) !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock) > .anaya-hero.page-hero-system
+  ) > .hero-pill-system > .hero-pill > .hero-pill-sub {
+    font-size: var(--home-hero-pill-sub-size) !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock) > .anaya-hero.page-hero-system
+  ) .hero-portrait-card {
+    width: 100% !important;
+    max-width: none !important;
+    height: var(--home-hero-image-height, var(--hero-portrait-height)) !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > .hero-text {
+    font-size: 16px !important;
+    line-height: 24.32px !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1240px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --home-hero-pill-min-height: clamp(48px, 4.4vw, 58px);
+    --home-hero-pill-pad-y: 5px;
+    --home-hero-pill-pad-x: 8px;
+    --home-hero-pill-main-size: 15.2px;
+    --home-hero-pill-sub-size: 8.64px;
+  }
+}
+
+@media (min-width: 1350px) and (max-width: 1499px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --home-hero-top-inset: 31.7px;
+    --home-hero-side-inset: 36px;
+    --home-hero-bottom-inset: 25.9px;
+    --home-hero-column-gap: 37.44px;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > .hero-text {
+    font-size: 17.5px !important;
+    line-height: 32px !important;
+  }
+}
+
+@media (min-width: 1350px) and (max-width: 1419px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --home-hero-image-height: 389.5px;
+  }
+}
+
+@media (min-width: 1420px) and (max-width: 1499px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --home-hero-image-height: 384.6px;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1719px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --home-hero-top-inset: 31.7px;
+    --home-hero-side-inset: 36px;
+    --home-hero-bottom-inset: 25.9px;
+    --home-hero-column-gap: 37.44px;
+    --home-hero-image-height: 370px;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1599px) {
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > .hero-text {
+    font-size: 17.25px !important;
+    line-height: 28px !important;
+  }
+}
+
+@media (min-width: 1720px) and (max-width: 2199px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --home-hero-top-inset: 36px;
+    --home-hero-side-inset: 46.1px;
+    --home-hero-bottom-inset: 30px;
+    --home-hero-column-gap: 38.4px;
+    --home-hero-image-height: 380.6px;
+    --home-hero-pill-main-size: clamp(1.08rem, calc(0.82rem + 0.48vw), 1.52rem);
+    --home-hero-pill-sub-size: clamp(0.64rem, calc(0.5rem + 0.2vw), 0.8rem);
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 2199px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --home-hero-left-system-max: 980px;
+  }
+}
+
+@media (min-width: 1920px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --home-hero-left-system-max: 100%;
+  }
+}
+
+@media (min-width: 2200px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) {
+    --hero-portrait-width: var(--hero-wide-portrait-width);
+    --hero-portrait-height: var(--hero-wide-portrait-height);
+    --home-hero-top-inset: 36px;
+    --home-hero-side-inset: 58px;
+    --home-hero-bottom-inset: 30px;
+    --home-hero-column-gap: 0px;
+    --home-hero-image-height: clamp(500px, calc(644px - 6vw), 512px);
+    --home-hero-pill-min-height: 82px;
+    --home-hero-pill-pad-y: 10px;
+    --home-hero-pill-pad-x: 16px;
+    --home-hero-pill-main-size: 26px;
+    --home-hero-pill-sub-size: 13.5px;
+    --home-hero-right-visual-gap: clamp(32px, 2vw, 56px);
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) > .hero-right-system {
+    transform: translateX(var(--home-hero-right-visual-gap)) !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay {
+    left: 50% !important;
+    right: auto !important;
+    gap: 8px !important;
+    width: min(calc(100% - 26px), clamp(560px, 25vw, 680px)) !important;
+    max-width: min(calc(100% - 26px), clamp(560px, 25vw, 680px)) !important;
+    padding: 13px 16px !important;
+    transform: translateX(-50%) !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-title {
+    font-size: 15px !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-text {
+    font-size: 17px !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1349px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay {
+    gap: 8px !important;
+    padding: 10px 12px !important;
+    --overlay-link-row-inset: 6px;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-title {
+    font-size: 11.8px !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-text {
+    font-size: 13.2px !important;
+  }
+}
+
+@media (min-width: 1350px) and (max-width: 1719px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay {
+    gap: 8px !important;
+    padding: 10.8px 12px !important;
+    --overlay-link-row-inset: 0px;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-title {
+    font-size: 12px !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-text {
+    font-size: 13.4px !important;
+  }
+}
+
+@media (min-width: 1720px) and (max-width: 2199px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay {
+    gap: 10px !important;
+    padding: 11.904px !important;
+    --overlay-link-row-inset: 8px;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-title {
+    font-size: 13.2px !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system,
+    main:not(#top) > .anaya-hero.page-hero-system
+  ) .hero-portrait-overlay-text {
+    font-size: 14.75px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system
+  ) > .hero-left-system {
+    grid-area: copy !important;
+  }
+
+  body .page-shell main.systems-detail-page > .page-hero-system {
+    grid-template-areas:
+      "copy"
+      "stats"
+      "portrait" !important;
+  }
+
+  body .page-shell :is(
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system
+  ) {
+    grid-template-areas:
+      "copy"
+      "stats"
+      "portrait" !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system
+  ) > .hero-pill-system {
+    grid-area: stats !important;
+  }
+
+  body .page-shell :is(
+    main.systems-detail-page > .page-hero-system,
+    main.featured-page > .page-hero-system,
+    main.media-library-page > .page-hero-system,
+    main.archer-page > .page-hero-system
+  ) > .hero-right-system {
+    grid-area: portrait !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock):not(#page-hero-type-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock):not(#page-hero-type-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock):not(#page-hero-type-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock):not(#page-hero-type-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock):not(#page-hero-type-lock) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > .hero-text {
+    font-size: 16px !important;
+    line-height: 24.32px !important;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1599px) {
+  body .page-shell :is(
+    main.systems-detail-page:not(#page-hero-master-lock):not(#page-hero-type-lock) > .page-hero-system,
+    main.featured-page:not(#page-hero-master-lock):not(#page-hero-type-lock) > .page-hero-system,
+    main.media-library-page:not(#page-hero-master-lock):not(#page-hero-type-lock) > .page-hero-system,
+    main.archer-page:not(#page-hero-master-lock):not(#page-hero-type-lock) > .page-hero-system,
+    main:not(#top):not(#page-hero-master-lock):not(#page-hero-type-lock) > .anaya-hero.page-hero-system
+  ) > .hero-left-system > .hero-text {
+    font-size: 17.25px !important;
+    line-height: 28px !important;
   }
 }
 
@@ -20892,5 +21411,296 @@ body .page-shell :is(
     border: 0;
     border-radius: 0;
     background: transparent;
+  }
+}
+
+/* Home Portfolio Materials + Contact closeout lock. */
+main#top > .contact-section {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main#top .contact-closeout-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 28px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+body .page-shell main#top .document-card,
+body .page-shell main#top .contact-form-card {
+  display: grid !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 34px clamp(36px, 2.4vw, 58px) !important;
+  border: 1px solid rgba(31, 27, 22, 0.1) !important;
+  border-radius: clamp(24px, 2.4vw, 30px) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.9), rgba(252, 243, 230, 0.74)),
+    rgba(255, 250, 243, 0.8) !important;
+  box-shadow: 0 18px 42px rgba(52, 36, 24, 0.1) !important;
+}
+
+body .page-shell main#top .document-card {
+  grid-template-rows: auto auto !important;
+  gap: 16px !important;
+}
+
+body .page-shell main#top .contact-form-card {
+  align-items: start !important;
+  gap: 16px !important;
+}
+
+body .page-shell main#top .home-closeout-heading {
+  display: block !important;
+  container-type: normal !important;
+  margin: 0 !important;
+}
+
+body .page-shell main#top .document-card-copy {
+  gap: 0 !important;
+}
+
+body .page-shell main#top .home-closeout-heading > .eyebrow {
+  margin: 0 0 12px !important;
+  color: var(--red) !important;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
+  font-size: 10.88px !important;
+  font-weight: 700 !important;
+  line-height: 13.056px !important;
+  letter-spacing: clamp(0.08em, 0.16cqw, 0.14em) !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+body .page-shell main#top .home-closeout-heading > h2 {
+  margin: 0 !important;
+  color: var(--text) !important;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+  white-space: normal !important;
+}
+
+body .page-shell main#top .document-actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(3, minmax(44px, auto)) auto !important;
+  gap: 10px !important;
+  min-height: 0 !important;
+}
+
+body .page-shell main#top .document-actions .button {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+  justify-content: center !important;
+  padding-inline: 12px !important;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
+  font-size: inherit !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  text-align: center !important;
+  white-space: normal !important;
+}
+
+body .page-shell main#top .document-actions .button-primary {
+  grid-column: 1 / -1 !important;
+}
+
+body .page-shell main#top .contact-form-card .contact-form,
+body .page-shell main#top .contact-form,
+body .page-shell main#top .contact-name-row {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 7px !important;
+  width: 100% !important;
+}
+
+body .page-shell main#top .contact-form-card .contact-form {
+  order: initial !important;
+  align-self: start !important;
+}
+
+body .page-shell main#top .contact-form label {
+  display: grid !important;
+  gap: 5px !important;
+  color: var(--red) !important;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
+  font-size: 11.84px !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+}
+
+body .page-shell main#top .contact-form input,
+body .page-shell main#top .contact-form select,
+body .page-shell main#top .contact-form textarea {
+  width: 100% !important;
+  min-width: 0 !important;
+  border: 1px solid rgba(158, 111, 53, 0.26) !important;
+  border-radius: 17px !important;
+  background-color: rgba(255, 255, 252, 0.9) !important;
+  color: var(--text) !important;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 19.2px !important;
+  letter-spacing: normal !important;
+  padding: 10px 14px !important;
+  outline: none !important;
+}
+
+body .page-shell main#top .contact-form input,
+body .page-shell main#top .contact-form select {
+  min-height: 39px !important;
+}
+
+body .page-shell main#top .contact-form select {
+  appearance: none !important;
+  background-image: none !important;
+  padding-right: 52px !important;
+}
+
+body .page-shell main#top .contact-form .select-field {
+  position: relative !important;
+}
+
+body .page-shell main#top .contact-form .select-field::after {
+  right: 18px !important;
+  bottom: 15px !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-right: 2px solid var(--red) !important;
+  border-bottom: 2px solid var(--red) !important;
+}
+
+body .page-shell main#top .contact-form textarea {
+  min-height: 132px !important;
+  height: 132px !important;
+  resize: vertical !important;
+}
+
+body .page-shell main#top .contact-form input:focus,
+body .page-shell main#top .contact-form select:focus,
+body .page-shell main#top .contact-form textarea:focus {
+  border-color: rgba(170, 62, 35, 0.74) !important;
+  background-color: #fffefa !important;
+  box-shadow: 0 0 0 4px rgba(194, 138, 53, 0.14) !important;
+}
+
+body .page-shell main#top .contact-form .button {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+  margin-top: 0 !important;
+  border: 1px solid rgba(170, 62, 35, 0.32) !important;
+  border-radius: 999px !important;
+  color: #fffaf1 !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, var(--red), #c4542c) !important;
+  box-shadow: 0 12px 24px rgba(170, 62, 35, 0.16) !important;
+}
+
+@media (max-width: 430px) {
+  body .page-shell main#top .home-closeout-heading > .eyebrow {
+    margin-bottom: 4px !important;
+  }
+
+  body .page-shell main#top .home-closeout-heading > h2 {
+    font-size: 22.5px !important;
+  }
+
+  body .page-shell main#top .contact-form .button {
+    padding-inline: 12px !important;
+    font-size: 13.44px !important;
+    line-height: 14.784px !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1024px) {
+  body .page-shell main#top .home-closeout-heading > .eyebrow {
+    font-size: clamp(11.2px, calc(8.32px + 0.375vw), 12.16px) !important;
+    line-height: 1.15 !important;
+  }
+}
+
+@media (min-width: 821px) {
+  body .page-shell main#top .contact-form-card .contact-form,
+  body .page-shell main#top .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px 16px !important;
+  }
+
+  body .page-shell main#top .contact-form-card .contact-name-row,
+  body .page-shell main#top .contact-name-row {
+    grid-column: 1 / -1 !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  body .page-shell main#top .contact-form label:has(textarea),
+  body .page-shell main#top .contact-form .button {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main#top .contact-closeout-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) !important;
+  }
+
+  body .page-shell main#top .document-card {
+    grid-template-rows: auto minmax(0, 1fr) !important;
+  }
+
+  body .page-shell main#top .document-card,
+  body .page-shell main#top .contact-form-card {
+    gap: var(--section-title-to-content-gap, 24px) !important;
+  }
+
+  body .page-shell main#top .home-closeout-heading > .eyebrow {
+    margin-bottom: var(--section-eyebrow-to-title-gap, 10px) !important;
+    font-size: var(--section-eyebrow-size-desktop, 12px) !important;
+    line-height: var(--section-eyebrow-line-desktop, 15px) !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  body .page-shell main#top .home-closeout-heading > h2 {
+    font-family: Georgia, "Palatino Linotype", serif !important;
+    font-size: var(--section-title-size-desktop, clamp(36px, 2.1vw, 42px)) !important;
+    line-height: var(--section-title-line-desktop, 1.05) !important;
+    letter-spacing: 0 !important;
+  }
+
+  body .page-shell main#top .document-actions {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(7, minmax(44px, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  body .page-shell main#top .document-actions .button {
+    min-width: auto !important;
+    padding-inline: 16px !important;
+    font-size: 15px !important;
+  }
+
+  body .page-shell main#top .document-actions .button-primary {
+    grid-column: auto !important;
+  }
+
+  body .page-shell main#top .contact-form .button {
+    min-width: auto !important;
+    font-size: 14px !important;
+    line-height: normal !important;
   }
 }
