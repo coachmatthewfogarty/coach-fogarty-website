@@ -1,12 +1,12 @@
 # HOME HERO DESKTOP MASTER LOCK
 
-Date: 2026-05-14
+Date: 2026-05-15
 
-The Home Hero desktop system is the approved source for desktop page hero systems. It has now been applied to Systems, Featured, Gallery/Media, Anaya Beard Case Study, and The Archer through the scoped `.page-hero-system` hook. About and Contact remain excluded.
+The Home Hero desktop system is the approved source for page hero systems. It has now been applied to Home, Systems, Featured, Gallery/Media, Anaya Beard Case Study, The Archer, and Credentials through the scoped `.page-hero-system` hook. About and Contact remain excluded.
 
 ## Scope
 
-Desktop lock begins at `1025px`. Tablet and mobile keep their existing shared/legacy rules.
+Desktop lock begins at `1025px`. Tablet and mobile now use the same `.page-hero-system` source of truth.
 
 Reusable page heroes must use the Home hero class hooks:
 
@@ -38,7 +38,7 @@ Do not make `#impact`, `main#top`, or Home-only section ids part of any reusable
 - `.hero-portrait-picture` and `.hero-portrait-image` fill the portrait card.
 - `.hero-portrait-image` keeps `object-fit: cover` and `object-position: 50% 0%`.
 - `.hero-portrait-overlay`, `.hero-portrait-overlay-title`, and `.hero-portrait-overlay-text` are the desktop-safe overlay hooks.
-- `.hero-mobile-highlight` remains on the overlay for tablet/mobile compatibility only.
+- `.hero-portrait-overlay` is the only active overlay behavior hook.
 
 ## Wide Desktop Refinements
 
@@ -50,11 +50,9 @@ Do not make `#impact`, `main#top`, or Home-only section ids part of any reusable
 - `1920px` portrait height remains unchanged at `380.6px`.
 - The final wide-desktop rhythm keeps the portrait height ramp and does not use a stat-pill lift transform. The body paragraph uses `margin-top: clamp(28px, calc(-166px + 8.8vw), 48px)` at `2200px+` to keep the title/body/pill rhythm balanced while the right column bottom-aligns to the pill group.
 
-## Legacy Rules Kept
+## Legacy Rules Removed
 
-The stylesheet still contains broad/shared rules for `.hero`, `main#top > .hero`, `.hero-copy`, `.hero-text`, `.hero-stat-band`, `.stat-band`, `.hero-visual`, `.portrait-card`, `.hero-mobile-highlight`, `.proof-card`, `.hero-kicker`, and `.hero-actions`.
-
-Those rules may support tablet/mobile, old Home hero variants, older subpage fallbacks, Credentials, About, or Contact. The desktop master lock wins through later scoped selectors rather than removing those shared rules. `#impact` remains the Home section id/anchor, not a reusable subpage hero system hook.
+The old `.subpage-hero`, Anaya-specific, Archer-specific, Featured-specific, Gallery-specific, Credentials-specific, `.systems-jump-nav`, `.media-filter-row`, `.hero-actions`, `.page-highlight-bar`, `#impact`, and `main#top` reusable hero rules were removed from `styles.css`. Reusable hero behavior now lives in `.page-hero-system`.
 
 ## Applied Page Heroes
 
@@ -65,5 +63,6 @@ The reusable desktop lock currently covers:
 - `media.html`
 - `anaya-case-study.html`
 - `archer-visuals.html`
+- `credentials.html`
 
 Desktop verification sizes for those pages are `1025`, `1200`, `1280`, `1350`, `1440`, `1500`, `1600`, `1920`, `2200`, `2400`, and `2560`. Tablet/mobile safety sizes are `1024`, `820`, `720`, and `390`.

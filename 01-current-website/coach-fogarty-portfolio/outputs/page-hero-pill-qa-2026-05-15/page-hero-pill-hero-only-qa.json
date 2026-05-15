@@ -1,0 +1,3840 @@
+{
+  "generatedAt": "2026-05-15T18:31:17.373Z",
+  "summary": {
+    "total": 84,
+    "pass": 84,
+    "fail": 0
+  },
+  "passFail": {
+    "360": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "390": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "430": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "720": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "820": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "1024": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "1025": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "1280": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "1440": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "1600": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "1920": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    },
+    "2560": {
+      "Home": "PASS",
+      "Systems": "PASS",
+      "Featured Work": "PASS",
+      "Gallery / Media": "PASS",
+      "Anaya Beard Case Study": "PASS",
+      "The Archer": "PASS",
+      "Credentials": "PASS"
+    }
+  },
+  "metrics": {
+    "360": {
+      "Home": {
+        "card": {
+          "bottom": 650.33,
+          "height": 267.25,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 383.08
+        },
+        "desktopBottomDelta": 129.76,
+        "grid": {
+          "bottom": 780.09,
+          "height": 113.76,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 666.33
+        },
+        "hero": {
+          "bottom": 797.09,
+          "height": 718.09,
+          "right": 348,
+          "width": 336,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/hero-matthew-fogarty-main-hero-cover-center-upper-1800x1980.avif",
+        "overlay": {
+          "bottom": 639.33,
+          "height": 42.12,
+          "right": 320,
+          "width": 280,
+          "x": 40,
+          "y": 597.21
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 627.96,
+          "height": 267.25,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 360.71
+        },
+        "desktopBottomDelta": 129.76,
+        "grid": {
+          "bottom": 757.72,
+          "height": 113.76,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 643.96
+        },
+        "hero": {
+          "bottom": 774.72,
+          "height": 695.72,
+          "right": 348,
+          "width": 336,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 616.96,
+          "height": 42.12,
+          "right": 320,
+          "width": 280,
+          "x": 40,
+          "y": 574.84
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 602.49,
+          "height": 267.25,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 335.24
+        },
+        "desktopBottomDelta": 129.76,
+        "grid": {
+          "bottom": 732.25,
+          "height": 113.76,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 618.49
+        },
+        "hero": {
+          "bottom": 749.25,
+          "height": 670.25,
+          "right": 348,
+          "width": 336,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 591.49,
+          "height": 42.12,
+          "right": 320,
+          "width": 280,
+          "x": 40,
+          "y": 549.38
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 627.96,
+          "height": 267.25,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 360.71
+        },
+        "desktopBottomDelta": 129.76,
+        "grid": {
+          "bottom": 757.72,
+          "height": 113.76,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 643.96
+        },
+        "hero": {
+          "bottom": 774.72,
+          "height": 695.72,
+          "right": 348,
+          "width": 336,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 616.96,
+          "height": 42.12,
+          "right": 320,
+          "width": 280,
+          "x": 40,
+          "y": 574.84
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 627.96,
+          "height": 267.25,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 360.71
+        },
+        "desktopBottomDelta": 129.76,
+        "grid": {
+          "bottom": 757.72,
+          "height": 113.76,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 643.96
+        },
+        "hero": {
+          "bottom": 774.72,
+          "height": 695.72,
+          "right": 348,
+          "width": 336,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 616.96,
+          "height": 42.12,
+          "right": 320,
+          "width": 280,
+          "x": 40,
+          "y": 574.84
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 605.59,
+          "height": 267.25,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 129.76,
+        "grid": {
+          "bottom": 735.35,
+          "height": 113.76,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 621.59
+        },
+        "hero": {
+          "bottom": 752.35,
+          "height": 673.35,
+          "right": 348,
+          "width": 336,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 594.59,
+          "height": 42.12,
+          "right": 320,
+          "width": 280,
+          "x": 40,
+          "y": 552.48
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 650.33,
+          "height": 267.25,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 383.08
+        },
+        "desktopBottomDelta": 129.76,
+        "grid": {
+          "bottom": 780.09,
+          "height": 113.76,
+          "right": 331,
+          "width": 302,
+          "x": 29,
+          "y": 666.33
+        },
+        "hero": {
+          "bottom": 797.09,
+          "height": 718.09,
+          "right": 348,
+          "width": 336,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 639.33,
+          "height": 42.12,
+          "right": 320,
+          "width": 280,
+          "x": 40,
+          "y": 597.21
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "390": {
+      "Home": {
+        "card": {
+          "bottom": 654.52,
+          "height": 293.8,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 360.71
+        },
+        "desktopBottomDelta": 130.23,
+        "grid": {
+          "bottom": 784.75,
+          "height": 114.23,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 670.52
+        },
+        "hero": {
+          "bottom": 801.75,
+          "height": 722.75,
+          "right": 378,
+          "width": 366,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/hero-matthew-fogarty-main-hero-cover-center-upper-1800x1980.avif",
+        "overlay": {
+          "bottom": 642.8,
+          "height": 42.99,
+          "right": 349.28,
+          "width": 308.56,
+          "x": 40.72,
+          "y": 599.8
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 632.15,
+          "height": 293.8,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.23,
+        "grid": {
+          "bottom": 762.38,
+          "height": 114.23,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 648.15
+        },
+        "hero": {
+          "bottom": 779.38,
+          "height": 700.38,
+          "right": 378,
+          "width": 366,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 620.43,
+          "height": 42.99,
+          "right": 349.28,
+          "width": 308.56,
+          "x": 40.72,
+          "y": 577.44
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 597.05,
+          "height": 293.8,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 303.24
+        },
+        "desktopBottomDelta": 130.23,
+        "grid": {
+          "bottom": 727.28,
+          "height": 114.23,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 613.05
+        },
+        "hero": {
+          "bottom": 744.28,
+          "height": 665.28,
+          "right": 378,
+          "width": 366,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 585.33,
+          "height": 42.99,
+          "right": 349.28,
+          "width": 308.56,
+          "x": 40.72,
+          "y": 542.34
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 632.15,
+          "height": 293.8,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.23,
+        "grid": {
+          "bottom": 762.38,
+          "height": 114.23,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 648.15
+        },
+        "hero": {
+          "bottom": 779.38,
+          "height": 700.38,
+          "right": 378,
+          "width": 366,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 620.43,
+          "height": 42.99,
+          "right": 349.28,
+          "width": 308.56,
+          "x": 40.72,
+          "y": 577.44
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 654.52,
+          "height": 293.8,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 360.71
+        },
+        "desktopBottomDelta": 130.23,
+        "grid": {
+          "bottom": 784.75,
+          "height": 114.23,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 670.52
+        },
+        "hero": {
+          "bottom": 801.75,
+          "height": 722.75,
+          "right": 378,
+          "width": 366,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 642.8,
+          "height": 42.99,
+          "right": 349.28,
+          "width": 308.56,
+          "x": 40.72,
+          "y": 599.8
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 632.15,
+          "height": 293.8,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.23,
+        "grid": {
+          "bottom": 762.38,
+          "height": 114.23,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 648.15
+        },
+        "hero": {
+          "bottom": 779.38,
+          "height": 700.38,
+          "right": 378,
+          "width": 366,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 620.43,
+          "height": 42.99,
+          "right": 349.28,
+          "width": 308.56,
+          "x": 40.72,
+          "y": 577.44
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 632.15,
+          "height": 293.8,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.23,
+        "grid": {
+          "bottom": 762.38,
+          "height": 114.23,
+          "right": 361,
+          "width": 332,
+          "x": 29,
+          "y": 648.15
+        },
+        "hero": {
+          "bottom": 779.38,
+          "height": 700.38,
+          "right": 378,
+          "width": 366,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 620.43,
+          "height": 42.99,
+          "right": 349.28,
+          "width": 308.56,
+          "x": 40.72,
+          "y": 577.44
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "430": {
+      "Home": {
+        "card": {
+          "bottom": 667.55,
+          "height": 329.2,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.87,
+        "grid": {
+          "bottom": 798.42,
+          "height": 114.88,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 683.55
+        },
+        "hero": {
+          "bottom": 815.42,
+          "height": 736.42,
+          "right": 418,
+          "width": 406,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/hero-matthew-fogarty-main-hero-cover-center-upper-1800x1980.avif",
+        "overlay": {
+          "bottom": 654.73,
+          "height": 44.15,
+          "right": 388.18,
+          "width": 346.36,
+          "x": 41.82,
+          "y": 610.58
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 667.55,
+          "height": 329.2,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.87,
+        "grid": {
+          "bottom": 798.42,
+          "height": 114.88,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 683.55
+        },
+        "hero": {
+          "bottom": 815.42,
+          "height": 736.42,
+          "right": 418,
+          "width": 406,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 654.73,
+          "height": 44.15,
+          "right": 388.18,
+          "width": 346.36,
+          "x": 41.82,
+          "y": 610.58
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 632.45,
+          "height": 329.2,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 303.24
+        },
+        "desktopBottomDelta": 130.87,
+        "grid": {
+          "bottom": 763.32,
+          "height": 114.88,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 648.45
+        },
+        "hero": {
+          "bottom": 780.32,
+          "height": 701.32,
+          "right": 418,
+          "width": 406,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 619.63,
+          "height": 44.15,
+          "right": 388.18,
+          "width": 346.36,
+          "x": 41.82,
+          "y": 575.48
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 667.55,
+          "height": 329.2,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.87,
+        "grid": {
+          "bottom": 798.42,
+          "height": 114.88,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 683.55
+        },
+        "hero": {
+          "bottom": 815.42,
+          "height": 736.42,
+          "right": 418,
+          "width": 406,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 654.73,
+          "height": 44.15,
+          "right": 388.18,
+          "width": 346.36,
+          "x": 41.82,
+          "y": 610.58
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 667.55,
+          "height": 329.2,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.87,
+        "grid": {
+          "bottom": 798.42,
+          "height": 114.88,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 683.55
+        },
+        "hero": {
+          "bottom": 815.42,
+          "height": 736.42,
+          "right": 418,
+          "width": 406,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 654.73,
+          "height": 44.15,
+          "right": 388.18,
+          "width": 346.36,
+          "x": 41.82,
+          "y": 610.58
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 645.18,
+          "height": 329.2,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 315.98
+        },
+        "desktopBottomDelta": 130.87,
+        "grid": {
+          "bottom": 776.05,
+          "height": 114.88,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 661.18
+        },
+        "hero": {
+          "bottom": 793.05,
+          "height": 714.05,
+          "right": 418,
+          "width": 406,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 632.36,
+          "height": 44.15,
+          "right": 388.18,
+          "width": 346.36,
+          "x": 41.82,
+          "y": 588.21
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 667.55,
+          "height": 329.2,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 338.34
+        },
+        "desktopBottomDelta": 130.87,
+        "grid": {
+          "bottom": 798.42,
+          "height": 114.88,
+          "right": 401,
+          "width": 372,
+          "x": 29,
+          "y": 683.55
+        },
+        "hero": {
+          "bottom": 815.42,
+          "height": 736.42,
+          "right": 418,
+          "width": 406,
+          "x": 12,
+          "y": 79
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 654.73,
+          "height": 44.15,
+          "right": 388.18,
+          "width": 346.36,
+          "x": 41.82,
+          "y": 610.58
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "720": {
+      "Home": {
+        "card": {
+          "bottom": 868.2,
+          "height": 578.76,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 289.45
+        },
+        "desktopBottomDelta": 149.91,
+        "grid": {
+          "bottom": 1018.11,
+          "height": 133.91,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 884.2
+        },
+        "hero": {
+          "bottom": 1031.11,
+          "height": 950.11,
+          "right": 708,
+          "width": 696,
+          "x": 12,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/hero-matthew-fogarty-main-hero-cover-center-upper-1800x1980.avif",
+        "overlay": {
+          "bottom": 847.41,
+          "height": 64.67,
+          "right": 666.2,
+          "width": 612.41,
+          "x": 53.8,
+          "y": 782.73
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 868.2,
+          "height": 578.76,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 289.45
+        },
+        "desktopBottomDelta": 149.91,
+        "grid": {
+          "bottom": 1018.11,
+          "height": 133.91,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 884.2
+        },
+        "hero": {
+          "bottom": 1031.11,
+          "height": 950.11,
+          "right": 708,
+          "width": 696,
+          "x": 12,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 847.41,
+          "height": 64.67,
+          "right": 666.2,
+          "width": 612.41,
+          "x": 53.8,
+          "y": 782.73
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 871.47,
+          "height": 578.76,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 292.71
+        },
+        "desktopBottomDelta": 149.91,
+        "grid": {
+          "bottom": 1021.38,
+          "height": 133.91,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 887.47
+        },
+        "hero": {
+          "bottom": 1034.38,
+          "height": 953.38,
+          "right": 708,
+          "width": 696,
+          "x": 12,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 850.67,
+          "height": 64.67,
+          "right": 666.2,
+          "width": 612.41,
+          "x": 53.8,
+          "y": 786
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 868.2,
+          "height": 578.76,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 289.45
+        },
+        "desktopBottomDelta": 149.91,
+        "grid": {
+          "bottom": 1018.11,
+          "height": 133.91,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 884.2
+        },
+        "hero": {
+          "bottom": 1031.11,
+          "height": 950.11,
+          "right": 708,
+          "width": 696,
+          "x": 12,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 847.41,
+          "height": 64.67,
+          "right": 666.2,
+          "width": 612.41,
+          "x": 53.8,
+          "y": 782.73
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 868.2,
+          "height": 578.76,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 289.45
+        },
+        "desktopBottomDelta": 149.91,
+        "grid": {
+          "bottom": 1018.11,
+          "height": 133.91,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 884.2
+        },
+        "hero": {
+          "bottom": 1031.11,
+          "height": 950.11,
+          "right": 708,
+          "width": 696,
+          "x": 12,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 847.41,
+          "height": 64.67,
+          "right": 666.2,
+          "width": 612.41,
+          "x": 53.8,
+          "y": 782.73
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 868.2,
+          "height": 578.76,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 289.45
+        },
+        "desktopBottomDelta": 149.91,
+        "grid": {
+          "bottom": 1018.11,
+          "height": 133.91,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 884.2
+        },
+        "hero": {
+          "bottom": 1031.11,
+          "height": 950.11,
+          "right": 708,
+          "width": 696,
+          "x": 12,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 847.41,
+          "height": 64.67,
+          "right": 666.2,
+          "width": 612.41,
+          "x": 53.8,
+          "y": 782.73
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 868.2,
+          "height": 578.76,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 289.45
+        },
+        "desktopBottomDelta": 149.91,
+        "grid": {
+          "bottom": 1018.11,
+          "height": 133.91,
+          "right": 687,
+          "width": 654,
+          "x": 33,
+          "y": 884.2
+        },
+        "hero": {
+          "bottom": 1031.11,
+          "height": 950.11,
+          "right": 708,
+          "width": 696,
+          "x": 12,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 847.41,
+          "height": 64.67,
+          "right": 666.2,
+          "width": 612.41,
+          "x": 53.8,
+          "y": 782.73
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "820": {
+      "Home": {
+        "card": {
+          "bottom": 956.5,
+          "height": 630.79,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 325.71
+        },
+        "desktopBottomDelta": 168.51,
+        "grid": {
+          "bottom": 1125.01,
+          "height": 152.51,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 972.5
+        },
+        "hero": {
+          "bottom": 1154.01,
+          "height": 1073.01,
+          "right": 795.4,
+          "width": 770.8,
+          "x": 24.6,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/hero-matthew-fogarty-main-hero-cover-center-upper-1800x1980.avif",
+        "overlay": {
+          "bottom": 932.95,
+          "height": 68.77,
+          "right": 742.85,
+          "width": 665.7,
+          "x": 77.15,
+          "y": 864.18
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 956.5,
+          "height": 630.79,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 325.71
+        },
+        "desktopBottomDelta": 168.51,
+        "grid": {
+          "bottom": 1125.01,
+          "height": 152.51,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 972.5
+        },
+        "hero": {
+          "bottom": 1154.01,
+          "height": 1073.01,
+          "right": 795.4,
+          "width": 770.8,
+          "x": 24.6,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 932.95,
+          "height": 68.77,
+          "right": 742.85,
+          "width": 665.7,
+          "x": 77.15,
+          "y": 864.18
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 957.84,
+          "height": 630.79,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 327.05
+        },
+        "desktopBottomDelta": 168.51,
+        "grid": {
+          "bottom": 1126.35,
+          "height": 152.51,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 973.84
+        },
+        "hero": {
+          "bottom": 1155.35,
+          "height": 1074.35,
+          "right": 795.4,
+          "width": 770.8,
+          "x": 24.6,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 934.3,
+          "height": 68.77,
+          "right": 742.85,
+          "width": 665.7,
+          "x": 77.15,
+          "y": 865.52
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 956.5,
+          "height": 630.79,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 325.71
+        },
+        "desktopBottomDelta": 168.51,
+        "grid": {
+          "bottom": 1125.01,
+          "height": 152.51,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 972.5
+        },
+        "hero": {
+          "bottom": 1154.01,
+          "height": 1073.01,
+          "right": 795.4,
+          "width": 770.8,
+          "x": 24.6,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 932.95,
+          "height": 68.77,
+          "right": 742.85,
+          "width": 665.7,
+          "x": 77.15,
+          "y": 864.18
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 956.5,
+          "height": 630.79,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 325.71
+        },
+        "desktopBottomDelta": 168.51,
+        "grid": {
+          "bottom": 1125.01,
+          "height": 152.51,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 972.5
+        },
+        "hero": {
+          "bottom": 1154.01,
+          "height": 1073.01,
+          "right": 795.4,
+          "width": 770.8,
+          "x": 24.6,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 932.95,
+          "height": 68.77,
+          "right": 742.85,
+          "width": 665.7,
+          "x": 77.15,
+          "y": 864.18
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 956.5,
+          "height": 630.79,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 325.71
+        },
+        "desktopBottomDelta": 168.51,
+        "grid": {
+          "bottom": 1125.01,
+          "height": 152.51,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 972.5
+        },
+        "hero": {
+          "bottom": 1154.01,
+          "height": 1073.01,
+          "right": 795.4,
+          "width": 770.8,
+          "x": 24.6,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 932.95,
+          "height": 68.77,
+          "right": 742.85,
+          "width": 665.7,
+          "x": 77.15,
+          "y": 864.18
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 956.5,
+          "height": 630.79,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 325.71
+        },
+        "desktopBottomDelta": 168.51,
+        "grid": {
+          "bottom": 1125.01,
+          "height": 152.51,
+          "right": 766.4,
+          "width": 712.8,
+          "x": 53.6,
+          "y": 972.5
+        },
+        "hero": {
+          "bottom": 1154.01,
+          "height": 1073.01,
+          "right": 795.4,
+          "width": 770.8,
+          "x": 24.6,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 932.95,
+          "height": 68.77,
+          "right": 742.85,
+          "width": 665.7,
+          "x": 77.15,
+          "y": 864.18
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "1024": {
+      "Home": {
+        "card": {
+          "bottom": 1118.09,
+          "height": 805.3,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 312.78
+        },
+        "desktopBottomDelta": 182,
+        "grid": {
+          "bottom": 1300.09,
+          "height": 166,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 1134.09
+        },
+        "hero": {
+          "bottom": 1329.09,
+          "height": 1248.09,
+          "right": 996,
+          "width": 968,
+          "x": 28,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/hero-matthew-fogarty-main-hero-cover-center-upper-1800x1980.avif",
+        "overlay": {
+          "bottom": 1093.09,
+          "height": 73.4,
+          "right": 942,
+          "width": 860,
+          "x": 82,
+          "y": 1019.69
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 1118.09,
+          "height": 805.3,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 312.78
+        },
+        "desktopBottomDelta": 182,
+        "grid": {
+          "bottom": 1300.09,
+          "height": 166,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 1134.09
+        },
+        "hero": {
+          "bottom": 1329.09,
+          "height": 1248.09,
+          "right": 996,
+          "width": 968,
+          "x": 28,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 1093.09,
+          "height": 73.4,
+          "right": 942,
+          "width": 860,
+          "x": 82,
+          "y": 1019.69
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 1159.3,
+          "height": 805.3,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 353.99
+        },
+        "desktopBottomDelta": 182,
+        "grid": {
+          "bottom": 1341.3,
+          "height": 166,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 1175.3
+        },
+        "hero": {
+          "bottom": 1370.3,
+          "height": 1289.3,
+          "right": 996,
+          "width": 968,
+          "x": 28,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 1134.3,
+          "height": 73.4,
+          "right": 942,
+          "width": 860,
+          "x": 82,
+          "y": 1060.9
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 1118.09,
+          "height": 805.3,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 312.78
+        },
+        "desktopBottomDelta": 182,
+        "grid": {
+          "bottom": 1300.09,
+          "height": 166,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 1134.09
+        },
+        "hero": {
+          "bottom": 1329.09,
+          "height": 1248.09,
+          "right": 996,
+          "width": 968,
+          "x": 28,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 1093.09,
+          "height": 73.4,
+          "right": 942,
+          "width": 860,
+          "x": 82,
+          "y": 1019.69
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 1118.09,
+          "height": 805.3,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 312.78
+        },
+        "desktopBottomDelta": 182,
+        "grid": {
+          "bottom": 1300.09,
+          "height": 166,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 1134.09
+        },
+        "hero": {
+          "bottom": 1329.09,
+          "height": 1248.09,
+          "right": 996,
+          "width": 968,
+          "x": 28,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 1093.09,
+          "height": 73.4,
+          "right": 942,
+          "width": 860,
+          "x": 82,
+          "y": 1019.69
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 1118.09,
+          "height": 805.3,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 312.78
+        },
+        "desktopBottomDelta": 182,
+        "grid": {
+          "bottom": 1300.09,
+          "height": 166,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 1134.09
+        },
+        "hero": {
+          "bottom": 1329.09,
+          "height": 1248.09,
+          "right": 996,
+          "width": 968,
+          "x": 28,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 1093.09,
+          "height": 73.4,
+          "right": 942,
+          "width": 860,
+          "x": 82,
+          "y": 1019.69
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 1118.09,
+          "height": 805.3,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 312.78
+        },
+        "desktopBottomDelta": 182,
+        "grid": {
+          "bottom": 1300.09,
+          "height": 166,
+          "right": 967,
+          "width": 910,
+          "x": 57,
+          "y": 1134.09
+        },
+        "hero": {
+          "bottom": 1329.09,
+          "height": 1248.09,
+          "right": 996,
+          "width": 968,
+          "x": 28,
+          "y": 81
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 1093.09,
+          "height": 73.4,
+          "right": 942,
+          "width": 860,
+          "x": 82,
+          "y": 1019.69
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "1025": {
+      "Home": {
+        "card": {
+          "bottom": 551.67,
+          "height": 380.5,
+          "right": 944,
+          "width": 390,
+          "x": 554,
+          "y": 171.17
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 551.67,
+          "height": 110,
+          "right": 520.73,
+          "width": 439.73,
+          "x": 81,
+          "y": 441.67
+        },
+        "hero": {
+          "bottom": 575.67,
+          "height": 492.67,
+          "right": 981,
+          "width": 937,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/Cropped/home-matthew-fogarty-main-hero-2000x1333.avif",
+        "overlay": {
+          "bottom": 540.67,
+          "height": 54.59,
+          "right": 933,
+          "width": 368,
+          "x": 565,
+          "y": 486.08
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 495.43,
+          "height": 380.5,
+          "right": 944,
+          "width": 390,
+          "x": 554,
+          "y": 114.93
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 495.43,
+          "height": 110,
+          "right": 520.73,
+          "width": 439.73,
+          "x": 81,
+          "y": 385.43
+        },
+        "hero": {
+          "bottom": 519.43,
+          "height": 436.43,
+          "right": 981,
+          "width": 937,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 484.43,
+          "height": 54.59,
+          "right": 933,
+          "width": 368,
+          "x": 565,
+          "y": 429.84
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 591.22,
+          "height": 380.5,
+          "right": 944,
+          "width": 390,
+          "x": 554,
+          "y": 210.72
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 591.22,
+          "height": 110,
+          "right": 520.73,
+          "width": 439.73,
+          "x": 81,
+          "y": 481.22
+        },
+        "hero": {
+          "bottom": 615.22,
+          "height": 532.22,
+          "right": 981,
+          "width": 937,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 580.22,
+          "height": 54.59,
+          "right": 933,
+          "width": 368,
+          "x": 565,
+          "y": 525.63
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 495.43,
+          "height": 380.5,
+          "right": 944,
+          "width": 390,
+          "x": 554,
+          "y": 114.93
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 495.43,
+          "height": 110,
+          "right": 520.73,
+          "width": 439.73,
+          "x": 81,
+          "y": 385.43
+        },
+        "hero": {
+          "bottom": 519.43,
+          "height": 436.43,
+          "right": 981,
+          "width": 937,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 484.43,
+          "height": 54.59,
+          "right": 933,
+          "width": 368,
+          "x": 565,
+          "y": 429.84
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 495.43,
+          "height": 380.5,
+          "right": 944,
+          "width": 390,
+          "x": 554,
+          "y": 114.93
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 495.43,
+          "height": 110,
+          "right": 520.73,
+          "width": 439.73,
+          "x": 81,
+          "y": 385.43
+        },
+        "hero": {
+          "bottom": 519.43,
+          "height": 436.43,
+          "right": 981,
+          "width": 937,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 484.43,
+          "height": 54.59,
+          "right": 933,
+          "width": 368,
+          "x": 565,
+          "y": 429.84
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 505.16,
+          "height": 380.5,
+          "right": 944,
+          "width": 390,
+          "x": 554,
+          "y": 124.66
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 505.16,
+          "height": 119.73,
+          "right": 520.73,
+          "width": 439.73,
+          "x": 81,
+          "y": 385.43
+        },
+        "hero": {
+          "bottom": 529.16,
+          "height": 446.16,
+          "right": 981,
+          "width": 937,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 494.16,
+          "height": 54.59,
+          "right": 933,
+          "width": 368,
+          "x": 565,
+          "y": 439.57
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 561.41,
+          "height": 380.5,
+          "right": 944,
+          "width": 390,
+          "x": 554,
+          "y": 180.91
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 561.41,
+          "height": 119.73,
+          "right": 520.73,
+          "width": 439.73,
+          "x": 81,
+          "y": 441.67
+        },
+        "hero": {
+          "bottom": 585.41,
+          "height": 502.41,
+          "right": 981,
+          "width": 937,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 550.41,
+          "height": 54.59,
+          "right": 933,
+          "width": 368,
+          "x": 565,
+          "y": 495.81
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "1280": {
+      "Home": {
+        "card": {
+          "bottom": 503.34,
+          "height": 380.5,
+          "right": 1199,
+          "width": 390,
+          "x": 809,
+          "y": 122.84
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 503.34,
+          "height": 135.5,
+          "right": 775.73,
+          "width": 694.73,
+          "x": 81,
+          "y": 367.84
+        },
+        "hero": {
+          "bottom": 527.34,
+          "height": 444.34,
+          "right": 1236,
+          "width": 1192,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/Cropped/home-matthew-fogarty-main-hero-2000x1333.avif",
+        "overlay": {
+          "bottom": 490.83,
+          "height": 54.59,
+          "right": 1187.13,
+          "width": 366.25,
+          "x": 820.88,
+          "y": 436.23
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 503.34,
+          "height": 380.5,
+          "right": 1199,
+          "width": 390,
+          "x": 809,
+          "y": 122.84
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 503.34,
+          "height": 135.5,
+          "right": 775.73,
+          "width": 694.73,
+          "x": 81,
+          "y": 367.84
+        },
+        "hero": {
+          "bottom": 527.34,
+          "height": 444.34,
+          "right": 1236,
+          "width": 1192,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 490.83,
+          "height": 54.59,
+          "right": 1187.13,
+          "width": 366.25,
+          "x": 820.88,
+          "y": 436.23
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 495.59,
+          "height": 380.5,
+          "right": 1199,
+          "width": 390,
+          "x": 809,
+          "y": 115.09
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 495.59,
+          "height": 135.5,
+          "right": 775.73,
+          "width": 694.73,
+          "x": 81,
+          "y": 360.09
+        },
+        "hero": {
+          "bottom": 519.59,
+          "height": 436.59,
+          "right": 1236,
+          "width": 1192,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 483.07,
+          "height": 54.59,
+          "right": 1187.13,
+          "width": 366.25,
+          "x": 820.88,
+          "y": 428.48
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 503.34,
+          "height": 380.5,
+          "right": 1199,
+          "width": 390,
+          "x": 809,
+          "y": 122.84
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 503.34,
+          "height": 135.5,
+          "right": 775.73,
+          "width": 694.73,
+          "x": 81,
+          "y": 367.84
+        },
+        "hero": {
+          "bottom": 527.34,
+          "height": 444.34,
+          "right": 1236,
+          "width": 1192,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 490.83,
+          "height": 54.59,
+          "right": 1187.13,
+          "width": 366.25,
+          "x": 820.88,
+          "y": 436.23
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 503.34,
+          "height": 380.5,
+          "right": 1199,
+          "width": 390,
+          "x": 809,
+          "y": 122.84
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 503.34,
+          "height": 135.5,
+          "right": 775.73,
+          "width": 694.73,
+          "x": 81,
+          "y": 367.84
+        },
+        "hero": {
+          "bottom": 527.34,
+          "height": 444.34,
+          "right": 1236,
+          "width": 1192,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 490.83,
+          "height": 54.59,
+          "right": 1187.13,
+          "width": 366.25,
+          "x": 820.88,
+          "y": 436.23
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 503.34,
+          "height": 380.5,
+          "right": 1199,
+          "width": 390,
+          "x": 809,
+          "y": 122.84
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 503.34,
+          "height": 135.5,
+          "right": 775.73,
+          "width": 694.73,
+          "x": 81,
+          "y": 367.84
+        },
+        "hero": {
+          "bottom": 527.34,
+          "height": 444.34,
+          "right": 1236,
+          "width": 1192,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 490.83,
+          "height": 54.59,
+          "right": 1187.13,
+          "width": 366.25,
+          "x": 820.88,
+          "y": 436.23
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 503.34,
+          "height": 380.5,
+          "right": 1199,
+          "width": 390,
+          "x": 809,
+          "y": 122.84
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 503.34,
+          "height": 135.5,
+          "right": 775.73,
+          "width": 694.73,
+          "x": 81,
+          "y": 367.84
+        },
+        "hero": {
+          "bottom": 527.34,
+          "height": 444.34,
+          "right": 1236,
+          "width": 1192,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 490.83,
+          "height": 54.59,
+          "right": 1187.13,
+          "width": 366.25,
+          "x": 820.88,
+          "y": 436.23
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "1440": {
+      "Home": {
+        "card": {
+          "bottom": 500.29,
+          "height": 384.59,
+          "right": 1359,
+          "width": 390,
+          "x": 969,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.29,
+          "height": 143.28,
+          "right": 931.56,
+          "width": 850.56,
+          "x": 81,
+          "y": 357.01
+        },
+        "hero": {
+          "bottom": 527.19,
+          "height": 444.19,
+          "right": 1396,
+          "width": 1352,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/Cropped/home-matthew-fogarty-main-hero-2000x1333.avif",
+        "overlay": {
+          "bottom": 486.34,
+          "height": 54.59,
+          "right": 1345.77,
+          "width": 363.53,
+          "x": 982.23,
+          "y": 431.74
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 500.29,
+          "height": 384.59,
+          "right": 1359,
+          "width": 390,
+          "x": 969,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.29,
+          "height": 143.28,
+          "right": 931.56,
+          "width": 850.56,
+          "x": 81,
+          "y": 357.01
+        },
+        "hero": {
+          "bottom": 527.19,
+          "height": 444.19,
+          "right": 1396,
+          "width": 1352,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 486.34,
+          "height": 54.59,
+          "right": 1345.77,
+          "width": 363.53,
+          "x": 982.23,
+          "y": 431.74
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 500.29,
+          "height": 384.59,
+          "right": 1359,
+          "width": 390,
+          "x": 969,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.29,
+          "height": 143.28,
+          "right": 931.56,
+          "width": 850.56,
+          "x": 81,
+          "y": 357.01
+        },
+        "hero": {
+          "bottom": 527.19,
+          "height": 444.19,
+          "right": 1396,
+          "width": 1352,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 486.34,
+          "height": 54.59,
+          "right": 1345.77,
+          "width": 363.53,
+          "x": 982.23,
+          "y": 431.74
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 500.29,
+          "height": 384.59,
+          "right": 1359,
+          "width": 390,
+          "x": 969,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.29,
+          "height": 143.28,
+          "right": 931.56,
+          "width": 850.56,
+          "x": 81,
+          "y": 357.01
+        },
+        "hero": {
+          "bottom": 527.19,
+          "height": 444.19,
+          "right": 1396,
+          "width": 1352,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 486.34,
+          "height": 54.59,
+          "right": 1345.77,
+          "width": 363.53,
+          "x": 982.23,
+          "y": 431.74
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 500.29,
+          "height": 384.59,
+          "right": 1359,
+          "width": 390,
+          "x": 969,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.29,
+          "height": 143.28,
+          "right": 931.56,
+          "width": 850.56,
+          "x": 81,
+          "y": 357.01
+        },
+        "hero": {
+          "bottom": 527.19,
+          "height": 444.19,
+          "right": 1396,
+          "width": 1352,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 486.34,
+          "height": 54.59,
+          "right": 1345.77,
+          "width": 363.53,
+          "x": 982.23,
+          "y": 431.74
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 500.29,
+          "height": 384.59,
+          "right": 1359,
+          "width": 390,
+          "x": 969,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.29,
+          "height": 143.28,
+          "right": 931.56,
+          "width": 850.56,
+          "x": 81,
+          "y": 357.01
+        },
+        "hero": {
+          "bottom": 527.19,
+          "height": 444.19,
+          "right": 1396,
+          "width": 1352,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 486.34,
+          "height": 54.59,
+          "right": 1345.77,
+          "width": 363.53,
+          "x": 982.23,
+          "y": 431.74
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 500.29,
+          "height": 384.59,
+          "right": 1359,
+          "width": 390,
+          "x": 969,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.29,
+          "height": 143.28,
+          "right": 931.56,
+          "width": 850.56,
+          "x": 81,
+          "y": 357.01
+        },
+        "hero": {
+          "bottom": 527.19,
+          "height": 444.19,
+          "right": 1396,
+          "width": 1352,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 486.34,
+          "height": 54.59,
+          "right": 1345.77,
+          "width": 363.53,
+          "x": 982.23,
+          "y": 431.74
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "1600": {
+      "Home": {
+        "card": {
+          "bottom": 485.7,
+          "height": 370,
+          "right": 1519,
+          "width": 400,
+          "x": 1119,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 485.7,
+          "height": 151,
+          "right": 1061,
+          "width": 980,
+          "x": 81,
+          "y": 334.7
+        },
+        "hero": {
+          "bottom": 512.59,
+          "height": 429.59,
+          "right": 1556,
+          "width": 1512,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/Cropped/home-matthew-fogarty-main-hero-2000x1333.avif",
+        "overlay": {
+          "bottom": 470.3,
+          "height": 55.98,
+          "right": 1504.41,
+          "width": 370.81,
+          "x": 1133.59,
+          "y": 414.32
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 485.7,
+          "height": 370,
+          "right": 1519,
+          "width": 400,
+          "x": 1119,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 485.7,
+          "height": 151,
+          "right": 1061,
+          "width": 980,
+          "x": 81,
+          "y": 334.7
+        },
+        "hero": {
+          "bottom": 512.59,
+          "height": 429.59,
+          "right": 1556,
+          "width": 1512,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 470.3,
+          "height": 55.98,
+          "right": 1504.41,
+          "width": 370.81,
+          "x": 1133.59,
+          "y": 414.32
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 511.02,
+          "height": 370,
+          "right": 1519,
+          "width": 400,
+          "x": 1119,
+          "y": 141.02
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 511.02,
+          "height": 151,
+          "right": 1061,
+          "width": 980,
+          "x": 81,
+          "y": 360.02
+        },
+        "hero": {
+          "bottom": 537.92,
+          "height": 454.92,
+          "right": 1556,
+          "width": 1512,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 495.63,
+          "height": 55.98,
+          "right": 1504.41,
+          "width": 370.81,
+          "x": 1133.59,
+          "y": 439.65
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 485.7,
+          "height": 370,
+          "right": 1519,
+          "width": 400,
+          "x": 1119,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 485.7,
+          "height": 151,
+          "right": 1061,
+          "width": 980,
+          "x": 81,
+          "y": 334.7
+        },
+        "hero": {
+          "bottom": 512.59,
+          "height": 429.59,
+          "right": 1556,
+          "width": 1512,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 470.3,
+          "height": 55.98,
+          "right": 1504.41,
+          "width": 370.81,
+          "x": 1133.59,
+          "y": 414.32
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 485.7,
+          "height": 370,
+          "right": 1519,
+          "width": 400,
+          "x": 1119,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 485.7,
+          "height": 151,
+          "right": 1061,
+          "width": 980,
+          "x": 81,
+          "y": 334.7
+        },
+        "hero": {
+          "bottom": 512.59,
+          "height": 429.59,
+          "right": 1556,
+          "width": 1512,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 470.3,
+          "height": 55.98,
+          "right": 1504.41,
+          "width": 370.81,
+          "x": 1133.59,
+          "y": 414.32
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 485.7,
+          "height": 370,
+          "right": 1519,
+          "width": 400,
+          "x": 1119,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 485.7,
+          "height": 151,
+          "right": 1061,
+          "width": 980,
+          "x": 81,
+          "y": 334.7
+        },
+        "hero": {
+          "bottom": 512.59,
+          "height": 429.59,
+          "right": 1556,
+          "width": 1512,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 470.3,
+          "height": 55.98,
+          "right": 1504.41,
+          "width": 370.81,
+          "x": 1133.59,
+          "y": 414.32
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 485.7,
+          "height": 370,
+          "right": 1519,
+          "width": 400,
+          "x": 1119,
+          "y": 115.7
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 485.7,
+          "height": 151,
+          "right": 1061,
+          "width": 980,
+          "x": 81,
+          "y": 334.7
+        },
+        "hero": {
+          "bottom": 512.59,
+          "height": 429.59,
+          "right": 1556,
+          "width": 1512,
+          "x": 44,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 470.3,
+          "height": 55.98,
+          "right": 1504.41,
+          "width": 370.81,
+          "x": 1133.59,
+          "y": 414.32
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "1920": {
+      "Home": {
+        "card": {
+          "bottom": 500.59,
+          "height": 380.59,
+          "right": 1752.91,
+          "width": 480,
+          "x": 1272.91,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.59,
+          "height": 166,
+          "right": 1234.51,
+          "width": 1067.41,
+          "x": 167.09,
+          "y": 334.59
+        },
+        "hero": {
+          "bottom": 531.59,
+          "height": 448.59,
+          "right": 1800,
+          "width": 1680,
+          "x": 120,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/Cropped/home-matthew-fogarty-main-hero-2000x1333.avif",
+        "overlay": {
+          "bottom": 482.32,
+          "height": 55.98,
+          "right": 1737.91,
+          "width": 450,
+          "x": 1287.91,
+          "y": 426.34
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 500.59,
+          "height": 380.59,
+          "right": 1752.91,
+          "width": 480,
+          "x": 1272.91,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.59,
+          "height": 166,
+          "right": 1234.51,
+          "width": 1067.41,
+          "x": 167.09,
+          "y": 334.59
+        },
+        "hero": {
+          "bottom": 531.59,
+          "height": 448.59,
+          "right": 1800,
+          "width": 1680,
+          "x": 120,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 482.32,
+          "height": 55.98,
+          "right": 1737.91,
+          "width": 450,
+          "x": 1287.91,
+          "y": 426.34
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 528.19,
+          "height": 380.59,
+          "right": 1752.91,
+          "width": 480,
+          "x": 1272.91,
+          "y": 147.59
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 528.19,
+          "height": 166,
+          "right": 1234.51,
+          "width": 1067.41,
+          "x": 167.09,
+          "y": 362.19
+        },
+        "hero": {
+          "bottom": 559.19,
+          "height": 476.19,
+          "right": 1800,
+          "width": 1680,
+          "x": 120,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 509.91,
+          "height": 55.98,
+          "right": 1737.91,
+          "width": 450,
+          "x": 1287.91,
+          "y": 453.94
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 500.59,
+          "height": 380.59,
+          "right": 1752.91,
+          "width": 480,
+          "x": 1272.91,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.59,
+          "height": 166,
+          "right": 1234.51,
+          "width": 1067.41,
+          "x": 167.09,
+          "y": 334.59
+        },
+        "hero": {
+          "bottom": 531.59,
+          "height": 448.59,
+          "right": 1800,
+          "width": 1680,
+          "x": 120,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 482.32,
+          "height": 55.98,
+          "right": 1737.91,
+          "width": 450,
+          "x": 1287.91,
+          "y": 426.34
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 500.59,
+          "height": 380.59,
+          "right": 1752.91,
+          "width": 480,
+          "x": 1272.91,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.59,
+          "height": 166,
+          "right": 1234.51,
+          "width": 1067.41,
+          "x": 167.09,
+          "y": 334.59
+        },
+        "hero": {
+          "bottom": 531.59,
+          "height": 448.59,
+          "right": 1800,
+          "width": 1680,
+          "x": 120,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 482.32,
+          "height": 55.98,
+          "right": 1737.91,
+          "width": 450,
+          "x": 1287.91,
+          "y": 426.34
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 500.59,
+          "height": 380.59,
+          "right": 1752.91,
+          "width": 480,
+          "x": 1272.91,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.59,
+          "height": 166,
+          "right": 1234.51,
+          "width": 1067.41,
+          "x": 167.09,
+          "y": 334.59
+        },
+        "hero": {
+          "bottom": 531.59,
+          "height": 448.59,
+          "right": 1800,
+          "width": 1680,
+          "x": 120,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 482.32,
+          "height": 55.98,
+          "right": 1737.91,
+          "width": 450,
+          "x": 1287.91,
+          "y": 426.34
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 500.59,
+          "height": 380.59,
+          "right": 1752.91,
+          "width": 480,
+          "x": 1272.91,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 500.59,
+          "height": 166,
+          "right": 1234.51,
+          "width": 1067.41,
+          "x": 167.09,
+          "y": 334.59
+        },
+        "hero": {
+          "bottom": 531.59,
+          "height": 448.59,
+          "right": 1800,
+          "width": 1680,
+          "x": 120,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 482.32,
+          "height": 55.98,
+          "right": 1737.91,
+          "width": 450,
+          "x": 1287.91,
+          "y": 426.34
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    },
+    "2560": {
+      "Home": {
+        "card": {
+          "bottom": 620,
+          "height": 500,
+          "right": 2392.2,
+          "width": 716.8,
+          "x": 1675.4,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 620,
+          "height": 178,
+          "right": 1624.2,
+          "width": 1405.2,
+          "x": 219,
+          "y": 442
+        },
+        "hero": {
+          "bottom": 651,
+          "height": 568,
+          "right": 2400,
+          "width": 2240,
+          "x": 160,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/images/hero/Cropped/home-matthew-fogarty-main-hero-2000x1333.avif",
+        "overlay": {
+          "bottom": 601,
+          "height": 70.55,
+          "right": 2353.8,
+          "width": 640,
+          "x": 1713.8,
+          "y": 530.45
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Systems": {
+        "card": {
+          "bottom": 620,
+          "height": 500,
+          "right": 2392.2,
+          "width": 716.8,
+          "x": 1675.4,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 620,
+          "height": 178,
+          "right": 1624.2,
+          "width": 1405.2,
+          "x": 219,
+          "y": 442
+        },
+        "hero": {
+          "bottom": 651,
+          "height": 568,
+          "right": 2400,
+          "width": 2240,
+          "x": 160,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/coaching-details/photos/coaching-details-santa-ana-college-court-preparation-media-card-cover-bottom-center-1200x900.avif",
+        "overlay": {
+          "bottom": 601,
+          "height": 70.55,
+          "right": 2353.8,
+          "width": 640,
+          "x": 1713.8,
+          "y": 530.45
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Featured Work": {
+        "card": {
+          "bottom": 636.45,
+          "height": 500,
+          "right": 2392.2,
+          "width": 716.8,
+          "x": 1675.4,
+          "y": 136.45
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 636.45,
+          "height": 178,
+          "right": 1624.2,
+          "width": 1405.2,
+          "x": 219,
+          "y": 458.45
+        },
+        "hero": {
+          "bottom": 667.45,
+          "height": 584.45,
+          "right": 2400,
+          "width": 2240,
+          "x": 160,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 617.45,
+          "height": 70.55,
+          "right": 2353.8,
+          "width": 640,
+          "x": 1713.8,
+          "y": 546.91
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Gallery / Media": {
+        "card": {
+          "bottom": 620,
+          "height": 500,
+          "right": 2392.2,
+          "width": 716.8,
+          "x": 1675.4,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 620,
+          "height": 178,
+          "right": 1624.2,
+          "width": 1405.2,
+          "x": 219,
+          "y": 442
+        },
+        "hero": {
+          "bottom": 651,
+          "height": 568,
+          "right": 2400,
+          "width": 2240,
+          "x": 160,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+        "overlay": {
+          "bottom": 601,
+          "height": 70.55,
+          "right": 2353.8,
+          "width": 640,
+          "x": 1713.8,
+          "y": 530.45
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Anaya Beard Case Study": {
+        "card": {
+          "bottom": 620,
+          "height": 500,
+          "right": 2392.2,
+          "width": 716.8,
+          "x": 1675.4,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 620,
+          "height": 178,
+          "right": 1624.2,
+          "width": 1405.2,
+          "x": 219,
+          "y": 442
+        },
+        "hero": {
+          "bottom": 651,
+          "height": 568,
+          "right": 2400,
+          "width": 2240,
+          "x": 160,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+        "overlay": {
+          "bottom": 601,
+          "height": 70.55,
+          "right": 2353.8,
+          "width": 640,
+          "x": 1713.8,
+          "y": 530.45
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 0,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "The Archer": {
+        "card": {
+          "bottom": 620,
+          "height": 500,
+          "right": 2392.2,
+          "width": 716.8,
+          "x": 1675.4,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 620,
+          "height": 178,
+          "right": 1624.2,
+          "width": 1405.2,
+          "x": 219,
+          "y": 442
+        },
+        "hero": {
+          "bottom": 651,
+          "height": 568,
+          "right": 2400,
+          "width": 2240,
+          "x": 160,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+        "overlay": {
+          "bottom": 601,
+          "height": 70.55,
+          "right": 2353.8,
+          "width": 640,
+          "x": 1713.8,
+          "y": 530.45
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 3,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      },
+      "Credentials": {
+        "card": {
+          "bottom": 620,
+          "height": 500,
+          "right": 2392.2,
+          "width": 716.8,
+          "x": 1675.4,
+          "y": 120
+        },
+        "desktopBottomDelta": 0,
+        "grid": {
+          "bottom": 620,
+          "height": 178,
+          "right": 1624.2,
+          "width": 1405.2,
+          "x": 219,
+          "y": 442
+        },
+        "hero": {
+          "bottom": 651,
+          "height": 568,
+          "right": 2400,
+          "width": 2240,
+          "x": 160,
+          "y": 83
+        },
+        "heroContained": true,
+        "imageObjectPosition": "50% 0%",
+        "imageSrc": "http://127.0.0.1:4173/assets/documents/credentials/previews/packet/matthew-fogarty-professional-credentials-packet-preview.webp",
+        "overlay": {
+          "bottom": 601,
+          "height": 70.55,
+          "right": 2353.8,
+          "width": 640,
+          "x": 1713.8,
+          "y": 530.45
+        },
+        "overlayInside": true,
+        "overlayTextClean": true,
+        "pillCount": 6,
+        "placeholderCount": 2,
+        "uniqueCols": 3,
+        "uniqueRows": 2
+      }
+    }
+  }
+}

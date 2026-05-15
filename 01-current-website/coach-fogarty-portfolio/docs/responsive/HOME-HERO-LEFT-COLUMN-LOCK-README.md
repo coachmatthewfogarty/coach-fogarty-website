@@ -1,8 +1,8 @@
 # Home Hero Left Column Lock
 
-Date: 2026-05-14
+Date: 2026-05-15
 
-This file documents the locked Home hero left-column system created from the Home Hero Left Column Audit source of truth. The same class hooks are now reused by `.page-hero-system` on Systems, Featured, Gallery/Media, Anaya Beard Case Study, and The Archer.
+This file documents the locked Home/page hero left-column system. The same class hooks are now reused by `.page-hero-system` on Home, Systems, Featured, Gallery/Media, Anaya Beard Case Study, The Archer, and Credentials.
 
 ## Locked Classes
 
@@ -22,10 +22,8 @@ This file documents the locked Home hero left-column system created from the Hom
 - `1200px` through `1499px`: the approved live body rhythm is `17.5px / 32px`.
 - At `2200px+`, the body paragraph uses `margin-top: clamp(28px, calc(-166px + 8.8vw), 48px)`. The stat-pill grid does not use a lift transform; bottom alignment comes from the right-column grid item aligning to the pill group.
 - The locked `2200px+` stat-pill scale is `82px` height, `26px` main value text, and `13.5px` sub-label text.
-- `.hero-pill-main` and `.hero-pill-sub` are the authoritative desktop text hooks. The Home-only `#impact` id remains for the section anchor and legacy/shared rules, but it is not part of the reusable class system.
+- `.hero-pill-main` and `.hero-pill-sub` are the authoritative text hooks. `#impact` and Home-only selectors are not part of the reusable class system.
 
-## Legacy Rules Kept
+## Legacy Rules Removed
 
-The stylesheet still contains older broad rules for `.hero-kicker`, `.hero-actions`, `.proof-card`, base `.hero`, `.stat-band`, and `.hero-stat-band`. They were not removed because they may support older subpage variants, archived hero work, or non-Home sections.
-
-The Home hero uses a late, scoped desktop layer in `styles.css` named `Home Hero Left Column Master Lock`. Upgraded page heroes use the later `Reusable Page Hero Desktop Master Lock` scoped to `.page-hero-system`. Those layers isolate the approved class hooks from broad legacy selectors without changing tablet/mobile behavior.
+The old `#impact`, `main#top`, `.hero-actions`, `.hero-kicker`, `.proof-card`, and page-specific hero fallback selectors were removed from reusable hero behavior. The canonical `.page-hero-system` block in `styles.css` now owns the left copy and pill rhythm across all active non-About/Contact heroes.

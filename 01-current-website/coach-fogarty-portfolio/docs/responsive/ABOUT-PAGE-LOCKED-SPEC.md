@@ -17,6 +17,27 @@ Status: locked as a special letter/gallery page as of May 14, 2026.
 
 About is intentionally excluded from the reusable `.page-hero-system`. It uses a special locked letter/gallery layout, but its outer width now follows the same page shell lane as the other locked pages.
 
+## Responsive Exception To Global Breakpoints
+
+The global website breakpoint system still treats `1025px` as desktop start for normal hero pages and the reusable `.page-hero-system`. About is the intentional exception.
+
+About is story/copy-heavy and pairs a personal letter with a 12-image gallery. Because the page needs a substantial readable copy lane before the gallery moves beside it, About does not start its two-column layout at `1025px`.
+
+About-specific rules:
+
+| Global range | Width | About layout | Gallery |
+| --- | --- | --- | --- |
+| Small Mobile | `360px-389px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `2` columns x `6` rows |
+| Mobile | `390px-430px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `2` columns x `6` rows |
+| Large Mobile / Small Tablet | `431px-720px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `2` columns x `6` rows through `620px`; `3` columns x `4` rows from `621px` |
+| Tablet | `721px-1024px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `3` columns x `4` rows |
+| Compact Desktop | `1025px-1439px` | Stacked tablet-style About layout; full-width copy; signature below copy; gallery below signature; height sync off | `3` columns x `4` rows |
+| Desktop | `1440px-1899px` | Two-column About layout; copy/signature left; gallery right; height sync on | `3` columns x `4` rows |
+| Large Desktop | `1900px-2199px` | Two-column About layout; wider text column; narrower right gallery; height sync on | `3` columns x `4` rows |
+| Ultra-Wide | `2200px+` | Two-column About layout; ultra-wide shell; text-favored balance; height sync on | `3` columns x `4` rows |
+
+Do not reinterpret `1025px-1439px` as an About desktop split. In this page only, the full desktop two-column layout starts at `1440px`.
+
 ## Page Structure
 
 Order:
@@ -34,8 +55,8 @@ The About page uses the shared page shell rules:
 
 - Base shell: `.page-shell`
 - Desktop shell token: `--page-shell-width`
-- Desktop 1025-2199: `min(1680px, calc(100vw - 88px))`
-- Desktop 2200+: `min(2240px, calc(100vw - 320px))`
+- Shared page shell `1025px-2199px`: `min(1680px, calc(100vw - 88px))`
+- Shared page shell `2200px+`: `min(2240px, calc(100vw - 320px))`
 - About main: `width: 100%; max-width: 100%; margin: 0; overflow-x: clip`
 - About section: `width: 100%; max-width: none; margin: 22px 0 0`
 
@@ -49,7 +70,7 @@ Applies at `min-width: 1440px`.
 - Left column: copy and signature
 - Right column: 12-image gallery
 - Content grid: `.about-letter-body`
-- Columns: `minmax(0, clamp(520px, 39vw, 720px)) minmax(360px, 1fr)`
+- Base columns for `1440px-1899px`: `minmax(0, clamp(700px, 46vw, 860px)) minmax(420px, 1fr)`
 - Gap: `clamp(24px, 2.6vw, 48px)`
 - Section padding: `34px-58px` inline via `clamp(34px, 2.4vw, 58px)`, top `var(--section-heading-top-gap-desktop, 34px)`, bottom `clamp(28px, 2.2vw, 44px)`
 - Section radius: `34px`
@@ -83,33 +104,34 @@ Compact stacked desktop `1025px-1279px` and `1280px-1439px`:
 Mid desktop `1440px-1599px`:
 
 - Layout: 2 columns
+- Columns: `minmax(0, clamp(700px, 46vw, 860px)) minmax(420px, 1fr)`
 - Gallery: `3 columns x 4 rows`
 - Visible images: all 12 gallery images
 - Body font size: unchanged from base desktop
-- Body line-height: `1.4` from `1440px-1499px`; `1.32` from `1500px-1599px`
-- Paragraph gap: `12px`
-- Purpose: begin the full desktop layout at `1440px` with the complete `3 x 4` right gallery.
+- Body line-height: `1.52`
+- Paragraph gap: `14px`
+- Purpose: begin the full desktop layout at `1440px` with a more text-favored composition, wider copy column, narrower right gallery, and the complete `3 x 4` right gallery.
 
 Desktop readability range `1600px-1899px`:
 
-- Grid: unchanged from base desktop
+- Columns: `minmax(0, clamp(700px, 46vw, 860px)) minmax(420px, 1fr)`
 - Gallery: `3 columns x 4 rows`
 - Visible images: all 12 gallery images
 - Body font size: unchanged from base desktop
-- Body line-height: `1.32`
-- Paragraph gap: `12px`
-- Purpose: lightly relax the body rhythm at `1600 x 900` while preserving the approved two-column one-page desktop feel.
+- Body line-height: `1.52`
+- Paragraph gap: `14px`
+- Purpose: keep the desktop page text-driven through `1899px`, with the body copy reaching farther under the title while the right gallery narrows and remains synced to copy height.
 
 Large desktop `1900px-2199px`:
 
-- Columns: `minmax(0, clamp(680px, 38vw, 820px)) minmax(640px, 1fr)`
+- Columns: `minmax(0, clamp(840px, 45vw, 980px)) minmax(560px, 1fr)`
 - Gap: `clamp(34px, 2.8vw, 60px)`
 - Gallery: `3 columns x 4 rows`
 - Visible images: all 12 gallery images
-- Body copy: `clamp(1rem, 0.54vw, 1.12rem)`, line-height `1.6`
-- Paragraph gap: `12px`
+- Body copy: `clamp(1rem, 0.54vw, 1.12rem)`, line-height `1.56`
+- Paragraph gap: `14px`
 - Signature width: `clamp(235px, 13vw, 320px)`
-- Purpose: give `1920 x 1080` more comfortable line spacing while preserving the locked two-column gallery balance.
+- Purpose: give `1920 x 1080` a wider story column and narrower synced gallery so the title and body copy read as one stronger text block before the ultra-wide layout takes over at `2200px`.
 
 Ultra-wide `2200px+`:
 
@@ -154,7 +176,7 @@ Tablet:
 Mobile:
 
 - Stack below copy
-- Grid: `2 columns x 6 rows`
+- Grid: `2 columns x 6 rows` through `620px`; `3 columns x 4 rows` from `621px`
 - Image aspect ratio: `4 / 3`
 - Gap: `9px`
 - Radius: `12px`

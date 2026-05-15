@@ -21,7 +21,7 @@ Status: audit completed 2026-05-14. No design changes were made.
 - Broken static `media.html` href/src paths: none found.
 - Horizontal overflow at requested widths: none found.
 - Overlay behavior: opens at every requested width; Escape/arrow/click behavior is wired in `app.js`.
-- Duplicated/conflicting rules: no unsafe duplicates removed. The file contains legacy/shared fallback selector groups for subpage heroes and the later active `.page-hero-system` master lock. The docs now identify the latter as authoritative for Gallery desktop.
+- Duplicated/conflicting hero rules: the legacy/shared fallback selector groups for subpage heroes were removed in the 2026-05-15 page-hero cleanup. `.page-hero-system` is authoritative for Gallery across all ranges.
 - Unused/stale active-page class: `.media-album-section` styles are not emitted by the current Gallery Hub renderer. Keep as legacy/shared until other pages are checked.
 - Old documentation conflicts: existing docs referenced Gallery only through global responsive and Home Media overlay docs. This new Gallery packet is the page-specific source of truth.
 
@@ -30,13 +30,11 @@ Status: audit completed 2026-05-14. No design changes were made.
 - Created official Gallery documentation packet in `docs/gallery/`.
 - Captured computed QA output and screenshots in `outputs/gallery-page-spec-capture-2026-05-14/`.
 - Updated master README and responsive docs index to reference the Gallery packet.
-- No CSS, JS, HTML, or production assets were changed.
+- The 2026-05-15 page-hero cleanup changed hero HTML/CSS only; Gallery overlay JS and production assets were not changed.
 
 ## Archive / Legacy Notes
 
-No rules were deleted or archived during this pass. Legacy candidates are documented for a future dedicated cleanup:
-
-- Older `.subpage-hero` and approved-left-lock selector groups that are overridden by `.page-hero-system` for Gallery desktop.
+- Older `.subpage-hero` and approved-left-lock selector groups were removed from reusable hero behavior.
 - `.media-album-section` if future cross-page search confirms it is unused everywhere.
 - Historical Home Media audit outputs remain historical; use active docs instead.
 

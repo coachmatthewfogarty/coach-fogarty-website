@@ -48,7 +48,7 @@ Header rules:
 
 ## 3. Gallery Hero Section
 
-Hero classes: `.subpage-hero.media-hero.page-hero-system`. Left copy uses `.subpage-hero-copy.hero-left-system`; right image uses `.subpage-hero-visual.hero-right-system.hero-portrait-card`; hero pills use `.media-filter-row.hero-pill-system`.
+Hero classes: `.hero.page-hero-system`. Left copy uses `.hero-left-system`; right image uses `.hero-right-system` with `.hero-portrait-card`; hero pills use `.hero-pill-system`.
 
 - Eyebrow: `GALLERY HUB`.
 - H1: `Gallery Hub`.
@@ -88,7 +88,7 @@ Hero rules:
 
 | Order | Section | ID | Class names | Eyebrow | Title | Behavior |
 |---|---|---|---|---|---|---|
-| 1 | Hero | (none) | subpage-hero media-hero page-hero-system | GALLERY HUB | Gallery Hub | 6 hero pills plus right image highlight bar |
+| 1 | Hero | (none) | hero page-hero-system | GALLERY HUB | Gallery Hub | 6 hero pills plus right image overlay |
 | 2 | Featured Portfolio Galleries | featured-media | section media-library-section | GALLERY CATEGORIES | Featured Portfolio Galleries | Carousel over 10 category cards; 3 visible desktop/tablet, 1 visible mobile |
 | 3 | Coaching Photos and Team Culture | coaching-media | section media-library-section | COACHING PHOTOS | Coaching Photos and Team Culture | Carousel over 6 coaching albums plus 6 gallery buttons |
 | 4 | Teaching and Training Clips | video-galleries | section media-library-section | TRAINING VIDEOS | Teaching and Training Clips | Carousel over Archer + Anaya video items plus 2 action buttons |
@@ -167,7 +167,7 @@ Card rules:
 
 ## 7. Pills / Buttons / CTAs
 
-- Hero pills use `.button.button-secondary.button-small.hero-pill` inside `.media-filter-row.hero-pill-system`.
+- Hero pills use `.button.button-secondary.button-small.hero-pill` inside `.hero-pill-system`.
 - Desktop hero pill layout: 3 columns x 2 rows.
 - Hero pill treatment: 999px radius, warm cream gradient, `1.5px solid rgba(184, 135, 47, 0.58)`, inset highlight and warm shadow.
 - Hero pill text: `.hero-pill-main` weight 800, color `var(--ink)`; active desktop size controlled by `--home-hero-pill-main-size`.
@@ -201,7 +201,7 @@ Card rules:
 | Card background | cream vertical gradient over var(--panel) |
 | Overlay background | rgba(15, 12, 10, 0.82) |
 | Overlay panel | #1f1b16 at 0.96 alpha; awards overlay rgba(255,250,243,0.98) |
-| Hero overlay link blue | #8bb8e8 / legacy #8fbce8 |
+| Hero overlay link blue | #8bb8e8 |
 
 ## 9. Spacing / Layout System
 
@@ -262,6 +262,6 @@ Card rules:
 - Broken image paths in active Gallery data: none found.
 - Broken static href/src paths in `media.html`: none found.
 - Horizontal overflow across requested QA widths: none found.
-- Duplicated/legacy CSS: present by design as fallback. Active Gallery hero rules are the later `.page-hero-system` master-lock selectors. Older `.subpage-hero`/approved-hero fallback rules should remain marked as fallback unless a future cleanup proves all pages no longer use them.
+- Duplicated/legacy hero CSS: removed in the 2026-05-15 page-hero cleanup. Active Gallery hero rules are the `.page-hero-system` selectors.
 - Unused rendered class note: `.media-album-section` has active CSS but current Gallery Hub renderer does not emit it for the main page sections; keep as legacy/shared until other pages/usages are audited.
 - Design changes made during this spec pass: none.

@@ -31,7 +31,7 @@ The only future watch-list breakpoint is `1025px`, because it is the tightest de
 - Desktop starts at `1025px`.
 - The hero inherits the approved internal `.page-hero-system` used by Featured, Gallery, Anaya and Archer.
 - Left column uses `.hero-left-system` for eyebrow, title and body.
-- Right column uses `.hero-right-system.hero-portrait-card` with the approved image frame and overlay.
+- Right column uses `.hero-right-system` with `.hero-portrait-card`, the approved image frame, and overlay.
 - Six hero pills use `.hero-pill-system` and stay in a `3 x 2` desktop grid.
 - Tablet and mobile stack copy, pills and image cleanly through `1024px`.
 

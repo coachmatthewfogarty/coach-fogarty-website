@@ -16,7 +16,7 @@ This is the current active page-spec packet for `anaya-case-study.html`. It docu
 
 | # | ID | Classes | Heading | Rendered size at 1280 | Padding | Radius | Background |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | (hero) | hero subpage-hero anaya-hero page-hero-system | Anaya Beard | 1192x434px | 28.2px 36px 23px | 32px | rgba(0, 0, 0, 0) linear-gradient(135deg, rgba(255, 248, 237, 0.94), rgba(246, 236, 219, 0.78)) |
+| 1 | (hero) | hero page-hero-system | Anaya Beard | follows shared page hero system | shared page hero padding | shared page hero radius | shared page hero background |
 | 2 | foundation | section anaya-journey-section | Building From The Starting Point | 1192x1301px | 34px 36px | 34px | rgba(255, 248, 240, 0.58) none |
 | 3 | development-process | section anaya-journey-section | The Early Mornings, Repetition And Grind Behind The Growth | 1192x1346px | 34px 36px | 34px | rgba(255, 248, 240, 0.58) none |
 | 4 | leadership-impact | section anaya-journey-section | The Turning Point Became A Program Standard | 1192x1278px | 34px 36px | 34px | rgba(255, 248, 240, 0.58) none |
@@ -36,13 +36,13 @@ Active state: no Anaya-specific active nav class exists. Systems has a page-spec
 
 ## 2. Page Hero
 
-Hero markup: `.hero.subpage-hero.anaya-hero.page-hero-system`. Desktop >=1025 uses the reusable Page Hero Desktop Master Lock. At 1280px it renders 1192x433.69px with 28.2px top, 36px side, 23px bottom padding, 32px radius, 1px var(--line) border, shared shadow, and a two-column grid: 694.734px copy / 390px image with 33.28px column gap. Grid areas are `copy portrait` and `stats portrait`.
+Hero markup: `.hero.page-hero-system`. Desktop >=1025 uses the reusable Page Hero Desktop Master Lock, with `.hero-left-system`, `.hero-right-system`, `.hero-portrait-card`, `.hero-portrait-overlay`, and `.hero-pill-system` as the only active hero behavior hooks. Grid areas are `copy portrait` and `stats portrait`.
 
 Hero eyebrow text: `PLAYER DEVELOPMENT CASE STUDY`; 12.096px at 1280, 700 weight, 1.15 line-height, 0.14em letter-spacing, uppercase, red #8f2d1e, margin-bottom 12px. H1 text: `Anaya Beard`; Georgia/Palatino, 59.2px at 1280, 56.24px line-height, 700, #1f1b16, normal wrapping. Hero paragraph text is exactly the four-sentence paragraph in the HTML; 17.5px / 32px at 1280, 500 weight, muted #6a5f53, margin-top 25.5px, width 100% of the left column.
 
 Hero image: `./anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif`. At 1280 it renders 390x380.5px, object-fit cover, object-position 50% 0%, card radius 28px, shadow var(--shadow), border 1px rgba(255,255,255,0.4). Source aspect ratio is 3:2; desktop card uses locked height rather than preserving source ratio. Tablet/mobile stack copy, image, and chips into one column; image is 320px tall at 1024/820/768 and scales down by width at 390/375.
 
-Overlay card: `.hero-portrait-overlay` sits absolute over the hero image. Desktop <=1349 uses left/right clamp(10px,0.85vw,14px), bottom clamp(10px,0.9vw,18px), 10px/12px padding, 14px radius, rgba(32,28,24,0.82) background, blur(12px), gold title. At 1280 the overlay title is 11.8px, overlay links are 13.2px, flex nowrap with space-between. At >=2200 the overlay is centered, width min(calc(100% - 26px), clamp(560px,25vw,680px)), 13px 16px padding, title 15px and links 17px.
+Overlay card: `.hero-portrait-overlay` sits absolute over the hero image and follows `docs/responsive/HERO-OVERLAY-SYSTEM-LOCK.md`. Desktop <=1349 uses left/right clamp(10px,0.85vw,14px), bottom clamp(10px,0.9vw,18px), 10px/12px padding, 14px radius, rgba(32,28,24,0.74) background, blur(12px), gold title. At 1280 the overlay title is 11.8px, overlay links are 12px in the 1025-1599px guard range, flex nowrap with space-between. At >=2200 the overlay is centered, width min(calc(100% - 26px), clamp(560px,25vw,680px)), 13px 16px padding, title 15px and links 17px.
 
 ## 3. Impact / Accolade Chips
 

@@ -9,6 +9,7 @@ Companion active specs:
 - `docs/responsive/SYSTEMS-PAGE-LOCK-README.md`: locked Systems page hero, library, details, image, button and QA rules.
 - `docs/responsive/FEATURED-WORK-PAGE-LOCK-README.md`: locked Featured Work detailed section page rules.
 - `docs/responsive/ARCHER-PAGE-LOCK-README.md`: locked The Archer product case study page rules.
+- `docs/responsive/ABOUT-PAGE-LOCKED-SPEC.md`: locked About letter/gallery page exception to the reusable hero system.
 - `docs/gallery/GALLERY-PAGE-FINAL-SPEC.md`: locked Gallery / Media page spec, image inventory, interaction spec, cleanup log, and responsive QA packet.
 - `docs/image-export/README.md`: locked image export, crop, naming, and asset rules.
 
@@ -21,15 +22,16 @@ footer.js
 
 ## Breakpoints
 
-| Range | Name | Behavior |
-|---|---|---|
-| `<=430px` | small mobile | Tightest spacing, compact cards, protected mobile text floors |
-| `431-720px` | mobile | Stacked layout, mobile drawer header, compact sections |
-| `721-767px` | bridge | Tablet layout shell with mobile type scale |
-| `768-1024px` | tablet | Mobile structure with roomier spacing and tablet type scale |
-| `1025-1199px` | small desktop / large tablet transition | Desktop begins; keep layout compact and protect image/text balance |
-| `1200-2199px` | desktop | Desktop nav, split heroes, approved desktop page shell |
-| `2200px+` | wide desktop | Wide shell and capped wide components |
+| Range | Size | Device Type | Layout |
+|---|---|---|---|
+| Small Mobile | `360px-389px` | small phones | stacked hero, tight overlay |
+| Mobile | `390px-430px` | standard phones | stacked hero, compact overlay |
+| Large Mobile / Small Tablet | `431px-720px` | large phones, small tablets | stacked hero |
+| Tablet | `721px-1024px` | tablets / iPad range | stacked hero, larger image/overlay |
+| Desktop Start | `1025px-1199px` | small laptop / large tablet landscape | two-column hero begins |
+| Desktop | `1200px-1599px` | laptop / standard desktop | two-column Home hero system |
+| Large Desktop | `1600px-2199px` | large monitor | wider desktop hero rhythm |
+| Ultra-Wide | `2200px+` | 2K / wide desktop | wide shell, centered wider overlay |
 
 Desktop starts at `1025px`. Do not bring back older `1000px` desktop-switch rules.
 
@@ -85,6 +87,22 @@ Current reusable page-hero coverage:
 - The Archer: `archer-visuals.html`
 
 About and Contact are excluded from the reusable page-hero lock.
+
+## About Page Exception
+
+About is intentionally different from the global hero/page system.
+
+- About is excluded from the reusable `.page-hero-system`.
+- About uses a special locked letter/gallery layout, not a reusable hero.
+- About is story/copy-heavy and includes a 12-image gallery.
+- About does not start its two-column layout at the global `1025px` desktop start.
+- About stays stacked/tablet-style from `1025px` through `1439px`.
+- About full desktop two-column layout starts at `1440px`.
+- About `1440px+` uses copy/signature on the left and a 12-image `3 x 4` gallery on the right.
+- About `1025px-1439px` uses full-width copy, signature below copy, and a `3 x 4` gallery below the signature.
+- About `620px` and below uses a `2 x 6` gallery.
+
+Use `docs/responsive/ABOUT-PAGE-LOCKED-SPEC.md` as the source of truth before changing About responsive behavior. Future passes should not assume About follows the normal `1025px` two-column hero start.
 
 ## Locked Featured Work Page
 

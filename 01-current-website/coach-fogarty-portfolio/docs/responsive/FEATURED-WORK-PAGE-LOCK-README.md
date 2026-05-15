@@ -6,9 +6,9 @@ Status: corrected and locked as a detailed Featured Work section page as of May 
 
 - Page: `featured-work.html`
 - Main: `main.featured-page`
-- Hero: `.featured-hero.page-hero-system`
-- Hero stats: `.featured-hero-actions.hero-pill-system`
-- Hero overlay: `.page-highlight-bar.hero-portrait-overlay`
+- Hero: `.hero.page-hero-system`
+- Hero stats: `.hero-pill-system`
+- Hero overlay: `.hero-portrait-overlay`
 - Summary: `.featured-summary-section`
 - Detailed sections: `.featured-pillar`
 - Strategy panel: `.featured-strategy-panel`
@@ -49,7 +49,7 @@ Desktop uses the approved `3 x 2` pill grid inside the left hero column. Tablet 
 - Use the shared public-site cream background and page shell.
 - Use the shared header and footer without local overrides.
 - Use the reusable `.page-hero-system` hooks.
-- The hero image overlay must use the shared approved Home/Page Hero treatment: `page-highlight-bar hero-portrait-overlay`.
+- The hero image overlay must use the shared approved Home/Page Hero treatment: `.hero-portrait-overlay`.
 - Do not add a Featured-only hero overlay card system or override the shared overlay position, padding, radius, background, shadow, or typography.
 - Preserve navy/dark ink type, red accents, warm cream panels, soft borders, soft shadows, rounded portfolio cards, and the original detailed section rhythm.
 - Keep the restored `.featured-summary-*`, `.featured-pillar-*`, `.featured-stat-*`, `.featured-problem-*`, and `.featured-value-*` sections active.
@@ -78,4 +78,4 @@ Confirm no horizontal overflow, clean hero wrapping, intentional image crops, si
 
 The simplified 4-card rebuild was removed/reverted. Do not rebuild the body as only Proof of Work overview, four cards, compact proof metrics, and a generic CTA.
 
-The wrong Featured-only white hero caption card was removed. Featured Work now inherits the shared approved page-hero image overlay treatment; no Featured-only overlay selectors should be added back.
+The wrong Featured-only white hero caption card and old Featured-specific hero hooks were removed. Featured Work now inherits the shared approved page-hero image overlay treatment; no Featured-only hero selectors should be added back.

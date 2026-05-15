@@ -19,6 +19,8 @@ These are the only active website rule documents. If an archived note or old aud
 | Website map, editing rules, and doc index | `README.md` |
 | Global responsive, heading, body text, card, pill, overlay, and page-layout rules | `RESPONSIVE-DESIGN-SYSTEM.md` |
 | Measured Home hero desktop system | `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` |
+| Shared page hero system lock | `docs/responsive/PAGE-HERO-SYSTEM-LOCK.md` |
+| Shared hero image overlay card lock | `docs/responsive/HERO-OVERLAY-SYSTEM-LOCK.md` |
 | Locked Home Media cards, carousel, and shared overlay behavior | `docs/responsive/HOME-MEDIA-SECTION-LOCK-README.md` |
 | Locked Gallery / Media page specs, image inventory, interactions, cleanup, and QA | `docs/gallery/GALLERY-PAGE-FINAL-SPEC.md` |
 | Locked Systems page hero, library, details, image, button, and QA rules | `docs/responsive/SYSTEMS-PAGE-LOCK-README.md` |
@@ -66,7 +68,7 @@ Home hero desktop rules:
 
 Global page hero rules:
 
-- Systems, Featured, Gallery, Anaya, and Archer hero pages inherit the updated hero left-column rhythm.
+- Home, Systems, Featured, Gallery, Anaya, Archer, and Credentials hero pages inherit the same `.page-hero-system` component.
 - Do not change eyebrow/title/right image/overlay when only left-column formatting is requested.
 - Do not modify right-column image sizes, crops, or overlay formatting unless specifically requested.
 - About and Contact are excluded from broad global changes where existing approved page rules say not to touch them.
@@ -86,7 +88,7 @@ Featured Work page:
 - Structure: shared `.page-hero-system`, Homepage-style six stat-pill hero grid, Impact Summary, Pacific Academy, Santa Ana College, Anaya Beard, The Archer, Complete Coaching Profile, and Explore the Work CTA.
 - Featured Work uses the shared page hero system with the Homepage-style 6 stat-pill grid, while the page body preserves the original detailed Featured Work section layout. Do not replace the body with a simplified 4-card grid.
 - Preserve the approved cream background, navy/dark text, red accents, image-forward section system, soft shadow, rounded cards, and responsive shell.
-- Hero overlay: use the shared approved `page-highlight-bar hero-portrait-overlay` treatment. Do not add Featured-only hero overlay card rules or local overlay overrides.
+- Hero overlay: use the shared approved `.hero-portrait-overlay` treatment. Do not add Featured-only hero overlay card rules or local overlay overrides.
 - Cleanup: the simplified 4-card rebuild was removed/reverted, and the wrong Featured-only white hero caption card rules were removed.
 
 Typography and components:

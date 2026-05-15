@@ -1,6 +1,6 @@
 # Home Hero Responsive Design Spec
 
-Last updated: 2026-05-14
+Last updated: 2026-05-15
 
 This is the measured source of truth for the approved Home hero desktop system and the reusable page-hero system inherited from it. Use it when changing the Home hero, tuning inherited page hero left columns, or checking whether future CSS preserves the approved body, pill, portrait, and overlay rhythm.
 
@@ -8,7 +8,7 @@ Scope:
 
 - Page: `index.html`
 - Primary CSS: `styles.css`
-- Component: `main#top > .hero`
+- Component: `.page-hero-system`
 - Reusable page-hero hook: `.page-hero-system`
 - Desktop starts: `1025px`
 - Required desktop verification sizes: `1025x768`, `1280x800`, `1440x900`, `1600x900`, `1920x1080`, `2560x1440`
@@ -108,10 +108,10 @@ Guardrails:
 Selectors:
 
 ```text
-main#top > .hero .hero-copy
-main#top > .hero .eyebrow
-main#top > .hero h1
-main#top > .hero .hero-text
+.page-hero-system .hero-left-system
+.page-hero-system .eyebrow
+.page-hero-system h1
+.page-hero-system .hero-text
 ```
 
 Approved body behavior:
@@ -137,10 +137,10 @@ Copy rules:
 Selectors:
 
 ```text
-main#top > .hero .hero-pill-system
-main#top > .hero .hero-pill-system > .hero-pill
-main#top > .hero .hero-pill-main
-main#top > .hero .hero-pill-sub
+.page-hero-system .hero-pill-system
+.page-hero-system .hero-pill-system > .hero-pill
+.page-hero-system .hero-pill-main
+.page-hero-system .hero-pill-sub
 ```
 
 Approved stat pill system:
@@ -151,7 +151,7 @@ Approved stat pill system:
 - Pill colors, border radius, padding, type, and gaps match the Home hero system.
 - Wide desktop pills are not capped narrower than the left copy lane.
 - At `2200px+`, the pill group uses no lift transform. The right-column grid item bottom-aligns so the 2-row group aligns with the right portrait card.
-- `#impact` remains the Home section id/anchor and may appear in legacy selectors, but it is not part of the reusable page-hero system.
+- `#impact` is not part of the reusable page-hero system and should not appear in hero behavior selectors.
 
 Current sizing targets:
 
@@ -166,8 +166,8 @@ Current sizing targets:
 Wide desktop guardrail:
 
 ```css
-main#top > .hero .hero-left-system,
-main#top > .hero .hero-pill-system {
+.page-hero-system .hero-left-system,
+.page-hero-system .hero-pill-system {
   width: min(100%, var(--home-hero-left-system-max));
   max-width: min(100%, var(--home-hero-left-system-max));
 }
@@ -180,10 +180,10 @@ main#top > .hero .hero-pill-system {
 Scoped desktop selectors:
 
 ```text
-main#top > .hero .hero-right-system
-main#top > .hero .hero-portrait-card
-main#top > .hero .hero-portrait-picture
-main#top > .hero .hero-portrait-image
+.page-hero-system .hero-right-system
+.page-hero-system .hero-portrait-card
+.page-hero-system .hero-portrait-picture
+.page-hero-system .hero-portrait-image
 ```
 
 Image rules:
@@ -198,15 +198,15 @@ Image rules:
 Scoped desktop selectors:
 
 ```text
-main#top > .hero .hero-portrait-overlay
-main#top > .hero .hero-portrait-overlay-title
-main#top > .hero .hero-portrait-overlay-text
+.page-hero-system .hero-portrait-overlay
+.page-hero-system .hero-portrait-overlay-title
+.page-hero-system .hero-portrait-overlay-text
 ```
 
 Overlay rules:
 
 - Keep the overlay attached to the right portrait.
-- `.hero-mobile-highlight` is retained as a legacy/tablet/mobile compatibility class, but desktop lock work should target `.hero-portrait-overlay`.
+- `.hero-portrait-overlay` is the active reusable overlay hook across desktop, tablet, and mobile.
 - Keep the approved right-column formatting.
 - Keep approved overlay text on one line.
 - Wide desktop overlay should be capped so it does not stretch too far.
@@ -216,7 +216,7 @@ Overlay rules:
 Current wide desktop overlay cap:
 
 ```css
-main#top > .hero .hero-portrait-overlay {
+.page-hero-system .hero-portrait-overlay {
   width: min(calc(100% - 26px), clamp(560px, 25vw, 680px));
   max-width: min(calc(100% - 26px), clamp(560px, 25vw, 680px));
 }
@@ -224,7 +224,7 @@ main#top > .hero .hero-portrait-overlay {
 
 ## Inherited Page Heroes
 
-Systems, Featured, Gallery/Media, Anaya Beard Case Study, and The Archer now inherit the approved Home hero desktop system through `.page-hero-system`. Credentials keeps its prior shared fallback. About and Contact are excluded.
+Home, Systems, Featured, Gallery/Media, Anaya Beard Case Study, The Archer, and Credentials now inherit the approved Home hero system through `.page-hero-system`. About and Contact are excluded.
 
 Rules:
 

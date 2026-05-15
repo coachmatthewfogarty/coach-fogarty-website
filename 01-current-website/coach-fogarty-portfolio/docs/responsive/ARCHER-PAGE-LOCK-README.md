@@ -26,7 +26,7 @@ The page should feel technical, athletic, clean, and portfolio-ready. It should 
 - The page uses the reusable `.page-hero-system`.
 - The copy lane uses `.hero-left-system`.
 - The right visual uses `.hero-right-system`, `.hero-portrait-card`, `.hero-portrait-picture`, `.hero-portrait-image`, and `.hero-portrait-overlay`.
-- The hero pills use `.hero-pill-system`, `.hero-pill`, and `.hero-pill-main`.
+- The hero pills use `.hero-pill-system`, `.hero-pill`, `.hero-pill-main`, and `.hero-pill-sub`.
 - Desktop starts at `1025px`.
 - Right-column image sizing, overlay treatment, typography, pills, and shell alignment are inherited from the locked page-hero system.
 
@@ -57,7 +57,7 @@ Future exports should follow the locked crop ladder:
 
 - Removed the old standalone `.archer-page .asset-grid` media override after replacing the page with `.archer-media-grid`.
 - Removed the old six-button Archer hero navigation from the HTML.
-- Kept shared legacy page-hero fallback rules because they still support other pages and tablet/mobile cascade behavior.
+- Removed the old Archer-specific hero fallback rules; the shared `.page-hero-system` owns hero behavior across all device ranges.
 - No separate Archer overlay/gallery JavaScript was added; the page uses native images/videos while the Gallery page retains the site-wide media overlay.
 
 ## Required QA Breakpoints

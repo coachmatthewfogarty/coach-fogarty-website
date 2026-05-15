@@ -1,8 +1,8 @@
 # Home Hero Right Column Lock Prep
 
-Date: 2026-05-14
+Date: 2026-05-15
 
-This documents the desktop-only scoped class conversion for the Home hero right column. The same right-column hooks are now reused by `.page-hero-system` on Systems, Featured, Gallery/Media, Anaya Beard Case Study, and The Archer.
+This documents the shared right-column hooks for the Home/page hero system. The same right-column hooks are now reused by `.page-hero-system` on Home, Systems, Featured, Gallery/Media, Anaya Beard Case Study, The Archer, and Credentials.
 
 ## Scoped Classes
 
@@ -40,10 +40,10 @@ This documents the desktop-only scoped class conversion for the Home hero right 
 - Fixed tests at `512px / -52px`, `500px / -60px`, and `488px / -68px` were reviewed during the earlier balance pass. The final lock keeps the responsive portrait height ramp and removes pill-lift transforms; the right column bottom-aligns to the pill group.
 - The crop remains controlled by `object-fit: cover` and `object-position: 50% 0%`.
 
-## Legacy Rules Kept
+## Legacy Rules Removed
 
-The legacy classes `.hero-visual`, `.portrait-card`, `.hero-mobile-highlight`, `.page-highlight-bar`, and their broad selectors remain in the markup/CSS for tablet/mobile compatibility and older shared hero variants. The Home desktop lock and reusable page-hero lock now use the scoped classes listed above as the authoritative hooks.
+The old `.page-highlight-bar`, `.subpage-hero`, `.media-hero`, `.anaya-hero`, `.featured-hero`, `.credentials-hero`, `.systems-jump-nav`, `.media-filter-row`, `.hero-actions`, `#impact`, and `main#top` reusable hero selectors were removed from `styles.css`. The scoped classes listed above are the authoritative hooks.
 
 ## Reuse Note
 
-Do not copy `.hero-mobile-highlight` or `.page-highlight-bar` as the desktop system hook for new page heroes. Keep them only where tablet/mobile compatibility or older markup still depends on them; use `.hero-portrait-overlay` for the reusable desktop system.
+Do not copy `.hero-mobile-highlight` or `.page-highlight-bar` as the system hook for page heroes. Use `.hero-portrait-overlay` for the reusable system.

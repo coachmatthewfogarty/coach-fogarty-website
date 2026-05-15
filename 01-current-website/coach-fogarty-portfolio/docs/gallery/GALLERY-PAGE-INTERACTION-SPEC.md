@@ -82,4 +82,4 @@ Mobile overlay <=720px:
 
 - `renderGallery()` remains active for Home Media and is not stale.
 - `.media-album-section` CSS is not used by current Gallery Hub renderer but may be shared/legacy; do not remove without cross-page audit.
-- Older `.subpage-hero` fallback and approved-left-lock selectors are superseded by `.page-hero-system` on Gallery desktop but still provide tablet/mobile and older-page fallback.
+- Older `.subpage-hero` fallback and approved-left-lock selectors have been removed from reusable hero behavior. Gallery uses `.page-hero-system` across desktop, tablet, and mobile.

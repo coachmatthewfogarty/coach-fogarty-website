@@ -1,0 +1,600 @@
+[
+  {
+    "page": "featured",
+    "width": 1920,
+    "card": {
+      "bottom": 528.19,
+      "height": 380.59,
+      "right": 1745.41,
+      "width": 480,
+      "x": 1265.41,
+      "y": 147.59
+    },
+    "hero": {
+      "bottom": 559.19,
+      "height": 476.19,
+      "right": 1792.5,
+      "width": 1680,
+      "x": 112.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 509.91,
+      "height": 55.98,
+      "right": 1730.41,
+      "width": 450,
+      "x": 1280.41,
+      "y": 453.94
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 261.69,
+      "height": 114.89,
+      "right": 1227.01,
+      "width": 1067.41,
+      "x": 159.59,
+      "y": 146.8
+    },
+    "titleFont": "60.48px",
+    "titleLineHeight": "57.456px",
+    "titleOverflow": true,
+    "titleText": "Featured Work and Program Impact",
+    "viewport": 1920
+  },
+  {
+    "page": "featured",
+    "width": 1600,
+    "card": {
+      "bottom": 511.02,
+      "height": 370,
+      "right": 1511.5,
+      "width": 400,
+      "x": 1111.5,
+      "y": 141.02
+    },
+    "hero": {
+      "bottom": 537.92,
+      "height": 454.92,
+      "right": 1548.5,
+      "width": 1512,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 495.63,
+      "height": 55.98,
+      "right": 1496.91,
+      "width": 370.81,
+      "x": 1126.09,
+      "y": 439.65
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 254.52,
+      "height": 112.48,
+      "right": 1053.5,
+      "width": 980,
+      "x": 73.5,
+      "y": 142.04
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Featured Work and Program Impact",
+    "viewport": 1600
+  },
+  {
+    "page": "featured",
+    "width": 1440,
+    "card": {
+      "bottom": 500.29,
+      "height": 384.59,
+      "right": 1351.5,
+      "width": 390,
+      "x": 961.5,
+      "y": 115.7
+    },
+    "hero": {
+      "bottom": 527.19,
+      "height": 444.19,
+      "right": 1388.5,
+      "width": 1352,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 486.34,
+      "height": 54.59,
+      "right": 1338.27,
+      "width": 363.53,
+      "x": 974.73,
+      "y": 431.74
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 254.3,
+      "height": 112.48,
+      "right": 924.06,
+      "width": 850.56,
+      "x": 73.5,
+      "y": 141.82
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Featured Work and Program Impact",
+    "viewport": 1440
+  },
+  {
+    "page": "featured",
+    "width": 1280,
+    "card": {
+      "bottom": 495.59,
+      "height": 380.5,
+      "right": 1191.5,
+      "width": 390,
+      "x": 801.5,
+      "y": 115.09
+    },
+    "hero": {
+      "bottom": 519.59,
+      "height": 436.59,
+      "right": 1228.5,
+      "width": 1192,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 483.07,
+      "height": 54.59,
+      "right": 1179.63,
+      "width": 366.25,
+      "x": 813.38,
+      "y": 428.48
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 250.59,
+      "height": 112.48,
+      "right": 768.23,
+      "width": 694.73,
+      "x": 73.5,
+      "y": 138.1
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Featured Work and Program Impact",
+    "viewport": 1280
+  },
+  {
+    "page": "featured",
+    "width": 1025,
+    "card": {
+      "bottom": 591.22,
+      "height": 380.5,
+      "right": 936.5,
+      "width": 390,
+      "x": 546.5,
+      "y": 210.72
+    },
+    "hero": {
+      "bottom": 615.22,
+      "height": 532.22,
+      "right": 973.5,
+      "width": 937,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 580.22,
+      "height": 54.59,
+      "right": 925.5,
+      "width": 368,
+      "x": 557.5,
+      "y": 525.63
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 362.78,
+      "height": 224.97,
+      "right": 513.23,
+      "width": 439.73,
+      "x": 73.5,
+      "y": 137.81
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Featured Work and Program Impact",
+    "viewport": 1025
+  },
+  {
+    "page": "gallery",
+    "width": 1600,
+    "card": {
+      "bottom": 485.7,
+      "height": 370,
+      "right": 1511.5,
+      "width": 400,
+      "x": 1111.5,
+      "y": 115.7
+    },
+    "hero": {
+      "bottom": 512.59,
+      "height": 429.59,
+      "right": 1548.5,
+      "width": 1512,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 470.3,
+      "height": 55.98,
+      "right": 1496.91,
+      "width": 370.81,
+      "x": 1126.09,
+      "y": 414.32
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 198.28,
+      "height": 56.24,
+      "right": 1053.5,
+      "width": 980,
+      "x": 73.5,
+      "y": 142.04
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Gallery Hub",
+    "viewport": 1600
+  },
+  {
+    "page": "gallery",
+    "width": 1440,
+    "card": {
+      "bottom": 500.29,
+      "height": 384.59,
+      "right": 1351.5,
+      "width": 390,
+      "x": 961.5,
+      "y": 115.7
+    },
+    "hero": {
+      "bottom": 527.19,
+      "height": 444.19,
+      "right": 1388.5,
+      "width": 1352,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 486.34,
+      "height": 54.59,
+      "right": 1338.27,
+      "width": 363.53,
+      "x": 974.73,
+      "y": 431.74
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 198.06,
+      "height": 56.24,
+      "right": 924.06,
+      "width": 850.56,
+      "x": 73.5,
+      "y": 141.82
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Gallery Hub",
+    "viewport": 1440
+  },
+  {
+    "page": "gallery",
+    "width": 1280,
+    "card": {
+      "bottom": 503.34,
+      "height": 380.5,
+      "right": 1191.5,
+      "width": 390,
+      "x": 801.5,
+      "y": 122.84
+    },
+    "hero": {
+      "bottom": 527.34,
+      "height": 444.34,
+      "right": 1228.5,
+      "width": 1192,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 490.83,
+      "height": 54.59,
+      "right": 1179.63,
+      "width": 366.25,
+      "x": 813.38,
+      "y": 436.23
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 194.34,
+      "height": 56.24,
+      "right": 768.23,
+      "width": 694.73,
+      "x": 73.5,
+      "y": 138.1
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Gallery Hub",
+    "viewport": 1280
+  },
+  {
+    "page": "gallery",
+    "width": 1025,
+    "card": {
+      "bottom": 495.43,
+      "height": 380.5,
+      "right": 936.5,
+      "width": 390,
+      "x": 546.5,
+      "y": 114.93
+    },
+    "hero": {
+      "bottom": 519.43,
+      "height": 436.43,
+      "right": 973.5,
+      "width": 937,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/assets/media/sideline-leadership/photos/sideline-leadership-staff-celebrating-media-card-cover-center-1200x900.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 484.43,
+      "height": 54.59,
+      "right": 925.5,
+      "width": 368,
+      "x": 557.5,
+      "y": 429.84
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 194.05,
+      "height": 56.24,
+      "right": 513.23,
+      "width": 439.73,
+      "x": 73.5,
+      "y": 137.81
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Gallery Hub",
+    "viewport": 1025
+  },
+  {
+    "page": "anaya",
+    "width": 1600,
+    "card": {
+      "bottom": 485.7,
+      "height": 370,
+      "right": 1511.5,
+      "width": 400,
+      "x": 1111.5,
+      "y": 115.7
+    },
+    "hero": {
+      "bottom": 512.59,
+      "height": 429.59,
+      "right": 1548.5,
+      "width": 1512,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 470.3,
+      "height": 55.98,
+      "right": 1496.91,
+      "width": 370.81,
+      "x": 1126.09,
+      "y": 414.32
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 198.28,
+      "height": 56.24,
+      "right": 1053.5,
+      "width": 980,
+      "x": 73.5,
+      "y": 142.04
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Anaya Beard",
+    "viewport": 1600
+  },
+  {
+    "page": "anaya",
+    "width": 1440,
+    "card": {
+      "bottom": 500.29,
+      "height": 384.59,
+      "right": 1351.5,
+      "width": 390,
+      "x": 961.5,
+      "y": 115.7
+    },
+    "hero": {
+      "bottom": 527.19,
+      "height": 444.19,
+      "right": 1388.5,
+      "width": 1352,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 486.34,
+      "height": 54.59,
+      "right": 1338.27,
+      "width": 363.53,
+      "x": 974.73,
+      "y": 431.74
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 198.06,
+      "height": 56.24,
+      "right": 924.06,
+      "width": 850.56,
+      "x": 73.5,
+      "y": 141.82
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Anaya Beard",
+    "viewport": 1440
+  },
+  {
+    "page": "anaya",
+    "width": 1280,
+    "card": {
+      "bottom": 503.34,
+      "height": 380.5,
+      "right": 1191.5,
+      "width": 390,
+      "x": 801.5,
+      "y": 122.84
+    },
+    "hero": {
+      "bottom": 527.34,
+      "height": 444.34,
+      "right": 1228.5,
+      "width": 1192,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 490.83,
+      "height": 54.59,
+      "right": 1179.63,
+      "width": 366.25,
+      "x": 813.38,
+      "y": 436.23
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 194.34,
+      "height": 56.24,
+      "right": 768.23,
+      "width": 694.73,
+      "x": 73.5,
+      "y": 138.1
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Anaya Beard",
+    "viewport": 1280
+  },
+  {
+    "page": "anaya",
+    "width": 1025,
+    "card": {
+      "bottom": 495.43,
+      "height": 380.5,
+      "right": 936.5,
+      "width": 390,
+      "x": 546.5,
+      "y": 114.93
+    },
+    "hero": {
+      "bottom": 519.43,
+      "height": 436.43,
+      "right": 973.5,
+      "width": 937,
+      "x": 36.5,
+      "y": 83
+    },
+    "imageSrc": "http://127.0.0.1:4173/anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+    "linkOverflow": [],
+    "noHorizontalOverflow": true,
+    "objectPosition": "50% 0%",
+    "overlay": {
+      "bottom": 484.43,
+      "height": 54.59,
+      "right": 925.5,
+      "width": 368,
+      "x": 557.5,
+      "y": 429.84
+    },
+    "overlayInside": true,
+    "title": {
+      "bottom": 194.05,
+      "height": 56.24,
+      "right": 513.23,
+      "width": 439.73,
+      "x": 73.5,
+      "y": 137.81
+    },
+    "titleFont": "59.2px",
+    "titleLineHeight": "56.24px",
+    "titleOverflow": true,
+    "titleText": "Anaya Beard",
+    "viewport": 1025
+  }
+]
