@@ -17,6 +17,7 @@ These are the only active website rule documents. If an archived note or old aud
 | Source of truth | Active document |
 |---|---|
 | Website map, editing rules, and doc index | `README.md` |
+| Mac / PC active-folder and Git workflow | `WORKFLOW-MAC-PC.md` |
 | Global responsive, heading, body text, card, pill, overlay, and page-layout rules | `RESPONSIVE-DESIGN-SYSTEM.md` |
 | CSS override and `!important` control policy | `docs/responsive/CSS-OVERRIDE-CONTROL.md` |
 | Measured Home hero desktop system | `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` |
