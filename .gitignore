@@ -38,3 +38,6 @@ Thumbs.db
 **/.chrome-codex*/
 outputs/
 **/outputs/**/Default/
+
+# Large generated review artifacts
+01-current-website/coach-fogarty-portfolio/brand-audit-packet-current/
