@@ -58,6 +58,6 @@ Status: computed QA captured 2026-05-14 using headless Chrome against `media.htm
 - 1280px: no overflow; shell 1192px; desktop split stable.
 - 1025px: no overflow; desktop starts; header stays 44px; split hero still active.
 - 1024px: no overflow; tablet stack starts; header 59px; hero becomes one-column.
-- 820px: no overflow; tablet stack stable; footer accordions are at threshold behavior.
+- 820px: no overflow; tablet stack stable; footer accordions follow the <=1024 tablet/mobile behavior.
 - 768px: no overflow; tablet stack stable.
 - 430px / 390px / 375px: no overflow; mobile drawer header; single-card previews; action rows fit; overlay opens and thumb strip remains inside viewport.

@@ -48,8 +48,8 @@ Applies to `DOCUMENTS & REFERENCES` and `CONTACT`.
 - Text transform: `uppercase`.
 - Color: `#8f2d1e`.
 - White-space: `nowrap`.
-- `<=720px`: `10.88px / 13.056px`; spacing below `4px` through `430px`, `12px` from `431-720px`.
-- `721-1024px`: `clamp(11.2px, calc(8.32px + 0.375vw), 12.16px)` with `1.15` line-height; spacing below `12px`.
+- `<=767px`: `10.88px / 13.056px`; spacing below `4px` through `430px`, `12px` from `431-767px`.
+- `768-1024px`: `clamp(11.2px, calc(8.32px + 0.375vw), 12.16px)` with `1.15` line-height; spacing below `12px`.
 - `1025px+`: `12px / 15px`; letter spacing `0.15em`; spacing below `10px`.
 - Letter spacing below desktop uses the approved responsive clamp, resolving from about `0.08em` on small mobile to the desktop lock.
 
@@ -91,7 +91,7 @@ Applies to Resume, Degrees, Licenses, Certifications, Memberships, References, a
 Fields: First Name, Last Name, Email, Phone Number, School / Organization, Reason for Contact, Message, Send Message.
 
 - Form layout through `820px`: `1` column, `7px` gap.
-- Form layout from `821px`: `repeat(2, minmax(0, 1fr))`, `12px` row gap, `16px` column gap.
+- Form layout from `821px`: `repeat(2, minmax(0, 1fr))`, `12px` row gap, `16px` column gap. This is a scoped contact-form micro-breakpoint, not a global responsive or footer breakpoint.
 - Name row from `821px`: spans both form columns and uses two equal columns with `16px` gap.
 - Textarea label and submit button span both columns from `821px`.
 - Label font: `"Trebuchet MS", "Gill Sans", sans-serif`; `11.84px`; `700`; `normal` line-height; `0.13em`; uppercase; `#8f2d1e`.

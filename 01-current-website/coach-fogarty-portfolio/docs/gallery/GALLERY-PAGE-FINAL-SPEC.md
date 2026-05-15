@@ -44,7 +44,7 @@ Header rules:
 - Logo/MF mark: final desktop polish sets `35px x 35px`, radius `10px`, font-size `0.88rem`; tablet uses `38px x 38px`; smallest mobile uses `36px x 36px`; Georgia bold `MF`; gradient `linear-gradient(135deg, var(--red), var(--gold))`; text color `#fff7eb`.
 - Desktop nav: flex row, no wrap, `gap: 16px` base and `11px` in tablet-ish shared breakpoint; link font Georgia/Palatino, `0.98rem` base, weight `500`, color `#100d0a`, no underline.
 - Dropdowns: none.
-- Mobile menu: below 720px, hamburger button appears, brand copy hides, Contact shortcut appears, nav becomes a fixed drawer at `top: 72px`, `left: 14px`, width `min(282px, calc(100vw - 28px))`, initially translated offscreen with opacity 0; `.nav-open` translates to 0 and opacity 1. Escape/outside click closes.
+- Mobile menu: below 768px, hamburger button appears, brand copy hides, Contact shortcut appears, nav becomes a fixed drawer at `top: 72px`, `left: 14px`, width `min(282px, calc(100vw - 28px))`, initially translated offscreen with opacity 0; `.nav-open` translates to 0 and opacity 1. Escape/outside click closes.
 
 ## 3. Gallery Hero Section
 
@@ -154,7 +154,7 @@ Card rules:
 
 - Width: `width: 100%`; grid track controls card width.
 - Padding: 10px base for category/library cards; mobile remains 10px.
-- Radius: 20px base, 18px mobile. Shared 720px fallback also sets 22px, but later Gallery mobile polish wins for card radius.
+- Radius: 20px base, 18px mobile. Shared mobile fallback also sets 22px, but later Gallery mobile polish wins for card radius.
 - Background: cream gradient `linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(255, 248, 239, 0.78)), var(--panel)`.
 - Border: `1px solid var(--line)`.
 - Shadow: `var(--shadow)`; hover/focus changes to `0 24px 58px rgba(52, 36, 24, 0.15)`, border `rgba(184, 135, 47, 0.24)`, transform `translateY(-3px)`.
@@ -163,7 +163,7 @@ Card rules:
 - Description: category paragraph uses var(--muted), line 1.45; desktop single-line ellipsis; mobile clamps to 2 lines.
 - Badge/chip: `.library-type` appears inside category cards; `.media-card-kind` appears over video cards, red gradient, white text, 5px 9px padding, radius 999px, 0.72rem weight 700.
 - Desktop preview carousel: outer `.media-preview-carousel` grid has 44px arrow, content, 44px arrow; inner `.media-section-grid` has 3 columns.
-- Mobile <=720px: preview carousel becomes one content column with arrows absolutely positioned at bottom; inner preview track shows 1 card; category/library grid is 1 column.
+- Mobile <=767px: preview carousel becomes one content column with arrows absolutely positioned at bottom; inner preview track shows 1 card; category/library grid is 1 column.
 
 ## 7. Pills / Buttons / CTAs
 
@@ -175,7 +175,7 @@ Card rules:
 - Wide desktop variables: min-height 82px, padding 10px 16px, main text 26px.
 - Non-hero buttons: `.button` inline-flex, min-height 48px; `.button-small` min-height 40px, padding 0 14px, font-size 0.9rem; `.button-secondary` color var(--text), border var(--line), background rgba(255,255,255,0.58).
 - Hover/focus: shared `.button:hover, .button:focus-visible` translates Y -2px.
-- Action rows: `.media-related-actions` and `.media-gallery-button-row` become 2 columns on mobile <=720px and 1 column <=360px.
+- Action rows: `.media-related-actions` and `.media-gallery-button-row` become 2 columns on mobile <=767px and 1 column <=360px.
 
 ## 8. Colors
 
@@ -223,10 +223,10 @@ Card rules:
 - Footer padding: base latest rule `18px 30px 12px`; desktop site-chrome sets padding-left/right 0 and inner width; mobile `14px 18px 12px`, site-chrome final `18px var(--site-chrome-gutter) 12px`.
 - Desktop columns: `.footer-grid` is 4 columns, `repeat(4, minmax(0, 1fr))`, column gap clamp(42px, 7vw, 104px), row gap 16px.
 - Footer accordion title: `.footer-accordion-toggle`, font size 0.76rem, weight 800, letter spacing 0.16em, uppercase, color var(--red).
-- Footer links: `.footer-link-list a`, 0.92rem desktop, line 1.34, color var(--text); hover var(--red). Tablet <=1024 link size 0.88rem. Mobile <=820 link size 0.95rem, line 1.42.
-- Footer bottom: desktop flex row, justify space-between, gap 18px, margin-top 14px, padding-top 10px, top border rgba(158,111,53,0.22). Mobile <=820 stacks column-reverse, centers social icons/copyright, no top border.
+- Footer links: `.footer-link-list a`, 0.92rem desktop, line 1.34, color var(--text); hover var(--red). Tablet/mobile <=1024 link size 0.95rem, line 1.42.
+- Footer bottom: desktop flex row, justify space-between, gap 18px, margin-top 20px, padding-top 16px, top border rgba(158,111,53,0.22). Tablet/mobile <=1024 stacks column-reverse, centers social icons/copyright, no top border.
 - Social icons: footer socials flex gap 8px; anchors 32px square, SVG 15px square.
-- Footer accordions: at <=820px the footer grid becomes block, each footer group gets bottom divider, toggle min-height 46px, caret visible, link list hidden until `.is-open` from `footer.js`.
+- Footer accordions: at <=1024px the footer grid becomes block, each footer group gets bottom divider, toggle min-height 42px, caret visible, link list hidden until `.is-open` from `footer.js`.
 
 ## 11. Active Breakpoints
 

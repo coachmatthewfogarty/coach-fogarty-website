@@ -32,4 +32,4 @@ No CSS was removed in this pass. The audit found Anaya-adjacent legacy selectors
 - `renderAnayaGalleries()`: renders preview cards, empty states, View More actions, and card click handlers.
 - `openMediaAlbum()`, `renderMediaOverlay()`, `closeMediaOverlay()`: shared lightbox state, selected item, caption, thumbnail strip, full image/video viewer.
 - Overlay events: close button, previous/next buttons, thumbnail prev/next, viewer click-to-next, background click close, Escape, ArrowLeft, ArrowRight.
-- `footer.js`: mobile nav toggle, outside click/Escape close, scroll hide/reveal, footer accordion toggles at <=820px.
+- `footer.js`: mobile nav toggle, outside click/Escape close, scroll hide/reveal, footer accordion toggles at <=1024px.

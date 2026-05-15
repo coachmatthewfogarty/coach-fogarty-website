@@ -18,6 +18,7 @@ These are the only active website rule documents. If an archived note or old aud
 |---|---|
 | Website map, editing rules, and doc index | `README.md` |
 | Global responsive, heading, body text, card, pill, overlay, and page-layout rules | `RESPONSIVE-DESIGN-SYSTEM.md` |
+| CSS override and `!important` control policy | `docs/responsive/CSS-OVERRIDE-CONTROL.md` |
 | Measured Home hero desktop system | `docs/responsive/HOME-HERO-RESPONSIVE-SPEC.md` |
 | Shared page hero system lock | `docs/responsive/PAGE-HERO-SYSTEM-LOCK.md` |
 | Shared hero image overlay card lock | `docs/responsive/HERO-OVERLAY-SYSTEM-LOCK.md` |
@@ -53,7 +54,20 @@ Archived or superseded notes live under `docs/archive/` or `../outputs/archive/`
 
 ## Approved Layout Rules
 
-Desktop begins at `1025px`. The `1025-1199px` range is small desktop / large tablet transition and still uses desktop structure when the component is approved for desktop.
+Master responsive rule: test many sizes, code only a few clean ranges. Use fluid CSS (`clamp()`, `min()`, `max()`, `minmax()`, flexible grids, and max-widths) before adding one-off device rules.
+
+Master breakpoints:
+
+| Range | Widths | Site behavior |
+|---|---:|---|
+| Mobile | `0-767px` | stacked layout |
+| Tablet | `768-1024px` | stacked layout |
+| Compact Desktop | `1025-1199px` | desktop layout, tightest desktop QA range |
+| Standard Desktop | `1200-1599px` | desktop layout |
+| Large Desktop | `1600-2199px` | wider desktop rhythm |
+| Ultra-Wide Desktop | `2200px+` | wide shell rhythm |
+
+Global layout switch: `1024px` and below stays mobile/tablet stacked; `1025px` and above uses desktop layout. Footer accordions are active at `1024px` and below; the expanded desktop footer begins at `1025px`.
 
 Home hero desktop rules:
 
@@ -107,7 +121,7 @@ Locked Homepage Systems section:
 - Heading: `Systems & Proof of Work`.
 - Cards: Player Development, Defensive Tracker, Coaching Philosophy, Recruiting, Program Support, Scouting.
 - Coaching Philosophy buttons: Assistant Philosophy, 30-60-90 Plan, DEI Statement, Head Coach Alignment.
-- Layout: desktop `3` columns at `>=1025px`, tablet `2` columns from `721px` through `1024px`, mobile `1` column through `720px`.
+- Layout: desktop `3` columns at `>=1025px`, tablet `2` columns from `768px` through `1024px`, mobile `1` column through `767px`.
 - Preserve the cream section background, red card titles, rounded cards, image-forward layout, `4 / 3` media ratio, `object-fit: cover`, and pill button structure.
 - Do not redesign or change colors, typography, image ratio, spacing, card structure, or button style unless fixing a true bug.
 
@@ -119,7 +133,7 @@ Final Locked Systems page:
 - Hero target: `.page-hero-system`.
 - Library target: `#systems-library.systems-core-library`.
 - Core library cards: Player Development Systems, Scouting & Recruiting, DPAT, Program Support, Coaching Philosophy, The Archer.
-- Layout: desktop library `3` columns at `>=1025px`, tablet `2` columns from `721px` through `1024px`, mobile `1` column through `720px`.
+- Layout: desktop library `3` columns at `>=1025px`, tablet `2` columns from `768px` through `1024px`, mobile `1` column through `767px`.
 - Detail sections keep the staff workflow carousels for Player Development, Scouting, Recruiting, DPAT, Program Support and Coaching Philosophy, plus The Archer resource cards.
 - DPAT copy must include Defensive Performance Accountability Tracker.
 - Preserve the shared hero, cream card system, red titles, `4 / 3` media frames, approved crops, and pill/button style.
@@ -143,9 +157,36 @@ Locked Homepage Media section:
 
 ## Responsive Verification
 
-Use these key sizes for hero/layout work:
+Use the full master list for responsive QA. Do not create a separate CSS rule for every listed size unless a clean range cannot solve the problem.
 
 ```text
+Mobile Portrait:
+360x780
+375x812
+390x844
+430x932
+
+Mobile Landscape:
+780x360
+812x375
+844x390
+932x430
+
+Tablet Portrait:
+600x960
+720x960
+768x1024
+820x1180
+1024x1366
+1032x1376
+
+Tablet Landscape:
+1024x768
+1180x820
+1366x1024
+1376x1032
+
+Desktop:
 1025x768
 1280x800
 1440x900
@@ -153,8 +194,6 @@ Use these key sizes for hero/layout work:
 1920x1080
 2560x1440
 ```
-
-For mobile/tablet color and structure checks, also verify representative widths around `360`, `390`, `430`, `768`, `900`, and `1024`.
 
 ## Brand Memory
 

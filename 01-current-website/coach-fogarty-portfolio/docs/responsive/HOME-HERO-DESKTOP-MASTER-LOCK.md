@@ -65,4 +65,4 @@ The reusable desktop lock currently covers:
 - `archer-visuals.html`
 - `credentials.html`
 
-Desktop verification sizes for those pages are `1025`, `1200`, `1280`, `1350`, `1440`, `1500`, `1600`, `1920`, `2200`, `2400`, and `2560`. Tablet/mobile safety sizes are `1024`, `820`, `720`, and `390`.
+Desktop verification sizes for those pages follow the master responsive list in `RESPONSIVE-DESIGN-SYSTEM.md`: compact desktop starts at `1025`, standard desktop covers `1200-1599`, large desktop covers `1600-2199`, and ultra-wide starts at `2200`. Tablet/mobile safety checks use the master mobile and tablet portrait/landscape sizes instead of old one-off safety widths.

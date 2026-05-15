@@ -92,7 +92,7 @@ There is no separate final contact section on this page. CTA behavior lives insi
 
 ## 11. Footer
 
-Footer is shared full-bleed chrome. At 1280 it renders 1280px wide, transparent background, 18px top / 12px bottom chrome padding, no side border, top border rgba(31,27,22,0.14). Footer grid at 1280 is four equal columns of about 230.8px with 36px gap. Link text uses Trebuchet/Gill Sans, muted color, small body sizing, and hover color shift. Social buttons are inline SVGs, not image assets. Tablet/mobile footer keeps accordion markup; <=820 footer accordions collapse link lists until toggled by `footer.js`.
+Footer is shared full-bleed chrome. At 1280 it renders 1280px wide, transparent background, no side border, and one intentional divider on `.footer-grid`. Footer grid at 1280 is four equal columns. Link text uses Trebuchet/Gill Sans, muted color, small body sizing, and hover color shift. Social buttons are inline SVGs, not image assets. Tablet/mobile footer keeps accordion markup; <=1024 footer accordions collapse link lists until toggled by `footer.js`.
 
 ## Typography Specs
 
@@ -138,7 +138,7 @@ Responsive typography: desktop hero H1 is 59.2px at 1025-1600, 60.48px at 1920, 
 
 ## Spacing Specs
 
-Page shell desktop width is `min(var(--site-card-width), calc(100% - 88px))`, where `--site-card-width` resolves to min(1680px, calc(100vw - 88px)) until the >=2200 wide lock raises the shell to 2240px. Mobile <=720 uses calc(100% - 24px), and <=430 uses a 12px mobile gutter token. Shared section margin-top is 28px base, then 24px tablet section gap and 18px <=430 section gap. Hero desktop margin is 24px auto 32px; mobile hero top after header is 22px from the shared header + main rule plus compact card padding.
+Page shell desktop width is `min(var(--site-card-width), calc(100% - 88px))`, where `--site-card-width` resolves to min(1680px, calc(100vw - 88px)) until the >=2200 wide lock raises the shell to 2240px. Mobile <=767 uses calc(100% - 24px), and <=430 uses a 12px mobile gutter token. Shared section margin-top is 28px base, then 24px tablet section gap and 18px <=430 section gap. Hero desktop margin is 24px auto 32px; mobile hero top after header is 22px from the shared header + main rule plus compact card padding.
 
 Grid/card spacing: hero desktop column gap is 33.28px at 1025-1349, 37.44px at 1350-1719, 38.4px at 1720-2199, and 0px >=2200 with the visual shifted right by clamp(32px,2vw,56px). Story cards gap 22px. Gallery gap 20px desktop, 14px tablet/mobile grid gap in shared locks. Production grid gap 14px. Card padding: story 22px, production 18px, Anaya media caption 15px 16px, featured media caption 18px 16px 20px.
 
@@ -150,7 +150,7 @@ Grid/card spacing: hero desktop column gap is 33.28px at 1025-1349, 37.44px at 1
 - Media cards: 4:3 frames, cover fit, center position, button semantics, hover lift.
 - Image overlays/lightbox: shared overlay shell with close, previous/next, caption, counter when enabled, thumbnail strip and mobile compact overlay locks.
 - Section headers: eyebrow + H2 + optional intro, with late body-rhythm/container heading locks and JS compact-heading fitting from `footer.js`.
-- Footer links: desktop visible grid; <=820 accordion toggles open link lists.
+- Footer links: desktop visible grid; <=1024 accordion toggles open link lists.
 
 ## Breakpoint Measurements
 

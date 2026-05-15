@@ -56,8 +56,8 @@ The six locked library cards are:
 Rules:
 
 - Desktop: `3` columns from `1025px`.
-- Tablet: `2` columns from `721px` through `1024px`.
-- Mobile: `1` column through `720px`.
+- Tablet: `2` columns from `768px` through `1024px`.
+- Mobile: `1` column through `767px`.
 - Card media uses `4 / 3`, `object-fit: cover`, approved crops and no black bars.
 - Card titles, body copy and CTA rows use the existing `.system-card`, `.library-card-media`, `.library-actions` and `.button` language.
 - Button rows are two-up on desktop/tablet where space allows and single-column on mobile.

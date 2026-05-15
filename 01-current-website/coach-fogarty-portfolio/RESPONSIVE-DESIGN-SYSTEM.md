@@ -10,6 +10,7 @@ Companion active specs:
 - `docs/responsive/FEATURED-WORK-PAGE-LOCK-README.md`: locked Featured Work detailed section page rules.
 - `docs/responsive/ARCHER-PAGE-LOCK-README.md`: locked The Archer product case study page rules.
 - `docs/responsive/ABOUT-PAGE-LOCKED-SPEC.md`: locked About letter/gallery page exception to the reusable hero system.
+- `docs/responsive/CSS-OVERRIDE-CONTROL.md`: active CSS override and `!important` control policy.
 - `docs/gallery/GALLERY-PAGE-FINAL-SPEC.md`: locked Gallery / Media page spec, image inventory, interaction spec, cleanup log, and responsive QA packet.
 - `docs/image-export/README.md`: locked image export, crop, naming, and asset rules.
 
@@ -22,18 +23,30 @@ footer.js
 
 ## Breakpoints
 
-| Range | Size | Device Type | Layout |
-|---|---|---|---|
-| Small Mobile | `360px-389px` | small phones | stacked hero, tight overlay |
-| Mobile | `390px-430px` | standard phones | stacked hero, compact overlay |
-| Large Mobile / Small Tablet | `431px-720px` | large phones, small tablets | stacked hero |
-| Tablet | `721px-1024px` | tablets / iPad range | stacked hero, larger image/overlay |
-| Desktop Start | `1025px-1199px` | small laptop / large tablet landscape | two-column hero begins |
-| Desktop | `1200px-1599px` | laptop / standard desktop | two-column Home hero system |
-| Large Desktop | `1600px-2199px` | large monitor | wider desktop hero rhythm |
-| Ultra-Wide | `2200px+` | 2K / wide desktop | wide shell, centered wider overlay |
+Use many test sizes, but only a few clean code ranges. The site should resize smoothly between tested sizes.
 
-Desktop starts at `1025px`. Do not bring back older `1000px` desktop-switch rules.
+| Range | Size | Primary behavior |
+|---|---|---|
+| Mobile | `0-767px` | stacked mobile layout |
+| Tablet | `768px-1024px` | stacked tablet layout |
+| Compact Desktop | `1025px-1199px` | desktop layout; tightest desktop range |
+| Standard Desktop | `1200px-1599px` | standard desktop layout |
+| Large Desktop | `1600px-2199px` | large desktop rhythm |
+| Ultra-Wide Desktop | `2200px+` | wide shell rhythm |
+
+Global switch: `1024px` and below is mobile/tablet stacked layout. `1025px` and above is desktop layout. Do not bring back older `1000px`, `720px`, `820px`, or device-specific global switches.
+
+Responsive coding rule: solve layout with `clamp()`, `min()`, `max()`, `minmax()`, flexible grids, fluid spacing, and max-widths. One-off breakpoint rules are allowed only when a component truly cannot be fixed cleanly inside its master range, and the exception must be documented.
+
+## Documented Scoped Exceptions
+
+These are allowed exceptions, not alternate global breakpoint systems:
+
+- About page full two-column story/gallery layout starts at `1440px`; About remains stacked from `1025px` through `1439px` because its letter copy needs a wider readable lane before the gallery sits beside it.
+- Contact form fields use a scoped `820px/821px` micro-breakpoint for internal form field arrangement only. This must not be reused for footer, header, hero, page shell, or global layout behavior.
+- Small mobile fit rules such as `430px`, `399px`, `360px`, `359px`, and `340px` may remain only for text, button, title, or compact-control fitting. They must not define page structure.
+- Image crop and overlay polish rules may use asset-specific or height-specific guards when protecting faces, document previews, video overlays, or short landscape viewports.
+- Locked hero/card fit-protection ranges may remain where documented measured locks protect the reusable `.page-hero-system`, Home hero, Gallery, Systems, Featured, Contact, About, or Archer pages. These ranges tune typography, image balance, and card fit inside the master desktop bands; they must not change the global mobile/tablet/desktop switch.
 
 ## Page Shell
 
@@ -60,6 +73,18 @@ Target shell widths:
 | `1600x900` | `1512px` |
 | `1920x1080` | `1680px` |
 | `2560x1440` | `2240px` |
+
+## Shared Footer
+
+Footer behavior is shared across all pages through `.site-footer.site-chrome`.
+
+- Keep footer markup identical across pages: `.footer-grid` followed by `.footer-bottom`.
+- Keep `.site-footer.site-chrome` full-bleed, but do not give it desktop horizontal padding when `.footer-grid` and `.footer-bottom` are already fixed to `--page-shell-width`.
+- The single top divider above the footer columns is `.site-footer .footer-grid { border-top: 1px solid rgba(31, 27, 22, 0.14); }`.
+- Do not add a second divider on `.site-footer.site-chrome`; its `border-top` stays `0`.
+- Footer accordions are active at `1024px` and below. The expanded desktop footer begins at `1025px`.
+- Desktop footer content uses `width: var(--page-shell-width); margin-inline: auto;` so the divider, columns, copyright row and social icons align to the page shell walls.
+- Shared bottom padding comes from `.site-footer.site-chrome`; do not add page-specific footer spacing overrides.
 
 ## Home Hero Desktop System
 
@@ -149,8 +174,8 @@ The Home page Systems section is visually approved and locked as of May 14, 2026
 - Image target: `.library-card-media`.
 - Button target: `.library-actions`.
 - Desktop: `3` columns at `>=1025px`.
-- Tablet: `2` columns from `721px` through `1024px`.
-- Mobile: `1` column through `720px`.
+- Tablet: `2` columns from `768px` through `1024px`.
+- Mobile: `1` column through `767px`.
 - Media ratio: `4 / 3`.
 - Image fit: `cover`.
 - Desktop card title: `26px / 28px`.
@@ -168,8 +193,8 @@ The Systems page is FINAL LOCKED as of May 14, 2026. It is visually approved thr
 - Detail target: `.system-detail-section`.
 - Carousel target: `.system-document-carousel`.
 - Desktop: hero and library start at `1025px`; library uses `3` columns.
-- Tablet: library uses `2` columns from `721px` through `1024px`.
-- Mobile: library stacks to `1` column through `720px`.
+- Tablet: library uses `2` columns from `768px` through `1024px`.
+- Mobile: library stacks to `1` column through `767px`.
 - Six core library cards are Player Development Systems, Scouting & Recruiting, DPAT, Program Support, Coaching Philosophy and The Archer.
 - DPAT text must include Defensive Performance Accountability Tracker.
 - Detail sections may keep Scouting and Recruiting separated for staff workflow clarity, while the top library treats them as one core system group.
@@ -194,7 +219,7 @@ The Home page Portfolio Materials + Contact closeout is visually approved and lo
 - Gap between cards: `28px`.
 - Card treatment: cream gradient card, `1px` warm ink border, `clamp(24px, 2.4vw, 30px)` radius, and `0 18px 42px rgba(52, 36, 24, 0.1)` shadow.
 - Document pills: two-column stack through `1024px`, single-column stack from `1025px`.
-- Form: one column through `820px`, two columns from `821px`; textarea and submit span full width.
+- Form field arrangement keeps a scoped component micro-breakpoint: one column through `820px`, two columns from `821px`; textarea and submit span full width. This is not a global layout or footer breakpoint.
 - Use `docs/responsive/HOME-CONTACT-CLOSEOUT-LOCK-README.md` for measured values, colors, typography, and breakpoint QA.
 
 ## Page Hero Left Column
@@ -352,26 +377,42 @@ Tablet/mobile may change spacing, stack order, and size, but they should keep th
 
 ## Verification Standard
 
-For hero, page shell, body rhythm, pill, overlay, and image-column work, test:
+For hero, page shell, body rhythm, pill, overlay, footer, and image-column work, test the full master list:
 
 ```text
+Mobile Portrait:
+360x780
+375x812
+390x844
+430x932
+
+Mobile Landscape:
+780x360
+812x375
+844x390
+932x430
+
+Tablet Portrait:
+600x960
+720x960
+768x1024
+820x1180
+1024x1366
+1032x1376
+
+Tablet Landscape:
+1024x768
+1180x820
+1366x1024
+1376x1032
+
+Desktop:
 1025x768
 1280x800
 1440x900
 1600x900
 1920x1080
 2560x1440
-```
-
-Also check representative mobile/tablet widths:
-
-```text
-360
-390
-430
-768
-900
-1024
 ```
 
 Check for:

@@ -27,14 +27,12 @@ About-specific rules:
 
 | Global range | Width | About layout | Gallery |
 | --- | --- | --- | --- |
-| Small Mobile | `360px-389px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `2` columns x `6` rows |
-| Mobile | `390px-430px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `2` columns x `6` rows |
-| Large Mobile / Small Tablet | `431px-720px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `2` columns x `6` rows through `620px`; `3` columns x `4` rows from `621px` |
-| Tablet | `721px-1024px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `3` columns x `4` rows |
-| Compact Desktop | `1025px-1439px` | Stacked tablet-style About layout; full-width copy; signature below copy; gallery below signature; height sync off | `3` columns x `4` rows |
-| Desktop | `1440px-1899px` | Two-column About layout; copy/signature left; gallery right; height sync on | `3` columns x `4` rows |
-| Large Desktop | `1900px-2199px` | Two-column About layout; wider text column; narrower right gallery; height sync on | `3` columns x `4` rows |
-| Ultra-Wide | `2200px+` | Two-column About layout; ultra-wide shell; text-favored balance; height sync on | `3` columns x `4` rows |
+| Mobile | `0px-767px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `2` columns x `6` rows through `620px`; `3` columns x `4` rows from `621px` |
+| Tablet | `768px-1024px` | Stacked About layout; full-width copy; signature below copy; gallery below signature | `3` columns x `4` rows |
+| Compact Desktop | `1025px-1199px` | Stacked tablet-style About layout; full-width copy; signature below copy; gallery below signature; height sync off | `3` columns x `4` rows |
+| Standard Desktop Exception | `1200px-1439px` | Stacked tablet-style About layout; full-width copy; signature below copy; gallery below signature; height sync off | `3` columns x `4` rows |
+| Standard/Large Desktop | `1440px-2199px` | Two-column About layout; copy/signature left; gallery right; height sync on | `3` columns x `4` rows |
+| Ultra-Wide Desktop | `2200px+` | Two-column About layout; ultra-wide shell; text-favored balance; height sync on | `3` columns x `4` rows |
 
 Do not reinterpret `1025px-1439px` as an About desktop split. In this page only, the full desktop two-column layout starts at `1440px`.
 

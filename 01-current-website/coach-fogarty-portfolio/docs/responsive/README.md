@@ -14,12 +14,40 @@ Use this folder for active responsive specs only.
 - `FEATURED-WORK-PAGE-LOCK-README.md`: locked Featured Work detailed section source of truth for the shared hero, Homepage-style six stat-pill grid, approved `.hero-portrait-overlay` treatment, restored detailed body sections, cleanup notes, and breakpoint QA.
 - `ARCHER-PAGE-LOCK-README.md`: locked The Archer source of truth for the product case study structure, shared hero usage, section cards, media roles, scoped exceptions, and breakpoint QA.
 - `ABOUT-PAGE-LOCKED-SPEC.md`: locked About page source of truth for the special letter/gallery layout, shared page-shell width alignment, desktop gallery height sync, responsive gallery behavior, image list, cleanup notes, and breakpoint QA. About is excluded from the reusable `page-hero-system`.
+- `CSS-OVERRIDE-CONTROL.md`: active policy for remaining `!important` declarations, locked override systems, and future override cleanup.
 - `../../RESPONSIVE-DESIGN-SYSTEM.md`: global source of truth for breakpoints, page hero left-column rules, headings, eyebrows, body text, pills, cards, overlays, responsive color consistency, and verification.
 - `../image-export/README.md`: locked image export, crop, naming, and asset rules.
 
-## Required Desktop Checks
+## Master Responsive Checks
 
 ```text
+Mobile Portrait:
+360x780
+375x812
+390x844
+430x932
+
+Mobile Landscape:
+780x360
+812x375
+844x390
+932x430
+
+Tablet Portrait:
+600x960
+720x960
+768x1024
+820x1180
+1024x1366
+1032x1376
+
+Tablet Landscape:
+1024x768
+1180x820
+1366x1024
+1376x1032
+
+Desktop:
 1025x768
 1280x800
 1440x900
@@ -28,7 +56,9 @@ Use this folder for active responsive specs only.
 2560x1440
 ```
 
-Desktop starts at `1025px`. The `1025-1199px` range is the small-desktop / large-tablet transition range and should be tested as desktop.
+Code ranges are mobile `0-767px`, tablet `768-1024px`, compact desktop `1025-1199px`, standard desktop `1200-1599px`, large desktop `1600-2199px`, and ultra-wide desktop `2200px+`.
+
+Desktop starts at `1025px`. The `1025-1199px` range is the compact desktop range and should be tested as desktop. Footer accordions are active at `1024px` and below; expanded footer columns begin at `1025px`.
 
 Exception: About is intentionally excluded from the reusable `.page-hero-system` and does not use the normal `1025px` two-column hero start. About stays stacked/tablet-style through `1439px`; its locked letter/gallery layout starts the full two-column copy-left, gallery-right desktop composition at `1440px`. See `ABOUT-PAGE-LOCKED-SPEC.md` before changing About breakpoints.
 

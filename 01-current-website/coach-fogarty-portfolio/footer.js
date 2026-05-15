@@ -2,7 +2,7 @@ document.querySelectorAll(".footer-accordion-toggle").forEach((toggle) => {
   toggle.addEventListener("click", () => {
     const group = toggle.closest(".footer-links");
 
-    if (!group || !window.matchMedia("(max-width: 820px)").matches) {
+    if (!group || !window.matchMedia("(max-width: 1024px)").matches) {
       return;
     }
 
@@ -124,7 +124,7 @@ const compactCardTitleSelector = [
   ".media-library-meta strong",
   ".achievement-card strong"
 ].join(",");
-const compactHeroSelector = ".hero, .subpage-hero, .anaya-hero, .contact-hero, .media-hero, .media-overlay";
+const compactHeroSelector = ".hero, .page-hero-system, .media-overlay";
 
 function compactHeadingElements() {
   return [

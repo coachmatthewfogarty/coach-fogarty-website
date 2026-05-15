@@ -1835,7 +1835,7 @@ function renderMediaLibraryPage() {
   };
   const previewCarousels = {};
   const previewCardCount = () => {
-    if (window.matchMedia("(max-width: 720px)").matches) {
+    if (window.matchMedia("(max-width: 767px)").matches) {
       return 1;
     }
 
@@ -2475,7 +2475,7 @@ function openPlayingCareerAlbum(card) {
 }
 
 function playingCareerPageSize() {
-  if (window.matchMedia("(max-width: 720px)").matches) {
+  if (window.matchMedia("(max-width: 767px)").matches) {
     return 1;
   }
 
@@ -2588,7 +2588,7 @@ window.addEventListener("resize", () => {
 });
 
 function navScrollOffset() {
-  if (window.matchMedia("(max-width: 720px)").matches) {
+  if (window.matchMedia("(max-width: 767px)").matches) {
     return 28;
   }
 
