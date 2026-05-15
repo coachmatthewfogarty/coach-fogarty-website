@@ -43,7 +43,7 @@ The About card no longer has a separate custom desktop width system. It sits ins
 
 ## Desktop Layout
 
-Applies at `min-width: 1200px`.
+Applies at `min-width: 1440px`.
 
 - Layout: 2 columns
 - Left column: copy and signature
@@ -58,7 +58,7 @@ Applies at `min-width: 1200px`.
 - Heading to content gap: `var(--section-title-to-content-gap, 24px)`
 - Desktop title: nowrap
 
-Compact desktop `1025px-1199px`:
+Compact stacked desktop `1025px-1279px` and `1280px-1439px`:
 
 - Layout: stacked, tablet-style
 - Section margin top: `18px`
@@ -78,33 +78,34 @@ Compact desktop `1025px-1199px`:
 - Gallery image height: auto
 - Gallery image aspect ratio: `4 / 3`
 - Gallery gap: `8px`
-- Purpose: `1025px-1199px` uses a tablet-style stacked About layout with full-width copy, signature below copy, and a `3 x 4` gallery below the signature to avoid a skinny right-side gallery column.
+- Purpose: `1025px-1439px` uses a tablet-style stacked About layout with full-width copy, signature below copy, and a `3 x 4` gallery below the signature to avoid cramped copy or a skinny right-side gallery column.
 
-Small/mid desktop `1200px-1499px`:
+Mid desktop `1440px-1599px`:
 
-- Columns: `minmax(520px, 52%) minmax(360px, 1fr)`
-- Gap: `clamp(26px, 2.4vw, 32px)`
-- Gallery: `2 columns x 4 rows`
-- Visible images: first 8 gallery images only
-- Hidden images: images 9-12 via CSS only; images remain in `about.html`
-- `1350px-1499px` column polish: right column uses `minmax(360px, 0.9fr)`
+- Layout: 2 columns
+- Gallery: `3 columns x 4 rows`
+- Visible images: all 12 gallery images
 - Body font size: unchanged from base desktop
-- `1350px-1499px` body line-height: `1.4`
-- `1350px-1499px` paragraph gap: `12px`
-- Purpose: keep the locked two-column desktop layout at `1280 x 800` and `1440 x 900` while reducing the visual weight of the right-side gallery.
+- Body line-height: `1.4` from `1440px-1499px`; `1.32` from `1500px-1599px`
+- Paragraph gap: `12px`
+- Purpose: begin the full desktop layout at `1440px` with the complete `3 x 4` right gallery.
 
-1600 readability range `1500px-1899px`:
+Desktop readability range `1600px-1899px`:
 
 - Grid: unchanged from base desktop
+- Gallery: `3 columns x 4 rows`
+- Visible images: all 12 gallery images
 - Body font size: unchanged from base desktop
 - Body line-height: `1.32`
 - Paragraph gap: `12px`
 - Purpose: lightly relax the body rhythm at `1600 x 900` while preserving the approved two-column one-page desktop feel.
 
-Large desktop `1900px+`, with ultra-wide overrides at `2200px+`:
+Large desktop `1900px-2199px`:
 
 - Columns: `minmax(0, clamp(680px, 38vw, 820px)) minmax(640px, 1fr)`
 - Gap: `clamp(34px, 2.8vw, 60px)`
+- Gallery: `3 columns x 4 rows`
+- Visible images: all 12 gallery images
 - Body copy: `clamp(1rem, 0.54vw, 1.12rem)`, line-height `1.6`
 - Paragraph gap: `12px`
 - Signature width: `clamp(235px, 13vw, 320px)`
@@ -114,6 +115,8 @@ Ultra-wide `2200px+`:
 
 - Columns: `minmax(0, clamp(960px, 39vw, 1020px)) minmax(860px, 1fr)`
 - Gap: `clamp(46px, 2.2vw, 54px)`
+- Gallery: `3 columns x 4 rows`
+- Visible images: all 12 gallery images
 - Body copy: `clamp(1.06rem, 0.5vw, 1.18rem)`
 - Line-height: `1.60`
 - Paragraph gap: `12px`
@@ -165,7 +168,7 @@ The inline script in `about.html` measures `.about-letter-copy` at desktop width
 --about-letter-copy-height: <copy column height>px;
 ```
 
-That value drives `.about-letter-gallery` height and max-height, so changes to paragraph wrapping, font size, line-height, or signature size update the gallery height. The script removes the custom property below `1200px`, where the layout stacks and the gallery returns to fixed `4 / 3` thumbnails.
+That value drives `.about-letter-gallery` height and max-height, so changes to paragraph wrapping, font size, line-height, or signature size update the gallery height. The script removes the custom property below `1440px`, where the layout stacks and the gallery returns to fixed `4 / 3` thumbnails.
 
 Sync triggers:
 
@@ -252,7 +255,7 @@ Body copy:
 - Desktop size: `clamp(0.92rem, calc(0.74rem + 0.2vw), 1.05rem)`
 - Desktop line-height: `clamp(1.36, calc(1.28 + 0.08vw), 1.46)`
 - Paragraph gap: `var(--about-paragraph-gap, 14px)`
-- Small desktop: `0.88rem`, line-height `1.35`, gap `10px`
+- Compact stacked desktop `1025px-1439px`: `0.88rem`, line-height `1.56`, gap `11px`
 - Tablet: `clamp(0.92rem, 1.25vw, 1rem)`, line-height `1.5`
 - Mobile: `clamp(0.82rem, 3.35vw, 0.92rem)`, line-height `1.42`, gap `12px`
 - Max width: none on desktop, tablet, and mobile
@@ -328,7 +331,7 @@ All paths exist and load.
 
 - Header remains shared `.site-header.site-chrome`
 - Footer remains shared `.site-footer.site-chrome`
-- About section top spacing below header: `22px` desktop default, `18px` in the `1025px-1199px` compact desktop range, `clamp(18px, 4vw, 28px)` tablet/mobile
+- About section top spacing below header: `22px` desktop default, `18px` in the `1025px-1439px` compact stacked desktop range, `clamp(18px, 4vw, 28px)` tablet/mobile
 - Footer sits after the About section inside `main.about-cover-page`
 - Footer lane uses the shared desktop `--page-shell-width`
 - No About-specific header or footer redesign was introduced
@@ -369,20 +372,22 @@ Measured through local Chrome against `http://127.0.0.1:4173/about.html`.
 
 | Requested viewport | Page shell | About section | Layout | Gallery | Overflow | Notes |
 | --- | ---: | ---: | --- | --- | --- | --- |
-| 2560 x 1440 | 2240 | 2240 x 813 | 2 columns | 12 images, 3 x 4, synced to copy height | No | Card aligns with wide shell; title stays one line |
-| 1920 x 1080 | 1680 | 1680 x 908 | 2 columns | 12 images, 3 x 4, synced to copy height | No | Gallery fills right column cleanly |
+| 2560 x 1440 | 2240 | 2240 x 881 | 2 columns | 12 images, 3 x 4, synced to copy height | No | Card aligns with wide shell; title stays one line |
+| 1920 x 1080 | 1680 | 1680 x 960 | 2 columns | 12 images, 3 x 4, synced to copy height | No | Gallery fills right column cleanly |
 | 1600 x 900 | 1512 | 1512 x 865 | 2 columns | 12 images, 3 x 4, synced to copy height | No | Balanced copy/gallery fit |
 | 1500 x 900 | 1412 | 1412 x 890 | 2 columns | 12 images, 3 x 4, synced to copy height | No | Full desktop gallery resumes at 1500px |
-| 1499 x 900 | 1411 | 1411 x 805 | 2 columns | 8 images, 2 x 4, synced to copy height | No | Small/mid desktop gallery range ends here |
-| 1440 x 900 | 1352 | 1352 x 839 | 2 columns | 8 images, 2 x 4, synced to copy height | No | Cleaner mid-desktop gallery weight |
-| 1349 x 800 | 1261 | 1261 x 772 | 2 columns | 8 images, 2 x 4, synced to copy height | No | Small/mid desktop gallery range |
-| 1280 x 800 | 1192 | 1192 x 786 | 2 columns | 8 images, 2 x 4, synced to copy height | No | Cleaner small-desktop gallery weight |
-| 1200 x 800 | 1112 | 1112 x 837 | 2 columns | 8 images, 2 x 4, synced to copy height | No | Small desktop gallery range begins here |
+| 1499 x 900 | 1411 | 1411 x 867 | 2 columns | 12 images, 3 x 4, synced to copy height | No | Full desktop gallery active |
+| 1440 x 900 | 1352 | 1352 x 901 | 2 columns | 12 images, 3 x 4, synced to copy height | No | Full desktop gallery begins here |
+| 1439 x 900 | 1351 | 1351 x 1897 | Stacked | 12 images, 3 x 4 below signature | No | Upper edge of stacked compact desktop |
+| 1349 x 800 | 1261 | 1261 x 1828 | Stacked | 12 images, 3 x 4 below signature | No | Full-width copy; height sync cleared |
+| 1280 x 800 | 1192 | 1192 x 1780 | Stacked | 12 images, 3 x 4 below signature | No | Matches the approved 1025 x 768 format and 12-image count |
+| 1279 x 800 | 1191 | 1191 x 1779 | Stacked | 12 images, 3 x 4 below signature | No | Separate compact range remains stacked |
+| 1200 x 800 | 1112 | 1112 x 1721 | Stacked | 12 images, 3 x 4 below signature | No | Full-width copy; height sync cleared |
 | 1199 x 1183 | 1111 | Stacked range | Stacked | 3 x 4 below signature | No | Full-width copy; height sync cleared |
 | 1025 x 1183 | 937 | Stacked range | Stacked | 3 x 4 below signature | No | Full-width copy; height sync cleared |
-| 1199 x 800 | 1111 | Stacked range | Stacked | 3 x 4 below signature | No | Full-width copy; height sync cleared |
+| 1199 x 800 | 1111 | 1111 x 1720 | Stacked | 3 x 4 below signature | No | Full-width copy; height sync cleared |
 | 1100 x 768 | 1012 | Stacked range | Stacked | 3 x 4 below signature | No | Full-width copy; height sync cleared |
-| 1025 x 768 | 937 | Stacked range | Stacked | 3 x 4 below signature | No | Stacked compact range removes skinny right gallery column |
+| 1025 x 768 | 937 | 937 x 1628 | Stacked | 3 x 4 below signature | No | Stacked compact range removes skinny right gallery column |
 | 1024 x 1366 | 968 | 968 x 1699 | Stacked | 3 x 4 below copy | No | Tablet stack begins exactly below desktop breakpoint |
 | 820 x 1180 | 770.8 | 770.8 x 1598 | Stacked | 3 x 4 below copy | No | Clean tablet wrapping |
 | 768 x 1024 | 721.9 | 721.9 x 1608 | Stacked | 3 x 4 below copy | No | Clean tablet wrapping |
@@ -395,9 +400,8 @@ QA confirmations:
 - No horizontal scroll at tested desktop/tablet widths
 - Mobile CSS uses `2 x 6` gallery at `max-width: 620px`
 - Tablet CSS uses `3 x 4` gallery below copy at `max-width: 1024px`
-- Compact desktop uses stacked full-width copy and a `3 x 4` gallery below the signature at `1025px-1199px`
-- Small/mid desktop CSS uses an 8-image `2 x 4` right-column gallery from `1200px-1499px`
-- Desktop CSS returns to the full 12-image `3 x 4` right-column gallery at `1500px+`
-- Desktop gallery height sync tracks the left copy/signature height at `1200px+`
+- Compact stacked desktop uses full-width copy and a `3 x 4` gallery below the signature at `1025px-1439px`
+- Desktop CSS uses the full 12-image `3 x 4` right-column gallery at `1440px+`
+- Desktop gallery height sync tracks the left copy/signature height at `1440px+`
 - All 12 gallery images and the signature path exist
 - No About-content button or pill labels exist, so there is no label wrapping risk inside the section
