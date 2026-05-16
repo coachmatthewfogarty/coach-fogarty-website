@@ -114,7 +114,7 @@ const librarySections = [
     title: "Program Support",
     description: "Operations plans and year-round organization.",
     media: {
-      src: "assets/media/championship-culture/photos/championship-culture-pacific-academy-5th-school-championship-media-card-1200x900.avif",
+      src: "assets/media/championship-culture/photos/championship-culture-pacific-academy-5th-school-championship-homepage-program-support-media-card-zoom-in-q98-1200x900.avif",
       alt: "Fifth school championship team photo with trophy",
       role: "media-card"
     },
