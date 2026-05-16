@@ -554,9 +554,9 @@ const mediaAlbums = [
       },
       {
         type: "image",
-        mediaCardSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-5th-school-championship-media-card-1200x900.avif"),
-        thumbSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-5th-school-championship-overlay-thumb-600x400.webp"),
-        fullSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-5th-school-championship-landscape-2400x1800.avif"),
+        mediaCardSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-5th-school-championship-retouched-media-card-q98-1200x900.avif"),
+        thumbSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-5th-school-championship-retouched-overlay-thumb-q98-600x400.webp"),
+        fullSrc: mediaPhotoPath("championship-culture", "championship-culture-pacific-academy-5th-school-championship-retouched-media-card-q98-1200x900.avif"),
         orientation: "landscape",
         alt: "Fifth school championship",
         caption: "Fifth school championship"
