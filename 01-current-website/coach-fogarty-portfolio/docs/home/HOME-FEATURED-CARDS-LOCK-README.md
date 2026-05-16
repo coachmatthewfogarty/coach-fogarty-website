@@ -62,15 +62,15 @@ Shared sitewide typography locks still affect homepage headings and body copy at
 | 720px | stacked | about 681px | about 807.7px | about 621.4 x 466 | full width | Last stacked range |
 | 760px | side-by-side | about 699px | about 288px | about 300 x 225 | about 360px | Tablet side-by-side begins |
 | 1024px | side-by-side | about 953px | about 310px | about 301 x 225.8 | about 360px | Tablet side-by-side preserved |
-| 1025px | desktop | about 937px | about 396.8px | about 360 x 270 | about 360px | Desktop lock begins |
-| 1180px | desktop bridge | about 1092px | about 371.7px | about 333.2 x 249.9 | about 360px | Smoothed bridge before 1181 |
-| 1181px | desktop | about 1093px | visually stable | about 330 x 247.5 | about 360px | No old 360-to-330 media cliff |
-| 1280px | desktop | about 1192px | about 359.3px | about 330 x 247.5 | 380px | Desktop baseline |
-| 1440px | desktop | about 1352px | about 362.2px | about 344 x 258 | 380px | Media begins expanding |
-| 1600px | desktop | about 1512px | about 364.3px | about 387 x 290.2 | 380px | Wide desktop |
-| 1920px | desktop | about 1680px | about 386.5px | about 430 x 322.5 | 380px | Media reaches max |
-| 2200px | desktop | about 1880px | about 386.5px | 430 x 322.5 | 380px | Fixed max media |
-| 2560px | desktop | about 2240px | about 386.5px | 430 x 322.5 | 380px | Extra right-side room intentional |
+| 1025px | desktop | about 937px | about 332.7px | about 241 x 180.8 | about 360px | Desktop media rail aligns with Systems |
+| 1180px | desktop bridge | about 1092px | about 337.4px | about 292.7 x 219.5 | about 360px | Smoothed bridge before 1181 |
+| 1181px | desktop | about 1093px | about 323.2px | about 293 x 219.8 | about 360px | No old media cliff |
+| 1280px | desktop | about 1192px | about 325.2px | about 325.5 x 244.1 | 380px | Media width matches Systems card rhythm |
+| 1440px | desktop | about 1352px | about 345.1px | about 377.6 x 283.2 | 380px | Media continues with Systems rail |
+| 1600px | desktop | about 1512px | about 385.1px | about 428.1 x 321.1 | 420px | Copy and CTA rebalance begins |
+| 1920px | desktop | about 1680px | about 421.5px | about 476.6 x 357.5 | 440px | Media follows Systems card scale |
+| 2200px | desktop | about 1880px | about 468.1px | about 538.8 x 404.1 | 460px | Ultra-wide follows Systems rail |
+| 2560px | desktop | about 2240px | about 555.5px | about 655.3 x 491.5 | 460px | Media aligns to the wider Systems card rhythm |
 
 Spacing:
 
@@ -98,9 +98,10 @@ Layout:
 - 1025px+: desktop grid.
 - Desktop columns are media plus flexible copy.
 - Media aspect ratio: 4 / 3.
-- Copy max width: `820px`.
-- Body max width: `680px`.
-- Extra right-side space at wide desktop is intentional.
+- Copy max width: `820px` base desktop, increasing to `900px` at `1600px+`, `980px` at `1920px+`, and `1040px` at `2200px+`.
+- Body max width: `680px` base desktop, increasing to `740px` at `1600px+`, `780px` at `1920px+`, and `800px` at `2200px+`.
+- Ultra-wide cards follow the shared page shell rhythm instead of using a separate narrow cap.
+- Desktop media left edge and media width follow the Systems & Proof card media rail.
 
 Media:
 
@@ -108,6 +109,7 @@ Media:
 - Anaya crop is locked with `.featured-card--anaya`.
 - Archer uses the same 4:3 white media container.
 - Archer logo inset is baked into the asset; no CSS padding is added.
+- Media remains conservative through the compact desktop range, then scales with the Systems & Proof card image rhythm through ultra-wide.
 
 Typography:
 
@@ -136,7 +138,7 @@ CTA:
 
 - Anaya text: `View Case Study`.
 - Archer text: `View The Archer`.
-- Desktop width: `360px` through the 1025-1199 bridge, `380px` from 1200px up.
+- Desktop width: `360px` through the 1025-1199 bridge, `380px` from 1200px up, `420px` at `1600px+`, `440px` at `1920px+`, and `460px` at `2200px+`.
 - Height: `44px` desktop.
 - Padding: `0 24px`.
 - Radius: `999px`.
@@ -160,7 +162,7 @@ CTA:
 - `.innovation-section`, `.innovation-panel`, and `.innovation-card-copy` remain in the markup for compatibility with existing shared page structure.
 - `.featured-card` is now the lock class for the homepage reusable system.
 - The pseudo-border is intentionally retained because it contributes to the current gold edge.
-- Wide desktop keeps extra empty space to the right of the copy instead of rebalancing the card.
+- Desktop and wide desktop now align Featured media to the shared Home media rail established by Systems & Proof.
 - Desktop-only rules are scoped at `1025px+` and should not affect the mobile/tablet stack.
 
 ## 7. Lock Risks
@@ -168,3 +170,5 @@ CTA:
 - The Featured cards still inherit sitewide desktop typography locks. This is intentional today, but future global heading/body changes can affect these cards.
 - The 1181px media cliff has been smoothed; avoid reintroducing a separate 1025-1180-only media width without a bridge.
 - If the Archer asset changes to remove its baked-in white inset, revisit whether the media container needs padding.
+- Avoid reintroducing a separate ultra-wide width cap that makes the Home Featured wrapper feel narrower than the surrounding homepage sections.
+- Avoid reintroducing Featured-only media offsets that break alignment with Systems & Proof, Program Proof, or Playing Career.

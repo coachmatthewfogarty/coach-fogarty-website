@@ -150,11 +150,18 @@ Locked Homepage Media section:
 - Card thumbnails stay aligned with the first intended overlay image, and card clicks open the overlay at that matching first item.
 - Layout: desktop `3` columns, tablet `2` columns, mobile `1` column.
 - Preserve the `4 / 3` image frame, `object-fit: cover`, and title-below-image caption bar.
-- Captions keep the 1280px/1440px behavior and use the locked 1600px+ title/padding/arrow scaling.
+- Desktop media edges align to the Systems & Proof card media rail from `1025px+`; captions keep the locked 1600px+ title/padding/arrow scaling.
 - Home Media, Media page, and Anaya use the shared media overlay shell.
 - Multi-image thumbnail arrows move one image at a time, wrap both directions, and remain draggable/clickable.
 - Single-image albums use the single-item overlay state: centered normal-size active thumbnail, thumbnail arrows hidden.
 - Do not reintroduce `--gallery-media-height`, duplicate late Home Media overrides, or old overlay rules that hide thumbnail arrows with `!important`.
+
+Home Playing Career section:
+
+- Section target: `#playing-career.playing-career-section`.
+- Desktop visible carousel card edges align to the Systems & Proof card media rail from `1025px+`.
+- Carousel arrows are desktop-positioned so they do not consume horizontal card-row width.
+- Preserve the current carousel behavior, image crops, mobile/tablet behavior, and playing-career content order.
 
 ## Responsive Verification
 
