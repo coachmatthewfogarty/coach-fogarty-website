@@ -114,8 +114,9 @@ const librarySections = [
     title: "Program Support",
     description: "Operations plans and year-round organization.",
     media: {
-      src: "assets/media/team-environment/photos/team-environment-banquet-media-card-cover-center-1200x900.avif",
-      alt: "Team environment and program operations visual"
+      src: "assets/media/championship-culture/photos/championship-culture-pacific-academy-5th-school-championship-media-card-1200x900.avif",
+      alt: "Fifth school championship team photo with trophy",
+      role: "media-card"
     },
     buttons: [
       {
