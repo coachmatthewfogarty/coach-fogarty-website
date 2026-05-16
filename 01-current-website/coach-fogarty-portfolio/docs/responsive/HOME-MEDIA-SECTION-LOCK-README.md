@@ -46,17 +46,18 @@ Locked card specs:
 - Desktop grid: `3` columns.
 - Tablet grid: `2` columns.
 - Mobile grid: `1` column.
-- Desktop media rail: the first and third Home Media image edges align to the Systems & Proof card media rail from `1025px+`.
+- Desktop media rail: Home Media image widths follow the full-bleed Systems & Proof media frame reference from `1025px+`.
+- Desktop reference widths: about `278.3px` at `1025px`, `362.8px` at `1280px`, `415px` at `1440px`, `465.5px` at `1600px`, `513.9px` at `1920px`, and `692.7px` at `2560px`.
 - Card image frame: `aspect-ratio: 4 / 3`.
 - Card image fit: `object-fit: cover`.
 - Card titles stay below images in the caption bar.
 - Do not overlay titles on images.
 - Caption row holds the title on the left and the circular arrow on the right.
 - Caption title should stay on one line where possible, with ellipsis protection.
-- 1280px and 1440px desktop behavior now follows the shared Home media rail.
-- 1600px, 1920px, and 2560px use the locked 1600+ caption/title/arrow scaling so captions feel proportional to larger cards while the grid stays on the Systems & Proof rail.
+- 1280px and 1440px desktop behavior now follows the full-bleed Systems & Proof frame-width rhythm.
+- 1600px, 1920px, and 2560px use the locked 1600+ caption/title/arrow scaling so captions feel proportional to larger cards while the grid stays on the approved Home rail.
 - Cards keep the current image-forward visual direction and 3x2 desktop rhythm.
-- Do not reintroduce the old centered `2040px` desktop max-width that made the 2560px Home Media grid drift inward from Systems & Proof.
+- Do not reintroduce the old centered `2040px` desktop max-width that made the 2560px Home Media grid drift inward from the approved Home rail.
 
 Do not add duplicate late Home Media overrides after the canonical block. If a future card rule is needed, update the canonical block unless the rule is truly shared/global.
 

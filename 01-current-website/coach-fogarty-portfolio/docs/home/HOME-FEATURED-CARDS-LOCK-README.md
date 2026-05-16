@@ -62,15 +62,15 @@ Shared sitewide typography locks still affect homepage headings and body copy at
 | 720px | stacked | about 681px | about 807.7px | about 621.4 x 466 | full width | Last stacked range |
 | 760px | side-by-side | about 699px | about 288px | about 300 x 225 | about 360px | Tablet side-by-side begins |
 | 1024px | side-by-side | about 953px | about 310px | about 301 x 225.8 | about 360px | Tablet side-by-side preserved |
-| 1025px | desktop | about 937px | about 332.7px | about 241 x 180.8 | about 360px | Desktop media rail aligns with Systems |
-| 1180px | desktop bridge | about 1092px | about 337.4px | about 292.7 x 219.5 | about 360px | Smoothed bridge before 1181 |
-| 1181px | desktop | about 1093px | about 323.2px | about 293 x 219.8 | about 360px | No old media cliff |
-| 1280px | desktop | about 1192px | about 325.2px | about 325.5 x 244.1 | 380px | Media width matches Systems card rhythm |
-| 1440px | desktop | about 1352px | about 345.1px | about 377.6 x 283.2 | 380px | Media continues with Systems rail |
-| 1600px | desktop | about 1512px | about 385.1px | about 428.1 x 321.1 | 420px | Copy and CTA rebalance begins |
-| 1920px | desktop | about 1680px | about 421.5px | about 476.6 x 357.5 | 440px | Media follows Systems card scale |
-| 2200px | desktop | about 1880px | about 468.1px | about 538.8 x 404.1 | 460px | Ultra-wide follows Systems rail |
-| 2560px | desktop | about 2240px | about 555.5px | about 655.3 x 491.5 | 460px | Media aligns to the wider Systems card rhythm |
+| 1025px | desktop | about 937px | about 332.7px | about 278.3 x 208.7 | about 360px | Desktop media width matches Systems |
+| 1180px | desktop bridge | about 1092px | about 337.4px | about 330 x 247.5 | about 360px | Smoothed bridge before 1181 |
+| 1181px | desktop | about 1093px | about 323.2px | about 330.3 x 247.7 | about 360px | No old media cliff |
+| 1280px | desktop | about 1192px | about 331.2px | about 362.8 x 272.1 | 380px | Media width matches Systems |
+| 1440px | desktop | about 1352px | about 373.1px | about 415 x 311.2 | 380px | Media width matches Systems |
+| 1600px | desktop | about 1512px | about 413.1px | about 465.5 x 349.1 | 420px | Copy and CTA rebalance begins |
+| 1920px | desktop | about 1680px | about 449.5px | about 513.9 x 385.5 | 440px | Media follows Systems frame scale |
+| 2200px | desktop | about 1880px | about 496.1px | about 576.1 x 432.1 | 460px | Ultra-wide follows Systems frame |
+| 2560px | desktop | about 2240px | about 583.5px | about 692.7 x 519.5 | 460px | Media aligns to the wider Systems frame rhythm |
 
 Spacing:
 
@@ -101,7 +101,7 @@ Layout:
 - Copy max width: `820px` base desktop, increasing to `900px` at `1600px+`, `980px` at `1920px+`, and `1040px` at `2200px+`.
 - Body max width: `680px` base desktop, increasing to `740px` at `1600px+`, `780px` at `1920px+`, and `800px` at `2200px+`.
 - Ultra-wide cards follow the shared page shell rhythm instead of using a separate narrow cap.
-- Desktop media left edge and media width follow the Systems & Proof card media rail.
+- Desktop media width follows the full-bleed Systems & Proof media frame reference while keeping the approved Home media rail.
 
 Media:
 
@@ -109,7 +109,7 @@ Media:
 - Anaya crop is locked with `.featured-card--anaya`.
 - Archer uses the same 4:3 white media container.
 - Archer logo inset is baked into the asset; no CSS padding is added.
-- Media remains conservative through the compact desktop range, then scales with the Systems & Proof card image rhythm through ultra-wide.
+- Media remains conservative through the compact desktop range, then scales with the full-bleed Systems & Proof image-frame rhythm through ultra-wide.
 
 Typography:
 
@@ -162,7 +162,7 @@ CTA:
 - `.innovation-section`, `.innovation-panel`, and `.innovation-card-copy` remain in the markup for compatibility with existing shared page structure.
 - `.featured-card` is now the lock class for the homepage reusable system.
 - The pseudo-border is intentionally retained because it contributes to the current gold edge.
-- Desktop and wide desktop now align Featured media to the shared Home media rail established by Systems & Proof.
+- Desktop and wide desktop now align Featured media width to the full-bleed Systems & Proof frame reference while preserving the shared Home media rail.
 - Desktop-only rules are scoped at `1025px+` and should not affect the mobile/tablet stack.
 
 ## 7. Lock Risks
