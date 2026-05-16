@@ -7093,6 +7093,8 @@ main#top #systems .system-card .library-actions {
     --home-systems-media-frame-width: calc((var(--page-shell-width) - var(--home-media-rail-section-pad) - var(--home-media-rail-section-pad) - 2px - var(--home-media-rail-grid-gap) - var(--home-media-rail-grid-gap)) / 3);
     --home-section-wall-width: min(100vw, 2560px);
     --home-featured-frame-width: min(calc(100vw - 25px), 2535px);
+    --home-featured-side-fill-left: 12px;
+    --home-featured-side-fill-right: 13px;
     --home-featured-frame-border: rgba(184, 128, 30, 0.86);
     --home-section-wall-border: rgba(31, 27, 22, 0.05);
     --home-section-wall-bg:
@@ -7123,6 +7125,10 @@ main#top #systems .system-card .library-actions {
     padding-inline: calc((100vw - var(--page-shell-width)) / 2);
   }
 
+  main#top > :is(#systems, #media, #playing-career, #contact).section {
+    margin-top: 12px;
+  }
+
   .section {
     padding-inline: clamp(36px, 2.4vw, 58px);
   }
@@ -7140,6 +7146,7 @@ main#top #systems .system-card .library-actions {
     position: relative !important;
     isolation: isolate;
     overflow: visible !important;
+    box-shadow: none !important;
   }
 
   main#top > :is(#systems, #media, #playing-career, #contact).section::before {
@@ -7152,7 +7159,7 @@ main#top #systems .system-card .library-actions {
     width: var(--home-section-wall-width);
     max-width: 2560px;
     border: 1px solid var(--home-section-wall-border);
-    border-radius: 34px;
+    border-radius: 0;
     background: var(--home-section-wall-bg);
     pointer-events: none;
     transform: translateX(-50%);
@@ -7168,7 +7175,7 @@ main#top #systems .system-card .library-actions {
     width: var(--home-section-wall-width);
     max-width: 2560px;
     border: 1px solid var(--home-section-wall-border);
-    border-radius: 34px;
+    border-radius: 0;
     background: var(--home-section-wall-bg);
     pointer-events: none;
     transform: translateX(-50%);
@@ -7573,6 +7580,10 @@ main#top #featured-work .featured-card::before {
 }
 
 @media (min-width: 1025px) {
+  main#top #featured-work {
+    gap: 7px;
+  }
+
   main#top #featured-work .featured-card {
     isolation: isolate;
     overflow: visible;
@@ -7588,15 +7599,15 @@ main#top #featured-work .featured-card::before {
     left: 50%;
     width: var(--home-featured-frame-width);
     max-width: 2535px;
-    border: 5px solid var(--home-featured-frame-border);
+    border: solid var(--home-featured-frame-border);
+    border-width: 7px var(--home-featured-side-fill-right) 7px var(--home-featured-side-fill-left);
     border-radius: 0;
     background:
       linear-gradient(135deg, rgba(255, 246, 221, 0.46), rgba(255, 246, 221, 0) 26%, rgba(218, 163, 58, 0.16) 52%, rgba(255, 246, 221, 0) 78%),
       var(--featured-card-bg);
     box-shadow:
       inset 0 1px 0 rgba(255, 229, 168, 0.92),
-      inset 0 -1px 0 rgba(138, 93, 21, 0.24),
-      0 10px 24px rgba(52, 36, 24, 0.08);
+      inset 0 -1px 0 rgba(138, 93, 21, 0.24);
     transform: translateX(calc(-50% - 0.5px));
   }
 }
@@ -10865,5 +10876,26 @@ main.archer-page .archer-final-cta .featured-actions {
 
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system .hero-portrait-overlay {
     transform: translateX(-50%) !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .page-shell main#top > .page-hero-system.page-hero-system {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body .page-shell main#top > #featured-work {
+    margin-top: 12px !important;
+  }
+
+  body .page-shell main#top > #media {
+    margin-top: 12px !important;
+  }
+
+  body:has(main#top) .site-footer.site-chrome {
+    margin-top: 12px;
   }
 }
