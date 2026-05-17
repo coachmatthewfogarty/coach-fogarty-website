@@ -11269,15 +11269,18 @@ main.archer-page .archer-final-cta .featured-actions {
 
 @media (min-width: 1025px) {
   .page-shell main#top > .page-hero-system.page-hero-system {
-    width: 100vw !important;
+    --home-hero-wall-width: min(var(--home-section-wall-width), calc(100vw - 16px));
+    width: var(--home-hero-wall-width) !important;
     max-width: none !important;
     margin-top: 0 !important;
-    margin-inline: calc((var(--page-shell-width) - 100vw) / 2) !important;
+    margin-inline: calc((var(--page-shell-width) - var(--home-hero-wall-width)) / 2) !important;
     margin-bottom: 12px !important;
-    padding-inline: calc(((100vw - var(--page-shell-width)) / 2) + var(--home-hero-side-inset)) !important;
+    padding-inline: calc(((var(--home-hero-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset)) !important;
     border-color: transparent !important;
     border-radius: 0 !important;
-    background: var(--home-section-wall-bg) !important;
+    background:
+      linear-gradient(180deg, rgba(255, 252, 247, 0.94), rgba(250, 237, 218, 0.78)),
+      rgba(255, 250, 243, 0.86) !important;
     box-shadow: none !important;
   }
 
