@@ -8797,6 +8797,7 @@ body .page-shell :is(
 
 @media (min-width: 1025px) {
   main#top > #playing-career.playing-career-section {
+    padding-bottom: 0;
     border-color: transparent;
     background: transparent;
   }
@@ -9007,7 +9008,8 @@ body .page-shell :is(
   #playing-career .playing-career-track {
     --playing-career-gap: max(13px, calc((100% - var(--home-systems-media-frame-width) - var(--home-systems-media-frame-width) - var(--home-systems-media-frame-width)) / 2));
     grid-column: 1;
-    padding: 6px 0 0;
+    padding: 0;
+    background: #ffffff;
     scrollbar-width: none;
   }
 
@@ -9017,6 +9019,17 @@ body .page-shell :is(
 
   #playing-career .playing-career-track .achievement-card {
     flex-basis: var(--home-systems-media-frame-width);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #playing-career .playing-career-track .achievement-card:hover,
+  #playing-career .playing-career-track .achievement-card:focus-visible {
+    box-shadow: none;
+  }
+
+  #playing-career .playing-career-track .achievement-card img {
+    border-radius: 0;
   }
 
   #playing-career .playing-career-arrow {
