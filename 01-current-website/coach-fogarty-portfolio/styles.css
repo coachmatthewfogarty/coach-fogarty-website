@@ -10753,7 +10753,7 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 }
 
-@media (min-width: 820px) and (max-width: 1024px) {
+@media (min-width: 445px) and (max-width: 1024px) {
   body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
     min-width: min(clamp(137px, calc(9.8vw + 45px), 149px), calc((100% - 96px) / 5)) !important;
   }
