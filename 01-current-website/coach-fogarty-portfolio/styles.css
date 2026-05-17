@@ -10928,6 +10928,18 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 }
 
+@media (min-width: 2200px) {
+  body .page-shell main#top > .page-hero-system.page-hero-system {
+    --hero-overlay-link-gap-column: clamp(3px, 0.16vw, 4.5px);
+  }
+
+  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    flex: 0 0 clamp(91px, 3.8vw, 98px) !important;
+    min-width: 0 !important;
+    width: clamp(91px, 3.8vw, 98px) !important;
+  }
+}
+
 @media (min-width: 1025px) {
   .page-shell main#top > .page-hero-system.page-hero-system {
     margin-top: 0 !important;
