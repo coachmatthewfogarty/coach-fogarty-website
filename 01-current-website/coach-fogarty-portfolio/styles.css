@@ -10703,12 +10703,20 @@ main.archer-page .archer-final-cta .featured-actions {
     --hero-overlay-link-size: clamp(13.5px, calc(0.65vw + 10px), 14.8px);
     --hero-overlay-link-gap-column: clamp(5px, 0.75vw, 6px);
   }
+
+  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    padding-inline: clamp(1.6px, 0.32vw, 2.4px);
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body .page-shell main#top > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: clamp(14.6px, calc(0.2vw + 12.8px), 15px);
     --hero-overlay-link-gap-column: clamp(5px, 0.58vw, 6px);
+  }
+
+  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    padding-inline: clamp(2px, 0.24vw, 2.8px);
   }
 }
 
