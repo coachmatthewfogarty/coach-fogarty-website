@@ -8996,6 +8996,8 @@ body .page-shell :is(
 
   #playing-career .playing-career-carousel {
     grid-template-columns: minmax(0, 1fr);
+    width: calc(100% + (var(--home-media-rail-section-pad) * 2));
+    margin-inline: calc(var(--home-media-rail-section-pad) * -1);
     padding: 0;
     border: 0;
     border-radius: 0;
