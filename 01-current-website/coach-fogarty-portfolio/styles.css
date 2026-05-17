@@ -97,7 +97,7 @@ main {
   border-radius: 0;
   backdrop-filter: blur(16px) saturate(1.05);
   -webkit-backdrop-filter: blur(16px) saturate(1.05);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
   box-shadow: none;
 }
 
@@ -119,7 +119,7 @@ main {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--red), var(--gold));
+  background: var(--red);
 }
 
 .brand-copy {
@@ -5271,7 +5271,7 @@ main#top #media .gallery-card .gallery-card-arrow {
     var(--site-header-block-pad) max(var(--site-chrome-gutter), calc((100vw - var(--site-chrome-content-width)) / 2 + var(--site-chrome-gutter)));
   border-top: 0;
   border-bottom: 0;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .site-footer.site-chrome {
@@ -6771,8 +6771,8 @@ main#top .credentials-card .credential-document-heading .eyebrow {
 
   .site-header .brand {
     z-index: 1;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     flex: 0 0 auto;
     justify-content: center;
     gap: 0;
@@ -6780,10 +6780,10 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   }
 
   .site-header .brand-mark {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    font-size: 0.68rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    font-size: 0.78rem;
     line-height: 1;
   }
 
