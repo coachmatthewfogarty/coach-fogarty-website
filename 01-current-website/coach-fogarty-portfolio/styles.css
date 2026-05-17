@@ -8996,17 +8996,14 @@ body .page-shell :is(
 
   #playing-career .playing-career-carousel {
     grid-template-columns: minmax(0, 1fr);
-    padding:
-      0
-      var(--home-media-rail-system-pad)
-      0;
+    padding: 0;
     border: 0;
     border-radius: 0;
     background: transparent;
   }
 
   #playing-career .playing-career-track {
-    --playing-career-gap: max(13px, calc((100% - var(--home-systems-media-frame-width) - var(--home-systems-media-frame-width) - var(--home-systems-media-frame-width)) / 2));
+    --playing-career-gap: 12px;
     grid-column: 1;
     padding: 0;
     background: #ffffff;
@@ -9018,7 +9015,7 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-track .achievement-card {
-    flex-basis: var(--home-systems-media-frame-width);
+    flex-basis: calc((100% - (var(--playing-career-gap) * 2)) / 3);
     border-radius: 0;
     box-shadow: none;
   }
