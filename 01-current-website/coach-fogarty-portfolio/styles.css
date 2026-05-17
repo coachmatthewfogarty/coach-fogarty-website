@@ -1,7 +1,7 @@
 :root {
   --bg: #f4efe7;
   --site-bg: var(--bg);
-  --site-header-block-pad: 3px;
+  --site-header-block-pad: 2px;
   --panel: rgba(255, 250, 243, 0.82);
   --panel-strong: #fff9f0;
   --text: #1f1b16;
