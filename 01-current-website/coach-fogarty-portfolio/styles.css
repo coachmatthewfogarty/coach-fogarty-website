@@ -56,10 +56,7 @@ body:has(main#top) {
 }
 
 body:has(main#top) .site-footer.site-chrome {
-  background:
-    radial-gradient(circle at top left, rgba(184, 135, 47, 0.18), transparent 28%),
-    radial-gradient(circle at top right, rgba(36, 79, 115, 0.12), transparent 24%),
-    linear-gradient(180deg, #f6f0e5 0%, #f3ede4 38%, #efe6da 100%);
+  background: #ffffff;
 }
 
 .page-shell {
@@ -100,7 +97,7 @@ main {
   border-radius: 0;
   backdrop-filter: blur(16px) saturate(1.05);
   -webkit-backdrop-filter: blur(16px) saturate(1.05);
-  background: rgba(255, 255, 255, 0.42);
+  background: #ffffff;
   box-shadow: none;
 }
 
@@ -5274,7 +5271,7 @@ main#top #media .gallery-card .gallery-card-arrow {
     var(--site-header-block-pad) max(var(--site-chrome-gutter), calc((100vw - var(--site-chrome-content-width)) / 2 + var(--site-chrome-gutter)));
   border-top: 0;
   border-bottom: 0;
-  background: rgba(255, 255, 255, 0.42);
+  background: #ffffff;
 }
 
 .site-footer.site-chrome {
@@ -6832,7 +6829,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
 
   .site-header .site-nav a {
     font-family: "Trebuchet MS", "Gill Sans", sans-serif;
-    font-size: clamp(0.7rem, calc(0.64rem + 0.1vw), 0.82rem);
+    font-size: clamp(calc(0.7rem + 2px), calc(0.64rem + 0.1vw + 2px), calc(0.82rem + 2px));
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0;
