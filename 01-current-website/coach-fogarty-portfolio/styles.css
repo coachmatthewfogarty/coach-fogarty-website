@@ -10430,7 +10430,7 @@ main.archer-page .archer-final-cta .featured-actions {
   --hero-overlay-padding-block-start: clamp(7px, 1.45cqw, 14px);
   --hero-overlay-padding-inline: clamp(10px, 2.15cqw, 22px);
   --hero-overlay-padding-block-end: clamp(8px, 1.55cqw, 15px);
-  --hero-overlay-radius: 14px;
+  --hero-overlay-radius: 0px;
   --hero-overlay-title-size: clamp(0.66rem, 2.2cqw, 1rem);
   --hero-overlay-title-line: 1;
   --hero-overlay-link-size: clamp(0.64rem, 3.25cqw, 1rem);
@@ -10532,7 +10532,7 @@ main.archer-page .archer-final-cta .featured-actions {
   aspect-ratio: 1.13 / 1 !important;
   overflow: hidden !important;
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 28px !important;
+  border-radius: 0 !important;
   background: #d8c3a6 !important;
   box-shadow: var(--shadow) !important;
   transform: none !important;
