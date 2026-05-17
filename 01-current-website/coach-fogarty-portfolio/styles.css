@@ -10696,11 +10696,11 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 }
 
-@media (min-width: 500px) and (max-width: 767px) {
+@media (min-width: 560px) and (max-width: 767px) {
   body .page-shell main#top > .page-hero-system.page-hero-system {
-    --hero-overlay-link-size: clamp(12px, calc(1.15vw + 6.2px), 14px);
-    --hero-overlay-link-gap-column: clamp(2.4px, 0.45vw, 4px);
-    --hero-overlay-link-track: clamp(66px, 12.5vw, 78px);
+    --hero-overlay-link-size: clamp(12px, calc(0.9vw + 6.4px), 13.2px);
+    --hero-overlay-link-gap-column: clamp(2px, 0.35vw, 3px);
+    --hero-overlay-link-track: clamp(64px, 9.8vw, 70px);
   }
 
   body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
@@ -10712,8 +10712,9 @@ main.archer-page .archer-final-cta .featured-actions {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body .page-shell main#top > .page-hero-system.page-hero-system {
-    --hero-overlay-link-gap-column: clamp(3px, 0.55vw, 5px);
-    --hero-overlay-link-track: clamp(80px, 8vw, 92px);
+    --hero-overlay-link-size: clamp(13.4px, calc(0.5vw + 9.6px), 14px);
+    --hero-overlay-link-gap-column: clamp(2.5px, 0.35vw, 4px);
+    --hero-overlay-link-track: clamp(72px, 7.1vw, 76px);
   }
 
   body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
