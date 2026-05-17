@@ -12264,29 +12264,6 @@ body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-ov
   text-transform: uppercase !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text {
-  align-items: center !important;
-}
-
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-  display: inline-flex !important;
-  flex: 0 0 auto !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: auto !important;
-  min-width: 0 !important;
-}
-
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span {
-  display: inline-flex !important;
-  flex: 0 0 0.55em !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 0.55em !important;
-  min-width: 0.55em !important;
-  line-height: 1 !important;
-}
-
 body .page-shell main#top .contact-closeout-grid {
   grid-template-areas:
     "documents-heading"
