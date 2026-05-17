@@ -168,8 +168,8 @@ const librarySections = [
 
 const systemDisplayOrder = [
   "Player Development",
-  "Defensive Tracker",
   "Coaching Philosophy",
+  "Defensive Tracker",
   "Recruiting",
   "Program Support",
   "Scouting"
@@ -1632,14 +1632,15 @@ function renderGallery() {
     .map(
       (item, index) => {
         const itemIndex = albumItemIndexForSource(item, item.thumbnail);
+        const galleryCaption = item.caption === "Player Growth" ? "Player Development" : item.caption;
 
         return `
         <button class="gallery-card${item.crop ? ` gallery-card-${item.crop}` : ""}" type="button" data-album-index="${index}" data-album-item-index="${itemIndex}">
           <span class="gallery-media">
-            <img src="${encodeURI(item.thumbnail)}" data-image-role="${item.thumbnailRole || "thumb"}" alt="${item.caption}" />
+            <img src="${encodeURI(item.thumbnail)}" data-image-role="${item.thumbnailRole || "thumb"}" alt="${galleryCaption}" />
           </span>
           <span class="gallery-card-caption">
-            <span class="gallery-card-title">${item.caption}</span>
+            <span class="gallery-card-title">${galleryCaption}</span>
             <span class="gallery-card-arrow" aria-hidden="true">&rsaquo;</span>
           </span>
         </button>
