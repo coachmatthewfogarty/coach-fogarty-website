@@ -7148,6 +7148,9 @@ main#top #systems .library-card.system-card {
   height: auto;
   min-height: 0;
   align-items: center;
+  border: 1px solid rgba(184, 135, 47, 0.16);
+  background: linear-gradient(180deg, #fffdf8 0%, #fff7ea 100%);
+  box-shadow: none;
   text-align: center;
 }
 
@@ -7155,7 +7158,7 @@ main#top #systems .system-card > h3,
 main#top #systems .library-card.system-card > h3 {
   width: min(100%, 620px);
   margin-inline: auto;
-  color: var(--red);
+  color: #8f2d1e;
   text-align: center;
 }
 
@@ -7163,6 +7166,7 @@ main#top #systems .system-card > p,
 main#top #systems .library-card.system-card > p {
   width: min(100%, 620px);
   margin-inline: auto;
+  color: #6a5f53;
   text-align: center;
 }
 
@@ -7186,6 +7190,54 @@ main#top #systems .system-card .library-actions {
   margin: clamp(10px, 1.4vw, 16px) auto 0;
   padding-top: 0;
   justify-content: center;
+}
+
+main#top #systems .system-card .library-actions .button,
+main#top #systems .system-card .button-small {
+  border: 1px solid rgba(31, 27, 22, 0.14);
+  background: rgba(255, 255, 255, 0.72);
+  color: #1f1b16;
+}
+
+main#top #systems .system-card[data-system-type="leadership"],
+main#top #systems .library-card.system-card[data-system-type="leadership"] {
+  border: 1px solid rgba(184, 135, 47, 0.34);
+  background: linear-gradient(180deg, #111111 0%, #1a1a1a 100%);
+  box-shadow: none;
+}
+
+main#top #systems .system-card[data-system-type="recruiting"],
+main#top #systems .library-card.system-card[data-system-type="recruiting"] {
+  border: 1px solid rgba(184, 135, 47, 0.36);
+  background: linear-gradient(180deg, #2f3148 0%, #202333 100%);
+  box-shadow: none;
+}
+
+main#top #systems .system-card:is([data-system-type="leadership"], [data-system-type="recruiting"]) > h3,
+main#top #systems .library-card.system-card:is([data-system-type="leadership"], [data-system-type="recruiting"]) > h3 {
+  color: #f4c76b;
+}
+
+main#top #systems .system-card:is([data-system-type="leadership"], [data-system-type="recruiting"]) > p,
+main#top #systems .library-card.system-card:is([data-system-type="leadership"], [data-system-type="recruiting"]) > p {
+  color: rgba(255, 250, 243, 0.8);
+}
+
+main#top #systems .system-card[data-system-type="recruiting"] > p,
+main#top #systems .library-card.system-card[data-system-type="recruiting"] > p {
+  color: rgba(255, 250, 243, 0.78);
+}
+
+main#top #systems .system-card:is([data-system-type="leadership"], [data-system-type="recruiting"]) .library-actions .button,
+main#top #systems .system-card:is([data-system-type="leadership"], [data-system-type="recruiting"]) .button-small {
+  border: 1px solid rgba(244, 199, 107, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fffaf1;
+}
+
+main#top #systems .system-card[data-system-type="recruiting"] .library-actions .button,
+main#top #systems .system-card[data-system-type="recruiting"] .button-small {
+  background: rgba(255, 250, 243, 0.08);
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -7227,35 +7279,40 @@ main#top #systems .system-card .library-actions {
 
   main#top #systems .system-card,
   main#top #systems .library-card.system-card {
-    min-height: clamp(560px, 42vw, 780px);
+    min-height: clamp(420px, 28.5vw, 560px);
     justify-content: flex-start;
     padding:
-      clamp(30px, 3vw, 54px)
+      clamp(22px, 2vw, 34px)
       clamp(24px, 3vw, 48px)
-      clamp(26px, 2.6vw, 46px);
-    border: 0;
+      clamp(18px, 1.7vw, 28px);
     border-radius: 0;
-    background:
-      linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(255, 248, 239, 0.88)),
-      #fffaf3;
-    box-shadow: none;
     overflow: hidden;
   }
 
   main#top #systems .system-card:hover,
   main#top #systems .system-card:focus-within {
     transform: none;
-    border-color: transparent;
-    background:
-      linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(255, 248, 239, 0.9)),
-      #fffaf3;
+    border-color: rgba(184, 135, 47, 0.16);
+    background: linear-gradient(180deg, #fffdf8 0%, #fff7ea 100%);
     box-shadow: none;
+  }
+
+  main#top #systems .system-card[data-system-type="leadership"]:hover,
+  main#top #systems .system-card[data-system-type="leadership"]:focus-within {
+    border-color: rgba(184, 135, 47, 0.34);
+    background: linear-gradient(180deg, #111111 0%, #1a1a1a 100%);
+  }
+
+  main#top #systems .system-card[data-system-type="recruiting"]:hover,
+  main#top #systems .system-card[data-system-type="recruiting"]:focus-within {
+    border-color: rgba(184, 135, 47, 0.36);
+    background: linear-gradient(180deg, #2f3148 0%, #202333 100%);
   }
 
   main#top #systems .library-card-media {
     aspect-ratio: 4 / 3;
     height: auto;
-    width: min(100%, 700px);
+    width: min(100%, clamp(290px, 28.75vw, 460px));
     max-width: 100%;
     margin: auto auto 0;
     border: 0;
@@ -7284,14 +7341,14 @@ main#top #systems .system-card .library-actions {
   main#top #systems .system-card,
   main#top #systems .library-card.system-card {
     padding:
-      clamp(30px, 3vw, 54px)
+      clamp(22px, 2vw, 34px)
       clamp(24px, 3vw, 48px)
-      clamp(26px, 2.6vw, 46px);
+      clamp(18px, 1.7vw, 28px);
   }
 
   main#top #systems .system-card > h3,
   main#top #systems .library-card.system-card > h3 {
-    color: var(--red);
+    color: #8f2d1e;
     max-width: 100%;
     overflow: visible !important;
     font-size: clamp(1.34rem, calc(0.8rem + 3.75cqw), 2.35rem) !important;
@@ -7306,7 +7363,7 @@ main#top #systems .system-card .library-actions {
     gap: clamp(8px, 1vw, 12px);
     min-height: 0;
     margin-top: clamp(10px, 1.1vw, 16px);
-    margin-bottom: clamp(18px, 2vw, 34px);
+    margin-bottom: clamp(12px, 1.35vw, 22px);
     padding-top: 0;
   }
 
