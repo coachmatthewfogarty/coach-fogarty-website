@@ -7260,8 +7260,7 @@ main#top #systems .system-card .library-actions {
     --home-featured-side-fill-right: 13px;
     --home-featured-frame-border: rgba(184, 128, 30, 0.86);
     --home-section-wall-border: transparent;
-    --home-section-wall-bg:
-      linear-gradient(180deg, #ffffff 0%, #fffdf8 48%, #ffffff 100%);
+    --home-section-wall-bg: #ffffff;
     --home-contact-wall-bg:
       linear-gradient(180deg, rgba(255, 253, 248, 0.82), rgba(252, 243, 230, 0.66)),
       rgba(255, 250, 243, 0.74);
