@@ -7137,26 +7137,41 @@ main#top #systems .library-card.system-card > p {
 @media (min-width: 1280px) {
 }
 
-/* Systems & Proof of Work locked grid: mobile 1x6, tablet 2x3, desktop 3x2. */
+/* Systems & Proof of Work locked grid: mobile 1x6, tablet 2x3, desktop 2x3. */
 main#top #systems .library-grid {
   grid-auto-rows: auto;
+  background: #ffffff;
 }
 
 main#top #systems .system-card,
 main#top #systems .library-card.system-card {
   height: auto;
   min-height: 0;
+  align-items: center;
+  text-align: center;
 }
 
 main#top #systems .system-card > h3,
 main#top #systems .library-card.system-card > h3 {
+  width: min(100%, 620px);
+  margin-inline: auto;
   color: var(--red);
+  text-align: center;
+}
+
+main#top #systems .system-card > p,
+main#top #systems .library-card.system-card > p {
+  width: min(100%, 620px);
+  margin-inline: auto;
+  text-align: center;
 }
 
 main#top #systems .library-card-media {
+  order: 4;
   aspect-ratio: 4 / 3;
   height: auto;
   min-height: 0;
+  margin: clamp(14px, 2vw, 22px) auto 0;
 }
 
 main#top #systems [data-system-type="dpat"] .library-card-media img,
@@ -7166,8 +7181,11 @@ main#top #systems [data-system-type="scouting"] .library-card-media img {
 }
 
 main#top #systems .system-card .library-actions {
-  margin-top: clamp(2px, 1cqw, 6px);
+  order: 3;
+  width: min(100%, 520px);
+  margin: clamp(10px, 1.4vw, 16px) auto 0;
   padding-top: 0;
+  justify-content: center;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -7194,23 +7212,52 @@ main#top #systems .system-card .library-actions {
 
 @media (min-width: 1025px) {
   main#top #systems .library-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: clamp(14px, 1.35vw, 28px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(10px, 0.9vw, 16px);
+    align-items: stretch;
   }
 
   main#top #systems .system-card,
   main#top #systems .library-card.system-card {
-    min-height: 0;
+    min-height: clamp(560px, 42vw, 780px);
+    justify-content: flex-start;
+    padding:
+      clamp(30px, 3vw, 54px)
+      clamp(24px, 3vw, 48px)
+      clamp(26px, 2.6vw, 46px);
+    border: 0;
+    border-radius: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(255, 248, 239, 0.88)),
+      #fffaf3;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  main#top #systems .system-card:hover,
+  main#top #systems .system-card:focus-within {
+    transform: none;
+    border-color: transparent;
+    background:
+      linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(255, 248, 239, 0.9)),
+      #fffaf3;
+    box-shadow: none;
   }
 
   main#top #systems .library-card-media {
     aspect-ratio: 4 / 3;
     height: auto;
-    --home-systems-card-media-bleed: 19px;
-    width: calc(100% + (var(--home-systems-card-media-bleed) * 2));
-    max-width: none;
-    margin-left: calc(var(--home-systems-card-media-bleed) * -1);
-    border-radius: 6px;
+    width: min(100%, 700px);
+    max-width: 100%;
+    margin: auto auto 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  main#top #systems .system-card:hover .library-card-media img,
+  main#top #systems .system-card:focus-within .library-card-media img {
+    transform: none;
   }
 }
 
@@ -7224,11 +7271,14 @@ main#top #systems .system-card .library-actions {
 @media (min-width: 768px) and (max-width: 1024px) {
 }
 
-/* Desktop system-card title and pill fit: preserve one-line labels across the 3-column desktop range. */
+/* Desktop system-card Apple tile copy and pill fit. */
 @media (min-width: 1025px) {
   main#top #systems .system-card,
   main#top #systems .library-card.system-card {
-    padding: clamp(12px, 3.8cqw, 22px);
+    padding:
+      clamp(30px, 3vw, 54px)
+      clamp(24px, 3vw, 48px)
+      clamp(26px, 2.6vw, 46px);
   }
 
   main#top #systems .system-card > h3,
@@ -7245,18 +7295,20 @@ main#top #systems .system-card .library-actions {
 
   main#top #systems .system-card .library-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(6px, 2.2cqw, 12px);
+    gap: clamp(8px, 1vw, 12px);
     min-height: 0;
-    padding-top: clamp(8px, 2.2cqw, 14px);
+    margin-top: clamp(10px, 1.1vw, 16px);
+    margin-bottom: clamp(18px, 2vw, 34px);
+    padding-top: 0;
   }
 
   main#top #systems .system-card .library-actions .button,
   main#top #systems .system-card .button-small {
     min-width: 0;
     width: 100%;
-    min-height: clamp(37px, 10.5cqw, 46px);
-    padding-right: clamp(5px, 2.1cqw, 12px);
-    padding-left: clamp(5px, 2.1cqw, 12px);
+    min-height: clamp(36px, 3cqw, 42px);
+    padding-right: clamp(8px, 1.1vw, 14px);
+    padding-left: clamp(8px, 1.1vw, 14px);
     overflow: hidden;
     font-size: clamp(0.72rem, calc(0.48rem + 1.42cqw), 0.94rem);
     line-height: 1.05;
@@ -7379,12 +7431,15 @@ main#top #systems .system-card .library-actions {
   }
 
   main#top #systems .library-grid {
-    gap: clamp(14px, 1.15vw, 22px) !important;
+    gap: clamp(10px, 0.9vw, 16px);
   }
 
   main#top #systems .system-card,
   main#top #systems .library-card.system-card {
-    padding: clamp(12px, 2.6cqw, 18px);
+    padding:
+      clamp(30px, 3vw, 54px)
+      clamp(24px, 3vw, 48px)
+      clamp(26px, 2.6vw, 46px);
   }
 
   main#top #systems .system-card > h3,
@@ -7399,13 +7454,13 @@ main#top #systems .system-card .library-actions {
   }
 
   main#top #systems .system-card .library-actions {
-    gap: clamp(6px, 1.4cqw, 10px);
-    padding-top: clamp(7px, 1.45cqw, 10px);
+    gap: clamp(8px, 1vw, 12px);
+    padding-top: 0;
   }
 
   main#top #systems .system-card .library-actions .button,
   main#top #systems .system-card .button-small {
-    min-height: clamp(36px, 7cqw, 42px);
+    min-height: clamp(36px, 3cqw, 42px);
     font-size: clamp(0.72rem, calc(0.58rem + 0.9cqw), 0.86rem);
   }
 
