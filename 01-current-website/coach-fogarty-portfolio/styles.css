@@ -10679,8 +10679,8 @@ main.archer-page .archer-final-cta .featured-actions {
 
 @media (min-width: 431px) and (max-width: 1024px) {
   body .page-shell main#top > .page-hero-system.page-hero-system {
-    --hero-overlay-link-size: clamp(12px, 2.6vw, 15px);
-    --hero-overlay-link-gap-column: clamp(4px, 1.2vw, 8px);
+    --hero-overlay-link-size: clamp(11px, calc(2.1vw + 2px), 15px);
+    --hero-overlay-link-gap-column: clamp(3px, calc(0.85vw + 0.3px), 8px);
     --hero-overlay-justify: center;
     --hero-overlay-wrap: nowrap;
   }
