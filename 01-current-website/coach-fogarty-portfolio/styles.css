@@ -10709,6 +10709,10 @@ main.archer-page .archer-final-cta .featured-actions {
     --hero-overlay-link-gap-column: clamp(2px, 1cqw, 4px);
     --hero-overlay-link-size: clamp(0.56rem, 2.55cqw, 0.68rem);
   }
+
+  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    min-width: min(clamp(39px, calc(10.9vw - 1.875px), 45px), calc((100% - 66px) / 5)) !important;
+  }
 }
 
 @media (min-width: 431px) and (max-width: 1024px) {
@@ -10726,6 +10730,12 @@ main.archer-page .archer-final-cta .featured-actions {
     --hero-overlay-link-gap-column: clamp(3px, calc(0.85vw + 0.3px), 8px);
     --hero-overlay-justify: center;
     --hero-overlay-wrap: nowrap;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 444px) {
+  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    min-width: min(clamp(46.5px, calc(17.3vw - 28px), 49px), calc((100% - 70px) / 5)) !important;
   }
 }
 
