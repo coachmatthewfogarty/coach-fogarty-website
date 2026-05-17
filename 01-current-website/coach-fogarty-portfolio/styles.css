@@ -6832,6 +6832,8 @@ main#top .credentials-card .credential-document-heading .eyebrow {
     position: static;
     display: inline-flex;
     align-items: center;
+    min-height: 44px;
+    margin-block: calc(var(--site-header-block-pad) * -1);
   }
 
   .site-header .site-nav-featured > a,
@@ -6839,7 +6841,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   .site-header .site-nav-gallery > a {
     display: inline-flex;
     align-items: center;
-    min-height: 32px;
+    min-height: 44px;
   }
 
   .site-header .featured-nav-dropdown,
