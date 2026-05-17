@@ -8996,14 +8996,23 @@ body .page-shell :is(
   #playing-career .playing-career-carousel {
     grid-template-columns: minmax(0, 1fr);
     padding:
-      18px
+      0
       var(--home-media-rail-system-pad)
-      16px;
+      0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
 
   #playing-career .playing-career-track {
     --playing-career-gap: max(13px, calc((100% - var(--home-systems-media-frame-width) - var(--home-systems-media-frame-width) - var(--home-systems-media-frame-width)) / 2));
     grid-column: 1;
+    padding: 6px 0 0;
+    scrollbar-width: none;
+  }
+
+  #playing-career .playing-career-track::-webkit-scrollbar {
+    display: none;
   }
 
   #playing-career .playing-career-track .achievement-card {
