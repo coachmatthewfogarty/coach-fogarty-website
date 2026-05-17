@@ -10699,6 +10699,33 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 }
 
+@media (min-width: 500px) and (max-width: 767px) {
+  body .page-shell main#top > .page-hero-system.page-hero-system {
+    --hero-overlay-link-size: clamp(12px, calc(1.15vw + 6.2px), 14px);
+    --hero-overlay-link-gap-column: clamp(2.4px, 0.45vw, 4px);
+    --hero-overlay-link-track: clamp(66px, 12.5vw, 78px);
+  }
+
+  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    flex: 0 0 var(--hero-overlay-link-track) !important;
+    min-width: 0 !important;
+    width: var(--hero-overlay-link-track) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main#top > .page-hero-system.page-hero-system {
+    --hero-overlay-link-gap-column: clamp(3px, 0.55vw, 5px);
+    --hero-overlay-link-track: clamp(80px, 8vw, 92px);
+  }
+
+  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    flex: 0 0 var(--hero-overlay-link-track) !important;
+    min-width: 0 !important;
+    width: var(--hero-overlay-link-track) !important;
+  }
+}
+
 @media (max-width: 360px) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     --home-hero-pill-main-size: clamp(0.72rem, 3.3cqw, 1rem);
