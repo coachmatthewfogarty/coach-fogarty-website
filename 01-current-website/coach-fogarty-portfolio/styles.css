@@ -10764,6 +10764,7 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 
   body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    min-width: clamp(64px, 10vw, 74px) !important;
     padding-inline: clamp(1.6px, 0.32vw, 2.4px);
   }
 }
@@ -10775,6 +10776,7 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 
   body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    min-width: clamp(76px, 8vw, 84px) !important;
     padding-inline: clamp(2px, 0.24vw, 2.8px);
   }
 }
