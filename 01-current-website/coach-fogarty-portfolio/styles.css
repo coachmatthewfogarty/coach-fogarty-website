@@ -10642,6 +10642,15 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 }
 
+@media (min-width: 431px) and (max-width: 1024px) {
+  body .page-shell main#top > .page-hero-system.page-hero-system {
+    --hero-overlay-link-size: clamp(12px, 2.6vw, 15px);
+    --hero-overlay-link-gap-column: clamp(4px, 1.2vw, 8px);
+    --hero-overlay-justify: center;
+    --hero-overlay-wrap: nowrap;
+  }
+}
+
 @media (max-width: 360px) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     --home-hero-pill-main-size: clamp(0.72rem, 3.3cqw, 1rem);
@@ -10734,6 +10743,13 @@ main.archer-page .archer-final-cta .featured-actions {
 
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system .hero-portrait-overlay-text {
     white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main#top > .page-hero-system.page-hero-system {
+    --hero-overlay-justify: center;
+    --hero-overlay-link-gap-column: clamp(5px, 0.3vw, 8px);
   }
 }
 
