@@ -10964,6 +10964,12 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 }
 
+@media (min-width: 1601px) and (max-width: 2199px) {
+  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+    min-width: min(clamp(49px, calc(6.2vw - 50px), 84px), calc((100% - 85px) / 5)) !important;
+  }
+}
+
 @media (min-width: 2200px) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     --hero-portrait-width: var(--hero-wide-portrait-width);
