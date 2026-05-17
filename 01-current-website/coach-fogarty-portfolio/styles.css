@@ -7083,6 +7083,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   }
 
   .site-footer.site-chrome {
+    padding-top: 10px;
     padding-bottom: 24px;
   }
 
@@ -11517,6 +11518,18 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   }
 }
 
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text {
+  justify-content: space-between !important;
+  gap: var(--hero-overlay-link-gap-row) 0 !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: max-content !important;
+  padding-inline: 0 !important;
+}
+
 @media (min-width: 1025px) {
   .page-shell main#top > .page-hero-system.page-hero-system {
     --home-hero-wall-width: min(var(--home-section-wall-width), calc(100vw - 16px));
@@ -11585,7 +11598,7 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   }
 
   body:has(main#top) .site-footer.site-chrome {
-    margin-top: 12px;
+    margin-top: 0;
   }
 }
 
@@ -12137,18 +12150,22 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
     min-height: clamp(442px, 30.6vw, 578px) !important;
     padding:
-      clamp(25px, 2.5vw, 45px)
-      clamp(24px, 3vw, 48px)
-      clamp(21px, 2.2vw, 38px) !important;
+      clamp(24px, 2.15vw, 36px)
+      clamp(24px, 2.4vw, 46px)
+      clamp(18px, 1.45vw, 28px) !important;
   }
 
   body .page-shell main#top #systems .library-card-media {
-    width: min(100%, clamp(264px, 25.75vw, 412px)) !important;
-    margin-top: clamp(24px, 2vw, 26px) !important;
+    width: min(100%, clamp(320px, 27.75vw, 488px)) !important;
+    margin-top: clamp(20px, 1.4vw, 26px) !important;
   }
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card) > h3 {
     color: var(--text, #1f1b16) !important;
+    margin-bottom: clamp(4px, 0.35vw, 6px) !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    line-height: 1.03 !important;
   }
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card)[data-system-type="dpat"] > h3 {
@@ -12157,9 +12174,10 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card) > p {
     color: #51483f !important;
-    font-size: clamp(0.86rem, calc(0.72rem + 0.65cqw), 1rem) !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
+    margin-bottom: clamp(8px, 0.65vw, 12px) !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    line-height: 1.22 !important;
   }
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card)[data-system-type="dpat"] > p {
@@ -12173,9 +12191,9 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     justify-content: center;
     width: max-content;
     max-width: 100%;
-    gap: 0 clamp(5px, 0.55vw, 10px) !important;
-    margin-top: clamp(8px, 0.8vw, 12px) !important;
-    margin-bottom: clamp(8px, 0.8vw, 12px) !important;
+    gap: 0 clamp(3px, 0.32vw, 8px) !important;
+    margin-top: clamp(4px, 0.45vw, 8px) !important;
+    margin-bottom: clamp(2px, 0.25vw, 4px) !important;
   }
 
   body .page-shell main#top #systems .system-card .library-actions .button,
@@ -12185,15 +12203,16 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     width: auto !important;
     max-width: max-content !important;
     min-width: 0 !important;
-    min-height: clamp(30px, 2.3cqw, 32px) !important;
-    padding-right: clamp(6px, 0.66vw, 14px) !important;
-    padding-left: clamp(6px, 0.66vw, 14px) !important;
+    min-height: clamp(30px, 2vw, 34px) !important;
+    padding-right: clamp(6px, 0.54vw, 12px) !important;
+    padding-left: clamp(6px, 0.54vw, 12px) !important;
     border: 1px solid rgba(207, 79, 31, 0.72) !important;
     border-radius: 999px !important;
     background: rgba(255, 255, 255, 0.48) !important;
     box-shadow: none !important;
     color: var(--coach-orange, #cf4f1f) !important;
-    font-size: clamp(0.66rem, calc(0.56rem + 0.18vw), 0.78rem) !important;
+    font-size: clamp(0.68rem, calc(0.58rem + 0.17vw), 0.78rem) !important;
+    font-weight: 800 !important;
     line-height: 1 !important;
     white-space: nowrap !important;
   }

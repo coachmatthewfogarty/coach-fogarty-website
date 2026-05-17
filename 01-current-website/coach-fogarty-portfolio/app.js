@@ -9,19 +9,12 @@ const librarySections = [
     },
     buttons: [
       {
-        label: "Overview",
-        href: "./assets/documents/player-development/player-development-overview.pdf"
+        label: "Learn More",
+        href: "./systems.html#development",
+        internal: true
       },
       {
         label: "Training Programs",
-        href: "./assets/documents/player-development/player-development-complete-portfolio.pdf"
-      },
-      {
-        label: "Drill Log",
-        href: "./assets/documents/player-development/player-development-drill-log.pdf"
-      },
-      {
-        label: "Complete Portfolio",
         href: "./assets/documents/player-development/player-development-complete-portfolio.pdf"
       }
     ]
@@ -36,20 +29,13 @@ const librarySections = [
     },
     buttons: [
       {
-        label: "Overview",
-        href: "./assets/documents/scouting/automated-scouting-report-overview.pdf"
+        label: "Learn More",
+        href: "./systems.html#scouting",
+        internal: true
       },
       {
         label: "Personnel Report",
         href: "./assets/documents/scouting/scouting-report-player-personnel-breakdown.pdf"
-      },
-      {
-        label: "In-Game Notes",
-        href: "./assets/documents/scouting/scouting-report-in-game-notes-template.pdf"
-      },
-      {
-        label: "Complete Portfolio",
-        href: "./assets/documents/scouting/automated-scouting-report-complete-portfolio.pdf"
       }
     ]
   },
@@ -64,26 +50,20 @@ const librarySections = [
     },
     buttons: [
       {
+        label: "Learn More",
+        href: "./systems.html#recruiting",
+        internal: true
+      },
+      {
         label: "Recruiting Plan",
         href: "./assets/documents/program-development/recruiting-development-plan.pdf"
-      },
-      {
-        label: "Program Overview",
-        href: "./assets/documents/program-development/program-development-overview.pdf"
-      },
-      {
-        label: "Team Plan",
-        href: "./assets/documents/program-development/team-development-plan.pdf"
-      },
-      {
-        label: "Staff Plan",
-        href: "./assets/documents/program-development/staff-development-plan.pdf"
       }
     ]
   },
   {
     type: "DPAT",
-    title: "Defensive Tracker",
+    title: "Defensive Tracker Accountability System",
+    titleMarkup: "<span style='font-size: clamp(1.15rem, calc(-0.08rem + 2vw), 1.82rem);'>Defensive Tracker Accountability System</span>",
     description: "DPAT grading and accountability tracking.",
     media: {
       src: "assets/documents/system-previews/Ready - Q98/systems-dpat-dashboard-preview-media-card-q98-1448x1086.webp",
@@ -92,20 +72,13 @@ const librarySections = [
     },
     buttons: [
       {
-        label: "Overview",
-        href: "./assets/documents/program-systems/dpat/dpat-overview.pdf"
+        label: "Learn More",
+        href: "./systems.html#defense",
+        internal: true
       },
       {
         label: "Game Report",
         href: "./assets/documents/program-systems/dpat/dpat-game-breakdown-report.pdf"
-      },
-      {
-        label: "Team Rankings",
-        href: "./assets/documents/program-systems/dpat/dpat-rankings.pdf"
-      },
-      {
-        label: "Complete Portfolio",
-        href: "./assets/documents/program-systems/dpat/dpat-complete-portfolio.pdf"
       }
     ]
   },
@@ -120,20 +93,13 @@ const librarySections = [
     },
     buttons: [
       {
-        label: "Overview",
-        href: "./assets/documents/program-development/program-development-overview.pdf"
+        label: "Learn More",
+        href: "./systems.html#operations",
+        internal: true
       },
       {
         label: "Operations Plan",
         href: "./assets/documents/program-development/operations-development-plan.pdf"
-      },
-      {
-        label: "Staff Plan",
-        href: "./assets/documents/program-development/staff-development-plan.pdf"
-      },
-      {
-        label: "Fundraising Plan",
-        href: "./assets/documents/program-development/fundraising-development-plan.pdf"
       }
     ]
   },
@@ -147,20 +113,13 @@ const librarySections = [
     },
     buttons: [
       {
-        label: "Assistant Philosophy",
-        href: "./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-philosophy.pdf"
+        label: "Learn More",
+        href: "./systems.html#leadership",
+        internal: true
       },
       {
         label: "30-60-90 Plan",
         href: "./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-30-60-90-day-plan.pdf"
-      },
-      {
-        label: "DEI Statement",
-        href: "./assets/documents/coaching-philosophy/assistant-coach/assistant-coach-dei-statement.pdf"
-      },
-      {
-        label: "Head Coach Alignment",
-        href: "./assets/documents/coaching-philosophy/head-coach/head-coach-philosophy.pdf"
       }
     ]
   }
@@ -169,7 +128,7 @@ const librarySections = [
 const systemDisplayOrder = [
   "Player Development",
   "Coaching Philosophy",
-  "Defensive Tracker",
+  "Defensive Tracker Accountability System",
   "Recruiting",
   "Program Support",
   "Scouting"
@@ -1564,7 +1523,7 @@ function renderLibrary() {
     .map(
       (section) => `
         <article class="library-card system-card" id="system-${systemTypeSlug(section.type)}" data-system-type="${systemTypeSlug(section.type)}">
-          <h3>${section.title}</h3>
+          <h3>${section.titleMarkup || section.title}</h3>
           <p>${section.description}</p>
           <span class="library-card-media" aria-hidden="${section.media?.alt ? "false" : "true"}">
             <img src="${encodeURI(section.media?.src || "")}" alt="${section.media?.alt || ""}"${section.media?.role ? ` data-image-role="${section.media.role}"` : ""} loading="lazy" onerror="this.closest('.library-card-media').classList.add('is-missing'); this.remove();" />
