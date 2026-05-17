@@ -14,47 +14,6 @@ document.querySelectorAll(".footer-accordion-toggle").forEach((toggle) => {
 const siteHeader = document.querySelector(".site-header");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 
-if (siteHeader) {
-  let lastScrollY = window.scrollY;
-  let distanceScrolledDown = 0;
-  let ticking = false;
-  const hideThreshold = 16;
-  const revealThreshold = 2;
-
-  const updateHeaderVisibility = () => {
-    const currentScrollY = Math.max(window.scrollY, 0);
-    const scrollDelta = currentScrollY - lastScrollY;
-
-    if (currentScrollY <= 24) {
-      siteHeader.classList.remove("header-hidden");
-      distanceScrolledDown = 0;
-    } else if (scrollDelta > 0) {
-      distanceScrolledDown += scrollDelta;
-
-      if (distanceScrolledDown > hideThreshold && !siteHeader.classList.contains("nav-open")) {
-        siteHeader.classList.add("header-hidden");
-      }
-    }
-
-    if (scrollDelta < -revealThreshold) {
-      siteHeader.classList.remove("header-hidden");
-      distanceScrolledDown = 0;
-    }
-
-    lastScrollY = currentScrollY;
-    ticking = false;
-  };
-
-  window.addEventListener("scroll", () => {
-    if (ticking) {
-      return;
-    }
-
-    window.requestAnimationFrame(updateHeaderVisibility);
-    ticking = true;
-  }, { passive: true });
-}
-
 if (siteHeader && mobileNavToggle) {
   const setMobileNavOpen = (isOpen) => {
     siteHeader.classList.toggle("nav-open", isOpen);
