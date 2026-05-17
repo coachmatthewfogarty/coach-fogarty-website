@@ -9197,6 +9197,7 @@ body .page-shell :is(
 
   #playing-career .playing-career-track .achievement-card {
     flex-basis: calc((100% - (var(--playing-career-gap) * 2)) / 3);
+    aspect-ratio: 1 / 1;
     border-radius: 0;
     box-shadow: none;
   }
@@ -9498,7 +9499,7 @@ body .page-shell main#top .home-closeout-heading > h2 {
 body .page-shell main#top .document-actions {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  grid-template-rows: repeat(3, minmax(44px, auto)) auto !important;
+  grid-template-rows: repeat(4, minmax(44px, auto)) auto !important;
   gap: 10px !important;
   min-height: 0 !important;
 }
@@ -9704,7 +9705,7 @@ body .page-shell main#top .contact-form .button {
 
   body .page-shell main#top .document-actions {
     grid-template-columns: 1fr !important;
-    grid-template-rows: repeat(7, minmax(44px, 1fr)) !important;
+    grid-template-rows: repeat(7, minmax(44px, 1fr)) 50px !important;
     gap: 12px !important;
   }
 
@@ -9718,8 +9719,19 @@ body .page-shell main#top .contact-form .button {
     grid-column: auto !important;
   }
 
+  body .page-shell main#top .contact-form textarea {
+    min-height: 190px !important;
+    height: 190px !important;
+  }
+
+  body .page-shell main#top .document-actions .button-primary,
   body .page-shell main#top .contact-form .button {
     min-width: auto !important;
+    min-height: 50px !important;
+    height: 50px !important;
+  }
+
+  body .page-shell main#top .contact-form .button {
     font-size: 14px !important;
     line-height: normal !important;
   }
