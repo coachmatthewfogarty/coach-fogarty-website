@@ -6766,7 +6766,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   .site-header.site-chrome {
     min-height: 44px;
     justify-content: center;
-    gap: clamp(16px, 1.8vw, 28px);
+    gap: clamp(34px, 4vw, 58px);
   }
 
   .site-header .brand {
