@@ -10969,10 +10969,20 @@ main.archer-page .archer-final-cta .featured-actions {
 
 @media (min-width: 1025px) {
   .page-shell main#top > .page-hero-system.page-hero-system {
+    width: 100vw !important;
+    max-width: none !important;
     margin-top: 0 !important;
+    margin-inline: calc((var(--page-shell-width) - 100vw) / 2) !important;
     margin-bottom: 12px !important;
+    padding-inline: calc(((100vw - var(--page-shell-width)) / 2) + var(--home-hero-side-inset)) !important;
+    border-color: transparent !important;
     border-radius: 0 !important;
+    background: transparent !important;
     box-shadow: none !important;
+  }
+
+  .page-shell main#top > .page-hero-system.page-hero-system::before {
+    content: none !important;
   }
 
   body .page-shell main#top > #featured-work {
