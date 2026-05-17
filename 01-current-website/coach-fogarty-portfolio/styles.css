@@ -11056,7 +11056,9 @@ main.archer-page .archer-final-cta .featured-actions {
     padding-inline: calc(((100vw - var(--page-shell-width)) / 2) + var(--home-hero-side-inset)) !important;
     border-color: transparent !important;
     border-radius: 0 !important;
-    background: var(--bg) !important;
+    background:
+      linear-gradient(180deg, rgba(255, 252, 247, 0.94), rgba(250, 237, 218, 0.78)),
+      rgba(255, 250, 243, 0.86) !important;
     box-shadow: none !important;
   }
 
