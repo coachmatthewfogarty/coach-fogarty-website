@@ -4934,7 +4934,7 @@ main#top #media {
   --gallery-section-pad: clamp(28px, 3vw, 42px);
   --gallery-heading-gap: clamp(12px, 1.3vw, 18px);
   --gallery-grid-gap: clamp(14px, 1.35vw, 22px);
-  --gallery-caption-pad-y: clamp(10px, 0.8vw, 14px);
+  --gallery-caption-pad-y: clamp(8px, 0.68vw, 12px);
   --gallery-caption-pad-x: clamp(12px, 1vw, 16px);
   --gallery-title-size: clamp(0.86rem, calc(0.68rem + 0.34vw), 1rem);
   --gallery-arrow-size: clamp(20px, 1.7vw, 24px);
@@ -4988,7 +4988,7 @@ main#top #media .gallery-card .gallery-media {
   width: 100%;
   height: auto;
   min-height: 0;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 0 !important;
   background: #1f1b16;
@@ -5014,7 +5014,7 @@ main#top #media .gallery-card > span:not(.gallery-media) {
     var(--gallery-caption-pad-y)
     var(--gallery-caption-pad-x)
     calc(var(--gallery-caption-pad-y) + 1px) !important;
-  border-top: 1px solid rgba(31, 27, 22, 0.08);
+  border-top: 1px solid rgba(31, 27, 22, 0.06);
   background: #FFFAF3;
   text-align: center;
 }
@@ -5074,7 +5074,7 @@ main#top #media .gallery-card .gallery-card-arrow {
 
 @media (min-width: 1600px) {
   main#top #media {
-    --gallery-caption-pad-y: clamp(12px, 0.72vw, 16px);
+    --gallery-caption-pad-y: clamp(10px, 0.6vw, 14px);
     --gallery-caption-pad-x: clamp(14px, 0.82vw, 18px);
     --gallery-title-size: clamp(1.04rem, calc(0.82rem + 0.22vw), 1.18rem);
     --gallery-arrow-size: clamp(24px, 1.25vw, 28px);
@@ -7342,7 +7342,7 @@ main#top #systems .system-card[data-system-type="recruiting"] .button-small {
 @media (min-width: 1025px) {
   main#top #systems.library-section {
     --systems-wall-width: min(var(--home-section-wall-width), calc(100vw - 16px));
-    padding-bottom: clamp(52px, 3vw, 76px);
+    padding-bottom: 0;
   }
 
   main#top #systems .library-grid {
@@ -7502,7 +7502,7 @@ main#top #systems .system-card[data-system-type="recruiting"] .button-small {
   }
 
   main#top > :is(#systems, #media, #playing-career, #contact).section {
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
   .section {
@@ -11410,7 +11410,7 @@ main.archer-page .archer-final-cta .featured-actions {
     max-width: none !important;
     margin-top: 0 !important;
     margin-inline: calc((var(--page-shell-width) - var(--home-hero-wall-width)) / 2) !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 0 !important;
     padding-inline: calc(((var(--home-hero-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset)) !important;
     border-color: transparent !important;
     border-radius: 0 !important;
@@ -11424,12 +11424,35 @@ main.archer-page .archer-final-cta .featured-actions {
     content: none !important;
   }
 
+  body .page-shell main#top > #systems.section {
+    margin-top: 0 !important;
+    border-top-width: 0 !important;
+    padding-top: 24px !important;
+  }
+
+  body .page-shell main#top > #systems.section .section-heading {
+    margin-bottom: 28px !important;
+  }
+
+  body .page-shell main#top > #systems.section .section-heading > .eyebrow {
+    margin-bottom: 7px !important;
+    line-height: 15px !important;
+  }
+
+  body .page-shell main#top > #systems.section .section-heading > h2 {
+    line-height: 38px !important;
+  }
+
+  body .page-shell main#top > #systems.section::before {
+    border-top-width: 0 !important;
+  }
+
   body .page-shell main#top > #featured-work {
-    margin-top: 12px !important;
+    margin-top: 16px !important;
   }
 
   body .page-shell main#top > #media {
-    margin-top: 12px !important;
+    margin-top: 10px !important;
   }
 
   body:has(main#top) .site-footer.site-chrome {
@@ -11510,13 +11533,14 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
   --featured-cta-width: clamp(220px, 15vw, 290px);
   --featured-media-max: min(100%, 540px);
   --featured-panel-bg: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%);
-  --featured-gold-trim: #b8872f;
+  --featured-gold-trim: rgba(184, 135, 47, 0.78);
+  --featured-gold-inner: rgba(184, 135, 47, 0.38);
   min-height: auto;
   padding:
     clamp(24px, 4vw, 34px)
     clamp(20px, 5vw, 48px)
     clamp(16px, 3.2vw, 24px);
-  border: 3px solid var(--featured-gold-trim);
+  border: 2px solid var(--featured-gold-trim);
   border-radius: 0;
   background: var(--featured-panel-bg);
   box-shadow: none !important;
@@ -11531,7 +11555,7 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
   left: 1px;
   width: auto;
   max-width: none;
-  border: 1px solid var(--featured-gold-trim);
+  border: 1px solid var(--featured-gold-inner);
   border-radius: 0;
   background: transparent;
   box-shadow: none !important;
@@ -11787,6 +11811,12 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     --featured-media-max: clamp(332px, 22.1vw, 460px);
     --featured-logo-frame-height: clamp(253px, 20.3vw, 332px);
     --featured-logo-scale: 120%;
+  }
+
+  main#top #featured-work .featured-card.featured-card--archer .innovation-card-copy > p {
+    --archer-body-line-max: 760px;
+    padding-inline: 0;
+    white-space: nowrap;
   }
 
   body .page-shell main#top #featured-work > .featured-card.featured-card--archer {
