@@ -9491,7 +9491,7 @@ body .page-shell main#top .contact-form .button {
     --contact-closeout-card-bg:
       linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(253, 248, 240, 0.88)),
       #fffdf8;
-    --contact-closeout-card-radius: 10px;
+    --contact-closeout-card-radius: 0;
     --contact-closeout-card-shadow: none;
   }
 
