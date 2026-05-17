@@ -7150,24 +7150,32 @@ main#top .credentials-card .credential-document-heading .eyebrow {
 }
 
 /* Systems & Proof of Work: responsive fit for intro and mini-card text. */
-main#top #systems.library-section {
+main#top #systems.library-section,
+main#top #playing-career.playing-career-section,
+main#top #featured-work {
   container-type: inline-size;
   overflow: visible;
 }
 
-main#top #systems .section-heading {
+main#top #systems .section-heading,
+main#top #playing-career .section-heading,
+main#top #featured-work > .featured-work-section-heading {
   max-width: 100%;
   margin-bottom: clamp(8px, 1.1cqw, 14px);
 }
 
-main#top #systems .section-heading .eyebrow {
+main#top #systems .section-heading .eyebrow,
+main#top #playing-career .section-heading .eyebrow,
+main#top #featured-work > .featured-work-section-heading .eyebrow {
   font-size: clamp(0.62rem, calc(0.54rem + 0.26cqw), 0.84rem) !important;
   line-height: 1.15 !important;
   letter-spacing: clamp(0.08em, 0.16cqw, 0.14em);
   white-space: nowrap !important;
 }
 
-main#top #systems .section-heading h2 {
+main#top #systems .section-heading h2,
+main#top #playing-career .section-heading h2,
+main#top #featured-work > .featured-work-section-heading h2 {
   font-size: clamp(1.25rem, calc(1rem + 1.8cqw), 2.72rem) !important;
   line-height: 1.03 !important;
   white-space: nowrap !important;
@@ -7208,7 +7216,9 @@ main#top #systems .library-card.system-card > p {
 }
 
 @media (max-width: 767px) {
-  main#top #systems .section-heading {
+  main#top #systems .section-heading,
+  main#top #playing-career .section-heading,
+  main#top #featured-work > .featured-work-section-heading {
     margin-bottom: 9px;
   }
 
@@ -7236,7 +7246,9 @@ main#top #systems .library-card.system-card > p {
     --type-eyebrow-letter-spacing: clamp(0.07em, 0.16cqw, 0.12em);
   }
 
-  main#top #systems .section-heading h2 {
+  main#top #systems .section-heading h2,
+  main#top #playing-career .section-heading h2,
+  main#top #featured-work > .featured-work-section-heading h2 {
     font-size: clamp(1.18rem, 6.4cqw, 1.3rem) !important;
   }
 
@@ -11372,19 +11384,21 @@ body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-ov
     content: none !important;
   }
 
-  body .page-shell main#top > #systems.section {
+  body .page-shell main#top > :is(#systems, #playing-career).section {
     margin-top: 0 !important;
     border-top-width: 0 !important;
     padding-top: 18px !important;
   }
 
-  body .page-shell main#top > #systems.section .section-heading {
+  body .page-shell main#top > :is(#systems, #playing-career).section .section-heading,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading {
     position: relative;
     z-index: 0;
     margin-bottom: 22px !important;
   }
 
-  body .page-shell main#top > #systems.section .section-heading::before {
+  body .page-shell main#top > :is(#systems, #playing-career).section .section-heading::before,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -11398,16 +11412,18 @@ body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-ov
     transform: translateX(-50%);
   }
 
-  body .page-shell main#top > #systems.section .section-heading > .eyebrow {
+  body .page-shell main#top > :is(#systems, #playing-career).section .section-heading > .eyebrow,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading > .eyebrow {
     margin-bottom: 6px !important;
     line-height: 15px !important;
   }
 
-  body .page-shell main#top > #systems.section .section-heading > h2 {
+  body .page-shell main#top > :is(#systems, #playing-career).section .section-heading > h2,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading > h2 {
     line-height: 38px !important;
   }
 
-  body .page-shell main#top > #systems.section::before {
+  body .page-shell main#top > :is(#systems, #playing-career).section::before {
     border-top-width: 0 !important;
     background: #ffffff !important;
   }
@@ -11920,7 +11936,8 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     padding-top: var(--home-section-header-top) !important;
   }
 
-  body .page-shell main#top > :is(#systems, #media, #playing-career).section .section-heading {
+  body .page-shell main#top > :is(#systems, #media, #playing-career).section .section-heading,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading {
     position: relative;
     z-index: 0;
     isolation: isolate;
@@ -11941,16 +11958,20 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     transform: translateX(-50%);
   }
 
-  body .page-shell main#top > :is(#systems, #media, #playing-career).section .section-heading > .eyebrow {
+  body .page-shell main#top > :is(#systems, #media, #playing-career).section .section-heading > .eyebrow,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading > .eyebrow {
     margin: 0 0 var(--home-eyebrow-title-gap) !important;
     font-size: var(--section-eyebrow-size-desktop) !important;
     line-height: var(--section-eyebrow-line-desktop) !important;
     letter-spacing: 0.15em !important;
+    white-space: normal !important;
   }
 
-  body .page-shell main#top > :is(#systems, #media, #playing-career).section .section-heading > h2 {
+  body .page-shell main#top > :is(#systems, #media, #playing-career).section .section-heading > h2,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading > h2 {
     font-size: var(--section-title-size-desktop) !important;
     line-height: var(--home-section-title-line) !important;
+    white-space: normal !important;
   }
 
   body .page-shell main#top #systems .section-heading::before {
@@ -12204,12 +12225,14 @@ body .page-shell main#top .contact-closeout-grid > :is(.document-card, .contact-
 
   body .page-shell main#top
     :is(#systems, #media, #playing-career) > .section-heading,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading,
   body .page-shell main#top #contact .home-closeout-heading {
     text-align: left !important;
   }
 
   body .page-shell main#top
     :is(#systems, #media, #playing-career) > .section-heading > :is(.eyebrow, h2),
+  body .page-shell main#top > #featured-work > .featured-work-section-heading > :is(.eyebrow, h2),
   body .page-shell main#top #contact .home-closeout-heading > :is(.eyebrow, h2) {
     padding-inline: 0 !important;
     text-indent: 0 !important;
@@ -12222,5 +12245,82 @@ body .page-shell main#top .contact-closeout-grid > :is(.document-card, .contact-
 
   body .page-shell main#top #contact .home-closeout-heading {
     padding-inline: var(--home-section-header-inset) !important;
+  }
+}
+
+body .page-shell main#top > #featured-work > .featured-work-section-heading {
+  container-type: inline-size;
+  width: 100%;
+  max-width: none;
+  padding:
+    34px
+    34px
+    0;
+  background: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  body .page-shell main#top > #featured-work > .featured-work-section-heading {
+    --featured-section-header-inline-offset: 0px;
+    position: relative;
+    z-index: 0;
+    text-align: start !important;
+  }
+
+  body .page-shell main#top > #featured-work > .featured-work-section-heading::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: calc(100% + var(--featured-section-header-inline-offset) + var(--featured-section-header-inline-offset));
+    background: #ffffff;
+    pointer-events: none;
+    transform: translateX(-50%);
+  }
+}
+
+body .page-shell main#top > #featured-work {
+  gap: 0 !important;
+}
+
+body .page-shell main#top > #featured-work > .featured-card + .featured-card {
+  margin-top: var(--home-paired-section-gap, 12px);
+}
+
+@media (max-width: 767px) {
+  body .page-shell main#top > #featured-work > .featured-work-section-heading {
+    --featured-section-header-inline-offset: calc(var(--mobile-card-padding, 16px) + 1px);
+    width: auto;
+    margin-inline: var(--featured-section-header-inline-offset);
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main#top > #featured-work > .featured-work-section-heading {
+    --featured-section-header-inline-offset: calc(var(--mobile-page-gutter, 24px) + var(--mobile-section-pad, 24px) - 11px);
+    width: auto;
+    margin-inline: var(--featured-section-header-inline-offset);
+    padding: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main#top > #featured-work > .featured-work-section-heading {
+    width: 100%;
+    margin-inline: 0;
+    padding:
+      0
+      calc(
+        ((var(--featured-wall-width, 100%) - var(--page-shell-width)) / 2)
+        + var(--home-section-header-inset, clamp(36px, 2.4vw, 58px))
+      )
+      0;
+  }
+
+  body .page-shell main#top > #featured-work {
+    padding-top: var(--home-section-header-top, 18px);
   }
 }
