@@ -7211,8 +7211,16 @@ main#top #systems .system-card .library-actions {
 }
 
 @media (min-width: 1025px) {
+  main#top #systems.library-section {
+    --systems-wall-width: min(var(--home-section-wall-width), calc(100vw - 16px));
+    padding-bottom: clamp(52px, 3vw, 76px);
+  }
+
   main#top #systems .library-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: var(--systems-wall-width);
+    max-width: 2560px;
+    margin-inline: calc((100% - var(--systems-wall-width)) / 2);
     gap: clamp(10px, 0.9vw, 16px);
     align-items: stretch;
   }
