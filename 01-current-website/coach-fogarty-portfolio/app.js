@@ -62,9 +62,8 @@ const librarySections = [
   },
   {
     type: "DPAT",
-    title: "Defensive Tracker Accountability System",
-    titleMarkup: "<span style='font-size: clamp(1.15rem, calc(-0.08rem + 2vw), 1.82rem);'>Defensive Tracker Accountability System</span>",
-    description: "DPAT grading and accountability tracking.",
+    title: "DPAT",
+    description: "Defensive grading and accountability tracking.",
     media: {
       src: "assets/documents/system-previews/Ready - Q98/systems-dpat-dashboard-preview-media-card-q98-1448x1086.webp",
       alt: "DPAT defensive performance accountability dashboard preview",
@@ -128,7 +127,7 @@ const librarySections = [
 const systemDisplayOrder = [
   "Player Development",
   "Recruiting",
-  "Defensive Tracker Accountability System",
+  "DPAT",
   "Coaching Philosophy",
   "Program Support",
   "Scouting"
@@ -948,6 +947,23 @@ const anayaSections = [
         thumbSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-of-the-year-overlay-thumb-wide-tighten-x-04-q98-600x400.webp"),
         mediaCardSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-of-the-year-media-card-wide-tighten-x-04-q98-1200x900.avif")
       },
+      anayaCaseStudyImage(
+        "5-accolades-recognition",
+        "case-study-anaya-beard-accolades-recognition-female-scholar-athlete-of-the-year-graphic",
+        "Female Scholar Athlete of the Year graphic",
+        "Anaya Beard Female Scholar Athlete of the Year graphic"
+      ),
+      {
+        type: "image",
+        src: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-landscape-cover-shift-down-2-q98-2400x1800.avif"),
+        fullSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-landscape-cover-shift-down-2-q98-2400x1800.avif"),
+        mediaCardSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-media-card-cover-shift-down-2-q98-1200x900.avif"),
+        portraitSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-portrait-cover-center-q98-1800x2400.avif"),
+        thumbSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-overlay-thumb-cover-shift-down-2-q98-600x400.webp"),
+        orientation: "landscape",
+        alt: "Anaya Beard speaking at a Scholar Athlete recognition ceremony",
+        caption: "Scholar Athlete ceremony speech"
+      },
       {
         type: "image",
         src: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-500-point-club-landscape-shift-down-1-q98-2400x1800.avif"),
@@ -1340,7 +1356,10 @@ const mediaAnayaGalleryButton = document.querySelector("#mediaAnayaGalleryButton
 const playingCareerTrack = document.querySelector("#playingCareerTrack");
 const playingCareerPrev = document.querySelector("#playingCareerPrev");
 const playingCareerNext = document.querySelector("#playingCareerNext");
+const playingCareerAwardsStrip = document.querySelector(".playing-career-awards-strip");
 const playingCareerAwardsTrack = document.querySelector("#playingCareerAwardsTrack");
+const playingCareerAwardsPrev = document.querySelector("#playingCareerAwardsPrev");
+const playingCareerAwardsNext = document.querySelector("#playingCareerAwardsNext");
 const playingCareerAwards = document.querySelector("#playingCareerAwards");
 const anayaGalleries = document.querySelectorAll("[data-anaya-gallery]");
 const mediaOverlay = document.querySelector("#mediaOverlay");
@@ -1359,6 +1378,8 @@ const mediaOverlayNext = document.querySelector("#mediaOverlayNext");
 let activeOverlayAlbums = mediaAlbums;
 let activeAlbumIndex = 0;
 let activeItemIndex = 0;
+let activePlayingCareerIndex = 0;
+let activePlayingCareerAwardIndex = 1;
 let playingCareerResizeTimer;
 let mediaLibraryAlbums = [];
 
@@ -2333,10 +2354,33 @@ function renderPlayingCareerCarousel() {
   }
 
   const items = playingCareerAlbums[0].items;
-  playingCareerTrack.innerHTML = items
+  const itemCount = items.length;
+
+  if (!itemCount) {
+    playingCareerTrack.innerHTML = "";
+    return;
+  }
+
+  activePlayingCareerIndex = normalizePlayingCareerIndex(activePlayingCareerIndex, itemCount);
+  const slideIndexes =
+    itemCount === 1
+      ? [activePlayingCareerIndex]
+      : [
+          normalizePlayingCareerIndex(activePlayingCareerIndex - 1, itemCount),
+          activePlayingCareerIndex,
+          normalizePlayingCareerIndex(activePlayingCareerIndex + 1, itemCount)
+        ];
+  const activeSlot = itemCount === 1 ? 0 : 1;
+
+  playingCareerTrack.innerHTML = slideIndexes
     .map(
-      (item, index) => `
-        <button class="achievement-card" type="button" data-playing-career-index="${index}" data-overlay-trigger="playing-career" aria-label="Open ${mediaItemTitle(item, playingCareerAlbums[0])}">
+      (itemIndex, slotIndex) => {
+        const item = items[itemIndex];
+        const slideClass = slotIndex === activeSlot ? " is-active" : slotIndex < activeSlot ? " is-prev" : " is-next";
+        const ariaCurrent = slotIndex === activeSlot ? ' aria-current="true"' : "";
+
+        return `
+        <button class="achievement-card${slideClass}" type="button" data-playing-career-index="${itemIndex}" data-overlay-trigger="playing-career"${ariaCurrent} aria-label="Open ${mediaItemTitle(item, playingCareerAlbums[0])}">
           <img
             src="${encodeURI(mediaItemCarouselSrc(item))}"
             data-image-role="carousel"
@@ -2344,11 +2388,31 @@ function renderPlayingCareerCarousel() {
             style="${item.carouselPosition ? `object-position: ${item.carouselPosition};` : ""}"
           />
         </button>
-      `
+      `;
+      }
     )
     .join("");
 
   connectPlayingCareerCards();
+}
+
+function normalizePlayingCareerAwardIndex(index, itemCount = playingCareerAwardAlbums[0]?.items?.length || 0) {
+  if (!itemCount) {
+    return 0;
+  }
+
+  return ((index % itemCount) + itemCount) % itemCount;
+}
+
+function playingCareerAwardSlots(activeIndex, itemCount) {
+  const visibleOffsets = [-1, 0, 1, 2, 3];
+
+  return visibleOffsets.map((offset, slotIndex) => {
+    const itemIndex = normalizePlayingCareerAwardIndex(activeIndex + offset, itemCount);
+    const slotClass = slotIndex === 0 ? " is-peek is-peek-prev" : slotIndex === visibleOffsets.length - 1 ? " is-peek is-peek-next" : " is-full";
+
+    return { itemIndex, slotClass };
+  });
 }
 
 function renderPlayingCareerAwardsStrip() {
@@ -2357,17 +2421,25 @@ function renderPlayingCareerAwardsStrip() {
   }
 
   const album = playingCareerAwardAlbums[0];
-  playingCareerAwardsTrack.innerHTML = album.items
+  const itemCount = album.items.length;
+
+  activePlayingCareerAwardIndex = normalizePlayingCareerAwardIndex(activePlayingCareerAwardIndex, itemCount);
+  playingCareerAwardsTrack.innerHTML = playingCareerAwardSlots(activePlayingCareerAwardIndex, itemCount)
     .map(
-      (item, index) => `
-        <button class="playing-career-award-thumb" type="button" data-playing-award-index="${index}" aria-label="Open ${mediaItemTitle(item, album)}">
+      ({ itemIndex, slotClass }, slotIndex) => {
+        const item = album.items[itemIndex];
+        const ariaCurrent = slotIndex === 2 ? ' aria-current="true"' : "";
+
+        return `
+        <button class="playing-career-award-thumb${slotClass}" type="button" data-playing-award-index="${itemIndex}"${ariaCurrent} aria-label="Open ${mediaItemTitle(item, album)}">
           <img
             src="${encodeURI(mediaItemCarouselSrc(item))}"
             alt="${item.alt || mediaItemTitle(item, album)}"
-            loading="lazy"
+            loading="eager"
           />
         </button>
-      `
+      `;
+      }
     )
     .join("");
 
@@ -2380,17 +2452,100 @@ function connectPlayingCareerAwardCards() {
   }
 
   playingCareerAwardsTrack.dataset.overlayReady = "true";
+  let pendingCard = null;
+  let pendingPointerId = null;
+  let pointerStartX = 0;
+  let pointerStartY = 0;
+  let suppressNextAwardClickUntil = 0;
+  let awardWheelSuppressUntil = 0;
+
+  const beginAwardDrag = (card, pointerId, clientX, clientY) => {
+    pendingCard = card;
+    pendingPointerId = pointerId;
+    pointerStartX = clientX;
+    pointerStartY = clientY;
+  };
+
+  const finishAwardDrag = (pointerId, clientX, clientY) => {
+    const card = pendingCard;
+    const deltaX = Math.abs(clientX - pointerStartX);
+    const deltaY = Math.abs(clientY - pointerStartY);
+    const signedDeltaX = clientX - pointerStartX;
+
+    if (!card || pendingPointerId !== pointerId) {
+      return;
+    }
+
+    pendingCard = null;
+    pendingPointerId = null;
+
+    if (deltaX > 40 && deltaX > deltaY) {
+      suppressNextAwardClickUntil = window.performance.now() + 450;
+      scrollPlayingCareerAwardsCarousel(signedDeltaX < 0 ? 1 : -1);
+    }
+  };
+
+  playingCareerAwardsTrack.addEventListener(
+    "mousedown",
+    (event) => {
+      const card = event.target.closest("[data-playing-award-index]");
+
+      if (event.button !== 0 || !card || !playingCareerAwardsTrack.contains(card)) {
+        return;
+      }
+
+      beginAwardDrag(card, "mouse", event.clientX, event.clientY);
+    },
+    true
+  );
+
+  window.addEventListener(
+    "mouseup",
+    (event) => {
+      finishAwardDrag("mouse", event.clientX, event.clientY);
+    },
+    true
+  );
+
+  playingCareerAwardsTrack.addEventListener(
+    "touchstart",
+    (event) => {
+      const touch = event.changedTouches[0];
+      const card = event.target.closest("[data-playing-award-index]");
+
+      if (!touch || !card || !playingCareerAwardsTrack.contains(card)) {
+        return;
+      }
+
+      beginAwardDrag(card, touch.identifier, touch.clientX, touch.clientY);
+    },
+    true
+  );
+
+  window.addEventListener(
+    "touchend",
+    (event) => {
+      const touch = Array.from(event.changedTouches).find((changedTouch) => changedTouch.identifier === pendingPointerId);
+
+      if (!touch) {
+        return;
+      }
+
+      finishAwardDrag(touch.identifier, touch.clientX, touch.clientY);
+    },
+    true
+  );
+
   playingCareerAwardsTrack.addEventListener(
     "click",
     (event) => {
       const card = event.target.closest("[data-playing-award-index]");
-      const suppressUntil = Number(playingCareerAwardsTrack.dataset.dragScrollSuppressUntil || 0);
 
       if (!card || !playingCareerAwardsTrack.contains(card)) {
         return;
       }
 
-      if (window.performance.now() < suppressUntil) {
+      if (window.performance.now() < suppressNextAwardClickUntil) {
         event.preventDefault();
         event.stopImmediatePropagation();
         return;
@@ -2407,6 +2562,36 @@ function connectPlayingCareerAwardCards() {
       openMediaAlbum(0, playingCareerAwardAlbums, itemIndex);
     },
     true
+  );
+
+  playingCareerAwardsStrip?.addEventListener(
+    "wheel",
+    (event) => {
+      const horizontalIntent = Math.abs(event.deltaX) > Math.abs(event.deltaY);
+      const shiftVerticalIntent = event.shiftKey && Math.abs(event.deltaY) > 0;
+
+      if (!horizontalIntent && !shiftVerticalIntent) {
+        return;
+      }
+
+      const intent = horizontalIntent ? event.deltaX : event.deltaY;
+
+      if (!intent) {
+        return;
+      }
+
+      event.preventDefault();
+
+      const now = window.performance.now();
+
+      if (now < awardWheelSuppressUntil) {
+        return;
+      }
+
+      awardWheelSuppressUntil = now + 360;
+      scrollPlayingCareerAwardsCarousel(intent > 0 ? 1 : -1);
+    },
+    { passive: false }
   );
 }
 
@@ -2447,15 +2632,27 @@ function connectPlayingCareerCards() {
       const card = pendingCard;
       const deltaX = Math.abs(event.clientX - pointerStartX);
       const deltaY = Math.abs(event.clientY - pointerStartY);
+      const signedDeltaX = event.clientX - pointerStartX;
 
       pendingCard = null;
 
-      if (!card || event.pointerId !== pendingPointerId || deltaX > 8 || deltaY > 8) {
+      if (!card || event.pointerId !== pendingPointerId) {
         pendingPointerId = null;
         return;
       }
 
       pendingPointerId = null;
+
+      if (deltaX > 40 && deltaX > deltaY) {
+        suppressNextClickUntil = window.performance.now() + 450;
+        scrollPlayingCareerCarousel(signedDeltaX < 0 ? 1 : -1);
+        return;
+      }
+
+      if (deltaX > 8 || deltaY > 8) {
+        return;
+      }
+
       suppressNextClickUntil = window.performance.now() + 450;
       openPlayingCareerAlbum(card);
     },
@@ -2496,92 +2693,50 @@ function openPlayingCareerAlbum(card) {
   openMediaAlbum(0, playingCareerAlbums, itemIndex);
 }
 
-function playingCareerPageSize() {
-  if (window.matchMedia("(max-width: 767px)").matches) {
-    return 1;
-  }
-
-  if (window.matchMedia("(max-width: 1024px)").matches) {
-    return 2;
-  }
-
-  return 3;
-}
-
-function playingCareerCards() {
-  return Array.from(playingCareerTrack.querySelectorAll("[data-playing-career-index]"));
-}
-
-function playingCareerCardScrollLeft(card) {
-  const trackRect = playingCareerTrack.getBoundingClientRect();
-  const cardRect = card.getBoundingClientRect();
-  const trackStyle = window.getComputedStyle(playingCareerTrack);
-  const paddingLeft = parseFloat(trackStyle.paddingLeft) || 0;
-
-  return playingCareerTrack.scrollLeft + cardRect.left - trackRect.left - paddingLeft;
-}
-
-function closestPlayingCareerPage(pageSize) {
-  const cards = playingCareerCards();
-
-  if (!cards.length) {
+function normalizePlayingCareerIndex(index, itemCount = playingCareerAlbums[0].items.length) {
+  if (!itemCount) {
     return 0;
   }
 
-  const pageCount = Math.max(1, Math.ceil(cards.length / pageSize));
-  let closestPage = 0;
-  let closestDistance = Infinity;
-
-  for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
-    const cardIndex = Math.min(pageIndex * pageSize, cards.length - 1);
-    const distance = Math.abs(playingCareerCardScrollLeft(cards[cardIndex]) - playingCareerTrack.scrollLeft);
-
-    if (distance < closestDistance) {
-      closestDistance = distance;
-      closestPage = pageIndex;
-    }
-  }
-
-  return closestPage;
+  return ((index % itemCount) + itemCount) % itemCount;
 }
 
-function scrollPlayingCareerToPage(pageIndex, behavior = "smooth") {
-  if (!playingCareerTrack) {
+function setActivePlayingCareerIndex(index) {
+  const itemCount = playingCareerAlbums[0].items.length;
+
+  if (!itemCount) {
     return;
   }
 
-  const cards = playingCareerCards();
-  const pageSize = playingCareerPageSize();
-  const pageCount = Math.max(1, Math.ceil(cards.length / pageSize));
-  const boundedPageIndex = Math.max(0, Math.min(pageIndex, pageCount - 1));
-  const cardIndex = Math.min(boundedPageIndex * pageSize, cards.length - 1);
-
-  if (!cards[cardIndex]) {
-    return;
-  }
-
-  playingCareerTrack.scrollTo({
-    left: Math.max(0, playingCareerCardScrollLeft(cards[cardIndex])),
-    behavior
-  });
+  activePlayingCareerIndex = normalizePlayingCareerIndex(index, itemCount);
+  renderPlayingCareerCarousel();
 }
 
 function scrollPlayingCareerCarousel(direction) {
-  if (!playingCareerTrack) {
+  if (!playingCareerTrack || !playingCareerAlbums[0].items.length) {
     return;
   }
 
-  const pageSize = playingCareerPageSize();
-  const cards = playingCareerCards();
+  setActivePlayingCareerIndex(activePlayingCareerIndex + direction);
+}
 
-  if (!cards.length) {
+function setActivePlayingCareerAwardIndex(index) {
+  const itemCount = playingCareerAwardAlbums[0]?.items?.length || 0;
+
+  if (!itemCount) {
     return;
   }
 
-  const pageCount = Math.max(1, Math.ceil(cards.length / pageSize));
-  const currentPage = closestPlayingCareerPage(pageSize);
-  const nextPage = (currentPage + direction + pageCount) % pageCount;
-  scrollPlayingCareerToPage(nextPage);
+  activePlayingCareerAwardIndex = normalizePlayingCareerAwardIndex(index, itemCount);
+  renderPlayingCareerAwardsStrip();
+}
+
+function scrollPlayingCareerAwardsCarousel(direction) {
+  if (!playingCareerAwardsTrack || !playingCareerAwardAlbums[0]?.items?.length) {
+    return;
+  }
+
+  setActivePlayingCareerAwardIndex(activePlayingCareerAwardIndex + direction);
 }
 
 if (playingCareerPrev) {
@@ -2590,6 +2745,14 @@ if (playingCareerPrev) {
 
 if (playingCareerNext) {
   playingCareerNext.addEventListener("click", () => scrollPlayingCareerCarousel(1));
+}
+
+if (playingCareerAwardsPrev) {
+  playingCareerAwardsPrev.addEventListener("click", () => scrollPlayingCareerAwardsCarousel(-1));
+}
+
+if (playingCareerAwardsNext) {
+  playingCareerAwardsNext.addEventListener("click", () => scrollPlayingCareerAwardsCarousel(1));
 }
 
 if (playingCareerAwards) {
@@ -2605,7 +2768,7 @@ window.addEventListener("resize", () => {
 
   window.clearTimeout(playingCareerResizeTimer);
   playingCareerResizeTimer = window.setTimeout(() => {
-    scrollPlayingCareerToPage(closestPlayingCareerPage(playingCareerPageSize()), "auto");
+    renderPlayingCareerCarousel();
   }, 120);
 });
 
@@ -2806,5 +2969,3 @@ renderAnayaGalleries();
 renderPlayingCareerCarousel();
 renderPlayingCareerAwardsStrip();
 enableDragScroll(mediaOverlayStrip);
-enableDragScroll(playingCareerTrack);
-enableDragScroll(playingCareerAwardsTrack);

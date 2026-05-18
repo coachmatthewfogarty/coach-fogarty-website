@@ -62,6 +62,11 @@ body:has(main#top) {
   background: #ffffff;
 }
 
+html:has(body main#top),
+body:has(main#top) {
+  overflow-x: clip;
+}
+
 main#top {
   --home-system-card-cream: #fff4e6;
   --home-accent-red: var(--coach-red);
@@ -4970,7 +4975,7 @@ main#top #media {
   --home-section-wall-bg: #FFFAF3;
   --gallery-section-pad: clamp(28px, 3vw, 42px);
   --gallery-heading-gap: clamp(12px, 1.3vw, 18px);
-  --gallery-grid-gap: clamp(14px, 1.35vw, 22px);
+  --gallery-grid-gap: clamp(13px, 1.35vw, 22px);
   --gallery-overlay-pad-y: clamp(14px, 1.05vw, 20px);
   --gallery-overlay-pad-x: clamp(14px, 1.15vw, 22px);
   --gallery-title-size: clamp(0.9rem, calc(0.72rem + 0.28vw), 1.04rem);
@@ -5175,7 +5180,7 @@ main#top #media .gallery-card .gallery-card-arrow {
   main#top #media {
     --gallery-section-pad: clamp(18px, 3vw, 28px);
     --gallery-heading-gap: clamp(10px, 1.55vw, 16px);
-    --gallery-grid-gap: clamp(14px, 2vw, 22px);
+    --gallery-grid-gap: clamp(13px, 2vw, 22px);
     --gallery-overlay-pad-y: clamp(12px, 1.7vw, 18px);
     --gallery-overlay-pad-x: clamp(12px, 1.85vw, 20px);
     --gallery-title-size: clamp(0.84rem, calc(0.7rem + 0.38vw), 0.98rem);
@@ -5187,7 +5192,7 @@ main#top #media .gallery-card .gallery-card-arrow {
   main#top #media {
     --gallery-section-pad: clamp(12px, 4vw, 20px);
     --gallery-heading-gap: clamp(8px, 2.1vw, 12px);
-    --gallery-grid-gap: clamp(8px, 2.6vw, 14px);
+    --gallery-grid-gap: clamp(8px, 2.6vw, 13px);
     --gallery-overlay-pad-y: clamp(10px, 3vw, 14px);
     --gallery-overlay-pad-x: clamp(10px, 3.2vw, 16px);
     --gallery-title-size: clamp(0.82rem, 3.5vw, 0.96rem);
@@ -6363,17 +6368,6 @@ main#top .credentials-card .credential-document-heading .eyebrow {
     white-space: nowrap !important;
   }
 
-  main#top #systems .library-card.system-card[data-system-type="dpat"] h3 {
-    --mobile-fit-card-title-size: 20px !important;
-    --mobile-fit-card-title-line: 24px !important;
-    font-size: 20px !important;
-    line-height: 24px !important;
-  }
-
-  main#top #systems .library-card.system-card[data-system-type="dpat"] h3 > span {
-    font-size: 20px !important;
-    line-height: 24px !important;
-  }
 }
 
 /* Tablet follows the mobile layout, with roomier spacing for the larger screen. */
@@ -7405,29 +7399,29 @@ main#top #systems .system-card .button-small:first-child {
   mix-blend-mode: normal;
 }
 
-main#top #systems .system-card[data-system-type="dpat"],
-main#top #systems .library-card.system-card[data-system-type="dpat"] {
+main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]),
+main#top #systems .library-card.system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) {
   border: 0;
   background: #111111;
   box-shadow: none;
 }
 
-main#top #systems .system-card[data-system-type="dpat"] > h3,
-main#top #systems .system-card[data-system-type="dpat"] > h3 *,
-main#top #systems .library-card.system-card[data-system-type="dpat"] > h3,
-main#top #systems .library-card.system-card[data-system-type="dpat"] > h3 * {
+main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) > h3,
+main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) > h3 *,
+main#top #systems .library-card.system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) > h3,
+main#top #systems .library-card.system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) > h3 * {
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
 }
 
-main#top #systems .system-card[data-system-type="dpat"] > p,
-main#top #systems .library-card.system-card[data-system-type="dpat"] > p {
+main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) > p,
+main#top #systems .library-card.system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) > p {
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
 }
 
-main#top #systems .system-card[data-system-type="dpat"] .library-actions .button,
-main#top #systems .system-card[data-system-type="dpat"] .button-small {
+main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) .library-actions .button,
+main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) .button-small {
   border: 1px solid #d95a24;
   background: transparent;
   background-image: none;
@@ -7440,8 +7434,8 @@ main#top #systems .system-card[data-system-type="dpat"] .button-small {
   mix-blend-mode: normal;
 }
 
-main#top #systems .system-card[data-system-type="dpat"] .library-actions .button:first-child,
-main#top #systems .system-card[data-system-type="dpat"] .button-small:first-child {
+main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) .library-actions .button:first-child,
+main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) .button-small:first-child {
   border-color: #d95a24;
   background: #d95a24;
   background-image: none;
@@ -7506,8 +7500,8 @@ main#top #systems .system-card[data-system-type="dpat"] .button-small:first-chil
     box-shadow: none;
   }
 
-  main#top #systems .system-card[data-system-type="dpat"]:hover,
-  main#top #systems .system-card[data-system-type="dpat"]:focus-within {
+  main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]):hover,
+  main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]):focus-within {
     border-color: transparent;
     background: #111111;
   }
@@ -7539,8 +7533,8 @@ main#top #systems .system-card[data-system-type="dpat"] .button-small:first-chil
     --home-media-rail-section-pad: clamp(36px, 2.4vw, 58px);
     --home-media-rail-system-pad: 18px;
     --home-media-rail-system-inset: 19px;
-    --home-media-rail-grid-gap: clamp(14px, 1.15vw, 22px);
-    --home-media-frame-grid-gap: clamp(14px, 1.35vw, 22px);
+    --home-media-rail-grid-gap: clamp(13px, 1.15vw, 22px);
+    --home-media-frame-grid-gap: clamp(13px, 1.35vw, 22px);
     --home-media-reference-frame-width: calc((var(--page-shell-width) - var(--home-media-rail-section-pad) - var(--home-media-rail-section-pad) - var(--home-media-rail-grid-gap) - var(--home-media-rail-grid-gap)) / 3 - 38px);
     --home-systems-media-frame-width: calc((var(--page-shell-width) - var(--home-media-rail-section-pad) - var(--home-media-rail-section-pad) - 2px - var(--home-media-rail-grid-gap) - var(--home-media-rail-grid-gap)) / 3);
     --home-section-wall-width: min(100vw, 2560px);
@@ -9189,6 +9183,10 @@ body .page-shell :is(
 /* Playing Career & Honors lock: keep the current handoff specs explicit and scoped. */
 #playing-career.playing-career-section {
   --playing-career-wall-width: 100%;
+  --playing-career-carousel-wall-width: min(100vw, 2560px);
+  --playing-career-slide-width: 70%;
+  --playing-career-slide-half: 35%;
+  --playing-career-gap: 13px;
   background: transparent;
   border-color: transparent;
   box-shadow: none;
@@ -9197,6 +9195,10 @@ body .page-shell :is(
 @media (min-width: 1025px) {
   main#top > #playing-career.playing-career-section {
     --playing-career-wall-width: min(var(--home-section-wall-width), calc(100vw - 16px));
+    --playing-career-carousel-wall-width: var(--playing-career-wall-width);
+    --playing-career-slide-width: 70%;
+    --playing-career-slide-half: 35%;
+    --playing-career-gap: 13px;
     padding-bottom: 0;
     border-color: transparent;
     background: transparent;
@@ -9204,59 +9206,73 @@ body .page-shell :is(
 }
 
 #playing-career .playing-career-awards-strip {
+  --playing-career-awards-gap: 13px;
+  --playing-career-awards-shelf-pad: 13px;
+  --playing-career-awards-shelf-bg: linear-gradient(180deg, #FFF8EC 0%, #F1DEB8 100%);
+  --playing-career-awards-spacer-color: #ffffff;
+  --playing-career-awards-wall-width: var(--playing-career-carousel-wall-width, min(100vw, 2560px));
+  --playing-career-awards-item-width: calc(((100% - (var(--playing-career-awards-gap) * 2)) / 2) * 1.15);
+  --playing-career-awards-track-offset: calc(var(--playing-career-awards-item-width) * -0.630435);
+  --playing-career-awards-thumb-height: clamp(176px, 47.52vw, 249px);
+  position: relative;
   box-sizing: border-box;
-  width: var(--playing-career-wall-width);
-  margin: 10px 0 0;
-  padding: 0;
-  background: transparent;
+  width: var(--playing-career-awards-wall-width);
+  max-width: none;
+  margin: var(--playing-career-awards-shelf-pad) calc((100% - var(--playing-career-awards-wall-width)) / 2);
+  padding: var(--playing-career-awards-shelf-pad) 0;
+  background: var(--playing-career-awards-shelf-bg);
+  overflow: clip;
 }
 
 #playing-career .playing-career-awards-track {
   display: flex;
-  gap: 12px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: var(--playing-career-awards-gap);
+  width: 100%;
   min-width: 0;
-  max-width: 100%;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  padding: 0 0 8px;
-  scroll-snap-type: x proximity;
-  scrollbar-color: rgba(143, 45, 30, 0.2) transparent;
-  scrollbar-width: thin;
-  touch-action: pan-x pan-y;
-  -webkit-overflow-scrolling: touch;
+  max-width: none;
+  margin-left: var(--playing-career-awards-track-offset);
+  background: transparent;
+  overflow: visible;
+  padding: 0;
+  scrollbar-width: none;
+  touch-action: pan-y;
+  transition: opacity 160ms ease;
 }
 
 #playing-career .playing-career-awards-track::-webkit-scrollbar {
-  height: 5px;
-}
-
-#playing-career .playing-career-awards-track::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-#playing-career .playing-career-awards-track::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(143, 45, 30, 0.18);
+  display: none;
 }
 
 #playing-career .playing-career-award-thumb {
   appearance: none;
-  flex: 0 0 clamp(124px, 32vw, 176px);
-  aspect-ratio: 1 / 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 var(--playing-career-awards-item-width);
+  width: var(--playing-career-awards-item-width);
+  height: var(--playing-career-awards-thumb-height);
   padding: 0;
   border: 0;
   border-radius: 0;
-  background: transparent;
+  background: var(--playing-career-awards-shelf-bg);
   box-shadow: none;
   cursor: pointer;
   overflow: visible;
-  scroll-snap-align: start;
-  transition: transform 180ms ease;
+  user-select: none;
 }
 
-#playing-career .playing-career-award-thumb:hover,
-#playing-career .playing-career-award-thumb:focus-visible {
-  transform: translateY(-1px);
+#playing-career .playing-career-award-thumb:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--playing-career-awards-shelf-pad));
+  right: calc(-1 * var(--playing-career-awards-gap));
+  width: var(--playing-career-awards-gap);
+  height: calc(100% + (var(--playing-career-awards-shelf-pad) * 2));
+  background: var(--playing-career-awards-spacer-color);
+  pointer-events: none;
 }
 
 #playing-career .playing-career-award-thumb:focus-visible {
@@ -9275,89 +9291,152 @@ body .page-shell :is(
   pointer-events: none;
 }
 
-#playing-career .playing-career-award-thumb[aria-label="Open Rocky Mountain College MVP"] img {
-  transform: scale(1.18);
-  transform-origin: center center;
+#playing-career .playing-career-award-thumb.is-peek-prev img {
+  object-position: right center;
+}
+
+#playing-career .playing-career-award-thumb.is-peek-next img {
+  object-position: left center;
+}
+
+#playing-career .playing-career-awards-arrow {
+  --playing-career-awards-arrow-icon-size: 1.75rem;
+  position: absolute;
+  z-index: 3;
+  top: calc(13px + (var(--playing-career-awards-thumb-height) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 50px;
+  border: 1px solid #d95a24;
+  border-radius: 999px;
+  color: #d95a24;
+  -webkit-text-fill-color: #d95a24;
+  background: rgba(255, 255, 255, 0.88);
+  background-image: none;
+  cursor: pointer;
+  font-size: 0;
+  line-height: 1;
+  box-shadow: none;
+  text-shadow: none;
+  transform: translateY(-50%);
+}
+
+#playing-career .playing-career-awards-arrow::before {
+  display: block;
+  color: currentColor;
+  -webkit-text-fill-color: currentColor;
+  font-size: var(--playing-career-awards-arrow-icon-size);
+  line-height: 1;
+  text-shadow: none;
+  transform: translateY(-2px);
+}
+
+#playing-career .playing-career-awards-arrow-prev {
+  left: clamp(6px, 0.9vw, 14px);
+}
+
+#playing-career .playing-career-awards-arrow-prev::before {
+  content: "\2039";
+}
+
+#playing-career .playing-career-awards-arrow-next {
+  right: clamp(6px, 0.9vw, 14px);
+}
+
+#playing-career .playing-career-awards-arrow-next::before {
+  content: "\203a";
+}
+
+#playing-career .playing-career-awards-arrow:hover,
+#playing-career .playing-career-awards-arrow:focus-visible {
+  border-color: #d95a24;
+  color: #d95a24;
+  -webkit-text-fill-color: #d95a24;
+  background: rgba(255, 255, 255, 0.96);
+  transform: translateY(calc(-50% - 2px));
+}
+
+#playing-career .playing-career-awards-arrow:focus-visible {
+  outline: 3px solid rgba(184, 135, 47, 0.34);
+  outline-offset: 3px;
 }
 
 #playing-career .playing-career-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 12px;
-  margin: 0 0 14px;
+  gap: 13px;
+  margin: 0 0 13px;
 }
 
 #playing-career .playing-career-carousel {
   position: relative;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 12px;
-  align-items: center;
-  padding: 18px 14px 16px;
+  display: block;
+  width: var(--playing-career-carousel-wall-width);
+  max-width: none;
+  margin-inline: calc((100% - var(--playing-career-carousel-wall-width)) / 2);
+  padding: 0;
   border: 0;
-  border-radius: 28px;
+  border-radius: 0;
   background: transparent;
   box-shadow: none;
+  overflow: hidden;
 }
 
 #playing-career .playing-career-track {
-  --playing-career-gap: 16px;
-  display: flex;
+  position: relative;
+  left: calc(50% - var(--playing-career-slide-width) - var(--playing-career-gap) - var(--playing-career-slide-half));
+  display: inline-flex;
   gap: var(--playing-career-gap);
+  width: 100%;
   min-width: 0;
-  max-width: 100%;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  padding: 6px 0 10px;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline: 0;
-  scrollbar-color: rgba(143, 45, 30, 0.2) transparent;
-  scrollbar-width: thin;
-  touch-action: pan-x pan-y;
-  -webkit-overflow-scrolling: touch;
+  max-width: none;
+  overflow: visible;
+  padding: 0;
+  scrollbar-width: none;
+  touch-action: pan-y;
 }
 
 #playing-career .playing-career-track::-webkit-scrollbar {
-  height: 5px;
-}
-
-#playing-career .playing-career-track::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-#playing-career .playing-career-track::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(143, 45, 30, 0.18);
+  display: none;
 }
 
 #playing-career .playing-career-track .achievement-card {
   appearance: none;
-  flex: 0 0 calc((100% - (var(--playing-career-gap) * 2)) / 3);
-  aspect-ratio: 4 / 3;
+  flex: 0 0 var(--playing-career-slide-width);
+  aspect-ratio: 3200 / 1737;
   padding: 0;
   border: 0;
-  border-radius: 24px;
+  border-radius: 0;
   background: transparent;
-  box-shadow: var(--shadow);
+  box-shadow: none;
   color: inherit;
   cursor: pointer;
   font: inherit;
   overflow: hidden;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  opacity: 0.86;
   transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
+    opacity 180ms ease,
+    filter 180ms ease;
+}
+
+#playing-career .playing-career-track .achievement-card.is-active {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  filter: none;
+}
+
+#playing-career .playing-career-track .achievement-card:is(.is-prev, .is-next) {
+  filter: saturate(0.94) brightness(0.98);
 }
 
 #playing-career .playing-career-track .achievement-card:hover,
 #playing-career .playing-career-track .achievement-card:focus-visible {
-  border-color: rgba(184, 135, 47, 0.44);
-  box-shadow: 0 22px 64px rgba(52, 36, 24, 0.18);
-  transform: translateY(-2px);
+  opacity: 1;
+  filter: none;
 }
 
 #playing-career .playing-career-track .achievement-card:focus-visible {
@@ -9377,6 +9456,9 @@ body .page-shell :is(
 
 #playing-career .playing-career-arrow {
   --playing-career-arrow-icon-size: 2rem;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9393,6 +9475,7 @@ body .page-shell :is(
   line-height: 1;
   box-shadow: none;
   text-shadow: none;
+  transform: translateY(-50%);
 }
 
 #playing-career .playing-career-arrow::before {
@@ -9413,12 +9496,21 @@ body .page-shell :is(
   content: "\203a";
 }
 
+#playing-career .playing-career-arrow-prev {
+  left: clamp(8px, 1.4vw, 24px);
+}
+
+#playing-career .playing-career-arrow-next {
+  right: clamp(8px, 1.4vw, 24px);
+}
+
 #playing-career .playing-career-arrow:hover,
 #playing-career .playing-career-arrow:focus-visible {
   border-color: #d95a24;
   color: #d95a24;
   -webkit-text-fill-color: #d95a24;
   background: rgba(255, 255, 255, 0.96);
+  transform: translateY(calc(-50% - 2px));
 }
 
 #playing-career .playing-career-arrow:focus-visible {
@@ -9456,9 +9548,8 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-carousel {
-    grid-template-columns: minmax(0, 1fr);
-    width: var(--playing-career-wall-width);
-    margin-inline: calc((100% - var(--playing-career-wall-width)) / 2);
+    width: var(--playing-career-carousel-wall-width);
+    margin-inline: calc((100% - var(--playing-career-carousel-wall-width)) / 2);
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -9466,10 +9557,8 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-track {
-    --playing-career-gap: 12px;
-    grid-column: 1;
     padding: 0;
-    background: #ffffff;
+    background: transparent;
     scrollbar-width: none;
   }
 
@@ -9478,8 +9567,8 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-track .achievement-card {
-    flex-basis: calc((100% - (var(--playing-career-gap) * 2)) / 3);
-    aspect-ratio: 3 / 2;
+    flex-basis: var(--playing-career-slide-width);
+    aspect-ratio: 3200 / 1737;
     border-radius: 0;
     box-shadow: none;
   }
@@ -9514,40 +9603,50 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-awards-strip {
-    margin-inline: calc((100% - var(--playing-career-wall-width)) / 2);
+    --playing-career-awards-gap: 13px;
+    --playing-career-awards-item-width: calc(((100% - (var(--playing-career-awards-gap) * 4)) / 4) * 1.15);
+    --playing-career-awards-track-offset: calc(var(--playing-career-awards-item-width) * -0.76087);
+    --playing-career-awards-thumb-height: clamp(188px, 14.1075vw, 273px);
+    margin-inline: calc((100% - var(--playing-career-awards-wall-width)) / 2);
   }
 
   #playing-career .playing-career-awards-track {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 12px;
-    overflow-x: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: var(--playing-career-awards-gap);
+    margin-left: var(--playing-career-awards-track-offset);
+    overflow: visible;
     padding-bottom: 0;
     scrollbar-width: none;
   }
 
-  #playing-career .playing-career-awards-track::-webkit-scrollbar {
-    display: none;
-  }
-
   #playing-career .playing-career-award-thumb {
-    width: 100%;
-    height: clamp(128px, 10vw, 190px);
-    aspect-ratio: auto;
-    scroll-snap-align: none;
+    width: var(--playing-career-awards-item-width);
+    height: var(--playing-career-awards-thumb-height);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  #playing-career.playing-career-section {
+    --playing-career-carousel-wall-width: 100vw;
+    --playing-career-slide-width: 70%;
+    --playing-career-slide-half: 35%;
+    --playing-career-gap: 13px;
+  }
+
   #playing-career .playing-career-awards-strip {
-    width: 100%;
+    --playing-career-awards-gap: 13px;
+    --playing-career-awards-item-width: calc(((100% - (var(--playing-career-awards-gap) * 3)) / 3) * 1.15);
+    --playing-career-awards-track-offset: calc(var(--playing-career-awards-item-width) * -0.695652);
+    --playing-career-awards-thumb-height: clamp(176px, 23.76vw, 249px);
   }
 }
 
 @media (max-width: 900px) {
   #playing-career .playing-career-actions {
     display: block;
-    margin: 0 0 14px;
+    margin: 0 0 13px;
   }
 
   #playing-career .playing-career-carousel {
@@ -9562,42 +9661,41 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-arrow-prev {
-    left: 5px;
+    left: 14px;
   }
 
   #playing-career .playing-career-arrow-next {
-    right: 5px;
+    right: 14px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   #playing-career .playing-career-carousel {
-    gap: 10px;
-    padding: 16px 10px 14px;
+    padding: 0;
   }
 
   #playing-career .playing-career-track {
-    --playing-career-gap: 14px;
+    padding: 0;
   }
 
   #playing-career .playing-career-track .achievement-card {
-    flex: 0 0 calc((100% - var(--playing-career-gap)) / 2.12);
+    flex: 0 0 var(--playing-career-slide-width);
+    aspect-ratio: 3200 / 1737;
   }
 }
 
 @media (max-width: 767px) {
   #playing-career .playing-career-carousel {
-    grid-template-columns: 1fr;
-    padding: 12px;
+    padding: 0;
   }
 
   #playing-career .playing-career-track {
-    order: 1;
-    padding-bottom: 10px;
+    padding: 0;
   }
 
   #playing-career .playing-career-track .achievement-card {
-    flex-basis: min(82vw, 280px);
+    flex-basis: var(--playing-career-slide-width);
+    aspect-ratio: 800 / 579;
   }
 
   #playing-career .playing-career-arrow {
@@ -9616,7 +9714,7 @@ body .page-shell :is(
   #playing-career .playing-career-carousel {
     overflow: hidden;
     padding: 0;
-    border-radius: var(--mobile-section-radius, 22px);
+    border-radius: 0;
   }
 
   #playing-career .playing-career-track {
@@ -9629,7 +9727,7 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-track .achievement-card {
-    flex-basis: 100%;
+    flex-basis: var(--playing-career-slide-width);
     border: 0;
     border-radius: 0;
     background: transparent;
@@ -9645,7 +9743,7 @@ main#top > .contact-section {
 }
 
 body .page-shell main#top .contact-closeout-grid {
-  --contact-closeout-gap: 28px;
+  --contact-closeout-gap: 13px;
   --contact-closeout-width: 100%;
   display: grid !important;
   grid-template-columns: 1fr !important;
@@ -9716,7 +9814,7 @@ body .page-shell main#top .document-actions {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   grid-template-rows: repeat(4, minmax(44px, auto)) auto !important;
-  gap: 10px !important;
+  gap: 13px !important;
   min-height: 0 !important;
 }
 
@@ -9887,7 +9985,7 @@ body .page-shell main#top .contact-form .button {
 
 @media (min-width: 1025px) {
   body .page-shell main#top .contact-closeout-grid {
-    --contact-closeout-gap: 10px;
+    --contact-closeout-gap: 13px;
     --contact-closeout-width: var(--home-section-wall-width);
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) !important;
     margin-inline: calc((var(--page-shell-width) - var(--contact-closeout-width)) / 2);
@@ -11600,14 +11698,12 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
   --featured-cta-width: clamp(220px, 15vw, 290px);
   --featured-media-max: min(100%, 540px);
   --featured-panel-bg: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%);
-  --featured-gold-trim: rgba(184, 135, 47, 0.78);
-  --featured-gold-inner: rgba(184, 135, 47, 0.38);
   min-height: auto;
   padding:
     clamp(24px, 4vw, 34px)
     clamp(20px, 5vw, 48px)
     clamp(16px, 3.2vw, 24px);
-  border: 10px solid var(--featured-gold-trim);
+  border: 0;
   border-radius: 0;
   background: var(--featured-panel-bg);
   box-shadow: none !important;
@@ -11615,19 +11711,7 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer)::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 1px;
-  left: 1px;
-  width: auto;
-  max-width: none;
-  border: 1px solid var(--featured-gold-inner);
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none !important;
-  pointer-events: none;
-  transform: none;
+  content: none;
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) > * {
@@ -11850,20 +11934,7 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer)::after {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    inset-block: -10px;
-    left: calc(-10px - var(--home-featured-side-fill-left));
-    right: calc(-10px - var(--home-featured-side-fill-right));
-    border-radius: 0;
-    background: linear-gradient(
-      90deg,
-      var(--featured-gold-trim) 0 var(--home-featured-side-fill-left),
-      transparent var(--home-featured-side-fill-left) calc(100% - var(--home-featured-side-fill-right)),
-      var(--featured-gold-trim) calc(100% - var(--home-featured-side-fill-right)) 100%
-    );
-    pointer-events: none;
+    content: none;
   }
 
   body .page-shell main#top #featured-work > .featured-card {
@@ -12042,13 +12113,13 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
 
 @media (min-width: 1025px) {
   body .page-shell main#top {
-    --home-section-header-top: 18px;
+    --home-section-header-top: 13px;
     --home-eyebrow-title-gap: 6px;
     --home-section-title-line: 38px;
-    --home-title-content-gap: 18px;
-    --home-grid-gap: 14px;
-    --home-section-gap: 14px;
-    --home-paired-section-gap: 14px;
+    --home-title-content-gap: 13px;
+    --home-grid-gap: 12px;
+    --home-section-gap: 13px;
+    --home-paired-section-gap: 13px;
   }
 
   body .page-shell main#top > :is(#systems, #media, #playing-career).section {
@@ -12133,8 +12204,8 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
 
   body .page-shell main#top #systems .library-grid {
     box-sizing: border-box;
-    padding-left: 12px !important;
-    padding-right: 13px !important;
+    padding-left: var(--home-grid-edge-left) !important;
+    padding-right: var(--home-grid-edge-right) !important;
   }
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
@@ -12153,7 +12224,7 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   body .page-shell main#top #systems .library-card-media {
     --systems-media-balance-y: clamp(16.6px, calc(1.1vw + 5.3px), 19.4px);
     width: min(100%, clamp(320px, 27.75vw, 488px)) !important;
-    margin-top: clamp(14px, 1vw, 20px) !important;
+    margin-top: clamp(13px, 1vw, 20px) !important;
     transform: translateY(calc(-1 * var(--systems-media-balance-y))) scale(1.05);
     transform-origin: top center;
   }
@@ -12166,7 +12237,7 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     line-height: 1.03 !important;
   }
 
-  body .page-shell main#top #systems :is(.system-card, .library-card.system-card)[data-system-type="dpat"] > h3 {
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card):is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) > h3 {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
   }
@@ -12179,7 +12250,7 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     line-height: 1.26 !important;
   }
 
-  body .page-shell main#top #systems :is(.system-card, .library-card.system-card)[data-system-type="dpat"] > p {
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card):is([data-system-type="dpat"], [data-system-type="recruiting"], [data-system-type="scouting"]) > p {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
   }
@@ -12322,7 +12393,7 @@ body .page-shell main#top :is(.section-heading, .home-closeout-heading) > .eyebr
 }
 
 body .page-shell main#top {
-  --home-title-content-gap: 14px;
+  --home-title-content-gap: 13px;
 }
 
 body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading > .eyebrow,
@@ -12339,7 +12410,7 @@ body .page-shell main#top > #contact.contact-section .contact-closeout-grid > .h
 
 body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading,
 body .page-shell main#top > #featured-work > .featured-work-section-heading {
-  margin-bottom: var(--home-title-content-gap, 14px) !important;
+  margin-bottom: var(--home-title-content-gap, 13px) !important;
 }
 
 body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading > h2,
@@ -12358,7 +12429,7 @@ body .page-shell main#top #contact .home-closeout-heading > h2 {
 
 @media (min-width: 1025px) {
   body .page-shell main#top {
-    --home-title-content-gap: 18px;
+    --home-title-content-gap: 13px;
   }
 
   body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading > h2,
@@ -12415,7 +12486,7 @@ body .page-shell main#top .contact-closeout-grid {
   grid-template-areas:
     "documents-card"
     "contact-card";
-  row-gap: var(--home-title-content-gap, 14px) !important;
+  row-gap: var(--home-title-content-gap, 13px) !important;
   background: #ffffff;
 }
 
@@ -12485,8 +12556,8 @@ body .page-shell main#top .contact-closeout-grid > :is(.document-card, .contact-
   body .page-shell main#top .contact-closeout-grid {
     grid-template-areas:
       "documents-card contact-card";
-    row-gap: var(--home-title-content-gap, 18px) !important;
-    column-gap: 10px !important;
+    row-gap: var(--home-title-content-gap, 13px) !important;
+    column-gap: 13px !important;
   }
 
   body .page-shell main#top #contact .home-closeout-heading > .eyebrow {
@@ -12577,7 +12648,26 @@ body .page-shell main#top > #featured-work {
 }
 
 body .page-shell main#top > #featured-work > .featured-card + .featured-card {
-  margin-top: 14px;
+  margin-top: 13px;
+}
+
+/* Edge-bleed lock: overrun enough to cover the browser scrollbar gutter, so no side hairline appears. */
+body .page-shell main#top > #playing-career.section > .playing-career-carousel,
+body .page-shell main#top > #playing-career.section > .playing-career-awards-strip {
+  --home-edge-bleed-overrun: 10px;
+  width: calc(100vw + (var(--home-edge-bleed-overrun) * 2));
+  max-width: none;
+  margin-left: calc(50% - 50vw - var(--home-edge-bleed-overrun));
+  margin-right: calc(50% - 50vw - var(--home-edge-bleed-overrun));
+}
+
+/* Overrides older Featured width locks that use !important and left/right gutters. */
+body .page-shell main#top > #featured-work {
+  --home-edge-bleed-overrun: 10px;
+  width: calc(100vw + (var(--home-edge-bleed-overrun) * 2)) !important;
+  max-width: none !important;
+  margin-left: calc(50% - 50vw - var(--home-edge-bleed-overrun)) !important;
+  margin-right: calc(50% - 50vw - var(--home-edge-bleed-overrun)) !important;
 }
 
 @media (max-width: 767px) {
@@ -12618,7 +12708,7 @@ body .page-shell main#top > #featured-work > .featured-card + .featured-card {
 
 @media (min-width: 1025px) {
   body .page-shell main#top > #systems.section {
-    --home-section-header-top: 14px;
+    --home-section-header-top: 13px;
   }
 
   /* Overrides earlier homepage section margin locks so only the header approach rhythm changes. */
@@ -12692,30 +12782,20 @@ body .page-shell main#top > #featured-work > .featured-card + .featured-card {
 }
 
 body .page-shell main#top :is(#systems .library-grid, #media .gallery-grid) {
-  gap: 14px !important;
-  row-gap: 14px !important;
-  column-gap: 14px !important;
-}
-
-body .page-shell main#top #playing-career .playing-career-awards-strip {
-  margin-top: 14px;
+  gap: var(--home-grid-gap) !important;
+  row-gap: var(--home-grid-gap) !important;
+  column-gap: var(--home-grid-gap) !important;
 }
 
 body .page-shell main#top .contact-closeout-grid {
-  row-gap: 14px !important;
-  column-gap: 14px !important;
+  row-gap: 13px !important;
+  column-gap: 13px !important;
 }
 
 @media (min-width: 1025px) {
   body .page-shell main#top .contact-closeout-grid {
-    row-gap: 14px !important;
-    column-gap: 14px !important;
-  }
-}
-
-@media (max-width: 1024px) {
-  body .page-shell main#top #playing-career .playing-career-awards-strip {
-    margin-top: 14px;
+    row-gap: 13px !important;
+    column-gap: 13px !important;
   }
 }
 
@@ -12744,4 +12824,171 @@ body .page-shell main#top > #featured-work > .featured-work-section-heading {
 body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading::before,
 body .page-shell main#top > #featured-work > .featured-work-section-heading::before {
   content: none !important;
+}
+
+body .page-shell main#top > #playing-career.section > .section-heading {
+  display: block !important;
+  margin: 0 0 var(--section-title-to-content-gap, 18px) !important;
+}
+
+body .page-shell main#top > #playing-career.section > .section-heading::before {
+  content: none !important;
+}
+
+/* Keeps the Featured-to-Program Media join on the 13px neutral homepage rhythm. */
+body .page-shell main#top > #featured-work + #media.section {
+  margin-top: 13px !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}
+
+/* Homepage spacing lock, leaving the hero vertical rhythm untouched. */
+body .page-shell main#top {
+  --home-title-content-gap: 13px;
+  --home-grid-gap: 12px;
+  --home-grid-edge-left: 11px;
+  --home-grid-edge-right: 12px;
+  --home-section-gap: 13px;
+  --home-paired-section-gap: 13px;
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main#top {
+    --home-section-header-top: 13px;
+    --home-media-rail-grid-gap: 12px;
+    --home-media-frame-grid-gap: 12px;
+  }
+}
+
+body .page-shell main#top :is(
+  #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-panel,
+  #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy,
+  #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .featured-pill-row,
+  #media .gallery-card > span.gallery-card-caption,
+  .contact-closeout-grid,
+  .document-card,
+  .contact-form-card,
+  .document-actions,
+  .contact-form,
+  .contact-name-row
+) {
+  gap: 13px !important;
+  row-gap: 13px !important;
+  column-gap: 13px !important;
+}
+
+body .page-shell main#top :is(
+  #featured-work > .featured-card + .featured-card,
+  #featured-work + #media.section
+) {
+  margin-top: 13px !important;
+}
+
+body .page-shell main#top :is(#systems .library-grid, #media .gallery-grid) {
+  box-sizing: border-box;
+  padding-left: var(--home-grid-edge-left) !important;
+  padding-right: var(--home-grid-edge-right) !important;
+  background: #ffffff;
+}
+
+body .page-shell main#top > #playing-career.section > .section-heading {
+  margin-bottom: 13px !important;
+}
+
+body .page-shell main#top #playing-career.playing-career-section {
+  --playing-career-gap: 13px;
+}
+
+body .page-shell main#top > #playing-career.section {
+  background: #ffffff;
+}
+
+body .page-shell main#top > #playing-career.section::before {
+  content: none;
+}
+
+body .page-shell main#top > #playing-career.section > .playing-career-carousel {
+  margin-bottom: 0;
+}
+
+/* Aligns non-hero homepage section handoffs to a visible 13px rhythm. */
+@media (min-width: 1025px) {
+  body .page-shell main#top > #featured-work {
+    margin-top: 7px !important;
+    padding-top: 6px !important;
+  }
+
+  body .page-shell main#top > :is(#playing-career, #contact).section {
+    margin-top: 7px !important;
+    padding-top: 6px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main#top > #featured-work {
+    margin-top: 6px !important;
+    padding-top: 6px !important;
+  }
+
+  body .page-shell main#top > #playing-career.section {
+    margin-top: 6px !important;
+    padding-top: 5px !important;
+  }
+
+  body .page-shell main#top > #contact.contact-section {
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body .page-shell main#top > #featured-work {
+    margin-top: 6px !important;
+    padding-top: 6px !important;
+  }
+
+  body .page-shell main#top > #playing-career.section {
+    margin-top: 6px !important;
+    padding-top: 5px !important;
+  }
+
+  body .page-shell main#top > #contact.contact-section {
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* Home footer closeout spacing: separate the contact buttons from the footer divider. */
+body:has(main#top) .site-footer.site-chrome {
+  margin-top: 0 !important;
+  padding-top: 18px !important;
+}
+
+body:has(main#top) .site-footer.site-chrome .footer-grid {
+  border-top-color: rgba(158, 111, 53, 0.18);
+}
+
+@media (min-width: 1025px) {
+  body:has(main#top) .site-footer.site-chrome {
+    padding-top: 24px !important;
+  }
+
+  body:has(main#top) .site-footer.site-chrome .footer-grid {
+    grid-template-columns:
+      minmax(120px, 0.72fr)
+      minmax(170px, 0.96fr)
+      minmax(190px, 1fr)
+      minmax(280px, 1.12fr);
+    column-gap: clamp(40px, 5vw, 96px);
+    align-items: start;
+  }
+
+  body:has(main#top) .site-footer.site-chrome .footer-links {
+    align-self: start;
+    min-width: 0;
+  }
+
+  body:has(main#top) .site-footer.site-chrome .footer-accordion-toggle {
+    margin-top: 0;
+  }
 }
