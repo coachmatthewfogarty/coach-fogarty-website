@@ -9189,8 +9189,8 @@ body .page-shell :is(
 /* Playing Career & Honors lock: keep the current handoff specs explicit and scoped. */
 #playing-career.playing-career-section {
   --playing-career-wall-width: 100%;
-  background: rgba(255, 248, 240, 0.58);
-  border: 1px solid var(--line);
+  background: transparent;
+  border-color: transparent;
   box-shadow: none;
 }
 
@@ -9290,9 +9290,9 @@ body .page-shell :is(
   gap: 12px;
   align-items: center;
   padding: 18px 14px 16px;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: 28px;
-  background: linear-gradient(135deg, rgba(255, 252, 247, 0.78), rgba(215, 179, 119, 0.14));
+  background: transparent;
   box-shadow: none;
 }
 
