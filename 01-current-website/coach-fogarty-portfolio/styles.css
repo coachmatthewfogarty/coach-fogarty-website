@@ -9275,6 +9275,11 @@ body .page-shell :is(
   pointer-events: none;
 }
 
+#playing-career .playing-career-award-thumb[aria-label="Open Rocky Mountain College MVP"] img {
+  transform: scale(1.18);
+  transform-origin: center center;
+}
+
 #playing-career .playing-career-actions {
   display: flex;
   flex-wrap: wrap;
@@ -9371,24 +9376,49 @@ body .page-shell :is(
 }
 
 #playing-career .playing-career-arrow {
-  display: grid;
-  place-items: center;
+  --playing-career-arrow-icon-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 54px;
-  border: 1px solid rgba(31, 27, 22, 0.14);
+  border: 1px solid #d95a24;
   border-radius: 999px;
-  color: var(--text);
-  background: rgba(255, 250, 243, 0.82);
+  color: #d95a24;
+  -webkit-text-fill-color: #d95a24;
+  background: rgba(255, 255, 255, 0.88);
+  background-image: none;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 0;
   line-height: 1;
-  box-shadow: 0 12px 30px rgba(52, 36, 24, 0.12);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#playing-career .playing-career-arrow::before {
+  display: block;
+  color: currentColor;
+  -webkit-text-fill-color: currentColor;
+  font-size: var(--playing-career-arrow-icon-size);
+  line-height: 1;
+  text-shadow: none;
+  transform: translateY(-2px);
+}
+
+#playing-career .playing-career-arrow-prev::before {
+  content: "\2039";
+}
+
+#playing-career .playing-career-arrow-next::before {
+  content: "\203a";
 }
 
 #playing-career .playing-career-arrow:hover,
 #playing-career .playing-career-arrow:focus-visible {
-  border-color: rgba(184, 135, 47, 0.48);
-  color: var(--red);
+  border-color: #d95a24;
+  color: #d95a24;
+  -webkit-text-fill-color: #d95a24;
+  background: rgba(255, 255, 255, 0.96);
 }
 
 #playing-career .playing-career-arrow:focus-visible {
@@ -9525,10 +9555,10 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-arrow {
+    --playing-career-arrow-icon-size: 1.55rem;
     width: 34px;
     height: 40px;
-    font-size: 1.55rem;
-    background: rgba(255, 250, 243, 0.72);
+    background: rgba(255, 255, 255, 0.88);
   }
 
   #playing-career .playing-career-arrow-prev {
@@ -12016,9 +12046,9 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     --home-eyebrow-title-gap: 6px;
     --home-section-title-line: 38px;
     --home-title-content-gap: 18px;
-    --home-grid-gap: 12px;
+    --home-grid-gap: 14px;
     --home-section-gap: 14px;
-    --home-paired-section-gap: 12px;
+    --home-paired-section-gap: 14px;
   }
 
   body .page-shell main#top > :is(#systems, #media, #playing-career).section {
@@ -12383,9 +12413,7 @@ body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-ov
 
 body .page-shell main#top .contact-closeout-grid {
   grid-template-areas:
-    "documents-heading"
     "documents-card"
-    "contact-heading"
     "contact-card";
   row-gap: var(--home-title-content-gap, 14px) !important;
   background: #ffffff;
@@ -12401,6 +12429,16 @@ body .page-shell main#top .contact-closeout-heading--documents {
 
 body .page-shell main#top .contact-closeout-heading--contact {
   grid-area: contact-heading;
+}
+
+body .page-shell main#top .contact-closeout-heading--documents,
+body .page-shell main#top .contact-closeout-heading--contact {
+  display: none !important;
+}
+
+body .page-shell main#top .contact-closeout-heading--documents > h2,
+body .page-shell main#top .contact-closeout-heading--contact > h2 {
+  display: none !important;
 }
 
 body .page-shell main#top .document-card {
@@ -12446,7 +12484,6 @@ body .page-shell main#top .contact-closeout-grid > :is(.document-card, .contact-
 
   body .page-shell main#top .contact-closeout-grid {
     grid-template-areas:
-      "documents-heading contact-heading"
       "documents-card contact-card";
     row-gap: var(--home-title-content-gap, 18px) !important;
     column-gap: 10px !important;
@@ -12540,7 +12577,7 @@ body .page-shell main#top > #featured-work {
 }
 
 body .page-shell main#top > #featured-work > .featured-card + .featured-card {
-  margin-top: var(--home-paired-section-gap, 12px);
+  margin-top: 14px;
 }
 
 @media (max-width: 767px) {
@@ -12581,12 +12618,18 @@ body .page-shell main#top > #featured-work > .featured-card + .featured-card {
 
 @media (min-width: 1025px) {
   body .page-shell main#top > #systems.section {
-    --home-section-header-top: 6px;
+    --home-section-header-top: 14px;
   }
 
   /* Overrides earlier homepage section margin locks so only the header approach rhythm changes. */
+  body .page-shell main#top > #featured-work {
+    margin-top: 7px !important;
+    padding-top: 7px !important;
+  }
+
   body .page-shell main#top > :is(#media, #playing-career, #contact).section {
-    margin-top: 12px !important;
+    margin-top: 7px !important;
+    padding-top: 7px !important;
   }
 }
 
@@ -12594,16 +12637,28 @@ body .page-shell main#top > #featured-work > .featured-card + .featured-card {
   /* Overrides earlier tablet section padding locks so header approach gaps stay consistent. */
   body .page-shell main#top > #systems.section {
     margin-top: -38px !important;
-    padding-top: 16px !important;
+    padding-top: 23px !important;
+    padding-bottom: 0 !important;
   }
 
   body .page-shell main#top > #featured-work {
-    margin-top: 32px !important;
+    margin-top: 7px !important;
+    padding-top: 6px !important;
   }
 
-  body .page-shell main#top > :is(#media, #playing-career).section {
-    margin-top: 16px !important;
-    padding-top: 16px !important;
+  body .page-shell main#top > #media.section {
+    margin-top: 7px !important;
+    padding-top: 6px !important;
+  }
+
+  body .page-shell main#top > #playing-career.section {
+    margin-top: 6px !important;
+    padding-top: 6px !important;
+    padding-bottom: 0 !important;
+  }
+
+  body .page-shell main#top > #contact.contact-section {
+    margin-top: 13px !important;
   }
 }
 
@@ -12611,20 +12666,56 @@ body .page-shell main#top > #featured-work > .featured-card + .featured-card {
   /* Overrides earlier mobile section padding locks so header approach gaps stay consistent. */
   body .page-shell main#top > #systems.section {
     margin-top: -16px !important;
-    padding-top: 16px !important;
+    padding-top: 11px !important;
+    padding-bottom: 0 !important;
   }
 
   body .page-shell main#top > #featured-work {
-    margin-top: 24px !important;
+    margin-top: 7px !important;
+    padding-top: 6px !important;
   }
 
-  body .page-shell main#top > :is(#media, #playing-career).section {
-    margin-top: 16px !important;
-    padding-top: 16px !important;
+  body .page-shell main#top > #media.section {
+    margin-top: 7px !important;
+    padding-top: 6px !important;
+  }
+
+  body .page-shell main#top > #playing-career.section {
+    margin-top: 6px !important;
+    padding-top: 6px !important;
+    padding-bottom: 0 !important;
   }
 
   body .page-shell main#top > #contact.contact-section {
-    margin-top: 24px !important;
+    margin-top: 13px !important;
+  }
+}
+
+body .page-shell main#top :is(#systems .library-grid, #media .gallery-grid) {
+  gap: 14px !important;
+  row-gap: 14px !important;
+  column-gap: 14px !important;
+}
+
+body .page-shell main#top #playing-career .playing-career-awards-strip {
+  margin-top: 14px;
+}
+
+body .page-shell main#top .contact-closeout-grid {
+  row-gap: 14px !important;
+  column-gap: 14px !important;
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main#top .contact-closeout-grid {
+    row-gap: 14px !important;
+    column-gap: 14px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  body .page-shell main#top #playing-career .playing-career-awards-strip {
+    margin-top: 14px;
   }
 }
 
