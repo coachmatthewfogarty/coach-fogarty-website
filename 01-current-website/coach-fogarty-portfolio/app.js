@@ -127,9 +127,9 @@ const librarySections = [
 
 const systemDisplayOrder = [
   "Player Development",
-  "Coaching Philosophy",
-  "Defensive Tracker Accountability System",
   "Recruiting",
+  "Defensive Tracker Accountability System",
+  "Coaching Philosophy",
   "Program Support",
   "Scouting"
 ];
@@ -211,7 +211,7 @@ const mediaAlbums = [
     title: "Teaching Moments",
     category: "COURTSIDE",
     eyebrow: "COURTSIDE",
-    thumbnail: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-media-card-1200x900.avif"),
+    thumbnail: mediaPhotoPath("coaching-details", "coaching-details-santa-ana-college-pregame-warmup-home-card-cover-upper-q98-1200x900.avif"),
     thumbnailRole: "media-card",
     caption: "Teaching Moments",
     crop: "teaching",
@@ -995,17 +995,8 @@ const playingCareerAlbums = [
     eyebrow: "PLAYING BACKGROUND",
     caption: "Playing career photo album",
     showCounter: true,
-    thumbnail: playingCareerPhoto("playing-career-shasta-college-jump-shot-carousel-1200x900.avif"),
+    thumbnail: playingCareerPhoto("playing-career-rocky-mountain-college-fist-carousel-1200x900.avif"),
     items: [
-      {
-        title: "Shasta College Jump Shot",
-        carouselSrc: playingCareerPhoto("playing-career-shasta-college-jump-shot-carousel-1200x900.avif"),
-        thumbSrc: playingCareerPhoto("playing-career-shasta-college-jump-shot-overlay-thumb-600x400.webp"),
-        fullSrc: playingCareerPhoto("playing-career-shasta-college-jump-shot-portrait-1800x2400.avif"),
-        orientation: "portrait",
-        carouselPosition: "50% 42%",
-        alt: "Matthew Fogarty taking a jump shot at Shasta College"
-      },
       {
         title: "Rocky Mountain College Portrait",
         carouselSrc: playingCareerPhoto("playing-career-rocky-mountain-college-fist-carousel-1200x900.avif"),
@@ -1014,6 +1005,15 @@ const playingCareerAlbums = [
         orientation: "portrait",
         carouselPosition: "50% 35%",
         alt: "Matthew Fogarty Rocky Mountain College portrait"
+      },
+      {
+        title: "Shasta College Jump Shot",
+        carouselSrc: playingCareerPhoto("playing-career-shasta-college-jump-shot-carousel-1200x900.avif"),
+        thumbSrc: playingCareerPhoto("playing-career-shasta-college-jump-shot-overlay-thumb-600x400.webp"),
+        fullSrc: playingCareerPhoto("playing-career-shasta-college-jump-shot-portrait-1800x2400.avif"),
+        orientation: "portrait",
+        carouselPosition: "50% 42%",
+        alt: "Matthew Fogarty taking a jump shot at Shasta College"
       },
       {
         title: "Rocky Mountain College Point",
@@ -1130,7 +1130,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-overlay-thumb-600x400.webp"),
+        thumbSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-transparent-600x400.png"),
         alt: "Shasta College Hall of Fame award",
         caption: "College Hall of Fame - Shasta College",
         orientation: "landscape"
@@ -1138,7 +1138,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-all-state-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-shasta-college-all-state-overlay-thumb-600x400.webp"),
+        thumbSrc: playingCareerAward("playing-awards-shasta-college-all-state-clean-full-600x450.png"),
         alt: "First Team All-State award",
         caption: "First Team All-State recognition",
         orientation: "landscape"
@@ -1154,7 +1154,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-overlay-thumb-600x400.webp"),
+        thumbSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-clean-crop-596x400.png"),
         alt: "Outstanding performance award",
         caption: "Outstanding performance recognition",
         orientation: "landscape"
@@ -1163,7 +1163,8 @@ const playingCareerAwardAlbums = [
         type: "image",
         fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-portrait-1800x2400.avif"),
         mediaCardSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-card-1200x900.avif"),
-        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-overlay-thumb-600x400.webp"),
+        carouselSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
+        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
         alt: "Rocky Mountain College MVP award",
         caption: "Rocky Mountain College MVP",
         orientation: "portrait"
@@ -1171,7 +1172,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-overlay-thumb-600x400.webp"),
+        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-clean-full-600x450.png"),
         alt: "Second Team All-Conference award",
         caption: "Second Team All-Conference recognition",
         orientation: "landscape"
@@ -1339,6 +1340,7 @@ const mediaAnayaGalleryButton = document.querySelector("#mediaAnayaGalleryButton
 const playingCareerTrack = document.querySelector("#playingCareerTrack");
 const playingCareerPrev = document.querySelector("#playingCareerPrev");
 const playingCareerNext = document.querySelector("#playingCareerNext");
+const playingCareerAwardsTrack = document.querySelector("#playingCareerAwardsTrack");
 const playingCareerAwards = document.querySelector("#playingCareerAwards");
 const anayaGalleries = document.querySelectorAll("[data-anaya-gallery]");
 const mediaOverlay = document.querySelector("#mediaOverlay");
@@ -2349,6 +2351,65 @@ function renderPlayingCareerCarousel() {
   connectPlayingCareerCards();
 }
 
+function renderPlayingCareerAwardsStrip() {
+  if (!playingCareerAwardsTrack || !playingCareerAwardAlbums[0]?.items?.length) {
+    return;
+  }
+
+  const album = playingCareerAwardAlbums[0];
+  playingCareerAwardsTrack.innerHTML = album.items
+    .map(
+      (item, index) => `
+        <button class="playing-career-award-thumb" type="button" data-playing-award-index="${index}" aria-label="Open ${mediaItemTitle(item, album)}">
+          <img
+            src="${encodeURI(mediaItemCarouselSrc(item))}"
+            alt="${item.alt || mediaItemTitle(item, album)}"
+            loading="lazy"
+          />
+        </button>
+      `
+    )
+    .join("");
+
+  connectPlayingCareerAwardCards();
+}
+
+function connectPlayingCareerAwardCards() {
+  if (!playingCareerAwardsTrack || playingCareerAwardsTrack.dataset.overlayReady === "true") {
+    return;
+  }
+
+  playingCareerAwardsTrack.dataset.overlayReady = "true";
+  playingCareerAwardsTrack.addEventListener(
+    "click",
+    (event) => {
+      const card = event.target.closest("[data-playing-award-index]");
+      const suppressUntil = Number(playingCareerAwardsTrack.dataset.dragScrollSuppressUntil || 0);
+
+      if (!card || !playingCareerAwardsTrack.contains(card)) {
+        return;
+      }
+
+      if (window.performance.now() < suppressUntil) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        return;
+      }
+
+      const itemIndex = Number(card.dataset.playingAwardIndex);
+
+      if (!Number.isInteger(itemIndex)) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openMediaAlbum(0, playingCareerAwardAlbums, itemIndex);
+    },
+    true
+  );
+}
+
 function connectPlayingCareerCards() {
   if (!playingCareerTrack || playingCareerTrack.dataset.overlayReady === "true") {
     return;
@@ -2743,5 +2804,7 @@ renderGallery();
 renderMediaLibraryPage();
 renderAnayaGalleries();
 renderPlayingCareerCarousel();
+renderPlayingCareerAwardsStrip();
 enableDragScroll(mediaOverlayStrip);
 enableDragScroll(playingCareerTrack);
+enableDragScroll(playingCareerAwardsTrack);
