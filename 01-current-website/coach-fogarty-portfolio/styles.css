@@ -11899,7 +11899,7 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     --home-section-header-top: 18px;
     --home-eyebrow-title-gap: 6px;
     --home-section-title-line: 38px;
-    --home-title-content-gap: 22px;
+    --home-title-content-gap: 18px;
     --home-grid-gap: 12px;
     --home-section-gap: 14px;
     --home-paired-section-gap: 12px;
@@ -11960,17 +11960,17 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
 
   body .page-shell main#top > :is(#systems, #media, #playing-career).section .section-heading > .eyebrow,
   body .page-shell main#top > #featured-work > .featured-work-section-heading > .eyebrow {
-    margin: 0 0 var(--home-eyebrow-title-gap) !important;
-    font-size: var(--section-eyebrow-size-desktop) !important;
-    line-height: var(--section-eyebrow-line-desktop) !important;
-    letter-spacing: 0.15em !important;
-    white-space: normal !important;
+    display: none;
   }
 
   body .page-shell main#top > :is(#systems, #media, #playing-career).section .section-heading > h2,
   body .page-shell main#top > #featured-work > .featured-work-section-heading > h2 {
-    font-size: var(--section-title-size-desktop) !important;
-    line-height: var(--home-section-title-line) !important;
+    color: #1F1B16 !important;
+    font-family: Georgia, "Palatino Linotype", serif !important;
+    font-size: clamp(32px, 2.1vw, 42px) !important;
+    font-weight: 700 !important;
+    line-height: 1.02 !important;
+    letter-spacing: 0 !important;
     white-space: normal !important;
   }
 
@@ -12124,6 +12124,48 @@ body .page-shell main#top :is(.section-heading, .home-closeout-heading) > .eyebr
   text-transform: uppercase !important;
 }
 
+body .page-shell main#top {
+  --home-title-content-gap: 14px;
+}
+
+body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading > .eyebrow,
+body .page-shell main#top > #featured-work > .featured-work-section-heading > .eyebrow,
+body .page-shell main#top #contact .home-closeout-heading > .eyebrow {
+  display: none;
+}
+
+body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading,
+body .page-shell main#top > #featured-work > .featured-work-section-heading {
+  margin-bottom: var(--home-title-content-gap, 14px) !important;
+}
+
+body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading > h2,
+body .page-shell main#top > #featured-work > .featured-work-section-heading > h2,
+body .page-shell main#top #contact .home-closeout-heading > h2 {
+  margin: 0 !important;
+  color: #1F1B16 !important;
+  font-family: Georgia, "Palatino Linotype", serif !important;
+  font-size: clamp(22px, 6vw, 32px) !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main#top {
+    --home-title-content-gap: 18px;
+  }
+
+  body .page-shell main#top > :is(#systems, #media, #playing-career).section > .section-heading > h2,
+  body .page-shell main#top > #featured-work > .featured-work-section-heading > h2,
+  body .page-shell main#top #contact .home-closeout-heading > h2 {
+    font-size: clamp(32px, 2.1vw, 42px) !important;
+    line-height: 1.02 !important;
+  }
+}
+
 body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-title {
   color: var(--coach-gold-border, #d6a24b) !important;
   font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
@@ -12138,7 +12180,7 @@ body .page-shell main#top .contact-closeout-grid {
     "documents-card"
     "contact-heading"
     "contact-card";
-  row-gap: var(--home-title-content-gap, 22px) !important;
+  row-gap: var(--home-title-content-gap, 14px) !important;
   background: #ffffff;
 }
 
@@ -12199,21 +12241,20 @@ body .page-shell main#top .contact-closeout-grid > :is(.document-card, .contact-
     grid-template-areas:
       "documents-heading contact-heading"
       "documents-card contact-card";
-    row-gap: var(--home-title-content-gap, 22px) !important;
+    row-gap: var(--home-title-content-gap, 18px) !important;
     column-gap: 10px !important;
   }
 
   body .page-shell main#top #contact .home-closeout-heading > .eyebrow {
-    margin: 0 0 var(--home-eyebrow-title-gap, 6px) !important;
-    font-size: var(--section-eyebrow-size-desktop, 12px) !important;
-    line-height: var(--section-eyebrow-line-desktop, 15px) !important;
-    letter-spacing: 0.15em !important;
+    display: none;
   }
 
   body .page-shell main#top #contact .home-closeout-heading > h2 {
+    color: #1F1B16 !important;
     font-family: Georgia, "Palatino Linotype", serif !important;
-    font-size: var(--section-title-size-desktop, clamp(36px, 2.1vw, 42px)) !important;
-    line-height: var(--home-section-title-line, 38px) !important;
+    font-size: clamp(32px, 2.1vw, 42px) !important;
+    font-weight: 700 !important;
+    line-height: 1.02 !important;
     letter-spacing: 0 !important;
   }
 }
@@ -12245,6 +12286,12 @@ body .page-shell main#top .contact-closeout-grid > :is(.document-card, .contact-
 
   body .page-shell main#top #contact .home-closeout-heading {
     padding-inline: var(--home-section-header-inset) !important;
+  }
+
+  /* Overrides older homepage closeout heading locks so these follow the one-line section header scale. */
+  body .page-shell main#top > #contact.contact-section .home-closeout-heading > h2 {
+    font-size: clamp(32px, 2.1vw, 42px) !important;
+    line-height: 1.02 !important;
   }
 }
 
