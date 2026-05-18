@@ -1,0 +1,2244 @@
+[
+  {
+    "section": "Hero",
+    "role": "hero",
+    "type": "image",
+    "path": "./anaya/photos/h/case-study-anaya-beard-header-coaching-hero-cover-center-q98-2000x1333.avif",
+    "caption": "Coach Matthew Fogarty working with Anaya Beard during player development"
+  },
+  {
+    "section": "Foundation",
+    "type": "video",
+    "caption": "First workout ever",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/1f/IMG_1184.MOV"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "First workout ever",
+    "alt": "",
+    "role": "poster/media-card",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-first-workout-ever-poster-q98-1200x900.webp"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "First workout photo montage",
+    "alt": "Anaya Beard first workout photo montage",
+    "role": "display/full",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-shooting-collage-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "First workout photo montage",
+    "alt": "Anaya Beard first workout photo montage",
+    "role": "media-card",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-shooting-collage-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Foundation",
+    "type": "video",
+    "caption": "Baseline shooting form",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/1f/anaya-foundation-shooting-form-baseline-01.mov"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "Baseline shooting form",
+    "alt": "",
+    "role": "poster/media-card",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-shooting-form-baseline-media-card-zoom-out-2-right-q98-1200x900.avif"
+  },
+  {
+    "section": "Foundation",
+    "type": "video",
+    "caption": "Baseline jump shot",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/1f/anaya-foundation-jump-shot-baseline-01.mp4"
+  },
+  {
+    "section": "Foundation",
+    "type": "video",
+    "caption": "Baseline left-hand finish",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/1f/anaya-foundation-left-hand-baseline-01.mp4"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "Baseline left-hand finish",
+    "alt": "",
+    "role": "poster/media-card",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-left-hand-development-media-card-stretch-fill-q98-1200x900.avif"
+  },
+  {
+    "section": "Foundation",
+    "type": "video",
+    "caption": "Baseline fadeaway",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/1f/anaya-foundation-fadeaway-baseline-01.mp4"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "Baseline fadeaway",
+    "alt": "",
+    "role": "poster/media-card",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-free-throw-routine-media-card-stretch-fill-q98-1200x900.avif"
+  },
+  {
+    "section": "Foundation",
+    "type": "video",
+    "caption": "Baseline sealing",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/1f/anaya-foundation-sealing-baseline-01.mp4"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "Foundation commitment graphic",
+    "alt": "Anaya Beard commitment graphic from the foundation stage",
+    "role": "display/full",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-commitment-graphic-landscape-stretch-fill-shift-down-1-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "Foundation commitment graphic",
+    "alt": "Anaya Beard commitment graphic from the foundation stage",
+    "role": "media-card",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-commitment-graphic-media-card-stretch-fill-shift-down-1-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "Left-hand development stills",
+    "alt": "Anaya Beard left-hand development foundation work",
+    "role": "display/full",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-left-hand-development-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Foundation",
+    "type": "image",
+    "caption": "Left-hand development stills",
+    "alt": "Anaya Beard left-hand development foundation work",
+    "role": "media-card",
+    "path": "anaya/photos/1f/case-study-anaya-beard-foundation-left-hand-development-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "video",
+    "caption": "Early morning development work",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/2d/development-process-early-morning.MOV"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Early morning development work",
+    "alt": "",
+    "role": "poster/media-card",
+    "path": "anaya/photos/2d/dp-coaching-feedback-card-q98-1200x900.avif"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Early morning development work",
+    "alt": "",
+    "role": "overlay-thumb/media-card",
+    "path": "anaya/photos/2d/dp-coaching-feedback-card-q98-1200x900.avif"
+  },
+  {
+    "section": "Development Process",
+    "type": "video",
+    "caption": "Shot release repetition video",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/2d/IMG_1381.MOV"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Shot release repetition video",
+    "alt": "",
+    "role": "poster/media-card",
+    "path": "anaya/photos/2d/dp-shot-release-card-q98-1200x900.avif"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Shot release repetition video",
+    "alt": "",
+    "role": "overlay-thumb/media-card",
+    "path": "anaya/photos/2d/dp-shot-release-thumb-q98-600x400.webp"
+  },
+  {
+    "section": "Development Process",
+    "type": "video",
+    "caption": "Footwork repetition video",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/2d/IMG_1382.MOV"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Footwork repetition video",
+    "alt": "",
+    "role": "poster/media-card",
+    "path": "anaya/photos/2d/dp-shot-repetition-card-q98-1200x900.avif"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Footwork repetition video",
+    "alt": "",
+    "role": "overlay-thumb/media-card",
+    "path": "anaya/photos/2d/dp-shot-repetition-thumb-q98-600x400.webp"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Shooting form training",
+    "alt": "Anaya Beard shooting form training",
+    "role": "display/full",
+    "path": "anaya/photos/2d/dp-shooting-form-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Shooting form training",
+    "alt": "Anaya Beard shooting form training",
+    "role": "media-card",
+    "path": "anaya/photos/2d/dp-shooting-form-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Catch-and-shoot training",
+    "alt": "Anaya Beard catch-and-shoot training",
+    "role": "display/full",
+    "path": "anaya/photos/2d/dp-catch-and-shoot-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Catch-and-shoot training",
+    "alt": "Anaya Beard catch-and-shoot training",
+    "role": "media-card",
+    "path": "anaya/photos/2d/dp-catch-and-shoot-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Archer shooting development",
+    "alt": "Anaya Beard Archer shooting development",
+    "role": "display/full",
+    "path": "anaya/photos/2d/dp-archer-shooting-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Archer shooting development",
+    "alt": "Anaya Beard Archer shooting development",
+    "role": "media-card",
+    "path": "anaya/photos/2d/dp-archer-shooting-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Shot repetition",
+    "alt": "Anaya Beard shot repetition",
+    "role": "display/full",
+    "path": "anaya/photos/2d/dp-shot-repetition-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Shot repetition",
+    "alt": "Anaya Beard shot repetition",
+    "role": "media-card",
+    "path": "anaya/photos/2d/dp-shot-repetition-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Shot release repetition",
+    "alt": "Anaya Beard shot release repetition",
+    "role": "display/full",
+    "path": "anaya/photos/2d/dp-shot-release-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Shot release repetition",
+    "alt": "Anaya Beard shot release repetition",
+    "role": "media-card",
+    "path": "anaya/photos/2d/dp-shot-release-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Seated shooting drill",
+    "alt": "Anaya Beard seated shooting drill",
+    "role": "display/full",
+    "path": "anaya/photos/2d/dp-seated-shooting-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Seated shooting drill",
+    "alt": "Anaya Beard seated shooting drill",
+    "role": "media-card",
+    "path": "anaya/photos/2d/dp-seated-shooting-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Coaching feedback",
+    "alt": "Coach Fogarty giving Anaya Beard development feedback",
+    "role": "display/full",
+    "path": "anaya/photos/2d/dp-coaching-feedback-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Coaching feedback",
+    "alt": "Coach Fogarty giving Anaya Beard development feedback",
+    "role": "media-card",
+    "path": "anaya/photos/2d/dp-coaching-feedback-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Development teaching moment",
+    "alt": "Anaya Beard development process teaching moment",
+    "role": "display/full",
+    "path": "anaya/photos/2d/dp-homepage-callout-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Development Process",
+    "type": "image",
+    "caption": "Development teaching moment",
+    "alt": "Anaya Beard development process teaching moment",
+    "role": "media-card",
+    "path": "anaya/photos/2d/dp-homepage-callout-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench celebration",
+    "alt": "Anaya Beard bench celebration",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-celebration-landscape-zoom-in-1.75-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench celebration",
+    "alt": "Anaya Beard bench celebration",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-celebration-landscape-zoom-in-1.75-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench celebration",
+    "alt": "Anaya Beard bench celebration",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-celebration-media-card-zoom-in-1.75-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench celebration",
+    "alt": "Anaya Beard bench celebration",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-celebration-overlay-thumb-zoom-in-1.75-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench celebration",
+    "alt": "Anaya Beard bench celebration",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-celebration-portrait-zoom-in-1.75-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Helping teammate up",
+    "alt": "Anaya Beard helping a teammate up",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-helping-teammate-up-landscape-zoom-in-2.5-left-0.4-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Helping teammate up",
+    "alt": "Anaya Beard helping a teammate up",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-helping-teammate-up-landscape-zoom-in-2.5-left-0.4-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Helping teammate up",
+    "alt": "Anaya Beard helping a teammate up",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-helping-teammate-up-media-card-zoom-in-2.5-left-0.4-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Helping teammate up",
+    "alt": "Anaya Beard helping a teammate up",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-helping-teammate-up-overlay-thumb-zoom-in-2.5-left-0.4-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Helping teammate up",
+    "alt": "Anaya Beard helping a teammate up",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-helping-teammate-up-portrait-zoom-in-2.5-left-0.4-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Sideline energy",
+    "alt": "Anaya Beard sideline energy",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-sideline-energy-landscape-zoom-in-3.5-left-1-up-1-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Sideline energy",
+    "alt": "Anaya Beard sideline energy",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-sideline-energy-landscape-zoom-in-3.5-left-1-up-1-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Sideline energy",
+    "alt": "Anaya Beard sideline energy",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-sideline-energy-media-card-zoom-in-3.5-left-1-up-1-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Sideline energy",
+    "alt": "Anaya Beard sideline energy",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-sideline-energy-overlay-thumb-zoom-in-3.5-left-1-up-1-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Sideline energy",
+    "alt": "Anaya Beard sideline energy",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-sideline-energy-portrait-zoom-in-3.5-left-1-up-1-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Teammate high-five",
+    "alt": "Anaya Beard high-fiving teammates",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-teammate-high-five-landscape-shift-down-0.75-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Teammate high-five",
+    "alt": "Anaya Beard high-fiving teammates",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-teammate-high-five-landscape-shift-down-0.75-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Teammate high-five",
+    "alt": "Anaya Beard high-fiving teammates",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-teammate-high-five-media-card-shift-down-0.75-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Teammate high-five",
+    "alt": "Anaya Beard high-fiving teammates",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-teammate-high-five-overlay-thumb-shift-down-0.75-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Teammate high-five",
+    "alt": "Anaya Beard high-fiving teammates",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-teammate-high-five-portrait-shift-down-0.75-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Court leadership",
+    "alt": "Anaya Beard court leadership",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-court-leadership-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Court leadership",
+    "alt": "Anaya Beard court leadership",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-court-leadership-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Court leadership",
+    "alt": "Anaya Beard court leadership",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-court-leadership-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Court leadership",
+    "alt": "Anaya Beard court leadership",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-court-leadership-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Court leadership",
+    "alt": "Anaya Beard court leadership",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-court-leadership-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team celebration",
+    "alt": "Anaya Beard team celebration",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-celebration-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team celebration",
+    "alt": "Anaya Beard team celebration",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-celebration-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team celebration",
+    "alt": "Anaya Beard team celebration",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-celebration-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team celebration",
+    "alt": "Anaya Beard team celebration",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-celebration-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team celebration",
+    "alt": "Anaya Beard team celebration",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-celebration-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench leadership",
+    "alt": "Anaya Beard bench leadership",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-leadership-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench leadership",
+    "alt": "Anaya Beard bench leadership",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-leadership-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench leadership",
+    "alt": "Anaya Beard bench leadership",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-leadership-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench leadership",
+    "alt": "Anaya Beard bench leadership",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-leadership-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Bench leadership",
+    "alt": "Anaya Beard bench leadership",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-bench-leadership-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team walkout",
+    "alt": "Anaya Beard team walkout leadership moment",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-walkout-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team walkout",
+    "alt": "Anaya Beard team walkout leadership moment",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-walkout-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team walkout",
+    "alt": "Anaya Beard team walkout leadership moment",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-walkout-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team walkout",
+    "alt": "Anaya Beard team walkout leadership moment",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-walkout-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team walkout",
+    "alt": "Anaya Beard team walkout leadership moment",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-walkout-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Group training standard",
+    "alt": "Anaya Beard group training standard",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-group-training-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Group training standard",
+    "alt": "Anaya Beard group training standard",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-group-training-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Group training standard",
+    "alt": "Anaya Beard group training standard",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-group-training-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Group training standard",
+    "alt": "Anaya Beard group training standard",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-group-training-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Group training standard",
+    "alt": "Anaya Beard group training standard",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-group-training-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Beach training",
+    "alt": "Anaya Beard beach training",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-beach-training-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Beach training",
+    "alt": "Anaya Beard beach training",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-beach-training-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Beach training",
+    "alt": "Anaya Beard beach training",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-beach-training-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Beach training",
+    "alt": "Anaya Beard beach training",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-beach-training-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Beach training",
+    "alt": "Anaya Beard beach training",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-beach-training-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Defensive slide drill",
+    "alt": "Anaya Beard defensive slide drill",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-defensive-slide-drill-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Defensive slide drill",
+    "alt": "Anaya Beard defensive slide drill",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-defensive-slide-drill-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Defensive slide drill",
+    "alt": "Anaya Beard defensive slide drill",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-defensive-slide-drill-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Defensive slide drill",
+    "alt": "Anaya Beard defensive slide drill",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-defensive-slide-drill-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Defensive slide drill",
+    "alt": "Anaya Beard defensive slide drill",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-defensive-slide-drill-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Postgame team moment",
+    "alt": "Anaya Beard postgame team moment",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-postgame-team-moment-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Postgame team moment",
+    "alt": "Anaya Beard postgame team moment",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-postgame-team-moment-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Postgame team moment",
+    "alt": "Anaya Beard postgame team moment",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-postgame-team-moment-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Postgame team moment",
+    "alt": "Anaya Beard postgame team moment",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-postgame-team-moment-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Postgame team moment",
+    "alt": "Anaya Beard postgame team moment",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-postgame-team-moment-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Shooting workout",
+    "alt": "Anaya Beard shooting workout",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-shooting-workout-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Shooting workout",
+    "alt": "Anaya Beard shooting workout",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-shooting-workout-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Shooting workout",
+    "alt": "Anaya Beard shooting workout",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-shooting-workout-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Shooting workout",
+    "alt": "Anaya Beard shooting workout",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-shooting-workout-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Shooting workout",
+    "alt": "Anaya Beard shooting workout",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-shooting-workout-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Three-fingers huddle",
+    "alt": "Anaya Beard three-fingers huddle",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-three-fingers-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Three-fingers huddle",
+    "alt": "Anaya Beard three-fingers huddle",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-three-fingers-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Three-fingers huddle",
+    "alt": "Anaya Beard three-fingers huddle",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-three-fingers-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Three-fingers huddle",
+    "alt": "Anaya Beard three-fingers huddle",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-three-fingers-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Three-fingers huddle",
+    "alt": "Anaya Beard three-fingers huddle",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-three-fingers-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team shooting workout",
+    "alt": "Anaya Beard team shooting workout",
+    "role": "display/full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-shooting-workout-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team shooting workout",
+    "alt": "Anaya Beard team shooting workout",
+    "role": "full-overlay",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-shooting-workout-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team shooting workout",
+    "alt": "Anaya Beard team shooting workout",
+    "role": "media-card",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-shooting-workout-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team shooting workout",
+    "alt": "Anaya Beard team shooting workout",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-shooting-workout-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Leadership Impact",
+    "type": "image",
+    "caption": "Team shooting workout",
+    "alt": "Anaya Beard team shooting workout",
+    "role": "portrait-full",
+    "path": "anaya/photos/3l/case-study-anaya-beard-leadership-impact-team-shooting-workout-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Mid-range jumper",
+    "alt": "Anaya Beard mid-range jumper in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-mid-range-jumper-landscape-shift-up-2.75-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Mid-range jumper",
+    "alt": "Anaya Beard mid-range jumper in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-mid-range-jumper-landscape-shift-up-2.75-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Mid-range jumper",
+    "alt": "Anaya Beard mid-range jumper in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-mid-range-jumper-media-card-stretch-fill-whole-image-visible-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Mid-range jumper",
+    "alt": "Anaya Beard mid-range jumper in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-mid-range-jumper-overlay-thumb-shift-up-3-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Mid-range jumper",
+    "alt": "Anaya Beard mid-range jumper in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-mid-range-jumper-portrait-stretch-fill-whole-image-visible-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contact finish",
+    "alt": "Anaya Beard contact finish in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-contact-finish-landscape-shift-down-1-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contact finish",
+    "alt": "Anaya Beard contact finish in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-contact-finish-landscape-shift-down-1-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contact finish",
+    "alt": "Anaya Beard contact finish in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-contact-finish-media-card-shift-down-1-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contact finish",
+    "alt": "Anaya Beard contact finish in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-contact-finish-overlay-thumb-shift-down-1-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contact finish",
+    "alt": "Anaya Beard contact finish in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-contact-finish-portrait-shift-down-1-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Catch-and-shoot three",
+    "alt": "Anaya Beard catch-and-shoot three in game performance",
+    "role": "display/full",
+    "path": "anaya/photos/4b/bp-catch-and-shoot-three-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Catch-and-shoot three",
+    "alt": "Anaya Beard catch-and-shoot three in game performance",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/bp-catch-and-shoot-three-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Catch-and-shoot three",
+    "alt": "Anaya Beard catch-and-shoot three in game performance",
+    "role": "media-card",
+    "path": "anaya/photos/4b/bp-catch-and-shoot-three-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Catch-and-shoot three",
+    "alt": "Anaya Beard catch-and-shoot three in game performance",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/bp-catch-and-shoot-three-thumb-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Catch-and-shoot three",
+    "alt": "Anaya Beard catch-and-shoot three in game performance",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/bp-catch-and-shoot-three-portrait-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Drive right",
+    "alt": "Anaya Beard drive right in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-drive-right-landscape-stretch-fill-shift-up-3-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Drive right",
+    "alt": "Anaya Beard drive right in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-drive-right-landscape-stretch-fill-shift-up-3-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Drive right",
+    "alt": "Anaya Beard drive right in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-drive-right-media-card-stretch-fill-shift-up-3-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Drive right",
+    "alt": "Anaya Beard drive right in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-drive-right-overlay-thumb-shift-up-1-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Drive right",
+    "alt": "Anaya Beard drive right in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-drive-right-portrait-stretch-fill-shift-up-3-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "High post jab",
+    "alt": "Anaya Beard high-post jab in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-high-post-jab-landscape-cover-center-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "High post jab",
+    "alt": "Anaya Beard high-post jab in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-high-post-jab-landscape-cover-center-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "High post jab",
+    "alt": "Anaya Beard high-post jab in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-high-post-jab-media-card-cover-left-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "High post jab",
+    "alt": "Anaya Beard high-post jab in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-high-post-jab-overlay-thumb-cover-center-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "High post jab",
+    "alt": "Anaya Beard high-post jab in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-high-post-jab-portrait-zoom-in-106-shift-up-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast-break floating finish",
+    "alt": "Anaya Beard fast-break floating finish in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-landscape-stretch-fill-whole-image-visible-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast-break floating finish",
+    "alt": "Anaya Beard fast-break floating finish in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-landscape-stretch-fill-whole-image-visible-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast-break floating finish",
+    "alt": "Anaya Beard fast-break floating finish in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-media-card-stretch-fill-whole-image-visible-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast-break floating finish",
+    "alt": "Anaya Beard fast-break floating finish in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-overlay-thumb-stretch-fill-whole-image-visible-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast-break floating finish",
+    "alt": "Anaya Beard fast-break floating finish in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-portrait-stretch-fill-whole-image-visible-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast break",
+    "alt": "Anaya Beard fast break in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/bp-fast-break-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast break",
+    "alt": "Anaya Beard fast break in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/bp-fast-break-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast break",
+    "alt": "Anaya Beard fast break in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/bp-fast-break-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast break",
+    "alt": "Anaya Beard fast break in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/bp-fast-break-thumb-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Fast break",
+    "alt": "Anaya Beard fast break in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/bp-fast-break-portrait-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "ECC crossover",
+    "alt": "Anaya Beard ECC crossover feature in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-ecc-crossover-landscape-stretch-fill-whole-image-visible-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "ECC crossover",
+    "alt": "Anaya Beard ECC crossover feature in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-ecc-crossover-landscape-stretch-fill-whole-image-visible-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "ECC crossover",
+    "alt": "Anaya Beard ECC crossover feature in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-ecc-crossover-media-card-stretch-fill-whole-image-visible-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "ECC crossover",
+    "alt": "Anaya Beard ECC crossover feature in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-ecc-crossover-overlay-thumb-stretch-fill-whole-image-visible-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "ECC crossover",
+    "alt": "Anaya Beard ECC crossover feature in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-ecc-crossover-portrait-stretch-fill-whole-image-visible-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contested drive",
+    "alt": "Anaya Beard contested drive in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/bp-contested-drive-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contested drive",
+    "alt": "Anaya Beard contested drive in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/bp-contested-drive-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contested drive",
+    "alt": "Anaya Beard contested drive in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/bp-contested-drive-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contested drive",
+    "alt": "Anaya Beard contested drive in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/bp-contested-drive-thumb-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Contested drive",
+    "alt": "Anaya Beard contested drive in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/bp-contested-drive-portrait-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Free throw focus",
+    "alt": "Anaya Beard free throw focus in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-free-throw-focus-landscape-stretch-fill-shift-down-3-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Free throw focus",
+    "alt": "Anaya Beard free throw focus in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-free-throw-focus-landscape-stretch-fill-shift-down-3-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Free throw focus",
+    "alt": "Anaya Beard free throw focus in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-free-throw-focus-media-card-stretch-fill-shift-down-3-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Free throw focus",
+    "alt": "Anaya Beard free throw focus in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-free-throw-focus-overlay-thumb-shift-right-3-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Free throw focus",
+    "alt": "Anaya Beard free throw focus in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-free-throw-focus-portrait-stretch-fill-shift-down-3-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Game action front",
+    "alt": "Anaya Beard game action from the front in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/bp-game-action-front-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Game action front",
+    "alt": "Anaya Beard game action from the front in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/bp-game-action-front-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Game action front",
+    "alt": "Anaya Beard game action from the front in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/bp-game-action-front-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Game action front",
+    "alt": "Anaya Beard game action from the front in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/bp-game-action-front-thumb-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Game action front",
+    "alt": "Anaya Beard game action from the front in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/bp-game-action-front-portrait-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Transition dribble",
+    "alt": "Anaya Beard transition dribble in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-1-landscape-stretch-fill-whole-image-visible-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Transition dribble",
+    "alt": "Anaya Beard transition dribble in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-1-landscape-stretch-fill-whole-image-visible-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Transition dribble",
+    "alt": "Anaya Beard transition dribble in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-1-media-card-stretch-fill-whole-image-visible-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Transition dribble",
+    "alt": "Anaya Beard transition dribble in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-1-overlay-thumb-stretch-fill-whole-image-visible-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Transition dribble",
+    "alt": "Anaya Beard transition dribble in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-fast-break-floating-finish-1-portrait-stretch-fill-whole-image-visible-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Back-down finish",
+    "alt": "Anaya Beard back-down finish in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/bp-back-down-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Back-down finish",
+    "alt": "Anaya Beard back-down finish in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/bp-back-down-landscape-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Back-down finish",
+    "alt": "Anaya Beard back-down finish in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/bp-back-down-card-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Back-down finish",
+    "alt": "Anaya Beard back-down finish in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/bp-back-down-thumb-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Back-down finish",
+    "alt": "Anaya Beard back-down finish in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/bp-back-down-portrait-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Three-point focus",
+    "alt": "Anaya Beard three-point focus in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-three-point-focus-landscape-stretch-fill-shift-down-2-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Three-point focus",
+    "alt": "Anaya Beard three-point focus in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-three-point-focus-landscape-stretch-fill-shift-down-2-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Three-point focus",
+    "alt": "Anaya Beard three-point focus in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-three-point-focus-media-card-stretch-fill-shift-down-3-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Three-point focus",
+    "alt": "Anaya Beard three-point focus in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-three-point-focus-overlay-thumb-zoom-in-2-center-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Three-point focus",
+    "alt": "Anaya Beard three-point focus in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-three-point-focus-portrait-stretch-fill-shift-down-2-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Tip-off",
+    "alt": "Anaya Beard tip-off in breakthrough production",
+    "role": "display/full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-tip-off-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Tip-off",
+    "alt": "Anaya Beard tip-off in breakthrough production",
+    "role": "full-overlay",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-tip-off-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Tip-off",
+    "alt": "Anaya Beard tip-off in breakthrough production",
+    "role": "media-card",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-tip-off-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Tip-off",
+    "alt": "Anaya Beard tip-off in breakthrough production",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-tip-off-overlay-thumb-stretch-fill-shift-down-1-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Tip-off",
+    "alt": "Anaya Beard tip-off in breakthrough production",
+    "role": "portrait-full",
+    "path": "anaya/photos/4b/case-study-anaya-beard-breakthrough-production-tip-off-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "video",
+    "caption": "Breakthrough jump shot",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/4b/anaya-breakthrough-production-jump-shot-01.mp4"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "image",
+    "caption": "Breakthrough jump shot",
+    "alt": "",
+    "role": "poster/media-card",
+    "path": "anaya/photos/4b/bp-catch-and-shoot-three-card-q98-1200x900.avif"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "video",
+    "caption": "Breakthrough left-hand finish",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/4b/anaya-breakthrough-production-left-hand-01.mp4"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "video",
+    "caption": "Breakthrough fadeaway",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/4b/anaya-breakthrough-production-fadeaway-01.mp4"
+  },
+  {
+    "section": "Breakthrough Production",
+    "type": "video",
+    "caption": "Breakthrough sealing",
+    "alt": "",
+    "role": "video",
+    "path": "anaya/videos/4b/anaya-breakthrough-production-sealing-01.mp4"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Scholar Athlete of the Year",
+    "alt": "Anaya Beard Scholar Athlete of the Year recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-scholar-athlete-of-the-year-landscape-wide-tighten-x-04-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Scholar Athlete of the Year",
+    "alt": "Anaya Beard Scholar Athlete of the Year recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-scholar-athlete-of-the-year-landscape-wide-tighten-x-04-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Scholar Athlete of the Year",
+    "alt": "Anaya Beard Scholar Athlete of the Year recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-scholar-athlete-of-the-year-media-card-wide-tighten-x-04-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Scholar Athlete of the Year",
+    "alt": "Anaya Beard Scholar Athlete of the Year recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-scholar-athlete-of-the-year-overlay-thumb-wide-tighten-x-04-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Scholar Athlete of the Year",
+    "alt": "Anaya Beard Scholar Athlete of the Year recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-scholar-athlete-of-the-year-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "500 Point Club",
+    "alt": "Anaya Beard 500 Point Club recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-500-point-club-landscape-shift-down-1-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "500 Point Club",
+    "alt": "Anaya Beard 500 Point Club recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-500-point-club-landscape-shift-down-1-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "500 Point Club",
+    "alt": "Anaya Beard 500 Point Club recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-500-point-club-media-card-shift-down-1-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "500 Point Club",
+    "alt": "Anaya Beard 500 Point Club recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-500-point-club-overlay-thumb-shift-down-1-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "500 Point Club",
+    "alt": "Anaya Beard 500 Point Club recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-500-point-club-portrait-shift-down-1-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "First Team All-Conference and OPOY",
+    "alt": "Anaya Beard First Team All-Conference and OPOY recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-first-team-all-conference-opoy-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "First Team All-Conference and OPOY",
+    "alt": "Anaya Beard First Team All-Conference and OPOY recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-first-team-all-conference-opoy-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "First Team All-Conference and OPOY",
+    "alt": "Anaya Beard First Team All-Conference and OPOY recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-first-team-all-conference-opoy-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "First Team All-Conference and OPOY",
+    "alt": "Anaya Beard First Team All-Conference and OPOY recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-first-team-all-conference-opoy-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "First Team All-Conference and OPOY",
+    "alt": "Anaya Beard First Team All-Conference and OPOY recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-first-team-all-conference-opoy-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Back-to-back First Team All-Conference",
+    "alt": "Anaya Beard back-to-back First Team All-Conference recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-back-to-back-first-team-all-conference-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Back-to-back First Team All-Conference",
+    "alt": "Anaya Beard back-to-back First Team All-Conference recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-back-to-back-first-team-all-conference-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Back-to-back First Team All-Conference",
+    "alt": "Anaya Beard back-to-back First Team All-Conference recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-back-to-back-first-team-all-conference-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Back-to-back First Team All-Conference",
+    "alt": "Anaya Beard back-to-back First Team All-Conference recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-back-to-back-first-team-all-conference-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Back-to-back First Team All-Conference",
+    "alt": "Anaya Beard back-to-back First Team All-Conference recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-back-to-back-first-team-all-conference-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Athlete of the Week",
+    "alt": "Anaya Beard Athlete of the Week recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-athlete-of-the-week-01-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Athlete of the Week",
+    "alt": "Anaya Beard Athlete of the Week recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-athlete-of-the-week-01-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Athlete of the Week",
+    "alt": "Anaya Beard Athlete of the Week recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-athlete-of-the-week-01-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Athlete of the Week",
+    "alt": "Anaya Beard Athlete of the Week recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-athlete-of-the-week-01-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Athlete of the Week",
+    "alt": "Anaya Beard Athlete of the Week recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-athlete-of-the-week-01-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Awards ceremony recognition",
+    "alt": "Anaya Beard awards ceremony recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-awards-ceremony-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Awards ceremony recognition",
+    "alt": "Anaya Beard awards ceremony recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-awards-ceremony-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Awards ceremony recognition",
+    "alt": "Anaya Beard awards ceremony recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-awards-ceremony-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Awards ceremony recognition",
+    "alt": "Anaya Beard awards ceremony recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-awards-ceremony-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Awards ceremony recognition",
+    "alt": "Anaya Beard awards ceremony recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-awards-ceremony-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "All-Tournament recognition",
+    "alt": "Anaya Beard All-Tournament recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-all-tournament-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "All-Tournament recognition",
+    "alt": "Anaya Beard All-Tournament recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-all-tournament-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "All-Tournament recognition",
+    "alt": "Anaya Beard All-Tournament recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-all-tournament-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "All-Tournament recognition",
+    "alt": "Anaya Beard All-Tournament recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-all-tournament-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "All-Tournament recognition",
+    "alt": "Anaya Beard All-Tournament recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-all-tournament-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Coach and athlete photo",
+    "alt": "Anaya Beard coach and athlete recognition photo",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-coach-photo-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Coach and athlete photo",
+    "alt": "Anaya Beard coach and athlete recognition photo",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-coach-photo-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Coach and athlete photo",
+    "alt": "Anaya Beard coach and athlete recognition photo",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-coach-photo-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Coach and athlete photo",
+    "alt": "Anaya Beard coach and athlete recognition photo",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-coach-photo-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Coach and athlete photo",
+    "alt": "Anaya Beard coach and athlete recognition photo",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-coach-photo-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Playoff feature",
+    "alt": "Anaya Beard playoff feature recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-playoff-feature-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Playoff feature",
+    "alt": "Anaya Beard playoff feature recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-playoff-feature-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Playoff feature",
+    "alt": "Anaya Beard playoff feature recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-playoff-feature-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Playoff feature",
+    "alt": "Anaya Beard playoff feature recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-playoff-feature-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Playoff feature",
+    "alt": "Anaya Beard playoff feature recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-playoff-feature-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Media interview",
+    "alt": "Anaya Beard media interview recognition",
+    "role": "display/full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-media-interview-01-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Media interview",
+    "alt": "Anaya Beard media interview recognition",
+    "role": "full-overlay",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-media-interview-01-landscape-stretch-fill-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Media interview",
+    "alt": "Anaya Beard media interview recognition",
+    "role": "media-card",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-media-interview-01-media-card-stretch-fill-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Media interview",
+    "alt": "Anaya Beard media interview recognition",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-media-interview-01-overlay-thumb-stretch-fill-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Accolades Recognition",
+    "type": "image",
+    "caption": "Media interview",
+    "alt": "Anaya Beard media interview recognition",
+    "role": "portrait-full",
+    "path": "anaya/photos/5r/case-study-anaya-beard-accolades-recognition-media-interview-01-portrait-stretch-fill-q98-1800x2400.avif",
+    "orientation": "portrait"
+  },
+  {
+    "section": "Next-Level Opportunities",
+    "type": "image",
+    "caption": "Augusta University opportunity",
+    "alt": "Anaya Beard Augusta University next-level opportunity",
+    "role": "display/full",
+    "path": "anaya/photos/6n/case-study-anaya-beard-next-level-opportunities-augusta-university-commitment-landscape-stretch-fill-soft-saturation-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Next-Level Opportunities",
+    "type": "image",
+    "caption": "Augusta University opportunity",
+    "alt": "Anaya Beard Augusta University next-level opportunity",
+    "role": "full-overlay",
+    "path": "anaya/photos/6n/case-study-anaya-beard-next-level-opportunities-augusta-university-commitment-landscape-stretch-fill-soft-saturation-q98-2400x1800.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Next-Level Opportunities",
+    "type": "image",
+    "caption": "Augusta University opportunity",
+    "alt": "Anaya Beard Augusta University next-level opportunity",
+    "role": "media-card",
+    "path": "anaya/photos/6n/case-study-anaya-beard-next-level-opportunities-augusta-university-commitment-media-card-stretch-fill-soft-saturation-q98-1200x900.avif",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Next-Level Opportunities",
+    "type": "image",
+    "caption": "Augusta University opportunity",
+    "alt": "Anaya Beard Augusta University next-level opportunity",
+    "role": "overlay-thumb",
+    "path": "anaya/photos/6n/case-study-anaya-beard-next-level-opportunities-augusta-university-commitment-overlay-thumb-stretch-fill-soft-saturation-q98-600x400.webp",
+    "orientation": "landscape"
+  },
+  {
+    "section": "Next-Level Opportunities",
+    "type": "image",
+    "caption": "Augusta University opportunity",
+    "alt": "Anaya Beard Augusta University next-level opportunity",
+    "role": "portrait-full",
+    "path": "anaya/photos/6n/case-study-anaya-beard-next-level-opportunities-augusta-university-commitment-portrait-stretch-fill-soft-saturation-q98-1800x2400.avif",
+    "orientation": "portrait"
+  }
+]
