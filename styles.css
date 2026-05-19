@@ -1392,7 +1392,8 @@ a.credential-static[href] {
   display: flex;
 }
 
-.media-overlay.is-gallery-overlay {
+.media-overlay.is-gallery-overlay,
+.media-overlay.is-awards-overlay {
   --gallery-overlay-bottom-offset: 24px;
   --overlay-panel-padding: clamp(16px, 2.2vw, 26px);
   --overlay-content-gap: clamp(6px, 1.1vh, 10px);
@@ -1522,8 +1523,12 @@ a.credential-static[href] {
 
 .media-overlay.is-awards-overlay .media-overlay-panel {
   width: min(100%, 980px);
-  background: rgba(255, 250, 243, 0.98);
-  color: var(--text);
+  height: min(calc(100vh - 48px), 820px);
+  max-height: min(calc(100vh - 48px), 820px);
+  overflow: hidden;
+  padding: var(--overlay-panel-padding);
+  background: rgba(31, 27, 22, 0.96);
+  color: #fff7eb;
 }
 
 .media-overlay.is-awards-overlay.is-award-landscape .media-overlay-panel {
@@ -1536,17 +1541,25 @@ a.credential-static[href] {
 
 .media-overlay.is-awards-overlay .media-overlay-content .eyebrow,
 .media-overlay.is-awards-overlay .media-overlay-counter {
-  color: var(--red);
+  color: var(--sand);
 }
 
 .media-overlay.is-awards-overlay .media-overlay-content h2 {
-  color: var(--text);
+  color: #fff7eb;
+}
+
+.media-overlay.is-awards-overlay .media-overlay-content {
+  grid-template-rows: auto auto auto minmax(0, 1fr) minmax(1.4em, auto) minmax(calc(var(--overlay-thumb-height) + 36px), auto);
+  height: 100%;
+  max-height: none;
+  gap: var(--overlay-content-gap);
+  overflow: hidden;
 }
 
 .media-overlay.is-awards-overlay .media-overlay-viewer {
-  height: clamp(430px, 66vh, 600px);
   min-height: 0;
-  max-height: none;
+  height: 100%;
+  max-height: 100%;
   overflow: visible;
   border-radius: 0;
   background: transparent;
@@ -1589,22 +1602,31 @@ a.credential-static[href] {
   object-fit: contain;
 }
 
+.media-overlay.is-awards-overlay .media-overlay-strip-shell {
+  --awards-overlay-thumb-gap: clamp(14px, 1.4vw, 18px);
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 1fr);
+  justify-self: center;
+  width: min(100%, calc((var(--overlay-thumb-width) * 5) + (var(--awards-overlay-thumb-gap) * 4) + 8px));
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
+}
+
 .media-overlay.is-awards-overlay .media-overlay-strip {
-  justify-content: safe center;
-  width: 100%;
-  padding-bottom: 18px;
+  min-height: calc(var(--overlay-thumb-height) + 14px);
+  padding: 2px 2px 8px;
+  gap: var(--awards-overlay-thumb-gap);
+  scrollbar-color: rgba(255, 247, 235, 0.36) transparent;
 }
 
 .media-overlay.is-awards-overlay .media-overlay-caption {
-  color: rgba(48, 38, 28, 0.82);
+  color: rgba(255, 247, 235, 0.78);
 }
 
-.media-overlay.is-awards-overlay .media-overlay-close,
-.media-overlay.is-awards-overlay .media-overlay-nav,
 .media-overlay.is-awards-overlay .media-overlay-thumb-nav {
-  border-color: rgba(48, 38, 28, 0.18);
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.84);
+  display: none;
 }
 
 .media-overlay-caption {
@@ -1764,13 +1786,6 @@ a.credential-static[href] {
   backface-visibility: hidden;
 }
 
-.media-overlay.is-awards-overlay .media-thumb {
-  flex-basis: 132px;
-  width: 132px;
-  height: 88px;
-  background: rgba(255, 255, 255, 0.74);
-}
-
 .media-thumb-video {
   display: grid;
   place-items: center;
@@ -1858,7 +1873,8 @@ a.credential-static[href] {
 }
 
 @media (min-width: 768px) and (max-width: 1100px) {
-  .media-overlay.is-gallery-overlay {
+  .media-overlay.is-gallery-overlay,
+  .media-overlay.is-awards-overlay {
     --overlay-panel-padding: clamp(14px, 2vw, 22px);
     --overlay-thumb-width: clamp(78px, 10.5vw, 112px);
     --overlay-thumb-height: clamp(52px, 7vw, 74px);
@@ -1891,7 +1907,8 @@ a.credential-static[href] {
 }
 
 @media (min-width: 768px) and (max-height: 760px) {
-  .media-overlay.is-gallery-overlay {
+  .media-overlay.is-gallery-overlay,
+  .media-overlay.is-awards-overlay {
     --overlay-panel-padding: clamp(12px, 1.8vw, 20px);
     --overlay-content-gap: 6px;
     --overlay-thumb-width: clamp(72px, 9vw, 104px);
