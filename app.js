@@ -1145,6 +1145,24 @@ const playingCareerAwardAlbums = [
     items: [
       {
         type: "image",
+        fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-portrait-1800x2400.avif"),
+        mediaCardSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-card-1200x900.avif"),
+        carouselSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
+        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
+        alt: "Rocky Mountain College MVP award",
+        caption: "Rocky Mountain College MVP",
+        orientation: "portrait"
+      },
+      {
+        type: "image",
+        fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-landscape-2400x1800.avif"),
+        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-clean-full-600x450.png"),
+        alt: "Second Team All-Conference award",
+        caption: "Second Team All-Conference recognition",
+        orientation: "landscape"
+      },
+      {
+        type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-landscape-2400x1800.avif"),
         thumbSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-transparent-600x400.png"),
         alt: "Shasta College Hall of Fame award",
@@ -1173,24 +1191,6 @@ const playingCareerAwardAlbums = [
         thumbSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-clean-crop-596x400.png"),
         alt: "Outstanding performance award",
         caption: "Outstanding performance recognition",
-        orientation: "landscape"
-      },
-      {
-        type: "image",
-        fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-portrait-1800x2400.avif"),
-        mediaCardSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-card-1200x900.avif"),
-        carouselSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
-        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
-        alt: "Rocky Mountain College MVP award",
-        caption: "Rocky Mountain College MVP",
-        orientation: "portrait"
-      },
-      {
-        type: "image",
-        fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-clean-full-600x450.png"),
-        alt: "Second Team All-Conference award",
-        caption: "Second Team All-Conference recognition",
         orientation: "landscape"
       }
     ]
