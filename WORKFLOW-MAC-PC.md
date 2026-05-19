@@ -2,11 +2,17 @@
 
 This is the active workflow for editing the Coach Fogarty website from either computer.
 
-The goal is simple: one active website folder on Mac, one active website folder on PC, both connected to the same GitHub repo. Do not edit old copies, archive folders, output folders, or duplicate desktop folders.
+The goal is simple: one active repo folder on Mac, one active repo folder on PC, both connected to the same GitHub repo, with the live website source at the repo root.
 
 ## Active Website Folder
 
-Use this folder inside the repo on both computers:
+Use the repo root on both computers:
+
+```text
+Coach Fogarty Website/
+```
+
+Do not work from this old nested folder unless a task explicitly asks for it:
 
 ```text
 01-current-website/coach-fogarty-portfolio/
@@ -14,46 +20,78 @@ Use this folder inside the repo on both computers:
 
 ## Active GitHub Repo
 
-Both the Mac and PC active folders must point to:
+Both computers must point to:
 
 ```text
 https://github.com/coachmatthewfogarty/coach-fogarty-website.git
 ```
 
-## Before Editing On Either Computer
+## Start On Either Computer
 
-From the active website repo, run:
+From the repo root:
 
 ```bash
+pwd
 git status
+git remote -v
 git pull
 ```
 
-Do not start editing until the pull is complete and the folder is confirmed to be the active repo.
+Confirm:
+
+- `pwd` points to the repo root.
+- `git status` works and shows the current branch.
+- `git remote -v` points to `https://github.com/coachmatthewfogarty/coach-fogarty-website.git`.
+- `git pull` completes before editing.
+
+## Preview The Website
+
+Mac:
+
+```bash
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Windows PowerShell:
+
+```powershell
+py -m http.server 8000 --bind 127.0.0.1
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000/
+```
+
+If port `8000` is already busy, use another port such as `8001`.
 
 ## After Editing
 
-From the active website repo, run:
+From the repo root:
 
 ```bash
 git status
-git add -A
-git commit -m "Update website"
+git diff -- filename-you-changed
+git add filename-you-changed another-file-you-changed
+git commit -m "Describe the website update"
 git push
 ```
 
-Use a more specific commit message when possible, but this is the safe default.
+Use a specific commit message when possible.
+
+Do not use `git add -A` unless explicitly approved. Stage only the files intentionally changed for the task.
 
 ## Before Switching Computers
 
-Always push from the computer you were using before moving to the other computer.
+Always push from the computer you were using before moving to the other computer:
 
 ```bash
 git status
 git push
 ```
 
-If there are uncommitted changes, commit them first or intentionally discard/archive them before switching machines.
+If there are uncommitted changes, commit and push them first, or intentionally leave a clear note that the other computer will not have those local changes yet.
 
 ## Starting On The Other Computer
 
@@ -64,28 +102,13 @@ git status
 git pull
 ```
 
-This keeps the Mac and PC active folders synced to the same GitHub history.
-
-## Folder Safety Check
-
-If there is any doubt, run:
-
-```bash
-pwd
-git status
-git remote -v
-```
-
-Confirm:
-
-- `pwd` points to the active repo/folder you expect.
-- `git status` works and shows the current branch.
-- `git remote -v` points to `https://github.com/coachmatthewfogarty/coach-fogarty-website.git`.
+This keeps the Mac and PC synced to the same GitHub history.
 
 ## Do Not Edit
 
-Do not make website edits in:
+Do not make current website edits in:
 
+- `01-current-website/coach-fogarty-portfolio/`
 - old website copies
 - exported output folders
 - archived folders
@@ -100,19 +123,9 @@ Archived and output folders are for history, reference, or generated artifacts. 
 
 ## Asset Rule
 
-Only final approved website assets go into the live website assets folder.
+Only final approved website assets go into the live website asset folders under the repo root.
 
 Originals, Photoshop files, crop candidates, and messy exports stay outside the live website unless they are final approved assets.
-
-Use the live website assets folder only for assets that are ready to ship with the site.
-
-## Cleanup Checklist
-
-- Identify the active repo on Mac.
-- Identify the active repo on PC.
-- Confirm both point to the same GitHub remote.
-- Rename old folders with `OLD` or `ARCHIVE`.
-- Keep only one active shortcut/bookmark on each computer.
 
 ## Emergency Check
 
@@ -124,4 +137,4 @@ git status
 git remote -v
 ```
 
-If the folder or remote does not match this document, do not edit. Find the active repo first.
+If the folder or remote does not match this document, do not edit. Find the active repo root first.

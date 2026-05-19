@@ -2,6 +2,11 @@
 
 This repository's GitHub Pages live website publishes from the repo root.
 
+For human Mac/PC setup, start with:
+
+- `START-HERE.md`
+- `WORKFLOW-MAC-PC.md`
+
 ## Live Website Source
 
 The active live website source is the repo root:
