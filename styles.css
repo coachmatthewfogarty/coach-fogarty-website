@@ -9180,10 +9180,12 @@ body .page-shell :is(
   }
 }
 
-/* Playing Career & Honors lock: keep the current handoff specs explicit and scoped. */
+/* Playing Career & Honors approved sizing lock: main photo rail is size-locked. */
 #playing-career.playing-career-section {
-  --playing-career-wall-width: 100%;
-  --playing-career-carousel-wall-width: min(100vw, 2560px);
+  --playing-career-carousel-wall-width: 100vw;
+  --playing-career-awards-wall-width: var(--playing-career-carousel-wall-width);
+  --playing-career-composition-width: var(--playing-career-carousel-wall-width);
+  --playing-career-composition-clip: max(0px, calc((100vw - var(--playing-career-composition-width)) / 2));
   --playing-career-slide-width: 70%;
   --playing-career-slide-half: 35%;
   --playing-career-gap: 13px;
@@ -9194,10 +9196,11 @@ body .page-shell :is(
 
 @media (min-width: 1025px) {
   main#top > #playing-career.playing-career-section {
-    --playing-career-wall-width: min(var(--home-section-wall-width), calc(100vw - 16px));
-    --playing-career-carousel-wall-width: var(--playing-career-wall-width);
-    --playing-career-slide-width: 70%;
-    --playing-career-slide-half: 35%;
+    --playing-career-carousel-wall-width: 100vw;
+    --playing-career-awards-wall-width: var(--playing-career-carousel-wall-width);
+    --playing-career-composition-width: min(var(--playing-career-carousel-wall-width), var(--home-section-wall-width, 2560px));
+    --playing-career-slide-width: min(62%, 1240px);
+    --playing-career-slide-half: min(31%, 620px);
     --playing-career-gap: 13px;
     padding-bottom: 0;
     border-color: transparent;
@@ -9210,10 +9213,21 @@ body .page-shell :is(
   --playing-career-awards-shelf-pad: 13px;
   --playing-career-awards-shelf-bg: linear-gradient(180deg, #FFF8EC 0%, #F1DEB8 100%);
   --playing-career-awards-spacer-color: #ffffff;
-  --playing-career-awards-wall-width: var(--playing-career-carousel-wall-width, min(100vw, 2560px));
-  --playing-career-awards-item-width: calc(((100% - (var(--playing-career-awards-gap) * 2)) / 2) * 1.15);
-  --playing-career-awards-track-offset: calc(var(--playing-career-awards-item-width) * -0.630435);
-  --playing-career-awards-thumb-height: clamp(176px, 47.52vw, 249px);
+  --playing-career-awards-item-width: clamp(180px, 50.8vw, 215px);
+  --playing-career-awards-visible-slots: 5;
+  --playing-career-awards-slot-overhang: clamp(0px, 4.8vw, 132px);
+  --playing-career-awards-slot-width: max(
+    var(--playing-career-awards-item-width),
+    calc(
+      (
+        var(--playing-career-awards-wall-width)
+        + (var(--playing-career-awards-slot-overhang) * 2)
+        - (var(--playing-career-awards-gap) * (var(--playing-career-awards-visible-slots) - 1))
+      ) * 0.2
+    )
+  );
+  --playing-career-awards-track-width: calc((var(--playing-career-awards-slot-width) * var(--playing-career-awards-visible-slots)) + (var(--playing-career-awards-gap) * (var(--playing-career-awards-visible-slots) - 1)));
+  --playing-career-awards-thumb-height: calc(var(--playing-career-awards-item-width) * 2 / 3);
   position: relative;
   box-sizing: border-box;
   width: var(--playing-career-awards-wall-width);
@@ -9221,23 +9235,27 @@ body .page-shell :is(
   margin: var(--playing-career-awards-shelf-pad) calc((100% - var(--playing-career-awards-wall-width)) / 2);
   padding: var(--playing-career-awards-shelf-pad) 0;
   background: var(--playing-career-awards-shelf-bg);
+  clip-path: inset(0 var(--playing-career-composition-clip));
   overflow: clip;
 }
 
 #playing-career .playing-career-awards-track {
+  position: relative;
+  left: 50%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
   gap: var(--playing-career-awards-gap);
-  width: 100%;
+  width: var(--playing-career-awards-track-width);
   min-width: 0;
   max-width: none;
-  margin-left: var(--playing-career-awards-track-offset);
+  margin-inline: 0;
   background: transparent;
   overflow: visible;
   padding: 0;
   scrollbar-width: none;
   touch-action: pan-y;
+  transform: translateX(-50%);
   transition: opacity 160ms ease;
 }
 
@@ -9251,8 +9269,8 @@ body .page-shell :is(
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 var(--playing-career-awards-item-width);
-  width: var(--playing-career-awards-item-width);
+  flex: 0 0 var(--playing-career-awards-slot-width);
+  width: var(--playing-career-awards-slot-width);
   height: var(--playing-career-awards-thumb-height);
   padding: 0;
   border: 0;
@@ -9282,7 +9300,7 @@ body .page-shell :is(
 
 #playing-career .playing-career-award-thumb img {
   display: block;
-  width: 100%;
+  width: min(100%, var(--playing-career-awards-item-width));
   height: 100%;
   object-fit: contain;
   object-position: center center;
@@ -9334,7 +9352,7 @@ body .page-shell :is(
 }
 
 #playing-career .playing-career-awards-arrow-prev {
-  left: clamp(6px, 0.9vw, 14px);
+  left: calc(var(--playing-career-composition-clip) + clamp(6px, 0.9vw, 14px));
 }
 
 #playing-career .playing-career-awards-arrow-prev::before {
@@ -9342,7 +9360,7 @@ body .page-shell :is(
 }
 
 #playing-career .playing-career-awards-arrow-next {
-  right: clamp(6px, 0.9vw, 14px);
+  right: calc(var(--playing-career-composition-clip) + clamp(6px, 0.9vw, 14px));
 }
 
 #playing-career .playing-career-awards-arrow-next::before {
@@ -9381,22 +9399,24 @@ body .page-shell :is(
   border: 0;
   border-radius: 0;
   background: transparent;
+  clip-path: inset(0 var(--playing-career-composition-clip));
   box-shadow: none;
   overflow: hidden;
 }
 
 #playing-career .playing-career-track {
   position: relative;
-  left: calc(50% - var(--playing-career-slide-width) - var(--playing-career-gap) - var(--playing-career-slide-half));
-  display: inline-flex;
+  left: 50%;
+  display: flex;
   gap: var(--playing-career-gap);
-  width: 100%;
+  width: var(--playing-career-composition-width);
   min-width: 0;
   max-width: none;
   overflow: visible;
   padding: 0;
   scrollbar-width: none;
   touch-action: pan-y;
+  transform: translateX(calc(-1 * (var(--playing-career-slide-width) + var(--playing-career-gap) + var(--playing-career-slide-half))));
 }
 
 #playing-career .playing-career-track::-webkit-scrollbar {
@@ -9497,11 +9517,11 @@ body .page-shell :is(
 }
 
 #playing-career .playing-career-arrow-prev {
-  left: clamp(8px, 1.4vw, 24px);
+  left: calc(var(--playing-career-composition-clip) + clamp(8px, 1.4vw, 24px));
 }
 
 #playing-career .playing-career-arrow-next {
-  right: clamp(8px, 1.4vw, 24px);
+  right: calc(var(--playing-career-composition-clip) + clamp(8px, 1.4vw, 24px));
 }
 
 #playing-career .playing-career-arrow:hover,
@@ -9590,11 +9610,11 @@ body .page-shell :is(
   }
 
   #playing-career .playing-career-arrow-prev {
-    left: clamp(6px, 0.9vw, 14px);
+    left: calc(var(--playing-career-composition-clip) + clamp(6px, 0.9vw, 14px));
   }
 
   #playing-career .playing-career-arrow-next {
-    right: clamp(6px, 0.9vw, 14px);
+    right: calc(var(--playing-career-composition-clip) + clamp(6px, 0.9vw, 14px));
   }
 
   #playing-career .playing-career-arrow:hover,
@@ -9604,9 +9624,8 @@ body .page-shell :is(
 
   #playing-career .playing-career-awards-strip {
     --playing-career-awards-gap: 13px;
-    --playing-career-awards-item-width: calc(((100% - (var(--playing-career-awards-gap) * 4)) / 4) * 1.15);
-    --playing-career-awards-track-offset: calc(var(--playing-career-awards-item-width) * -0.76087);
-    --playing-career-awards-thumb-height: clamp(188px, 14.1075vw, 273px);
+    --playing-career-awards-item-width: 300px;
+    --playing-career-awards-thumb-height: calc(var(--playing-career-awards-item-width) * 2 / 3);
     margin-inline: calc((100% - var(--playing-career-awards-wall-width)) / 2);
   }
 
@@ -9615,31 +9634,66 @@ body .page-shell :is(
     flex-wrap: nowrap;
     justify-content: flex-start;
     gap: var(--playing-career-awards-gap);
-    margin-left: var(--playing-career-awards-track-offset);
     overflow: visible;
     padding-bottom: 0;
     scrollbar-width: none;
   }
 
   #playing-career .playing-career-award-thumb {
-    width: var(--playing-career-awards-item-width);
+    width: var(--playing-career-awards-slot-width);
     height: var(--playing-career-awards-thumb-height);
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023.98px) {
   #playing-career.playing-career-section {
     --playing-career-carousel-wall-width: 100vw;
-    --playing-career-slide-width: 70%;
-    --playing-career-slide-half: 35%;
+    --playing-career-awards-wall-width: var(--playing-career-carousel-wall-width);
+    --playing-career-composition-width: var(--playing-career-carousel-wall-width);
+    --playing-career-slide-width: 64%;
+    --playing-career-slide-half: 32%;
     --playing-career-gap: 13px;
   }
 
   #playing-career .playing-career-awards-strip {
     --playing-career-awards-gap: 13px;
-    --playing-career-awards-item-width: calc(((100% - (var(--playing-career-awards-gap) * 3)) / 3) * 1.15);
-    --playing-career-awards-track-offset: calc(var(--playing-career-awards-item-width) * -0.695652);
-    --playing-career-awards-thumb-height: clamp(176px, 23.76vw, 249px);
+    --playing-career-awards-item-width: clamp(285px, calc(52.3px + 30.3vw), 305px);
+    --playing-career-awards-thumb-height: calc(var(--playing-career-awards-item-width) * 2 / 3);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1024.98px) {
+  #playing-career.playing-career-section {
+    --playing-career-carousel-wall-width: 100vw;
+    --playing-career-awards-wall-width: var(--playing-career-carousel-wall-width);
+    --playing-career-composition-width: min(var(--playing-career-carousel-wall-width), var(--home-section-wall-width, 2560px));
+    --playing-career-slide-width: 62%;
+    --playing-career-slide-half: 31%;
+    --playing-career-gap: 13px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  #playing-career.playing-career-section {
+    --playing-career-slide-width: 64%;
+    --playing-career-slide-half: 32%;
+  }
+
+  #playing-career .playing-career-awards-strip {
+    --playing-career-awards-item-width: clamp(255px, calc(117.6px + 20.6vw), 270px);
+    --playing-career-awards-thumb-height: calc(var(--playing-career-awards-item-width) * 2 / 3);
+  }
+}
+
+@media (min-width: 835px) and (max-width: 1279px) {
+  #playing-career .playing-career-awards-strip {
+    --playing-career-awards-item-width: clamp(285px, calc(139.8px + 17.2vw), 300px);
+  }
+}
+
+@media (min-width: 1280px) {
+  #playing-career .playing-career-awards-strip {
+    --playing-career-awards-item-width: clamp(315px, calc(195px + 9.375vw), 360px);
   }
 }
 
@@ -9669,21 +9723,6 @@ body .page-shell :is(
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  #playing-career .playing-career-carousel {
-    padding: 0;
-  }
-
-  #playing-career .playing-career-track {
-    padding: 0;
-  }
-
-  #playing-career .playing-career-track .achievement-card {
-    flex: 0 0 var(--playing-career-slide-width);
-    aspect-ratio: 3200 / 1737;
-  }
-}
-
 @media (max-width: 767px) {
   #playing-career .playing-career-carousel {
     padding: 0;
@@ -9695,7 +9734,6 @@ body .page-shell :is(
 
   #playing-career .playing-career-track .achievement-card {
     flex-basis: var(--playing-career-slide-width);
-    aspect-ratio: 800 / 579;
   }
 
   #playing-career .playing-career-arrow {
@@ -9731,6 +9769,12 @@ body .page-shell :is(
     border: 0;
     border-radius: 0;
     background: transparent;
+  }
+}
+
+@media (max-width: 599.98px) {
+  #playing-career .playing-career-track .achievement-card {
+    aspect-ratio: 800 / 579;
   }
 }
 
@@ -12649,16 +12693,6 @@ body .page-shell main#top > #featured-work {
 
 body .page-shell main#top > #featured-work > .featured-card + .featured-card {
   margin-top: 13px;
-}
-
-/* Edge-bleed lock: overrun enough to cover the browser scrollbar gutter, so no side hairline appears. */
-body .page-shell main#top > #playing-career.section > .playing-career-carousel,
-body .page-shell main#top > #playing-career.section > .playing-career-awards-strip {
-  --home-edge-bleed-overrun: 10px;
-  width: calc(100vw + (var(--home-edge-bleed-overrun) * 2));
-  max-width: none;
-  margin-left: calc(50% - 50vw - var(--home-edge-bleed-overrun));
-  margin-right: calc(50% - 50vw - var(--home-edge-bleed-overrun));
 }
 
 /* Overrides older Featured width locks that use !important and left/right gutters. */
