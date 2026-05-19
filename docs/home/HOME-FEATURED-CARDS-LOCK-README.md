@@ -1,10 +1,10 @@
-# Home Featured Cards Lock
+# Home Featured Panels Lock
 
-Lock date: 2026-05-14
+Lock date: 2026-05-19
 
 ## 1. Current HTML Structure
 
-The homepage Featured wrapper is `#featured-work`. It contains two reusable card shells:
+The homepage Featured wrapper is `#featured-work`. It contains two reusable feature panels:
 
 ```html
 <section class="section innovation-section featured-card featured-card--anaya">
@@ -22,153 +22,95 @@ The homepage Featured wrapper is `#featured-work`. It contains two reusable card
 </section>
 ```
 
-Both cards share `.featured-card`. Card-specific behavior uses explicit modifiers:
+Both panels share `.featured-card`. Card-specific behavior uses explicit modifiers:
 
 - `.featured-card--anaya`
 - `.featured-card--archer`
 
-The old order-dependent Anaya selector has been removed. The Archer card no longer uses the unclear `id="player-development"` anchor. Button links remain unchanged.
+Button links and labels remain unchanged.
 
-## 2. Current CSS Selectors
+## 2. Featured Alignment Source Of Truth
 
-The active homepage Featured lock lives in `styles.css` under:
+Featured Anaya and Archer panels should use a shared Apple-style centered section rhythm:
+
+`eyebrow -> title -> support line -> centered CTA row -> centered media/logo`
+
+This is an alignment and rhythm rule only. It does not copy Apple color, typography, imagery, or product styling.
+
+Rules:
+
+- Center the text block and CTA row as one visual group.
+- Keep the CTA/proof row compact, centered, and directly under the support line.
+- Center the media/logo under the CTA row.
+- Let Anaya's image and The Archer logo act as the visual anchor for each panel.
+- Preserve the Coach Fogarty cream/red/gold direction and approved orange/red pill/button style.
+- Do not stretch the Anaya image or The Archer logo.
+- Do not add fake padding, black bars, blurred fills, or transparent padding around media.
+- Keep the homepage media wall at `calc(100vw - 16px)` with 8px side gutters.
+- Keep the 13px white spacer rhythm between Featured panels and from Featured to the following media section.
+
+## 3. Active CSS Selectors
+
+The active homepage Featured lock lives in `styles.css` under `/* Homepage Featured: Apple-style vertical feature panels. */` and the later homepage wall/spacing locks:
 
 ```css
 main#top #featured-work
 main#top #featured-work .featured-card
-main#top #featured-work .featured-card::before
 main#top #featured-work .innovation-panel
-main#top #featured-work .innovation-thumbnail
-main#top #featured-work .featured-card--anaya .innovation-thumbnail
-main#top #featured-work .innovation-thumbnail img
-main#top #featured-work .featured-card--anaya .innovation-thumbnail img
 main#top #featured-work .innovation-card-copy
-main#top #featured-work .innovation-proof-chips
-main#top #featured-work .innovation-proof-chips span
 main#top #featured-work .featured-card .section-heading
-main#top #featured-work .featured-card .eyebrow
+main#top #featured-work .featured-card .section-heading > .eyebrow
 main#top #featured-work .featured-card .section-heading h2
 main#top #featured-work .innovation-card-copy > p
+main#top #featured-work .featured-pill-row
+main#top #featured-work .innovation-proof-chips
 main#top #featured-work .innovation-panel .button
+main#top #featured-work .innovation-thumbnail
+main#top #featured-work .innovation-thumbnail img
+main#top #featured-work .featured-card--anaya .innovation-thumbnail
+main#top #featured-work .featured-card--archer .innovation-thumbnail
+main#top #featured-work .featured-card--archer .innovation-thumbnail img
+body .page-shell main#top > #featured-work
+body .page-shell main#top > #featured-work > .featured-card + .featured-card
+body .page-shell main#top > #featured-work + #media.section
 ```
 
-Shared sitewide typography locks still affect homepage headings and body copy at desktop. The Featured lock scopes card structure, media, chips, and CTA behavior.
+Shared sitewide typography locks may still set the headline font system. Featured-specific rhythm, wall width, panel layout, CTA row, and media anchoring are controlled by the scoped Featured selectors above.
 
-## 3. Breakpoint Measurements
+## 4. Layout Rules
 
-| Viewport | Layout | Card width | Card height | Media size | CTA width | Notes |
-| --- | --- | ---: | ---: | ---: | ---: | --- |
-| 375px | stacked | about 351px | about 527px | about 311.5 x 233.6 | full width | Mobile image above copy |
-| 720px | stacked | about 681px | about 807.7px | about 621.4 x 466 | full width | Last stacked range |
-| 760px | side-by-side | about 699px | about 288px | about 300 x 225 | about 360px | Tablet side-by-side begins |
-| 1024px | side-by-side | about 953px | about 310px | about 301 x 225.8 | about 360px | Tablet side-by-side preserved |
-| 1025px | desktop | about 937px | about 332.7px | about 278.3 x 208.7 | about 360px | Desktop media width matches Systems |
-| 1180px | desktop bridge | about 1092px | about 337.4px | about 330 x 247.5 | about 360px | Smoothed bridge before 1181 |
-| 1181px | desktop | about 1093px | about 323.2px | about 330.3 x 247.7 | about 360px | No old media cliff |
-| 1280px | desktop | about 1192px | about 331.2px | about 362.8 x 272.1 | 380px | Media width matches Systems |
-| 1440px | desktop | about 1352px | about 373.1px | about 415 x 311.2 | 380px | Media width matches Systems |
-| 1600px | desktop | about 1512px | about 413.1px | about 465.5 x 349.1 | 420px | Copy and CTA rebalance begins |
-| 1920px | desktop | about 1680px | about 449.5px | about 513.9 x 385.5 | 440px | Media follows Systems frame scale |
-| 2200px | desktop | about 1880px | about 496.1px | about 576.1 x 432.1 | 460px | Ultra-wide follows Systems frame |
-| 2560px | desktop | about 2240px | about 583.5px | about 692.7 x 519.5 | 460px | Media aligns to the wider Systems frame rhythm |
-
-Spacing:
-
-- Systems section to Featured wrapper: 28px at desktop.
-- Featured card gap: fluid, maxing at 30px on larger desktop.
-- Featured bottom to next section: 28px at desktop.
-- Mobile/tablet uses the existing responsive rhythm.
-
-## 4. Final Reusable Design Rules
-
-Section and shell:
+Section and wall:
 
 - `#featured-work` is a one-column grid.
-- `.featured-card` is a full-width row card.
-- Background: `#fbf1e2`.
-- Border: `1px solid rgba(152, 105, 31, 0.62)`.
-- Border radius: `30px` desktop, fluidly smaller on mobile/tablet.
-- Shadow: inset gold top line plus `0 10px 24px rgba(52, 36, 24, 0.08)`.
-- Pseudo-border remains active for the current layered gold edge.
+- The Featured wrapper uses the canonical homepage media wall: `min(var(--home-section-wall-width, 2560px), calc(100vw - 16px))`.
+- Featured panels have no side-bleed hack and no separate ultra-wide cap.
+- The standalone `Featured` section heading bar is hidden; each panel carries its own centered heading.
+- The Anaya-to-Archer gap is 13px.
+- The Featured-to-Program Media join is 13px.
 
-Layout:
+Panel rhythm:
 
-- Below 760px: one-column stack, media above copy.
-- 760px-1024px: side-by-side tablet grid.
-- 1025px+: desktop grid.
-- Desktop columns are media plus flexible copy.
-- Media aspect ratio: 4 / 3.
-- Copy max width: `820px` base desktop, increasing to `900px` at `1600px+`, `980px` at `1920px+`, and `1040px` at `2200px+`.
-- Body max width: `680px` base desktop, increasing to `740px` at `1600px+`, `780px` at `1920px+`, and `800px` at `2200px+`.
-- Ultra-wide cards follow the shared page shell rhythm instead of using a separate narrow cap.
-- Desktop media width follows the full-bleed Systems & Proof media frame reference while keeping the approved Home media rail.
+- `.innovation-panel` is a centered vertical flex stack.
+- `.innovation-card-copy` is a centered vertical text group.
+- `.featured-pill-row` is the centered CTA/proof row.
+- `.innovation-thumbnail` is centered below the CTA/proof row.
+- Anaya and Archer share the same text-to-action and action-to-media rhythm variables.
 
 Media:
 
-- Anaya uses the shared 4:3 media container with `object-fit: cover`.
-- Anaya crop is locked with `.featured-card--anaya`.
-- Archer uses the same 4:3 white media container.
-- Archer logo inset is baked into the asset; no CSS padding is added.
-- Media remains conservative through the compact desktop range, then scales with the full-bleed Systems & Proof image-frame rhythm through ultra-wide.
+- Anaya uses a real image container with `object-fit: cover`; desktop uses the approved wide visual anchor, mobile returns to the safer 4:3 fit.
+- The Archer uses a transparent logo container with `object-fit: contain`; no CSS padding is used to create fake whitespace.
+- Media sizing is controlled through max-widths, aspect ratio, and logo frame height.
 
-Typography:
+## 5. Retired Rule
 
-- Eyebrow: Trebuchet MS / Gill Sans fallback stack, 12px desktop, 15px line-height, 700, `0.15em`, red.
-- Title: Georgia / Palatino fallback stack, 36px normal desktop, about 40.32px near 1920px, 42px at 2200px+, line-height about 1.05.
-- Body: Trebuchet MS / Gill Sans fallback stack, 17.5px desktop, 29.75px line-height, 500, `rgb(106, 95, 83)`.
-- Eyebrow to title gap: 10px.
-- Title to body gap: 24px.
-- Body to pills gap: 52px.
+The old homepage Featured row-card lock is retired in `styles.css` around the former `/* Homepage Featured cards lock: two reusable full-width cards with explicit modifiers. */` block.
 
-Pills:
+That old rule made Featured behave as a side-by-side media/copy card system with copy-column CTA alignment. It is no longer active because it conflicts with the current centered Apple-style rhythm.
 
-- Display: flex row.
-- Desktop wrap: no wrap.
-- Gap: 10px.
-- Height: 30px.
-- Padding: `6px 13px`.
-- Radius: `999px`.
-- Border: `1px solid rgba(152, 105, 31, 0.24)`.
-- Background: `rgba(255, 252, 247, 0.72)`.
-- Font: Trebuchet MS / Gill Sans fallback stack, 800, about 13.12px-14.08px depending breakpoint.
-- Color: `rgb(36, 79, 115)`.
-- Width: content-based.
+## 6. Lock Risks
 
-CTA:
-
-- Anaya text: `View Case Study`.
-- Archer text: `View The Archer`.
-- Desktop width: `360px` through the 1025-1199 bridge, `380px` from 1200px up, `420px` at `1600px+`, `440px` at `1920px+`, and `460px` at `2200px+`.
-- Height: `44px` desktop.
-- Padding: `0 24px`.
-- Radius: `999px`.
-- Background: `linear-gradient(135deg, #8f2d1e, #c4542c)`.
-- Hover/focus movement remains `translateY(-2px)`.
-- CTA aligns with the copy column.
-
-## 5. Cleanup Completed
-
-- Added `.featured-card`, `.featured-card--anaya`, and `.featured-card--archer`.
-- Removed the fragile Anaya `:first-child` dependency.
-- Removed Archer's unclear `id="player-development"`.
-- Removed stale `#player-development` scroll-margin references.
-- Removed duplicate Featured card rule blocks that were overridden later.
-- Removed homepage-unused `.innovation-panel h3` styling and selector references.
-- Consolidated active card shell, media, copy, pills, and CTA rules into one scoped Featured block.
-- Promoted repeated card values into Featured CSS variables.
-
-## 6. Known Intentional Design Choices
-
-- `.innovation-section`, `.innovation-panel`, and `.innovation-card-copy` remain in the markup for compatibility with existing shared page structure.
-- `.featured-card` is now the lock class for the homepage reusable system.
-- The pseudo-border is intentionally retained because it contributes to the current gold edge.
-- Desktop and wide desktop now align Featured media width to the full-bleed Systems & Proof frame reference while preserving the shared Home media rail.
-- Desktop-only rules are scoped at `1025px+` and should not affect the mobile/tablet stack.
-
-## 7. Lock Risks
-
-- The Featured cards still inherit sitewide desktop typography locks. This is intentional today, but future global heading/body changes can affect these cards.
-- The 1181px media cliff has been smoothed; avoid reintroducing a separate 1025-1180-only media width without a bridge.
-- If the Archer asset changes to remove its baked-in white inset, revisit whether the media container needs padding.
-- Avoid reintroducing a separate ultra-wide width cap that makes the Home Featured wrapper feel narrower than the surrounding homepage sections.
-- Avoid reintroducing Featured-only media offsets that break alignment with Systems & Proof, Program Proof, or Playing Career.
+- The Featured cards still inherit sitewide heading typography locks. Keep Featured alignment scoped so global typography edits do not move the CTA/media rhythm.
+- Do not reintroduce a separate Featured width cap, side-bleed overrun, or media offset.
+- If The Archer logo asset changes, revisit logo frame width/height instead of adding padding.
+- If the Anaya asset changes, preserve face/body crop by adjusting `object-position` or max-widths, not by stretching the image.

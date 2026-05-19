@@ -326,14 +326,18 @@ Current desktop pill rhythm:
 | `1720-2199px` | fills the safe left lane | Home-scaled large desktop | Home-scaled | Home-scaled |
 | `2200px+` | fills the safe left grid track | `82px` | `26px` | `13.5px` |
 
-## Featured Cards
+## Homepage Featured Panels
 
-Featured cards and panels should feel like part of the website design system, not separate landing-page components.
+Homepage Featured Anaya and Archer panels use the lock in `docs/home/HOME-FEATURED-CARDS-LOCK-README.md`.
 
-- Keep card rhythm compact, readable, and aligned to the shared shell.
+- Featured Anaya and Archer panels should use a shared Apple-style centered section rhythm: eyebrow -> title -> support line -> centered CTA row -> centered media/logo.
+- This is an alignment/rhythm rule only; do not copy Apple colors, typography, images, or product styling.
+- Keep panel rhythm compact, readable, and aligned to the homepage media wall.
+- Use `min(var(--home-section-wall-width, 2560px), calc(100vw - 16px))` for the Featured wall.
+- Keep the 13px white spacer rhythm between the two Featured panels and from Featured to Program Proof/Home Media.
 - Avoid nesting cards inside cards.
-- Use stable media dimensions and `minmax(0, 1fr)` grid tracks.
-- Keep button groups aligned and equal-height when presented as a group.
+- Use stable media/logo dimensions; do not stretch Anaya's image or The Archer logo.
+- Keep button/proof groups compact and centered directly under the support line.
 - Preserve approved proof chips/stat card sizing unless a specific card task asks for a change.
 
 ## Gallery Cards
