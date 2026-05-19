@@ -7538,10 +7538,6 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
     --home-media-reference-frame-width: calc((var(--page-shell-width) - var(--home-media-rail-section-pad) - var(--home-media-rail-section-pad) - var(--home-media-rail-grid-gap) - var(--home-media-rail-grid-gap)) / 3 - 38px);
     --home-systems-media-frame-width: calc((var(--page-shell-width) - var(--home-media-rail-section-pad) - var(--home-media-rail-section-pad) - 2px - var(--home-media-rail-grid-gap) - var(--home-media-rail-grid-gap)) / 3);
     --home-section-wall-width: min(100vw, 2560px);
-    --home-featured-frame-width: min(calc(100vw - 25px), 2535px);
-    --home-featured-side-fill-left: 11px;
-    --home-featured-side-fill-right: 13px;
-    --home-featured-frame-border: rgba(184, 128, 30, 0.86);
     --home-section-wall-border: transparent;
     --home-section-wall-bg: #ffffff;
     --home-contact-wall-bg:
@@ -7938,7 +7934,8 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
   }
 }
 
-/* Homepage Featured cards lock: two reusable full-width cards with explicit modifiers. */
+/* Retired 2026-05-19: old Homepage Featured row-card lock.
+   The active source-of-truth is the Apple-style centered feature panel block below.
 main#top #featured-work {
   --featured-card-bg: #fbf1e2;
   --featured-card-radius: 30px;
@@ -8351,6 +8348,8 @@ main#top #featured-work .innovation-panel .button {
     min-height: 44px;
   }
 }
+
+*/
 
 /* Final responsive sweep: phone-width guards for single-line headings and CTA grids. */
 @media (max-width: 430px) {
@@ -11673,37 +11672,61 @@ body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-ov
 main#top #featured-work {
   --featured-copy-max: 920px;
   --featured-body-max: 760px;
-  --featured-cta-width: 320px;
+  --featured-cta-width: clamp(220px, 15vw, 290px);
   --featured-media-max: min(100%, 720px);
+  --featured-text-gap: clamp(8px, 0.8vw, 12px);
+  --featured-action-gap: clamp(12px, 0.95vw, 16px);
+  --featured-media-gap: clamp(16px, 1.45vw, 24px);
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
   gap: 12px;
+  min-width: 0;
   background: #ffffff;
   text-align: center;
 }
 
 main#top #featured-work .featured-card {
+  position: relative;
+  container-type: inline-size;
   display: grid;
+  width: 100%;
+  min-width: 0;
   min-height: min(720px, 86svh);
   place-items: center;
 }
 
 main#top #featured-work .innovation-panel {
   display: flex !important;
+  box-sizing: border-box;
   width: 100%;
   max-width: min(100%, 1180px);
+  min-width: 0;
+  min-height: 0;
   margin-inline: auto;
+  padding: 0 !important;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(18px, 3vw, 30px);
+  gap: var(--featured-media-gap);
+  overflow: visible;
   text-align: center;
 }
 
 main#top #featured-work .innovation-card-copy {
   order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: min(100%, var(--featured-copy-max));
   max-width: min(100%, var(--featured-copy-max));
   margin-inline: auto;
-  justify-items: center;
+  gap: var(--featured-text-gap);
+  min-width: 0;
   text-align: center;
 }
 
@@ -11715,8 +11738,29 @@ main#top #featured-work .innovation-card-copy > p {
 }
 
 main#top #featured-work .innovation-proof-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
   width: min(100%, var(--featured-body-max));
   justify-content: center;
+}
+
+main#top #featured-work .innovation-proof-chips span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 6px 12px;
+  border: 1px solid var(--home-proof-pill-border);
+  border-radius: 999px;
+  background: var(--home-proof-pill-bg);
+  color: var(--home-proof-pill-main);
+  font-size: clamp(0.74rem, 2.1cqw, 0.86rem);
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
 main#top #featured-work .innovation-panel .button {
@@ -11730,17 +11774,35 @@ main#top #featured-work .innovation-panel .button {
 
 main#top #featured-work .innovation-thumbnail {
   order: 2;
+  display: grid;
+  position: relative;
   width: min(100%, var(--featured-media-max));
   max-width: var(--featured-media-max);
+  min-width: 0;
+  min-height: 0;
   margin-inline: auto;
+  place-items: center;
+  aspect-ratio: 4 / 3;
   justify-self: center;
+  background: #ffffff;
+  overflow: hidden;
   transform: none;
+}
+
+main#top #featured-work .innovation-thumbnail img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center center !important;
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) {
   --featured-body-max: 760px;
   --featured-cta-width: clamp(220px, 15vw, 290px);
-  --featured-media-max: min(100%, 540px);
+  --featured-media-max: min(100%, 620px);
   --featured-panel-bg: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%);
   min-height: auto;
   padding:
@@ -11765,9 +11827,12 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 
 main#top #featured-work .featured-card.featured-card--archer {
   --featured-panel-bg: linear-gradient(180deg, #dfc79c 0%, #ecdab8 44%, #f8eddc 100%);
-  --featured-media-max: clamp(300px, 22vw, 380px);
+  --featured-media-max: clamp(300px, 24vw, 420px);
   --featured-logo-frame-height: clamp(190px, 16vw, 260px);
-  --featured-logo-scale: 120%;
+  --featured-logo-scale: 110%;
+  --featured-logo-offset-y: clamp(3px, 0.35vw, 5px);
+  --featured-archer-media-shift-y: 0px;
+  --featured-archer-media-shift-return: 0px;
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-thumbnail {
@@ -11775,29 +11840,36 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-panel {
-  gap: clamp(14px, 2.6vw, 22px);
+  gap: var(--featured-media-gap);
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   justify-content: center;
-  justify-items: center;
   align-items: center;
-  gap: 0 clamp(10px, 2vw, 14px);
+  gap: var(--featured-text-gap);
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading,
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy > p {
-  flex: 0 0 min(100%, var(--featured-body-max));
+  flex: 0 1 auto;
+  width: min(100%, var(--featured-body-max));
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading {
-  margin-bottom: clamp(10px, 1.2vw, 14px);
+  margin-bottom: 0;
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading > .eyebrow {
+  display: block;
   margin-bottom: clamp(5px, 0.55vw, 7px) !important;
+  margin-inline: auto;
+  max-width: 100%;
+  overflow-wrap: normal;
+  text-align: center;
+  text-wrap: balance;
+  white-space: normal !important;
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading h2 {
@@ -11805,7 +11877,7 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy > p {
-  margin-bottom: clamp(16px, 1.6vw, 20px);
+  margin: 0;
   color: rgba(73, 62, 50, 0.88);
   font-weight: 600;
   text-wrap: balance;
@@ -11822,12 +11894,14 @@ main#top #featured-work .featured-card.featured-card--archer .innovation-card-co
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .featured-pill-row {
   order: 3;
   display: flex;
-  flex: 0 1 min(100%, var(--featured-body-max));
+  flex: 0 1 auto;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  width: min(100%, var(--featured-body-max));
   gap: 8px clamp(10px, 0.9vw, 14px);
   max-width: min(100%, var(--featured-body-max));
+  margin-top: 0;
   margin-inline: auto;
 }
 
@@ -11907,12 +11981,14 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail {
   background: transparent;
   box-shadow: none;
   overflow: hidden;
+  margin-top: var(--featured-archer-media-shift-y);
+  margin-bottom: var(--featured-archer-media-shift-return);
 }
 
 main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   position: absolute;
   inset: auto;
-  top: 50%;
+  top: calc(50% + var(--featured-logo-offset-y));
   left: 50%;
   display: block;
   width: var(--featured-logo-scale);
@@ -11927,9 +12003,10 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
 @media (min-width: 768px) and (max-width: 1024px) {
   main#top #featured-work {
     --featured-media-max: min(100%, 760px);
-    width: calc(100vw - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
-    margin-inline: calc((100% - (100vw - 24px)) / 2) !important;
+    --featured-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+    width: var(--featured-wall-width) !important;
+    max-width: 2560px !important;
+    margin-inline: calc((100% - var(--featured-wall-width)) / 2) !important;
   }
 
   main#top #featured-work .featured-card {
@@ -11940,7 +12017,7 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) {
-    min-height: auto;
+    min-height: clamp(583px, 77.1vw, 658px);
     padding:
       clamp(26px, 4.2vw, 36px)
       clamp(24px, 4.5vw, 42px)
@@ -11948,15 +12025,13 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card.featured-card--anaya {
-    --featured-media-max: clamp(525px, 64vw, 640px);
-    min-height: clamp(583px, 77.1vw, 658px);
+    --featured-media-max: clamp(540px, 72vw, 680px);
   }
 
   main#top #featured-work .featured-card.featured-card--archer {
-    --featured-media-max: clamp(313px, 44.2vw, 405px);
+    --featured-media-max: clamp(320px, 47vw, 430px);
     --featured-logo-frame-height: clamp(231px, 35vw, 304px);
-    --featured-logo-scale: 120%;
-    min-height: clamp(561px, 71.8vw, 626px);
+    --featured-logo-scale: 110%;
   }
 }
 
@@ -11991,23 +12066,23 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .innovation-panel {
-    gap: clamp(24px, 2.2vw, 38px);
+    gap: var(--featured-media-gap);
   }
 
   body .page-shell main#top #featured-work .innovation-card-copy {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     align-self: center !important;
     justify-content: center !important;
-    justify-items: center;
     align-items: center;
-    gap: clamp(14px, 1.5vw, 24px) clamp(12px, 1.2vw, 20px) !important;
+    gap: var(--featured-text-gap) !important;
     transform: none !important;
   }
 
   main#top #featured-work .featured-card .section-heading,
   main#top #featured-work .innovation-card-copy > p {
-    flex: 0 0 min(100%, var(--featured-body-max));
+    flex: 0 1 auto;
+    width: min(100%, var(--featured-body-max));
   }
 
   main#top #featured-work .innovation-proof-chips {
@@ -12026,15 +12101,16 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) {
     --featured-cta-width: clamp(220px, 14vw, 290px);
-    --featured-media-max: clamp(500px, 31vw, 610px);
+    --featured-media-max: clamp(540px, 38vw, 760px);
+    --featured-media-gap: clamp(16px, 1.35vw, 22px);
   }
 
   main#top #featured-work .featured-card.featured-card--anaya {
-    --featured-media-max: clamp(489px, 33.9vw, 658px);
+    --featured-media-max: clamp(680px, 50vw, 900px);
   }
 
   body .page-shell main#top #featured-work > .featured-card:is(.featured-card--anaya, .featured-card--archer) {
-    min-height: auto;
+    min-height: clamp(577px, calc(455px + 11.9vw), 692px);
     padding:
       clamp(26px, 2.3vw, 38px)
       clamp(42px, 5vw, 76px)
@@ -12044,15 +12120,11 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     padding-left: clamp(42px, 5vw, 76px);
   }
 
-  body .page-shell main#top #featured-work > .featured-card.featured-card--anaya {
-    min-height: clamp(564px, calc(348px + 17.4vw), 691px);
-  }
-
   main#top #featured-work .featured-card.featured-card--archer {
     --featured-cta-width: clamp(188px, 11vw, 224px);
-    --featured-media-max: clamp(332px, 22.1vw, 460px);
-    --featured-logo-frame-height: clamp(253px, 20.3vw, 332px);
-    --featured-logo-scale: 120%;
+    --featured-media-max: clamp(380px, 28vw, 560px);
+    --featured-logo-frame-height: clamp(260px, 20vw, 360px);
+    --featured-logo-scale: 110%;
   }
 
   main#top #featured-work .featured-card.featured-card--archer .innovation-card-copy > p {
@@ -12061,21 +12133,16 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     white-space: nowrap;
   }
 
-  body .page-shell main#top #featured-work > .featured-card.featured-card--archer {
-    min-height: clamp(564px, calc(348px + 17.4vw), 691px);
-  }
-
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-panel {
-    gap: clamp(18px, 1.7vw, 26px);
+    gap: var(--featured-media-gap);
   }
 
   body .page-shell main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy {
-    /* Overrides the earlier desktop Featured copy gap lock so both homepage Featured cards use tighter Apple-style rhythm. */
-    gap: 0 clamp(10px, 0.9vw, 14px) !important;
+    gap: var(--featured-text-gap) !important;
   }
 
   body .page-shell main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy .section-heading {
-    margin-bottom: clamp(10px, 0.9vw, 14px) !important;
+    margin-bottom: 0 !important;
   }
 
   body .page-shell main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading > .eyebrow {
@@ -12084,7 +12151,7 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy > p {
-    margin-bottom: clamp(16px, 1.25vw, 20px);
+    margin: 0;
   }
 }
 
@@ -12094,12 +12161,12 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card.featured-card--anaya {
-    --featured-media-max: 658px;
+    --featured-media-max: 900px;
   }
 
   main#top #featured-work .featured-card.featured-card--archer {
-    --featured-media-max: 460px;
-    --featured-logo-frame-height: 332px;
+    --featured-media-max: 560px;
+    --featured-logo-frame-height: 360px;
   }
 }
 
@@ -12118,7 +12185,7 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) {
-    min-height: auto;
+    min-height: clamp(523px, calc(218px + 78.25vw), 625px);
     padding:
       clamp(21.8px, 5.75vw, 29.7px)
       clamp(18px, 5vw, 24px)
@@ -12126,27 +12193,27 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading {
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy > p {
-    margin-bottom: 16px;
+    margin: 0;
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-panel {
-    gap: 16px;
+    gap: var(--featured-media-gap);
   }
 
   main#top #featured-work .featured-card--anaya .innovation-thumbnail {
     aspect-ratio: 4 / 3;
-    width: min(94.5%, var(--featured-media-max));
+    width: min(100%, var(--featured-media-max));
   }
 
   main#top #featured-work .featured-card.featured-card--archer {
     --featured-cta-width: 230px;
     --featured-media-max: clamp(234px, 64.4vw, 276px);
     --featured-logo-frame-height: clamp(165px, 44.2vw, 212px);
-    --featured-logo-scale: 120%;
+    --featured-logo-scale: 110%;
   }
 
   main#top #featured-work .featured-card--archer .innovation-panel .button {
@@ -12695,13 +12762,13 @@ body .page-shell main#top > #featured-work > .featured-card + .featured-card {
   margin-top: 13px;
 }
 
-/* Overrides older Featured width locks that use !important and left/right gutters. */
+/* Canonical homepage media wall for Featured; replaces older edge-bleed gutter hacks. */
 body .page-shell main#top > #featured-work {
-  --home-edge-bleed-overrun: 10px;
-  width: calc(100vw + (var(--home-edge-bleed-overrun) * 2)) !important;
-  max-width: none !important;
-  margin-left: calc(50% - 50vw - var(--home-edge-bleed-overrun)) !important;
-  margin-right: calc(50% - 50vw - var(--home-edge-bleed-overrun)) !important;
+  --featured-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+  width: var(--featured-wall-width) !important;
+  max-width: 2560px !important;
+  margin-left: calc((100% - var(--featured-wall-width)) / 2) !important;
+  margin-right: calc((100% - var(--featured-wall-width)) / 2) !important;
 }
 
 @media (max-width: 767px) {
@@ -12895,9 +12962,6 @@ body .page-shell main#top {
 }
 
 body .page-shell main#top :is(
-  #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-panel,
-  #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy,
-  #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .featured-pill-row,
   #media .gallery-card > span.gallery-card-caption,
   .contact-closeout-grid,
   .document-card,
