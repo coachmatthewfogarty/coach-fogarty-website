@@ -13050,6 +13050,76 @@ body .page-shell main#top #systems .library-card-media img {
   }
 }
 
+/* Homepage Program Media wall lock: overrides older shared media padding/grid locks that caused nested side bands on tablet/mobile. */
+@media (max-width: 1024px) {
+  body .page-shell main#top > #media.section {
+    --program-media-responsive-wall-width: calc(100vw - 14px);
+    --gallery-grid-gap: 6px;
+    box-sizing: border-box !important;
+    width: var(--program-media-responsive-wall-width) !important;
+    max-width: var(--program-media-responsive-wall-width) !important;
+    margin-right: calc((100% - var(--program-media-responsive-wall-width)) / 2) !important;
+    margin-left: calc((100% - var(--program-media-responsive-wall-width)) / 2) !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  body .page-shell main#top > #media.section::before {
+    content: none !important;
+  }
+
+  body .page-shell main#top #media .gallery-grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    gap: var(--gallery-grid-gap) !important;
+    row-gap: var(--gallery-grid-gap) !important;
+    column-gap: var(--gallery-grid-gap) !important;
+    background: #ffffff;
+  }
+
+  body .page-shell main#top #media :is(.gallery-card, .gallery-media, .gallery-card img) {
+    border-radius: 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main#top > #media.section {
+    --program-media-responsive-wall-width: calc(100vw - 34px);
+    --gallery-grid-gap: 11px;
+  }
+
+  body .page-shell main#top #media .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body .page-shell main#top #media .gallery-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+body .page-shell main#top > #featured-work + #media.section {
+  margin-top: 8px !important;
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main#top #media .gallery-grid {
+    padding-left: 11px !important;
+    padding-right: 11px !important;
+    gap: 11px !important;
+    row-gap: 11px !important;
+    column-gap: 11px !important;
+  }
+}
+
 @media (min-width: 1025px) {
   /* Keeps approved desktop 2x3 layout above older late homepage grid locks. */
   body .page-shell main#top #systems .library-grid {
