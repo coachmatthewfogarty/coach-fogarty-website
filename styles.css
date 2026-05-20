@@ -13016,7 +13016,8 @@ body .page-shell main#top #systems .library-card-media img {
 /* Homepage Systems wall lock: overrides older homepage grid padding/2-column locks that caused nested side strips. */
 @media (max-width: 1024px) {
   body .page-shell main#top > #systems.section {
-    --systems-responsive-wall-width: calc(100vw - 16px);
+    --systems-responsive-wall-width: calc(100vw - 14px);
+    --systems-grid-gap: 11px;
     box-sizing: border-box !important;
     width: var(--systems-responsive-wall-width) !important;
     max-width: var(--systems-responsive-wall-width) !important;
@@ -13040,13 +13041,17 @@ body .page-shell main#top #systems .library-card-media img {
     margin-inline: 0 !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
+    gap: var(--systems-grid-gap) !important;
+    row-gap: var(--systems-grid-gap) !important;
+    column-gap: var(--systems-grid-gap) !important;
     background: #ffffff;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body .page-shell main#top > #systems.section {
-    --systems-responsive-wall-width: calc(100vw - 48px);
+    --systems-responsive-wall-width: calc(100vw - 34px);
+    --systems-grid-gap: 11px;
   }
 }
 
@@ -13123,6 +13128,11 @@ body .page-shell main#top > #featured-work + #media.section {
 @media (min-width: 1025px) {
   /* Keeps approved desktop 2x3 layout above older late homepage grid locks. */
   body .page-shell main#top #systems .library-grid {
+    padding-left: 11px !important;
+    padding-right: 11px !important;
+    gap: 11px !important;
+    row-gap: 11px !important;
+    column-gap: 11px !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
