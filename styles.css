@@ -13006,6 +13006,57 @@ body .page-shell main#top :is(#systems .library-grid, #media .gallery-grid) {
   background: #ffffff;
 }
 
+/* Homepage Systems square tile lock: replaces older rounded card/media rules for the Apple-style tile edge. */
+body .page-shell main#top #systems :is(.system-card, .library-card.system-card),
+body .page-shell main#top #systems .library-card-media,
+body .page-shell main#top #systems .library-card-media img {
+  border-radius: 0 !important;
+}
+
+/* Homepage Systems wall lock: overrides older homepage grid padding/2-column locks that caused nested side strips. */
+@media (max-width: 1024px) {
+  body .page-shell main#top > #systems.section {
+    --systems-responsive-wall-width: calc(100vw - 16px);
+    box-sizing: border-box !important;
+    width: var(--systems-responsive-wall-width) !important;
+    max-width: var(--systems-responsive-wall-width) !important;
+    margin-right: calc((100% - var(--systems-responsive-wall-width)) / 2) !important;
+    margin-left: calc((100% - var(--systems-responsive-wall-width)) / 2) !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  body .page-shell main#top > #systems.section::before {
+    content: none !important;
+  }
+
+  body .page-shell main#top #systems .library-grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    background: #ffffff;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main#top > #systems.section {
+    --systems-responsive-wall-width: calc(100vw - 48px);
+  }
+}
+
+@media (min-width: 1025px) {
+  /* Keeps approved desktop 2x3 layout above older late homepage grid locks. */
+  body .page-shell main#top #systems .library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
 body .page-shell main#top > #playing-career.section > .section-heading {
   margin-bottom: 13px !important;
 }
