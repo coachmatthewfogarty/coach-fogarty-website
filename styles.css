@@ -11821,6 +11821,10 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
   --featured-cta-width: clamp(220px, 15vw, 290px);
   --featured-media-max: min(100%, 620px);
   --featured-panel-bg: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%);
+  --featured-eyebrow-size: 14px;
+  --featured-title-size: 24px;
+  --featured-body-size: 17px;
+  --featured-body-line: 1.35;
   min-height: auto;
   padding:
     clamp(24px, 4vw, 34px)
@@ -11844,12 +11848,12 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 
 main#top #featured-work .featured-card.featured-card--archer {
   --featured-panel-bg: linear-gradient(180deg, #dfc79c 0%, #ecdab8 44%, #f8eddc 100%);
-  --featured-media-max: clamp(300px, 24vw, 420px);
-  --featured-logo-frame-height: clamp(190px, 16vw, 260px);
-  --featured-logo-scale: 110%;
-  --featured-logo-offset-y: clamp(3px, 0.35vw, 5px);
-  --featured-archer-media-shift-y: 0px;
-  --featured-archer-media-shift-return: 0px;
+  --featured-media-max: clamp(365px, 96vw, 375px);
+  --featured-logo-frame-height: clamp(318px, 88vw, 345px);
+  --featured-archer-logo-art-scale: 1.34;
+  --featured-archer-logo-art-shift: 18px;
+  --featured-archer-logo-bleed: 24px;
+  --featured-archer-stack-top-offset: clamp(-16px, calc(25px - 10vw), -11px);
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-thumbnail {
@@ -11858,6 +11862,11 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-panel {
   gap: var(--featured-media-gap);
+}
+
+main#top #featured-work .featured-card--archer .innovation-panel {
+  align-self: start;
+  transform: translateY(var(--featured-archer-stack-top-offset));
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy {
@@ -11875,11 +11884,33 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
+}
+
+main#top #featured-work .featured-card--archer .featured-archer-title {
+  display: grid;
+  place-items: center;
+  width: min(calc(100% + var(--featured-archer-logo-bleed)), var(--featured-media-max)) !important;
+  max-width: var(--featured-media-max) !important;
+  margin-bottom: 0 !important;
+}
+
+main#top #featured-work .featured-card--archer .featured-archer-title-logo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: var(--featured-logo-frame-height);
+  object-fit: contain;
+  object-position: center center;
+  filter: drop-shadow(0 16px 24px rgba(52, 36, 24, 0.14));
+  transform: translateY(var(--featured-archer-logo-art-shift)) scale(var(--featured-archer-logo-art-scale));
+  transform-origin: center center;
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading > .eyebrow {
   display: block;
+  font-size: var(--featured-eyebrow-size) !important;
+  line-height: 1.15 !important;
   margin-bottom: clamp(5px, 0.55vw, 7px) !important;
   margin-inline: auto;
   max-width: 100%;
@@ -11890,14 +11921,21 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading h2 {
+  font-size: var(--featured-title-size) !important;
   line-height: 0.96 !important;
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy > p {
   margin: 0;
   color: rgba(73, 62, 50, 0.88);
+  font-size: var(--featured-body-size) !important;
   font-weight: 600;
+  line-height: var(--featured-body-line) !important;
   text-wrap: balance;
+}
+
+main#top #featured-work .featured-card--anaya .innovation-card-copy {
+  transform: translateY(calc(-1 * var(--featured-anaya-copy-shift, 16px)));
 }
 
 main#top #featured-work .featured-card.featured-card--archer .innovation-card-copy > p {
@@ -11988,35 +12026,6 @@ main#top #featured-work .featured-card--anaya .innovation-thumbnail {
   aspect-ratio: 16 / 9;
 }
 
-main#top #featured-work .featured-card--archer .innovation-thumbnail {
-  display: grid;
-  position: relative;
-  height: var(--featured-logo-frame-height);
-  aspect-ratio: auto;
-  place-items: center;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  overflow: hidden;
-  margin-top: var(--featured-archer-media-shift-y);
-  margin-bottom: var(--featured-archer-media-shift-return);
-}
-
-main#top #featured-work .featured-card--archer .innovation-thumbnail img {
-  position: absolute;
-  inset: auto;
-  top: calc(50% + var(--featured-logo-offset-y));
-  left: 50%;
-  display: block;
-  width: var(--featured-logo-scale);
-  max-width: none;
-  height: auto;
-  object-fit: contain !important;
-  object-position: center center !important;
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0 16px 24px rgba(52, 36, 24, 0.14));
-}
-
 @media (min-width: 768px) and (max-width: 1024px) {
   main#top #featured-work {
     --featured-media-max: min(100%, 760px);
@@ -12034,6 +12043,10 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) {
+    --featured-anaya-copy-shift: 20px;
+    --featured-eyebrow-size: 15px;
+    --featured-title-size: 31px;
+    --featured-body-size: 18px;
     min-height: clamp(583px, 77.1vw, 658px);
     padding:
       clamp(26px, 4.2vw, 36px)
@@ -12042,13 +12055,23 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card.featured-card--anaya {
+    --featured-anaya-copy-shift: 24px;
     --featured-media-max: clamp(540px, 72vw, 680px);
   }
 
   main#top #featured-work .featured-card.featured-card--archer {
-    --featured-media-max: clamp(320px, 47vw, 430px);
-    --featured-logo-frame-height: clamp(231px, 35vw, 304px);
-    --featured-logo-scale: 110%;
+    --featured-media-max: clamp(660px, 88vw, 690px);
+    --featured-logo-frame-height: clamp(430px, 59vw, 470px);
+    --featured-archer-logo-art-scale: 1.36;
+    --featured-archer-logo-art-shift: 22px;
+    --featured-archer-logo-bleed: 120px;
+    --featured-archer-stack-top-offset: clamp(-28px, calc(-7.64px - 2vw), -23px);
+  }
+}
+
+@media (min-width: 521px) and (max-width: 767px) {
+  main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) {
+    min-height: clamp(523px, calc(369px + 24.7vw), 552px);
   }
 }
 
@@ -12117,12 +12140,18 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) {
+    --featured-anaya-copy-shift: 18px;
+    --featured-eyebrow-size: 16px;
+    --featured-title-size: 38px;
+    --featured-body-size: 19px;
     --featured-cta-width: clamp(220px, 14vw, 290px);
     --featured-media-max: clamp(540px, 38vw, 760px);
     --featured-media-gap: clamp(16px, 1.35vw, 22px);
   }
 
   main#top #featured-work .featured-card.featured-card--anaya {
+    --featured-anaya-copy-shift: 6px;
+    --featured-anaya-desktop-height-lift: clamp(20px, calc(14.0625vw - 160px), 65px);
     --featured-media-max: clamp(680px, 50vw, 900px);
   }
 
@@ -12137,11 +12166,19 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     padding-left: clamp(42px, 5vw, 76px);
   }
 
+  body .page-shell main#top #featured-work > .featured-card.featured-card--anaya {
+    min-height: calc(clamp(577px, calc(455px + 11.9vw), 692px) + var(--featured-anaya-desktop-height-lift));
+    place-items: start center;
+  }
+
   main#top #featured-work .featured-card.featured-card--archer {
     --featured-cta-width: clamp(188px, 11vw, 224px);
-    --featured-media-max: clamp(380px, 28vw, 560px);
-    --featured-logo-frame-height: clamp(260px, 20vw, 360px);
-    --featured-logo-scale: 110%;
+    --featured-media-max: clamp(860px, 58vw, 920px);
+    --featured-logo-frame-height: clamp(470px, 32vw, 520px);
+    --featured-archer-logo-art-scale: 1.38;
+    --featured-archer-logo-art-shift: 26px;
+    --featured-archer-logo-bleed: 220px;
+    --featured-archer-stack-top-offset: clamp(-34px, calc(-18.825px - 0.7vw), -26px);
   }
 
   main#top #featured-work .featured-card.featured-card--archer .innovation-card-copy > p {
@@ -12158,13 +12195,24 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     gap: var(--featured-text-gap) !important;
   }
 
+  body .page-shell main#top #featured-work .featured-card--anaya .innovation-card-copy {
+    transform: translateY(calc(-1 * var(--featured-anaya-copy-shift))) !important;
+  }
+
   body .page-shell main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy .section-heading {
     margin-bottom: 0 !important;
   }
 
   body .page-shell main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading > .eyebrow {
-    /* Overrides the sitewide desktop heading lock so the Featured cards use the tighter Apple-style eyebrow gap. */
+    /* Overrides the sitewide desktop heading lock so the Featured cards use the tighter Apple-style eyebrow gap and scale. */
+    font-size: var(--featured-eyebrow-size) !important;
+    line-height: 1.15 !important;
     margin-bottom: clamp(5px, 0.55vw, 7px) !important;
+  }
+
+  body .page-shell main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .section-heading > h2 {
+    font-size: var(--featured-title-size) !important;
+    line-height: 0.96 !important;
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-card-copy > p {
@@ -12182,8 +12230,11 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card.featured-card--archer {
-    --featured-media-max: 560px;
-    --featured-logo-frame-height: 360px;
+    --featured-media-max: 920px;
+    --featured-logo-frame-height: 520px;
+    --featured-archer-logo-art-scale: 1.38;
+    --featured-archer-logo-art-shift: 26px;
+    --featured-archer-stack-top-offset: -34px;
   }
 }
 
@@ -12202,6 +12253,10 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
   }
 
   main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) {
+    --featured-anaya-copy-shift: 16px;
+    --featured-eyebrow-size: 14px;
+    --featured-title-size: 24px;
+    --featured-body-size: 17px;
     min-height: clamp(523px, calc(218px + 78.25vw), 625px);
     padding:
       clamp(21.8px, 5.75vw, 29.7px)
@@ -12226,16 +12281,39 @@ main#top #featured-work .featured-card--archer .innovation-thumbnail img {
     width: min(100%, var(--featured-media-max));
   }
 
+  main#top #featured-work .featured-card.featured-card--anaya {
+    --featured-anaya-copy-shift: 26px;
+  }
+
   main#top #featured-work .featured-card.featured-card--archer {
     --featured-cta-width: 230px;
-    --featured-media-max: clamp(234px, 64.4vw, 276px);
-    --featured-logo-frame-height: clamp(165px, 44.2vw, 212px);
-    --featured-logo-scale: 110%;
+    --featured-media-max: clamp(365px, 96vw, 375px);
+    --featured-logo-frame-height: clamp(318px, 88vw, 345px);
+    --featured-archer-logo-art-scale: 1.34;
+    --featured-archer-logo-art-shift: 18px;
+    --featured-archer-logo-bleed: 24px;
+    --featured-archer-stack-top-offset: clamp(-16px, calc(25px - 10vw), -11px);
+    min-height: auto;
+    padding-bottom: clamp(28px, 7vw, 32px);
   }
 
   main#top #featured-work .featured-card--archer .innovation-panel .button {
     width: auto !important;
     max-width: none !important;
+  }
+}
+
+@media (max-width: 374px) {
+  main#top #featured-work .featured-card--anaya .featured-pill-row {
+    gap: 5px !important;
+  }
+
+  main#top #featured-work .featured-card--anaya .innovation-proof-chips {
+    gap: 5px !important;
+  }
+
+  main#top #featured-work .featured-card--anaya .button-primary {
+    padding-inline: 12px !important;
   }
 }
 
