@@ -12906,7 +12906,7 @@ body .page-shell main#top > #featured-work {
 }
 
 body .page-shell main#top > #featured-work > .featured-card + .featured-card {
-  margin-top: 13px;
+  margin-top: 11px;
 }
 
 /* Canonical homepage media wall for Featured; replaces older edge-bleed gutter hacks. */
@@ -13157,7 +13157,7 @@ body .page-shell main#top :is(
   #featured-work > .featured-card + .featured-card,
   #featured-work + #media.section
 ) {
-  margin-top: 13px !important;
+  margin-top: 11px !important;
 }
 
 body .page-shell main#top :is(#systems .library-grid, #media .gallery-grid) {
@@ -13236,7 +13236,7 @@ body .page-shell main#top #systems .library-card-media img {
 @media (max-width: 1024px) {
   body .page-shell main#top > #media.section {
     --program-media-responsive-wall-width: calc(100vw - 14px);
-    --gallery-grid-gap: 6px;
+    --gallery-grid-gap: 11px;
     box-sizing: border-box !important;
     width: var(--program-media-responsive-wall-width) !important;
     max-width: var(--program-media-responsive-wall-width) !important;
@@ -13289,7 +13289,7 @@ body .page-shell main#top #systems .library-card-media img {
 }
 
 body .page-shell main#top > #featured-work + #media.section {
-  margin-top: 8px !important;
+  margin-top: 11px !important;
 }
 
 @media (min-width: 1025px) {
@@ -13398,6 +13398,40 @@ body .page-shell main#top > #playing-career.section > .playing-career-carousel {
   }
 }
 
+/* Homepage Playing Career/Awards spacing lock: match Systems' internal rhythm while preserving full-bleed carousel peeks. */
+body .page-shell main#top #playing-career.playing-career-section {
+  --playing-career-gap: 11px;
+}
+
+body .page-shell main#top #playing-career .playing-career-awards-strip {
+  --playing-career-awards-gap: 11px;
+  --playing-career-awards-shelf-pad: 11px;
+}
+
+body .page-shell main#top #playing-career .playing-career-awards-arrow {
+  top: calc(var(--playing-career-awards-shelf-pad) + (var(--playing-career-awards-thumb-height) / 2));
+}
+
+/* Homepage hero-to-Systems handoff: match the 11px Systems rhythm. */
+@media (min-width: 1025px) {
+  body .page-shell main#top > #systems.section {
+    padding-top: 11px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main#top > #systems.section {
+    margin-top: -28px !important;
+    padding-top: 11px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body .page-shell main#top > #systems.section {
+    padding-top: 9px !important;
+  }
+}
+
 /* Home footer closeout spacing: separate the contact buttons from the footer divider. */
 body:has(main#top) .site-footer.site-chrome {
   margin-top: 0 !important;
@@ -13417,7 +13451,7 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
 body .page-shell main#top > section#contact.contact-section {
   --contact-card-title-top-space: 36px;
   --contact-card-bottom-space: 28px;
-  margin-top: 11px !important;
+  margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
