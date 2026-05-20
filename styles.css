@@ -13046,6 +13046,22 @@ body .page-shell main#top #systems .library-card-media img {
     column-gap: var(--systems-grid-gap) !important;
     background: #ffffff;
   }
+
+  body .page-shell main#top #systems {
+    --systems-card-media-breathing-space: clamp(10px, 1.4vw, 14px);
+  }
+
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
+    padding-bottom: var(--systems-card-media-breathing-space) !important;
+  }
+
+  body .page-shell main#top #systems .library-card-media {
+    margin-top: clamp(4px, 0.7vw, 8px);
+  }
+
+  body .page-shell main#top #systems .system-card .library-actions {
+    margin-top: clamp(6px, 1vw, 10px);
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
