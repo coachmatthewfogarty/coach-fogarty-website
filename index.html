@@ -8,7 +8,7 @@
       name="description"
       content="Matthew Fogarty college basketball coaching portfolio with player development, scouting, recruiting, defense, program systems, credentials and coaching impact."
     />
-    <link rel="stylesheet" href="./styles.css?v=playing-awards-overlay-dark-panel-20260519" />
+    <link rel="stylesheet" href="./styles.css?v=contact-desktop-divider-stretch-20260520" />
   </head>
   <body>
     <div class="page-shell">
@@ -264,13 +264,14 @@
           <div class="contact-closeout-grid">
             <div class="home-closeout-heading document-card-copy contact-closeout-heading--documents">
               <p class="eyebrow">DOCUMENTS &amp; REFERENCES</p>
-              <h2 id="home-document-title">Portfolio Materials</h2>
+              <h2>Portfolio Materials</h2>
             </div>
             <div class="home-closeout-heading contact-closeout-heading--contact">
               <p class="eyebrow">CONTACT</p>
               <h2>Contact Coach Fogarty</h2>
             </div>
             <article class="document-card" aria-labelledby="home-document-title">
+              <h2 class="document-card-title" id="home-document-title">Credentials</h2>
               <div class="document-actions" aria-label="Portfolio material links">
                 <a class="button button-secondary" href="assets/documents/resume/matthew-fogarty-resume.pdf" target="_blank" rel="noreferrer">Resume</a>
                 <a class="button button-secondary" href="assets/documents/credentials/degrees/degrees-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Degrees</a>
@@ -278,36 +279,36 @@
                 <a class="button button-secondary" href="assets/documents/credentials/certifications/certifications-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Certifications</a>
                 <a class="button button-secondary" href="assets/documents/credentials/memberships/memberships-matthew-fogarty.pdf" target="_blank" rel="noreferrer">Memberships</a>
                 <a class="button button-secondary" href="assets/documents/references/matthew-fogarty-recommendation-letters.pdf" target="_blank" rel="noreferrer">References</a>
-                <button class="button button-secondary" id="playingCareerAwards" type="button">Awards</button>
                 <a class="button button-primary" href="assets/documents/portfolio/matthew-fogarty-portfolio-overview.pdf" target="_blank" rel="noreferrer">View Portfolio</a>
               </div>
             </article>
             <div class="contact-form-card">
+              <h2 class="contact-card-title">Contact Coach Fogarty</h2>
               <form class="contact-form" id="contactForm" action="mailto:CoachMatthewFogarty@gmail.com" method="post" enctype="text/plain">
                 <div class="contact-name-row">
                   <label>
-                    First Name
-                    <input type="text" name="first-name" autocomplete="given-name" required />
+                    <span class="contact-field-label">First Name</span>
+                    <input type="text" name="first-name" autocomplete="given-name" placeholder="First Name" required />
                   </label>
                   <label>
-                    Last Name
-                    <input type="text" name="last-name" autocomplete="family-name" required />
+                    <span class="contact-field-label">Last Name</span>
+                    <input type="text" name="last-name" autocomplete="family-name" placeholder="Last Name" required />
                   </label>
                 </div>
                 <label>
-                  Email
-                  <input type="email" name="email" autocomplete="email" required />
+                  <span class="contact-field-label">Email</span>
+                  <input type="email" name="email" autocomplete="email" placeholder="Email" required />
                 </label>
                 <label>
-                  Phone Number
-                  <input type="tel" name="phone" autocomplete="tel" />
+                  <span class="contact-field-label">Phone Number</span>
+                  <input type="tel" name="phone" autocomplete="tel" placeholder="Phone Number" />
                 </label>
                 <label>
-                  School / Organization
-                  <input type="text" name="school-organization" autocomplete="organization" />
+                  <span class="contact-field-label">School / Organization</span>
+                  <input type="text" name="school-organization" autocomplete="organization" placeholder="School / Organization" />
                 </label>
                 <label class="select-field">
-                  Reason for Contact
+                  <span class="contact-field-label">Reason for Contact</span>
                   <select name="reason">
                     <option value="">Select Contact Reason</option>
                     <option value="Coaching Opportunity">Coaching Opportunity</option>
@@ -320,8 +321,8 @@
                   </select>
                 </label>
                 <label>
-                  Message
-                  <textarea name="message" rows="7" required></textarea>
+                  <span class="contact-field-label">Message</span>
+                  <textarea name="message" rows="7" placeholder="Message" required></textarea>
                 </label>
                 <button class="button button-primary" type="submit">Send Message</button>
               </form>
