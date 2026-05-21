@@ -13465,7 +13465,8 @@ body .page-shell main#top #systems .library-card-media img {
   }
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
-    padding-top: 15px !important;
+    padding-top: 13px !important;
+    padding-bottom: 13px !important;
   }
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card) > p {
@@ -13478,7 +13479,51 @@ body .page-shell main#top #systems .library-card-media img {
   }
 
   body .page-shell main#top #systems .library-card-media {
+    width: min(100%, 340px) !important;
     margin-top: 5px !important;
+  }
+}
+
+/* Homepage Systems pill lock: mobile/tablet use desktop-style intrinsic pills instead of stretched full-width buttons. */
+@media (max-width: 1024px) {
+  body .page-shell main#top #systems .system-card .library-actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: max-content !important;
+    max-width: calc(100% - 28px) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    gap: 8px !important;
+  }
+
+  body .page-shell main#top #systems .system-card .library-actions .button,
+  body .page-shell main#top #systems .system-card .button-small {
+    width: auto !important;
+    max-width: max-content !important;
+    min-width: 0 !important;
+    min-height: 36px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    font-size: 12.75px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body .page-shell main#top #systems .system-card .library-actions {
+    max-width: calc(100% - 20px) !important;
+    gap: 7px !important;
+  }
+
+  body .page-shell main#top #systems .system-card .library-actions .button,
+  body .page-shell main#top #systems .system-card .button-small {
+    min-height: 34px !important;
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+    font-size: 12.5px !important;
   }
 }
 
