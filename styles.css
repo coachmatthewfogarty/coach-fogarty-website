@@ -12633,7 +12633,24 @@ main#top #featured-work .featured-card--anaya .innovation-thumbnail {
 
 @media (min-width: 1920px) {
   body .page-shell main#top #systems .library-card-media {
-    --systems-media-balance-y: 15.6px;
+    --systems-media-balance-y: clamp(18px, 1.35vw, 24px);
+  }
+}
+
+@media (min-width: 1280px) {
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
+    padding-top: 34px !important;
+    padding-bottom: clamp(47.3px, calc(34px + 1.040625vw), 52.3px) !important;
+  }
+
+  /* Desktop Systems rhythm: remove the older action min-height spacer so the visible pills-to-image gap can be set directly. */
+  body .page-shell main#top #systems .system-card .library-actions {
+    min-height: 0 !important;
+  }
+
+  body .page-shell main#top #systems .library-card-media {
+    --systems-media-balance-y: 0px;
+    margin-top: 6px !important;
   }
 }
 
@@ -13222,7 +13239,7 @@ body .page-shell main#top #systems .library-card-media img {
   }
 
   body .page-shell main#top #systems {
-    --systems-card-media-breathing-space: clamp(10px, 1.4vw, 14px);
+    --systems-card-media-breathing-space: clamp(16px, 4vw, 22px);
   }
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
@@ -13242,6 +13259,76 @@ body .page-shell main#top #systems .library-card-media img {
   body .page-shell main#top > #systems.section {
     --systems-responsive-wall-width: calc(100vw - 34px);
     --systems-grid-gap: 11px;
+  }
+
+  body .page-shell main#top #systems {
+    --systems-card-media-breathing-space: 15px;
+  }
+
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
+    padding-top: 15px !important;
+  }
+
+  /* Tablet Systems rhythm: override the older body/action margins and action min-height that held the pills away from the image. */
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card) > p {
+    margin-bottom: 6px !important;
+  }
+
+  body .page-shell main#top #systems .system-card .library-actions {
+    min-height: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body .page-shell main#top #systems .library-card-media {
+    margin-top: 7px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile Systems rhythm: match the tablet fix by removing the older action min-height spacer between pills and image. */
+  body .page-shell main#top #systems {
+    --systems-card-media-breathing-space: 15px;
+  }
+
+  body .page-shell main#top #systems .system-card[data-system-type="dpat"] {
+    order: 1;
+  }
+
+  body .page-shell main#top #systems .system-card[data-system-type="development"] {
+    order: 2;
+  }
+
+  body .page-shell main#top #systems .system-card[data-system-type="recruiting"] {
+    order: 3;
+  }
+
+  body .page-shell main#top #systems .system-card[data-system-type="operations"] {
+    order: 4;
+  }
+
+  body .page-shell main#top #systems .system-card[data-system-type="scouting"] {
+    order: 5;
+  }
+
+  body .page-shell main#top #systems .system-card[data-system-type="leadership"] {
+    order: 6;
+  }
+
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
+    padding-top: 15px !important;
+  }
+
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card) > p {
+    margin-bottom: 6px !important;
+  }
+
+  body .page-shell main#top #systems .system-card .library-actions {
+    min-height: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body .page-shell main#top #systems .library-card-media {
+    margin-top: 5px !important;
   }
 }
 
