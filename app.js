@@ -1537,6 +1537,10 @@ function systemTypeSlug(type) {
   return type.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
+function systemPrimaryHref(section) {
+  return section.buttons.find((button) => button.internal)?.href || section.buttons[0]?.href || "./systems.html";
+}
+
 function renderLibrary() {
   if (!libraryGrid) {
     return;
@@ -1546,6 +1550,7 @@ function renderLibrary() {
     .map(
       (section) => `
         <article class="library-card system-card" id="system-${systemTypeSlug(section.type)}" data-system-type="${systemTypeSlug(section.type)}">
+          <a class="system-card-link" href="${encodeURI(systemPrimaryHref(section))}" aria-label="View ${section.title} system"></a>
           <h3>${section.titleMarkup || section.title}</h3>
           <p>${section.description}</p>
           <span class="library-card-media" aria-hidden="${section.media?.alt ? "false" : "true"}">

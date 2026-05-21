@@ -760,6 +760,18 @@ a.credential-static[href] {
   scroll-margin-top: 96px;
 }
 
+.system-card-link {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.system-card .library-actions {
+  position: relative;
+  z-index: 2;
+}
+
 .system-card:hover,
 .system-card:focus-within {
   transform: translateY(-4px);
@@ -11899,6 +11911,17 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) > * {
   position: relative;
   z-index: 1;
+}
+
+main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) > .featured-card-link {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+}
+
+main#top #featured-work .featured-card .featured-pill-row {
+  position: relative;
+  z-index: 3;
 }
 
 main#top #featured-work .featured-card.featured-card--archer {
