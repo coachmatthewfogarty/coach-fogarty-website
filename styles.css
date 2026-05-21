@@ -12654,6 +12654,34 @@ main#top #featured-work .featured-card--anaya .innovation-thumbnail {
   }
 }
 
+@media (min-width: 1025px) and (max-width: 1279px) {
+  body .page-shell main#top #systems {
+    --systems-card-media-breathing-space: 15px;
+  }
+
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
+    min-height: 0 !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  /* Small-desktop Systems rhythm: bridge the 1025px breakpoint so it does not inherit the older action spacer. */
+  body .page-shell main#top #systems :is(.system-card, .library-card.system-card) > p {
+    margin-bottom: 6px !important;
+  }
+
+  body .page-shell main#top #systems .system-card .library-actions {
+    min-height: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body .page-shell main#top #systems .library-card-media {
+    --systems-media-balance-y: 0px;
+    margin-top: 7px !important;
+    transform: none !important;
+  }
+}
+
 body:has(main#top) .site-header .brand-mark {
   border: 1px solid rgba(214, 162, 75, 0.8) !important;
   background: linear-gradient(135deg, #b43f1f 0%, #d95a24 100%) !important;
