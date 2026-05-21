@@ -7336,27 +7336,27 @@ main#top #systems .library-card.system-card {
   text-align: center;
 }
 
-main#top #systems .system-card[data-system-type="development"] {
+main#top #systems .system-card[data-system-type="dpat"] {
   order: 1;
 }
 
-main#top #systems .system-card[data-system-type="leadership"] {
-  order: 4;
-}
-
-main#top #systems .system-card[data-system-type="dpat"] {
-  order: 3;
-}
-
-main#top #systems .system-card[data-system-type="recruiting"] {
+main#top #systems .system-card[data-system-type="development"] {
   order: 2;
 }
 
 main#top #systems .system-card[data-system-type="operations"] {
-  order: 5;
+  order: 3;
+}
+
+main#top #systems .system-card[data-system-type="recruiting"] {
+  order: 4;
 }
 
 main#top #systems .system-card[data-system-type="scouting"] {
+  order: 5;
+}
+
+main#top #systems .system-card[data-system-type="leadership"] {
   order: 6;
 }
 
@@ -12072,6 +12072,7 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
   background: transparent !important;
   background-image: none !important;
   color: #d95a24 !important;
+  cursor: pointer;
   -webkit-text-fill-color: #d95a24 !important;
   box-shadow: none !important;
   text-shadow: none !important;

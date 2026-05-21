@@ -125,12 +125,12 @@ const librarySections = [
 ];
 
 const systemDisplayOrder = [
+  "DPAT",
   "Player Development",
   "Recruiting",
-  "DPAT",
-  "Coaching Philosophy",
   "Program Support",
-  "Scouting"
+  "Scouting",
+  "Coaching Philosophy"
 ];
 
 librarySections.sort((left, right) => systemDisplayOrder.indexOf(left.title) - systemDisplayOrder.indexOf(right.title));
