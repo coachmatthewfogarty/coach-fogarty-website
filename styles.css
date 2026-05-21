@@ -13625,6 +13625,7 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
 
 @media (min-width: 1025px) {
   body:has(main#top) .site-footer.site-chrome {
+    background: #fff4e6;
     padding-top: 24px !important;
   }
 
@@ -13636,6 +13637,8 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
       minmax(280px, 1.12fr);
     column-gap: clamp(40px, 5vw, 96px);
     align-items: start;
+    padding-top: 24px;
+    border-top: 1px solid rgba(31, 27, 22, 0.08);
   }
 
   body:has(main#top) .site-footer.site-chrome .footer-links {
@@ -13645,5 +13648,21 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
 
   body:has(main#top) .site-footer.site-chrome .footer-accordion-toggle {
     margin-top: 0;
+    color: #8f2d1e;
+  }
+
+  body:has(main#top) .site-footer.site-chrome .footer-link-list a {
+    color: #1f1b16;
+  }
+
+  body:has(main#top) .site-footer.site-chrome .footer-bottom {
+    margin-top: 20px;
+    padding-top: 0;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  body:has(main#top) .site-footer.site-chrome .footer-copyright {
+    color: #6a5f53;
   }
 }
