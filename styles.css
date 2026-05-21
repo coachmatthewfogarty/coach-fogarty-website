@@ -13485,6 +13485,35 @@ body .page-shell main#top > #playing-career.section > .playing-career-carousel {
   margin-bottom: 0;
 }
 
+body .page-shell main#top > #playing-career.section .playing-career-label {
+  position: absolute;
+  top: clamp(10px, 1.2vw, 18px);
+  left: calc(
+    var(--playing-career-composition-clip)
+    + ((var(--playing-career-composition-width) - var(--playing-career-slide-width)) / 2)
+    + clamp(10px, 1.2vw, 18px)
+  );
+  z-index: 3;
+  margin: 0;
+  padding: clamp(8px, 0.8vw, 11px) clamp(12px, 1.2vw, 18px);
+  border: 1px solid rgba(216, 178, 112, 0.28);
+  border-radius: var(--hero-overlay-radius, 8px);
+  background: rgba(20, 22, 24, 0.86);
+  box-shadow:
+    0 14px 30px rgba(18, 14, 10, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: #fff4e2;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
 /* Aligns non-hero homepage section handoffs to a visible 13px rhythm. */
 @media (min-width: 1025px) {
   body .page-shell main#top > #featured-work {
@@ -13552,6 +13581,10 @@ body .page-shell main#top > #playing-career.section > .playing-career-carousel {
 /* Homepage Playing Career/Awards spacing lock: match Systems' internal rhythm while preserving full-bleed carousel peeks. */
 body .page-shell main#top #playing-career.playing-career-section {
   --playing-career-gap: 11px;
+}
+
+body .page-shell main#top #playing-career .playing-career-carousel {
+  background: rgba(20, 22, 24, 0.86);
 }
 
 body .page-shell main#top #playing-career .playing-career-awards-strip {
