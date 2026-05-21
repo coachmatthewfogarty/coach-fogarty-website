@@ -9822,6 +9822,42 @@ body .page-shell :is(
   }
 }
 
+@media (max-width: 599.98px), (max-width: 932px) and (max-height: 430px) {
+  /* Replaces the older oversized mobile carousel arrow sizing for Playing Career and Awards. */
+  #playing-career .playing-career-arrow,
+  #playing-career .playing-career-awards-arrow {
+    --playing-career-arrow-icon-size: 1.25rem;
+    --playing-career-awards-arrow-icon-size: 1.25rem;
+    width: 30px;
+    height: 36px;
+    touch-action: manipulation;
+  }
+
+  #playing-career .playing-career-arrow::before,
+  #playing-career .playing-career-awards-arrow::before {
+    position: relative;
+    z-index: 1;
+  }
+
+  #playing-career .playing-career-arrow::after,
+  #playing-career .playing-career-awards-arrow::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 999px;
+  }
+
+  #playing-career .playing-career-arrow-prev,
+  #playing-career .playing-career-awards-arrow-prev {
+    left: 10px;
+  }
+
+  #playing-career .playing-career-arrow-next,
+  #playing-career .playing-career-awards-arrow-next {
+    right: 10px;
+  }
+}
+
 /* Home Portfolio Materials + Contact closeout lock. */
 main#top > .contact-section {
   padding: 0 !important;
