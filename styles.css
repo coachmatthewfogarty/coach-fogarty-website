@@ -12137,10 +12137,6 @@ main#top #featured-work .featured-card--anaya .innovation-thumbnail {
 @media (min-width: 768px) and (max-width: 1024px) {
   main#top #featured-work {
     --featured-media-max: min(100%, 760px);
-    --featured-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
-    width: var(--featured-wall-width) !important;
-    max-width: 2560px !important;
-    margin-inline: calc((100% - var(--featured-wall-width)) / 2) !important;
   }
 
   main#top #featured-work .featured-card {
@@ -12187,11 +12183,7 @@ main#top #featured-work .featured-card--anaya .innovation-thumbnail {
   main#top #featured-work {
     --featured-cta-width: clamp(220px, 17vw, 320px);
     --featured-media-max: clamp(560px, 48vw, 920px);
-    --featured-wall-width: min(var(--home-section-wall-width), calc(100vw - 16px));
-    width: var(--featured-wall-width) !important;
-    max-width: 2560px !important;
     margin: 12px 0 0 !important;
-    margin-inline: calc((100% - var(--featured-wall-width)) / 2) !important;
     gap: 12px !important;
     justify-items: stretch;
   }
@@ -13020,7 +13012,7 @@ body .page-shell main#top > #featured-work > .featured-card + .featured-card {
   margin-top: 11px;
 }
 
-/* Canonical homepage media wall for Featured; replaces older edge-bleed gutter hacks. */
+/* Canonical homepage wide-wall contract: Featured uses the same centered section width as the surrounding media walls, replacing older edge-bleed gutter hacks. */
 body .page-shell main#top > #featured-work {
   --featured-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
   width: var(--featured-wall-width) !important;
@@ -13750,12 +13742,25 @@ body .page-shell main#top #playing-career .playing-career-award-thumb:is(:hover,
 
 /* Home footer closeout spacing: separate the contact buttons from the footer divider. */
 body:has(main#top) .site-footer.site-chrome {
+  --home-footer-rule-width: 100%;
   margin-top: 0 !important;
   padding-top: 18px !important;
 }
 
 body:has(main#top) .site-footer.site-chrome .footer-grid {
+  position: relative;
   border-top-color: rgba(158, 111, 53, 0.18);
+}
+
+body:has(main#top) .site-footer.site-chrome .footer-grid::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: var(--home-footer-rule-width);
+  border-top: 1px solid rgba(158, 111, 53, 0.18);
+  pointer-events: none;
+  transform: translateX(-50%);
 }
 
 body .page-shell main#top > section#contact.contact-section,
@@ -13813,20 +13818,46 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
 
 @media (min-width: 1025px) {
   body:has(main#top) .site-footer.site-chrome {
-    background: #fff4e6;
+    --home-footer-rule-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+    --home-footer-inner-gutter: clamp(68px, 6vw, 132px);
+    position: relative;
+    background: transparent;
     padding-top: 24px !important;
   }
 
+  body:has(main#top) .site-footer.site-chrome::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: 50%;
+    width: var(--home-footer-rule-width);
+    background: #fff4e6;
+    pointer-events: none;
+    transform: translateX(-50%);
+  }
+
+  body:has(main#top) .site-footer.site-chrome .footer-grid,
+  body:has(main#top) .site-footer.site-chrome .footer-bottom {
+    box-sizing: border-box;
+    position: relative;
+    width: var(--home-footer-rule-width) !important;
+    max-width: 2560px;
+    padding-right: var(--home-footer-inner-gutter);
+    padding-left: var(--home-footer-inner-gutter);
+    z-index: 1;
+  }
+
   body:has(main#top) .site-footer.site-chrome .footer-grid {
-    grid-template-columns:
-      minmax(120px, 0.72fr)
-      minmax(170px, 0.96fr)
-      minmax(190px, 1fr)
-      minmax(280px, 1.12fr);
-    column-gap: clamp(40px, 5vw, 96px);
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
+    column-gap: clamp(48px, 6vw, 128px);
     align-items: start;
     padding-top: 24px;
     border-top: 1px solid rgba(31, 27, 22, 0.08);
+  }
+
+  body:has(main#top) .site-footer.site-chrome .footer-grid::before {
+    border-top-color: rgba(31, 27, 22, 0.08);
   }
 
   body:has(main#top) .site-footer.site-chrome .footer-links {
