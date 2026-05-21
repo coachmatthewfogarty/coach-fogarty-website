@@ -9453,6 +9453,7 @@ body .page-shell :is(
 
 #playing-career .playing-career-track .achievement-card {
   appearance: none;
+  position: relative;
   flex: 0 0 var(--playing-career-slide-width);
   aspect-ratio: 3200 / 1737;
   padding: 0;
@@ -9471,10 +9472,25 @@ body .page-shell :is(
 }
 
 #playing-career .playing-career-track .achievement-card.is-active {
-  position: relative;
   z-index: 1;
   opacity: 1;
   filter: none;
+}
+
+#playing-career .playing-career-track .achievement-card.is-active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, background-color 180ms ease;
+}
+
+#playing-career .playing-career-track .achievement-card.is-active:is(:hover, :focus-visible)::before {
+  background: rgba(0, 0, 0, 0.16);
+  opacity: 1;
 }
 
 #playing-career .playing-career-track .achievement-card:is(.is-prev, .is-next) {
@@ -12060,6 +12076,18 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
   filter: none !important;
   opacity: 1 !important;
   mix-blend-mode: normal !important;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-proof-chips span:is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+  color: #b8441b !important;
+  -webkit-text-fill-color: #b8441b !important;
+  box-shadow: none !important;
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .button-primary {
@@ -13594,6 +13622,90 @@ body .page-shell main#top #playing-career .playing-career-awards-strip {
 
 body .page-shell main#top #playing-career .playing-career-awards-arrow {
   top: calc(var(--playing-career-awards-shelf-pad) + (var(--playing-career-awards-thumb-height) / 2));
+}
+
+/*
+  Homepage hover movement lock.
+  Older shared hover rules above still add translate/scale/lift effects to generic
+  cards, buttons, and carousel arrows. Keep this override after those rules so the
+  targeted homepage areas can keep color/filter/shadow feedback without moving.
+*/
+body .page-shell main#top #systems :is(.system-card, .library-card.system-card):is(:hover, :focus-within),
+body .page-shell main#top #featured-work .featured-card:is(:hover, :focus-within),
+body .page-shell main#top #media .gallery-card:is(:hover, :focus-visible),
+body .page-shell main#top #playing-career .playing-career-track .achievement-card:is(:hover, :focus-visible),
+body .page-shell main#top #playing-career .playing-career-award-thumb:is(:hover, :focus-visible) {
+  transform: none !important;
+}
+
+body .page-shell main#top #systems .system-card:is(:hover, :focus-within) .library-card-media img {
+  transform: none !important;
+}
+
+body .page-shell main#top :is(#systems, #featured-work, #contact) .button:is(:hover, :focus-visible),
+body .page-shell main#top #featured-work .innovation-proof-chips span:is(:hover, :focus-visible),
+body .page-shell main#top .credentials-card .credential-link-grid .button:is(:hover, :focus-visible) {
+  transform: none !important;
+}
+
+body .page-shell main#top :is(#featured-work, #contact) .button-primary:is(:hover, :focus-visible),
+body .page-shell main#top .credentials-card .credential-link-grid .credential-priority-link:is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: #c94d1f !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main#top :is(#featured-work, #contact) .button-secondary:is(:hover, :focus-visible),
+body .page-shell main#top .credentials-card .credential-link-grid .button:not(.credential-priority-link):is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+  color: #b8441b !important;
+  -webkit-text-fill-color: #b8441b !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main#top #systems .system-card .library-actions .button:first-child:is(:hover, :focus-visible),
+body .page-shell main#top #systems .system-card .button-small:first-child:is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: #c94d1f !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main#top #systems .system-card .library-actions .button:not(:first-child):is(:hover, :focus-visible),
+body .page-shell main#top #systems .system-card .button-small:not(:first-child):is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+  color: #b8441b !important;
+  -webkit-text-fill-color: #b8441b !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main#top #playing-career .playing-career-arrow:is(:hover, :focus-visible),
+body .page-shell main#top #playing-career .playing-career-awards-arrow:is(:hover, :focus-visible) {
+  transform: translateY(-50%) !important;
+}
+
+body .page-shell main#top #playing-career .playing-career-award-thumb::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--playing-career-awards-shelf-pad, 0px));
+  right: 0;
+  bottom: calc(-1 * var(--playing-career-awards-shelf-pad, 0px));
+  left: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, background-color 180ms ease;
+}
+
+body .page-shell main#top #playing-career .playing-career-award-thumb:is(:hover, :focus-visible)::before {
+  background: rgba(0, 0, 0, 0.16);
+  opacity: 1;
 }
 
 /* Homepage hero-to-Systems handoff: match the 11px Systems rhythm. */
