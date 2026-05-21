@@ -11324,14 +11324,22 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
 }
 
 @media (max-width: 430px) and (orientation: portrait) {
+  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system {
+    gap: clamp(8px, 2.2vw, 12px) !important;
+  }
+
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill {
     grid-template-rows: max-content max-content !important;
     align-content: center !important;
-    gap: 4px !important;
+    gap: 3px !important;
+  }
+
+  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-main {
+    line-height: 1.02 !important;
   }
 
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-sub {
-    font-size: clamp(10px, 2.55vw, 11px) !important;
+    font-size: clamp(9.5px, 2.45vw, 10.75px) !important;
     line-height: 1.08 !important;
     overflow-wrap: normal !important;
     white-space: nowrap !important;
@@ -11404,7 +11412,11 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
 
 @media (max-width: 430px) and (orientation: portrait) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
-    --home-hero-pill-sub-size: clamp(10px, 2.55vw, 11px);
+    --home-hero-pill-min-height: clamp(54px, 8.8vw, 68px);
+    --home-hero-pill-pad-y: clamp(5px, 1.35vw, 9px);
+    --home-hero-pill-pad-x: clamp(4px, 1.35vw, 12px);
+    --home-hero-pill-main-size: clamp(0.74rem, 3.2cqw, 1.08rem);
+    --home-hero-pill-sub-size: clamp(9.5px, 2.45vw, 10.75px);
   }
 }
 
@@ -12751,6 +12763,52 @@ body:has(main#top) .site-header .brand-mark {
   background: linear-gradient(135deg, #b43f1f 0%, #d95a24 100%) !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Mobile home header: center the menu, MF mark and Contact boxes in one compact row without optical translate nudges. */
+@media (max-width: 767px) {
+  body:has(main#top) .site-header.site-chrome {
+    grid-template-columns: 40px minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    min-height: 44px !important;
+    padding-block: 4px !important;
+  }
+
+  body:has(main#top) .mobile-nav-toggle,
+  body:has(main#top) .site-header .brand,
+  body:has(main#top) .mobile-contact-link {
+    align-self: center !important;
+    transform: none !important;
+  }
+
+  body:has(main#top) .mobile-nav-toggle,
+  body:has(main#top) .site-header .brand,
+  body:has(main#top) .site-header .brand-mark {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  body:has(main#top) .site-header .brand {
+    display: grid !important;
+    place-items: center !important;
+    justify-self: center !important;
+  }
+
+  body:has(main#top) .mobile-contact-link {
+    min-height: 36px !important;
+    line-height: 1 !important;
+  }
+
+  body:has(main#top) main#top > .page-hero-system.page-hero-system {
+    margin-top: 0 !important;
+  }
+}
+
+/* Tablet home header: remove the hero's top margin so the header-to-hero band matches the mobile no-gap chrome. */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body:has(main#top) main#top > .page-hero-system.page-hero-system {
+    margin-top: 0 !important;
+  }
 }
 
 body .page-shell main#top .eyebrow,
