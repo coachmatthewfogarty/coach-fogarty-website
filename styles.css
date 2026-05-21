@@ -11049,7 +11049,7 @@ main.archer-page .archer-final-cta .featured-actions {
   gap: 16px !important;
   overflow: hidden !important;
   border: 1px solid var(--line) !important;
-  border-radius: 34px !important;
+  border-radius: 0 !important;
   background: linear-gradient(135deg, rgba(255, 248, 237, 0.94), rgba(246, 236, 219, 0.78)) !important;
   box-shadow: var(--shadow) !important;
 }
@@ -11295,11 +11295,22 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     margin-bottom: 18px !important;
     padding: 14px 20px 12px !important;
-    border-radius: 34px !important;
+    border-radius: 0 !important;
   }
 
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system .hero-text {
     line-height: 1.52 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main#top > .page-hero-system.page-hero-system {
+    box-sizing: border-box !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-right: calc((100% - 100vw) / 2) !important;
+    margin-left: calc((100% - 100vw) / 2) !important;
+    border-radius: 0 !important;
   }
 }
 
@@ -11352,10 +11363,11 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 768px) {
   body .page-shell main#top > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: clamp(14.6px, calc(0.2vw + 12.8px), 15px);
     --hero-overlay-link-gap-column: clamp(5px, 0.58vw, 6px);
+    --hero-overlay-padding-inline: clamp(28px, 4.1vw, 42px);
   }
 
   body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
@@ -11482,6 +11494,7 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
 @media (min-width: 1025px) and (max-width: 1599px) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: 12px;
+    --hero-overlay-padding-inline: 18px;
   }
 }
 
