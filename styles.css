@@ -11955,6 +11955,8 @@ main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card-
 }
 
 main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-panel {
+  position: relative;
+  z-index: 3;
   gap: var(--featured-media-gap);
 }
 
@@ -13682,6 +13684,24 @@ body .page-shell main#top #systems .system-card .button-small:not(:first-child):
   color: #b8441b !important;
   -webkit-text-fill-color: #b8441b !important;
   box-shadow: none !important;
+}
+
+body .page-shell main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .button-primary:is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: #c94d1f !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body .page-shell main#top #featured-work .featured-card:is(.featured-card--anaya, .featured-card--archer) .innovation-proof-chips span:is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  color: #b8441b !important;
+  -webkit-text-fill-color: #b8441b !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 body .page-shell main#top #playing-career .playing-career-arrow:is(:hover, :focus-visible),
