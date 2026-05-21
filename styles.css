@@ -11319,6 +11319,33 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   line-height: 1.08 !important;
 }
 
+.hero-pill-sub-mobile {
+  display: none !important;
+}
+
+@media (max-width: 430px) and (orientation: portrait) {
+  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill {
+    grid-template-rows: max-content max-content !important;
+    align-content: center !important;
+    gap: 4px !important;
+  }
+
+  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-sub {
+    font-size: clamp(10px, 2.55vw, 11px) !important;
+    line-height: 1.08 !important;
+    overflow-wrap: normal !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-pill-sub-full {
+    display: none !important;
+  }
+
+  .hero-pill-sub-mobile {
+    display: inline !important;
+  }
+}
+
 @media (max-width: 767px) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     margin-bottom: 18px !important;
@@ -11346,74 +11373,38 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     padding: 16px !important;
     --hero-overlay-padding-inline: clamp(7px, 2.2cqw, 10px);
-    --hero-overlay-link-gap-column: clamp(2px, 1cqw, 4px);
     --hero-overlay-link-size: clamp(0.56rem, 2.55cqw, 0.68rem);
-  }
-
-  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-    min-width: min(clamp(39px, calc(10.9vw - 1.875px), 45px), calc((100% - 66px) / 5)) !important;
-  }
-}
-
-@media (min-width: 431px) and (max-width: 1024px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system {
-    --hero-overlay-link-size: clamp(12px, 2.6vw, 15px);
-    --hero-overlay-link-gap-column: clamp(4px, 1.2vw, 8px);
-    --hero-overlay-justify: center;
-    --hero-overlay-wrap: nowrap;
   }
 }
 
 @media (min-width: 431px) and (max-width: 1024px) {
   body .page-shell main#top > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: clamp(11px, calc(2.1vw + 2px), 15px);
-    --hero-overlay-link-gap-column: clamp(3px, calc(0.85vw + 0.3px), 8px);
-    --hero-overlay-justify: center;
-    --hero-overlay-wrap: nowrap;
-  }
-}
-
-@media (min-width: 431px) and (max-width: 444px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-    min-width: min(clamp(46.5px, calc(17.3vw - 28px), 49px), calc((100% - 70px) / 5)) !important;
   }
 }
 
 @media (min-width: 560px) and (max-width: 767px) {
   body .page-shell main#top > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: clamp(13.5px, calc(0.65vw + 10px), 14.8px);
-    --hero-overlay-link-gap-column: clamp(5px, 0.75vw, 6px);
-  }
-
-  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-    min-width: clamp(64px, 10vw, 74px) !important;
-    padding-inline: clamp(1.6px, 0.32vw, 2.4px);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (min-height: 768px) {
   body .page-shell main#top > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: clamp(14.6px, calc(0.2vw + 12.8px), 15px);
-    --hero-overlay-link-gap-column: clamp(5px, 0.58vw, 6px);
     --hero-overlay-padding-inline: clamp(28px, 4.1vw, 42px);
-  }
-
-  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-    min-width: clamp(76px, 8vw, 84px) !important;
-    padding-inline: clamp(2px, 0.24vw, 2.8px);
-  }
-}
-
-@media (min-width: 445px) and (max-width: 1024px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-    min-width: min(clamp(137px, calc(9.8vw + 45px), 149px), calc((100% - 96px) / 5)) !important;
   }
 }
 
 @media (max-width: 360px) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     --home-hero-pill-main-size: clamp(0.72rem, 3.3cqw, 1rem);
-    --home-hero-pill-sub-size: clamp(0.5rem, 2.45cqw, 0.68rem);
+  }
+}
+
+@media (max-width: 430px) and (orientation: portrait) {
+  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
+    --home-hero-pill-sub-size: clamp(10px, 2.55vw, 11px);
   }
 }
 
@@ -11453,9 +11444,6 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
     --hero-overlay-title-size: 11.8px;
     --hero-overlay-link-size: 13.2px;
     --hero-overlay-link-gap-row: 0;
-    --hero-overlay-link-gap-column: 6px;
-    --hero-overlay-justify: space-between;
-    --hero-overlay-wrap: nowrap;
     grid-template-columns: minmax(0, 1fr) var(--hero-portrait-width) !important;
     grid-template-areas:
       "copy portrait"
@@ -11505,17 +11493,9 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   }
 }
 
-@media (min-width: 1025px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system {
-    --hero-overlay-justify: center;
-    --hero-overlay-link-gap-column: clamp(5px, 0.3vw, 8px);
-  }
-}
-
-@media (min-width: 1025px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system {
-    --hero-overlay-justify: center;
-    --hero-overlay-link-gap-column: clamp(5px, 0.3vw, 8px);
+@media (min-width: 1025px) and (max-width: 1104px) {
+  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system h1 {
+    font-size: clamp(49px, calc(11.2vw - 65.8px), 59.2px) !important;
   }
 }
 
@@ -11531,8 +11511,14 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
     --home-hero-pill-min-height: clamp(48px, 4.4vw, 58px);
     --home-hero-pill-pad-y: 5px;
     --home-hero-pill-pad-x: 8px;
-    --home-hero-pill-main-size: 15.2px;
-    --home-hero-pill-sub-size: 8.64px;
+    --home-hero-pill-main-size: clamp(16px, calc(1.29vw + 2.78px), 18px);
+    --home-hero-pill-sub-size: clamp(9.8px, calc(0.65vw + 3.14px), 10.8px);
+    --hero-overlay-padding-inline: 12px;
+    --hero-overlay-link-columns: minmax(0, 0.82fr) minmax(0, 1.02fr) minmax(0, 0.9fr) minmax(0, 1.48fr) minmax(0, 1.03fr);
+    --hero-overlay-divider-1: 15.6%;
+    --hero-overlay-divider-2: 35%;
+    --hero-overlay-divider-3: 52.2%;
+    --hero-overlay-divider-4: 80.4%;
   }
 }
 
@@ -11616,12 +11602,6 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   }
 }
 
-@media (min-width: 1601px) and (max-width: 2199px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-    min-width: min(clamp(49px, calc(6.2vw - 50px), 84px), calc((100% - 85px) / 5)) !important;
-  }
-}
-
 @media (min-width: 2200px) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
     --hero-portrait-width: var(--hero-wide-portrait-width);
@@ -11640,8 +11620,8 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
     --hero-overlay-left: 50%;
     --hero-overlay-right: auto;
     --hero-overlay-gap: 8px;
-    --hero-overlay-width: min(calc(100% - 26px), clamp(560px, 25vw, 680px));
-    --hero-overlay-max-width: min(calc(100% - 26px), clamp(560px, 25vw, 680px));
+    --hero-overlay-width: min(calc(100% - 26px), 560px);
+    --hero-overlay-max-width: min(calc(100% - 26px), 560px);
     --hero-overlay-padding-block-start: 13px;
     --hero-overlay-padding-inline: 16px;
     --hero-overlay-padding-block-end: 13px;
@@ -11668,28 +11648,66 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   }
 }
 
-@media (min-width: 2200px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system {
-    --hero-overlay-link-gap-column: clamp(3px, 0.16vw, 4.5px);
-  }
-
-  body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-    flex: 0 0 clamp(91px, 3.8vw, 98px) !important;
-    min-width: 0 !important;
-    width: clamp(91px, 3.8vw, 98px) !important;
-  }
-}
-
+/* Homepage hero overlay: dividers use consistent weighted lanes so longer links stay balanced. */
 body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text {
-  justify-content: space-between !important;
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: var(
+    --hero-overlay-link-columns,
+    minmax(0, 0.9fr) minmax(0, 1.05fr) minmax(0, 0.95fr) minmax(0, 1.36fr) minmax(0, 0.95fr)
+  ) !important;
+  justify-content: stretch !important;
+  justify-items: center !important;
+  align-items: center !important;
   gap: var(--hero-overlay-link-gap-row) 0 !important;
 }
 
 body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
-  flex: 0 0 auto !important;
   width: auto !important;
   min-width: max-content !important;
   padding-inline: 0 !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(1) {
+  grid-column: 1 !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(2) {
+  grid-column: 2 !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(3) {
+  grid-column: 3 !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(4) {
+  grid-column: 4 !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(5) {
+  grid-column: 5 !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(1) {
+  left: var(--hero-overlay-divider-1, 17.3%) !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(2) {
+  left: var(--hero-overlay-divider-2, 37.4%) !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(3) {
+  left: var(--hero-overlay-divider-3, 55.7%) !important;
+}
+
+body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(4) {
+  left: var(--hero-overlay-divider-4, 81.8%) !important;
 }
 
 @media (min-width: 1025px) {
