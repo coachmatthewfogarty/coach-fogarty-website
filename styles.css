@@ -13915,6 +13915,76 @@ body .page-shell main#top #playing-career .playing-career-award-thumb:is(:hover,
   opacity: 1;
 }
 
+/* Shared square-card lock: target pages follow the homepage box/media corner treatment; pills stay rounded in their own rules. */
+body .page-shell :is(
+  main#top,
+  main.systems-detail-page,
+  main.featured-page,
+  main.media-library-page,
+  main.anaya-case-study-page,
+  main.archer-page,
+  main.about-cover-page,
+  main.contact-page
+) :is(
+  .section,
+  .page-hero-system,
+  .hero-portrait-card,
+  .hero-portrait-picture,
+  .hero-portrait-image,
+  .hero-portrait-overlay,
+  .system-card,
+  .library-card,
+  .library-card-media,
+  .library-card-media img,
+  .system-document-card,
+  .system-document-preview,
+  .featured-card,
+  .featured-pillar,
+  .featured-strategy-panel,
+  .featured-final-cta,
+  .featured-pillar-visual,
+  .featured-pillar-visual img,
+  .innovation-panel,
+  .innovation-thumbnail,
+  .innovation-thumbnail img,
+  .gallery-card,
+  .gallery-media,
+  .gallery-card img,
+  .media-category-card,
+  .media-library-card,
+  .media-category-frame,
+  .media-library-frame,
+  .media-category-frame img,
+  .media-library-frame img,
+  .case-study-section,
+  .case-study-copy,
+  .case-study-media,
+  .anaya-media-card,
+  .anaya-media-frame,
+  .anaya-media-frame img,
+  .anaya-media-frame video,
+  .anaya-media-empty,
+  .archer-feature-visual,
+  .archer-feature-visual img,
+  .archer-feature-card,
+  .archer-mini-card,
+  .archer-proof-grid article,
+  .archer-media-grid figure,
+  .archer-media-grid img,
+  .archer-media-grid video,
+  .archer-final-cta,
+  .about-letter-section,
+  .about-letter-gallery,
+  .about-letter-gallery img,
+  .contact-materials-card,
+  .contact-form-card,
+  .document-card,
+  .contact-form-card .contact-form,
+  .contact-page-grid
+) {
+  border-radius: 0 !important;
+}
+
 /* Homepage hero-to-Systems handoff: match the 11px Systems rhythm. */
 @media (min-width: 1025px) {
   body .page-shell main#top > #systems.section {
