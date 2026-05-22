@@ -10588,6 +10588,15 @@ body:has(main.systems-detail-page) .site-nav a[href="./systems.html"] {
   color: var(--red);
 }
 
+body:has(main.featured-page) .site-nav a[href="./featured-work.html"],
+body:has(main.anaya-case-study-page) .site-nav a[href="./featured-work.html"],
+body:has(main.archer-page) .site-nav a[href="./featured-work.html"],
+body:has(main.media-library-page) .site-nav a[href="./media.html"],
+body:has(main.about-cover-page) .site-nav a[href="./about.html"],
+body:has(main.contact-page) .site-nav a[href="./contact.html"] {
+  color: var(--red);
+}
+
 main.systems-detail-page > .systems-core-library,
 main.systems-detail-page > .system-detail-section {
   width: min(var(--page-shell-width), 100%);
@@ -10793,10 +10802,6 @@ main.systems-detail-page .systems-archer-grid {
    The page keeps the shared .page-hero-system, button, card, section, overlay and
    color systems. These scoped rules only organize the Archer case-study sections,
    product visuals and media cards. */
-body:has(main.archer-page) .site-nav a[href="./featured-work.html"] {
-  color: var(--red);
-}
-
 main.archer-page > .section {
   width: min(var(--page-shell-width), 100%);
   margin-right: auto;
@@ -12805,43 +12810,43 @@ main#top #featured-work .featured-card--anaya .innovation-thumbnail {
   }
 }
 
-body:has(main#top) .site-header .brand-mark {
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-header .brand-mark {
   border: 1px solid rgba(214, 162, 75, 0.8) !important;
   background: linear-gradient(135deg, #b43f1f 0%, #d95a24 100%) !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
 
-/* Mobile home header: center the menu, MF mark and Contact boxes in one compact row without optical translate nudges. */
+/* Shared mobile header: target pages intentionally follow the homepage header specs. */
 @media (max-width: 767px) {
-  body:has(main#top) .site-header.site-chrome {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-header.site-chrome {
     grid-template-columns: 40px minmax(0, 1fr) auto !important;
     align-items: center !important;
     min-height: 44px !important;
     padding-block: 4px !important;
   }
 
-  body:has(main#top) .mobile-nav-toggle,
-  body:has(main#top) .site-header .brand,
-  body:has(main#top) .mobile-contact-link {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .mobile-nav-toggle,
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-header .brand,
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .mobile-contact-link {
     align-self: center !important;
     transform: none !important;
   }
 
-  body:has(main#top) .mobile-nav-toggle,
-  body:has(main#top) .site-header .brand,
-  body:has(main#top) .site-header .brand-mark {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .mobile-nav-toggle,
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-header .brand,
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-header .brand-mark {
     width: 36px !important;
     height: 36px !important;
   }
 
-  body:has(main#top) .site-header .brand {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-header .brand {
     display: grid !important;
     place-items: center !important;
     justify-self: center !important;
   }
 
-  body:has(main#top) .mobile-contact-link {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .mobile-contact-link {
     min-height: 36px !important;
     line-height: 1 !important;
   }
