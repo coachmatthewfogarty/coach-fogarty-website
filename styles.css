@@ -14531,6 +14531,37 @@ body .page-shell main.contact-page .contact-document-actions .button {
   height: var(--contact-action-row-height) !important;
 }
 
+/* Contact pill hover lock: mirrors homepage Systems/Featured overlay feedback without movement. */
+body .page-shell main.contact-page :is(.contact-document-actions .button, .contact-form .button):is(:hover, :focus-visible) {
+  transform: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+
+body .page-shell main.contact-page :is(.contact-materials-card, .contact-form-card):is(:hover, :focus-within) {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main.contact-page :is(.contact-form .button-primary, .contact-document-actions .button-primary):is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: #c94d1f !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body .page-shell main.contact-page .contact-document-actions .button-secondary:is(:hover, :focus-visible) {
+  border-color: #b8441b !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+  background-image: none !important;
+  color: #b8441b !important;
+  -webkit-text-fill-color: #b8441b !important;
+}
+
 /* Contact footer/gutter alignment follows the updated About page rules. */
 body:has(main.contact-page) main.contact-page .site-footer.site-chrome {
   padding-top: 0 !important;
