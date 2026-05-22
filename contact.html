@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Matthew Fogarty</title>
     <meta name="description" content="Contact Coach Matthew Fogarty for college basketball coaching opportunities." />
-    <link rel="stylesheet" href="./styles.css?v=footer-responsive-20260512" />
+    <link rel="stylesheet" href="./styles.css?v=contact-mobile-no-overlap-20260522" />
   </head>
   <body>
     <div class="page-shell">
@@ -114,43 +114,44 @@
               <form class="contact-form" id="contactForm" action="mailto:CoachMatthewFogarty@gmail.com" method="post" enctype="text/plain">
                 <div class="contact-name-row">
                   <label>
-                    First Name
-                    <input type="text" name="first-name" autocomplete="given-name" required />
+                    <span class="contact-field-label">First Name</span>
+                    <input type="text" name="first-name" autocomplete="given-name" placeholder="First Name" required />
                   </label>
                   <label>
-                    Last Name
-                    <input type="text" name="last-name" autocomplete="family-name" required />
+                    <span class="contact-field-label">Last Name</span>
+                    <input type="text" name="last-name" autocomplete="family-name" placeholder="Last Name" required />
                   </label>
                 </div>
                 <div class="contact-method-row">
                   <label>
-                    Email Address
-                    <input type="email" name="email" autocomplete="email" required />
+                    <span class="contact-field-label">Email</span>
+                    <input type="email" name="email" autocomplete="email" placeholder="Email" required />
                   </label>
                   <label>
-                    Phone Number (Optional)
-                    <input type="tel" name="phone" autocomplete="tel" />
+                    <span class="contact-field-label">Phone Number</span>
+                    <input type="tel" name="phone" autocomplete="tel" placeholder="Phone Number" />
                   </label>
                 </div>
                 <label>
-                  Subject
-                  <input type="text" name="subject" required />
+                  <span class="contact-field-label">School / Organization</span>
+                  <input type="text" name="school-organization" autocomplete="organization" placeholder="School / Organization" />
                 </label>
                 <label class="select-field">
-                  Reason for Contact
+                  <span class="contact-field-label">Reason for Contact</span>
                   <select name="reason">
-                    <option value="">Select Contact Reason</option>
+                    <option value="">Reason for Contact</option>
                     <option value="Coaching Opportunity">Coaching Opportunity</option>
                     <option value="Staff Conversation">Staff Conversation</option>
-                    <option value="Portfolio Materials">Portfolio Materials</option>
-                    <option value="References">References</option>
                     <option value="Player Development">Player Development</option>
+                    <option value="Recruiting / Evaluation">Recruiting / Evaluation</option>
+                    <option value="Portfolio Materials">Portfolio Materials</option>
+                    <option value="Speaking / Clinic">Speaking / Clinic</option>
                     <option value="Other">Other</option>
                   </select>
                 </label>
                 <label>
-                  Message
-                  <textarea name="message" rows="6" required></textarea>
+                  <span class="contact-field-label">Message</span>
+                  <textarea name="message" rows="7" placeholder="Message" required></textarea>
                 </label>
                 <button class="button button-primary" type="submit">Send Message</button>
               </form>
