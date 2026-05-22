@@ -94,7 +94,7 @@ main#top {
   --home-cta-border: #d95a24;
 }
 
-body:has(main#top) .site-footer.site-chrome {
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome {
   background: var(--home-system-card-cream, #fff4e6);
 }
 
@@ -13934,14 +13934,14 @@ body .page-shell main#top #playing-career .playing-career-award-thumb:is(:hover,
   }
 }
 
-/* Home footer closeout spacing: separate the contact buttons from the footer divider. */
-body:has(main#top) .site-footer.site-chrome {
+/* Shared footer closeout spacing: target pages intentionally follow the homepage footer specs. */
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome {
   --home-footer-rule-width: 100%;
   margin-top: 0 !important;
   padding-top: 18px !important;
 }
 
-body:has(main#top) .site-footer.site-chrome .footer-grid {
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-grid {
   position: relative;
   border-top-color: rgba(158, 111, 53, 0.18);
 }
@@ -14063,7 +14063,7 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
 }
 
 @media (min-width: 1025px) {
-  body:has(main#top) .site-footer.site-chrome {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome {
     --home-footer-rule-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
     --home-footer-inner-gutter: clamp(68px, 6vw, 132px);
     position: relative;
@@ -14071,7 +14071,7 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
     padding-top: 0 !important;
   }
 
-  body:has(main#top) .site-footer.site-chrome::before {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome::before {
     content: "";
     position: absolute;
     inset-block: 0;
@@ -14082,8 +14082,8 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
     transform: translateX(-50%);
   }
 
-  body:has(main#top) .site-footer.site-chrome .footer-grid,
-  body:has(main#top) .site-footer.site-chrome .footer-bottom {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-grid,
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-bottom {
     box-sizing: border-box;
     position: relative;
     width: var(--home-footer-rule-width) !important;
@@ -14093,7 +14093,7 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
     z-index: 1;
   }
 
-  body:has(main#top) .site-footer.site-chrome .footer-grid {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-grid {
     grid-template-columns: repeat(4, max-content);
     justify-content: space-between;
     column-gap: clamp(48px, 6vw, 128px);
@@ -14102,28 +14102,28 @@ body .page-shell main#top > section#contact.contact-section > .contact-closeout-
     border-top: 1px solid rgba(31, 27, 22, 0.08);
   }
 
-  body:has(main#top) .site-footer.site-chrome .footer-links {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-links {
     align-self: start;
     min-width: 0;
   }
 
-  body:has(main#top) .site-footer.site-chrome .footer-accordion-toggle {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-accordion-toggle {
     margin-top: 0;
     color: #8f2d1e;
   }
 
-  body:has(main#top) .site-footer.site-chrome .footer-link-list a {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-link-list a {
     color: #1f1b16;
   }
 
-  body:has(main#top) .site-footer.site-chrome .footer-bottom {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-bottom {
     margin-top: 20px;
     padding-top: 0;
     border-top: 0;
     border-bottom: 0;
   }
 
-  body:has(main#top) .site-footer.site-chrome .footer-copyright {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-copyright {
     color: #6a5f53;
   }
 }
