@@ -13997,7 +13997,7 @@ body .page-shell :is(
   main.about-cover-page,
   main.contact-page
 ) :is(
-  .section,
+  .section:not(.featured-card),
   .library-grid,
   .systems-core-grid,
   .systems-archer-grid,
