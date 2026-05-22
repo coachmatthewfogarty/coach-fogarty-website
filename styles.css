@@ -14392,7 +14392,7 @@ body:has(:is(main#top, main.about-cover-page)) main.about-cover-page .site-foote
 body .page-shell main.contact-page {
   --contact-shell-width: var(--home-section-wall-width, 100vw);
   --contact-content-bg: #fff4e6;
-  --contact-shell-gutter-top: 11px;
+  --contact-shell-gutter-top: 0px;
   --contact-shell-gutter-right: 12px;
   --contact-shell-gutter-bottom: 11px;
   --contact-shell-gutter-left: 11px;
@@ -14410,7 +14410,7 @@ body .page-shell main.contact-page {
   background: #ffffff;
 }
 
-/* Contact header handoff: removes the old top spacer so content starts directly under the sticky header. */
+/* Contact header handoff: matches the homepage/About header by removing the old white top gutter under sticky chrome. */
 body .page-shell main.contact-page:not(#top):not(.about-cover-page) > .section.contact-section {
   box-sizing: border-box;
   width: var(--contact-shell-width);
@@ -14569,7 +14569,7 @@ body:has(main.contact-page) main.contact-page .site-footer.site-chrome {
 
 @media (min-width: 1025px) {
   body .page-shell main.contact-page {
-    --contact-shell-gutter-top: 11px;
+    --contact-shell-gutter-top: 0px;
     --contact-shell-gutter-right: 12px;
     --contact-shell-gutter-bottom: 11px;
     --contact-shell-gutter-left: 11px;
@@ -14587,7 +14587,7 @@ body:has(main.contact-page) main.contact-page .site-footer.site-chrome {
 
 @media (max-width: 1024px) {
   body .page-shell main.contact-page {
-    --contact-shell-gutter-top: 11px;
+    --contact-shell-gutter-top: 0px;
     --contact-shell-gutter-right: 12px;
     --contact-shell-gutter-bottom: 11px;
     --contact-shell-gutter-left: 11px;
@@ -14628,7 +14628,7 @@ body:has(main.contact-page) main.contact-page .site-footer.site-chrome {
 
 @media (max-width: 767px) {
   body .page-shell main.contact-page {
-    --contact-shell-gutter-top: 11px;
+    --contact-shell-gutter-top: 0px;
     --contact-shell-gutter-right: 12px;
     --contact-shell-gutter-bottom: 11px;
     --contact-shell-gutter-left: 11px;
@@ -14638,7 +14638,7 @@ body:has(main.contact-page) main.contact-page .site-footer.site-chrome {
 
 @media (max-width: 620px) {
   body .page-shell main.contact-page {
-    --contact-shell-gutter-top: 11px;
+    --contact-shell-gutter-top: 0px;
     --contact-shell-gutter-right: 12px;
     --contact-shell-gutter-bottom: 11px;
     --contact-shell-gutter-left: 11px;
