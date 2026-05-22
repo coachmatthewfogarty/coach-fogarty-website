@@ -9098,6 +9098,19 @@ body .page-shell :is(
   .about-cover-page .about-cover-copy p:not(.eyebrow) + p {
     margin-top: 12px;
   }
+
+  .about-cover-page .about-letter-gallery img {
+    /* Large desktop image-fit lock: replaces the old crop rule so full photos stay visible inside the existing frames. */
+    object-fit: fill;
+    object-position: center center;
+  }
+}
+
+@media (min-width: 2200px) {
+  .about-cover-page .about-letter-gallery img {
+    /* Ultra-wide desktop crop reset: 2560px has enough room for the original full-frame cover crop without stretching photos. */
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 1024px) {
