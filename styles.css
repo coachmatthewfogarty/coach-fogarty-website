@@ -11072,7 +11072,8 @@ main.archer-page .archer-final-cta .featured-actions {
 }
 
 /* Canonical Home/page hero system.
-   Source of truth for every active hero except About and Contact. */
+   Source of truth for every active hero except About and Contact.
+   The target interior page heroes intentionally follow the homepage hero specs. */
 .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
   --home-hero-left-system-max: 100%;
   --home-hero-pill-min-height: clamp(54px, 8.5vw, 76px);
@@ -11118,8 +11119,16 @@ main.archer-page .archer-final-cta .featured-actions {
   box-shadow: var(--shadow) !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system {
+.page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system {
   background: var(--home-system-card-cream, #fff4e6) !important;
+}
+
+@media (min-width: 1025px) {
+  .page-shell :is(main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) {
+    --home-section-wall-width: min(100vw, 2560px);
+    --home-section-wall-border: transparent;
+    --home-section-wall-bg: #ffffff;
+  }
 }
 
 .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-left-system {
@@ -11146,7 +11155,7 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   color: var(--red) !important;
   font-size: clamp(10.24px, 2.25vw, 12.16px) !important;
   font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
+  letter-spacing: 0.15em !important;
   line-height: 1.15 !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
@@ -11324,6 +11333,8 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
     rgba(255, 250, 243, 0.86)
   ) !important;
   color: var(--home-proof-pill-main, var(--text)) !important;
+  font-size: inherit !important;
+  line-height: normal !important;
   text-align: center !important;
   text-decoration: none !important;
   box-shadow:
@@ -11403,7 +11414,7 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system {
+  .page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system {
     box-sizing: border-box !important;
     width: 100vw !important;
     max-width: 100vw !important;
@@ -11422,19 +11433,19 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
 }
 
 @media (min-width: 431px) and (max-width: 1024px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system {
+  .page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: clamp(11px, calc(2.1vw + 2px), 15px);
   }
 }
 
 @media (min-width: 560px) and (max-width: 767px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system {
+  .page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: clamp(13.5px, calc(0.65vw + 10px), 14.8px);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (min-height: 768px) {
-  body .page-shell main#top > .page-hero-system.page-hero-system {
+  .page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system {
     --hero-overlay-link-size: clamp(14.6px, calc(0.2vw + 12.8px), 15px);
     --hero-overlay-padding-inline: clamp(28px, 4.1vw, 42px);
   }
@@ -11516,7 +11527,7 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system .eyebrow {
     font-size: var(--hero-eyebrow-size) !important;
     line-height: var(--hero-eyebrow-line) !important;
-    letter-spacing: 0.12em !important;
+    letter-spacing: 0.15em !important;
   }
 
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system h1 {
@@ -11696,8 +11707,8 @@ body .page-shell main#top > .page-hero-system.page-hero-system {
   }
 }
 
-/* Homepage hero overlay: dividers use consistent weighted lanes so longer links stay balanced. */
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text {
+/* Homepage-spec hero overlay: dividers use consistent weighted lanes so longer links stay balanced. */
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text {
   position: relative !important;
   display: grid !important;
   grid-template-columns: var(
@@ -11710,56 +11721,56 @@ body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-ov
   gap: var(--hero-overlay-link-gap-row) 0 !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
   width: auto !important;
   min-width: max-content !important;
   padding-inline: 0 !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(1) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(1) {
   grid-column: 1 !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(2) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(2) {
   grid-column: 2 !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(3) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(3) {
   grid-column: 3 !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(4) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(4) {
   grid-column: 4 !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(5) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(5) {
   grid-column: 5 !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text span {
   position: absolute !important;
   top: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(1) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(1) {
   left: var(--hero-overlay-divider-1, 17.3%) !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(2) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(2) {
   left: var(--hero-overlay-divider-2, 37.4%) !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(3) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(3) {
   left: var(--hero-overlay-divider-3, 55.7%) !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(4) {
+.page-shell :is(main#top, main.featured-page, main.media-library-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(4) {
   left: var(--hero-overlay-divider-4, 81.8%) !important;
 }
 
 @media (min-width: 1025px) {
-  .page-shell main#top > .page-hero-system.page-hero-system {
+  .page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system {
     --home-hero-wall-width: min(var(--home-section-wall-width), calc(100vw - 16px));
     width: var(--home-hero-wall-width) !important;
     max-width: none !important;
@@ -11773,7 +11784,7 @@ body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-ov
     box-shadow: none !important;
   }
 
-  .page-shell main#top > .page-hero-system.page-hero-system::before {
+  .page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system::before {
     content: none !important;
   }
 
@@ -12835,20 +12846,28 @@ body:has(main#top) .site-header .brand-mark {
     line-height: 1 !important;
   }
 
-  body:has(main#top) main#top > .page-hero-system.page-hero-system {
+  .page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system {
     margin-top: 0 !important;
   }
 }
 
 /* Tablet home header: remove the hero's top margin so the header-to-hero band matches the mobile no-gap chrome. */
 @media (min-width: 768px) and (max-width: 1024px) {
-  body:has(main#top) main#top > .page-hero-system.page-hero-system {
+  .page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system {
     margin-top: 0 !important;
   }
 }
 
 body .page-shell main#top .eyebrow,
 body .page-shell main#top :is(.section-heading, .home-closeout-heading) > .eyebrow {
+  color: var(--coach-red, #8f2d1e) !important;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+}
+
+body .page-shell :is(main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system .eyebrow {
   color: var(--coach-red, #8f2d1e) !important;
   font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
   font-weight: 700 !important;
@@ -12904,8 +12923,8 @@ body .page-shell main#top #contact .home-closeout-heading > h2 {
   }
 }
 
-/* Homepage hero pill color overrides shared page-hero pill defaults above. */
-body .page-shell main#top > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill {
+/* Homepage-spec hero pill color overrides shared page-hero pill defaults above. */
+.page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill {
   border: 1.25px solid rgba(201, 149, 62, 0.72) !important;
   background: linear-gradient(180deg, #FFF8EC 0%, #F7E9D2 100%) !important;
   color: #1F1B16 !important;
@@ -12914,23 +12933,23 @@ body .page-shell main#top > .page-hero-system.page-hero-system > .hero-pill-syst
     0 10px 24px rgba(143, 45, 30, 0.08) !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-main {
+.page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-main {
   color: #1F1B16 !important;
   font-weight: 800 !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-sub {
+.page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-sub {
   color: #6A4E2E !important;
   font-weight: 700 !important;
 }
 
-/* Homepage overlay color overrides shared hero overlay defaults above. */
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay {
+/* Homepage-spec overlay color overrides shared hero overlay defaults above. */
+.page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system .hero-portrait-overlay {
   border-color: rgba(216, 178, 112, 0.28) !important;
   background: rgba(20, 22, 24, 0.86) !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-title {
+.page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-title {
   color: #D08A3A !important;
   font-family: "Trebuchet MS", "Gill Sans", sans-serif !important;
   font-weight: 800 !important;
@@ -12938,11 +12957,11 @@ body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-ov
   text-transform: uppercase !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+.page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text a {
   color: #9EC3EA !important;
 }
 
-body .page-shell main#top > .page-hero-system.page-hero-system .hero-portrait-overlay-text span {
+.page-shell :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page) > .page-hero-system.page-hero-system .hero-portrait-overlay-text span {
   color: rgba(255, 244, 226, 0.45) !important;
 }
 
@@ -13742,6 +13761,18 @@ body .page-shell main#top > #playing-career.section .playing-career-label {
 
   /* Overrides older mobile page-shell/wall-width locks so affected homepage sections do not show phone-edge white rails. */
   body .page-shell main#top > :is(.page-hero-system, #systems.section, #featured-work, #media.section, #contact.contact-section) {
+    box-sizing: border-box !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-right: calc((100% - 100vw) / 2) !important;
+    margin-left: calc((100% - 100vw) / 2) !important;
+  }
+
+  body .page-shell main.systems-detail-page.systems-detail-page > .hero.page-hero-system.page-hero-system,
+  body .page-shell main.featured-page.featured-page > .hero.page-hero-system.page-hero-system,
+  body .page-shell main.media-library-page.media-library-page > .hero.page-hero-system.page-hero-system,
+  body .page-shell main.anaya-case-study-page.anaya-case-study-page > .hero.page-hero-system.page-hero-system,
+  body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system {
     box-sizing: border-box !important;
     width: 100vw !important;
     max-width: 100vw !important;
