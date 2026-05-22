@@ -9150,6 +9150,14 @@ body .page-shell :is(
   }
 }
 
+@media (max-width: 1279px) {
+  .about-cover-page .about-letter-gallery {
+    /* Replaces the older stacked About image grid gutter rule so mobile and tablet image grids remove the side gutters at 1279px and below. */
+    width: calc(100% + var(--about-shell-gutter-left) + var(--about-shell-gutter-right));
+    margin-left: calc(var(--about-shell-gutter-left) * -1);
+  }
+}
+
 @media (max-width: 767px) {
   .about-story-page.about-cover-page {
     --about-shell-gutter-left: 24px;
