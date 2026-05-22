@@ -10239,7 +10239,8 @@ body .page-shell main.contact-page:not(#top):not(.about-cover-page) > .section.c
   padding-bottom: 22px !important;
   padding-left: 0 !important;
   border: 0 !important;
-  background: transparent !important;
+  background: #ffffff !important;
+  background-image: none !important;
   box-shadow: none !important;
 }
 
@@ -13983,6 +13984,45 @@ body .page-shell :is(
   .contact-page-grid
 ) {
   border-radius: 0 !important;
+}
+
+/* Shared spacing-line lock: target page grid seams use the homepage white #ffffff instead of older cream/transparent fills. */
+body .page-shell :is(
+  main#top,
+  main.systems-detail-page,
+  main.featured-page,
+  main.media-library-page,
+  main.anaya-case-study-page,
+  main.archer-page,
+  main.about-cover-page,
+  main.contact-page
+) :is(
+  .section,
+  .library-grid,
+  .systems-core-grid,
+  .systems-archer-grid,
+  .system-document-grid,
+  .featured-page > .featured-pillar,
+  .featured-page > .featured-strategy-panel,
+  .featured-page > .featured-final-cta,
+  .featured-pillar-grid,
+  .featured-pillar-grid-reverse,
+  .media-library-section,
+  .media-section-grid,
+  .media-preview-carousel,
+  .gallery-grid,
+  .anaya-gallery-preview,
+  .timeline-grid,
+  .archer-card-grid,
+  .archer-proof-grid,
+  .archer-media-grid,
+  .about-letter-section,
+  .about-letter-gallery,
+  .contact-page-grid,
+  .contact-closeout-grid
+) {
+  background: #ffffff !important;
+  background-image: none !important;
 }
 
 /* Homepage hero-to-Systems handoff: match the 11px Systems rhythm. */
