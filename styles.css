@@ -58,12 +58,13 @@ body {
     linear-gradient(180deg, #f6f0e5 0%, #f3ede4 38%, #efe6da 100%);
 }
 
-body:has(main#top) {
+/* Shared site canvas: these pages intentionally follow the homepage body background. */
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) {
   background: #ffffff;
 }
 
-html:has(body main#top),
-body:has(main#top) {
+html:has(body :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)),
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) {
   overflow-x: clip;
 }
 
