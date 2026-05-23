@@ -10543,12 +10543,16 @@ body:has(main.contact-page) .site-nav a[href="./contact"] {
 body .page-shell main.systems-detail-page > .system-detail-section {
   --systems-section-wall-width: 100vw;
   --systems-section-inline-pad: max(18px, calc((var(--systems-section-wall-width) - var(--page-shell-width)) / 2 + 18px));
+  --systems-carousel-safe-gutter: clamp(22px, 5.8vw, 25px);
+  --systems-intro-rail-gap: 20px;
   box-sizing: border-box;
   width: var(--systems-section-wall-width) !important;
   max-width: none !important;
   margin: 0 calc(50% - (var(--systems-section-wall-width) * 0.5)) !important;
-  margin-top: clamp(26px, 2.4vw, 44px) !important;
+  margin-top: var(--systems-intro-rail-gap) !important;
+  padding-top: 0 !important;
   padding-right: var(--systems-section-inline-pad) !important;
+  padding-bottom: 0 !important;
   padding-left: var(--systems-section-inline-pad) !important;
   border: 0 !important;
   border-radius: 0 !important;
@@ -10556,16 +10560,93 @@ body .page-shell main.systems-detail-page > .system-detail-section {
   box-shadow: none !important;
 }
 
+/* Systems DPAT intro start lock: only the first detail section gets mobile/tablet top breathing room so its eyebrow clears the hero rail above it. */
+@media (max-width: 1024px) {
+  /* Systems mobile/tablet hero seam lock: the hero-to-DPAT gap stays white instead of showing the old gray page gutter. */
+  body .page-shell main.systems-detail-page {
+    background: #ffffff !important;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section#defense {
+    padding-top: clamp(18px, 3.2vw, 24px) !important;
+  }
+}
+
+/* Systems vertical rail rhythm: section block spacing centers each intro between the carousel above and its own proof carousel; card sizing and scroll behavior stay unchanged. */
+/* Systems detail intro rhythm lock: intro spacing is standardized, body copy stays readable, and carousel/card mechanics stay unchanged. */
+body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy {
+  --section-eyebrow-to-title-gap: 6px;
+  --section-title-to-intro-gap: 10px;
+  --mobile-fit-title-size: clamp(22px, 6vw, 28px);
+  --mobile-fit-title-line: 1.06;
+}
+
+/* Systems intro rail alignment: detail intro text aligns to the first carousel card edge so copy and proof cards read as one unit; card sizing and scroll behavior stay unchanged. */
+body .page-shell main.systems-detail-page > .system-detail-section > .system-detail-grid {
+  margin-right: calc(var(--systems-carousel-safe-gutter, clamp(22px, 5.8vw, 25px)) - var(--systems-section-inline-pad));
+  margin-left: calc(var(--systems-carousel-safe-gutter, clamp(22px, 5.8vw, 25px)) - var(--systems-section-inline-pad));
+}
+
+/* These Systems-only !important values override the shared site heading rhythm locks above. */
+body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > .eyebrow {
+  margin-bottom: 6px !important;
+}
+
+body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > h2 {
+  margin: 0 !important;
+}
+
+body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > h2 + p:not(.eyebrow) {
+  margin-top: 10px !important;
+}
+
 main.systems-detail-page .system-detail-copy > p:not(.eyebrow) {
-  max-width: 920px;
+  /* Systems intro body width lock: copy is capped wider than 820px so it does not float beside excessive blank space, while still avoiding full-width lines. */
+  max-width: min(100%, 900px);
   font-size: clamp(1rem, 0.24vw + 0.92rem, 1.12rem);
   line-height: 1.62;
 }
 
-/* Systems media wall lock: document card rows intentionally reach the section shell walls with no inner side gutters. */
+/* Systems carousel safe rail: proof-card rows stay wide, safe side gutters prevent edge clipping, and card content/sizing rules are intentionally unchanged. */
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel {
-  margin-right: calc(var(--systems-section-inline-pad) * -1) !important;
-  margin-left: calc(var(--systems-section-inline-pad) * -1) !important;
+  margin-right: calc((var(--systems-section-inline-pad) - var(--systems-carousel-safe-gutter)) * -1) !important;
+  margin-left: calc((var(--systems-section-inline-pad) - var(--systems-carousel-safe-gutter)) * -1) !important;
+  margin-top: 20px;
+}
+
+/* Systems carousel arrow lock: arrows sit inside the safe proof rail and stay visually active; JS only disables single-item rails. */
+body .page-shell main.systems-detail-page > .system-detail-section .system-carousel-arrow {
+  z-index: 5;
+  border-color: rgba(207, 79, 31, 0.34);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(255, 248, 239, 0.94)),
+    var(--panel);
+  color: var(--coach-orange);
+  opacity: 1;
+}
+
+body .page-shell main.systems-detail-page > .system-detail-section .system-carousel-arrow:hover,
+body .page-shell main.systems-detail-page > .system-detail-section .system-carousel-arrow:focus-visible {
+  border-color: rgba(207, 79, 31, 0.34);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(255, 248, 239, 0.94)),
+    var(--panel);
+  color: var(--coach-orange);
+  transform: translateY(-50%);
+}
+
+body .page-shell main.systems-detail-page > .system-detail-section .system-carousel-arrow:disabled {
+  cursor: default;
+  opacity: 0.36;
+  transform: translateY(-50%);
+}
+
+body .page-shell main.systems-detail-page > .system-detail-section .system-carousel-arrow-prev {
+  left: clamp(6px, 1.4vw, 14px);
+}
+
+body .page-shell main.systems-detail-page > .system-detail-section .system-carousel-arrow-next {
+  right: clamp(6px, 1.4vw, 14px);
 }
 
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-grid {
@@ -10738,6 +10819,29 @@ body .page-shell main.media-library-page > .media-library-section .media-library
   body .page-shell main.systems-detail-page > .system-detail-section {
     --systems-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
     --systems-section-inline-pad: calc(((var(--systems-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
+    --systems-carousel-safe-gutter: clamp(24px, 1.8vw, 31.5px);
+    --systems-intro-rail-gap: 28px;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy {
+    --section-eyebrow-to-title-gap: 8px;
+    --section-title-to-intro-gap: 14px;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > .eyebrow {
+    margin-bottom: 8px !important;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > h2 + p:not(.eyebrow) {
+    margin-top: 14px !important;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > p:not(.eyebrow) {
+    max-width: clamp(820px, 54vw, 1080px);
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel {
+    margin-top: 28px;
   }
 
   body .page-shell main.media-library-page > .media-library-section {
@@ -10747,8 +10851,33 @@ body .page-shell main.media-library-page > .media-library-section .media-library
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy {
+    --section-eyebrow-to-title-gap: 6px;
+    --section-title-to-intro-gap: 12px;
+    --mobile-fit-title-size: clamp(28px, 3.6vw, 34px);
+    --mobile-fit-title-line: 1.05;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section {
+    --systems-carousel-safe-gutter: clamp(26px, 3.5vw, 32px);
+    --systems-intro-rail-gap: 24px;
+  }
+
+  body .page-shell main:not(#top).systems-detail-page > .system-detail-section .system-detail-copy > h2 {
+    font-size: clamp(28px, 3.6vw, 34px) !important;
+    line-height: 1.05 !important;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > h2 + p:not(.eyebrow) {
+    margin-top: 12px !important;
+  }
+
   body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card {
     flex-basis: calc((100% - 16px) / 2);
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel {
+    margin-top: 24px;
   }
 
   body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
@@ -10759,6 +10888,11 @@ body .page-shell main.media-library-page > .media-library-section .media-library
 @media (max-width: 767px) {
   body .page-shell main.systems-detail-page > .system-detail-section {
     width: 100%;
+  }
+
+  body .page-shell main:not(#top).systems-detail-page > .system-detail-section .system-detail-copy > h2 {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.06 !important;
   }
 
   body .page-shell main.media-library-page > .media-library-section {
@@ -14109,6 +14243,20 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .site-footer.site-chrome .footer-grid {
   position: relative;
   border-top-color: rgba(158, 111, 53, 0.18);
+}
+
+/* Systems mobile/tablet footer seam lock: removes the shared 18px cream lead-in so the footer divider starts right after the final media rail. */
+@media (max-width: 1024px) {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.systems-detail-page > .hero.page-hero-system.page-hero-system {
+    border-bottom: 0 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.systems-detail-page > .site-footer.site-chrome {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 }
 
 body .page-shell main#top > section#contact.contact-section,

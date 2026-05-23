@@ -109,17 +109,65 @@ document.querySelectorAll("[data-system-carousel]").forEach((carousel) => {
     return firstCard.getBoundingClientRect().width + gap;
   };
 
+  const wrapThreshold = () => Math.max(16, Math.min(96, cardStep() * 0.2));
+  let isWrapScrolling = false;
+  let wrapReleaseFrame;
+
+  // Systems carousel wrap lock: rapid arrow clicks wait for edge-to-edge wrap to settle so the rail does not bounce back to the side it just left.
+  const scrollToWrappedEdge = (left) => {
+    isWrapScrolling = true;
+    window.cancelAnimationFrame(wrapReleaseFrame);
+    track.scrollTo({ left, behavior: "smooth" });
+
+    const startedAt = window.performance.now();
+    const releaseWhenSettled = () => {
+      const settled = Math.abs(track.scrollLeft - left) <= 4;
+      const timedOut = window.performance.now() - startedAt > 1800;
+
+      if (settled || timedOut) {
+        isWrapScrolling = false;
+        return;
+      }
+
+      wrapReleaseFrame = window.requestAnimationFrame(releaseWhenSettled);
+    };
+
+    wrapReleaseFrame = window.requestAnimationFrame(releaseWhenSettled);
+  };
+
   const updateButtons = () => {
-    const maxScrollLeft = track.scrollWidth - track.clientWidth;
-    previousButton.disabled = track.scrollLeft <= 2;
-    nextButton.disabled = track.scrollLeft >= maxScrollLeft - 2;
+    const hasMultipleCards = track.querySelectorAll(".system-document-card").length > 1;
+    previousButton.disabled = !hasMultipleCards;
+    nextButton.disabled = !hasMultipleCards;
   };
 
   previousButton.addEventListener("click", () => {
+    if (isWrapScrolling) {
+      return;
+    }
+
+    const maxScrollLeft = track.scrollWidth - track.clientWidth;
+
+    if (track.scrollLeft <= 2) {
+      scrollToWrappedEdge(maxScrollLeft);
+      return;
+    }
+
     track.scrollBy({ left: -cardStep(), behavior: "smooth" });
   });
 
   nextButton.addEventListener("click", () => {
+    if (isWrapScrolling) {
+      return;
+    }
+
+    const maxScrollLeft = track.scrollWidth - track.clientWidth;
+
+    if (track.scrollLeft >= maxScrollLeft - wrapThreshold()) {
+      scrollToWrappedEdge(0);
+      return;
+    }
+
     track.scrollBy({ left: cardStep(), behavior: "smooth" });
   });
 
