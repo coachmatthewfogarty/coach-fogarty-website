@@ -33,8 +33,18 @@
       "permanent": true
     },
     {
+      "source": "/gallery.html",
+      "destination": "/gallery",
+      "permanent": true
+    },
+    {
       "source": "/media.html",
-      "destination": "/media",
+      "destination": "/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/media",
+      "destination": "/gallery",
       "permanent": true
     },
     {

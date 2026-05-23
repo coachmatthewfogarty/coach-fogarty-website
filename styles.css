@@ -10533,7 +10533,7 @@ body:has(main.systems-detail-page) .site-nav a[href="./systems"] {
 body:has(main.featured-page) .site-nav a[href="./featured"],
 body:has(main.anaya-case-study-page) .site-nav a[href="./featured"],
 body:has(main.archer-page) .site-nav a[href="./featured"],
-body:has(main.media-library-page) .site-nav a[href="./media"],
+body:has(main.media-library-page) .site-nav a[href="./gallery"],
 body:has(main.about-cover-page) .site-nav a[href="./about"],
 body:has(main.contact-page) .site-nav a[href="./contact"] {
   color: var(--red);
