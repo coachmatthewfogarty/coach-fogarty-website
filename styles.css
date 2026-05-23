@@ -2905,12 +2905,6 @@ a.credential-static[href] {
   margin-bottom: 14px;
 }
 
-.media-library-page .media-library-section {
-  margin-top: 18px;
-  padding: 22px 28px;
-  border-radius: 28px;
-}
-
 .media-category-grid,
 .media-section-grid,
 .media-feature-grid {
@@ -2986,8 +2980,7 @@ a.credential-static[href] {
 }
 
 .media-category-card,
-.media-library-card,
-.media-album-section {
+.media-library-card {
   border: 1px solid var(--line);
   background:
     linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(255, 248, 239, 0.78)),
@@ -3065,11 +3058,6 @@ a.credential-static[href] {
 .media-album-stack {
   display: grid;
   gap: 24px;
-}
-
-.media-album-section {
-  padding: 22px;
-  border-radius: 28px;
 }
 
 .media-album-heading {
@@ -10702,6 +10690,85 @@ main.systems-detail-page .system-document-copy strong {
   min-height: 2.28em;
 }
 
+/* Gallery section lock: content sections intentionally follow the Systems page section specs. */
+body .page-shell main.media-library-page > .media-library-section {
+  --gallery-section-wall-width: 100vw;
+  --gallery-section-inline-pad: max(18px, calc((var(--gallery-section-wall-width) - var(--page-shell-width)) / 2 + 18px));
+  box-sizing: border-box;
+  width: var(--gallery-section-wall-width) !important;
+  max-width: none !important;
+  margin: 0 calc(50% - (var(--gallery-section-wall-width) * 0.5)) !important;
+  margin-top: clamp(26px, 2.4vw, 44px) !important;
+  padding-right: var(--gallery-section-inline-pad) !important;
+  padding-left: var(--gallery-section-inline-pad) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-album-section {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-album-stack {
+  gap: 24px;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-section-grid,
+body .page-shell main.media-library-page > .media-library-section .media-feature-grid,
+body .page-shell main.media-library-page > .media-library-section .media-category-grid {
+  gap: 16px;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
+  margin-right: calc(var(--gallery-section-inline-pad) * -1) !important;
+  margin-left: calc(var(--gallery-section-inline-pad) * -1) !important;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-preview-carousel > .media-section-grid {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-category-card,
+body .page-shell main.media-library-page > .media-library-section .media-library-card {
+  padding: 0 0 12px !important;
+  overflow: hidden;
+  border: 1px solid rgba(31, 27, 22, 0.1);
+  border-radius: 22px;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-category-frame,
+body .page-shell main.media-library-page > .media-library-section .media-library-frame {
+  border: 0 !important;
+  border-radius: 0 !important;
+  border-top-left-radius: inherit !important;
+  border-top-right-radius: inherit !important;
+  background: #fffaf3;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-category-card h3,
+body .page-shell main.media-library-page > .media-library-section .media-category-card p,
+body .page-shell main.media-library-page > .media-library-section .media-category-card .button,
+body .page-shell main.media-library-page > .media-library-section .media-library-meta {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-category-card .button {
+  width: auto;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-category-card h3,
+body .page-shell main.media-library-page > .media-library-section .media-library-meta {
+  margin-top: 12px;
+}
+
 @media (min-width: 1025px) {
   body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card {
     flex-basis: calc((100% - 48px) / 4);
@@ -10710,6 +10777,11 @@ main.systems-detail-page .system-document-copy strong {
   body .page-shell main.systems-detail-page > .system-detail-section {
     --systems-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
     --systems-section-inline-pad: calc(((var(--systems-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
+  }
+
+  body .page-shell main.media-library-page > .media-library-section {
+    --gallery-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+    --gallery-section-inline-pad: calc(((var(--gallery-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
   }
 }
 
@@ -10721,6 +10793,10 @@ main.systems-detail-page .system-document-copy strong {
 
 @media (max-width: 767px) {
   body .page-shell main.systems-detail-page > .system-detail-section {
+    width: 100%;
+  }
+
+  body .page-shell main.media-library-page > .media-library-section {
     width: 100%;
   }
 
