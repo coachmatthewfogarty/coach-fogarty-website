@@ -1347,12 +1347,6 @@ const mediaArcherFeatured = document.querySelector("#mediaArcherFeatured");
 const mediaArcherPhotoGrid = document.querySelector("#mediaArcherPhotoGrid");
 const mediaArcherVideoGrid = document.querySelector("#mediaArcherVideoGrid");
 const mediaAnayaSections = document.querySelector("#mediaAnayaSections");
-const mediaVideoActions = document.querySelector("#mediaVideoActions");
-const mediaPlayingCareerButton = document.querySelector("#mediaPlayingCareerButton");
-const mediaPlayingAwardsButton = document.querySelector("#mediaPlayingAwardsButton");
-const mediaArcherPhotoButton = document.querySelector("#mediaArcherPhotoButton");
-const mediaArcherVideoButton = document.querySelector("#mediaArcherVideoButton");
-const mediaAnayaGalleryButton = document.querySelector("#mediaAnayaGalleryButton");
 const playingCareerTrack = document.querySelector("#playingCareerTrack");
 const playingCareerPrev = document.querySelector("#playingCareerPrev");
 const playingCareerNext = document.querySelector("#playingCareerNext");
@@ -1816,7 +1810,6 @@ function renderMediaLibraryPage() {
   ];
 
   const albumIndexFor = (album) => mediaLibraryAlbums.indexOf(album);
-  const galleryButton = (albumIndex, label) => `<button class="button button-secondary button-small" type="button" data-open-media-gallery="${albumIndex}">${label}</button>`;
   const previewCard = ({ albumIndex, itemIndex, label, titleOverride }) => {
     const album = mediaLibraryAlbums[albumIndex];
     const item = activeAlbumItemsFor(album)[itemIndex];
@@ -1824,15 +1817,16 @@ function renderMediaLibraryPage() {
   };
   const previewCarousels = {};
   const previewCardCount = () => {
-    if (window.matchMedia("(max-width: 767px)").matches) {
-      return 1;
+    // Gallery preview carousels keep the desktop carousel structure on tablet/mobile with two visible cards.
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      return 2;
     }
 
     return 3;
   };
   const visiblePreviewCards = (cards, start = 0) => {
     const count = Math.min(previewCardCount(), cards.length);
-    return Array.from({ length: count }, (_, offset) => cards[(start + offset) % cards.length]);
+    return cards.slice(start, start + count);
   };
   const previewCarouselMarkup = (key, cards, renderCard = previewCard) => {
     previewCarousels[key] = { cards, start: 0, renderCard };
@@ -1891,12 +1885,8 @@ function renderMediaLibraryPage() {
       label: album.category || "Coaching Gallery"
     }));
 
-    mediaAlbumSections.innerHTML = `
-      ${previewCarouselMarkup("coaching", coachingPreview)}
-      <div class="media-gallery-button-row">
-        ${coachingAlbums.map((album) => galleryButton(albumIndexFor(album), album.title)).join("")}
-      </div>
-    `;
+    // Gallery album access stays inside the carousel cards; separate action-pill rows are intentionally retired.
+    mediaAlbumSections.innerHTML = previewCarouselMarkup("coaching", coachingPreview);
   }
 
   if (mediaVideoGrid) {
@@ -1912,13 +1902,6 @@ function renderMediaLibraryPage() {
       videoPreviewItems,
       ({ albumIndex, itemIndex, item, label }) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, label)
     );
-  }
-
-  if (mediaVideoActions) {
-    mediaVideoActions.innerHTML = `
-      ${galleryButton(albumIndexFor(archerVideoAlbum), "All Archer Videos")}
-      ${galleryButton(albumIndexFor(anayaVideoAlbum), "All Training Clips")}
-    `;
   }
 
   if (mediaPlayingCareerGrid) {
@@ -1986,7 +1969,15 @@ function renderMediaLibraryPage() {
         return;
       }
 
-      state.start = (state.start + direction + state.cards.length) % state.cards.length;
+      const count = Math.min(previewCardCount(), state.cards.length);
+      const lastStart = Math.max(0, state.cards.length - count);
+
+      if (direction > 0) {
+        state.start = state.start >= lastStart ? 0 : Math.min(state.start + count, lastStart);
+      } else {
+        state.start = state.start <= 0 ? lastStart : Math.max(state.start - count, 0);
+      }
+
       track.innerHTML = visiblePreviewCards(state.cards, state.start).map(state.renderCard).join("");
       connectMediaLibraryCards(carousel);
     };
@@ -2002,26 +1993,6 @@ function renderMediaLibraryPage() {
       enableSwipeCarousel(track, moveCarousel);
     }
   });
-
-  if (mediaPlayingCareerButton) {
-    mediaPlayingCareerButton.dataset.openMediaGallery = String(albumIndexFor(playingAlbum));
-  }
-
-  if (mediaPlayingAwardsButton) {
-    mediaPlayingAwardsButton.dataset.openMediaGallery = String(albumIndexFor(awardsAlbum));
-  }
-
-  if (mediaArcherPhotoButton) {
-    mediaArcherPhotoButton.dataset.openMediaGallery = String(albumIndexFor(archerPhotoAlbum));
-  }
-
-  if (mediaArcherVideoButton) {
-    mediaArcherVideoButton.dataset.openMediaGallery = String(albumIndexFor(archerVideoAlbum));
-  }
-
-  if (mediaAnayaGalleryButton) {
-    mediaAnayaGalleryButton.dataset.openMediaGallery = String(albumIndexFor(anayaFullAlbum));
-  }
 
   connectMediaLibraryCards(document);
 }

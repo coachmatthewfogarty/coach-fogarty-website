@@ -3128,17 +3128,6 @@ a.credential-static[href] {
   margin-top: 12px;
 }
 
-.media-gallery-button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.media-gallery-button-row .button {
-  min-height: 38px;
-}
-
 .media-directory-card {
   min-height: 0;
 }
@@ -7765,7 +7754,7 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
   }
 }
 
-/* Gallery page mobile polish: keep desktop intact, make phone previews read like a gallery. */
+/* Gallery page mobile polish: keep desktop intact while preserving the two-card carousel pattern. */
 @media (max-width: 767px) {
   .media-library-page,
   .media-library-page .media-library-section{
@@ -7787,38 +7776,8 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
     white-space: var(--type-heading-white-space, normal) !important;
   }
 
-  .media-library-page .media-preview-carousel {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-    padding-bottom: 48px;
-  }
-
   .media-library-page .media-section-grid:has(> .media-preview-carousel) {
     grid-template-columns: minmax(0, 1fr) !important;
-  }
-
-  .media-library-page .media-preview-carousel > .media-section-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 12px;
-    width: 100%;
-  }
-
-  .media-library-page .media-carousel-arrow {
-    position: absolute;
-    bottom: 0;
-    width: 40px;
-    height: 40px;
-    font-size: 1.75rem;
-  }
-
-  .media-library-page .media-carousel-arrow-prev {
-    left: calc(50% - 46px);
-  }
-
-  .media-library-page .media-carousel-arrow-next {
-    right: calc(50% - 46px);
   }
 
   .media-library-page .media-category-card,
@@ -7868,29 +7827,6 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
     bottom: 12px;
   }
 
-  .media-library-page .media-gallery-button-row,
-  .media-library-page .media-related-actions {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .media-library-page .media-gallery-button-row .button,
-  .media-library-page .media-related-actions .button {
-    width: 100%;
-    min-height: 40px;
-  }
-
-  .media-library-page #playing-career-media .media-related-actions {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 360px) {
-  .media-library-page .media-gallery-button-row,
-  .media-library-page .media-related-actions {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 /* Gallery awards: keep certificate and diploma tops visible inside the same card frame. */
@@ -10725,14 +10661,39 @@ body .page-shell main.media-library-page > .media-library-section .media-categor
   gap: 16px;
 }
 
+/* Gallery carousel lock: album access stays in one no-wrap carousel row; old stacked/action-pill rules are retired. */
+body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
+  --gallery-carousel-visible-count: 3;
+  --gallery-carousel-gap: 16px;
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) 44px !important;
+  gap: 10px !important;
+  align-items: center;
+  padding-bottom: 0 !important;
+}
+
 body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
   margin-right: calc(var(--gallery-section-inline-pad) * -1) !important;
   margin-left: calc(var(--gallery-section-inline-pad) * -1) !important;
 }
 
 body .page-shell main.media-library-page > .media-library-section .media-preview-carousel > .media-section-grid {
+  display: flex !important;
+  grid-template-columns: none !important;
+  flex-wrap: nowrap !important;
+  gap: var(--gallery-carousel-gap) !important;
+  align-items: stretch;
   padding-right: 0 !important;
   padding-left: 0 !important;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-preview-carousel > .media-section-grid > :is(.media-category-card, .media-library-card) {
+  width: auto !important;
+  flex: 0 0 calc((100% - ((var(--gallery-carousel-visible-count) - 1) * var(--gallery-carousel-gap))) / var(--gallery-carousel-visible-count)) !important;
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-carousel-arrow {
+  position: static !important;
 }
 
 body .page-shell main.media-library-page > .media-library-section .media-category-card,
@@ -10789,6 +10750,10 @@ body .page-shell main.media-library-page > .media-library-section .media-library
   body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card {
     flex-basis: calc((100% - 16px) / 2);
   }
+
+  body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
+    --gallery-carousel-visible-count: 2;
+  }
 }
 
 @media (max-width: 767px) {
@@ -10798,6 +10763,19 @@ body .page-shell main.media-library-page > .media-library-section .media-library
 
   body .page-shell main.media-library-page > .media-library-section {
     width: 100%;
+  }
+
+  body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
+    --gallery-carousel-visible-count: 2;
+    --gallery-carousel-gap: 10px;
+    grid-template-columns: 38px minmax(0, 1fr) 38px !important;
+    gap: 8px !important;
+  }
+
+  body .page-shell main.media-library-page > .media-library-section .media-carousel-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1.7rem;
   }
 
   main.systems-detail-page .system-detail-copy > p:not(.eyebrow) {
