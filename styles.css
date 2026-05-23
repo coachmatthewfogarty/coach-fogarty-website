@@ -9107,6 +9107,23 @@ body .page-shell :is(
 }
 
 @media (min-width: 2200px) {
+  .about-cover-page .about-letter-copy {
+    gap: clamp(22px, 1vw, 26px);
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) {
+    line-height: 1.62;
+  }
+
+  .about-cover-page .about-cover-copy p:not(.eyebrow) + p {
+    margin-top: 16px;
+  }
+
+  .about-cover-page .about-letter-gallery {
+    height: max(var(--about-letter-copy-height, 0px), clamp(860px, calc(100vh - 471px), 980px));
+    max-height: none;
+  }
+
   .about-cover-page .about-letter-gallery img {
     /* Ultra-wide desktop crop reset: 2560px has enough room for the original full-frame cover crop without stretching photos. */
     object-fit: cover;
