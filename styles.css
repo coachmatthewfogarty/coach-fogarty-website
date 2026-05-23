@@ -10526,16 +10526,16 @@ body .page-shell main.contact-page .contact-form .button {
    The shared page-hero, card, section-heading, image and button tokens above
    remain the source of visual truth. These scoped rules only align the Systems
    page library, detail sections and document carousels to that approved system. */
-body:has(main.systems-detail-page) .site-nav a[href="./systems.html"] {
+body:has(main.systems-detail-page) .site-nav a[href="./systems"] {
   color: var(--red);
 }
 
-body:has(main.featured-page) .site-nav a[href="./featured-work.html"],
-body:has(main.anaya-case-study-page) .site-nav a[href="./featured-work.html"],
-body:has(main.archer-page) .site-nav a[href="./featured-work.html"],
-body:has(main.media-library-page) .site-nav a[href="./media.html"],
-body:has(main.about-cover-page) .site-nav a[href="./about.html"],
-body:has(main.contact-page) .site-nav a[href="./contact.html"] {
+body:has(main.featured-page) .site-nav a[href="./featured"],
+body:has(main.anaya-case-study-page) .site-nav a[href="./featured"],
+body:has(main.archer-page) .site-nav a[href="./featured"],
+body:has(main.media-library-page) .site-nav a[href="./media"],
+body:has(main.about-cover-page) .site-nav a[href="./about"],
+body:has(main.contact-page) .site-nav a[href="./contact"] {
   color: var(--red);
 }
 

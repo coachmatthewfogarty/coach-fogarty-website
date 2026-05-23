@@ -1,0 +1,61 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/systems.html",
+      "destination": "/systems",
+      "permanent": true
+    },
+    {
+      "source": "/featured.html",
+      "destination": "/featured",
+      "permanent": true
+    },
+    {
+      "source": "/featured-work.html",
+      "destination": "/featured",
+      "permanent": true
+    },
+    {
+      "source": "/featured-work",
+      "destination": "/featured",
+      "permanent": true
+    },
+    {
+      "source": "/media.html",
+      "destination": "/media",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/anaya-case-study.html",
+      "destination": "/anaya-case-study",
+      "permanent": true
+    },
+    {
+      "source": "/archer-visuals.html",
+      "destination": "/archer-visuals",
+      "permanent": true
+    },
+    {
+      "source": "/credentials.html",
+      "destination": "/credentials",
+      "permanent": true
+    }
+  ]
+}

@@ -10,7 +10,7 @@ const librarySections = [
     buttons: [
       {
         label: "Learn More",
-        href: "./systems.html#development",
+        href: "./systems#development",
         internal: true
       },
       {
@@ -30,7 +30,7 @@ const librarySections = [
     buttons: [
       {
         label: "Learn More",
-        href: "./systems.html#scouting",
+        href: "./systems#scouting",
         internal: true
       },
       {
@@ -51,7 +51,7 @@ const librarySections = [
     buttons: [
       {
         label: "Learn More",
-        href: "./systems.html#recruiting",
+        href: "./systems#recruiting",
         internal: true
       },
       {
@@ -72,7 +72,7 @@ const librarySections = [
     buttons: [
       {
         label: "Learn More",
-        href: "./systems.html#defense",
+        href: "./systems#defense",
         internal: true
       },
       {
@@ -93,7 +93,7 @@ const librarySections = [
     buttons: [
       {
         label: "Learn More",
-        href: "./systems.html#operations",
+        href: "./systems#operations",
         internal: true
       },
       {
@@ -113,7 +113,7 @@ const librarySections = [
     buttons: [
       {
         label: "Learn More",
-        href: "./systems.html#leadership",
+        href: "./systems#leadership",
         internal: true
       },
       {
@@ -1532,7 +1532,7 @@ function systemTypeSlug(type) {
 }
 
 function systemPrimaryHref(section) {
-  return section.buttons.find((button) => button.internal)?.href || section.buttons[0]?.href || "./systems.html";
+  return section.buttons.find((button) => button.internal)?.href || section.buttons[0]?.href || "./systems";
 }
 
 function renderLibrary() {
