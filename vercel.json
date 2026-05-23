@@ -48,8 +48,18 @@
       "permanent": true
     },
     {
+      "source": "/the-archer.html",
+      "destination": "/the-archer",
+      "permanent": true
+    },
+    {
       "source": "/archer-visuals.html",
-      "destination": "/archer-visuals",
+      "destination": "/the-archer",
+      "permanent": true
+    },
+    {
+      "source": "/archer-visuals",
+      "destination": "/the-archer",
       "permanent": true
     },
     {
