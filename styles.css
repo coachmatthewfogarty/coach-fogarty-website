@@ -14213,6 +14213,29 @@ body .page-shell :is(
   background-image: none !important;
 }
 
+/* Anaya/Archer case page wall lock: section bands use the same shell-wall gutter math as Systems, remove old top/bottom wall lines, and preserve inner cards/media layouts. */
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) > .section.section {
+  --case-page-section-wall-width: 100vw;
+  --case-page-section-inline-pad: max(18px, calc((var(--case-page-section-wall-width) - var(--page-shell-width)) / 2 + 18px));
+  box-sizing: border-box;
+  width: var(--case-page-section-wall-width) !important;
+  max-width: none !important;
+  margin-right: calc(50% - (var(--case-page-section-wall-width) * 0.5)) !important;
+  margin-left: calc(50% - (var(--case-page-section-wall-width) * 0.5)) !important;
+  padding-right: var(--case-page-section-inline-pad) !important;
+  padding-left: var(--case-page-section-inline-pad) !important;
+  border: 0 !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+@media (min-width: 1025px) {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) > .section.section {
+    --case-page-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+    --case-page-section-inline-pad: calc(((var(--case-page-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
+  }
+}
+
 /* Homepage hero-to-Systems handoff: match the 11px Systems rhythm. */
 @media (min-width: 1025px) {
   body .page-shell main#top > #systems.section {
@@ -14247,6 +14270,23 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
 
 /* Systems mobile/tablet footer seam lock: removes the shared 18px cream lead-in so the footer divider starts right after the final media rail. */
 @media (max-width: 1024px) {
+  /* Anaya/Archer mobile/tablet seam lock: hero handoffs stay white and drop the old border/shadow strip before the first content section. */
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) {
+    background: #ffffff !important;
+  }
+
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) > .hero.page-hero-system.page-hero-system {
+    border-bottom: 0 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Anaya/Archer mobile/tablet footer seam lock: removes the shared cream lead-in so the footer divider starts at the case page wall. */
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) > .site-footer.site-chrome {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
   body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.systems-detail-page > .hero.page-hero-system.page-hero-system {
     border-bottom: 0 !important;
     border-color: transparent !important;
