@@ -15360,6 +15360,23 @@ body .page-shell main.featured-page > .featured-final-cta > div > h2 + p {
   margin-top: var(--featured-title-to-body-gap) !important;
 }
 
+/* Featured summary intro: the moved coaching-profile paragraph sits directly under Four-Part Impact and uses the same body-copy rhythm as the split sections. */
+body .page-shell main.featured-page > .featured-summary-section > .section-heading {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 + p {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: var(--featured-title-to-body-gap) !important;
+  margin-bottom: 0 !important;
+  color: var(--muted) !important;
+  font-size: 16px !important;
+  line-height: 1.52 !important;
+  text-align: left !important;
+}
+
 @media (min-width: 1025px) {
   body .page-shell main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
     /* Featured body uses the approved shared page wall width; media balance is controlled inside the split grid, not by narrowing the wall. */
