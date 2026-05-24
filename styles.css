@@ -15385,7 +15385,7 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
     --featured-section-rail-gutter: var(--featured-section-padding);
   }
 
-  /* Featured split sections favor text/proof content while keeping media strong and below overpowering ultra-wide sizes. */
+  /* Featured split sections use the wide wall, while desktop range rules below control the paired media/copy balance. */
   body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid {
     grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr) !important;
   }
@@ -15407,7 +15407,7 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
     aspect-ratio: auto;
   }
 
-  /* Featured split rail alignment: media and copy anchor to their outside section rails so wide desktop gutters match Systems/Gallery spacing. */
+  /* Featured base split rail alignment is replaced by scaled desktop-pair rules at 1360px+ so media/copy do not drift apart on wide screens. */
   body .page-shell main.featured-page .featured-pillar-grid:not(.featured-pillar-grid-reverse) .featured-pillar-copy,
   body .page-shell main.featured-page .featured-pillar-grid-reverse .featured-pillar-visual {
     justify-self: start;
@@ -15457,8 +15457,8 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
   }
 
   body .page-shell main.featured-page .featured-pillar-visual {
-    width: min(100%, 544px);
-    max-width: 544px;
+    width: min(100%, 546px);
+    max-width: 546px;
     height: auto;
   }
 
@@ -15522,14 +15522,58 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
   }
 }
 
-@media (min-width: 1360px) and (max-width: 1500px) {
-  /* Featured 1440 desktop refinement: keep the 1280 pattern, but let text/proof/actions use the full copy column to avoid awkward orphan wraps. */
+@media (min-width: 1360px) {
+  /* Featured desktop rail-span pair system: keeps approved gutters locked, removes the old flexible middle spacer, and holds a 60px text/image gap while the real columns stretch to both rails. */
+  body .page-shell main.featured-page > .featured-pillar > :is(.featured-pillar-grid, .featured-pillar-grid-reverse) {
+    column-gap: 60px !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+
   body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid {
-    grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr) !important;
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr) !important;
   }
 
   body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid-reverse {
-    grid-template-columns: minmax(420px, 0.92fr) minmax(0, 1.08fr) !important;
+    grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr) !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-copy {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-visual {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-copy,
+  body .page-shell main.featured-page .featured-pillar-visual,
+  body .page-shell main.featured-page .featured-pillar-grid:not(.featured-pillar-grid-reverse) .featured-pillar-copy,
+  body .page-shell main.featured-page .featured-pillar-grid:not(.featured-pillar-grid-reverse) .featured-pillar-visual,
+  body .page-shell main.featured-page .featured-pillar-grid-reverse .featured-pillar-copy,
+  body .page-shell main.featured-page .featured-pillar-grid-reverse .featured-pillar-visual {
+    justify-self: stretch !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-grid:not(.featured-pillar-grid-reverse) .featured-pillar-visual,
+  body .page-shell main.featured-page .featured-pillar-grid-reverse .featured-pillar-copy {
+    grid-column: 2;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-grid:not(.featured-pillar-grid-reverse) .featured-pillar-copy,
+  body .page-shell main.featured-page .featured-pillar-grid-reverse .featured-pillar-visual {
+    grid-column: 1;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-visual,
+  body .page-shell main.featured-page .featured-visual-grid {
+    height: auto !important;
+  }
+
+  body .page-shell main.featured-page .featured-visual-grid {
+    aspect-ratio: 4 / 3 !important;
   }
 
   body .page-shell main.featured-page .featured-stat-grid,
@@ -15539,20 +15583,29 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
   }
 
   body .page-shell main.featured-page .featured-stat-card {
-    min-height: 76px !important;
-    padding: 10px 14px !important;
+    min-height: clamp(76px, 4.8vw, 92px) !important;
+    padding: clamp(9px, 0.8vw, 14px) 14px !important;
   }
 
   body .page-shell main.featured-page .featured-pillar-copy > .featured-actions {
-    justify-content: stretch;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 
   body .page-shell main.featured-page .featured-pillar-copy > .featured-actions .button {
-    flex: 1 1 0;
+    flex: 0 1 auto;
     min-width: 0;
     justify-content: center;
     text-align: center;
     white-space: nowrap;
+  }
+}
+
+@media (min-width: 1501px) and (max-width: 2199px) {
+  /* Featured mid/large desktop proof rhythm: keeps the 1280-style 2x2 rectangle-card stack so copy, cards and actions stay vertically paired with the image grid. */
+  body .page-shell main.featured-page .featured-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
   }
 }
 
