@@ -2188,7 +2188,7 @@ a.credential-static[href] {
 .featured-pillar,
 .featured-strategy-panel,
 .featured-final-cta {
-  margin-top: 28px;
+  margin-top: var(--featured-section-gap, 28px);
 }
 
 .featured-summary-grid,
@@ -2200,7 +2200,6 @@ a.credential-static[href] {
 
 .featured-summary-card,
 .featured-stat-card,
-.featured-problem-grid article,
 .featured-value-grid article {
   border: 1px solid rgba(31, 27, 22, 0.1);
   background:
@@ -2233,7 +2232,6 @@ a.credential-static[href] {
 .featured-summary-card h3,
 .featured-pillar-copy h2,
 .featured-stat-card strong,
-.featured-problem-grid span,
 .featured-value-grid h3,
 .featured-strategy-panel h2,
 .featured-final-cta h2 {
@@ -2260,7 +2258,7 @@ a.credential-static[href] {
 .featured-pillar,
 .featured-strategy-panel,
 .featured-final-cta {
-  padding: 42px;
+  padding: var(--featured-section-padding, 42px);
   border: 1px solid var(--line);
   border-radius: 34px;
   background: rgba(255, 248, 240, 0.58);
@@ -2271,7 +2269,7 @@ a.credential-static[href] {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
   gap: 36px;
-  align-items: center;
+  align-items: start;
 }
 
 .featured-pillar-grid-reverse {
@@ -2301,7 +2299,7 @@ a.credential-static[href] {
 .featured-pillar-copy > p,
 .featured-strategy-panel > p,
 .featured-final-cta p {
-  max-width: 900px;
+  max-width: min(100%, var(--featured-body-copy-max, 900px));
   margin: 18px 0 0;
   color: var(--muted);
   line-height: 1.6;
@@ -2335,27 +2333,6 @@ a.credential-static[href] {
   line-height: 1.3;
 }
 
-.featured-system-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.featured-system-list span {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 11px;
-  border: 1px solid rgba(184, 135, 47, 0.22);
-  border-radius: 999px;
-  background:
-    linear-gradient(180deg, rgba(255, 252, 247, 0.92), rgba(250, 237, 218, 0.74)),
-    rgba(255, 250, 243, 0.84);
-  color: var(--text);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
 .featured-actions {
   display: flex;
   flex-wrap: wrap;
@@ -2380,36 +2357,6 @@ a.credential-static[href] {
   height: auto;
   border-radius: 20px;
   object-fit: cover;
-}
-
-.featured-pillar-visual figcaption {
-  margin-top: 12px;
-  color: var(--muted);
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.featured-problem-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.featured-problem-grid article {
-  padding: 16px;
-  border-radius: 18px;
-}
-
-.featured-problem-grid span {
-  color: var(--red);
-  font-weight: 700;
-}
-
-.featured-problem-grid p {
-  margin: 8px 0 0;
-  color: var(--muted);
-  line-height: 1.45;
 }
 
 .featured-value-grid {
@@ -2563,15 +2510,6 @@ a.credential-static[href] {
     line-height: 1.25;
   }
 
-  .featured-system-list {
-    gap: 8px;
-    margin-top: 14px;
-  }
-
-  .featured-system-list span {
-    padding: 7px 10px;
-  }
-
   .featured-actions {
     gap: 10px;
     margin-top: 20px;
@@ -2587,17 +2525,6 @@ a.credential-static[href] {
     border-radius: 18px;
   }
 
-  .featured-pillar-visual figcaption {
-    margin-top: 10px;
-    line-height: 1.28;
-  }
-
-  .featured-problem-grid {
-    gap: 8px;
-    margin-top: 16px;
-  }
-
-  .featured-problem-grid article,
   .featured-value-grid article {
     padding: 16px;
     border-radius: var(--featured-card-radius);
@@ -2613,8 +2540,7 @@ a.credential-static[href] {
 }
 
 @media (min-width: 1025px) and (max-width: 1240px) {
-  .featured-stat-grid,
-  .featured-problem-grid {
+  .featured-stat-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -3676,7 +3602,6 @@ a.credential-static[href] {
   .credential-section-actions,
   .featured-summary-grid,
   .featured-stat-grid,
-  .featured-problem-grid,
   .featured-value-grid,
   .featured-actions {
     grid-template-columns: 1fr;
@@ -3686,7 +3611,6 @@ a.credential-static[href] {
   .credential-document-grid,
   .featured-summary-grid,
   .featured-stat-grid,
-  .featured-problem-grid,
   .featured-value-grid {
     display: grid;
   }
@@ -5763,7 +5687,6 @@ main#top #media .gallery-card .gallery-card-arrow {
   .credential-document-grid,
   .featured-summary-grid,
   .featured-stat-grid,
-  .featured-problem-grid,
   .featured-value-grid,
   .media-feature-grid,
   .media-final-cta {
@@ -7673,6 +7596,190 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
 
 .featured-page .featured-pillar-visual img {
   height: auto !important;
+}
+
+/* Featured body rhythm: section intros share one left wall with their cards, proof rows and CTAs. */
+main.featured-page {
+  --featured-body-copy-max: 100%;
+  --featured-section-gap: 24px;
+  --featured-section-padding: clamp(22px, 6vw, 26px);
+  --featured-eyebrow-gap: 6px;
+  --featured-title-to-body-gap: 10px;
+  --featured-body-to-proof-gap: 20px;
+  --featured-body-to-button-gap: 18px;
+  --featured-proof-to-button-gap: 12px;
+  --featured-proof-card-gap: 12px;
+}
+
+@media (min-width: 768px) {
+  main.featured-page {
+    --featured-section-padding: clamp(28px, 4vw, 34px);
+    --featured-title-to-body-gap: 12px;
+    --featured-body-to-proof-gap: 20px;
+    --featured-body-to-button-gap: 22px;
+    --featured-proof-to-button-gap: 13px;
+    --featured-proof-card-gap: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  main.featured-page {
+    --featured-body-copy-max: clamp(820px, 54vw, 1080px);
+    --featured-section-padding: clamp(34px, 2.15vw, 44px);
+    --featured-eyebrow-gap: 8px;
+    --featured-title-to-body-gap: 14px;
+    --featured-body-to-proof-gap: 24px;
+    --featured-body-to-button-gap: 24px;
+    --featured-proof-to-button-gap: 12px;
+    --featured-proof-card-gap: 14px;
+  }
+}
+
+/* Featured body copy cap: wide enough to avoid floating beside excessive blank space without becoming full-width prose. */
+main.featured-page :is(
+  .featured-pillar-copy > p:not(.eyebrow),
+  .featured-final-cta > div > p:not(.eyebrow)
+) {
+  max-width: min(100%, var(--featured-body-copy-max)) !important; /* Overrides older shared page body-width locks that also use !important. */
+  margin-top: var(--featured-title-to-body-gap) !important;
+}
+
+/* Featured body sections preserve image crops while tightening media/text alignment and panel padding. */
+main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
+  margin-top: var(--featured-section-gap) !important; /* Overrides older shared section spacing locks that also use !important. */
+  padding: var(--featured-section-padding) !important; /* Overrides older shared mobile/card padding locks that also use !important. */
+}
+
+main.featured-page :is(.featured-pillar-grid, .featured-pillar-grid-reverse) {
+  align-items: start !important;
+  gap: clamp(22px, 3vw, 40px);
+}
+
+main.featured-page :is(
+  .featured-summary-section > .section-heading,
+  .featured-pillar-copy,
+  .featured-strategy-panel > .section-heading,
+  .featured-final-cta > div
+) {
+  max-width: min(100%, var(--featured-body-copy-max));
+}
+
+main.featured-page :is(
+  .featured-summary-section > .section-heading,
+  .featured-strategy-panel > .section-heading
+) {
+  margin-bottom: var(--featured-body-to-proof-gap) !important; /* Overrides older shared heading-to-content locks that also use !important. */
+}
+
+main.featured-page :is(
+  .featured-summary-section .section-heading > .eyebrow,
+  .featured-pillar-copy > .eyebrow,
+  .featured-strategy-panel .section-heading > .eyebrow,
+  .featured-final-cta > div > .eyebrow
+) {
+  margin: 0 0 var(--featured-eyebrow-gap) !important; /* Overrides older shared heading rhythm locks that also use !important. */
+}
+
+main.featured-page :is(
+  .featured-summary-section .section-heading > h2,
+  .featured-pillar-copy > h2,
+  .featured-strategy-panel .section-heading > h2,
+  .featured-final-cta h2
+) {
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+main.featured-page :is(
+  .featured-stat-grid,
+  .featured-actions,
+  .featured-value-grid
+) {
+  margin-top: var(--featured-body-to-proof-gap) !important;
+}
+
+main.featured-page :is(.featured-stat-grid, .featured-value-grid) {
+  gap: var(--featured-proof-card-gap);
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+main.featured-page :is(.featured-stat-card, .featured-value-grid article) {
+  height: 100%;
+}
+
+main.featured-page .featured-stat-grid {
+  margin-bottom: 0 !important;
+}
+
+main.featured-page .featured-stat-grid + .featured-actions {
+  margin-top: var(--featured-proof-to-button-gap) !important;
+}
+
+main.featured-page .featured-pillar-copy > p:not(.eyebrow) + .featured-actions,
+main.featured-page .featured-final-cta > div + .featured-actions {
+  margin-top: var(--featured-body-to-button-gap) !important;
+}
+
+@media (max-width: 767px) {
+  main.featured-page :is(
+    .featured-summary-section .section-heading > h2,
+    .featured-pillar-copy > h2,
+    .featured-strategy-panel .section-heading > h2,
+    .featured-final-cta h2
+  ) {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.06 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  main.featured-page :is(
+    .featured-summary-section .section-heading > h2,
+    .featured-pillar-copy > h2,
+    .featured-strategy-panel .section-heading > h2,
+    .featured-final-cta h2
+  ) {
+    font-size: clamp(28px, 3.6vw, 34px) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  main.featured-page .featured-pillar-copy {
+    max-width: 100%;
+  }
+
+  main.featured-page .featured-pillar-grid {
+    grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+  }
+
+  main.featured-page .featured-pillar-grid-reverse {
+    grid-template-columns: minmax(420px, 0.98fr) minmax(0, 1.02fr);
+  }
+}
+
+@media (min-width: 1250px) {
+  main.featured-page .featured-stat-grid {
+    gap: 14px;
+  }
+}
+
+/* Featured final CTA spacing: normalize the breathing room before the shared footer without changing footer content. */
+main.featured-page > .featured-final-cta {
+  margin-bottom: 28px !important; /* Overrides older shared footer closeout spacing that also uses !important. */
+}
+
+@media (min-width: 768px) {
+  main.featured-page > .featured-final-cta {
+    margin-bottom: 36px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  main.featured-page > .featured-final-cta {
+    margin-bottom: 44px !important;
+  }
 }
 
 @media (min-width: 821px) {
@@ -15043,5 +15150,330 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-
     --mobile-fit-title-line: 1.06 !important;
     font-size: clamp(22px, 6vw, 28px) !important;
     line-height: 1.06 !important;
+  }
+}
+
+/* Featured final heading cascade lock: keep Featured body rhythm after the late Gallery/Anaya heading locks. */
+body .page-shell main.featured-page :is(
+  .featured-summary-section .section-heading > .eyebrow,
+  .featured-pillar-copy > .eyebrow,
+  .featured-strategy-panel .section-heading > .eyebrow,
+  .featured-final-cta > div > .eyebrow
+) {
+  margin: 0 0 var(--featured-eyebrow-gap) !important;
+}
+
+body .page-shell main.featured-page.featured-page .featured-summary-section .section-heading > .eyebrow,
+body .page-shell main.featured-page.featured-page .featured-pillar-copy > .eyebrow,
+body .page-shell main.featured-page.featured-page .featured-strategy-panel .section-heading > .eyebrow,
+body .page-shell main.featured-page.featured-page .featured-final-cta > div > .eyebrow {
+  margin-bottom: var(--featured-eyebrow-gap) !important;
+}
+
+@media (min-width: 1025px) {
+  html body .page-shell > main.featured-page:not(#top).featured-page .featured-summary-section > .section-heading > p.eyebrow,
+  html body .page-shell > main.featured-page:not(#top).featured-page .featured-pillar .featured-pillar-copy > p.eyebrow,
+  html body .page-shell > main.featured-page:not(#top).featured-page .featured-strategy-panel > .section-heading > p.eyebrow,
+  html body .page-shell > main.featured-page:not(#top).featured-page .featured-final-cta > div > p.eyebrow {
+    margin: 0 0 8px !important;
+  }
+}
+
+body .page-shell main.featured-page :is(
+  .featured-pillar-copy > p:not(.eyebrow),
+  .featured-final-cta > div > p:not(.eyebrow)
+) {
+  max-width: min(100%, var(--featured-body-copy-max)) !important;
+  margin-top: var(--featured-title-to-body-gap) !important;
+}
+
+body .page-shell main.featured-page :is(
+  .featured-stat-grid,
+  .featured-actions,
+  .featured-value-grid
+) {
+  margin-top: var(--featured-body-to-proof-gap) !important;
+}
+
+body .page-shell main.featured-page :is(
+  .featured-summary-section > .section-heading,
+  .featured-strategy-panel > .section-heading
+) {
+  margin-bottom: var(--featured-body-to-proof-gap) !important;
+}
+
+body .page-shell main.featured-page :is(.featured-stat-grid, .featured-value-grid) {
+  gap: var(--featured-proof-card-gap) !important;
+  align-items: stretch !important;
+  grid-auto-rows: 1fr !important;
+}
+
+body .page-shell main.featured-page :is(.featured-stat-card, .featured-value-grid article) {
+  height: 100% !important;
+}
+
+body .page-shell main.featured-page .featured-stat-card {
+  /* Featured proof cards center both label lines so Pacific, Santa Ana, Anaya and Archer share one rectangle-pill treatment. */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 88px !important; /* Overrides older Featured card min-height rules so narrow desktop proof cards do not become tall tiles. */
+  text-align: center !important;
+}
+
+body .page-shell main.featured-page .featured-stat-grid + .featured-actions {
+  margin-top: var(--featured-proof-to-button-gap) !important;
+}
+
+/* Featured proof simplification: cream chip rows and Anaya mini proof cards were removed, so remaining action rows sit directly under body copy or stat cards. */
+body .page-shell main.featured-page .featured-actions {
+  width: 100%;
+}
+
+/* Featured Archer proof parity: Archer now follows the same body -> 2x2 stat cards -> compact action-row rhythm as the other proof sections. */
+body .page-shell main.featured-page #the-archer-feature .featured-stat-grid + .featured-actions {
+  margin-top: var(--featured-proof-to-button-gap) !important;
+}
+
+body .page-shell main.featured-page .featured-pillar-copy > p:not(.eyebrow) + .featured-actions,
+body .page-shell main.featured-page .featured-final-cta > div + .featured-actions {
+  margin-top: var(--featured-body-to-button-gap) !important;
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.featured-page :is(
+    .featured-summary-section .section-heading > h2,
+    .featured-pillar-copy > h2,
+    .featured-strategy-panel .section-heading > h2,
+    .featured-final-cta h2
+  ) {
+    --mobile-fit-title-size: clamp(22px, 6vw, 28px) !important;
+    --mobile-fit-title-line: 1.06 !important;
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.06 !important;
+  }
+}
+
+/* Featured white canvas lock: remove the old gray/warm section spacing so the page matches the other white-wall pages. */
+body:has(main.featured-page),
+body:has(main.featured-page) .page-shell,
+body .page-shell main.featured-page {
+  background: #ffffff !important;
+}
+
+/* Featured body containment: sections stay borderless and white; proof cards keep their own small borders. */
+body .page-shell main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
+  --featured-section-wall-width: 100vw;
+  --featured-section-inline-pad: var(--featured-section-padding);
+  --featured-section-rail-gutter: var(--featured-section-padding);
+  box-sizing: border-box;
+  width: var(--featured-section-wall-width) !important;
+  max-width: none !important;
+  margin: 0 calc(50% - (var(--featured-section-wall-width) * 0.5)) !important;
+  margin-top: var(--featured-section-gap) !important;
+  padding-top: var(--featured-section-padding) !important;
+  padding-right: var(--featured-section-inline-pad) !important;
+  padding-bottom: var(--featured-section-padding) !important;
+  padding-left: var(--featured-section-inline-pad) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) > :is(
+  .section-heading,
+  .featured-summary-grid,
+  .featured-pillar-grid,
+  .featured-pillar-grid-reverse,
+  .featured-actions,
+  .featured-value-grid,
+  div,
+  p
+) {
+  margin-right: calc(var(--featured-section-rail-gutter) - var(--featured-section-inline-pad)) !important;
+  margin-left: calc(var(--featured-section-rail-gutter) - var(--featured-section-inline-pad)) !important;
+}
+
+/* Featured image/text rhythm: split-section media aligns to the text group top while proof cards, chips and buttons share one text wall. */
+body .page-shell main.featured-page > .featured-pillar > :is(.featured-pillar-grid, .featured-pillar-grid-reverse) {
+  align-items: start !important;
+}
+
+body .page-shell main.featured-page .featured-pillar-copy {
+  display: block;
+  max-width: min(100%, var(--featured-body-copy-max)) !important;
+}
+
+body .page-shell main.featured-page > .featured-summary-section > .featured-summary-grid,
+body .page-shell main.featured-page > .featured-strategy-panel > .featured-value-grid {
+  width: auto !important;
+  max-width: none !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid,
+body .page-shell main.featured-page > .featured-final-cta {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+body .page-shell main.featured-page > .featured-summary-section {
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main.featured-page > .featured-final-cta {
+  align-items: center !important;
+}
+
+/* Featured Coaching Profile uses the full section wall so its title/body align with the value-card row below, instead of inheriting the general body-copy cap. */
+body .page-shell main.featured-page > .featured-strategy-panel > .section-heading,
+body .page-shell main.featured-page > .featured-strategy-panel > p,
+body .page-shell main.featured-page > .featured-final-cta > div,
+body .page-shell main.featured-page > .featured-final-cta > div > p {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body .page-shell main.featured-page > .featured-strategy-panel > .section-heading + p,
+body .page-shell main.featured-page > .featured-final-cta > div > h2 + p {
+  margin-top: var(--featured-title-to-body-gap) !important;
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
+    /* Featured body uses the approved shared page wall width; media balance is controlled inside the split grid, not by narrowing the wall. */
+    --featured-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+    --featured-section-inline-pad: var(--featured-section-padding);
+    --featured-section-rail-gutter: var(--featured-section-padding);
+  }
+
+  /* Featured split sections favor text/proof content while keeping media strong and below overpowering ultra-wide sizes. */
+  body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid {
+    grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr) !important;
+  }
+
+  body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid-reverse {
+    grid-template-columns: minmax(420px, 0.98fr) minmax(0, 1.02fr) !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-visual {
+    max-width: 920px;
+  }
+
+  /* Wide-wall balance: capped media and capped copy justify toward the split gutter so ultra-wide sections do not develop empty center pockets. */
+  body .page-shell main.featured-page .featured-pillar-grid:not(.featured-pillar-grid-reverse) .featured-pillar-copy,
+  body .page-shell main.featured-page .featured-pillar-grid-reverse .featured-pillar-visual {
+    justify-self: end;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-grid:not(.featured-pillar-grid-reverse) .featured-pillar-visual,
+  body .page-shell main.featured-page .featured-pillar-grid-reverse .featured-pillar-copy {
+    justify-self: start;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1500px) {
+  /* Narrow desktop proof rhythm: keep the wide wall and 920px media cap, but contain proof cards and pill rows so they do not stretch loose at 1280. */
+  body .page-shell main.featured-page .featured-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: min(100%, 600px);
+    max-width: 600px;
+    margin-right: auto !important;
+    margin-left: 0 !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-copy > .featured-actions {
+    width: min(100%, 600px);
+    max-width: 600px;
+    margin-right: auto !important;
+    margin-left: 0 !important;
+  }
+
+  body .page-shell main.featured-page #anaya-case-study .featured-stat-card {
+    padding: 13px 15px !important;
+  }
+
+  body .page-shell main.featured-page #anaya-case-study .featured-actions {
+    gap: 10px;
+  }
+}
+
+/* Featured final CTA spacing before footer is normalized with real outside spacing, not extra panel padding. */
+body .page-shell main.featured-page > .featured-final-cta {
+  margin-bottom: 28px !important;
+}
+
+@media (min-width: 768px) {
+  body .page-shell main.featured-page > .featured-final-cta {
+    margin-bottom: 36px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main.featured-page > .featured-final-cta {
+    margin-bottom: 44px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main.featured-page :is(
+    .featured-summary-section .section-heading > h2,
+    .featured-pillar-copy > h2,
+    .featured-strategy-panel .section-heading > h2,
+    .featured-final-cta h2
+  ) {
+    --mobile-fit-title-size: clamp(28px, 3.6vw, 34px) !important;
+    --mobile-fit-title-line: 1.05 !important;
+    font-size: clamp(28px, 3.6vw, 34px) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+/* Featured title one-line lock: replaces older wrap-friendly title rules so body section titles stay on one line across mobile, tablet and desktop. */
+body .page-shell main.featured-page :is(
+  .featured-summary-section .section-heading > h2,
+  .featured-pillar-copy > h2,
+  .featured-strategy-panel .section-heading > h2,
+  .featured-final-cta h2
+) {
+  max-width: 100% !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.featured-page :is(
+    .featured-summary-section .section-heading > h2,
+    .featured-pillar-copy > h2,
+    .featured-strategy-panel .section-heading > h2,
+    .featured-final-cta h2
+  ) {
+    font-size: clamp(13px, 3.9vw, 18px) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main.featured-page :is(
+    .featured-summary-section .section-heading > h2,
+    .featured-pillar-copy > h2,
+    .featured-strategy-panel .section-heading > h2,
+    .featured-final-cta h2
+  ) {
+    font-size: clamp(20px, 3vw, 28px) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main.featured-page :is(
+    .featured-summary-section .section-heading > h2,
+    .featured-pillar-copy > h2,
+    .featured-strategy-panel .section-heading > h2,
+    .featured-final-cta h2
+  ) {
+    font-size: clamp(28px, 2.15vw, 37.6px) !important;
+    line-height: 1.04 !important;
   }
 }
