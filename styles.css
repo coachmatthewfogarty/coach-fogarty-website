@@ -10515,11 +10515,13 @@ body:has(main.contact-page) .site-nav a[href="./contact"] {
 }
 
 /* Systems section wall lock: detail sections intentionally match the header/footer wall gutters and drop the old bordered card frame. */
+/* Systems full rhythm lock: intro text aligns to the first carousel card edge, body copy is capped wider than before, proof rails keep safe gutters, arrows sit inside wrapping rails, and first/last section spacing is normalized. */
 body .page-shell main.systems-detail-page > .system-detail-section {
   --systems-section-wall-width: 100vw;
   --systems-section-inline-pad: max(18px, calc((var(--systems-section-wall-width) - var(--page-shell-width)) / 2 + 18px));
-  --systems-carousel-safe-gutter: clamp(22px, 5.8vw, 25px);
-  --systems-intro-rail-gap: 20px;
+  --systems-carousel-safe-gutter: clamp(14px, 4.2vw, 18px);
+  --systems-intro-rail-gap: 28px;
+  --systems-final-footer-gap: 28px;
   box-sizing: border-box;
   width: var(--systems-section-wall-width) !important;
   max-width: none !important;
@@ -10535,20 +10537,14 @@ body .page-shell main.systems-detail-page > .system-detail-section {
   box-shadow: none !important;
 }
 
-/* Systems DPAT intro start lock: only the first detail section gets mobile/tablet top breathing room so its eyebrow clears the hero rail above it. */
 @media (max-width: 1024px) {
   /* Systems mobile/tablet hero seam lock: the hero-to-DPAT gap stays white instead of showing the old gray page gutter. */
   body .page-shell main.systems-detail-page {
     background: #ffffff !important;
   }
-
-  body .page-shell main.systems-detail-page > .system-detail-section#defense {
-    padding-top: clamp(18px, 3.2vw, 24px) !important;
-  }
 }
 
-/* Systems vertical rail rhythm: section block spacing centers each intro between the carousel above and its own proof carousel; card sizing and scroll behavior stay unchanged. */
-/* Systems detail intro rhythm lock: intro spacing is standardized, body copy stays readable, and carousel/card mechanics stay unchanged. */
+/* Systems detail intro rhythm lock: eyebrow/title/body spacing is standardized and carousel/card mechanics stay unchanged. */
 body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy {
   --section-eyebrow-to-title-gap: 6px;
   --section-title-to-intro-gap: 10px;
@@ -10556,7 +10552,7 @@ body .page-shell main.systems-detail-page > .system-detail-section .system-detai
   --mobile-fit-title-line: 1.06;
 }
 
-/* Systems intro rail alignment: detail intro text aligns to the first carousel card edge so copy and proof cards read as one unit; card sizing and scroll behavior stay unchanged. */
+/* Systems intro rail alignment: detail intro text aligns to the first carousel card edge so copy and proof cards read as one unit. */
 body .page-shell main.systems-detail-page > .system-detail-section > .system-detail-grid {
   margin-right: calc(var(--systems-carousel-safe-gutter, clamp(22px, 5.8vw, 25px)) - var(--systems-section-inline-pad));
   margin-left: calc(var(--systems-carousel-safe-gutter, clamp(22px, 5.8vw, 25px)) - var(--systems-section-inline-pad));
@@ -10577,19 +10573,19 @@ body .page-shell main.systems-detail-page > .system-detail-section .system-detai
 
 main.systems-detail-page .system-detail-copy > p:not(.eyebrow) {
   /* Systems intro body width lock: copy is capped wider than 820px so it does not float beside excessive blank space, while still avoiding full-width lines. */
-  max-width: min(100%, 900px);
+  max-width: 100%;
   font-size: clamp(1rem, 0.24vw + 0.92rem, 1.12rem);
   line-height: 1.62;
 }
 
-/* Systems carousel safe rail: proof-card rows stay wide, safe side gutters prevent edge clipping, and card content/sizing rules are intentionally unchanged. */
+/* Systems carousel safe rail: proof-card rows stay wide with safe side gutters so cards and arrows do not hit the hard viewport edge; card content/sizing rules are intentionally unchanged. */
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel {
   margin-right: calc((var(--systems-section-inline-pad) - var(--systems-carousel-safe-gutter)) * -1) !important;
   margin-left: calc((var(--systems-section-inline-pad) - var(--systems-carousel-safe-gutter)) * -1) !important;
   margin-top: 20px;
 }
 
-/* Systems carousel arrow lock: arrows sit inside the safe proof rail and stay visually active; JS only disables single-item rails. */
+/* Systems carousel arrow lock: arrows sit inside the safe proof rail, stay visually active, and pair with JS wrap behavior; JS only disables single-item rails. */
 body .page-shell main.systems-detail-page > .system-detail-section .system-carousel-arrow {
   z-index: 5;
   border-color: rgba(207, 79, 31, 0.34);
@@ -10676,6 +10672,11 @@ body .page-shell main.systems-detail-page > .system-detail-section .system-docum
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card:is(:hover, :focus-visible) .system-document-preview::before {
   background: rgba(0, 0, 0, 0.16);
   opacity: 1;
+}
+
+/* Systems final footer rhythm: this !important overrides the section padding reset above so only Coaching Philosophy breathes before the footer. */
+body .page-shell main.systems-detail-page > .system-detail-section#leadership {
+  padding-bottom: var(--systems-final-footer-gap) !important;
 }
 
 main.systems-detail-page .system-document-copy strong {
@@ -10833,8 +10834,9 @@ body .page-shell :is(main.media-library-page > .media-library-section, main.anay
   body .page-shell main.systems-detail-page > .system-detail-section {
     --systems-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
     --systems-section-inline-pad: calc(((var(--systems-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
-    --systems-carousel-safe-gutter: clamp(24px, 1.8vw, 31.5px);
+    --systems-carousel-safe-gutter: clamp(24px, 1.8vw, 31px);
     --systems-intro-rail-gap: 28px;
+    --systems-final-footer-gap: 44px;
   }
 
   body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy {
@@ -10882,8 +10884,9 @@ body .page-shell :is(main.media-library-page > .media-library-section, main.anay
   }
 
   body .page-shell main.systems-detail-page > .system-detail-section {
-    --systems-carousel-safe-gutter: clamp(26px, 3.5vw, 32px);
-    --systems-intro-rail-gap: 24px;
+    --systems-carousel-safe-gutter: clamp(18px, 2.8vw, 24px);
+    --systems-intro-rail-gap: 32px;
+    --systems-final-footer-gap: 36px;
   }
 
   body .page-shell main:not(#top).systems-detail-page > .system-detail-section .system-detail-copy > h2 {
@@ -10915,6 +10918,39 @@ body .page-shell :is(main.media-library-page > .media-library-section, main.anay
 
   body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
     --gallery-carousel-visible-count: 2;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1024px) {
+  body .page-shell main.systems-detail-page > .system-detail-section {
+    --systems-carousel-safe-gutter: 25px;
+  }
+}
+
+@media (max-width: 932px) and (max-height: 430px) {
+  body .page-shell main.systems-detail-page > .system-detail-section {
+    --systems-carousel-safe-gutter: clamp(14px, 4.2vw, 18px);
+    --systems-intro-rail-gap: 28px;
+    --systems-final-footer-gap: 28px;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy {
+    --section-title-to-intro-gap: 10px;
+    --mobile-fit-title-size: clamp(22px, 6vw, 28px);
+    --mobile-fit-title-line: 1.06;
+  }
+
+  body .page-shell main:not(#top).systems-detail-page > .system-detail-section .system-detail-copy > h2 {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.06 !important;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > h2 + p:not(.eyebrow) {
+    margin-top: 10px !important;
+  }
+
+  body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel {
+    margin-top: 20px;
   }
 }
 
