@@ -7697,14 +7697,6 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
   }
 }
 
-/* Gallery page heading caps follow the documented eyebrow/title scale. */
-.media-library-page .section-heading {
-  --type-section-title-size: clamp(2.2rem, calc(1.93rem + 0.3vw), 2.5rem);
-  --type-section-title-line: 1.04;
-  --type-eyebrow-size: 0.76rem;
-  --type-eyebrow-line: 1.15;
-}
-
 .media-library-page .media-category-card,
 .media-library-page .media-library-card,
 .media-library-page .media-album-heading {
@@ -7713,11 +7705,6 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .media-library-page .section-heading {
-    --type-section-title-size: clamp(1.6rem, calc(1.12rem + 1.1vw), 2.2rem);
-    --type-eyebrow-size: clamp(0.7rem, calc(0.62rem + 0.2vw), 0.76rem);
-  }
-
   .media-library-page .media-category-card,
   .media-library-page .media-library-card,
   .media-library-page .media-album-heading {
@@ -7726,13 +7713,6 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
 }
 
 @media (max-width: 767px) {
-  .media-library-page .section-heading {
-    --type-section-title-size: 1.55rem;
-    --type-section-title-line: 1.08;
-    --type-eyebrow-size: 0.68rem;
-    --type-eyebrow-line: 1.2;
-  }
-
   .media-library-page .media-category-card,
   .media-library-page .media-library-card,
   .media-library-page .media-album-heading {
@@ -7742,11 +7722,6 @@ main#top #systems .system-card:is([data-system-type="dpat"], [data-system-type="
 }
 
 @media (max-width: 360px) {
-  .media-library-page .section-heading {
-    --type-section-title-size: 1.46rem;
-    --type-eyebrow-size: 0.64rem;
-  }
-
   .media-library-page .media-category-card,
   .media-library-page .media-library-card,
   .media-library-page .media-album-heading {
@@ -10711,6 +10686,7 @@ main.systems-detail-page .system-document-copy strong {
 body .page-shell main.media-library-page > .media-library-section {
   --gallery-section-wall-width: 100vw;
   --gallery-section-inline-pad: max(18px, calc((var(--gallery-section-wall-width) - var(--page-shell-width)) / 2 + 18px));
+  --gallery-section-rail-gutter: clamp(22px, 5.8vw, 25px);
   box-sizing: border-box;
   width: var(--gallery-section-wall-width) !important;
   max-width: none !important;
@@ -10722,6 +10698,13 @@ body .page-shell main.media-library-page > .media-library-section {
   border-radius: 0 !important;
   background: #ffffff !important;
   box-shadow: none !important;
+}
+
+/* Gallery/Anaya Systems shell lock: section headings, proof blocks and media rails use the same rail gutter math as Systems detail sections instead of the older page-shell inset. */
+body .page-shell main.media-library-page > .media-library-section > :is(.section-heading, .media-album-stack, .media-section-grid),
+body .page-shell main.anaya-case-study-page > .anaya-journey-section > :is(.section-heading, .case-study-section, .production-grid, .anaya-gallery-block) {
+  margin-right: calc(var(--gallery-section-rail-gutter, var(--case-page-section-rail-gutter, clamp(22px, 5.8vw, 25px))) - var(--gallery-section-inline-pad, var(--case-page-section-inline-pad))) !important;
+  margin-left: calc(var(--gallery-section-rail-gutter, var(--case-page-section-rail-gutter, clamp(22px, 5.8vw, 25px))) - var(--gallery-section-inline-pad, var(--case-page-section-inline-pad))) !important;
 }
 
 body .page-shell main.media-library-page > .media-library-section .media-album-section {
@@ -10746,16 +10729,17 @@ body .page-shell main.media-library-page > .media-library-section .media-categor
 body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
   --gallery-carousel-visible-count: 3;
   --gallery-carousel-gap: 16px;
+  position: relative;
   display: grid !important;
-  grid-template-columns: 44px minmax(0, 1fr) 44px !important;
-  gap: 10px !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
   align-items: center;
   padding-bottom: 0 !important;
 }
 
 body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
-  margin-right: calc(var(--gallery-section-inline-pad) * -1) !important;
-  margin-left: calc(var(--gallery-section-inline-pad) * -1) !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 body .page-shell main.media-library-page > .media-library-section .media-preview-carousel > .media-section-grid {
@@ -10774,7 +10758,22 @@ body .page-shell main.media-library-page > .media-library-section .media-preview
 }
 
 body .page-shell main.media-library-page > .media-library-section .media-carousel-arrow {
-  position: static !important;
+  position: absolute !important;
+  top: 50%;
+  z-index: 5;
+  transform: translateY(-50%);
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-carousel-arrow-prev {
+  left: clamp(6px, 1.4vw, 14px);
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-carousel-arrow-next {
+  right: clamp(6px, 1.4vw, 14px);
+}
+
+body .page-shell main.media-library-page > .media-library-section .media-carousel-arrow:is(:hover, :focus-visible) {
+  transform: translateY(-50%);
 }
 
 body .page-shell main.media-library-page > .media-library-section .media-category-card,
@@ -10809,6 +10808,21 @@ body .page-shell main.media-library-page > .media-library-section .media-categor
 body .page-shell main.media-library-page > .media-library-section .media-category-card h3,
 body .page-shell main.media-library-page > .media-library-section .media-library-meta {
   margin-top: 12px;
+}
+
+/* Gallery/Anaya heading alignment lock: section eyebrows and titles intentionally mirror the Systems detail intro rhythm; old Gallery-only heading caps are retired. */
+body .page-shell :is(main.media-library-page > .media-library-section, main.anaya-case-study-page > .anaya-journey-section) > .section-heading {
+  --section-eyebrow-to-title-gap: 6px;
+  --mobile-fit-title-size: clamp(22px, 6vw, 28px);
+  --mobile-fit-title-line: 1.06;
+}
+
+body .page-shell :is(main.media-library-page > .media-library-section, main.anaya-case-study-page > .anaya-journey-section) > .section-heading > .eyebrow {
+  margin-bottom: 6px !important;
+}
+
+body .page-shell :is(main.media-library-page > .media-library-section, main.anaya-case-study-page > .anaya-journey-section) > .section-heading > h2 {
+  margin: 0 !important;
 }
 
 @media (min-width: 1025px) {
@@ -10847,6 +10861,15 @@ body .page-shell main.media-library-page > .media-library-section .media-library
   body .page-shell main.media-library-page > .media-library-section {
     --gallery-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
     --gallery-section-inline-pad: calc(((var(--gallery-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
+    --gallery-section-rail-gutter: clamp(24px, 1.8vw, 31.5px);
+  }
+
+  body .page-shell :is(main.media-library-page > .media-library-section, main.anaya-case-study-page > .anaya-journey-section) > .section-heading {
+    --section-eyebrow-to-title-gap: 8px;
+  }
+
+  body .page-shell :is(main.media-library-page > .media-library-section, main.anaya-case-study-page > .anaya-journey-section) > .section-heading > .eyebrow {
+    margin-bottom: 8px !important;
   }
 }
 
@@ -10880,6 +10903,16 @@ body .page-shell main.media-library-page > .media-library-section .media-library
     margin-top: 24px;
   }
 
+  body .page-shell :is(main.media-library-page > .media-library-section, main.anaya-case-study-page > .anaya-journey-section) > .section-heading {
+    --mobile-fit-title-size: clamp(28px, 3.6vw, 34px);
+    --mobile-fit-title-line: 1.05;
+  }
+
+  body .page-shell :is(main.media-library-page > .media-library-section, main.anaya-case-study-page > .anaya-journey-section) > .section-heading > h2 {
+    font-size: clamp(28px, 3.6vw, 34px) !important;
+    line-height: 1.05 !important;
+  }
+
   body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
     --gallery-carousel-visible-count: 2;
   }
@@ -10891,6 +10924,11 @@ body .page-shell main.media-library-page > .media-library-section .media-library
   }
 
   body .page-shell main:not(#top).systems-detail-page > .system-detail-section .system-detail-copy > h2 {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.06 !important;
+  }
+
+  body .page-shell :is(main.media-library-page > .media-library-section, main.anaya-case-study-page > .anaya-journey-section) > .section-heading > h2 {
     font-size: clamp(22px, 6vw, 28px) !important;
     line-height: 1.06 !important;
   }
@@ -11968,6 +12006,83 @@ body .page-shell main.systems-detail-page > .hero.page-hero-system.page-hero-sys
 
 body .page-shell main.systems-detail-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text span:nth-of-type(5) {
   left: var(--systems-highlight-divider-5) !important;
+}
+
+/* Anaya portfolio highlight lock: six hero links intentionally use Systems-style equal lanes on one row so labels never stack. */
+body .page-shell main.anaya-case-study-page > .page-hero-system.page-hero-system {
+  --anaya-highlight-divider-1: 16.666%;
+  --anaya-highlight-divider-2: 33.333%;
+  --anaya-highlight-divider-3: 50%;
+  --anaya-highlight-divider-4: 66.666%;
+  --anaya-highlight-divider-5: 83.333%;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(max-content, 1fr)) !important;
+  justify-content: stretch !important;
+  justify-items: center !important;
+  align-items: center !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text a {
+  width: auto !important;
+  min-width: max-content !important;
+  padding-inline: 0 !important;
+  white-space: nowrap !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text a:nth-of-type(1) {
+  grid-column: 1 !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text a:nth-of-type(2) {
+  grid-column: 2 !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text a:nth-of-type(3) {
+  grid-column: 3 !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text a:nth-of-type(4) {
+  grid-column: 4 !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text a:nth-of-type(5) {
+  grid-column: 5 !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text a:nth-of-type(6) {
+  grid-column: 6 !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text span {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text span:nth-of-type(1) {
+  left: var(--anaya-highlight-divider-1) !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text span:nth-of-type(2) {
+  left: var(--anaya-highlight-divider-2) !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text span:nth-of-type(3) {
+  left: var(--anaya-highlight-divider-3) !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text span:nth-of-type(4) {
+  left: var(--anaya-highlight-divider-4) !important;
+}
+
+body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-overlay .hero-portrait-overlay-text span:nth-of-type(5) {
+  left: var(--anaya-highlight-divider-5) !important;
 }
 
 @media (min-width: 1025px) {
@@ -14217,6 +14332,7 @@ body .page-shell :is(
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) > .section.section {
   --case-page-section-wall-width: 100vw;
   --case-page-section-inline-pad: max(18px, calc((var(--case-page-section-wall-width) - var(--page-shell-width)) / 2 + 18px));
+  --case-page-section-rail-gutter: clamp(22px, 5.8vw, 25px);
   box-sizing: border-box;
   width: var(--case-page-section-wall-width) !important;
   max-width: none !important;
@@ -14233,6 +14349,7 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
   body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) > .section.section {
     --case-page-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
     --case-page-section-inline-pad: calc(((var(--case-page-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
+    --case-page-section-rail-gutter: clamp(24px, 1.8vw, 31.5px);
   }
 }
 
@@ -14790,5 +14907,50 @@ body:has(main.contact-page) main.contact-page .site-footer.site-chrome {
     --contact-shell-gutter-bottom: 11px;
     --contact-shell-gutter-left: 0px;
     --contact-panel-gap: 11px;
+  }
+}
+
+/* Gallery/Anaya final heading cascade lock: this late scoped rule keeps their eyebrow/title sizing aligned with the Systems detail sections after shared mobile heading overrides. */
+body .page-shell main.media-library-page > .media-library-section > .section-heading,
+body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-heading {
+  text-align: left !important;
+}
+
+body .page-shell main.media-library-page > .media-library-section > .section-heading > .eyebrow,
+body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-heading > .eyebrow {
+  margin: 0 0 6px !important;
+}
+
+body .page-shell main.media-library-page > .media-library-section > .section-heading > h2,
+body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-heading > h2 {
+  margin: 0 !important;
+  font-size: var(--section-title-size-desktop, clamp(36px, 2.1vw, 42px)) !important;
+  line-height: var(--section-title-line-desktop, 1.05) !important;
+}
+
+@media (min-width: 1025px) {
+  body .page-shell main.media-library-page > .media-library-section > .section-heading > .eyebrow,
+  body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-heading > .eyebrow {
+    margin-bottom: 8px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main.media-library-page > .media-library-section > .section-heading > h2,
+  body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-heading > h2 {
+    --mobile-fit-title-size: clamp(28px, 3.6vw, 34px) !important;
+    --mobile-fit-title-line: 1.05 !important;
+    font-size: clamp(28px, 3.6vw, 34px) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.media-library-page > .media-library-section > .section-heading > h2,
+  body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-heading > h2 {
+    --mobile-fit-title-size: clamp(22px, 6vw, 28px) !important;
+    --mobile-fit-title-line: 1.06 !important;
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.06 !important;
   }
 }
