@@ -2366,7 +2366,8 @@ a.credential-static[href] {
   aspect-ratio: 4 / 3;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 12px;
+  background: #ffffff;
 }
 
 .featured-visual-grid img {
@@ -15198,11 +15199,18 @@ body .page-shell main.featured-page.featured-page .featured-final-cta > div > .e
 }
 
 body .page-shell main.featured-page :is(
-  .featured-pillar-copy > p:not(.eyebrow),
   .featured-final-cta > div > p:not(.eyebrow)
 ) {
   max-width: min(100%, var(--featured-body-copy-max)) !important;
   margin-top: var(--featured-title-to-body-gap) !important;
+}
+
+/* Featured pillar body width reset: removes the old body-copy cap so split-section paragraphs can match the proof-card row width. */
+body .page-shell main.featured-page .featured-pillar-copy > p:not(.eyebrow) {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: var(--featured-title-to-body-gap) !important;
+  text-wrap: normal !important;
 }
 
 body .page-shell main.featured-page :is(
@@ -15325,6 +15333,43 @@ body .page-shell main.featured-page .featured-pillar-copy {
   max-width: min(100%, var(--featured-body-copy-max)) !important;
 }
 
+/* Featured pillar template: Pacific defines the shared body/proof/action rhythm; the same rules carry to Santa Ana, Anaya and Archer. */
+body .page-shell main.featured-page > .featured-pillar {
+  --featured-pillar-content-max: clamp(900px, 50vw, 1180px);
+  --featured-pillar-bottom-breathing: 30px;
+}
+
+body .page-shell main.featured-page .featured-pillar-copy > p:not(.eyebrow),
+body .page-shell main.featured-page .featured-pillar-copy > .featured-stat-grid,
+body .page-shell main.featured-page .featured-pillar-copy > .featured-actions {
+  width: min(100%, var(--featured-pillar-content-max)) !important;
+  max-width: var(--featured-pillar-content-max) !important;
+}
+
+/* Featured body/proof width lock: body paragraphs stretch to the same measure as the rectangle proof cards below them. */
+body .page-shell main.featured-page .featured-pillar-copy > p:not(.eyebrow) {
+  max-width: var(--featured-pillar-content-max) !important;
+  text-wrap: normal !important;
+}
+
+/* Featured action-pill row: replaces the old content-sized flex pills with equal-width premium pills that span the same row width as the proof cards. */
+body .page-shell main.featured-page .featured-pillar-copy > .featured-actions {
+  gap: 14px !important;
+}
+
+body .page-shell main.featured-page .featured-pillar-copy > .featured-actions .button,
+body .page-shell main.featured-page > .featured-final-cta .featured-actions .button-secondary {
+  min-height: 50px;
+  padding-right: 26px;
+  padding-left: 26px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
 body .page-shell main.featured-page > .featured-summary-section > .featured-summary-grid,
 body .page-shell main.featured-page > .featured-strategy-panel > .featured-value-grid {
   width: auto !important;
@@ -15385,6 +15430,12 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
     --featured-section-rail-gutter: var(--featured-section-padding);
   }
 
+  /* Featured split sections keep a real bottom landing zone after the 2x2 image grid before the next section begins. */
+  body .page-shell main.featured-page > .featured-pillar {
+    --featured-pillar-bottom-breathing: 44px;
+    padding-bottom: max(var(--featured-section-padding), var(--featured-pillar-bottom-breathing)) !important;
+  }
+
   /* Featured split sections use the wide wall, while desktop range rules below control the paired media/copy balance. */
   body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid {
     grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr) !important;
@@ -15405,6 +15456,7 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
 
   body .page-shell main.featured-page .featured-visual-grid {
     aspect-ratio: auto;
+    gap: 12px;
   }
 
   /* Featured base split rail alignment is replaced by scaled desktop-pair rules at 1360px+ so media/copy do not drift apart on wide screens. */
@@ -15446,9 +15498,10 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
 }
 
 @media (min-width: 1025px) and (max-width: 1359px) {
-  /* Featured 1280 body measure: replaces the older open desktop copy cap for the four split sections so each body block resolves as a balanced four-line paragraph. */
+  /* Featured 1280 body/proof match: replaces the old 59ch paragraph cap so body text spans the same width as the proof-card group. */
   body .page-shell main.featured-page .featured-pillar-copy > p:not(.eyebrow) {
-    max-width: 59ch !important; /* Overrides the wider Featured body-copy cap only in the 1280 desktop range. */
+    width: min(100%, 540px) !important;
+    max-width: 540px !important;
   }
 
   /* Featured 1280 balance: replaces the broad stretch-lock behavior only in narrow desktop so media stays premium without making each section taller than the proof/action stack. */
@@ -15495,16 +15548,25 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
     width: min(100%, 540px);
     max-width: 540px;
     margin-top: 8px !important;
-    gap: 10px !important;
-    flex-wrap: nowrap;
-    justify-content: center;
+    gap: 14px !important;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+  }
+
+  body .page-shell main.featured-page .featured-stat-grid + .featured-actions:has(> :nth-child(4)) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   body .page-shell main.featured-page .featured-stat-grid + .featured-actions .button {
-    flex: 0 1 auto;
+    width: 100%;
     min-width: 0;
+    min-height: 52px;
     padding-right: 12px;
     padding-left: 12px;
+    border-radius: 999px;
+    font-size: 0.96rem;
+    font-weight: 700;
     white-space: nowrap;
   }
 
@@ -15576,10 +15638,11 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
     aspect-ratio: 4 / 3 !important;
   }
 
+  body .page-shell main.featured-page .featured-pillar-copy > p:not(.eyebrow),
   body .page-shell main.featured-page .featured-stat-grid,
   body .page-shell main.featured-page .featured-pillar-copy > .featured-actions {
-    width: 100%;
-    max-width: none;
+    width: min(100%, var(--featured-pillar-content-max)) !important;
+    max-width: var(--featured-pillar-content-max) !important;
   }
 
   body .page-shell main.featured-page .featured-stat-card {
@@ -15588,13 +15651,26 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
   }
 
   body .page-shell main.featured-page .featured-pillar-copy > .featured-actions {
-    flex-wrap: nowrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 16px !important;
   }
 
-  body .page-shell main.featured-page .featured-pillar-copy > .featured-actions .button {
-    flex: 0 1 auto;
+  body .page-shell main.featured-page .featured-pillar-copy > .featured-actions:has(> :nth-child(4)) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body .page-shell main.featured-page .featured-pillar-copy > .featured-actions .button,
+  body .page-shell main.featured-page > .featured-final-cta .featured-actions .button-secondary {
+    width: 100%;
     min-width: 0;
+    min-height: 60px;
+    padding-right: 18px;
+    padding-left: 18px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
     justify-content: center;
     text-align: center;
     white-space: nowrap;
@@ -15606,6 +15682,51 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
   body .page-shell main.featured-page .featured-stat-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 12px !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  /* Featured ultra-wide media match: replaces the oversized 2560 Featured image tiles with About-page-sized tiles while preserving the section rail and content gutters. */
+  /* The !important values in this block override the 1360px+ Featured stretch-rail rule that otherwise forces media to fill the full split column. */
+  body .page-shell main.featured-page > .featured-pillar {
+    --featured-pillar-bottom-breathing: 48px;
+    --featured-pillar-content-max: 100%;
+  }
+
+  /* Featured ultra-wide split fix: the media column matches the capped image grid, removing the dead middle gap without moving the image wall or text left wall. */
+  body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid {
+    grid-template-columns: minmax(0, 1fr) 915px !important;
+  }
+
+  body .page-shell main.featured-page > .featured-pillar > .featured-pillar-grid-reverse {
+    grid-template-columns: 915px minmax(0, 1fr) !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-visual {
+    max-width: 915px !important;
+  }
+
+  /* Ultra-wide media wall alignment: replaces the inward-pull rule so 2x2 image grids sit on the same outside wall as the text/proof system. */
+  body .page-shell main.featured-page .featured-pillar-grid:not(.featured-pillar-grid-reverse) .featured-pillar-visual {
+    justify-self: end !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-grid-reverse .featured-pillar-visual {
+    justify-self: start !important;
+  }
+
+  body .page-shell main.featured-page .featured-visual-grid {
+    grid-template-columns: repeat(2, minmax(0, 451.5px));
+    grid-template-rows: repeat(2, 233px);
+    gap: 12px;
+    aspect-ratio: auto !important;
+    height: auto !important;
+  }
+
+  /* Overrides the older shared Featured 4:3 image rule only inside ultra-wide 2x2 media grids so tile sizing matches the About page at 2560. */
+  body .page-shell main.featured-page .featured-visual-grid img {
+    height: 100% !important;
+    aspect-ratio: auto !important;
   }
 }
 
