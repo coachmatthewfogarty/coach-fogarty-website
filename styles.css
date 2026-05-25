@@ -16767,3 +16767,282 @@ html body .page-shell main.featured-page > section.featured-final-cta > * {
     transform: translateX(6px) !important;
   }
 }
+
+/* Archer body background system mirrors Featured: cream hero, black opening/final bands, and gold middle bands. */
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page {
+  background: #ffffff !important;
+  background-image: none !important;
+}
+
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system {
+  margin-bottom: 0 !important;
+}
+
+/* Archer Featured-wall handoff: body bands use the same shared wall and no inherited page-section spacer. */
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > .section.section {
+  --archer-section-wall-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
+  --archer-featured-media-width: min(100%, 1600px);
+  --archer-featured-copy-max: min(100%, 760px);
+  --archer-featured-gap: clamp(28px, 3.2vw, 60px);
+  --archer-featured-proof-gap: 16px;
+  --archer-featured-action-height: 58px;
+  box-sizing: border-box !important;
+  width: var(--archer-section-wall-width) !important;
+  max-width: none !important;
+  margin-top: 0 !important;
+  margin-right: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
+  margin-left: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
+  background: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%) !important;
+  background-color: #ead8b8 !important;
+  background-image: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-overview-section, .archer-final-cta).section {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #f7f4ef !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-overview-section, .archer-final-cta).section::before {
+  background: #000000 !important;
+  content: "" !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: 0 !important;
+}
+
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-overview-section, .archer-final-cta).section > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body .page-shell main.archer-page.archer-page > .section.section > :is(.section-heading, .archer-split, .archer-card-grid, .archer-proof-grid, .archer-media-grid, .featured-actions),
+body .page-shell main.archer-page.archer-page > .section.archer-final-cta > :is(div, .featured-actions) {
+  width: min(100%, var(--archer-featured-media-width)) !important;
+  max-width: var(--archer-featured-media-width) !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-split,
+body .page-shell main.archer-page.archer-page .archer-split-reverse {
+  gap: var(--archer-featured-gap) !important;
+  align-items: center !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-split {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr) !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-split-reverse {
+  grid-template-columns: minmax(360px, 0.86fr) minmax(0, 1fr) !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-section-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  width: min(100%, var(--archer-featured-copy-max)) !important;
+  max-width: var(--archer-featured-copy-max) !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-overview-section .archer-section-copy > .eyebrow,
+body .page-shell main.archer-page.archer-page .archer-overview-section .archer-section-copy h2,
+body .page-shell main.archer-page.archer-page .archer-final-cta > div > .eyebrow,
+body .page-shell main.archer-page.archer-page .archer-final-cta h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-overview-section .archer-section-copy > .eyebrow,
+body .page-shell main.archer-page.archer-page .archer-final-cta > div > .eyebrow {
+  color: #f2a179 !important;
+  -webkit-text-fill-color: #f2a179 !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-overview-section .archer-section-copy > p,
+body .page-shell main.archer-page.archer-page .archer-final-cta > div > p {
+  color: #ded8cf !important;
+  -webkit-text-fill-color: #ded8cf !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-section-copy > p:not(.eyebrow),
+body .page-shell main.archer-page.archer-page .archer-section-copy > .archer-chip-list,
+body .page-shell main.archer-page.archer-page .archer-section-copy > .archer-card-grid,
+body .page-shell main.archer-page.archer-page .archer-section-copy > .archer-mini-grid,
+body .page-shell main.archer-page.archer-page .archer-final-cta > div > p,
+body .page-shell main.archer-page.archer-page .archer-final-cta > .featured-actions {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-section-copy > p:not(.eyebrow),
+body .page-shell main.archer-page.archer-page .archer-final-cta > div > p {
+  text-wrap: normal !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-feature-visual,
+body .page-shell main.archer-page.archer-page .archer-media-grid figure {
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-feature-visual img,
+body .page-shell main.archer-page.archer-page .archer-media-grid img,
+body .page-shell main.archer-page.archer-page .archer-media-grid video {
+  border-radius: 0 !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-media-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  background: #ffffff !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-media-grid figure {
+  display: grid !important;
+  grid-template-rows: auto minmax(54px, auto) !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-media-grid figcaption,
+body .page-shell main.archer-page.archer-page .archer-feature-visual figcaption {
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-card-grid,
+body .page-shell main.archer-page.archer-page .archer-proof-grid {
+  gap: var(--archer-featured-proof-gap) !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-feature-card,
+body .page-shell main.archer-page.archer-page .archer-mini-card,
+body .page-shell main.archer-page.archer-page .archer-proof-grid article {
+  display: flex !important;
+  min-width: 0 !important;
+  min-height: 92px !important;
+  height: 100% !important;
+  padding: 14px 18px !important;
+  border: 1px solid rgba(196, 119, 46, 0.36) !important;
+  border-radius: 0 !important;
+  background: #fffaf2 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-feature-card,
+body .page-shell main.archer-page.archer-page .archer-proof-grid article {
+  flex-direction: column !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-mini-card h3,
+body .page-shell main.archer-page.archer-page .archer-feature-card h3,
+body .page-shell main.archer-page.archer-page .archer-proof-grid h3,
+body .page-shell main.archer-page.archer-page .archer-feature-card p,
+body .page-shell main.archer-page.archer-page .archer-proof-grid p {
+  text-align: center !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-final-cta {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr) !important;
+  gap: var(--archer-featured-gap) !important;
+}
+
+body .page-shell main.archer-page.archer-page .featured-actions {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  justify-content: stretch !important;
+}
+
+body .page-shell main.archer-page.archer-page .featured-actions .button {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: var(--archer-featured-action-height) !important;
+  height: var(--archer-featured-action-height) !important;
+  padding-right: 18px !important;
+  padding-left: 18px !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-final-cta .featured-actions .button-secondary {
+  border-color: rgba(255, 255, 255, 0.26) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (min-width: 2200px) {
+  body .page-shell main.archer-page.archer-page > .section.section {
+    --archer-featured-media-width: min(100%, 1600px);
+    --archer-featured-copy-max: 620px;
+    --archer-featured-gap: 60px;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-split {
+    grid-template-columns: minmax(0, 1fr) 915px !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-split-reverse {
+    grid-template-columns: 915px minmax(0, 1fr) !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-media-grid {
+    max-width: 915px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main.archer-page.archer-page .archer-split,
+  body .page-shell main.archer-page.archer-page .archer-split-reverse,
+  body .page-shell main.archer-page.archer-page .archer-final-cta {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-section-copy {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.archer-page.archer-page > .section.section {
+    --archer-featured-action-height: 52px;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-split,
+  body .page-shell main.archer-page.archer-page .archer-split-reverse,
+  body .page-shell main.archer-page.archer-page .archer-final-cta,
+  body .page-shell main.archer-page.archer-page .archer-media-grid,
+  body .page-shell main.archer-page.archer-page .featured-actions {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-section-copy {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .featured-actions .button {
+    white-space: normal !important;
+  }
+}
