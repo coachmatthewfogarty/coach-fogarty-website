@@ -63,6 +63,11 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
   background: #ffffff;
 }
 
+/* Gallery page canvas: match the hero/footer cream while leaving the sticky header on its own chrome rule. */
+body:has(main.media-library-page) {
+  background: #fff4e6;
+}
+
 html:has(body :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)),
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) {
   overflow-x: clip;
@@ -4673,9 +4678,10 @@ main:not(#top) .contact-section .section-heading h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* Mobile gallery carousels use overlaid arrows, so the card track must own the full row. */
   .media-preview-carousel {
-    grid-template-columns: 38px minmax(0, 1fr) 38px;
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
   }
 
   .media-carousel-arrow {
@@ -10809,7 +10815,7 @@ main.systems-detail-page .system-document-copy strong {
   min-height: 2.28em;
 }
 
-/* Gallery section lock: content sections intentionally follow the Systems page section specs. */
+/* Gallery section lock: sections keep Systems sizing but use the same cream canvas as the hero/footer. */
 body .page-shell main.media-library-page > .media-library-section {
   --gallery-section-wall-width: 100vw;
   --gallery-section-inline-pad: max(18px, calc((var(--gallery-section-wall-width) - var(--page-shell-width)) / 2 + 18px));
@@ -10823,7 +10829,7 @@ body .page-shell main.media-library-page > .media-library-section {
   padding-left: var(--gallery-section-inline-pad) !important;
   border: 0 !important;
   border-radius: 0 !important;
-  background: #ffffff !important;
+  background: var(--home-system-card-cream, #fff4e6) !important;
   box-shadow: none !important;
 }
 
@@ -11102,8 +11108,13 @@ body .page-shell :is(main.media-library-page > .media-library-section, main.anay
   body .page-shell main.media-library-page > .media-library-section .media-preview-carousel {
     --gallery-carousel-visible-count: 2;
     --gallery-carousel-gap: 10px;
-    grid-template-columns: 38px minmax(0, 1fr) 38px !important;
-    gap: 8px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+
+  body .page-shell main.media-library-page > .media-library-section .media-preview-carousel > .media-section-grid {
+    width: 100%;
+    min-width: 0;
   }
 
   body .page-shell main.media-library-page > .media-library-section .media-carousel-arrow {
@@ -11453,6 +11464,11 @@ main.archer-page .archer-final-cta .featured-actions {
     --home-section-wall-width: min(100vw, 2560px);
     --home-section-wall-border: transparent;
     --home-section-wall-bg: #ffffff;
+  }
+
+  /* Gallery desktop wall note: override the shared detail-page white wall so the full page matches hero/footer cream. */
+  .page-shell main.media-library-page {
+    --home-section-wall-bg: var(--home-system-card-cream, #fff4e6);
   }
 }
 
@@ -14466,12 +14482,11 @@ body .page-shell :is(
   border-radius: 0 !important;
 }
 
-/* Shared spacing-line lock: target page grid seams use the homepage white #ffffff instead of older cream/transparent fills. */
+/* Shared spacing-line lock: non-gallery target page grid seams use homepage white; Gallery gets its hero/footer cream below. */
 body .page-shell :is(
   main#top,
   main.systems-detail-page,
   main.featured-page,
-  main.media-library-page,
   main.anaya-case-study-page,
   main.archer-page,
   main.contact-page
@@ -14495,6 +14510,16 @@ body .page-shell :is(
   .contact-closeout-grid
 ) {
   background: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Gallery cream canvas lock: replaces the old shared white wall so the whole Gallery page matches hero/footer. */
+body:has(main.media-library-page),
+body:has(main.media-library-page) .page-shell,
+body .page-shell main.media-library-page,
+body .page-shell main.media-library-page > .media-library-section,
+body .page-shell main.media-library-page > .media-library-section > :is(.media-section-grid, .media-preview-carousel) {
+  background: #fff4e6 !important;
   background-image: none !important;
 }
 
