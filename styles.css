@@ -12101,7 +12101,7 @@ main.archer-page .archer-final-cta .featured-actions {
   }
 
   body .page-shell main.featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(5) {
-    transform: translateX(7px) !important;
+    transform: translateX(12px) !important;
   }
 }
 
@@ -15473,18 +15473,24 @@ body .page-shell main.featured-page > .featured-summary-section .featured-summar
   white-space: normal !important;
 }
 
-@media (min-width: 1025px) and (max-width: 1500px) {
+html body .page-shell main.featured-page #featured-summary-title,
+html body .page-shell main.featured-page > section[id] {
+  scroll-margin-top: 120px;
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
   body .page-shell main.featured-page > .featured-summary-section > .featured-summary-grid {
     gap: 12px !important;
   }
 
   body .page-shell main.featured-page > .featured-summary-section .featured-summary-card {
+    min-height: 170px !important;
     padding-right: 16px !important;
     padding-left: 16px !important;
   }
 
   body .page-shell main.featured-page > .featured-summary-section .featured-summary-card h3 {
-    font-size: 22px !important;
+    font-size: 21px !important;
     white-space: nowrap !important;
   }
 
@@ -16202,14 +16208,17 @@ html body .page-shell main.featured-page > section.featured-final-cta p:not(.eye
   color: #ded8cf !important;
   -webkit-text-fill-color: #ded8cf !important;
   overflow-wrap: normal !important;
-  text-wrap: balance !important;
+  text-wrap: wrap !important;
   white-space: normal !important;
 }
 
 @media (min-width: 1025px) {
+  /* Featured Explore body note: desktop copy uses the open text column instead of the old one-line lock. */
   html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
-    /* Desktop keeps the approved one-line Explore body; smaller screens use the wrapping rule above. */
-    white-space: nowrap !important;
+    width: 100% !important;
+    max-width: none !important;
+    white-space: normal !important;
+    text-wrap: wrap !important;
   }
 }
 
@@ -16224,14 +16233,17 @@ html body .page-shell main.featured-page > section.featured-final-cta p:not(.eye
     max-width: 100% !important;
     font-size: clamp(28px, 5.2vw, 38px) !important;
     line-height: 1.05 !important;
-    text-wrap: balance !important;
+    text-wrap: wrap !important;
     white-space: normal !important;
   }
 
+  /* Featured Explore tablet body note: remove the old character cap so the paragraph can spread across available width. */
   html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
-    max-width: 68ch !important;
+    width: 100% !important;
+    max-width: none !important;
     font-size: clamp(15px, 2.3vw, 17px) !important;
     line-height: 1.55 !important;
+    text-wrap: wrap !important;
   }
 
   html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
@@ -16306,7 +16318,7 @@ html body .page-shell main.featured-page > section.featured-final-cta .featured-
 }
 
 @media (min-width: 1025px) and (max-width: 1320px) {
-  /* Featured final CTA bridge: 1280-style desktops keep the right-side pills, but the rail/buttons shrink so body copy never runs under them. */
+  /* Featured Explore desktop bridge note: keep the right-side pills, but remove the old balanced copy cap so text uses its full open column. */
   html body .page-shell main.featured-page > section.featured-final-cta {
     grid-template-columns: minmax(0, 1fr) minmax(150px, 205px) !important;
     align-items: stretch !important;
@@ -16317,15 +16329,16 @@ html body .page-shell main.featured-page > section.featured-final-cta .featured-
     max-width: 100% !important;
     font-size: clamp(28px, 3.25vw, 38px) !important;
     line-height: 1.05 !important;
-    text-wrap: balance !important;
+    text-wrap: wrap !important;
     white-space: normal !important;
   }
 
   html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
-    max-width: 68ch !important;
+    width: 100% !important;
+    max-width: none !important;
     font-size: 16px !important;
     line-height: 1.42 !important;
-    text-wrap: balance !important;
+    text-wrap: wrap !important;
     white-space: normal !important;
   }
 
@@ -16347,7 +16360,7 @@ html body .page-shell main.featured-page > section.featured-final-cta .featured-
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* Featured final CTA tablet-wide lock: keep the pills on the right, but reduce type and pill scale so the copy lands cleanly in two lines. */
+  /* Featured Explore tablet-wide note: keep the pills on the right, but let title/body fill the open text column naturally. */
   html body .page-shell main.featured-page > section.featured-final-cta {
     grid-template-columns: minmax(0, 1fr) minmax(180px, 250px) !important;
     align-items: stretch !important;
@@ -16358,15 +16371,16 @@ html body .page-shell main.featured-page > section.featured-final-cta .featured-
     max-width: 100% !important;
     font-size: clamp(28px, 4vw, 36px) !important;
     line-height: 1.05 !important;
-    text-wrap: balance !important;
+    text-wrap: wrap !important;
     white-space: normal !important;
   }
 
   html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
-    max-width: 58ch !important;
+    width: 100% !important;
+    max-width: none !important;
     font-size: 14.5px !important;
     line-height: 1.48 !important;
-    text-wrap: balance !important;
+    text-wrap: wrap !important;
     white-space: normal !important;
   }
 
@@ -16423,18 +16437,30 @@ html body .page-shell main.featured-page > .featured-pillar .featured-pillar-cop
 
 @media (min-width: 768px) and (max-width: 1024px) {
   html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > p:not(.eyebrow) {
-    max-width: min(100%, 92ch) !important;
+    max-width: min(100%, 128ch) !important;
     font-size: 16px !important;
     line-height: 1.55 !important;
+    text-wrap: wrap !important;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 444px) {
   html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > p:not(.eyebrow) {
     max-width: min(100%, 42ch) !important;
     font-size: 15.5px !important;
     line-height: 1.5 !important;
     text-wrap: pretty !important;
+  }
+}
+
+/* Featured mid-mobile body note: 445-767px replaces the old narrow cap so proof-section paragraphs can use the available left-to-right section width. */
+@media (min-width: 445px) and (max-width: 767px) {
+  html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > p:not(.eyebrow) {
+    width: min(100%, var(--featured-centered-media-width)) !important;
+    max-width: 100% !important;
+    font-size: 15.5px !important;
+    line-height: 1.5 !important;
+    text-wrap: wrap !important;
   }
 }
 
@@ -16467,4 +16493,224 @@ html body .page-shell main.featured-page > section.section.featured-summary-sect
 html body .page-shell main.featured-page > section.featured-final-cta > * {
   position: relative !important;
   z-index: 1 !important;
+}
+
+@media (max-width: 1279px) {
+  /* Featured sub-1280 shell lock: all Featured bands use the full hero/footer wall so no left/right hairline appears. */
+  html body .page-shell main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
+    --featured-section-wall-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
+    margin-right: calc(50% - (var(--featured-section-wall-width) * 0.5)) !important;
+    margin-left: calc(50% - (var(--featured-section-wall-width) * 0.5)) !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  /* Featured 1025 shell note: hero and footer use the same full wall as the Featured bands, removing the narrow white edge rails. */
+  body .page-shell main.featured-page > .hero.page-hero-system.page-hero-system {
+    --home-hero-wall-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
+  }
+
+  body:has(main.featured-page) .site-footer.site-chrome {
+    --home-footer-rule-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Featured tablet/mobile type pass: keep walls and image grids untouched while strengthening cards and cleaning pill text. */
+  /* Featured Explore tablet body note: this stays uncapped so the CTA paragraph uses the available black-band width. */
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: 14px !important;
+    line-height: 1.48 !important;
+    text-wrap: wrap !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-card-label {
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card h3 {
+    font-size: 28px !important;
+    line-height: 1.04 !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card strong {
+    font-size: 15px !important;
+    line-height: 1.18 !important;
+    white-space: nowrap !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card > p {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card {
+    min-height: 88px !important;
+    padding: 14px 16px !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card strong {
+    font-size: 24px !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card span {
+    font-size: 15px !important;
+    line-height: 1.24 !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions .button {
+    min-height: 52px !important;
+    height: auto !important;
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+    font-size: 15px !important;
+    line-height: 1.1 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Featured Explore mobile body note: remove the old 46ch cap so title/body text can use the whole CTA content area. */
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    text-wrap: wrap !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card {
+    padding: 18px 20px !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-card-label {
+    font-size: 10.5px !important;
+    line-height: 1.1 !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card h3 {
+    font-size: 25px !important;
+    line-height: 1.05 !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card strong {
+    font-size: 14px !important;
+    line-height: 1.18 !important;
+    white-space: nowrap !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card > p {
+    font-size: 15.5px !important;
+    line-height: 1.42 !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-grid {
+    gap: 12px !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card {
+    min-height: 82px !important;
+    padding: 12px 10px !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card strong {
+    font-size: 22px !important;
+    line-height: 1.05 !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card span {
+    font-size: 13.5px !important;
+    line-height: 1.22 !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions {
+    gap: 12px !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions:not(:has(> :nth-child(4))) {
+    grid-template-columns: minmax(0, min(100%, 320px)) !important;
+    justify-content: center !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions:has(> :nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions .button {
+    min-height: 50px !important;
+    height: auto !important;
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+    font-size: 14px !important;
+    line-height: 1.12 !important;
+    white-space: normal !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 819px) {
+  html body .page-shell main.featured-page > section.featured-final-cta {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* Featured Explore narrow-tablet body note: keep the CTA copy full-width here too, replacing the old 62ch lock. */
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+    width: 100% !important;
+    max-width: none !important;
+    text-wrap: wrap !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
+    width: min(100%, 520px) !important;
+  }
+}
+
+@media (max-width: 374px) {
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card h3 {
+    font-size: 23px !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card strong {
+    font-size: 13px !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card strong {
+    font-size: 20px !important;
+  }
+
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card span {
+    font-size: 12.5px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Featured mobile copy width pass: Explore and Impact intro copy use the full black band content width instead of narrow/tiny line locks. */
+  html body .page-shell main.featured-page > section.featured-final-cta > div,
+  html body .page-shell main.featured-page > section.featured-final-cta h2,
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow),
+  body .page-shell main.featured-page > .featured-summary-section > .section-heading,
+  body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 + p {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta h2 {
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 + p {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+  }
+
+  body .page-shell main.featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(5) {
+    transform: translateX(6px) !important;
+  }
 }
