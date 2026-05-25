@@ -14468,11 +14468,8 @@ body .page-shell :is(
   .section:not(.featured-card),
   .library-grid,
   .system-document-grid,
-  .featured-page > .featured-pillar,
   .featured-page > .featured-strategy-panel,
   .featured-page > .featured-final-cta,
-  .featured-pillar-grid,
-  .featured-pillar-grid-reverse,
   .media-library-section,
   .media-section-grid,
   .media-preview-carousel,
@@ -15288,7 +15285,7 @@ body .page-shell main.featured-page {
   background: #ffffff !important;
 }
 
-/* Featured body containment: sections stay borderless and white; proof cards keep their own small borders. */
+/* Featured body containment: sections stay borderless; individual Featured bands own their active background rules below. */
 body .page-shell main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
   --featured-section-wall-width: 100vw;
   --featured-section-inline-pad: var(--featured-section-padding);
@@ -15304,7 +15301,7 @@ body .page-shell main.featured-page > :is(.featured-summary-section, .featured-p
   padding-left: var(--featured-section-inline-pad) !important;
   border: 0 !important;
   border-radius: 0 !important;
-  background: #ffffff !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 
@@ -15382,9 +15379,14 @@ body .page-shell main.featured-page > .featured-final-cta {
   background-image: none !important;
 }
 
+/* Featured impact summary black band: replaces the old white section rule while leaving the four summary cards and their label pills on their existing colors. */
 body .page-shell main.featured-page > .featured-summary-section {
-  background: #ffffff !important;
-  box-shadow: none !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 100vmax #000000 !important;
+  clip-path: inset(0 -100vmax) !important;
+  color: #f7f4ef !important;
 }
 
 body .page-shell main.featured-page > .featured-final-cta {
@@ -15411,19 +15413,50 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
   max-width: none !important;
 }
 
+body .page-shell main.featured-page > .featured-summary-section > .section-heading > .eyebrow {
+  color: #f2a179 !important;
+  -webkit-text-fill-color: #f2a179 !important;
+}
+
+body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 + p {
   width: 100% !important;
   max-width: none !important;
   margin-top: var(--featured-title-to-body-gap) !important;
   margin-bottom: 0 !important;
-  color: var(--muted) !important;
+  color: #ded8cf !important;
+  -webkit-text-fill-color: #ded8cf !important;
   font-size: 16px !important;
   line-height: 1.52 !important;
   text-align: left !important;
 }
 
+/* Featured impact summary cards: keep the titles inside the cream rectangle boxes on the original dark heading color, despite the black section band. */
+body .page-shell main.featured-page > .featured-summary-section .featured-summary-card h3 {
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+/* Featured black-band sections: Impact Summary and Explore the Work use a true 100vw wall with no white top gap or side gutter. */
+body .page-shell main.featured-page > :is(.featured-summary-section, .featured-final-cta) {
+  --featured-section-wall-width: 100vw !important;
+  margin-top: 0 !important;
+  margin-right: calc(50% - 50vw) !important;
+  margin-left: calc(50% - 50vw) !important;
+  border: 0 !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 100vmax #000000 !important;
+  clip-path: inset(0 -100vmax) !important;
+}
+
 @media (min-width: 1025px) {
-  body .page-shell main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
+  body .page-shell main.featured-page > .featured-strategy-panel {
     /* Featured body uses the approved shared page wall width; media balance is controlled inside the split grid, not by narrowing the wall. */
     --featured-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
     --featured-section-inline-pad: var(--featured-section-padding);
@@ -15764,6 +15797,214 @@ body .page-shell main.featured-page > .featured-final-cta {
   }
 }
 
+/* Featured centered proof layout final: clean stack, 20px rhythm, larger media capped at 1600px, stats spanning the same width. */
+body .page-shell main.featured-page > .featured-pillar {
+  --featured-centered-media-gap: 20px;
+  --featured-centered-stat-gap: 20px;
+  --featured-centered-media-width: 1600px;
+}
+
+body .page-shell main.featured-page > .featured-pillar > :is(.featured-pillar-grid, .featured-pillar-grid-reverse) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+  max-width: 100% !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy {
+  display: contents !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > .eyebrow,
+body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > h2 {
+  width: min(100%, 980px) !important;
+  max-width: 980px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  text-align: center !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > p:not(.eyebrow) {
+  width: min(100%, var(--featured-centered-media-width)) !important;
+  max-width: min(var(--featured-centered-media-width), 138ch) !important;
+  margin-top: 12px !important;
+  margin-right: auto !important;
+  margin-bottom: 0 !important;
+  margin-left: auto !important;
+  font-size: clamp(16px, 0.82vw, 18px) !important;
+  line-height: 1.52 !important;
+  text-align: center !important;
+  text-wrap: balance !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-pillar-visual {
+  order: 4 !important;
+  width: min(100%, var(--featured-centered-media-width)) !important;
+  max-width: var(--featured-centered-media-width) !important;
+  margin: var(--featured-centered-media-gap) auto 0 !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-visual-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1.82 / 1 !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-visual-grid img {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-stat-grid {
+  order: 5 !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  width: min(100%, var(--featured-centered-media-width)) !important;
+  max-width: var(--featured-centered-media-width) !important;
+  margin-top: var(--featured-centered-stat-gap) !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-actions {
+  order: 6 !important;
+  width: min(100%, var(--featured-centered-media-width)) !important;
+  max-width: var(--featured-centered-media-width) !important;
+  margin-top: 16px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-actions .button {
+  border-color: var(--coach-orange) !important;
+  background: var(--coach-orange) !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar .featured-actions .button:hover,
+body .page-shell main.featured-page > .featured-pillar .featured-actions .button:focus-visible {
+  border-color: var(--coach-orange-hover) !important;
+  background: var(--coach-orange-hover) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Featured proof control parity: all four proof sections share one rectangle-card row, one action-pill row, and one spacing system. */
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar {
+  --featured-proof-row-gap: 16px;
+  --featured-proof-card-height: 92px;
+  --featured-action-row-gap: 16px;
+  --featured-action-pill-height: 58px;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-grid,
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions {
+  width: min(100%, var(--featured-centered-media-width)) !important;
+  max-width: var(--featured-centered-media-width) !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-auto-rows: 1fr !important;
+  gap: var(--featured-proof-row-gap) !important;
+  margin-top: var(--featured-centered-stat-gap) !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card {
+  display: flex !important;
+  min-width: 0 !important;
+  min-height: var(--featured-proof-card-height) !important;
+  height: 100% !important;
+  padding: 14px 18px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card strong {
+  line-height: 1.05 !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-card span {
+  line-height: 1.22 !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions {
+  display: grid !important;
+  gap: var(--featured-action-row-gap) !important;
+  margin-top: 16px !important;
+  justify-content: stretch !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions:has(> :nth-child(4)) {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions .button {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: var(--featured-action-pill-height) !important;
+  height: var(--featured-action-pill-height) !important;
+  padding-right: 18px !important;
+  padding-left: 18px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-stat-grid,
+  body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar .featured-actions,
+  body .page-shell main.featured-page > #the-archer-feature.featured-pillar .featured-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Featured proof section bands: all four case sections use the same Pacific Academy beige background with the approved 12px band-to-band spacing. */
+body .page-shell main.featured-page > .featured-pillar {
+  --featured-section-gap: 12px !important;
+  margin-top: 12px !important;
+}
+
+body .page-shell main.featured-page > :is(#program-turnaround, #collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar {
+  --featured-section-wall-width: 100vw !important;
+  margin-right: calc(50% - 50vw) !important;
+  margin-left: calc(50% - 50vw) !important;
+  background: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%) !important;
+  background-color: #f5e7cf !important;
+  background-image: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%) !important;
+}
+
+body .page-shell main.featured-page > .featured-pillar > :is(.featured-pillar-grid, .featured-pillar-grid-reverse),
+body .page-shell main.featured-page > .featured-pillar .featured-visual-grid {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.featured-page > .featured-pillar .featured-visual-grid {
+    aspect-ratio: 1 / 1.16 !important;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   body .page-shell main.featured-page :is(
     .featured-summary-section .section-heading > h2,
@@ -15822,5 +16063,280 @@ body .page-shell main.featured-page :is(
   ) {
     font-size: clamp(28px, 2.15vw, 37.6px) !important;
     line-height: 1.04 !important;
+  }
+}
+
+/* Featured final CTA responsive lock: Explore the Work stays black/full-bleed, but title/body wrap on smaller screens instead of colliding with the action pills. */
+html body .page-shell main.featured-page > section.featured-final-cta {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px) !important;
+  align-items: stretch !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+  margin-bottom: 0 !important;
+  border: 0 !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 100vmax #000000 !important;
+  clip-path: inset(0 -100vmax) !important;
+  color: #f7f4ef !important;
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta .eyebrow {
+  color: #f2a179 !important;
+  -webkit-text-fill-color: #f2a179 !important;
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+  max-width: none !important;
+  color: #ded8cf !important;
+  -webkit-text-fill-color: #ded8cf !important;
+  overflow-wrap: normal !important;
+  text-wrap: balance !important;
+  white-space: normal !important;
+}
+
+@media (min-width: 1025px) {
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+    /* Desktop keeps the approved one-line Explore body; smaller screens use the wrapping rule above. */
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  html body .page-shell main.featured-page > section.featured-final-cta {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 24px !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta h2 {
+    max-width: 100% !important;
+    font-size: clamp(28px, 5.2vw, 38px) !important;
+    line-height: 1.05 !important;
+    text-wrap: balance !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+    max-width: 68ch !important;
+    font-size: clamp(15px, 2.3vw, 17px) !important;
+    line-height: 1.55 !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
+    width: min(100%, 520px) !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: minmax(48px, auto) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.featured-page > section.featured-final-cta h2 {
+    font-size: clamp(24px, 8.4vw, 34px) !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  html body .page-shell main.featured-page > section.featured-final-cta h2 {
+    white-space: nowrap !important;
+  }
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
+  align-self: stretch !important;
+  display: grid !important;
+  grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin-top: 0 !important;
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta .featured-actions .button {
+  height: 100% !important;
+  min-height: 0 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta .featured-actions .button-primary {
+  border-color: var(--coach-orange) !important;
+  background: var(--coach-orange) !important;
+  background-image: none !important;
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta .featured-actions .button-secondary {
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  background-image: none !important;
+}
+
+html body .page-shell main.featured-page > section.featured-final-cta .featured-actions .button:hover,
+html body .page-shell main.featured-page > section.featured-final-cta .featured-actions .button:focus-visible {
+  border-color: var(--coach-orange-hover) !important;
+  background: var(--coach-orange-hover) !important;
+  background-image: none !important;
+}
+
+@media (max-width: 1024px) {
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
+    align-self: start !important;
+    width: min(100%, 520px) !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: minmax(48px, auto) !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions .button {
+    min-height: 48px !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1320px) {
+  /* Featured final CTA bridge: 1280-style desktops keep the right-side pills, but the rail/buttons shrink so body copy never runs under them. */
+  html body .page-shell main.featured-page > section.featured-final-cta {
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 205px) !important;
+    align-items: stretch !important;
+    gap: clamp(16px, 2vw, 24px) !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta h2 {
+    max-width: 100% !important;
+    font-size: clamp(28px, 3.25vw, 38px) !important;
+    line-height: 1.05 !important;
+    text-wrap: balance !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+    max-width: 68ch !important;
+    font-size: 16px !important;
+    line-height: 1.42 !important;
+    text-wrap: balance !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
+    align-self: stretch !important;
+    width: 100% !important;
+    grid-template-rows: repeat(3, minmax(38px, 1fr)) !important;
+    grid-auto-rows: initial !important;
+    gap: 9px !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions .button {
+    min-height: 38px !important;
+    height: auto !important;
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Featured final CTA tablet-wide lock: keep the pills on the right, but reduce type and pill scale so the copy lands cleanly in two lines. */
+  html body .page-shell main.featured-page > section.featured-final-cta {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 250px) !important;
+    align-items: stretch !important;
+    gap: clamp(16px, 2.5vw, 24px) !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta h2 {
+    max-width: 100% !important;
+    font-size: clamp(28px, 4vw, 36px) !important;
+    line-height: 1.05 !important;
+    text-wrap: balance !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta p:not(.eyebrow) {
+    max-width: 58ch !important;
+    font-size: 14.5px !important;
+    line-height: 1.48 !important;
+    text-wrap: balance !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
+    align-self: stretch !important;
+    width: 100% !important;
+    grid-template-rows: repeat(3, minmax(40px, 1fr)) !important;
+    grid-auto-rows: initial !important;
+    gap: 10px !important;
+  }
+
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions .button {
+    min-height: 40px !important;
+    height: auto !important;
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+    font-size: 0.82rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.featured-page > section.featured-final-cta .featured-actions {
+    width: 100% !important;
+  }
+}
+
+/* Featured centered heading scale: larger eyebrow/title for the four proof sections, with a tighter 12px title-to-body gap. */
+html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > .eyebrow {
+  font-size: 15px !important;
+  line-height: 1.1 !important;
+}
+
+html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > h2 {
+  font-size: clamp(48px, 3.6vw, 68px) !important;
+  line-height: 1.02 !important;
+}
+
+/* Featured proof body measure: paragraph copy stays inside the image-grid width and scales from roughly two desktop lines to four mobile lines. */
+@media (min-width: 1501px) {
+  html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > p:not(.eyebrow) {
+    max-width: min(var(--featured-centered-media-width), 150ch) !important;
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1500px) {
+  html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > p:not(.eyebrow) {
+    max-width: min(100%, 158ch) !important;
+    font-size: 17px !important;
+    line-height: 1.52 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > p:not(.eyebrow) {
+    max-width: min(100%, 92ch) !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.featured-page > .featured-pillar .featured-pillar-copy > p:not(.eyebrow) {
+    max-width: min(100%, 42ch) !important;
+    font-size: 15.5px !important;
+    line-height: 1.5 !important;
+    text-wrap: pretty !important;
   }
 }
