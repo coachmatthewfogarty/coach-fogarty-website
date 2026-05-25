@@ -11570,6 +11570,36 @@ main.archer-page .archer-final-cta .featured-actions {
   object-position: 50% 0% !important;
 }
 
+html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-picture {
+  background: #fff !important;
+}
+
+html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-picture > img.hero-portrait-image {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #fff !important;
+  transform: translateY(-5%) scale(1.12) !important;
+  transform-origin: center center !important;
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-picture > img.hero-portrait-image {
+    transform: translateY(-5%) scale(1.04) !important;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 2199px) {
+  html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-picture > img.hero-portrait-image {
+    transform: translateY(-8%) scale(1.04) !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-picture > img.hero-portrait-image {
+    transform: translateY(-9%) scale(1) !important;
+  }
+}
+
 .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system .hero-portrait-overlay {
   position: absolute !important;
   right: var(--hero-overlay-right) !important;
