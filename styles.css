@@ -7646,10 +7646,10 @@ main.featured-page {
     --featured-body-copy-max: clamp(820px, 54vw, 1080px);
     --featured-section-padding: clamp(34px, 2.15vw, 44px);
     --featured-eyebrow-gap: 8px;
-    --featured-title-to-body-gap: 14px;
+    --featured-title-to-body-gap: 20px;
     --featured-body-to-proof-gap: 24px;
     --featured-body-to-button-gap: 24px;
-    --featured-proof-to-button-gap: 12px;
+    --featured-proof-to-button-gap: 30px;
     --featured-proof-card-gap: 14px;
   }
 }
@@ -15547,7 +15547,7 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
   body .page-shell main.featured-page .featured-stat-grid + .featured-actions {
     width: min(100%, 540px);
     max-width: 540px;
-    margin-top: 8px !important;
+    margin-top: 30px !important;
     gap: 14px !important;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -15603,6 +15603,7 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
   body .page-shell main.featured-page .featured-pillar-copy {
     width: 100% !important;
     max-width: none !important;
+    align-self: stretch !important;
   }
 
   body .page-shell main.featured-page .featured-pillar-visual {
@@ -15645,9 +15646,17 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
     max-width: var(--featured-pillar-content-max) !important;
   }
 
+  body .page-shell main.featured-page .featured-pillar-copy > p:not(.eyebrow) {
+    line-height: 3 !important;
+  }
+
   body .page-shell main.featured-page .featured-stat-card {
     min-height: clamp(76px, 4.8vw, 92px) !important;
     padding: clamp(9px, 0.8vw, 14px) 14px !important;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-copy > .featured-stat-grid {
+    margin-top: auto !important;
   }
 
   body .page-shell main.featured-page .featured-pillar-copy > .featured-actions {
@@ -15688,9 +15697,17 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
 @media (min-width: 2200px) {
   /* Featured ultra-wide media match: replaces the oversized 2560 Featured image tiles with About-page-sized tiles while preserving the section rail and content gutters. */
   /* The !important values in this block override the 1360px+ Featured stretch-rail rule that otherwise forces media to fill the full split column. */
+  main.featured-page {
+    --featured-title-to-body-gap: 30px;
+  }
+
   body .page-shell main.featured-page > .featured-pillar {
     --featured-pillar-bottom-breathing: 48px;
     --featured-pillar-content-max: 100%;
+  }
+
+  body .page-shell main.featured-page .featured-pillar-copy > p:not(.eyebrow) {
+    line-height: 40px !important;
   }
 
   /* Featured ultra-wide split fix: the media column matches the capped image grid, removing the dead middle gap without moving the image wall or text left wall. */
