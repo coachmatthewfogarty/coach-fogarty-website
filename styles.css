@@ -12094,6 +12094,17 @@ main.archer-page .archer-final-cta .featured-actions {
   left: var(--hero-overlay-divider-4, 81.8%) !important;
 }
 
+/* Featured highlight edge links: keep homepage lanes/dividers, then visually center Summary and The Archer between the overlay wall and nearest divider. */
+@media (min-width: 1025px) {
+  body .page-shell main.featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(1) {
+    transform: translateX(-7px) !important;
+  }
+
+  body .page-shell main.featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(5) {
+    transform: translateX(7px) !important;
+  }
+}
+
 /* Systems page highlight lock: six links intentionally use homepage-style equal lanes on one row. */
 body .page-shell main.systems-detail-page > .page-hero-system.page-hero-system {
   --systems-highlight-divider-1: 16.666%;
@@ -15381,6 +15392,8 @@ body .page-shell main.featured-page > .featured-final-cta {
 
 /* Featured impact summary black band: replaces the old white section rule while leaving the four summary cards and their label pills on their existing colors. */
 body .page-shell main.featured-page > .featured-summary-section {
+  padding-top: calc(var(--featured-section-padding) * 0.5) !important;
+  padding-bottom: calc(var(--featured-section-padding) * 0.5) !important;
   background: #000000 !important;
   background-color: #000000 !important;
   background-image: none !important;
@@ -15426,13 +15439,56 @@ body .page-shell main.featured-page > .featured-summary-section > .section-headi
 body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 + p {
   width: 100% !important;
   max-width: none !important;
-  margin-top: var(--featured-title-to-body-gap) !important;
+  margin-top: calc(var(--featured-title-to-body-gap) * 0.5) !important;
   margin-bottom: 0 !important;
   color: #ded8cf !important;
   -webkit-text-fill-color: #ded8cf !important;
   font-size: 16px !important;
   line-height: 1.52 !important;
   text-align: left !important;
+}
+
+body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 + p,
+body .page-shell main.featured-page > .featured-summary-section .featured-summary-card > p {
+  white-space: nowrap !important;
+}
+
+body .page-shell main.featured-page > .featured-summary-section .featured-summary-card {
+  min-height: 0 !important;
+  padding: 18px 20px 16px !important;
+}
+
+body .page-shell main.featured-page > .featured-summary-section .featured-summary-card h3 {
+  margin-top: 12px !important;
+  margin-bottom: 6px !important;
+}
+
+body .page-shell main.featured-page > .featured-summary-section .featured-summary-card > p {
+  margin-top: 10px !important;
+  font-size: 17px !important;
+  line-height: 1.35 !important;
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 + p {
+    font-size: 7px !important;
+    line-height: 1.35 !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card > p {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main.featured-page > .featured-summary-section > .section-heading > h2 + p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  body .page-shell main.featured-page > .featured-summary-section .featured-summary-card > p {
+    font-size: 16px !important;
+  }
 }
 
 /* Featured impact summary cards: keep the titles inside the cream rectangle boxes on the original dark heading color, despite the black section band. */
@@ -15453,6 +15509,10 @@ body .page-shell main.featured-page > :is(.featured-summary-section, .featured-f
   background-image: none !important;
   box-shadow: inset 0 0 0 100vmax #000000 !important;
   clip-path: inset(0 -100vmax) !important;
+}
+
+body .page-shell main.featured-page > #the-archer-feature.featured-pillar + .featured-final-cta {
+  margin-top: 12px !important;
 }
 
 @media (min-width: 1025px) {
