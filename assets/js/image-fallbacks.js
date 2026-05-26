@@ -475,26 +475,40 @@
     prepareAll();
   }
 
-  new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      mutation.addedNodes.forEach((node) => {
-        if (!(node instanceof Element)) {
-          return;
-        }
+  function watchAddedMedia() {
+    const observerRoot = document.documentElement || document.body;
 
-        if (node.matches("img")) {
-          prepareElement(node);
-        }
+    if (!observerRoot) {
+      return;
+    }
 
-        if (node.matches("video[poster]")) {
-          prepareVideoPoster(node);
-        }
+    new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (!(node instanceof Element)) {
+            return;
+          }
 
-        prepareAll(node);
+          if (node.matches("img")) {
+            prepareElement(node);
+          }
+
+          if (node.matches("video[poster]")) {
+            prepareVideoPoster(node);
+          }
+
+          prepareAll(node);
+        });
       });
+    }).observe(observerRoot, {
+      childList: true,
+      subtree: true
     });
-  }).observe(document.documentElement, {
-    childList: true,
-    subtree: true
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", watchAddedMedia, { once: true });
+  } else {
+    watchAddedMedia();
+  }
 })();
