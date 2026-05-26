@@ -7671,8 +7671,15 @@ main.featured-page :is(
 
 /* Featured body sections preserve image crops while tightening media/text alignment and panel padding. */
 main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
-  margin-top: var(--featured-section-gap) !important; /* Overrides older shared section spacing locks that also use !important. */
   padding: var(--featured-section-padding) !important; /* Overrides older shared mobile/card padding locks that also use !important. */
+}
+
+main.featured-page > :is(.featured-summary-section, #collegiate-impact, #anaya-case-study, #the-archer-feature) {
+  margin-top: var(--featured-section-gap) !important;
+}
+
+main.featured-page > :is(#program-turnaround, .featured-final-cta) {
+  margin-top: 0 !important;
 }
 
 main.featured-page :is(.featured-pillar-grid, .featured-pillar-grid-reverse) {
