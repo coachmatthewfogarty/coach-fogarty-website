@@ -11753,6 +11753,30 @@ html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page
   display: none !important;
 }
 
+body .page-shell main.archer-page.archer-page .archer-pill-label-mobile {
+  display: none !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-pill-label-full {
+  display: inline !important;
+}
+
+body .page-shell main.archer-page.archer-page .hero-pill :is(.archer-pill-label-full, .archer-pill-label-mobile) {
+  max-width: 100% !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 767px), (max-width: 932px) and (max-height: 430px) {
+  body .page-shell main.archer-page.archer-page .archer-pill-label-full {
+    display: none !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-pill-label-mobile {
+    display: inline !important;
+  }
+}
+
 @media (max-width: 430px) and (orientation: portrait) {
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system {
     gap: clamp(8px, 2.2vw, 12px) !important;
@@ -11789,7 +11813,7 @@ html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page
 }
 
 @media (max-width: 767px) {
-  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page):not(.featured-page)) > .page-hero-system.page-hero-system {
+  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page):not(.featured-page):not(.archer-page)) > .page-hero-system.page-hero-system {
     margin-bottom: 18px !important;
     padding: 14px 20px 12px !important;
     border-radius: 0 !important;
@@ -14638,6 +14662,10 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
     box-shadow: none !important;
   }
 
+  body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system {
+    margin-bottom: 0 !important;
+  }
+
   /* Anaya/Archer mobile/tablet footer seam lock: removes the shared cream lead-in so the footer divider starts at the case page wall. */
   body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) > .site-footer.site-chrome {
     margin-top: 0 !important;
@@ -16779,7 +16807,7 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
 }
 
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > .section.section {
-  --archer-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+  --archer-section-wall-width: min(var(--home-section-wall-width, 2560px), 100vw);
   --archer-section-inline-pad: var(--featured-section-padding);
   --archer-section-rail-gutter: var(--featured-section-padding);
   --archer-featured-media-width: min(100%, 1600px);
@@ -16819,9 +16847,17 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
   margin-top: 0 !important;
 }
 
+body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system + .archer-overview-section.section {
+  margin-top: 0 !important;
+}
+
+/* Archer spacer-line note: middle-section dividers must be one solid white line from edge to edge.
+   The hero-to-Training Tool handoff follows Featured: connected bands, no spacer border.
+   Do not use margin gaps here; gaps expose the cream/black band colors at the ends. */
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-how-section, .archer-development-section, .archer-portfolio-section, .archer-final-cta).section,
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(#photos, #videos).section {
-  margin-top: 12px !important;
+  margin-top: 0 !important;
+  border-top: 12px solid #ffffff !important;
 }
 
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-overview-section, .archer-final-cta).section::before {
@@ -16941,6 +16977,10 @@ body .page-shell main.archer-page.archer-page .archer-proof-grid {
   gap: var(--archer-featured-proof-gap) !important;
 }
 
+body .page-shell main.archer-page.archer-page .archer-how-section .archer-card-grid-four {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
 body .page-shell main.archer-page.archer-page .archer-feature-card,
 body .page-shell main.archer-page.archer-page .archer-mini-card,
 body .page-shell main.archer-page.archer-page .archer-proof-grid article {
@@ -17014,6 +17054,10 @@ body .page-shell main.archer-page.archer-page .archer-final-cta .featured-action
     margin-left: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
   }
 
+  html body .page-shell main.archer-page.archer-page > section.hero.page-hero-system.page-hero-system {
+    margin-bottom: 0 !important;
+  }
+
   body:has(main.archer-page) .site-footer.site-chrome {
     --home-footer-rule-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
   }
@@ -17060,6 +17104,7 @@ body .page-shell main.archer-page.archer-page .archer-final-cta .featured-action
   body .page-shell main.archer-page.archer-page .archer-split,
   body .page-shell main.archer-page.archer-page .archer-split-reverse,
   body .page-shell main.archer-page.archer-page .archer-final-cta,
+  body .page-shell main.archer-page.archer-page .archer-how-section .archer-card-grid-four,
   body .page-shell main.archer-page.archer-page .archer-media-grid,
   body .page-shell main.archer-page.archer-page .featured-actions {
     grid-template-columns: minmax(0, 1fr) !important;
@@ -17073,4 +17118,10 @@ body .page-shell main.archer-page.archer-page .archer-final-cta .featured-action
   body .page-shell main.archer-page.archer-page .featured-actions .button {
     white-space: normal !important;
   }
+}
+
+/* Archer hero seam lock: match Featured by connecting the hero directly to the Training Tool band. */
+html body .page-shell main.archer-page.archer-page > section.hero.page-hero-system.page-hero-system {
+  margin-bottom: 0 !important;
+  border-bottom: 0 !important;
 }
