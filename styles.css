@@ -11789,7 +11789,7 @@ html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page
 }
 
 @media (max-width: 767px) {
-  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system {
+  .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page):not(.featured-page)) > .page-hero-system.page-hero-system {
     margin-bottom: 18px !important;
     padding: 14px 20px 12px !important;
     border-radius: 0 !important;
@@ -15329,7 +15329,17 @@ body .page-shell main.featured-page > :is(.featured-summary-section, .featured-p
   border-radius: 0 !important;
 }
 
-/* Featured intentional section gaps: only the middle tan proof sections separate; hero/Impact, Impact/Pacific, and Archer/Explore stay connected. */
+/* Featured band joins: no spacer is allowed between Hero/Impact, Impact/Pacific, or Archer/Explore. */
+body .page-shell main.featured-page > #featured-work-hero.page-hero-system {
+  margin-bottom: 0 !important;
+  border-bottom: 0 !important;
+}
+
+body .page-shell main.featured-page > #featured-work-hero.page-hero-system + .featured-summary-section {
+  margin-top: 0 !important;
+}
+
+/* Featured intentional section gaps: only the middle tan proof sections separate. */
 body .page-shell main.featured-page > :is(#collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar {
   margin-top: var(--featured-section-gap) !important;
 }
