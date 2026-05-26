@@ -16931,6 +16931,7 @@ body .page-shell main.archer-page.archer-page .archer-section-copy > p:not(.eyeb
 body .page-shell main.archer-page.archer-page .archer-section-copy > .archer-chip-list,
 body .page-shell main.archer-page.archer-page .archer-section-copy > .archer-card-grid,
 body .page-shell main.archer-page.archer-page .archer-section-copy > .archer-mini-grid,
+body .page-shell main.archer-page.archer-page .archer-section-copy > .archer-proof-grid,
 body .page-shell main.archer-page.archer-page .archer-final-cta > div > p,
 body .page-shell main.archer-page.archer-page .archer-final-cta > .featured-actions {
   width: 100% !important;
@@ -16955,6 +16956,26 @@ body .page-shell main.archer-page.archer-page .archer-feature-visual img,
 body .page-shell main.archer-page.archer-page .archer-media-grid img,
 body .page-shell main.archer-page.archer-page .archer-media-grid video {
   border-radius: 0 !important;
+}
+
+@media (min-width: 1025px) {
+  /* Archer Training Tool image sizing: keep the proof photo present, but make this section shallower than the gallery. */
+  body .page-shell main.archer-page.archer-page .archer-overview-section .archer-feature-visual {
+    width: min(100%, 780px) !important;
+    justify-self: end !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-overview-section .archer-feature-visual img {
+    aspect-ratio: 16 / 9 !important;
+    max-height: 440px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .page-shell main.archer-page.archer-page .archer-overview-section .archer-feature-visual img {
+    aspect-ratio: 16 / 9 !important;
+    max-height: 430px !important;
+  }
 }
 
 body .page-shell main.archer-page.archer-page .archer-media-grid {
@@ -17042,6 +17063,27 @@ body .page-shell main.archer-page.archer-page .archer-proof-grid {
   gap: var(--archer-featured-proof-gap) !important;
 }
 
+@media (min-width: 1025px) {
+  /* Archer portfolio proof pills: desktop keeps the three proof cards in one row directly under the body copy. */
+  body .page-shell main.archer-page.archer-page .archer-portfolio-section .archer-split {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-portfolio-section .archer-section-copy {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-portfolio-section .archer-section-copy > p:not(.eyebrow) {
+    max-width: 920px !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-portfolio-section .archer-proof-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    margin-top: 24px !important;
+  }
+}
+
 body .page-shell main.archer-page.archer-page .archer-how-section .archer-card-grid-four {
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
@@ -17104,21 +17146,48 @@ body .page-shell main.archer-page.archer-page .featured-actions .button {
   white-space: normal !important;
 }
 
-@media (min-width: 1025px) and (max-width: 1179px) {
-  body .page-shell main.archer-page.archer-page .archer-final-cta .featured-actions {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-
-  body .page-shell main.archer-page.archer-page .archer-final-cta .featured-actions .button {
-    font-size: clamp(14px, 1.35vw, 16px) !important;
-  }
-}
-
 body .page-shell main.archer-page.archer-page .archer-final-cta .featured-actions .button-secondary {
   border-color: rgba(255, 255, 255, 0.26) !important;
   background: rgba(255, 255, 255, 0.08) !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (min-width: 1025px) {
+  /* Archer desktop CTA reset: deletes the old two-column/tall-pill behavior.
+     Body copy now spans the available width in 1-2 long lines, with three smaller pills below it. */
+  body .page-shell main.archer-page.archer-page .archer-final-cta {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-final-cta > div,
+  body .page-shell main.archer-page.archer-page .archer-final-cta > .featured-actions {
+    width: 100% !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-final-cta > div > p:not(.eyebrow) {
+    max-width: none !important;
+    font-size: clamp(20px, 1.55vw, 28px) !important;
+    line-height: 1.38 !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-final-cta .featured-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-final-cta .featured-actions .button {
+    min-height: 48px !important;
+    height: 48px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    font-size: clamp(14px, 1vw, 17px) !important;
+    line-height: 1.08 !important;
+  }
 }
 
 @media (max-width: 1279px) {
