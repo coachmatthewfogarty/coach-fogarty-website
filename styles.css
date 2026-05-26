@@ -2193,7 +2193,7 @@ a.credential-static[href] {
 .featured-pillar,
 .featured-strategy-panel,
 .featured-final-cta {
-  margin-top: var(--featured-section-gap, 28px);
+  margin-top: 0;
 }
 
 .featured-summary-grid,
@@ -2451,7 +2451,7 @@ a.credential-static[href] {
   .featured-page > .featured-pillar,
   .featured-page > .featured-strategy-panel,
   .featured-page > .featured-final-cta {
-    margin-top: var(--featured-section-gap);
+    margin-top: 0;
     padding: var(--featured-section-padding);
     border-radius: var(--featured-radius);
   }
@@ -7674,11 +7674,11 @@ main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-
   padding: var(--featured-section-padding) !important; /* Overrides older shared mobile/card padding locks that also use !important. */
 }
 
-main.featured-page > :is(.featured-summary-section, #collegiate-impact, #anaya-case-study, #the-archer-feature) {
+main.featured-page > :is(#collegiate-impact, #anaya-case-study, #the-archer-feature) {
   margin-top: var(--featured-section-gap) !important;
 }
 
-main.featured-page > :is(#program-turnaround, .featured-final-cta) {
+main.featured-page > :is(.featured-summary-section, #program-turnaround, .featured-final-cta) {
   margin-top: 0 !important;
 }
 
@@ -15311,7 +15311,7 @@ body .page-shell main.featured-page {
   background: #ffffff !important;
 }
 
-/* Featured section shell wall: all body bands match the hero/footer wall and gutters; color bands are set in their own rules below. */
+/* Featured section shell wall: bands touch by default so black/tan transitions do not expose a white spacer line. */
 body .page-shell main.featured-page > :is(.featured-summary-section, .featured-pillar, .featured-strategy-panel, .featured-final-cta) {
   --featured-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
   --featured-section-inline-pad: var(--featured-section-padding);
@@ -15320,13 +15320,18 @@ body .page-shell main.featured-page > :is(.featured-summary-section, .featured-p
   width: var(--featured-section-wall-width) !important;
   max-width: none !important;
   margin: 0 calc(50% - (var(--featured-section-wall-width) * 0.5)) !important;
-  margin-top: var(--featured-section-gap) !important;
+  margin-top: 0 !important;
   padding-top: var(--featured-section-padding) !important;
   padding-right: var(--featured-section-inline-pad) !important;
   padding-bottom: var(--featured-section-padding) !important;
   padding-left: var(--featured-section-inline-pad) !important;
   border: 0 !important;
   border-radius: 0 !important;
+}
+
+/* Featured intentional section gaps: only the middle tan proof sections separate; hero/Impact, Impact/Pacific, and Archer/Explore stay connected. */
+body .page-shell main.featured-page > :is(#collegiate-impact, #anaya-case-study, #the-archer-feature).featured-pillar {
+  margin-top: var(--featured-section-gap) !important;
 }
 
 body .page-shell main.featured-page > :is(.featured-strategy-panel, .featured-pillar) {
@@ -15560,7 +15565,7 @@ body .page-shell main.featured-page > :is(.featured-summary-section, .featured-f
 }
 
 body .page-shell main.featured-page > #the-archer-feature.featured-pillar + .featured-final-cta {
-  margin-top: 12px !important;
+  margin-top: 0 !important;
 }
 
 @media (min-width: 1025px) {
