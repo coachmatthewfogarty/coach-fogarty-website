@@ -14582,61 +14582,6 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
   }
 }
 
-/* Archer Systems shell wall lock: Archer sections keep the Systems shell math and now use the shared cream canvas. */
-body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page > .section.section {
-  --archer-section-wall-width: 100vw;
-  --archer-section-inline-pad: max(18px, calc((var(--archer-section-wall-width) - var(--page-shell-width)) / 2 + 18px));
-  --archer-section-rail-gutter: clamp(14px, 4.2vw, 18px);
-  box-sizing: border-box;
-  width: var(--archer-section-wall-width) !important;
-  max-width: none !important;
-  margin-right: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
-  margin-left: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
-  padding-right: var(--archer-section-inline-pad) !important;
-  padding-left: var(--archer-section-inline-pad) !important;
-  border: 0 !important;
-  background: #fff4e6 !important;
-  box-shadow: none !important;
-}
-
-body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page > .section.section > :is(.section-heading, .archer-split, .archer-card-grid, .archer-proof-grid, .archer-media-grid, .featured-actions),
-body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page > .section.archer-final-cta > :is(div, .featured-actions) {
-  margin-right: calc(var(--archer-section-rail-gutter) - var(--archer-section-inline-pad)) !important;
-  margin-left: calc(var(--archer-section-rail-gutter) - var(--archer-section-inline-pad)) !important;
-}
-
-@media (min-width: 1025px) {
-  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page > .section.section {
-    --archer-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
-    --archer-section-inline-pad: calc(((var(--archer-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
-    --archer-section-rail-gutter: clamp(24px, 1.8vw, 31px);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page > .section.section {
-    --archer-section-rail-gutter: clamp(26px, 3.7vw, 32px);
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1024px) {
-  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page > .section.section {
-    --archer-section-rail-gutter: 25px;
-  }
-}
-
-@media (max-width: 932px) and (max-height: 430px) {
-  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page > .section.section {
-    --archer-section-rail-gutter: clamp(14px, 4.2vw, 18px);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 932px) and (max-height: 430px) {
-  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page > .section.section {
-    --archer-section-rail-gutter: 25px;
-  }
-}
-
 /* Homepage hero-to-Systems handoff: match the 11px Systems rhythm. */
 @media (min-width: 1025px) {
   body .page-shell main#top > #systems.section {
@@ -16774,19 +16719,30 @@ html body .page-shell main.featured-page > section.featured-final-cta > * {
   }
 }
 
-/* Archer body background system mirrors Featured: cream hero, black opening/final bands, and gold middle bands. */
+/* Archer page shell mirrors Featured: shared full-width wall, matching gutters, band spacing, and body backgrounds. */
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page {
+  --featured-section-gap: 24px;
+  --featured-section-padding: clamp(22px, 6vw, 26px);
   background: #ffffff !important;
   background-image: none !important;
 }
 
-body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system {
-  margin-bottom: 0 !important;
+@media (min-width: 768px) {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page {
+    --featured-section-padding: clamp(28px, 4vw, 34px);
+  }
 }
 
-/* Archer Featured-wall handoff: body bands use the same shared wall and no inherited page-section spacer. */
+@media (min-width: 1025px) {
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page {
+    --featured-section-padding: clamp(34px, 2.15vw, 44px);
+  }
+}
+
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > .section.section {
-  --archer-section-wall-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
+  --archer-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+  --archer-section-inline-pad: var(--featured-section-padding);
+  --archer-section-rail-gutter: var(--featured-section-padding);
   --archer-featured-media-width: min(100%, 1600px);
   --archer-featured-copy-max: min(100%, 760px);
   --archer-featured-gap: clamp(28px, 3.2vw, 60px);
@@ -16795,9 +16751,12 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
   box-sizing: border-box !important;
   width: var(--archer-section-wall-width) !important;
   max-width: none !important;
-  margin-top: 0 !important;
-  margin-right: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
-  margin-left: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
+  margin: 0 calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
+  margin-top: var(--featured-section-gap) !important;
+  padding-top: var(--featured-section-padding) !important;
+  padding-right: var(--archer-section-inline-pad) !important;
+  padding-bottom: var(--featured-section-padding) !important;
+  padding-left: var(--archer-section-inline-pad) !important;
   background: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%) !important;
   background-color: #ead8b8 !important;
   background-image: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%) !important;
@@ -16807,6 +16766,7 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
 }
 
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-overview-section, .archer-final-cta).section {
+  --archer-section-wall-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
   background: #000000 !important;
   background-color: #000000 !important;
   background-image: none !important;
@@ -16814,6 +16774,15 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
   isolation: isolate !important;
   overflow: hidden !important;
   position: relative !important;
+}
+
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > .archer-overview-section.section {
+  margin-top: 0 !important;
+}
+
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-how-section, .archer-development-section, .archer-portfolio-section, .archer-final-cta).section,
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(#photos, #videos).section {
+  margin-top: 12px !important;
 }
 
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-overview-section, .archer-final-cta).section::before {
@@ -16832,10 +16801,10 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
 
 body .page-shell main.archer-page.archer-page > .section.section > :is(.section-heading, .archer-split, .archer-card-grid, .archer-proof-grid, .archer-media-grid, .featured-actions),
 body .page-shell main.archer-page.archer-page > .section.archer-final-cta > :is(div, .featured-actions) {
-  width: min(100%, var(--archer-featured-media-width)) !important;
-  max-width: var(--archer-featured-media-width) !important;
-  margin-right: auto !important;
-  margin-left: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  margin-right: calc(var(--archer-section-rail-gutter) - var(--archer-section-inline-pad)) !important;
+  margin-left: calc(var(--archer-section-rail-gutter) - var(--archer-section-inline-pad)) !important;
 }
 
 body .page-shell main.archer-page.archer-page .archer-split,
@@ -16847,11 +16816,11 @@ body .page-shell main.archer-page.archer-page .archer-split-reverse {
 }
 
 body .page-shell main.archer-page.archer-page .archer-split {
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr) !important;
+  grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr) !important;
 }
 
 body .page-shell main.archer-page.archer-page .archer-split-reverse {
-  grid-template-columns: minmax(360px, 0.86fr) minmax(0, 1fr) !important;
+  grid-template-columns: minmax(420px, 0.98fr) minmax(0, 1.02fr) !important;
 }
 
 body .page-shell main.archer-page.archer-page .archer-section-copy {
@@ -16965,7 +16934,7 @@ body .page-shell main.archer-page.archer-page .archer-proof-grid p {
 }
 
 body .page-shell main.archer-page.archer-page .archer-final-cta {
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr) !important;
+  grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr) !important;
   gap: var(--archer-featured-gap) !important;
 }
 
@@ -16995,6 +16964,20 @@ body .page-shell main.archer-page.archer-page .archer-final-cta .featured-action
   background: rgba(255, 255, 255, 0.08) !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (max-width: 1279px) {
+  /* Archer sub-1280 shell lock: mirrors Featured so hero, body bands, and footer do not show side hairlines. */
+  html body .page-shell main.archer-page.archer-page > :is(.hero.page-hero-system, .section.section) {
+    --home-hero-wall-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
+    --archer-section-wall-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
+    margin-right: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
+    margin-left: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
+  }
+
+  body:has(main.archer-page) .site-footer.site-chrome {
+    --home-footer-rule-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
+  }
 }
 
 @media (min-width: 2200px) {
