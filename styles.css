@@ -17202,6 +17202,19 @@ html body .page-shell main.archer-page.archer-page > section.hero.page-hero-syst
   border-bottom: 0 !important;
 }
 
+@media (min-width: 1720px) and (max-width: 2199px) {
+  /* Archer wide-desktop logo overlay: shorter bar, lowered slightly so it clears the Archer wordmark. */
+  html body .page-shell main.archer-page.archer-page > section.hero.page-hero-system.page-hero-system {
+    --hero-overlay-bottom: 8px;
+    --hero-overlay-gap: 4px;
+    --hero-overlay-padding-block-start: 7px;
+    --hero-overlay-padding-block-end: 7px;
+    --hero-overlay-title-size: 10.8px;
+    --hero-overlay-link-size: 12px;
+    --hero-overlay-link-line: 1.05;
+  }
+}
+
 html body .page-shell main.archer-page.archer-page > section.hero.page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-main {
   font-size: clamp(1.08rem, 2.1cqw, 1.62rem) !important;
   line-height: 1.02 !important;
