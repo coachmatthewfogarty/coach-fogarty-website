@@ -16978,9 +16978,39 @@ body .page-shell main.archer-page.archer-page .archer-media-grid video {
   }
 }
 
-body .page-shell main.archer-page.archer-page .archer-media-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
+/* Archer Visual Gallery program-media lock: replaces the old Archer 2-column/gallery-gap rules.
+   Keep this section on the homepage Program Media rhythm: white wall, 11px lines, 3/2/1 columns. */
+body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
+  --archer-program-media-gap: 11px;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+body .page-shell main.archer-page.archer-page > #photos.section::before {
+  content: none !important;
+}
+
+body .page-shell main.archer-page.archer-page > #photos.section > .section-heading {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  padding-right: var(--archer-section-inline-pad) !important;
+  padding-left: var(--archer-section-inline-pad) !important;
+}
+
+body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-grid {
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  padding-right: var(--archer-program-media-gap) !important;
+  padding-left: var(--archer-program-media-gap) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--archer-program-media-gap) !important;
+  row-gap: var(--archer-program-media-gap) !important;
+  column-gap: var(--archer-program-media-gap) !important;
   background: #ffffff !important;
 }
 
@@ -17040,13 +17070,49 @@ body .page-shell main.archer-page.archer-page .archer-media-grid figure:has(vide
   bottom: 42px !important;
 }
 
-body .page-shell main.archer-page.archer-page .archer-media-grid + .archer-media-grid {
-  margin-top: 20px !important;
+body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-grid + .archer-media-grid {
+  margin-top: var(--archer-program-media-gap) !important;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
+    --archer-program-media-wall-width: calc(100vw - 34px);
+    box-sizing: border-box !important;
+    width: var(--archer-program-media-wall-width) !important;
+    max-width: var(--archer-program-media-wall-width) !important;
+    margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+    margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-grid {
+    padding-right: var(--archer-program-media-gap) !important;
+    padding-left: var(--archer-program-media-gap) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
 }
 
 @media (max-width: 767px) {
-  body .page-shell main.archer-page.archer-page .archer-media-grid {
-    gap: 26px !important;
+  body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
+    --archer-program-media-wall-width: 100vw;
+    box-sizing: border-box !important;
+    width: var(--archer-program-media-wall-width) !important;
+    max-width: var(--archer-program-media-wall-width) !important;
+    margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+    margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-grid {
+    padding-right: var(--archer-program-media-gap) !important;
+    padding-left: var(--archer-program-media-gap) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 
   body .page-shell main.archer-page.archer-page .archer-media-grid figcaption {
@@ -17208,6 +17274,26 @@ body .page-shell main.archer-page.archer-page .archer-final-cta .featured-action
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
+    --archer-program-media-wall-width: calc(100vw - 34px);
+    width: var(--archer-program-media-wall-width) !important;
+    max-width: var(--archer-program-media-wall-width) !important;
+    margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+    margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
+    --archer-program-media-wall-width: 100vw;
+    width: var(--archer-program-media-wall-width) !important;
+    max-width: var(--archer-program-media-wall-width) !important;
+    margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+    margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+  }
+}
+
 @media (min-width: 2200px) {
   body .page-shell main.archer-page.archer-page > .section.section {
     --archer-featured-media-width: min(100%, 1600px);
@@ -17221,10 +17307,6 @@ body .page-shell main.archer-page.archer-page .archer-final-cta .featured-action
 
   body .page-shell main.archer-page.archer-page .archer-split-reverse {
     grid-template-columns: 915px minmax(0, 1fr) !important;
-  }
-
-  body .page-shell main.archer-page.archer-page .archer-media-grid {
-    max-width: 915px !important;
   }
 }
 
