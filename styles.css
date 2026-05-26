@@ -15957,6 +15957,10 @@ body .page-shell main.featured-page > .featured-pillar .featured-visual-grid {
   aspect-ratio: 1.82 / 1 !important;
 }
 
+body .page-shell main.featured-page > .featured-pillar .featured-visual-grid.featured-visual-grid-tall {
+  aspect-ratio: 4 / 3 !important;
+}
+
 body .page-shell main.featured-page > .featured-pillar .featured-visual-grid img {
   width: 100% !important;
   height: 100% !important;
