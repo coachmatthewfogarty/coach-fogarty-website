@@ -58,14 +58,9 @@ body {
     linear-gradient(180deg, #f6f0e5 0%, #f3ede4 38%, #efe6da 100%);
 }
 
-/* Shared site canvas: these pages intentionally follow the homepage body background. */
+/* Shared site canvas: these pages intentionally follow the homepage white outer webpage background. */
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) {
   background: #ffffff;
-}
-
-/* Cream page canvas: match the hero/footer cream while leaving the sticky header on its own chrome rule. */
-body:has(:is(main.media-library-page, main.systems-detail-page, main.anaya-case-study-page, main.archer-page)) {
-  background: #fff4e6;
 }
 
 html:has(body :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)),
@@ -10678,9 +10673,9 @@ body .page-shell main.systems-detail-page > .system-detail-section {
 }
 
 @media (max-width: 1024px) {
-  /* Systems mobile/tablet hero seam lock: the hero-to-DPAT gap stays cream instead of showing the old white/gray page gutter. */
+  /* Systems mobile/tablet page canvas lock: outer page stays homepage white while content bands keep their own color. */
   body .page-shell main.systems-detail-page {
-    background: #fff4e6 !important;
+    background: #ffffff !important;
   }
 }
 
@@ -11472,9 +11467,9 @@ main.archer-page .archer-final-cta .featured-actions {
     --home-section-wall-bg: #ffffff;
   }
 
-  /* Gallery desktop wall note: override the shared detail-page white wall so the full page matches hero/footer cream. */
+  /* Gallery desktop wall note: keep the outer canvas white like the homepage. */
   .page-shell main.media-library-page {
-    --home-section-wall-bg: var(--home-system-card-cream, #fff4e6);
+    --home-section-wall-bg: #ffffff;
   }
 }
 
@@ -14590,11 +14585,9 @@ body .page-shell :is(
   background-image: none !important;
 }
 
-/* Cream page canvas lock: replaces the old shared white wall so Gallery, Systems, Anaya, and Archer match hero/footer. */
-body:has(:is(main.media-library-page, main.systems-detail-page, main.anaya-case-study-page, main.archer-page)),
-body:has(:is(main.media-library-page, main.systems-detail-page, main.anaya-case-study-page, main.archer-page)) .page-shell,
-body .page-shell :is(main.media-library-page, main.systems-detail-page, main.anaya-case-study-page, main.archer-page),
-body .page-shell :is(main.media-library-page > .media-library-section, main.systems-detail-page > .system-detail-section, main.anaya-case-study-page > .section, main.archer-page > .section),
+/* Cream content-band lock: Systems, Gallery, and Anaya keep cream bands only.
+   Systems, Gallery, Anaya, and Archer outer webpage canvases intentionally match the homepage white. */
+body .page-shell :is(main.media-library-page > .media-library-section, main.systems-detail-page > .system-detail-section, main.anaya-case-study-page > .section),
 body .page-shell main.media-library-page > .media-library-section > :is(.media-section-grid, .media-preview-carousel),
 body .page-shell main.systems-detail-page > .system-detail-section > .system-detail-grid {
   background: #fff4e6 !important;
@@ -14660,9 +14653,9 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
 
 /* Systems mobile/tablet footer seam lock: removes the shared 18px cream lead-in so the footer divider starts right after the final media rail. */
 @media (max-width: 1024px) {
-  /* Anaya/Archer mobile/tablet seam lock: hero handoffs stay cream and drop the old border/shadow strip before the first content section. */
-  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) {
-    background: #fff4e6 !important;
+  /* Anaya mobile/tablet page canvas lock: outer page stays homepage white while content bands keep their own color. */
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.anaya-case-study-page {
+    background: #ffffff !important;
   }
 
   body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main:is(.anaya-case-study-page, .archer-page) > .hero.page-hero-system.page-hero-system {
@@ -16971,14 +16964,77 @@ body .page-shell main.archer-page.archer-page .archer-media-grid {
 }
 
 body .page-shell main.archer-page.archer-page .archer-media-grid figure {
+  position: relative !important;
   display: grid !important;
-  grid-template-rows: auto minmax(54px, auto) !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+  aspect-ratio: 4 / 3 !important;
 }
 
-body .page-shell main.archer-page.archer-page .archer-media-grid figcaption,
+body .page-shell main.archer-page.archer-page .archer-media-grid figure::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.22) 72%,
+      rgba(0, 0, 0, 0.66) 100%
+    ) !important;
+  pointer-events: none !important;
+}
+
 body .page-shell main.archer-page.archer-page .archer-feature-visual figcaption {
   background: #ffffff !important;
   box-shadow: none !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-media-grid img,
+body .page-shell main.archer-page.archer-page .archer-media-grid video {
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Archer media title overlay: captions live inside each image/video like the homepage gallery cards.
+   No arrow control is added; the grid gap handles spacing between cards. */
+body .page-shell main.archer-page.archer-page .archer-media-grid figcaption {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 2 !important;
+  min-height: 0 !important;
+  padding: 14px 16px !important;
+  color: #fff8ec !important;
+  background: transparent !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  text-align: left !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.46) !important;
+  pointer-events: none !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-media-grid figure:has(video) figcaption {
+  bottom: 42px !important;
+}
+
+body .page-shell main.archer-page.archer-page .archer-media-grid + .archer-media-grid {
+  margin-top: 20px !important;
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.archer-page.archer-page .archer-media-grid {
+    gap: 26px !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-media-grid figcaption {
+    padding: 12px 14px !important;
+  }
+
+  body .page-shell main.archer-page.archer-page .archer-media-grid figure:has(video) figcaption {
+    bottom: 38px !important;
+  }
 }
 
 body .page-shell main.archer-page.archer-page .archer-card-grid,
