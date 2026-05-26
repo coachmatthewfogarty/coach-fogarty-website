@@ -11571,6 +11571,10 @@ main.archer-page .archer-final-cta .featured-actions {
   object-position: 50% 0% !important;
 }
 
+body .page-shell main.featured-page > #featured-work-hero.page-hero-system .hero-portrait-image {
+  object-position: 28% 0% !important;
+}
+
 html body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero-system .hero-portrait-card .hero-portrait-picture {
   background: #fff !important;
 }
@@ -15958,6 +15962,15 @@ body .page-shell main.featured-page > .featured-pillar .featured-visual-grid img
   height: 100% !important;
   aspect-ratio: auto !important;
   object-fit: cover !important;
+}
+
+/* Pacific Academy crop notes:
+   Keep the same tile sizing as the other featured grids. Frames stay filled with
+   no borders; only crop positions change. The coach's far-left arm is already cut
+   off in the source file, so CSS cannot reveal more of that arm. */
+body .page-shell main.featured-page > #program-turnaround.featured-pillar .featured-visual-grid img {
+  object-fit: cover !important;
+  object-position: center bottom !important;
 }
 
 body .page-shell main.featured-page > .featured-pillar .featured-stat-grid {
