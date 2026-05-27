@@ -2285,7 +2285,10 @@ function renderAnayaGalleries() {
                       : `<img src="${encodeURI(thumbnail)}" data-image-role="${imageRole}" alt="${item.alt || item.caption || section.title}" />`
                   }
                 </span>
-                <span>${item.caption || section.title}</span>
+                <span class="anaya-media-caption">
+                  <span class="anaya-media-title">${item.caption || section.title}</span>
+                  <span class="anaya-media-arrow" aria-hidden="true">&rsaquo;</span>
+                </span>
               </button>
             `;
           })
