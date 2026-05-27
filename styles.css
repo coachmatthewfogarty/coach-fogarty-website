@@ -16879,8 +16879,18 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
   border-top: 12px solid #ffffff !important;
 }
 
-body:has(main.archer-page) .page-shell main.archer-page.archer-page > :is(.archer-how-section, #photos).section {
-  padding-top: 12px !important;
+body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
+  padding-top: 0 !important;
+}
+
+html body:has(main.archer-page) .page-shell main.archer-page.archer-page > .archer-how-section.section.section {
+  padding-top: 44px !important;
+}
+
+/* Archer section handoff lock: How It Works -> gallery and gallery -> Portfolio should
+   use only the 12px white divider, without extra bottom padding making the spacer look thicker. */
+html body:has(main.archer-page) .page-shell main.archer-page.archer-page > :is(.archer-how-section, #photos).section.section {
+  padding-bottom: 0 !important;
 }
 
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-overview-section, .archer-final-cta).section::before {
@@ -16946,6 +16956,16 @@ body .page-shell main.archer-page.archer-page .archer-final-cta > div > .eyebrow
   -webkit-text-fill-color: #f2a179 !important;
 }
 
+/* Archer eyebrow rhythm lock: keep section labels tight to their titles while preserving
+   each label's existing page color treatment. */
+body .page-shell main.archer-page.archer-page > section.section :is(.section-heading, .archer-section-copy, .archer-final-cta > div) > .eyebrow {
+  margin-bottom: 0 !important;
+}
+
+body .page-shell main.archer-page.archer-page > section.section > .section-heading > h2 {
+  margin-top: 0 !important;
+}
+
 body .page-shell main.archer-page.archer-page .archer-overview-section .archer-section-copy > p,
 body .page-shell main.archer-page.archer-page .archer-final-cta > div > p {
   color: #ded8cf !important;
@@ -17008,17 +17028,16 @@ body .page-shell main.archer-page.archer-page .archer-overview-section .archer-f
   }
 }
 
-/* Archer Visual Gallery edge-bleed lock: the media grid intentionally overdraws the section gutter by one
-   gallery gap so image edges cover the white side rails while preserving the 11px internal seams. */
+/* Archer Visual Gallery hero-rail lock: keep the media wall on the same outer rail as the Archer hero.
+   The gallery heading is intentionally removed, so the image grid connects to How It Works with only
+   the 12px white divider while preserving 11px internal seams. */
 body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
   --archer-program-media-gap: 11px;
-  --archer-gallery-edge-bleed: var(--archer-program-media-gap);
-  --archer-program-media-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
   box-sizing: border-box !important;
-  width: var(--archer-program-media-wall-width) !important;
-  max-width: var(--archer-program-media-wall-width) !important;
-  margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
-  margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
+  width: var(--archer-section-wall-width) !important;
+  max-width: var(--archer-section-wall-width) !important;
+  margin-right: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
+  margin-left: calc(50% - (var(--archer-section-wall-width) * 0.5)) !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
   background: #ffffff !important;
@@ -17038,10 +17057,10 @@ body .page-shell main.archer-page.archer-page > #photos.section > .section-headi
 }
 
 body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-grid {
-  width: calc(100% + (var(--archer-gallery-edge-bleed) * 2)) !important;
+  width: 100% !important;
   max-width: none !important;
-  margin-right: calc(var(--archer-gallery-edge-bleed) * -1) !important;
-  margin-left: calc(var(--archer-gallery-edge-bleed) * -1) !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -17127,19 +17146,6 @@ body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-
     column-gap: 11px !important;
   }
 
-  body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
-    --archer-program-media-wall-width: calc(100vw - 34px);
-    box-sizing: border-box !important;
-    width: var(--archer-program-media-wall-width) !important;
-    max-width: var(--archer-program-media-wall-width) !important;
-    margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
-    margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-
   body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-grid {
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -17161,19 +17167,6 @@ body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-
     gap: 11px !important;
     row-gap: 11px !important;
     column-gap: 11px !important;
-  }
-
-  body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
-    --archer-program-media-wall-width: 100vw;
-    box-sizing: border-box !important;
-    width: var(--archer-program-media-wall-width) !important;
-    max-width: var(--archer-program-media-wall-width) !important;
-    margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
-    margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
   }
 
   body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-grid {
@@ -17338,26 +17331,6 @@ body .page-shell main.archer-page.archer-page .archer-final-cta .featured-action
 
   body:has(main.archer-page) .site-footer.site-chrome {
     --home-footer-rule-width: min(var(--home-section-wall-width, 2560px), 100vw) !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
-    --archer-program-media-wall-width: calc(100vw - 34px);
-    width: var(--archer-program-media-wall-width) !important;
-    max-width: var(--archer-program-media-wall-width) !important;
-    margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
-    margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
-  }
-}
-
-@media (max-width: 767px) {
-  body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
-    --archer-program-media-wall-width: 100vw;
-    width: var(--archer-program-media-wall-width) !important;
-    max-width: var(--archer-program-media-wall-width) !important;
-    margin-right: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
-    margin-left: calc((100% - var(--archer-program-media-wall-width)) / 2) !important;
   }
 }
 
