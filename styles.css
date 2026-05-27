@@ -7102,30 +7102,26 @@ main#top .credentials-card .credential-document-heading .eyebrow {
     overflow-y: auto;
   }
 
-  .site-header .featured-nav-dropdown,
-  .site-header .systems-nav-dropdown,
-  .site-header .gallery-nav-dropdown {
+  .site-header .featured-nav-dropdown {
     display: block;
   }
 
-  .site-header .featured-nav-panel,
-  .site-header .systems-nav-panel,
-  .site-header .gallery-nav-panel {
+  .site-header .featured-nav-panel {
     display: grid;
     gap: 0;
     padding: 0 0 8px;
   }
 
-  .site-header .featured-nav-column,
-  .site-header .systems-nav-column,
-  .site-header .gallery-nav-column {
+  .site-header .featured-nav-column {
     display: grid;
     gap: 0;
   }
 
-  .site-header .featured-nav-column p,
-  .site-header .systems-nav-column p,
-  .site-header .gallery-nav-column p {
+  .site-header .featured-nav-column:first-child {
+    display: none;
+  }
+
+  .site-header .featured-nav-column p {
     margin: 0;
     padding: 8px 18px 4px;
     color: rgba(29, 29, 31, 0.58);
@@ -7135,9 +7131,7 @@ main#top .credentials-card .credential-document-heading .eyebrow {
     line-height: 1.2;
   }
 
-  .site-header .featured-nav-column a,
-  .site-header .systems-nav-column a,
-  .site-header .gallery-nav-column a {
+  .site-header .featured-nav-column a {
     padding: 8px 18px 8px 30px;
     font-size: 0.92rem;
     line-height: 1.2;
