@@ -18356,6 +18356,7 @@ html body .page-shell main.anaya-case-study-page > .hero.page-hero-system + .ana
 }
 
 html body .page-shell main.anaya-case-study-page > .anaya-summary-section + .anaya-journey-section {
+  border-top: 0 !important;
   margin-top: 0 !important;
 }
 
@@ -18408,7 +18409,7 @@ html body .page-shell main.anaya-case-study-page > .anaya-summary-section .featu
 
 html body .page-shell main.anaya-case-study-page > .anaya-summary-section .featured-summary-card h3 {
   margin-top: 0 !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 3px !important;
   color: var(--ink) !important;
   font-size: clamp(1.12rem, 0.72vw + 0.84rem, 1.72rem) !important;
   line-height: 1.08 !important;
@@ -18416,12 +18417,17 @@ html body .page-shell main.anaya-case-study-page > .anaya-summary-section .featu
 }
 
 html body .page-shell main.anaya-case-study-page > .anaya-summary-section .featured-summary-card > p {
-  margin-top: 8px !important;
+  margin-top: 4px !important;
   font-size: clamp(0.94rem, 0.24vw + 0.86rem, 1.12rem) !important;
   line-height: 1.38 !important;
   overflow-wrap: normal !important;
   text-wrap: pretty !important;
   white-space: normal !important;
+}
+
+html body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.anaya-case-study-page > section.section.anaya-summary-section + section.section.anaya-journey-section {
+  border-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 @media (max-width: 1024px) {
