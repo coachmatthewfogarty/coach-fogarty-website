@@ -7096,6 +7096,54 @@ main#top .credentials-card .credential-document-heading .eyebrow {
   }
 }
 
+@media (max-width: 767px) {
+  .site-header .site-nav {
+    max-height: calc(100dvh - 88px);
+    overflow-y: auto;
+  }
+
+  .site-header .featured-nav-dropdown,
+  .site-header .systems-nav-dropdown,
+  .site-header .gallery-nav-dropdown {
+    display: block;
+  }
+
+  .site-header .featured-nav-panel,
+  .site-header .systems-nav-panel,
+  .site-header .gallery-nav-panel {
+    display: grid;
+    gap: 0;
+    padding: 0 0 8px;
+  }
+
+  .site-header .featured-nav-column,
+  .site-header .systems-nav-column,
+  .site-header .gallery-nav-column {
+    display: grid;
+    gap: 0;
+  }
+
+  .site-header .featured-nav-column p,
+  .site-header .systems-nav-column p,
+  .site-header .gallery-nav-column p {
+    margin: 0;
+    padding: 8px 18px 4px;
+    color: rgba(29, 29, 31, 0.58);
+    font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .site-header .featured-nav-column a,
+  .site-header .systems-nav-column a,
+  .site-header .gallery-nav-column a {
+    padding: 8px 18px 8px 30px;
+    font-size: 0.92rem;
+    line-height: 1.2;
+  }
+}
+
 /* System cards keep the description attached to the title, then separate it from the image. */
 .system-card > h3,
 .library-card.system-card > h3 {
