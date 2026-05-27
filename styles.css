@@ -10742,8 +10742,8 @@ body .page-shell main.systems-detail-page > .system-detail-section {
   --systems-carousel-safe-gutter: clamp(14px, 4.2vw, 18px);
   --systems-carousel-media-gutter: var(--systems-carousel-safe-gutter);
   --systems-intro-rail-gap: 12px;
-  --systems-section-breathing-room: 12px;
-  --systems-final-footer-gap: 28px;
+  --systems-section-breathing-room: 24px;
+  --systems-final-footer-gap: var(--systems-section-breathing-room);
   box-sizing: border-box;
   width: var(--systems-section-wall-width) !important;
   max-width: none !important;
@@ -10772,12 +10772,14 @@ body .page-shell main.systems-detail-page > .system-detail-section .system-detai
   --section-title-to-intro-gap: 10px;
   --mobile-fit-title-size: clamp(22px, 6vw, 28px);
   --mobile-fit-title-line: 1.06;
+  width: 100%;
 }
 
 /* Systems intro rail alignment: detail intro text aligns to the first carousel card edge so copy and proof cards read as one unit. */
 body .page-shell main.systems-detail-page > .system-detail-section > .system-detail-grid {
   margin-right: calc(var(--systems-carousel-safe-gutter, clamp(22px, 5.8vw, 25px)) - var(--systems-section-inline-pad));
   margin-left: calc(var(--systems-carousel-safe-gutter, clamp(22px, 5.8vw, 25px)) - var(--systems-section-inline-pad));
+  width: auto;
 }
 
 /* These Systems-only !important values override the shared site heading rhythm locks above. */
@@ -10794,8 +10796,9 @@ body .page-shell main.systems-detail-page > .system-detail-section .system-detai
 }
 
 main.systems-detail-page .system-detail-copy > p:not(.eyebrow) {
-  /* Systems intro body width lock: copy is capped wider than 820px so it does not float beside excessive blank space, while still avoiding full-width lines. */
-  max-width: 100%;
+  /* Systems intro body width lock: copy spans the full detail rail under each section title. */
+  max-width: none !important;
+  width: 100% !important;
   font-size: clamp(1rem, 0.24vw + 0.92rem, 1.12rem);
   line-height: 1.62;
 }
@@ -10805,6 +10808,13 @@ body .page-shell main.systems-detail-page > .system-detail-section .system-docum
   margin-right: calc((var(--systems-section-inline-pad) - var(--systems-carousel-media-gutter, var(--systems-carousel-safe-gutter))) * -1) !important;
   margin-left: calc((var(--systems-section-inline-pad) - var(--systems-carousel-media-gutter, var(--systems-carousel-safe-gutter))) * -1) !important;
   margin-top: 20px;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  line-height: 0;
 }
 
 /* Systems carousel arrow lock: arrows sit inside the safe proof rail, stay visually active, and pair with JS wrap behavior; JS only disables single-item rails. */
@@ -10843,61 +10853,114 @@ body .page-shell main.systems-detail-page > .system-detail-section .system-carou
 }
 
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-grid {
+  align-items: flex-start !important;
   padding-right: 0 !important;
+  padding-bottom: 0 !important;
   padding-left: 0 !important;
+  margin-bottom: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
   scroll-padding-inline: 0 !important;
 }
 
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card {
-  min-height: 100%;
+  display: block !important;
+  min-height: 0;
+  align-self: flex-start;
+  margin-bottom: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
-/* Systems media image edge lock: previews intentionally cover the card top and side edges while copy keeps lower padding. */
+/* Systems media image-only lock: document previews carry their own titles, so the lower metadata block is hidden. */
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card {
-  padding: 0 0 12px !important;
+  padding: 0 !important;
 }
 
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-preview {
+  display: block !important;
   position: relative;
   min-height: 0;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: auto;
   width: 100%;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  height: auto;
+  border: 0;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  line-height: 0;
 }
 
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-preview::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms ease, background-color 180ms ease;
+  content: none !important;
 }
 
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-copy {
-  padding: 12px 16px 2px;
+  display: none !important;
+}
+
+/* Systems full-page thumbnail lock: every document preview shows the complete page instead of cropping. */
+body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-preview {
+  background: transparent !important;
+}
+
+body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-preview img,
+body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card-media .system-document-preview img,
+body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card-fit-contain .system-document-preview img,
+body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .dpat-card-cover-top .system-document-preview img,
+body .page-shell main.systems-detail-page > .system-detail-section#leadership .system-document-carousel .system-document-preview img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  display: block !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* DPAT and Recruiting include mixed portrait/landscape exports; keep full pages visible without oversized rails. */
+body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #recruiting) .system-document-carousel .system-document-preview {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  background: transparent !important;
+}
+
+body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #recruiting) .system-document-carousel .system-document-preview img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: clamp(340px, 34vw, 620px) !important;
+  object-fit: contain !important;
+  object-position: center center !important;
 }
 
 /* Systems media hover lock: document cards stay still and use the homepage Playing Career/Awards dark image overlay. */
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card:is(:hover, :focus-visible) {
+  border: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
   transform: none !important;
 }
 
 body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel .system-document-card:is(:hover, :focus-visible) .system-document-preview::before {
-  background: rgba(0, 0, 0, 0.16);
-  opacity: 1;
+  content: none !important;
 }
 
-/* Systems final footer rhythm: this !important overrides the section padding reset above so only Coaching Philosophy breathes before the footer. */
-body .page-shell main.systems-detail-page > .system-detail-section#leadership {
+/* Systems section edge rhythm: all six main sections keep matching top and bottom breathing room. */
+body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #development, #recruiting, #operations, #scouting, #leadership) {
+  padding-top: var(--systems-section-breathing-room) !important;
   padding-bottom: var(--systems-final-footer-gap) !important;
 }
 
@@ -11058,7 +11121,8 @@ body .page-shell :is(main.media-library-page > .media-library-section, main.anay
     --systems-section-inline-pad: calc(((var(--systems-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
     --systems-carousel-safe-gutter: clamp(24px, 1.8vw, 31px);
     --systems-intro-rail-gap: 12px;
-    --systems-final-footer-gap: 44px;
+    --systems-section-breathing-room: 24px;
+    --systems-final-footer-gap: var(--systems-section-breathing-room);
   }
 
   body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy {
@@ -11075,7 +11139,8 @@ body .page-shell :is(main.media-library-page > .media-library-section, main.anay
   }
 
   body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy > p:not(.eyebrow) {
-    max-width: clamp(820px, 54vw, 1080px);
+    max-width: none !important;
+    width: 100% !important;
   }
 
   body .page-shell main.systems-detail-page > .system-detail-section .system-document-carousel {
@@ -11109,7 +11174,8 @@ body .page-shell :is(main.media-library-page > .media-library-section, main.anay
     --systems-carousel-safe-gutter: clamp(18px, 2.8vw, 24px);
     --systems-carousel-media-gutter: 17px;
     --systems-intro-rail-gap: 12px;
-    --systems-final-footer-gap: 36px;
+    --systems-section-breathing-room: 24px;
+    --systems-final-footer-gap: var(--systems-section-breathing-room);
   }
 
   body .page-shell main:not(#top).systems-detail-page > .system-detail-section .system-detail-copy > h2 {
@@ -11155,7 +11221,8 @@ body .page-shell :is(main.media-library-page > .media-library-section, main.anay
     --systems-carousel-safe-gutter: clamp(14px, 4.2vw, 18px);
     --systems-carousel-media-gutter: 0px;
     --systems-intro-rail-gap: 12px;
-    --systems-final-footer-gap: 28px;
+    --systems-section-breathing-room: 24px;
+    --systems-final-footer-gap: var(--systems-section-breathing-room);
   }
 
   body .page-shell main.systems-detail-page > .system-detail-section .system-detail-copy {
@@ -17822,4 +17889,402 @@ html body .page-shell main.archer-page.archer-page .archer-mini-card h3 {
   html body .page-shell main.archer-page.archer-page .archer-split .archer-section-copy h2 {
     font-size: 34px !important;
   }
+}
+
+/* Systems footer CTA mirrors the Featured page Explore band. */
+html body .page-shell main.systems-detail-page > section.featured-final-cta {
+  --systems-cta-wall-width: min(var(--home-section-wall-width, 2560px), 100vw);
+  --systems-cta-padding: clamp(34px, 2.15vw, 44px);
+  align-items: stretch !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  clip-path: none !important;
+  color: #f7f4ef !important;
+  display: grid !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px) !important;
+  isolation: isolate !important;
+  margin: 12px calc(50% - (var(--systems-cta-wall-width) * 0.5)) 0 !important;
+  max-width: none !important;
+  overflow: hidden !important;
+  padding: var(--systems-cta-padding) !important;
+  position: relative !important;
+  width: var(--systems-cta-wall-width) !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta::before {
+  background: #000000 !important;
+  content: "" !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: 0 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta > div {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta .eyebrow {
+  color: #f2a179 !important;
+  -webkit-text-fill-color: #f2a179 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  line-height: 1.03 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta p:not(.eyebrow) {
+  color: #ded8cf !important;
+  -webkit-text-fill-color: #ded8cf !important;
+  line-height: 1.52 !important;
+  margin-top: 14px !important;
+  max-width: none !important;
+  overflow-wrap: normal !important;
+  text-wrap: wrap !important;
+  white-space: normal !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions {
+  align-self: stretch !important;
+  display: grid !important;
+  gap: 12px !important;
+  grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+  margin-top: 0 !important;
+  min-width: 0 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions .button {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions .button-primary {
+  background: var(--coach-orange) !important;
+  background-image: none !important;
+  border-color: var(--coach-orange) !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions .button-secondary {
+  background: rgba(255, 255, 255, 0.08) !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions .button:hover,
+html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions .button:focus-visible {
+  background: var(--coach-orange-hover) !important;
+  background-image: none !important;
+  border-color: var(--coach-orange-hover) !important;
+}
+
+@media (min-width: 1025px) {
+  html body .page-shell main.systems-detail-page > section.featured-final-cta h2 {
+    font-size: clamp(2rem, 1.8vw, 2.5rem) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1320px) {
+  html body .page-shell main.systems-detail-page > section.featured-final-cta {
+    gap: clamp(16px, 2vw, 24px) !important;
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 205px) !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta h2 {
+    font-size: clamp(28px, 3.25vw, 38px) !important;
+    line-height: 1.05 !important;
+    max-width: 100% !important;
+    text-wrap: wrap !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta p:not(.eyebrow) {
+    font-size: 16px !important;
+    line-height: 1.42 !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions {
+    gap: 9px !important;
+    grid-template-rows: repeat(3, minmax(38px, 1fr)) !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions .button {
+    font-size: 0.78rem !important;
+    height: auto !important;
+    min-height: 38px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html body .page-shell main.systems-detail-page > section.featured-final-cta {
+    gap: clamp(16px, 2.5vw, 24px) !important;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 250px) !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta h2 {
+    font-size: clamp(28px, 4vw, 36px) !important;
+    line-height: 1.05 !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta p:not(.eyebrow) {
+    font-size: 14.5px !important;
+    line-height: 1.48 !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions {
+    gap: 10px !important;
+    grid-template-rows: repeat(3, minmax(40px, 1fr)) !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions .button {
+    font-size: 0.82rem !important;
+    height: auto !important;
+    min-height: 40px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.systems-detail-page > section.featured-final-cta {
+    align-items: start !important;
+    gap: 24px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta h2 {
+    font-size: clamp(24px, 8.4vw, 34px) !important;
+    line-height: 1.05 !important;
+    max-width: 100% !important;
+    text-wrap: wrap !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta p:not(.eyebrow) {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions {
+    align-self: start !important;
+    grid-auto-rows: minmax(48px, auto) !important;
+    grid-template-rows: none !important;
+    width: 100% !important;
+  }
+
+  html body .page-shell main.systems-detail-page > section.featured-final-cta .featured-actions .button {
+    height: auto !important;
+    min-height: 48px !important;
+  }
+}
+
+/* Systems Impact Summary mirrors the Featured black summary band below the hero. */
+html body .page-shell main.systems-detail-page > section.section.featured-summary-section {
+  --featured-section-padding: clamp(34px, 2.15vw, 44px);
+  --featured-section-wall-width: min(var(--home-section-wall-width, 2560px), 100vw);
+  --featured-section-inline-pad: var(--featured-section-padding);
+  --featured-section-rail-gutter: var(--featured-section-padding);
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  clip-path: none !important;
+  color: #f7f4ef !important;
+  isolation: isolate !important;
+  margin: 0 calc(50% - (var(--featured-section-wall-width) * 0.5)) !important;
+  max-width: none !important;
+  overflow: hidden !important;
+  padding-top: calc(var(--featured-section-padding) * 0.5) !important;
+  padding-right: var(--featured-section-inline-pad) !important;
+  padding-bottom: calc(var(--featured-section-padding) * 0.5) !important;
+  padding-left: var(--featured-section-inline-pad) !important;
+  position: relative !important;
+  width: var(--featured-section-wall-width) !important;
+}
+
+html body .page-shell main.systems-detail-page > section.section.featured-summary-section::before {
+  background: #000000 !important;
+  content: "" !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: 0 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.section.featured-summary-section > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+html body .page-shell main.systems-detail-page > section.section.featured-summary-section > :is(.section-heading, .featured-summary-grid) {
+  margin-right: calc(var(--featured-section-rail-gutter) - var(--featured-section-inline-pad)) !important;
+  margin-left: calc(var(--featured-section-rail-gutter) - var(--featured-section-inline-pad)) !important;
+}
+
+html body .page-shell main.systems-detail-page > .hero.page-hero-system + .featured-summary-section {
+  margin-top: 0 !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section + .system-detail-section {
+  margin-top: 0 !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section > .section-heading {
+  width: 100% !important;
+  max-width: none !important;
+  margin-bottom: 18px !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section > .section-heading > .eyebrow {
+  color: #f2a179 !important;
+  -webkit-text-fill-color: #f2a179 !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section > .section-heading > h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section > .section-heading > h2 + p {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: calc(var(--featured-title-to-body-gap, 14px) * 0.5) !important;
+  margin-bottom: 0 !important;
+  color: #ded8cf !important;
+  -webkit-text-fill-color: #ded8cf !important;
+  font-size: 16px !important;
+  line-height: 1.52 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section > .featured-summary-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(12px, 1.25vw, 20px) !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card {
+  justify-content: flex-start !important;
+  min-height: 0 !important;
+  padding: clamp(16px, 1.2vw, 20px) !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card h3 {
+  margin-top: 0 !important;
+  margin-bottom: 6px !important;
+  color: var(--ink) !important;
+  font-size: clamp(1.22rem, 0.9vw + 0.84rem, 1.95rem) !important;
+  line-height: 1.08 !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card > p {
+  margin-top: 8px !important;
+  font-size: clamp(0.94rem, 0.24vw + 0.86rem, 1.12rem) !important;
+  line-height: 1.38 !important;
+  overflow-wrap: normal !important;
+  text-wrap: pretty !important;
+  white-space: normal !important;
+}
+
+@media (max-width: 1024px) {
+  html body .page-shell main.systems-detail-page > .featured-summary-section > .featured-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
+  html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+  }
+
+  html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card h3 {
+    font-size: 21px !important;
+  }
+
+  html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card > p {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 1501px) and (max-width: 2199px) {
+  html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card > p {
+    font-size: 15px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html body .page-shell main.systems-detail-page > .featured-summary-section > .section-heading > h2 + p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card > p {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.systems-detail-page > .featured-summary-section > .section-heading > h2 + p {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card {
+    padding: 12px !important;
+  }
+
+  html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card h3 {
+    font-size: clamp(16px, 4.1vw, 19px) !important;
+    line-height: 1.08 !important;
+  }
+
+  html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card > p {
+    font-size: clamp(11px, 3.25vw, 13px) !important;
+    line-height: 1.34 !important;
+  }
+}
+
+/* Systems detail gold bands match the Featured proof-section background. */
+html body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #development, #recruiting, #operations, #scouting, #leadership) {
+  background: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 100%) !important;
+  background-color: #f5e7cf !important;
+  background-image: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 100%) !important;
+}
+
+html body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #development, #recruiting, #operations, #scouting, #leadership) > .system-detail-grid {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
