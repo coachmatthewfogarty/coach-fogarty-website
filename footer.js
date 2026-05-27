@@ -13,12 +13,40 @@ document.querySelectorAll(".footer-accordion-toggle").forEach((toggle) => {
 
 const siteHeader = document.querySelector(".site-header");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+const mobileFeaturedItem = document.querySelector(".site-nav-featured");
+const mobileFeaturedLink = mobileFeaturedItem?.querySelector(":scope > a");
+const mobileFeaturedDropdown = mobileFeaturedItem?.querySelector(".featured-nav-dropdown");
+let mobileFeaturedToggle = null;
 
 if (siteHeader && mobileNavToggle) {
+  if (mobileFeaturedItem && mobileFeaturedLink && mobileFeaturedDropdown) {
+    if (!mobileFeaturedDropdown.id) {
+      mobileFeaturedDropdown.id = "featured-mobile-subnav";
+    }
+
+    mobileFeaturedToggle = document.createElement("button");
+    mobileFeaturedToggle.className = "mobile-subnav-toggle";
+    mobileFeaturedToggle.type = "button";
+    mobileFeaturedToggle.setAttribute("aria-label", "Toggle Featured submenu");
+    mobileFeaturedToggle.setAttribute("aria-controls", mobileFeaturedDropdown.id);
+    mobileFeaturedToggle.setAttribute("aria-expanded", "false");
+    mobileFeaturedLink.insertAdjacentElement("afterend", mobileFeaturedToggle);
+
+    mobileFeaturedToggle.addEventListener("click", () => {
+      const isOpen = mobileFeaturedItem.classList.toggle("is-mobile-subnav-open");
+      mobileFeaturedToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
   const setMobileNavOpen = (isOpen) => {
     siteHeader.classList.toggle("nav-open", isOpen);
     mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
     mobileNavToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+
+    if (!isOpen && mobileFeaturedItem && mobileFeaturedToggle) {
+      mobileFeaturedItem.classList.remove("is-mobile-subnav-open");
+      mobileFeaturedToggle.setAttribute("aria-expanded", "false");
+    }
   };
 
   mobileNavToggle.addEventListener("click", () => {

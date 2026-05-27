@@ -5188,6 +5188,7 @@ main#top #media .gallery-card .gallery-card-arrow {
 /* Mobile header drawer */
 .mobile-nav-toggle,
 .mobile-contact-link,
+.mobile-subnav-toggle,
 .nav-label-mobile {
   display: none;
 }
@@ -7102,7 +7103,49 @@ main#top .credentials-card .credential-document-heading .eyebrow {
     overflow-y: auto;
   }
 
+  .site-header .site-nav-featured {
+    position: relative;
+  }
+
+  .site-header .site-nav-featured > a {
+    padding-right: 54px;
+  }
+
+  .site-header .mobile-subnav-toggle {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .site-header .mobile-subnav-toggle::before {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    content: "";
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 160ms ease;
+  }
+
+  .site-header .site-nav-featured.is-mobile-subnav-open .mobile-subnav-toggle::before {
+    transform: rotate(225deg) translate(-2px, -2px);
+  }
+
   .site-header .featured-nav-dropdown {
+    display: none;
+  }
+
+  .site-header .site-nav-featured.is-mobile-subnav-open .featured-nav-dropdown {
     display: block;
   }
 
