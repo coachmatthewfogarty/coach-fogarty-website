@@ -14847,7 +14847,8 @@ body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-
 
 @media (min-width: 1025px) {
   body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.anaya-case-study-page > .section.section {
-    --case-page-section-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
+    /* Match the Archer page wall math: the section band owns the full wall, not a scrollbar-trimmed inset that can expose side hairlines. */
+    --case-page-section-wall-width: min(var(--home-section-wall-width, 2560px), 100vw);
     --case-page-section-inline-pad: calc(((var(--case-page-section-wall-width) - var(--page-shell-width)) / 2) + var(--home-hero-side-inset, 34px));
     --case-page-section-rail-gutter: clamp(24px, 1.8vw, 31.5px);
   }
@@ -17348,15 +17349,6 @@ body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  body .page-shell main.anaya-case-study-page > .anaya-journey-section > .anaya-gallery-block {
-    --anaya-program-media-wall-width: calc(100vw - 34px);
-    box-sizing: border-box !important;
-    width: var(--anaya-program-media-wall-width) !important;
-    max-width: var(--anaya-program-media-wall-width) !important;
-    margin-right: calc((100% - var(--anaya-program-media-wall-width)) / 2) !important;
-    margin-left: calc((100% - var(--anaya-program-media-wall-width)) / 2) !important;
-  }
-
   body .page-shell main.anaya-case-study-page .anaya-gallery-preview {
     gap: 11px !important;
     row-gap: 11px !important;
@@ -17371,15 +17363,6 @@ body .page-shell main.archer-page.archer-page > #photos.section > .archer-media-
 }
 
 @media (max-width: 767px) {
-  body .page-shell main.anaya-case-study-page > .anaya-journey-section > .anaya-gallery-block {
-    --anaya-program-media-wall-width: 100vw;
-    box-sizing: border-box !important;
-    width: var(--anaya-program-media-wall-width) !important;
-    max-width: var(--anaya-program-media-wall-width) !important;
-    margin-right: calc((100% - var(--anaya-program-media-wall-width)) / 2) !important;
-    margin-left: calc((100% - var(--anaya-program-media-wall-width)) / 2) !important;
-  }
-
   body .page-shell main.anaya-case-study-page .anaya-gallery-preview {
     gap: 11px !important;
     row-gap: 11px !important;
@@ -18430,20 +18413,24 @@ html body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.m
   margin-top: 0 !important;
 }
 
-/* Anaya case-study media grids: match the homepage Program Media tile system for sections 01-05. */
+/* Anaya media wall parity with the Archer gallery:
+   the section owns the cream wall, while the media rail expands back across
+   the section padding. Card/frame wrappers stay transparent so no old panel
+   line can appear between the image edge and the wall. */
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) > .anaya-gallery-block {
   --anaya-program-media-gap: 11px;
-  --anaya-program-media-wall-width: min(var(--home-section-wall-width, 2560px), calc(100vw - 16px));
   box-sizing: border-box !important;
-  width: var(--anaya-program-media-wall-width) !important;
-  max-width: var(--anaya-program-media-wall-width) !important;
+  width: calc(100% + (var(--case-page-section-inline-pad) * 2)) !important;
+  max-width: none !important;
   margin-top: var(--featured-section-gap, 12px) !important;
-  margin-right: calc((100% - var(--anaya-program-media-wall-width)) / 2) !important;
-  margin-left: calc((100% - var(--anaya-program-media-wall-width)) / 2) !important;
+  margin-right: calc(var(--case-page-section-inline-pad) * -1) !important;
+  margin-left: calc(var(--case-page-section-inline-pad) * -1) !important;
   padding: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
-  background: #ffffff !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
   box-shadow: none !important;
 }
 
@@ -18455,7 +18442,9 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-l
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
-  background: #ffffff !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-media-card {
@@ -18468,7 +18457,9 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-l
   padding: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
-  background: #1f1b16 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
   box-shadow: none !important;
   transform: none !important;
 }
@@ -18495,8 +18486,11 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-l
   min-height: 0 !important;
   aspect-ratio: auto !important;
   overflow: hidden !important;
+  border: 0 !important;
   border-radius: 0 !important;
-  background: #1f1b16 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-media-frame img,
@@ -18574,6 +18568,92 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-l
 
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-gallery-actions {
   display: none !important;
+}
+
+@media (max-width: 1024px) {
+  body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-gallery-preview {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Section 06 keeps its desktop composition, but tablet/mobile uses the same
+     Archer-style wall fill so no cream strip appears between image and wall. */
+  body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section > .anaya-gallery-block {
+    --anaya-program-media-gap: 11px;
+    box-sizing: border-box !important;
+    width: calc(100% + (var(--case-page-section-inline-pad) * 2)) !important;
+    max-width: none !important;
+    margin-top: var(--featured-section-gap, 12px) !important;
+    margin-right: calc(var(--case-page-section-inline-pad) * -1) !important;
+    margin-left: calc(var(--case-page-section-inline-pad) * -1) !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section .anaya-gallery-preview {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: var(--anaya-program-media-gap) !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section .anaya-media-card {
+    position: relative !important;
+    display: block !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 3 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section .anaya-media-frame {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section .anaya-media-frame img,
+  body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section .anaya-media-frame video {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    filter: brightness(0.96) !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-gallery-preview {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -18827,6 +18907,9 @@ html body .page-shell main.anaya-case-study-page > section.featured-final-cta .e
 html body .page-shell main.anaya-case-study-page > section.featured-final-cta h2 {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+  overflow-wrap: normal !important;
+  text-wrap: nowrap !important;
+  white-space: nowrap !important;
 }
 
 html body .page-shell main.anaya-case-study-page > section.featured-final-cta p:not(.eyebrow) {
@@ -18890,8 +18973,8 @@ html body .page-shell main.anaya-case-study-page > section.featured-final-cta .f
     max-width: 100% !important;
     font-size: clamp(28px, 3.25vw, 38px) !important;
     line-height: 1.05 !important;
-    text-wrap: wrap !important;
-    white-space: normal !important;
+    text-wrap: nowrap !important;
+    white-space: nowrap !important;
   }
 
   html body .page-shell main.anaya-case-study-page > section.featured-final-cta p:not(.eyebrow) {
@@ -18923,10 +19006,10 @@ html body .page-shell main.anaya-case-study-page > section.featured-final-cta .f
 
   html body .page-shell main.anaya-case-study-page > section.featured-final-cta h2 {
     max-width: 100% !important;
-    font-size: clamp(28px, 4vw, 36px) !important;
+    font-size: clamp(25px, 3.4vw, 34px) !important;
     line-height: 1.05 !important;
-    text-wrap: wrap !important;
-    white-space: normal !important;
+    text-wrap: nowrap !important;
+    white-space: nowrap !important;
   }
 
   html body .page-shell main.anaya-case-study-page > section.featured-final-cta p:not(.eyebrow) {
@@ -18938,7 +19021,7 @@ html body .page-shell main.anaya-case-study-page > section.featured-final-cta .f
     width: 100% !important;
     grid-template-rows: repeat(3, minmax(40px, 1fr)) !important;
     grid-auto-rows: initial !important;
-    gap: 10px !important;
+    gap: 9px !important;
   }
 
   html body .page-shell main.anaya-case-study-page > section.featured-final-cta .featured-actions .button {
@@ -18959,15 +19042,15 @@ html body .page-shell main.anaya-case-study-page > section.featured-final-cta .f
 
   html body .page-shell main.anaya-case-study-page > section.featured-final-cta h2 {
     max-width: 100% !important;
-    font-size: clamp(24px, 8.4vw, 34px) !important;
+    font-size: clamp(17px, 4.8vw, 23px) !important;
     line-height: 1.05 !important;
-    text-wrap: wrap !important;
-    white-space: normal !important;
+    text-wrap: nowrap !important;
+    white-space: nowrap !important;
   }
 
   html body .page-shell main.anaya-case-study-page > section.featured-final-cta p:not(.eyebrow) {
-    font-size: clamp(15px, 4vw, 17px) !important;
-    line-height: 1.55 !important;
+    font-size: clamp(14px, 3.75vw, 15.5px) !important;
+    line-height: 1.44 !important;
   }
 
   html body .page-shell main.anaya-case-study-page > section.featured-final-cta .featured-actions {
@@ -18975,10 +19058,59 @@ html body .page-shell main.anaya-case-study-page > section.featured-final-cta .f
     width: 100% !important;
     grid-template-rows: none !important;
     grid-auto-rows: minmax(48px, auto) !important;
+    gap: 10px !important;
   }
 
   html body .page-shell main.anaya-case-study-page > section.featured-final-cta .featured-actions .button {
     min-height: 48px !important;
     height: auto !important;
+  }
+}
+
+/* Anaya final CTA title fit: keep "See the Systems Behind the Results" on one line from mobile to ultra-wide. */
+html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section.featured-final-cta.featured-final-cta h2 {
+  overflow-wrap: normal !important;
+  text-wrap: nowrap !important;
+  white-space: pre !important;
+}
+
+html body .page-shell main.anaya-case-study-page > section.featured-final-cta #anaya-final-cta-title {
+  overflow-wrap: normal !important;
+  text-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section.featured-final-cta.featured-final-cta h2 {
+    font-size: clamp(22px, 2.9vw, 32px) !important;
+  }
+
+  html body .page-shell main.anaya-case-study-page > section.featured-final-cta #anaya-final-cta-title {
+    font-size: clamp(22px, 2.9vw, 32px) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section.featured-final-cta.featured-final-cta h2 {
+    font-size: clamp(14px, 4vw, 18px) !important;
+  }
+
+  html body .page-shell main.anaya-case-study-page > section.featured-final-cta #anaya-final-cta-title {
+    font-size: clamp(14px, 4vw, 18px) !important;
+  }
+}
+
+/* Anaya Explore handoff: remove the mobile/tablet cream tail after the final image before the black CTA starts. */
+html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section#next-level.section.anaya-journey-section {
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  html body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section {
+    padding-bottom: 0 !important;
+  }
+
+  html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section#next-level.section.anaya-journey-section {
+    padding-bottom: 0 !important;
   }
 }
