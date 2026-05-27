@@ -18196,8 +18196,8 @@ html body .page-shell main.systems-detail-page > .featured-summary-section > .se
 
 html body .page-shell main.systems-detail-page > .featured-summary-section > .featured-summary-grid {
   display: grid !important;
-  grid-template-columns: minmax(0, 45%) minmax(0, 45%) !important;
-  justify-content: space-between !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  justify-content: stretch !important;
   gap: clamp(12px, 1.25vw, 20px) !important;
   width: 100% !important;
   max-width: none !important;
@@ -18237,8 +18237,8 @@ html body .page-shell main.systems-detail-page > .featured-summary-section .feat
   }
 
   html body .page-shell main.systems-detail-page > .featured-summary-section > .featured-summary-grid {
-    grid-template-columns: minmax(0, 45%) minmax(0, 45%) !important;
-    justify-content: space-between !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    justify-content: stretch !important;
     gap: clamp(10px, 2.5vw, 14px) !important;
   }
 }
@@ -18281,6 +18281,11 @@ html body .page-shell main.systems-detail-page > .featured-summary-section .feat
     font-size: 11px !important;
     line-height: 1.35 !important;
     white-space: normal !important;
+  }
+
+  html body .page-shell main.systems-detail-page > .featured-summary-section > .featured-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-content: stretch !important;
   }
 
   html body .page-shell main.systems-detail-page > .featured-summary-section .featured-summary-card {
@@ -18387,8 +18392,8 @@ html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .sec
 
 html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .featured-summary-grid {
   display: grid !important;
-  grid-template-columns: minmax(0, 47%) minmax(0, 47%) !important;
-  justify-content: space-between !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  justify-content: stretch !important;
   gap: clamp(12px, 1.25vw, 20px) !important;
   width: 100% !important;
   max-width: none !important;
@@ -18428,8 +18433,8 @@ html body .page-shell main.anaya-case-study-page > .anaya-summary-section .featu
   }
 
   html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .featured-summary-grid {
-    grid-template-columns: minmax(0, 47%) minmax(0, 47%) !important;
-    justify-content: space-between !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    justify-content: stretch !important;
     gap: clamp(10px, 2.5vw, 14px) !important;
   }
 }
@@ -18470,6 +18475,11 @@ html body .page-shell main.anaya-case-study-page > .anaya-summary-section .featu
   html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .section-heading > h2 + p {
     font-size: 11px !important;
     line-height: 1.35 !important;
+  }
+
+  html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .featured-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-content: stretch !important;
   }
 
   html body .page-shell main.anaya-case-study-page > .anaya-summary-section .featured-summary-card {
