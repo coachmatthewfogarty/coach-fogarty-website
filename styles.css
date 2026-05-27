@@ -12083,11 +12083,11 @@ body .page-shell main.archer-page.archer-page .hero-pill :is(.archer-pill-label-
     --home-hero-pill-main-size: clamp(16px, calc(1.29vw + 2.78px), 18px);
     --home-hero-pill-sub-size: clamp(9.8px, calc(0.65vw + 3.14px), 10.8px);
     --hero-overlay-padding-inline: 12px;
-    --hero-overlay-link-columns: minmax(0, 0.82fr) minmax(0, 1.02fr) minmax(0, 0.9fr) minmax(0, 1.48fr) minmax(0, 1.03fr);
-    --hero-overlay-divider-1: 15.6%;
-    --hero-overlay-divider-2: 35%;
-    --hero-overlay-divider-3: 52.2%;
-    --hero-overlay-divider-4: 80.4%;
+    --hero-overlay-link-columns: minmax(0, 25fr) minmax(0, 12fr) minmax(0, 14fr) minmax(0, 25fr) minmax(0, 24fr);
+    --hero-overlay-divider-1: 25%;
+    --hero-overlay-divider-2: 37%;
+    --hero-overlay-divider-3: 51%;
+    --hero-overlay-divider-4: 76%;
   }
 }
 
@@ -12279,14 +12279,69 @@ body .page-shell main.archer-page.archer-page .hero-pill :is(.archer-pill-label-
   left: var(--hero-overlay-divider-4, 81.8%) !important;
 }
 
-/* Featured highlight edge links: keep homepage lanes/dividers, then visually center Summary and The Archer between the overlay wall and nearest divider. */
-@media (min-width: 1025px) {
-  body .page-shell main.featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(1) {
-    transform: translateX(-7px) !important;
+/* Featured 1025-1600 highlight-note: replaces the old edge-link transform nudges with real padded lanes, so Summary and The Archer breathe between the overlay walls and divider bars. */
+@media (min-width: 1025px) and (max-width: 1600px) {
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system {
+    --hero-overlay-padding-inline: clamp(18px, 1.55vw, 24px);
+    --hero-overlay-link-size: clamp(11px, 0.78vw, 12.4px);
   }
 
-  body .page-shell main.featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(5) {
-    transform: translateX(12px) !important;
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text {
+    display: grid !important;
+    grid-template-columns:
+      minmax(0, 25fr)
+      max-content
+      minmax(0, 12fr)
+      max-content
+      minmax(0, 14fr)
+      max-content
+      minmax(0, 25fr)
+      max-content
+      minmax(0, 24fr) !important;
+    justify-items: center !important;
+    gap: 0 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(1) {
+    grid-column: 1 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(2) {
+    grid-column: 3 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(3) {
+    grid-column: 5 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(4) {
+    grid-column: 7 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text a:nth-of-type(5) {
+    grid-column: 9 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text span {
+    position: static !important;
+    transform: none !important;
+    justify-self: center !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(1) {
+    grid-column: 2 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(2) {
+    grid-column: 4 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(3) {
+    grid-column: 6 !important;
+  }
+
+  body .page-shell :is(main#top, main.featured-page).featured-page > .page-hero-system.page-hero-system .hero-portrait-overlay-text span:nth-of-type(4) {
+    grid-column: 8 !important;
   }
 }
 
