@@ -12400,16 +12400,15 @@ body .page-shell main.archer-page.archer-page .hero-pill :is(.archer-pill-label-
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill {
     grid-template-rows: max-content max-content !important;
     align-content: center !important;
-    gap: 3px !important;
   }
 
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-main {
-    line-height: 1.02 !important;
+    line-height: 0.96 !important;
   }
 
   .page-shell :is(main:not(.about-story-page):not(.about-cover-page):not(.contact-page)) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill > .hero-pill-sub {
     font-size: clamp(9.5px, 2.45vw, 10.75px) !important;
-    line-height: 1.08 !important;
+    line-height: 1 !important;
     overflow-wrap: normal !important;
     white-space: nowrap !important;
   }
@@ -15050,7 +15049,8 @@ body .page-shell main#top #playing-career .playing-career-carousel {
 
 body .page-shell main#top #playing-career .playing-career-awards-strip {
   --playing-career-awards-gap: 11px;
-  --playing-career-awards-shelf-pad: 11px;
+  --playing-career-awards-shelf-pad: 0px;
+  --playing-career-awards-slot-overhang: 0px;
 }
 
 body .page-shell main#top #playing-career .playing-career-awards-arrow {
@@ -19656,11 +19656,24 @@ html body :is(
 }
 
 html body .media-carousel-arrow {
-  width: 30px !important;
-  height: 30px !important;
+  width: 36px !important;
+  height: 36px !important;
   border-color: #d95a24 !important;
-  color: #9f2f22 !important;
-  -webkit-text-fill-color: #9f2f22 !important;
+  color: #d95a24 !important;
+  -webkit-text-fill-color: #d95a24 !important;
+}
+
+html body :is(
+  .media-carousel-arrow,
+  .system-carousel-arrow,
+  .playing-career-arrow,
+  .playing-career-awards-arrow,
+  .media-overlay-nav,
+  .media-overlay-thumb-nav
+) {
+  border-color: #d95a24 !important;
+  color: #d95a24 !important;
+  -webkit-text-fill-color: #d95a24 !important;
 }
 
 html body :is(.playing-career-arrow, .media-overlay-nav) {
@@ -19800,7 +19813,8 @@ html body :is(
 }
 
 html body :is(.media-carousel-arrow, .system-carousel-arrow)::before {
-  font-size: 0.8rem !important;
+  font-size: 1.08rem !important;
+  border-width: 0 !important;
 }
 
 html body :is(.playing-career-arrow, .playing-career-awards-arrow, .media-overlay-thumb-nav)::before {
@@ -19808,12 +19822,12 @@ html body :is(.playing-career-arrow, .playing-career-awards-arrow, .media-overla
   border-width: 0 !important;
 }
 
-html body :is(.playing-career-arrow-prev, .playing-career-awards-arrow-prev, .media-overlay-thumb-prev)::before {
+html body :is(.media-carousel-arrow-prev, .system-carousel-arrow-prev, .playing-career-arrow-prev, .playing-career-awards-arrow-prev, .media-overlay-thumb-prev)::before {
   border-bottom-width: 3px !important;
   border-left-width: 3px !important;
 }
 
-html body :is(.playing-career-arrow-next, .playing-career-awards-arrow-next, .media-overlay-thumb-next)::before {
+html body :is(.media-carousel-arrow-next, .system-carousel-arrow-next, .playing-career-arrow-next, .playing-career-awards-arrow-next, .media-overlay-thumb-next)::before {
   border-top-width: 3px !important;
   border-right-width: 3px !important;
 }
@@ -19830,4 +19844,169 @@ html body .media-overlay-nav::before {
   html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section#next-level.section.anaya-journey-section {
     padding-bottom: 0 !important;
   }
+}
+
+/* Sitewide carousel arrow color lock: match homepage arrow hex exactly. */
+html body :is(
+  .media-carousel-arrow,
+  .system-carousel-arrow,
+  .playing-career-arrow,
+  .playing-career-awards-arrow,
+  .media-overlay-nav,
+  .media-overlay-thumb-nav
+) {
+  border-color: #d95a24 !important;
+  color: #d95a24 !important;
+  -webkit-text-fill-color: #d95a24 !important;
+}
+
+html body :is(
+  .media-carousel-arrow,
+  .system-carousel-arrow,
+  .playing-career-arrow,
+  .playing-career-awards-arrow,
+  .media-overlay-nav,
+  .media-overlay-thumb-nav
+)::before {
+  border-color: #d95a24 !important;
+}
+
+/* Sitewide carousel arrow size lock: match homepage Playing Career controls exactly. */
+html body :is(
+  .media-carousel-arrow,
+  .system-carousel-arrow,
+  .playing-career-arrow,
+  .playing-career-awards-arrow,
+  .media-overlay-nav,
+  .media-overlay-thumb-nav
+) {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+html body :is(
+  .media-carousel-arrow,
+  .system-carousel-arrow,
+  .playing-career-arrow,
+  .playing-career-awards-arrow,
+  .media-overlay-nav,
+  .media-overlay-thumb-nav
+)::before {
+  width: 0.54em !important;
+  height: 0.54em !important;
+  font-size: 1.08rem !important;
+  border-width: 0 !important;
+  border-color: #d95a24 !important;
+}
+
+html body :is(
+  .media-carousel-arrow-prev,
+  .system-carousel-arrow-prev,
+  .playing-career-arrow-prev,
+  .playing-career-awards-arrow-prev,
+  .media-overlay-prev,
+  .media-overlay-thumb-prev
+)::before {
+  border-bottom-width: 3px !important;
+  border-left-width: 3px !important;
+}
+
+html body :is(
+  .media-carousel-arrow-next,
+  .system-carousel-arrow-next,
+  .playing-career-arrow-next,
+  .playing-career-awards-arrow-next,
+  .media-overlay-next,
+  .media-overlay-thumb-next
+)::before {
+  border-top-width: 3px !important;
+  border-right-width: 3px !important;
+}
+
+/* Mobile hero pill line lock: all two-line hero pills use a 1px main/sub gap. */
+@media (max-width: 430px) and (orientation: portrait) {
+  html body .page-shell :is(
+    main#top,
+    main.systems-detail-page,
+    main.featured-page,
+    main.media-library-page,
+    main.anaya-case-study-page,
+    main.archer-page
+  ) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill {
+    gap: 1px !important;
+  }
+}
+
+/* Homepage awards carousel lock: no peek cards; every visible award fills a full card. */
+html body .page-shell main#top #playing-career .playing-career-awards-strip {
+  --playing-career-awards-visible-slots: 3;
+  --playing-career-awards-gap: 11px;
+  --playing-career-awards-slot-overhang: 0px;
+  --playing-career-awards-track-width: 100%;
+  --playing-career-awards-item-width: calc(
+    (100% - (var(--playing-career-awards-gap) * (var(--playing-career-awards-visible-slots) - 1)))
+    / var(--playing-career-awards-visible-slots)
+  );
+  --playing-career-awards-slot-width: var(--playing-career-awards-item-width);
+  --playing-career-awards-thumb-height: calc(var(--playing-career-awards-item-width) * 2 / 3);
+}
+
+html body .page-shell main#top #playing-career .playing-career-awards-track {
+  left: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  width: 100% !important;
+  background: #ffffff !important;
+  transform: none !important;
+}
+
+html body .page-shell main#top #playing-career .playing-career-awards-track::after {
+  content: none !important;
+}
+
+html body .page-shell main#top #playing-career .playing-career-award-thumb {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  aspect-ratio: 3 / 2 !important;
+  overflow: hidden !important;
+}
+
+html body .page-shell main#top #playing-career .playing-career-award-thumb::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: calc(-1 * var(--playing-career-awards-gap)) !important;
+  bottom: 0 !important;
+  z-index: 2 !important;
+  width: var(--playing-career-awards-gap) !important;
+  height: auto !important;
+  background: #ffffff !important;
+  pointer-events: none !important;
+}
+
+html body .page-shell main#top #playing-career .playing-career-award-thumb:last-child::after {
+  content: none !important;
+}
+
+html body .page-shell main#top #playing-career .playing-career-award-thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+html body .page-shell main#top #playing-career .playing-career-awards-strip {
+  border-top: 11px solid #ffffff !important;
+  border-bottom: 11px solid #ffffff !important;
+}
+
+html body .page-shell main#top #playing-career .playing-career-award-thumb.is-home-award-mvp-plaque img {
+  transform: scale(1.14) !important;
+}
+
+html body .page-shell main#top #playing-career .playing-career-awards-arrow {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }

@@ -1147,6 +1147,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-landscape-2400x1800.avif"),
+        carouselSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-clean-crop-595x400.png"),
         thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-overlay-thumb-600x400.webp"),
         alt: "Second Team All-Conference award",
         caption: "Second Team All-Conference recognition",
@@ -1161,11 +1162,13 @@ const playingCareerAwardAlbums = [
         alt: "Rocky Mountain College MVP award",
         caption: "Rocky Mountain College MVP",
         cardClass: "is-award-bg-blend is-award-mvp-plaque",
+        homeAwardClass: "is-home-award-mvp-plaque",
         orientation: "portrait"
       },
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-all-state-landscape-2400x1800.avif"),
+        carouselSrc: playingCareerAward("playing-awards-shasta-college-all-state-clean-crop-600x400.png"),
         thumbSrc: playingCareerAward("playing-awards-shasta-college-all-state-overlay-thumb-600x400.webp"),
         alt: "First Team All-State award",
         caption: "First Team All-State recognition",
@@ -1184,6 +1187,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-conference-mvp-landscape-2400x1800.avif"),
+        carouselSrc: playingCareerAward("playing-awards-shasta-college-conference-mvp-clean-crop-600x400.png"),
         thumbSrc: playingCareerAward("playing-awards-shasta-college-conference-mvp-overlay-thumb-600x400.webp"),
         alt: "Conference MVP award",
         caption: "Conference MVP recognition",
@@ -1192,6 +1196,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-landscape-2400x1800.avif"),
+        carouselSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-clean-crop-596x400.png"),
         thumbSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-overlay-thumb-600x400.webp"),
         alt: "Outstanding performance award",
         caption: "Outstanding performance recognition",
@@ -2389,11 +2394,11 @@ function normalizePlayingCareerAwardIndex(index, itemCount = playingCareerAwardA
 }
 
 function playingCareerAwardSlots(activeIndex, itemCount) {
-  const visibleOffsets = [-1, 0, 1, 2, 3];
+  const visibleOffsets = [0, 1, 2];
 
   return visibleOffsets.map((offset, slotIndex) => {
     const itemIndex = normalizePlayingCareerAwardIndex(activeIndex + offset, itemCount);
-    const slotClass = slotIndex === 0 ? " is-peek is-peek-prev" : slotIndex === visibleOffsets.length - 1 ? " is-peek is-peek-next" : " is-full";
+    const slotClass = " is-full";
 
     return { itemIndex, slotClass };
   });
@@ -2412,10 +2417,10 @@ function renderPlayingCareerAwardsStrip() {
     .map(
       ({ itemIndex, slotClass }, slotIndex) => {
         const item = album.items[itemIndex];
-        const ariaCurrent = slotIndex === 2 ? ' aria-current="true"' : "";
+        const ariaCurrent = slotIndex === 1 ? ' aria-current="true"' : "";
 
         return `
-        <button class="playing-career-award-thumb${slotClass}" type="button" data-playing-award-index="${itemIndex}"${ariaCurrent} aria-label="Open ${mediaItemTitle(item, album)}">
+        <button class="playing-career-award-thumb${slotClass}${item.homeAwardClass ? ` ${item.homeAwardClass}` : ""}" type="button" data-playing-award-index="${itemIndex}"${ariaCurrent} aria-label="Open ${mediaItemTitle(item, album)}">
           <img
             src="${encodeURI(mediaItemCarouselSrc(item))}"
             alt="${item.alt || mediaItemTitle(item, album)}"
