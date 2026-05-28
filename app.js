@@ -955,14 +955,7 @@ const anayaSections = [
       ),
       {
         type: "image",
-        src: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-landscape-cover-shift-down-2-q98-2400x1800.avif"),
-        fullSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-landscape-cover-shift-down-2-q98-2400x1800.avif"),
-        mediaCardSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-media-card-cover-shift-down-2-q98-1200x900.avif"),
-        portraitSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-portrait-cover-center-q98-1800x2400.avif"),
-        thumbSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-overlay-thumb-cover-shift-down-2-q98-600x400.webp"),
-        orientation: "landscape",
-        alt: "Anaya Beard speaking at a Scholar Athlete recognition ceremony",
-        caption: "Scholar Athlete ceremony speech"
+        ...anayaCaseStudyImage("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-awards-ceremony", "Awards ceremony recognition", "Anaya Beard awards ceremony recognition")
       },
       {
         type: "image",
@@ -977,7 +970,17 @@ const anayaSections = [
       anayaCaseStudyImage("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-first-team-all-conference-opoy", "First Team All-Conference and OPOY", "Anaya Beard First Team All-Conference and OPOY recognition"),
       anayaCaseStudyImage("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-back-to-back-first-team-all-conference", "Back-to-back First Team All-Conference", "Anaya Beard back-to-back First Team All-Conference recognition"),
       anayaCaseStudyImage("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-athlete-of-the-week-01", "Athlete of the Week", "Anaya Beard Athlete of the Week recognition"),
-      anayaCaseStudyImage("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-awards-ceremony", "Awards ceremony recognition", "Anaya Beard awards ceremony recognition"),
+      {
+        type: "image",
+        src: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-landscape-cover-shift-down-2-q98-2400x1800.avif"),
+        fullSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-landscape-cover-shift-down-2-q98-2400x1800.avif"),
+        mediaCardSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-media-card-cover-shift-down-2-q98-1200x900.avif"),
+        portraitSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-portrait-cover-center-q98-1800x2400.avif"),
+        thumbSrc: anayaPhoto("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-scholar-athlete-ceremony-speech-overlay-thumb-cover-shift-down-2-q98-600x400.webp"),
+        orientation: "landscape",
+        alt: "Anaya Beard speaking at a Scholar Athlete recognition ceremony",
+        caption: "Scholar Athlete ceremony speech"
+      },
       anayaCaseStudyImage("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-all-tournament", "All-Tournament recognition", "Anaya Beard All-Tournament recognition"),
       anayaCaseStudyImage("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-coach-photo", "Coach and athlete photo", "Anaya Beard coach and athlete recognition photo"),
       anayaCaseStudyImage("5-accolades-recognition", "case-study-anaya-beard-accolades-recognition-playoff-feature", "Playoff feature", "Anaya Beard playoff feature recognition"),
@@ -1289,58 +1292,186 @@ const archerMediaAlbum = {
       caption: "Training Progressions - jump hook apex point"
     },
     {
+      type: "image",
+      src: "assets/the-archer/photos/archer-blue-wall-high-arc-release-01-q98.jpg",
+      fullSrc: "assets/the-archer/photos/archer-blue-wall-high-arc-release-01-q98.jpg",
+      mediaCardSrc: "assets/the-archer/photos/archer-blue-wall-high-arc-release-01-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-blue-wall-high-arc-release-01-overlay-thumb-cover-center-q98-600x400.jpg",
+      alt: "High-arc release over The Archer guide on a blue-wall gym court",
+      caption: "High-arc release feedback"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-red-lane-finishing-release-01-q98.jpg",
+      fullSrc: "assets/the-archer/photos/archer-red-lane-finishing-release-01-q98.jpg",
+      mediaCardSrc: "assets/the-archer/photos/archer-red-lane-finishing-release-01-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-red-lane-finishing-release-01-overlay-thumb-cover-center-q98-600x400.jpg",
+      alt: "Player finishing a touch shot beside The Archer on the red lane",
+      caption: "Red-lane finishing release"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-red-lane-touch-finish-01-q98.jpg",
+      fullSrc: "assets/the-archer/photos/archer-red-lane-touch-finish-01-q98.jpg",
+      mediaCardSrc: "assets/the-archer/photos/archer-red-lane-touch-finish-01-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-red-lane-touch-finish-01-overlay-thumb-cover-center-q98-600x400.jpg",
+      alt: "Wide view of a soft-touch finish rep with The Archer on the red lane",
+      caption: "Soft-touch finish rep"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-red-lane-set-position-01-q98.jpg",
+      fullSrc: "assets/the-archer/photos/archer-red-lane-set-position-01-q98.jpg",
+      mediaCardSrc: "assets/the-archer/photos/archer-red-lane-set-position-01-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-red-lane-set-position-01-overlay-thumb-cover-center-q98-600x400.jpg",
+      alt: "Player holding the ball beside The Archer before a red-lane rep",
+      caption: "Red-lane set position"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-red-lane-drive-setup-01-q98.jpg",
+      fullSrc: "assets/the-archer/photos/archer-red-lane-drive-setup-01-q98.jpg",
+      mediaCardSrc: "assets/the-archer/photos/archer-red-lane-drive-setup-01-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-red-lane-drive-setup-01-overlay-thumb-cover-center-q98-600x400.jpg",
+      alt: "Player driving into a red-lane rep with The Archer set at the rim",
+      caption: "Drive setup into arc feedback"
+    },
+    {
+      type: "image",
+      src: "assets/the-archer/photos/archer-soft-touch-release-wide-01-q98.jpg",
+      fullSrc: "assets/the-archer/photos/archer-soft-touch-release-wide-01-q98.jpg",
+      mediaCardSrc: "assets/the-archer/photos/archer-soft-touch-release-wide-01-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/photos/archer-soft-touch-release-wide-01-overlay-thumb-cover-center-q98-600x400.jpg",
+      alt: "Wide gym view of a soft-touch release clearing The Archer guide",
+      caption: "Wide soft-touch release"
+    },
+    {
       type: "video",
       src: "assets/the-archer/videos/archer-cut-and-floater-close-placement-01.mov",
-      poster: "assets/the-archer/photos/archer-shooting-development-wide-01.jpg",
+      poster: "assets/the-archer/thumbnails/archer-cut-and-floater-close-placement-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-cut-and-floater-close-placement-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-cut-and-floater-close-placement-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Cut and floater close placement"
     },
     {
       type: "video",
       src: "assets/the-archer/videos/archer-floater-touch-arc-training-01.mov",
-      poster: "assets/the-archer/photos/archer-arc-comparison-low-vs-high-01.jpg",
+      poster: "assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Floater touch arc training"
     },
     {
       type: "video",
       src: "assets/the-archer/videos/archer-prototype-push-shot-01.mov",
-      poster: "assets/the-archer/photos/archer-free-throw-set-position-01.jpg",
+      poster: "assets/the-archer/thumbnails/archer-prototype-push-shot-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-prototype-push-shot-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-prototype-push-shot-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Prototype push shot"
     },
     {
       type: "video",
       src: "assets/the-archer/videos/archer-prototype-push-shot-02.mov",
-      poster: "assets/the-archer/photos/archer-free-throw-set-position-01.jpg",
+      poster: "assets/the-archer/thumbnails/archer-prototype-push-shot-02-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-prototype-push-shot-02-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-prototype-push-shot-02-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Prototype push shot variation"
     },
     {
       type: "video",
       src: "assets/the-archer/videos/archer-standard-placement-free-throw-high-arc-01.mov",
-      poster: "assets/the-archer/photos/archer-free-throw-release-close-placement-01.png",
+      poster: "assets/the-archer/thumbnails/archer-standard-placement-free-throw-high-arc-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-standard-placement-free-throw-high-arc-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-standard-placement-free-throw-high-arc-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Standard placement free throw high arc"
     },
     {
       type: "video",
       src: "assets/the-archer/videos/archer-fadeaway-close-placement-01.mov",
-      poster: "assets/the-archer/photos/archer-release-high-arc-close-placement-01.png",
+      poster: "assets/the-archer/thumbnails/archer-fadeaway-close-placement-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-fadeaway-close-placement-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-fadeaway-close-placement-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Fadeaway close placement"
     },
     {
       type: "video",
       src: "assets/the-archer/videos/archer-free-throw-close-placement-demonstration-01.mov",
-      poster: "assets/the-archer/photos/archer-free-throw-close-placement-01.jpg",
+      poster: "assets/the-archer/thumbnails/archer-free-throw-close-placement-demonstration-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-free-throw-close-placement-demonstration-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-free-throw-close-placement-demonstration-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Free throw close placement demonstration"
     },
     {
       type: "video",
       src: "assets/the-archer/videos/archer-three-point-shooting-close-placement-01.mov",
-      poster: "assets/the-archer/photos/archer-coach-demonstration-close-placement-01.jpg",
+      poster: "assets/the-archer/thumbnails/archer-three-point-shooting-close-placement-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-three-point-shooting-close-placement-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-three-point-shooting-close-placement-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Three-point shooting close placement"
     },
     {
       type: "video",
       src: "assets/the-archer/videos/archer-jump-hook-close-placement-01.mov",
-      poster: "assets/the-archer/photos/archer-jump-hook-apex-point-01.png",
+      poster: "assets/the-archer/thumbnails/archer-jump-hook-close-placement-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-jump-hook-close-placement-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-jump-hook-close-placement-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
       caption: "Jump hook close placement"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-rim-ladder-finishing-rep-01-720p.mp4",
+      poster: "assets/the-archer/thumbnails/archer-rim-ladder-finishing-rep-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-rim-ladder-finishing-rep-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-rim-ladder-finishing-rep-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
+      caption: "Rim ladder finishing rep"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-rim-ladder-approach-dribble-01-720p.mp4",
+      poster: "assets/the-archer/thumbnails/archer-rim-ladder-approach-dribble-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-rim-ladder-approach-dribble-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-rim-ladder-approach-dribble-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
+      caption: "Rim ladder approach dribble"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-wing-arc-shooting-rep-01-720p.mp4",
+      poster: "assets/the-archer/thumbnails/archer-wing-arc-shooting-rep-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-wing-arc-shooting-rep-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-wing-arc-shooting-rep-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
+      caption: "Wing arc shooting rep"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-full-court-arc-training-rotation-01-720p.mp4",
+      poster: "assets/the-archer/thumbnails/archer-full-court-arc-training-rotation-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-full-court-arc-training-rotation-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-full-court-arc-training-rotation-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
+      caption: "Full-court arc training rotation"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-blue-wall-high-arc-release-clip-01-720p.mp4",
+      poster: "assets/the-archer/thumbnails/archer-blue-wall-high-arc-release-clip-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-blue-wall-high-arc-release-clip-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-blue-wall-high-arc-release-clip-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
+      caption: "Blue-wall high-arc release clip"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-blue-wall-coached-high-arc-01-720p.mp4",
+      poster: "assets/the-archer/thumbnails/archer-blue-wall-coached-high-arc-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-blue-wall-coached-high-arc-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-blue-wall-coached-high-arc-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
+      caption: "Coached high-arc release"
+    },
+    {
+      type: "video",
+      src: "assets/the-archer/videos/archer-red-lane-group-arc-rep-01-720p.mp4",
+      poster: "assets/the-archer/thumbnails/archer-red-lane-group-arc-rep-01-poster-q98.jpg",
+      mediaCardSrc: "assets/the-archer/thumbnails/archer-red-lane-group-arc-rep-01-poster-media-card-cover-center-q98-1200x900.jpg",
+      thumbSrc: "assets/the-archer/thumbnails/archer-red-lane-group-arc-rep-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
+      caption: "Red-lane group arc rep"
     }
   ]
 };
