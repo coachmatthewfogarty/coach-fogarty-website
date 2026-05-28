@@ -11243,6 +11243,15 @@ body .page-shell main.media-library-page > #playing-awards-media.media-library-s
   object-position: center center !important;
 }
 
+body .page-shell main.media-library-page > #playing-awards-media.media-library-section .media-library-card.is-award-bg-blend,
+body .page-shell main.media-library-page > #playing-awards-media.media-library-section .media-library-card.is-award-bg-blend .media-library-frame {
+  background: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 42%, #fff7e8 100%) !important;
+}
+
+body .page-shell main.media-library-page > #playing-awards-media.media-library-section .media-library-card.is-award-mvp-plaque .media-library-frame img {
+  transform: scale(1.14) !important;
+}
+
 /* Awards overlay thumbnail lock:
    use cropped overlay-thumb image sources in app.js, then let the image cover
    the full button so no balanced-document mat shows inside the thumbnail. */
@@ -15873,6 +15882,10 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-
   line-height: var(--section-title-line-desktop, 1.05) !important;
 }
 
+body .page-shell main.media-library-page > .media-library-section {
+  padding-bottom: 12px !important;
+}
+
 @media (min-width: 1025px) {
   body .page-shell main.media-library-page > .media-library-section > .section-heading > .eyebrow,
   body .page-shell main.anaya-case-study-page > .anaya-journey-section > .section-heading > .eyebrow {
@@ -19615,6 +19628,198 @@ html body .page-shell main.anaya-case-study-page > section.featured-final-cta #a
 /* Anaya Explore handoff: remove the mobile/tablet cream tail after the final image before the black CTA starts. */
 html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section#next-level.section.anaya-journey-section {
   padding-bottom: 0 !important;
+}
+
+html body .page-shell main.media-library-page > #playing-awards-media.media-library-section .media-library-card.is-award-mvp-plaque .media-library-frame img {
+  transform: scale(1.14) !important;
+}
+
+/* Shared carousel arrow centering lock: keep round controls and center the chevron glyph optically. */
+html body :is(
+  .media-carousel-arrow,
+  .system-carousel-arrow,
+  .playing-career-arrow,
+  .playing-career-awards-arrow,
+  .media-overlay-nav,
+  .media-overlay-thumb-nav
+) {
+  display: grid !important;
+  aspect-ratio: 1 / 1 !important;
+  align-items: center !important;
+  justify-items: center !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-align: center !important;
+}
+
+html body .media-carousel-arrow {
+  width: 30px !important;
+  height: 30px !important;
+  border-color: #d95a24 !important;
+  color: #9f2f22 !important;
+  -webkit-text-fill-color: #9f2f22 !important;
+}
+
+html body :is(.playing-career-arrow, .media-overlay-nav) {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+html body :is(.playing-career-awards-arrow, .system-carousel-arrow) {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+html body .media-overlay-thumb-nav {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+html body :is(
+  .media-carousel-arrow-prev,
+  .system-carousel-arrow-prev,
+  .playing-career-arrow-prev,
+  .playing-career-awards-arrow-prev,
+  .media-overlay-prev,
+  .media-overlay-thumb-prev
+)::before,
+html body :is(
+  .media-carousel-arrow-next,
+  .system-carousel-arrow-next,
+  .playing-career-arrow-next,
+  .playing-career-awards-arrow-next,
+  .media-overlay-next,
+  .media-overlay-thumb-next
+)::before {
+  display: grid !important;
+  width: 100% !important;
+  height: 100% !important;
+  place-items: center !important;
+  color: currentColor !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 0.72em !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  transform: translateY(-0.02em) !important;
+}
+
+html body :is(
+  .media-carousel-arrow-prev,
+  .system-carousel-arrow-prev,
+  .playing-career-arrow-prev,
+  .playing-career-awards-arrow-prev,
+  .media-overlay-prev,
+  .media-overlay-thumb-prev
+)::before {
+  content: "\2039" !important;
+}
+
+html body :is(
+  .media-carousel-arrow-next,
+  .system-carousel-arrow-next,
+  .playing-career-arrow-next,
+  .playing-career-awards-arrow-next,
+  .media-overlay-next,
+  .media-overlay-thumb-next
+)::before {
+  content: "\203a" !important;
+}
+
+html body :is(.media-carousel-arrow, .system-carousel-arrow)::before {
+  font-size: 1.7rem !important;
+}
+
+html body :is(.playing-career-arrow, .playing-career-awards-arrow, .media-overlay-thumb-nav)::before {
+  font-size: 1.55rem !important;
+}
+
+html body .media-overlay-nav::before {
+  font-size: 2rem !important;
+}
+
+html body :is(
+  .media-carousel-arrow-prev,
+  .system-carousel-arrow-prev,
+  .playing-career-arrow-prev,
+  .playing-career-awards-arrow-prev,
+  .media-overlay-prev,
+  .media-overlay-thumb-prev,
+  .media-carousel-arrow-next,
+  .system-carousel-arrow-next,
+  .playing-career-arrow-next,
+  .playing-career-awards-arrow-next,
+  .media-overlay-next,
+  .media-overlay-thumb-next
+)::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  display: block !important;
+  width: 0.54em !important;
+  height: 0.54em !important;
+  border-color: currentColor !important;
+  border-style: solid !important;
+  border-width: 0 !important;
+  font-size: 1.5rem !important;
+}
+
+html body :is(.media-carousel-arrow, .system-carousel-arrow, .playing-career-arrow, .playing-career-awards-arrow, .media-overlay-nav, .media-overlay-thumb-nav)::after {
+  content: none !important;
+}
+
+html body :is(
+  .media-carousel-arrow-prev,
+  .system-carousel-arrow-prev,
+  .playing-career-arrow-prev,
+  .playing-career-awards-arrow-prev,
+  .media-overlay-prev,
+  .media-overlay-thumb-prev
+)::before {
+  border-bottom-width: 4px !important;
+  border-left-width: 4px !important;
+  transform: translate(-38%, -50%) rotate(45deg) !important;
+}
+
+html body :is(
+  .media-carousel-arrow-next,
+  .system-carousel-arrow-next,
+  .playing-career-arrow-next,
+  .playing-career-awards-arrow-next,
+  .media-overlay-next,
+  .media-overlay-thumb-next
+)::before {
+  border-top-width: 4px !important;
+  border-right-width: 4px !important;
+  transform: translate(-62%, -50%) rotate(45deg) !important;
+}
+
+html body :is(.media-carousel-arrow, .system-carousel-arrow)::before {
+  font-size: 0.8rem !important;
+}
+
+html body :is(.playing-career-arrow, .playing-career-awards-arrow, .media-overlay-thumb-nav)::before {
+  font-size: 1.08rem !important;
+  border-width: 0 !important;
+}
+
+html body :is(.playing-career-arrow-prev, .playing-career-awards-arrow-prev, .media-overlay-thumb-prev)::before {
+  border-bottom-width: 3px !important;
+  border-left-width: 3px !important;
+}
+
+html body :is(.playing-career-arrow-next, .playing-career-awards-arrow-next, .media-overlay-thumb-next)::before {
+  border-top-width: 3px !important;
+  border-right-width: 3px !important;
+}
+
+html body .media-overlay-nav::before {
+  font-size: 1.28rem !important;
 }
 
 @media (max-width: 1024px) {

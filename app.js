@@ -1155,11 +1155,12 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-portrait-1800x2400.avif"),
-        mediaCardSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-card-1200x900.avif"),
+        mediaCardSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
         carouselSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
         thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-overlay-thumb-600x400.webp"),
         alt: "Rocky Mountain College MVP award",
         caption: "Rocky Mountain College MVP",
+        cardClass: "is-award-bg-blend is-award-mvp-plaque",
         orientation: "portrait"
       },
       {
@@ -1173,9 +1174,11 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-landscape-2400x1800.avif"),
+        mediaCardSrc: `${playingCareerAward("playing-awards-shasta-college-hall-of-fame-transparent-600x400.png")}?v=plate-black-rim-20260528`,
         thumbSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-overlay-thumb-600x400.webp"),
         alt: "Shasta College Hall of Fame award",
         caption: "College Hall of Fame - Shasta College",
+        cardClass: "is-award-bg-blend",
         orientation: "landscape"
       },
       {
@@ -1654,9 +1657,10 @@ function mediaLibraryCardMarkup(albumIndex, itemIndex, item, label = "Gallery", 
   const isAwardsCard = album?.title === "Playing Career Awards";
   const awardsThumb = item.mediaCardSrc || mediaItemSrc(item);
   const thumb = isVideo ? mediaItemPoster(item) : isAwardsCard ? awardsThumb : mediaItemCardSrc(item);
+  const cardClass = item.cardClass ? ` ${item.cardClass}` : "";
 
   return `
-    <button class="media-library-card ${isVideo ? "media-video-card" : "media-photo-card"}" type="button" data-media-library-album="${albumIndex}" data-media-library-item="${itemIndex}" aria-label="Open ${item.alt || title}">
+    <button class="media-library-card ${isVideo ? "media-video-card" : "media-photo-card"}${cardClass}" type="button" data-media-library-album="${albumIndex}" data-media-library-item="${itemIndex}" aria-label="Open ${item.alt || title}">
       <span class="media-library-frame">
         ${
           isVideo
