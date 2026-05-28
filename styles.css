@@ -19923,18 +19923,16 @@ html body :is(
   border-right-width: 3px !important;
 }
 
-/* Mobile hero pill line lock: all two-line hero pills use a 1px main/sub gap. */
-@media (max-width: 430px) and (orientation: portrait) {
-  html body .page-shell :is(
-    main#top,
-    main.systems-detail-page,
-    main.featured-page,
-    main.media-library-page,
-    main.anaya-case-study-page,
-    main.archer-page
-  ) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill {
-    gap: 1px !important;
-  }
+/* Hero pill line lock: all two-line hero pills use a 1px main/sub gap at every width. */
+html body .page-shell :is(
+  main#top,
+  main.systems-detail-page,
+  main.featured-page,
+  main.media-library-page,
+  main.anaya-case-study-page,
+  main.archer-page
+) > .page-hero-system.page-hero-system > .hero-pill-system > .hero-pill {
+  gap: 1px !important;
 }
 
 /* Homepage awards carousel lock: no peek cards; every visible award fills a full card. */
@@ -20009,4 +20007,127 @@ html body .page-shell main#top #playing-career .playing-career-award-thumb.is-ho
 html body .page-shell main#top #playing-career .playing-career-awards-arrow {
   top: 50% !important;
   transform: translateY(-50%) !important;
+}
+
+/* Homepage Playing Career photo rail: responsive frame lock for mobile, tablet, desktop, and ultra-wide. */
+html body .page-shell main#top #playing-career.playing-career-section {
+  --playing-career-frame-ratio: 16 / 10;
+  --playing-career-slide-half: calc(var(--playing-career-slide-width) / 2);
+}
+
+html body .page-shell main#top #playing-career .playing-career-track .achievement-card {
+  aspect-ratio: var(--playing-career-frame-ratio) !important;
+}
+
+@media (max-width: 599.98px) {
+  html body .page-shell main#top #playing-career.playing-career-section {
+    --playing-career-composition-width: 100vw;
+    --playing-career-slide-width: 86%;
+    --playing-career-gap: 10px;
+    --playing-career-frame-ratio: 4 / 3;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767.98px) {
+  html body .page-shell main#top #playing-career.playing-career-section {
+    --playing-career-composition-width: 100vw;
+    --playing-career-slide-width: 78%;
+    --playing-career-gap: 11px;
+    --playing-career-frame-ratio: 4 / 3;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024.98px) {
+  html body .page-shell main#top #playing-career.playing-career-section {
+    --playing-career-composition-width: 100vw;
+    --playing-career-slide-width: 72%;
+    --playing-career-gap: 11px;
+    --playing-career-frame-ratio: 3 / 2;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1599.98px) {
+  html body .page-shell main#top #playing-career.playing-career-section {
+    --playing-career-composition-width: 100vw;
+    --playing-career-slide-width: min(64%, 1100px);
+    --playing-career-gap: 11px;
+    --playing-career-frame-ratio: 16 / 10;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 2199.98px) {
+  html body .page-shell main#top #playing-career.playing-career-section {
+    --playing-career-composition-width: 100vw;
+    --playing-career-slide-width: min(60%, 1220px);
+    --playing-career-gap: 11px;
+    --playing-career-frame-ratio: 16 / 10;
+  }
+}
+
+@media (min-width: 2200px) {
+  html body .page-shell main#top #playing-career.playing-career-section {
+    --playing-career-composition-width: min(100vw, 2400px);
+    --playing-career-slide-width: min(54%, 1300px);
+    --playing-career-gap: 11px;
+    --playing-career-frame-ratio: 16 / 10;
+  }
+}
+
+/*
+  Homepage Anaya case-study spacing lock.
+  Retires the older min-height/copy-shift padding stack for this card only:
+  the card uses equal top/bottom padding, then keeps the text, buttons and image
+  grouped together so the eyebrow-to-top and image-to-bottom spaces match.
+*/
+html body .page-shell main#top #featured-work > .featured-card.featured-card--anaya {
+  --featured-anaya-card-pad-y: clamp(30px, 3vw, 48px);
+  --featured-anaya-card-pad-x: clamp(24px, 5vw, 76px);
+  --featured-anaya-stack-gap: clamp(18px, 1.8vw, 30px);
+  min-height: 0 !important;
+  padding:
+    var(--featured-anaya-card-pad-y)
+    var(--featured-anaya-card-pad-x) !important;
+  place-items: center !important;
+}
+
+html body .page-shell main#top #featured-work > .featured-card.featured-card--anaya .innovation-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--featured-anaya-stack-gap) !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+html body .page-shell main#top #featured-work > .featured-card.featured-card--anaya .innovation-card-copy {
+  order: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(7px, 0.75vw, 11px) !important;
+  width: min(100%, var(--featured-body-max, 760px)) !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+html body .page-shell main#top #featured-work > .featured-card.featured-card--anaya .innovation-card-copy .section-heading {
+  margin: 0 !important;
+}
+
+html body .page-shell main#top #featured-work > .featured-card.featured-card--anaya .innovation-card-copy > p {
+  margin: 0 !important;
+}
+
+html body .page-shell main#top #featured-work > .featured-card.featured-card--anaya .featured-pill-row {
+  margin: 0 !important;
+}
+
+html body .page-shell main#top #featured-work > .featured-card.featured-card--anaya .innovation-thumbnail {
+  order: 2 !important;
+  width: min(100%, var(--featured-media-max, 900px)) !important;
+  margin: 0 !important;
 }
