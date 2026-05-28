@@ -11111,7 +11111,7 @@ body .page-shell main.media-library-page > .media-library-section {
 
 body .page-shell main.media-library-page > .media-library-section + .media-library-section {
   margin-top: 0 !important;
-  border-top: 12px solid #ffffff !important;
+  border-top: 0 !important;
 }
 
 body .page-shell main.media-library-page > .page-hero-system + #featured-media.media-library-section {
@@ -11278,7 +11278,7 @@ html body .page-shell main.media-library-page > section.featured-final-cta {
   margin: 0 calc(50% - (var(--gallery-cta-wall-width) * 0.5)) !important;
   padding: clamp(34px, 3.5vw, 48px) var(--gallery-cta-inline-pad) !important;
   border: 0 !important;
-  border-top: 12px solid #ffffff !important;
+  border-top: 0 !important;
   border-radius: 0 !important;
   background: #000000 !important;
   background-color: #000000 !important;
@@ -17531,10 +17531,15 @@ body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero
 /* Archer spacer-line note: middle-section dividers must be one solid white line from edge to edge.
    The hero-to-Training Tool handoff follows Featured: connected bands, no spacer border.
    Do not use margin gaps here; gaps expose the cream/black band colors at the ends. */
-body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-how-section, .archer-development-section, .archer-portfolio-section, .archer-final-cta).section,
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-development-section, .archer-portfolio-section).section,
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(#photos, #videos).section {
   margin-top: 0 !important;
   border-top: 12px solid #ffffff !important;
+}
+
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-how-section, .archer-final-cta).section {
+  margin-top: 0 !important;
+  border-top: 0 !important;
 }
 
 body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section {
