@@ -1143,10 +1143,11 @@ const playingCareerAwardAlbums = [
     showCounter: true,
     thumbnail: playingCareerAward("playing-awards-shasta-college-hall-of-fame-overlay-thumb-600x400.webp"),
     items: [
+      // Overlay strip thumbnails use cropped overlay-thumb assets so the thumbnail slots fill edge-to-edge.
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-balanced-document-thumb-600x400.webp"),
+        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-2nd-team-all-conference-overlay-thumb-600x400.webp"),
         alt: "Second Team All-Conference award",
         caption: "Second Team All-Conference recognition",
         orientation: "landscape"
@@ -1156,7 +1157,7 @@ const playingCareerAwardAlbums = [
         fullSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-portrait-1800x2400.avif"),
         mediaCardSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-card-1200x900.avif"),
         carouselSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
-        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-clean-600x400.png"),
+        thumbSrc: playingCareerAward("playing-awards-rocky-mountain-college-mvp-overlay-thumb-600x400.webp"),
         alt: "Rocky Mountain College MVP award",
         caption: "Rocky Mountain College MVP",
         orientation: "portrait"
@@ -1164,7 +1165,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-all-state-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-shasta-college-all-state-balanced-document-thumb-600x400.webp"),
+        thumbSrc: playingCareerAward("playing-awards-shasta-college-all-state-overlay-thumb-600x400.webp"),
         alt: "First Team All-State award",
         caption: "First Team All-State recognition",
         orientation: "landscape"
@@ -1172,7 +1173,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-transparent-600x400.png"),
+        thumbSrc: playingCareerAward("playing-awards-shasta-college-hall-of-fame-overlay-thumb-600x400.webp"),
         alt: "Shasta College Hall of Fame award",
         caption: "College Hall of Fame - Shasta College",
         orientation: "landscape"
@@ -1180,7 +1181,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-conference-mvp-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-shasta-college-conference-mvp-balanced-document-thumb-600x400.webp"),
+        thumbSrc: playingCareerAward("playing-awards-shasta-college-conference-mvp-overlay-thumb-600x400.webp"),
         alt: "Conference MVP award",
         caption: "Conference MVP recognition",
         orientation: "landscape"
@@ -1188,7 +1189,7 @@ const playingCareerAwardAlbums = [
       {
         type: "image",
         fullSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-landscape-2400x1800.avif"),
-        thumbSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-balanced-document-thumb-600x400.webp"),
+        thumbSrc: playingCareerAward("playing-awards-shasta-college-outstanding-performance-overlay-thumb-600x400.webp"),
         alt: "Outstanding performance award",
         caption: "Outstanding performance recognition",
         orientation: "landscape"
@@ -1973,9 +1974,9 @@ function renderMediaLibraryPage() {
       const lastStart = Math.max(0, state.cards.length - count);
 
       if (direction > 0) {
-        state.start = state.start >= lastStart ? 0 : Math.min(state.start + count, lastStart);
+        state.start = state.start >= lastStart ? 0 : Math.min(state.start + 1, lastStart);
       } else {
-        state.start = state.start <= 0 ? lastStart : Math.max(state.start - count, 0);
+        state.start = state.start <= 0 ? lastStart : Math.max(state.start - 1, 0);
       }
 
       track.innerHTML = visiblePreviewCards(state.cards, state.start).map(state.renderCard).join("");
