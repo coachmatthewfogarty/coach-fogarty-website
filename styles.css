@@ -9318,6 +9318,14 @@ body .page-shell :is(
   }
 }
 
+@media (min-width: 1600px) and (max-width: 1899px) {
+  .about-cover-page .about-letter-gallery img {
+    /* Mid-wide desktop framing lock: match the large-desktop mosaic crop so photos breathe before the 1900px layout handoff. */
+    object-fit: fill;
+    object-position: center center;
+  }
+}
+
 @media (min-width: 1900px) {
   .about-cover-page .about-letter-body {
     grid-template-columns: minmax(0, clamp(840px, 45vw, 1020px)) minmax(560px, 1fr);
@@ -9355,8 +9363,8 @@ body .page-shell :is(
   }
 
   .about-cover-page .about-letter-gallery img {
-    /* Ultra-wide desktop crop reset: 2560px has enough room for the original full-frame cover crop without stretching photos. */
-    object-fit: cover;
+    /* Ultra-wide desktop framing lock: keep the existing mosaic size while showing the full photo inside each wide grid cell. */
+    object-fit: fill;
   }
 }
 
