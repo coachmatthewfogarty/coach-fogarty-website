@@ -20262,3 +20262,8 @@ html body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-h
     margin-top: calc(clamp(26px, 2.4vw, 44px) * -1) !important;
   }
 }
+
+/* Anaya case study hero handoff: match Featured and Archer without overlapping the final hero pill row. */
+html body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system + .anaya-summary-section {
+  margin-top: 0 !important;
+}
