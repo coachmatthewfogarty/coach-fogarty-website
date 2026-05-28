@@ -19284,11 +19284,78 @@ html body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-sec
   display: none !important;
 }
 
-/* Systems detail gold bands match the Featured proof-section background. */
+/* Systems detail bands match the Systems hero/footer cream canvas. */
 html body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #development, #recruiting, #operations, #scouting, #leadership) {
-  background: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 100%) !important;
-  background-color: #f5e7cf !important;
-  background-image: linear-gradient(180deg, #ead8b8 0%, #f5e7cf 100%) !important;
+  background: var(--home-system-card-cream, #fff4e6) !important;
+  background-color: var(--home-system-card-cream, #fff4e6) !important;
+  background-image: none !important;
+}
+
+html body .page-shell main.systems-detail-page {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+html body .page-shell main.systems-detail-page > .page-hero-system {
+  order: 1 !important;
+}
+
+html body .page-shell main.systems-detail-page > .systems-summary-section {
+  order: 2 !important;
+}
+
+html body .page-shell main.systems-detail-page > #development.system-detail-section {
+  order: 3 !important;
+}
+
+html body .page-shell main.systems-detail-page > #operations.system-detail-section {
+  order: 4 !important;
+}
+
+html body .page-shell main.systems-detail-page > #defense.system-detail-section {
+  order: 5 !important;
+}
+
+html body .page-shell main.systems-detail-page > #recruiting.system-detail-section {
+  order: 6 !important;
+}
+
+html body .page-shell main.systems-detail-page > #scouting.system-detail-section {
+  order: 7 !important;
+}
+
+html body .page-shell main.systems-detail-page > #leadership.system-detail-section {
+  order: 8 !important;
+}
+
+html body .page-shell main.systems-detail-page > .featured-final-cta {
+  order: 9 !important;
+}
+
+html body .page-shell main.systems-detail-page > .site-footer {
+  order: 10 !important;
+}
+
+html body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #recruiting) {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #f7f4ef !important;
+}
+
+html body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #recruiting) .system-detail-copy > .eyebrow {
+  color: #f2a179 !important;
+  -webkit-text-fill-color: #f2a179 !important;
+}
+
+html body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #recruiting) .system-detail-copy > h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #recruiting) .system-detail-copy > p:not(.eyebrow) {
+  color: #ded8cf !important;
+  -webkit-text-fill-color: #ded8cf !important;
 }
 
 html body .page-shell main.systems-detail-page > .system-detail-section:is(#defense, #development, #recruiting, #operations, #scouting, #leadership) > .system-detail-grid {
