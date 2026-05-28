@@ -1090,6 +1090,7 @@ const playingCareerAlbums = [
       },
       {
         title: "Rocky Mountain College Push Shot",
+        showOnHome: false,
         carouselSrc: playingCareerPhoto("playing-career-rocky-mountain-college-push-shot-carousel-1200x900.avif"),
         thumbSrc: playingCareerPhoto("playing-career-rocky-mountain-college-push-shot-overlay-thumb-600x400.webp"),
         fullSrc: playingCareerPhoto("playing-career-rocky-mountain-college-push-shot-portrait-1800x2400.avif"),
@@ -2468,12 +2469,18 @@ function renderAnayaGalleries() {
   });
 }
 
+function playingCareerHomeItems() {
+  return playingCareerAlbums[0].items
+    .map((item, itemIndex) => ({ item, itemIndex }))
+    .filter(({ item }) => item.showOnHome !== false);
+}
+
 function renderPlayingCareerCarousel() {
   if (!playingCareerTrack) {
     return;
   }
 
-  const items = playingCareerAlbums[0].items;
+  const items = playingCareerHomeItems();
   const itemCount = items.length;
 
   if (!itemCount) {
@@ -2494,8 +2501,8 @@ function renderPlayingCareerCarousel() {
 
   playingCareerTrack.innerHTML = slideIndexes
     .map(
-      (itemIndex, slotIndex) => {
-        const item = items[itemIndex];
+      (homeItemIndex, slotIndex) => {
+        const { item, itemIndex } = items[homeItemIndex];
         const slideClass = slotIndex === activeSlot ? " is-active" : slotIndex < activeSlot ? " is-prev" : " is-next";
         const ariaCurrent = slotIndex === activeSlot ? ' aria-current="true"' : "";
 
@@ -2813,7 +2820,7 @@ function openPlayingCareerAlbum(card) {
   openMediaAlbum(0, playingCareerAlbums, itemIndex);
 }
 
-function normalizePlayingCareerIndex(index, itemCount = playingCareerAlbums[0].items.length) {
+function normalizePlayingCareerIndex(index, itemCount = playingCareerHomeItems().length) {
   if (!itemCount) {
     return 0;
   }
@@ -2822,7 +2829,7 @@ function normalizePlayingCareerIndex(index, itemCount = playingCareerAlbums[0].i
 }
 
 function setActivePlayingCareerIndex(index) {
-  const itemCount = playingCareerAlbums[0].items.length;
+  const itemCount = playingCareerHomeItems().length;
 
   if (!itemCount) {
     return;
@@ -2833,7 +2840,7 @@ function setActivePlayingCareerIndex(index) {
 }
 
 function scrollPlayingCareerCarousel(direction) {
-  if (!playingCareerTrack || !playingCareerAlbums[0].items.length) {
+  if (!playingCareerTrack || !playingCareerHomeItems().length) {
     return;
   }
 
