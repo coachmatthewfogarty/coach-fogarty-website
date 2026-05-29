@@ -20720,8 +20720,8 @@ html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-p
 
 /* Footer bottom row breathing room: keep the copyright/social line lower and less cramped. */
 html body .site-footer.site-chrome .footer-bottom {
-  margin-top: clamp(34px, 3vw, 56px) !important;
-  padding-top: clamp(18px, 1.6vw, 30px) !important;
+  margin-top: clamp(18px, 1.65vw, 30px) !important;
+  padding-top: clamp(6px, 0.65vw, 12px) !important;
 }
 
 html body .site-footer.site-chrome .footer-socials {
