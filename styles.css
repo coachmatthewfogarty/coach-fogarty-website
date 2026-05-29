@@ -20682,20 +20682,20 @@ html body .page-shell main#top > #playing-career.section {
   padding-top: 0 !important;
 }
 
-/* Homepage hero highlight links: use a real wrapping row, not the older forced grid lanes. */
+/* Homepage hero highlight links: one-line portfolio highlight row with visible dividers. */
 html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay {
-  width: calc(100% - 48px) !important;
-  max-width: calc(100% - 48px) !important;
-  padding: 14px 18px !important;
+  width: calc(100% - 24px) !important;
+  max-width: calc(100% - 24px) !important;
+  padding: 12px !important;
 }
 
 html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay-text {
   display: flex !important;
-  flex-wrap: wrap !important;
+  flex-wrap: nowrap !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 7px 18px !important;
-  white-space: normal !important;
+  gap: 8px !important;
+  white-space: nowrap !important;
 }
 
 html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay-text a {
@@ -20708,7 +20708,9 @@ html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-p
 }
 
 html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay-text span {
-  display: none !important;
+  display: inline-flex !important;
+  position: static !important;
+  transform: none !important;
 }
 
 /* Footer bottom row breathing room: keep the copyright/social line lower and less cramped. */
