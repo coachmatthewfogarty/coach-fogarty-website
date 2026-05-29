@@ -20569,3 +20569,26 @@ html body .page-shell main.archer-page.archer-page > #photos.section.archer-feat
     grid-template-columns: minmax(0, 1fr) !important;
   }
 }
+
+/* Hero edge lock: active portfolio heroes must reach the viewport edge, with no white side rails from the centered page shell. */
+html body .page-shell :is(
+  main#top,
+  main.systems-detail-page,
+  main.featured-page,
+  main.media-library-page,
+  main.anaya-case-study-page,
+  main.archer-page
+) > .hero.page-hero-system.page-hero-system {
+  box-sizing: border-box !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-right: calc(50% - 50vw) !important;
+  margin-left: calc(50% - 50vw) !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+}
+
+html body .page-shell main#top > .hero.page-hero-system.page-hero-system {
+  margin-bottom: 0 !important;
+}
