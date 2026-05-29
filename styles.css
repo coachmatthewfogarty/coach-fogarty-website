@@ -20682,13 +20682,7 @@ html body .page-shell main#top > #playing-career.section {
   padding-top: 0 !important;
 }
 
-/* Homepage hero highlight links: one-line portfolio highlight row with visible dividers. */
-html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay {
-  width: calc(100% - 24px) !important;
-  max-width: calc(100% - 24px) !important;
-  padding: 12px !important;
-}
-
+/* Homepage hero highlight links: keep the original contained overlay, but let links flow in one natural row. */
 html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay-text {
   display: flex !important;
   flex-wrap: nowrap !important;
