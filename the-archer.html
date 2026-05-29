@@ -183,17 +183,30 @@
             <h2>Featured Archer Visuals</h2>
           </div>
           <div class="archer-media-grid">
-            <figure><img src="./assets/the-archer/photos/archer-shooting-development-wide-01.jpg" data-image-role="media-card" alt="Wide view of The Archer shooting development tool during a training setup" /><figcaption>Shooting development setup</figcaption></figure>
-            <figure><img src="./assets/the-archer/photos/archer-blue-wall-high-arc-release-01-q98.jpg" data-image-role="media-card" alt="High-arc release over The Archer guide on a blue-wall gym court" /><figcaption>High-arc release feedback</figcaption></figure>
-            <figure><img src="./assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-q98.jpg" data-image-role="media-card" alt="Video poster for floater touch arc training with The Archer" /><figcaption>Floater touch arc training video</figcaption></figure>
-            <figure><img src="./assets/the-archer/photos/archer-free-throw-set-position-close-placement-01.png" data-image-role="media-card" alt="Free throw set position close to The Archer shooting guide" /><figcaption>Free throw set position</figcaption></figure>
-            <figure><img src="./assets/the-archer/photos/archer-jump-hook-apex-point-01.png" data-image-role="media-card" alt="Jump hook apex point training with The Archer basketball tool" /><figcaption>Post touch apex point</figcaption></figure>
-            <figure><img src="./assets/the-archer/photos/archer-red-lane-touch-finish-01-q98.jpg" data-image-role="media-card" alt="Wide view of a soft-touch finish rep with The Archer on the red lane" /><figcaption>Soft-touch finish rep</figcaption></figure>
+            <figure data-archer-overlay-item="0" role="button" tabindex="0"><img src="./assets/the-archer/photos/archer-shooting-development-wide-01.jpg" data-image-role="media-card" alt="Wide view of The Archer shooting development tool during a training setup" /><figcaption>Shooting development setup</figcaption></figure>
+            <figure data-archer-overlay-item="11" role="button" tabindex="0"><img src="./assets/the-archer/photos/archer-blue-wall-high-arc-release-01-q98.jpg" data-image-role="media-card" alt="High-arc release over The Archer guide on a blue-wall gym court" /><figcaption>High-arc release feedback</figcaption></figure>
+            <figure data-archer-overlay-item="18" role="button" tabindex="0"><img src="./assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-q98.jpg" data-image-role="media-card" alt="Video poster for floater touch arc training with The Archer" /><figcaption>Floater touch arc training video</figcaption></figure>
+            <figure data-archer-overlay-item="2" role="button" tabindex="0"><img src="./assets/the-archer/photos/archer-free-throw-set-position-close-placement-01.png" data-image-role="media-card" alt="Free throw set position close to The Archer shooting guide" /><figcaption>Free throw set position</figcaption></figure>
+            <figure data-archer-overlay-item="10" role="button" tabindex="0"><img src="./assets/the-archer/photos/archer-jump-hook-apex-point-01.png" data-image-role="media-card" alt="Jump hook apex point training with The Archer basketball tool" /><figcaption>Post touch apex point</figcaption></figure>
+            <figure data-archer-overlay-item="13" role="button" tabindex="0"><img src="./assets/the-archer/photos/archer-red-lane-touch-finish-01-q98.jpg" data-image-role="media-card" alt="Wide view of a soft-touch finish rep with The Archer on the red lane" /><figcaption>Soft-touch finish rep</figcaption></figure>
           </div>
-          <div class="featured-actions archer-media-actions" aria-label="Explore full Archer media">
-            <a class="button button-primary" href="./gallery#archer-media">View Archer Photos</a>
-            <a class="button button-secondary" href="./gallery#video-galleries">View Archer Videos</a>
-            <a class="button button-secondary" href="./gallery">View Full Gallery</a>
+        </section>
+
+        <section class="section archer-featured-visuals archer-video-preview-section" id="archer-videos">
+          <div class="section-heading">
+            <p class="eyebrow">VIDEO PROOF</p>
+            <div class="archer-video-heading-row">
+              <h2>Featured Archer Clips</h2>
+              <div class="archer-video-carousel-controls" aria-label="Browse featured Archer clips">
+                <button class="archer-video-carousel-button" type="button" data-archer-video-prev aria-label="Previous Archer videos">&lsaquo;</button>
+                <button class="archer-video-carousel-button" type="button" data-archer-video-next aria-label="Next Archer videos">&rsaquo;</button>
+              </div>
+            </div>
+          </div>
+          <div class="archer-media-grid archer-video-preview-grid">
+            <figure data-archer-video-item="1" role="button" tabindex="0"><img src="./assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-q98.jpg" data-image-role="media-card" alt="Video poster for floater touch arc training with The Archer" /><figcaption>Floater touch arc training</figcaption></figure>
+            <figure data-archer-video-item="11" role="button" tabindex="0"><img src="./assets/the-archer/thumbnails/archer-wing-arc-shooting-rep-01-poster-q98.jpg" data-image-role="media-card" alt="Video poster for wing arc shooting rep with The Archer" /><figcaption>Wing arc shooting rep</figcaption></figure>
+            <figure data-archer-video-item="15" role="button" tabindex="0"><img src="./assets/the-archer/thumbnails/archer-red-lane-group-arc-rep-01-poster-q98.jpg" data-image-role="media-card" alt="Video poster for red-lane group arc rep with The Archer" /><figcaption>Red-lane group arc rep</figcaption></figure>
           </div>
         </section>
 
@@ -285,7 +298,119 @@
 </footer>
       </main>
     </div>
+    <div class="media-overlay" id="mediaOverlay" aria-hidden="true">
+      <div class="media-overlay-panel" role="dialog" aria-modal="true" aria-labelledby="mediaOverlayTitle">
+        <button class="media-overlay-close" id="mediaOverlayClose" type="button" aria-label="Close media viewer">&times;</button>
+        <button class="media-overlay-nav media-overlay-prev" id="mediaOverlayPrev" type="button" aria-label="Previous media">&lsaquo;</button>
+        <div class="media-overlay-content">
+          <p class="eyebrow">GALLERY</p>
+          <h2 id="mediaOverlayTitle"></h2>
+          <p class="media-overlay-counter" id="mediaOverlayCounter" hidden></p>
+          <div class="media-overlay-viewer" id="mediaOverlayViewer"></div>
+          <p class="media-overlay-caption" id="mediaOverlayCaption"></p>
+          <div class="media-overlay-strip-shell" id="mediaOverlayStripShell" hidden>
+            <button class="media-overlay-thumb-nav media-overlay-thumb-prev" id="mediaOverlayThumbPrev" type="button" aria-label="Scroll thumbnails left">&lsaquo;</button>
+            <div class="media-overlay-strip" id="mediaOverlayStrip" aria-label="Album thumbnails"></div>
+            <button class="media-overlay-thumb-nav media-overlay-thumb-next" id="mediaOverlayThumbNext" type="button" aria-label="Scroll thumbnails right">&rsaquo;</button>
+          </div>
+        </div>
+        <button class="media-overlay-nav media-overlay-next" id="mediaOverlayNext" type="button" aria-label="Next media">&rsaquo;</button>
+      </div>
+    </div>
     <script src="./assets/js/image-fallbacks.js"></script>
+    <script src="./app.js?v=archer-page-overlay-20260529"></script>
+    <script>
+      (() => {
+        if (typeof archerMediaAlbum === "undefined" || typeof openMediaAlbum !== "function") {
+          return;
+        }
+
+        const fullAlbum = { ...archerMediaAlbum, eyebrow: "THE ARCHER", mediaLibrary: true, showCounter: true };
+        const videoAlbum = {
+          eyebrow: "THE ARCHER",
+          title: "The Archer Videos",
+          mediaLibrary: true,
+          showCounter: true,
+          items: archerMediaAlbum.items.filter((item) => item.type === "video")
+        };
+        const videoTriggers = Array.from(document.querySelectorAll("[data-archer-video-item]"));
+        const videoPrev = document.querySelector("[data-archer-video-prev]");
+        const videoNext = document.querySelector("[data-archer-video-next]");
+        const featuredVideoIndexes = videoTriggers
+          .map((trigger) => Number(trigger.dataset.archerVideoItem || 0))
+          .filter((index) => Number.isInteger(index) && index >= 0 && index < videoAlbum.items.length);
+        const videoPreviewOrder = [
+          ...featuredVideoIndexes,
+          ...videoAlbum.items.map((_, index) => index).filter((index) => !featuredVideoIndexes.includes(index))
+        ];
+        let videoStartIndex = 0;
+
+        const resolveMediaSrc = (item) => {
+          const src = item.mediaCardSrc || item.poster || item.thumbSrc || item.src || "";
+          return src.startsWith("./") || src.startsWith("/") ? src : `./${src}`;
+        };
+
+        const renderVideoPreview = () => {
+          if (!videoAlbum.items.length) {
+            return;
+          }
+
+          videoTriggers.forEach((trigger, slotIndex) => {
+            const videoIndex = videoPreviewOrder[(videoStartIndex + slotIndex) % videoPreviewOrder.length];
+            const item = videoAlbum.items[videoIndex];
+            const image = trigger.querySelector("img");
+            const caption = trigger.querySelector("figcaption");
+            trigger.dataset.archerVideoItem = String(videoIndex);
+            if (image) {
+              image.src = resolveMediaSrc(item);
+              image.alt = item.alt || `Video poster for ${item.caption || "an Archer training clip"}`;
+            }
+            if (caption) {
+              caption.textContent = item.caption || "Archer training clip";
+            }
+          });
+        };
+
+        const stepVideoPreview = (direction) => {
+          if (!videoPreviewOrder.length) {
+            return;
+          }
+
+          videoStartIndex = (videoStartIndex + direction + videoPreviewOrder.length) % videoPreviewOrder.length;
+          renderVideoPreview();
+        };
+
+        const openTrigger = (trigger, albums, itemIndex) => {
+          openMediaAlbum(0, albums, Number(itemIndex || 0));
+        };
+
+        document.querySelectorAll("[data-archer-overlay-item]").forEach((trigger) => {
+          const activate = () => openTrigger(trigger, [fullAlbum], trigger.dataset.archerOverlayItem);
+          trigger.addEventListener("click", activate);
+          trigger.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activate();
+            }
+          });
+        });
+
+        videoTriggers.forEach((trigger) => {
+          const activate = () => openTrigger(trigger, [videoAlbum], trigger.dataset.archerVideoItem);
+          trigger.addEventListener("click", activate);
+          trigger.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activate();
+            }
+          });
+        });
+
+        videoPrev?.addEventListener("click", () => stepVideoPreview(-1));
+        videoNext?.addEventListener("click", () => stepVideoPreview(1));
+        renderVideoPreview();
+      })();
+    </script>
     <script src="./footer.js?v=mobile-featured-subnav-20260527"></script>
   </body>
 </html>
