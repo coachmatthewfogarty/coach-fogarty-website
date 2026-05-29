@@ -20707,6 +20707,17 @@ html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-p
   transform: none !important;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay-text {
+    justify-content: space-between !important;
+    gap: clamp(12px, 2.4vw, 28px) !important;
+  }
+
+  html body .page-shell main#top > .hero.page-hero-system.page-hero-system > .hero-pill-system {
+    gap: clamp(22px, 3vw, 34px) !important;
+  }
+}
+
 /* Footer bottom row breathing room: keep the copyright/social line lower and less cramped. */
 html body .site-footer.site-chrome .footer-bottom {
   margin-top: clamp(34px, 3vw, 56px) !important;
