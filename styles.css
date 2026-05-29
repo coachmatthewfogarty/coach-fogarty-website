@@ -14740,27 +14740,27 @@ body .page-shell main#top #systems .library-card-media img {
   }
 
   body .page-shell main#top #systems .system-card[data-system-type="dpat"] {
-    order: 1;
-  }
-
-  body .page-shell main#top #systems .system-card[data-system-type="development"] {
     order: 2;
   }
 
-  body .page-shell main#top #systems .system-card[data-system-type="recruiting"] {
-    order: 3;
+  body .page-shell main#top #systems .system-card[data-system-type="development"] {
+    order: 1;
   }
 
-  body .page-shell main#top #systems .system-card[data-system-type="operations"] {
+  body .page-shell main#top #systems .system-card[data-system-type="recruiting"] {
     order: 4;
   }
 
+  body .page-shell main#top #systems .system-card[data-system-type="operations"] {
+    order: 3;
+  }
+
   body .page-shell main#top #systems .system-card[data-system-type="scouting"] {
-    order: 5;
+    order: 6;
   }
 
   body .page-shell main#top #systems .system-card[data-system-type="leadership"] {
-    order: 6;
+    order: 5;
   }
 
   body .page-shell main#top #systems :is(.system-card, .library-card.system-card) {
@@ -17057,6 +17057,177 @@ html body .page-shell main.featured-page > section.featured-final-cta .featured-
   border-color: var(--coach-orange-hover) !important;
   background: var(--coach-orange-hover) !important;
   background-image: none !important;
+}
+
+/* Homepage Explore band mirrors the Featured page CTA directly below the hero. */
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta {
+  --home-explore-wall-width: min(var(--home-section-wall-width, 2560px), 100vw);
+  --home-explore-padding: var(--featured-section-padding, 42px);
+  align-items: stretch !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  clip-path: none !important;
+  color: #f7f4ef !important;
+  display: grid !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px) !important;
+  margin: 0 calc(50% - (var(--home-explore-wall-width) * 0.5)) !important;
+  max-width: none !important;
+  padding: var(--home-explore-padding) !important;
+  width: var(--home-explore-wall-width) !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta > div {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta .eyebrow {
+  color: #f2a179 !important;
+  -webkit-text-fill-color: #f2a179 !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta p:not(.eyebrow) {
+  color: #ded8cf !important;
+  -webkit-text-fill-color: #ded8cf !important;
+  max-width: none !important;
+  overflow-wrap: normal !important;
+  text-wrap: wrap !important;
+  white-space: normal !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions {
+  align-self: stretch !important;
+  display: grid !important;
+  gap: 12px !important;
+  grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+  margin-top: 0 !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button-primary {
+  background: var(--coach-orange) !important;
+  background-image: none !important;
+  border-color: var(--coach-orange) !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button-secondary {
+  background: rgba(255, 255, 255, 0.08) !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button:hover,
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button:focus-visible {
+  background: var(--coach-orange-hover) !important;
+  background-image: none !important;
+  border-color: var(--coach-orange-hover) !important;
+}
+
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta + #systems.section {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 1025px) {
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 {
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1320px) {
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta {
+    gap: clamp(16px, 2vw, 24px) !important;
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 205px) !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 {
+    font-size: clamp(28px, 3.25vw, 38px) !important;
+    line-height: 1.05 !important;
+    max-width: 100% !important;
+    text-wrap: nowrap !important;
+    white-space: nowrap !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta p:not(.eyebrow) {
+    font-size: 16px !important;
+    line-height: 1.42 !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions {
+    gap: 9px !important;
+    grid-template-rows: repeat(3, minmax(38px, 1fr)) !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button {
+    font-size: 0.78rem !important;
+    height: auto !important;
+    min-height: 38px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta {
+    align-items: start !important;
+    gap: 24px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 {
+    font-size: clamp(28px, 5.2vw, 38px) !important;
+    line-height: 1.05 !important;
+    max-width: 100% !important;
+    text-wrap: wrap !important;
+    white-space: normal !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta p:not(.eyebrow) {
+    font-size: clamp(15px, 2.3vw, 17px) !important;
+    line-height: 1.55 !important;
+    width: 100% !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions {
+    align-self: start !important;
+    grid-auto-rows: minmax(48px, auto) !important;
+    grid-template-rows: none !important;
+    width: min(100%, 520px) !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button {
+    height: auto !important;
+    min-height: 48px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 {
+    font-size: clamp(24px, 8.4vw, 34px) !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 1024px) {
