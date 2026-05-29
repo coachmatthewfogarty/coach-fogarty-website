@@ -20197,3 +20197,137 @@ html body .page-shell main.systems-detail-page > .hero.page-hero-system.page-her
 html body .page-shell main.anaya-case-study-page > .hero.page-hero-system.page-hero-system + .anaya-summary-section {
   margin-top: 0 !important;
 }
+
+/*
+  Archer featured visuals refinement:
+  Keep the Archer page as a restrained case study preview and route the full
+  photo/video library through the existing Gallery page overlay flow.
+*/
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals {
+  --archer-featured-preview-gap: clamp(14px, 1.25vw, 22px);
+  padding-top: var(--featured-section-padding) !important;
+  padding-right: var(--archer-section-inline-pad) !important;
+  padding-bottom: var(--featured-section-padding) !important;
+  padding-left: var(--archer-section-inline-pad) !important;
+  background: linear-gradient(180deg, #f6ead7 0%, #fff7e8 100%) !important;
+  background-color: #fff7e8 !important;
+  background-image: linear-gradient(180deg, #f6ead7 0%, #fff7e8 100%) !important;
+}
+
+html body:has(main.archer-page) .page-shell main.archer-page.archer-page > #photos.section.section.archer-featured-visuals {
+  padding-bottom: var(--featured-section-padding) !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals > :is(.section-heading, .archer-media-grid, .archer-media-actions) {
+  width: auto !important;
+  max-width: none !important;
+  margin-right: calc(var(--archer-section-rail-gutter) - var(--archer-section-inline-pad)) !important;
+  margin-left: calc(var(--archer-section-rail-gutter) - var(--archer-section-inline-pad)) !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals > .section-heading {
+  margin-bottom: 16px !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals > .archer-media-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--archer-program-media-gap, 11px) !important;
+  background: transparent !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals .archer-media-grid figure {
+  position: relative !important;
+  display: grid !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+  overflow: hidden !important;
+  aspect-ratio: 4 / 3 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #1f1b16 !important;
+  box-shadow: none !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals .archer-media-grid figure::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.22) 72%,
+      rgba(0, 0, 0, 0.66) 100%
+    ) !important;
+  pointer-events: none !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals .archer-media-grid :is(img, video) {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  border-radius: 0 !important;
+  background: #1f1b16 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals .archer-media-grid figure:nth-child(2) img {
+  object-position: center 18% !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals .archer-media-grid figure:nth-child(3) img {
+  object-position: 65% 58% !important;
+  transform: scale(1.36) !important;
+  transform-origin: 65% 58% !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals .archer-media-grid figure:nth-child(6) img {
+  object-position: 45% 60% !important;
+  transform: scale(1.28) !important;
+  transform-origin: 45% 60% !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals .archer-media-grid figcaption,
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals .archer-media-grid figure:has(video) figcaption {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 2 !important;
+  min-height: 0 !important;
+  padding: 14px 16px !important;
+  color: #fff8ec !important;
+  background: transparent !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  text-align: left !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.46) !important;
+  pointer-events: none !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals > .archer-media-actions {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  margin-top: var(--archer-program-media-gap, 11px) !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals > .archer-media-actions::before {
+  content: none !important;
+}
+
+html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals > .archer-media-actions .button {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals > .archer-media-grid,
+  html body .page-shell main.archer-page.archer-page > #photos.section.archer-featured-visuals > .archer-media-actions {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
