@@ -17100,6 +17100,10 @@ html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 
   -webkit-text-fill-color: #ffffff !important;
 }
 
+html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 span {
+  display: inline !important;
+}
+
 html body .page-shell main#top > section.home-explore-cta.featured-final-cta p:not(.eyebrow) {
   color: #ded8cf !important;
   -webkit-text-fill-color: #ded8cf !important;
@@ -17194,11 +17198,11 @@ html body .page-shell main#top > section.home-explore-cta.featured-final-cta + #
   }
 
   html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 {
-    font-size: clamp(28px, 5.2vw, 38px) !important;
+    font-size: clamp(22px, 3.35vw, 28px) !important;
     line-height: 1.05 !important;
     max-width: 100% !important;
-    text-wrap: wrap !important;
-    white-space: normal !important;
+    text-wrap: nowrap !important;
+    white-space: nowrap !important;
   }
 
   html body .page-shell main#top > section.home-explore-cta.featured-final-cta p:not(.eyebrow) {
@@ -17220,9 +17224,39 @@ html body .page-shell main#top > section.home-explore-cta.featured-final-cta + #
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta > div {
+    width: 100% !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta p:not(.eyebrow) {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions {
+    align-self: stretch !important;
+    justify-self: stretch !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button {
+    max-width: none !important;
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 767px) {
   html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 {
-    font-size: clamp(24px, 8.4vw, 34px) !important;
+    font-size: clamp(11.5px, 3.7vw, 30px) !important;
+    line-height: 1.08 !important;
+    text-wrap: nowrap !important;
+    white-space: nowrap !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta h2 span {
+    display: inline !important;
   }
 
   html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions {
@@ -20570,20 +20604,22 @@ html body .page-shell main.archer-page.archer-page > #photos.section.archer-feat
   }
 }
 
-/* Hero edge lock: active portfolio heroes must reach the viewport edge, with no white side rails from the centered page shell. */
+/* Hero edge lock: active portfolio heroes use the same centered wall as the homepage Explore band. */
 html body .page-shell :is(
   main#top,
   main.systems-detail-page,
   main.featured-page,
   main.media-library-page,
+  main.credentials-page,
   main.anaya-case-study-page,
   main.archer-page
 ) > .hero.page-hero-system.page-hero-system {
+  --home-hero-wall-width: min(var(--home-section-wall-width, 2560px), 100vw);
   box-sizing: border-box !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin-right: calc(50% - 50vw) !important;
-  margin-left: calc(50% - 50vw) !important;
+  width: var(--home-hero-wall-width) !important;
+  max-width: 2560px !important;
+  margin-right: calc(50% - (var(--home-hero-wall-width) * 0.5)) !important;
+  margin-left: calc(50% - (var(--home-hero-wall-width) * 0.5)) !important;
   border-right: 0 !important;
   border-left: 0 !important;
   border-radius: 0 !important;
@@ -20599,11 +20635,12 @@ html body .page-shell main#top {
 }
 
 html body .page-shell main#top > :is(#systems.section, #media.section) {
+  --home-systems-media-wall-width: min(var(--home-section-wall-width, 2560px), 100vw);
   box-sizing: border-box !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin-right: calc(50% - 50vw) !important;
-  margin-left: calc(50% - 50vw) !important;
+  width: var(--home-systems-media-wall-width) !important;
+  max-width: 2560px !important;
+  margin-right: calc(50% - (var(--home-systems-media-wall-width) * 0.5)) !important;
+  margin-left: calc(50% - (var(--home-systems-media-wall-width) * 0.5)) !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
   border-right: 0 !important;
@@ -20651,10 +20688,11 @@ html body .page-shell main#top :is(#systems .library-grid, #media .gallery-grid)
 }
 
 html body .page-shell main#top > #featured-work {
+  --featured-wall-width: min(var(--home-section-wall-width, 2560px), 100vw);
   box-sizing: border-box !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin: 0 calc(50% - 50vw) !important;
+  width: var(--featured-wall-width) !important;
+  max-width: 2560px !important;
+  margin: 0 calc(50% - (var(--featured-wall-width) * 0.5)) !important;
   padding: 0 !important;
   gap: 0 !important;
   background: transparent !important;
@@ -20671,7 +20709,11 @@ html body .page-shell main#top > #featured-work > .featured-card + .featured-car
   margin-top: 0 !important;
 }
 
-html body .page-shell main#top > #featured-work + #media.section,
+html body .page-shell main#top > #featured-work + #media.section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 html body .page-shell main#top > #media.section + #playing-career.section {
   margin-top: 0 !important;
   padding-top: 0 !important;
@@ -20680,6 +20722,13 @@ html body .page-shell main#top > #media.section + #playing-career.section {
 html body .page-shell main#top > #playing-career.section {
   margin-top: 0 !important;
   padding-top: 0 !important;
+}
+
+/* Homepage Archer-to-Program Media handoff: remove the internal bottom shelf so the only visible divider is the 11px grid rhythm. */
+html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+  --featured-archer-stack-top-offset: 0px;
+  min-height: auto !important;
+  padding-bottom: var(--home-section-grid-gap) !important;
 }
 
 /* Homepage hero highlight links: keep the original contained overlay, but let links flow in one natural row. */
