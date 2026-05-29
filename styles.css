@@ -20681,3 +20681,32 @@ html body .page-shell main#top > #playing-career.section {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+/* Homepage hero highlight links: use a real wrapping row, not the older forced grid lanes. */
+html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay {
+  width: calc(100% - 48px) !important;
+  max-width: calc(100% - 48px) !important;
+  padding: 14px 18px !important;
+}
+
+html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay-text {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px 18px !important;
+  white-space: normal !important;
+}
+
+html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay-text a {
+  display: inline-flex !important;
+  grid-column: auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+}
+
+html body .page-shell main#top > .hero.page-hero-system.page-hero-system .hero-portrait-overlay-text span {
+  display: none !important;
+}
