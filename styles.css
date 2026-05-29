@@ -20592,3 +20592,44 @@ html body .page-shell :is(
 html body .page-shell main#top > .hero.page-hero-system.page-hero-system {
   margin-bottom: 0 !important;
 }
+
+/* Homepage Systems/Program Media gutter lock: outer rails match the internal card gap. */
+html body .page-shell main#top {
+  --home-section-grid-gap: 11px;
+}
+
+html body .page-shell main#top > :is(#systems.section, #media.section) {
+  box-sizing: border-box !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-right: calc(50% - 50vw) !important;
+  margin-left: calc(50% - 50vw) !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+html body .page-shell main#top > :is(#systems.section, #media.section)::before {
+  content: none !important;
+}
+
+html body .page-shell main#top :is(#systems .library-grid, #media .gallery-grid) {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: var(--home-section-grid-gap) !important;
+  gap: var(--home-section-grid-gap) !important;
+  row-gap: var(--home-section-grid-gap) !important;
+  column-gap: var(--home-section-grid-gap) !important;
+  background: #ffffff !important;
+}
+
+html body .page-shell main#top > #featured-work + #media.section {
+  margin-top: var(--home-section-grid-gap) !important;
+  padding-top: 0 !important;
+}
