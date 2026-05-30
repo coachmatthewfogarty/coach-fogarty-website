@@ -155,6 +155,17 @@ const anayaPhotoFolder = (section) => `${anayaAssetRoot}/photos/${anayaAssetSect
 const anayaVideoFolder = (section) => `${anayaAssetRoot}/videos/${anayaAssetSection(section)}/`;
 const anayaPhoto = (section, fileName) => `${anayaPhotoFolder(section)}${fileName}`;
 const anayaVideo = (section, fileName) => `${anayaVideoFolder(section)}${fileName}`;
+const playableVideoSources = new Set([
+  "assets/the-archer/videos/archer-rim-ladder-finishing-rep-01-720p.mp4",
+  "assets/the-archer/videos/archer-rim-ladder-approach-dribble-01-720p.mp4",
+  "assets/the-archer/videos/archer-wing-arc-shooting-rep-01-720p.mp4",
+  "assets/the-archer/videos/archer-full-court-arc-training-rotation-01-720p.mp4",
+  "assets/the-archer/videos/archer-blue-wall-high-arc-release-clip-01-720p.mp4",
+  "assets/the-archer/videos/archer-blue-wall-coached-high-arc-01-720p.mp4",
+  "assets/the-archer/videos/archer-red-lane-group-arc-rep-01-720p.mp4"
+]);
+const isPlayableMediaItem = (item) => item?.type !== "video" || playableVideoSources.has(item.src);
+const playableMediaItems = (items = []) => items.filter(isPlayableMediaItem);
 const anayaCaseStudyImage = (section, fileBase, caption, alt = caption) => ({
   type: "image",
   src: anayaPhoto(section, `${fileBase}-landscape-stretch-fill-q98-2400x1800.avif`),
@@ -1994,7 +2005,7 @@ function renderMediaLibraryPage() {
   const archerVideoAlbum = mediaLibraryAlbum(
     {
       title: "The Archer Videos",
-      items: archerMediaAlbum.items.filter((item) => item.type === "video")
+      items: archerMediaAlbum.items.filter((item) => item.type === "video" && isPlayableMediaItem(item))
     },
     "THE ARCHER"
   );
@@ -2003,7 +2014,7 @@ function renderMediaLibraryPage() {
       title: "Anaya Beard Development Videos",
       items: anayaSections.flatMap((section) =>
         (section.items || [])
-          .filter((item) => item.type === "video")
+          .filter((item) => item.type === "video" && isPlayableMediaItem(item))
           .map((item) => ({ ...item, caption: `${section.title} - ${item.caption || "Video"}` }))
       )
     },
@@ -2118,8 +2129,8 @@ function renderMediaLibraryPage() {
     const archerVideoAlbumIndex = albumIndexFor(archerVideoAlbum);
     const anayaVideoAlbumIndex = albumIndexFor(anayaVideoAlbum);
     const videoPreviewItems = [
-      ...archerVideoAlbum.items.map((item, itemIndex) => ({ albumIndex: archerVideoAlbumIndex, itemIndex, item, label: "The Archer Video" })),
-      ...anayaVideoAlbum.items.map((item, itemIndex) => ({ albumIndex: anayaVideoAlbumIndex, itemIndex, item, label: "Development Video" }))
+      ...activeAlbumItemsFor(archerVideoAlbum).map((item, itemIndex) => ({ albumIndex: archerVideoAlbumIndex, itemIndex, item, label: "The Archer Video" })),
+      ...activeAlbumItemsFor(anayaVideoAlbum).filter((item) => item.src).map((item, itemIndex) => ({ albumIndex: anayaVideoAlbumIndex, itemIndex, item, label: "Development Video" }))
     ];
 
     mediaVideoGrid.innerHTML = previewCarouselMarkup(
@@ -2149,9 +2160,10 @@ function renderMediaLibraryPage() {
 
   if (mediaArcherFeatured) {
     const albumIndex = albumIndexFor(archerAlbum);
+    const archerFeaturedItems = activeAlbumItemsFor(archerAlbum);
     mediaArcherFeatured.innerHTML = previewCarouselMarkup(
       "archer",
-      archerAlbum.items.map((item, itemIndex) => ({ albumIndex, itemIndex, item, label: item.type === "video" ? "The Archer Video" : "The Archer" })),
+      archerFeaturedItems.map((item, itemIndex) => ({ albumIndex, itemIndex, item, label: item.type === "video" ? "The Archer Video" : "The Archer" })),
       ({ albumIndex, itemIndex, item, label }) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, label)
     );
   }
@@ -2166,7 +2178,7 @@ function renderMediaLibraryPage() {
 
   if (mediaArcherVideoGrid) {
     const albumIndex = albumIndexFor(archerVideoAlbum);
-    mediaArcherVideoGrid.innerHTML = archerVideoAlbum.items
+    mediaArcherVideoGrid.innerHTML = activeAlbumItemsFor(archerVideoAlbum)
       .slice(0, 1)
       .map((item, itemIndex) => mediaLibraryCardMarkup(albumIndex, itemIndex, item, "The Archer Video"))
       .join("");
@@ -2223,7 +2235,8 @@ function renderMediaLibraryPage() {
 }
 
 function activeAlbumItemsFor(album) {
-  return album.items && album.items.length ? album.items : [{ type: "image", src: album.thumbnail, caption: album.caption || album.title }];
+  const items = playableMediaItems(album.items);
+  return items.length ? items : [{ type: "image", src: album.thumbnail, caption: album.caption || album.title }];
 }
 
 function mediaAlbumDescription(title) {
@@ -2252,8 +2265,9 @@ function anayaSectionDescription(title) {
 
 function activeAlbumItems() {
   const album = activeOverlayAlbums[activeAlbumIndex];
-  return album.items && album.items.length
-    ? album.items
+  const items = playableMediaItems(album.items);
+  return items.length
+    ? items
     : [
         {
           type: "image",
@@ -2607,7 +2621,7 @@ function renderAnayaGalleries() {
   anayaGalleries.forEach((gallery) => {
     const sectionIndex = Number(gallery.dataset.anayaGallery);
     const section = anayaSections[sectionIndex];
-    const items = section.items || [];
+    const items = activeAlbumItemsFor(section);
     const isFeatured = section.layout === "featured";
     const previewItems = isFeatured ? items.slice(0, 1) : items.slice(0, 6);
 

@@ -318,20 +318,27 @@
       </div>
     </div>
     <script src="./assets/js/image-fallbacks.js"></script>
-    <script src="./app.js?v=archer-page-overlay-20260529"></script>
+    <script src="./app.js?v=playable-video-filter-20260530"></script>
     <script>
       (() => {
         if (typeof archerMediaAlbum === "undefined" || typeof openMediaAlbum !== "function") {
           return;
         }
 
-        const fullAlbum = { ...archerMediaAlbum, eyebrow: "THE ARCHER", mediaLibrary: true, showCounter: true };
+        const playableArcherItem = (item) => item.type !== "video" || (item.src && item.src.toLowerCase().endsWith(".mp4"));
+        const fullAlbum = {
+          ...archerMediaAlbum,
+          eyebrow: "THE ARCHER",
+          mediaLibrary: true,
+          showCounter: true,
+          items: archerMediaAlbum.items.filter(playableArcherItem)
+        };
         const videoAlbum = {
           eyebrow: "THE ARCHER",
           title: "The Archer Videos",
           mediaLibrary: true,
           showCounter: true,
-          items: archerMediaAlbum.items.filter((item) => item.type === "video")
+          items: archerMediaAlbum.items.filter((item) => item.type === "video" && playableArcherItem(item))
         };
         const videoTriggers = Array.from(document.querySelectorAll("[data-archer-video-item]"));
         const videoPrev = document.querySelector("[data-archer-video-prev]");
