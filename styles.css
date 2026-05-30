@@ -21086,3 +21086,28 @@ html body .site-footer.site-chrome .footer-socials a {
   width: clamp(42px, 2.7vw, 54px) !important;
   height: clamp(42px, 2.7vw, 54px) !important;
 }
+
+/* Cross-page anchor lock: keep pill/nav links aligned directly below the compact sticky header. */
+html:has(body :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) {
+  scroll-padding-top: 36px !important;
+}
+
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page))
+  .page-shell
+  main:is(#top, .systems-detail-page, .featured-page, .media-library-page, .anaya-case-study-page, .archer-page, .about-cover-page, .contact-page)
+  :is(section[id], [id="how-it-works"]) {
+  scroll-margin-top: 36px !important;
+}
+
+@media (max-width: 767px) {
+  html:has(body :is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) {
+    scroll-padding-top: 52px !important;
+  }
+
+  body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page))
+    .page-shell
+    main:is(#top, .systems-detail-page, .featured-page, .media-library-page, .anaya-case-study-page, .archer-page, .about-cover-page, .contact-page)
+    :is(section[id], [id="how-it-works"]) {
+    scroll-margin-top: 52px !important;
+  }
+}
