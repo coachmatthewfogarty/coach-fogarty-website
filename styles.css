@@ -19509,6 +19509,12 @@ body .page-shell main.anaya-case-study-page > #foundation.anaya-journey-section 
   text-transform: uppercase !important;
 }
 
+body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) > .anaya-gallery-block {
+  width: calc(100% + (var(--case-page-section-inline-pad) * 2) - 2px) !important;
+  margin-right: calc((var(--case-page-section-inline-pad) * -1) + 1px) !important;
+  margin-left: calc((var(--case-page-section-inline-pad) * -1) + 1px) !important;
+}
+
 @media (max-width: 1024px) {
   body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-gallery-preview {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -20102,9 +20108,14 @@ html body .page-shell main.anaya-case-study-page > section.featured-final-cta #a
   }
 }
 
-/* Anaya Explore handoff: remove the mobile/tablet cream tail after the final image before the black CTA starts. */
+/* Anaya next-level spacing: match the eyebrow approach and image-to-section closeout. */
 html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section#next-level.section.anaya-journey-section {
-  padding-bottom: 0 !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+html body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section .anaya-media-card {
+  border: 0 !important;
 }
 
 html body .page-shell main.media-library-page > #playing-awards-media.media-library-section .media-library-card.is-award-mvp-plaque .media-library-frame img {
@@ -20315,11 +20326,21 @@ html body .media-overlay-nav::before {
 
 @media (max-width: 1024px) {
   html body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section {
-    padding-bottom: 0 !important;
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
   }
 
   html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section#next-level.section.anaya-journey-section {
-    padding-bottom: 0 !important;
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html body .page-shell main.anaya-case-study-page > #next-level.anaya-journey-section,
+  html body .page-shell main.anaya-case-study-page.anaya-case-study-page > section#next-level.section.anaya-journey-section {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
   }
 }
 
