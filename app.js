@@ -155,16 +155,7 @@ const anayaPhotoFolder = (section) => `${anayaAssetRoot}/photos/${anayaAssetSect
 const anayaVideoFolder = (section) => `${anayaAssetRoot}/videos/${anayaAssetSection(section)}/`;
 const anayaPhoto = (section, fileName) => `${anayaPhotoFolder(section)}${fileName}`;
 const anayaVideo = (section, fileName) => `${anayaVideoFolder(section)}${fileName}`;
-const playableVideoSources = new Set([
-  "assets/the-archer/videos/archer-rim-ladder-finishing-rep-01-720p.mp4",
-  "assets/the-archer/videos/archer-rim-ladder-approach-dribble-01-720p.mp4",
-  "assets/the-archer/videos/archer-wing-arc-shooting-rep-01-720p.mp4",
-  "assets/the-archer/videos/archer-full-court-arc-training-rotation-01-720p.mp4",
-  "assets/the-archer/videos/archer-blue-wall-high-arc-release-clip-01-720p.mp4",
-  "assets/the-archer/videos/archer-blue-wall-coached-high-arc-01-720p.mp4",
-  "assets/the-archer/videos/archer-red-lane-group-arc-rep-01-720p.mp4"
-]);
-const isPlayableMediaItem = (item) => item?.type !== "video" || playableVideoSources.has(item.src);
+const isPlayableMediaItem = (item) => item?.type !== "video" || item.src?.toLowerCase().endsWith(".mp4");
 const playableMediaItems = (items = []) => items.filter(isPlayableMediaItem);
 const anayaCaseStudyImage = (section, fileBase, caption, alt = caption) => ({
   type: "image",
@@ -551,7 +542,7 @@ const anayaSections = [
     items: [
       {
         type: "video",
-        src: anayaVideo("1-foundation", "IMG_1184.MOV"),
+        src: anayaVideo("1-foundation", "IMG_1184.mp4"),
         poster: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-first-workout-ever-poster-q98-1200x900.webp"),
         caption: "First workout ever"
       },
@@ -564,7 +555,7 @@ const anayaSections = [
       },
       {
         type: "video",
-        src: anayaVideo("1-foundation", "anaya-foundation-shooting-form-baseline-01.mov"),
+        src: anayaVideo("1-foundation", "anaya-foundation-shooting-form-baseline-01.mp4"),
         poster: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-shooting-form-baseline-media-card-zoom-out-2-right-q98-1200x900.avif"),
         caption: "Baseline shooting form"
       },
@@ -615,21 +606,21 @@ const anayaSections = [
     items: [
       {
         type: "video",
-        src: anayaVideo("2-development-process", "development-process-early-morning.MOV"),
+        src: anayaVideo("2-development-process", "development-process-early-morning.mp4"),
         poster: anayaPhoto("2-development-process", "dp-coaching-feedback-card-q98-1200x900.avif"),
         thumb: anayaPhoto("2-development-process", "dp-coaching-feedback-card-q98-1200x900.avif"),
         caption: "Early morning development work"
       },
       {
         type: "video",
-        src: anayaVideo("2-development-process", "IMG_1381.MOV"),
+        src: anayaVideo("2-development-process", "IMG_1381.mp4"),
         poster: anayaPhoto("2-development-process", "dp-shot-release-card-q98-1200x900.avif"),
         thumb: anayaPhoto("2-development-process", "dp-shot-release-thumb-q98-600x400.webp"),
         caption: "Shot release repetition video"
       },
       {
         type: "video",
-        src: anayaVideo("2-development-process", "IMG_1382.MOV"),
+        src: anayaVideo("2-development-process", "IMG_1382.mp4"),
         poster: anayaPhoto("2-development-process", "dp-shot-repetition-card-q98-1200x900.avif"),
         thumb: anayaPhoto("2-development-process", "dp-shot-repetition-thumb-q98-600x400.webp"),
         caption: "Footwork repetition video"
@@ -1359,7 +1350,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-cut-and-floater-close-placement-01.mov",
+      src: "assets/the-archer/videos/archer-cut-and-floater-close-placement-01.mp4",
       poster: "assets/the-archer/thumbnails/archer-cut-and-floater-close-placement-01-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-cut-and-floater-close-placement-01-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-cut-and-floater-close-placement-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
@@ -1367,7 +1358,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-floater-touch-arc-training-01.mov",
+      src: "assets/the-archer/videos/archer-floater-touch-arc-training-01.mp4",
       poster: "assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-floater-touch-arc-training-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
@@ -1375,7 +1366,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-prototype-push-shot-01.mov",
+      src: "assets/the-archer/videos/archer-prototype-push-shot-01.mp4",
       poster: "assets/the-archer/thumbnails/archer-prototype-push-shot-01-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-prototype-push-shot-01-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-prototype-push-shot-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
@@ -1383,7 +1374,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-prototype-push-shot-02.mov",
+      src: "assets/the-archer/videos/archer-prototype-push-shot-02.mp4",
       poster: "assets/the-archer/thumbnails/archer-prototype-push-shot-02-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-prototype-push-shot-02-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-prototype-push-shot-02-poster-overlay-thumb-cover-center-q98-600x400.jpg",
@@ -1391,7 +1382,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-standard-placement-free-throw-high-arc-01.mov",
+      src: "assets/the-archer/videos/archer-standard-placement-free-throw-high-arc-01.mp4",
       poster: "assets/the-archer/thumbnails/archer-standard-placement-free-throw-high-arc-01-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-standard-placement-free-throw-high-arc-01-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-standard-placement-free-throw-high-arc-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
@@ -1399,7 +1390,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-fadeaway-close-placement-01.mov",
+      src: "assets/the-archer/videos/archer-fadeaway-close-placement-01.mp4",
       poster: "assets/the-archer/thumbnails/archer-fadeaway-close-placement-01-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-fadeaway-close-placement-01-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-fadeaway-close-placement-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
@@ -1407,7 +1398,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-free-throw-close-placement-demonstration-01.mov",
+      src: "assets/the-archer/videos/archer-free-throw-close-placement-demonstration-01.mp4",
       poster: "assets/the-archer/thumbnails/archer-free-throw-close-placement-demonstration-01-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-free-throw-close-placement-demonstration-01-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-free-throw-close-placement-demonstration-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
@@ -1415,7 +1406,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-three-point-shooting-close-placement-01.mov",
+      src: "assets/the-archer/videos/archer-three-point-shooting-close-placement-01.mp4",
       poster: "assets/the-archer/thumbnails/archer-three-point-shooting-close-placement-01-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-three-point-shooting-close-placement-01-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-three-point-shooting-close-placement-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
@@ -1423,7 +1414,7 @@ const archerMediaAlbum = {
     },
     {
       type: "video",
-      src: "assets/the-archer/videos/archer-jump-hook-close-placement-01.mov",
+      src: "assets/the-archer/videos/archer-jump-hook-close-placement-01.mp4",
       poster: "assets/the-archer/thumbnails/archer-jump-hook-close-placement-01-poster-q98.jpg",
       mediaCardSrc: "assets/the-archer/thumbnails/archer-jump-hook-close-placement-01-poster-media-card-cover-center-q98-1200x900.jpg",
       thumbSrc: "assets/the-archer/thumbnails/archer-jump-hook-close-placement-01-poster-overlay-thumb-cover-center-q98-600x400.jpg",
