@@ -18985,11 +18985,90 @@ html body .page-shell main.anaya-case-study-page > section.section.anaya-summary
   z-index: 1 !important;
 }
 
-html body .page-shell main.anaya-case-study-page > section.section.anaya-summary-section > :is(.section-heading, .featured-summary-grid) {
+html body .page-shell main.anaya-case-study-page > section.section.anaya-summary-section > :is(.anaya-summary-feature, .section-heading, .featured-summary-grid) {
   width: 100% !important;
   max-width: none !important;
   margin-right: 0 !important;
   margin-left: 0 !important;
+}
+
+/* Anaya Impact Summary feature note: Archer-style split belongs here, not in the page hero. */
+html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr) !important;
+  gap: var(--archer-featured-gap, clamp(28px, 4vw, 72px)) !important;
+  align-items: center !important;
+  margin-bottom: clamp(18px, 1.65vw, 28px) !important;
+}
+
+html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature > .section-heading {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature > .section-heading > .eyebrow {
+  margin-bottom: 0 !important;
+  color: #f2a179 !important;
+  -webkit-text-fill-color: #f2a179 !important;
+}
+
+html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature > .section-heading > h2 {
+  margin-top: 0 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature > .section-heading > h2 + p {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: calc(var(--featured-title-to-body-gap, 14px) * 0.5) !important;
+  margin-bottom: 0 !important;
+  color: #ded8cf !important;
+  -webkit-text-fill-color: #ded8cf !important;
+  font-size: 16px !important;
+  line-height: 1.52 !important;
+  text-align: left !important;
+  text-wrap: wrap !important;
+  white-space: normal !important;
+}
+
+html body .page-shell main.anaya-case-study-page > .anaya-summary-section .anaya-summary-actions {
+  margin-top: clamp(16px, 1.4vw, 24px) !important;
+}
+
+html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature > .anaya-summary-visual {
+  justify-self: end !important;
+  width: min(100%, 780px) !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature > .anaya-summary-visual img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  max-height: 440px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .anaya-summary-feature > .anaya-summary-visual {
+    justify-self: stretch !important;
+    width: 100% !important;
+  }
 }
 
 html body .page-shell main.anaya-case-study-page > .hero.page-hero-system + .anaya-summary-section {
