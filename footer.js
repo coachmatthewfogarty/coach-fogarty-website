@@ -91,11 +91,12 @@ document.querySelectorAll(".contact-form").forEach((contactForm) => {
     contactForm.classList.remove("is-sent");
 
     if (submitButton) {
+      submitButton.disabled = false;
       submitButton.textContent = submitButtonText;
     }
   });
 
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const formData = new FormData(contactForm);
@@ -110,11 +111,53 @@ document.querySelectorAll(".contact-form").forEach((contactForm) => {
       return;
     }
 
-    statusMessage.textContent = "Message sent.";
-    contactForm.classList.add("is-sent");
-
     if (submitButton) {
-      submitButton.textContent = "Message Sent";
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    statusMessage.textContent = "Sending...";
+
+    const payload = {
+      name,
+      email,
+      phone: String(formData.get("phone") || "").trim() || "Not provided",
+      organization: String(formData.get("school-organization") || "").trim() || "Not provided",
+      reason: String(formData.get("reason") || "").trim() || "Not provided",
+      message,
+      _replyto: email,
+      _subject: `Portfolio Contact from ${name}`,
+      _template: "table"
+    };
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error("Contact form submission failed.");
+      }
+
+      statusMessage.textContent = "Message sent.";
+      contactForm.classList.add("is-sent");
+
+      if (submitButton) {
+        submitButton.textContent = "Message Sent";
+      }
+    } catch (error) {
+      statusMessage.textContent = "Message could not be sent. Please email CoachMatthewFogarty@gmail.com.";
+      contactForm.classList.remove("is-sent");
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = submitButtonText;
+      }
     }
   });
 });
