@@ -72,6 +72,54 @@ if (siteHeader && mobileNavToggle) {
   });
 }
 
+const contactForm = document.querySelector("#contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const firstName = String(formData.get("first-name") || "").trim();
+    const lastName = String(formData.get("last-name") || "").trim();
+    const name = [firstName, lastName].filter(Boolean).join(" ");
+    const email = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const organization = String(formData.get("school-organization") || "").trim();
+    const reason = String(formData.get("reason") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    if (!name || !email || !message) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    const subject = `Portfolio Contact from ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone || "Not provided"}`,
+      `School / Organization: ${organization || "Not provided"}`,
+      `Reason for Contact: ${reason || "Not provided"}`,
+      "",
+      "Message:",
+      message
+    ].join("\n");
+
+    const composeUrl = new URL("https://mail.google.com/mail/");
+    composeUrl.searchParams.set("view", "cm");
+    composeUrl.searchParams.set("fs", "1");
+    composeUrl.searchParams.set("to", "coachmatthewfogarty@gmail.com");
+    composeUrl.searchParams.set("su", subject);
+    composeUrl.searchParams.set("body", body);
+
+    const composeWindow = window.open(composeUrl.toString(), "_blank", "noopener,noreferrer");
+
+    if (!composeWindow) {
+      window.location.href = composeUrl.toString();
+    }
+  });
+}
+
 const compactHeadingQuery = window.matchMedia("(min-width: 0px)");
 const compactEyebrowSelector = [
   ".section-heading > .eyebrow",
