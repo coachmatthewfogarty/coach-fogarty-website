@@ -19181,8 +19181,8 @@ html body .page-shell main.anaya-case-study-page > .anaya-summary-section > .ana
   display: block !important;
   width: 100% !important;
   height: auto !important;
-  aspect-ratio: 16 / 9 !important;
-  max-height: 440px !important;
+  aspect-ratio: 3 / 2 !important;
+  max-height: 500px !important;
   object-fit: cover !important;
   object-position: center center !important;
   border-radius: 0 !important;
