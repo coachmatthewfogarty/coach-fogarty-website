@@ -19345,6 +19345,7 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-l
 }
 
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-media-frame {
+  position: relative !important;
   display: block !important;
   width: 100% !important;
   height: 100% !important;
@@ -19375,6 +19376,26 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-l
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-media-card:is(:hover, :focus-visible) .anaya-media-frame img,
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-media-card:is(:hover, :focus-visible) .anaya-media-frame video {
   filter: brightness(1.04) !important;
+}
+
+body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-media-kind {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  z-index: 2 !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 5px 9px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--red), #c4542c) !important;
+  color: #ffffff !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  pointer-events: none !important;
 }
 
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-media-caption {
@@ -19433,6 +19454,59 @@ body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-l
 
 body .page-shell main.anaya-case-study-page > .anaya-journey-section:not(#next-level) .anaya-gallery-actions {
   display: none !important;
+}
+
+body .page-shell main.anaya-case-study-page > #foundation.anaya-journey-section .anaya-carousel-controls {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin-top: 14px !important;
+}
+
+body .page-shell main.anaya-case-study-page > #foundation.anaya-journey-section .anaya-carousel-button {
+  display: inline-grid !important;
+  width: 42px !important;
+  height: 42px !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border: 2px solid #d95a24 !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #d95a24 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  cursor: pointer !important;
+}
+
+body .page-shell main.anaya-case-study-page > #foundation.anaya-journey-section .anaya-carousel-button::before {
+  display: block !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-top: 3px solid currentColor !important;
+  border-left: 3px solid currentColor !important;
+  content: "" !important;
+}
+
+body .page-shell main.anaya-case-study-page > #foundation.anaya-journey-section .anaya-carousel-button-prev::before {
+  transform: translateX(2px) rotate(-45deg) !important;
+}
+
+body .page-shell main.anaya-case-study-page > #foundation.anaya-journey-section .anaya-carousel-button-next::before {
+  transform: translateX(-2px) rotate(135deg) !important;
+}
+
+body .page-shell main.anaya-case-study-page > #foundation.anaya-journey-section .anaya-carousel-button:is(:hover, :focus-visible) {
+  background: #d95a24 !important;
+  color: #ffffff !important;
+}
+
+body .page-shell main.anaya-case-study-page > #foundation.anaya-journey-section .anaya-carousel-status {
+  color: #6a5f53 !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
 }
 
 @media (max-width: 1024px) {
@@ -20535,7 +20609,7 @@ html body .page-shell main#top #featured-work > .featured-card.featured-card--an
   margin: 0 !important;
 }
 
-/* Final overlay album arrow lock: thumbnail strips scroll by gesture only; one main side arrow set remains. */
+/* Overlay thumbnail nav stays hidden; main image arrows remain available. */
 html body .media-overlay .media-overlay-strip-shell {
   grid-template-columns: minmax(0, 1fr) !important;
   gap: 0 !important;
@@ -20547,9 +20621,16 @@ html body .media-overlay .media-overlay-thumb-nav {
   pointer-events: none !important;
 }
 
+html body .media-overlay .media-overlay-thumb-nav::before {
+  content: none !important;
+}
+
 html body .media-overlay .media-overlay-nav {
   top: 50% !important;
   bottom: auto !important;
+  display: inline-grid !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
   font-size: 0 !important;
   line-height: 0 !important;
   transform: translateY(-50%) !important;

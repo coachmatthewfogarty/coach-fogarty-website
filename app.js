@@ -541,6 +541,25 @@ const anayaSections = [
     imageSystemPath: caseStudySectionPath("anaya-beard", "foundation"),
     items: [
       {
+        type: "image",
+        src: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-commitment-graphic-landscape-stretch-fill-shift-down-1-q98-2400x1800.avif"),
+        thumb: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-commitment-graphic-media-card-stretch-fill-shift-down-1-q98-1200x900.avif"),
+        alt: "Anaya Beard commitment graphic from the foundation stage",
+        caption: "Foundation commitment graphic"
+      },
+      {
+        type: "video",
+        src: anayaVideo("1-foundation", "anaya-foundation-left-hand-baseline-01.mp4"),
+        poster: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-left-hand-development-media-card-stretch-fill-q98-1200x900.avif"),
+        caption: "Baseline left-hand finish"
+      },
+      {
+        type: "video",
+        src: anayaVideo("1-foundation", "anaya-foundation-fadeaway-baseline-01.mp4"),
+        poster: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-free-throw-routine-media-card-stretch-fill-q98-1200x900.avif"),
+        caption: "Baseline fadeaway"
+      },
+      {
         type: "video",
         src: anayaVideo("1-foundation", "IMG_1184.mp4"),
         poster: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-first-workout-ever-poster-q98-1200x900.webp"),
@@ -567,28 +586,9 @@ const anayaSections = [
       },
       {
         type: "video",
-        src: anayaVideo("1-foundation", "anaya-foundation-left-hand-baseline-01.mp4"),
-        poster: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-left-hand-development-media-card-stretch-fill-q98-1200x900.avif"),
-        caption: "Baseline left-hand finish"
-      },
-      {
-        type: "video",
-        src: anayaVideo("1-foundation", "anaya-foundation-fadeaway-baseline-01.mp4"),
-        poster: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-free-throw-routine-media-card-stretch-fill-q98-1200x900.avif"),
-        caption: "Baseline fadeaway"
-      },
-      {
-        type: "video",
         src: anayaVideo("1-foundation", "anaya-foundation-sealing-baseline-01.mp4"),
         poster: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-free-throw-routine-media-card-stretch-fill-q98-1200x900.avif"),
         caption: "Baseline sealing"
-      },
-      {
-        type: "image",
-        src: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-commitment-graphic-landscape-stretch-fill-shift-down-1-q98-2400x1800.avif"),
-        thumb: anayaPhoto("1-foundation", "case-study-anaya-beard-foundation-commitment-graphic-media-card-stretch-fill-shift-down-1-q98-1200x900.avif"),
-        alt: "Anaya Beard commitment graphic from the foundation stage",
-        caption: "Foundation commitment graphic"
       },
       {
         type: "image",
@@ -1499,6 +1499,17 @@ const playingCareerAwardsPrev = document.querySelector("#playingCareerAwardsPrev
 const playingCareerAwardsNext = document.querySelector("#playingCareerAwardsNext");
 const playingCareerAwards = document.querySelector("#playingCareerAwards");
 const anayaGalleries = document.querySelectorAll("[data-anaya-gallery]");
+const anayaCarouselPageSize = () => {
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    return 1;
+  }
+
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    return 2;
+  }
+
+  return 3;
+};
 const mediaOverlay = document.querySelector("#mediaOverlay");
 const mediaOverlayEyebrow = document.querySelector(".media-overlay-content .eyebrow");
 const mediaOverlayTitle = document.querySelector("#mediaOverlayTitle");
@@ -2331,17 +2342,31 @@ function scrollMediaThumbnails(direction) {
     return;
   }
 
-  const firstThumb = mediaOverlayStrip.querySelector(".media-thumb");
-  const stripStyles = window.getComputedStyle(mediaOverlayStrip);
-  const thumbnailGap = Number.parseFloat(stripStyles.columnGap || stripStyles.gap || "0") || 0;
-  const scrollStep = firstThumb ? firstThumb.getBoundingClientRect().width + thumbnailGap : 160;
-  const currentLeft = mediaOverlayStrip.scrollLeft;
-  let nextLeft = currentLeft + direction * scrollStep;
+  const thumbs = Array.from(mediaOverlayStrip.querySelectorAll(".media-thumb"));
 
-  if (direction < 0 && currentLeft <= 2) {
+  if (!thumbs.length) {
+    return;
+  }
+
+  const currentLeft = mediaOverlayStrip.scrollLeft;
+  const baseOffset = thumbs[0].offsetLeft;
+  const currentIndex = thumbs.reduce((closestIndex, thumb, index) => {
+    const closestPosition = thumbs[closestIndex].offsetLeft - baseOffset;
+    const thumbPosition = thumb.offsetLeft - baseOffset;
+    const closestDistance = Math.abs(closestPosition - currentLeft);
+    const thumbDistance = Math.abs(thumbPosition - currentLeft);
+
+    return thumbDistance < closestDistance ? index : closestIndex;
+  }, 0);
+  const targetIndex = currentIndex + direction;
+  let nextLeft;
+
+  if (targetIndex < 0) {
     nextLeft = maxScrollLeft;
-  } else if (direction > 0 && currentLeft >= maxScrollLeft - 2) {
+  } else if (targetIndex >= thumbs.length) {
     nextLeft = 0;
+  } else {
+    nextLeft = thumbs[targetIndex].offsetLeft - baseOffset;
   }
 
   mediaOverlayStrip.scrollTo({
@@ -2359,6 +2384,19 @@ function selectMediaItem(index, { thumbScrollBehavior = "smooth" } = {}) {
 
   activeItemIndex = index;
   renderMediaOverlay({ thumbScrollBehavior });
+}
+
+function playOverlayVideoIfNeeded() {
+  const video = mediaOverlayViewer?.querySelector("video");
+
+  if (!video) {
+    return;
+  }
+
+  video.play().catch(() => {
+    video.muted = true;
+    video.play().catch(() => {});
+  });
 }
 
 function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
@@ -2403,7 +2441,7 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   mediaOverlayCaption.textContent = itemTitle;
   mediaOverlayViewer.innerHTML =
     item.type === "video"
-      ? `<video src="${encodeURI(item.src)}"${mediaItemPoster(item) ? ` poster="${encodeURI(mediaItemPoster(item))}" data-image-role="poster"` : ""} controls playsinline></video>`
+      ? `<video src="${encodeURI(item.src)}"${mediaItemPoster(item) ? ` poster="${encodeURI(mediaItemPoster(item))}" data-image-role="poster"` : ""} controls playsinline autoplay preload="auto"></video>`
       : isAwardsOverlay
         ? `<span class="award-slide award-slide--${awardOrientation}"><img src="${encodeURI(itemSrc)}" data-image-role="full" alt="${item.alt || itemTitle}" /></span>`
         : `<img src="${encodeURI(itemSrc)}" data-image-role="full" alt="${item.alt || itemTitle}" />`;
@@ -2446,6 +2484,7 @@ function renderMediaOverlay({ thumbScrollBehavior = "smooth" } = {}) {
   mediaOverlayPrev.hidden = !hasMultipleItems;
   mediaOverlayNext.hidden = !hasMultipleItems;
   queueActiveMediaThumbnailScroll(thumbScrollBehavior);
+  playOverlayVideoIfNeeded();
 }
 
 function openMediaAlbum(albumIndex, albums = mediaAlbums, itemIndex = 0) {
@@ -2614,11 +2653,21 @@ function renderAnayaGalleries() {
     const section = anayaSections[sectionIndex];
     const items = activeAlbumItemsFor(section);
     const isFeatured = section.layout === "featured";
-    const previewItems = isFeatured ? items.slice(0, 1) : items.slice(0, 6);
+    const isCarousel = sectionIndex === 0;
+    const carouselPageSize = anayaCarouselPageSize();
+    const carouselMaxStart = isCarousel ? Math.max(items.length - carouselPageSize, 0) : 0;
+    const carouselStart = isCarousel ? Math.min(Number(gallery.dataset.carouselStart || 0), carouselMaxStart) : 0;
+    const previewItems = isFeatured
+      ? items.slice(0, 1).map((item, itemIndex) => ({ item, itemIndex }))
+      : isCarousel
+        ? items
+            .slice(carouselStart, carouselStart + carouselPageSize)
+            .map((item, itemOffset) => ({ item, itemIndex: carouselStart + itemOffset }))
+        : items.slice(0, 6).map((item, itemIndex) => ({ item, itemIndex }));
 
     const previewMarkup = previewItems.length
       ? previewItems
-          .map((item, itemIndex) => {
+          .map(({ item, itemIndex }) => {
             const thumbnail = mediaItemCardSrc(item);
             const poster = mediaItemPoster(item);
             const isVideo = item.type === "video";
@@ -2629,7 +2678,7 @@ function renderAnayaGalleries() {
                 <span class="anaya-media-frame">
                   ${
                     isVideo
-                      ? `<video src="${encodeURI(item.src)}" poster="${poster ? encodeURI(poster) : ""}" data-image-role="poster" muted playsinline></video>`
+                      ? `<video src="${encodeURI(item.src)}" poster="${poster ? encodeURI(poster) : ""}" data-image-role="poster" muted playsinline></video><span class="anaya-media-kind">Video</span>`
                       : `<img src="${encodeURI(thumbnail)}" data-image-role="${imageRole}" alt="${item.alt || item.caption || section.title}" />`
                   }
                 </span>
@@ -2648,13 +2697,19 @@ function renderAnayaGalleries() {
       `;
 
     gallery.innerHTML = `
-      <div class="anaya-gallery-preview${isFeatured ? " anaya-gallery-featured" : ""}">
+      <div class="anaya-gallery-preview${isFeatured ? " anaya-gallery-featured" : ""}${isCarousel ? " anaya-gallery-carousel" : ""}">
         ${previewMarkup}
       </div>
       ${
         isFeatured
           ? ""
-          : `<div class="anaya-gallery-actions">
+          : isCarousel
+            ? `<div class="anaya-carousel-controls" aria-label="${section.title} carousel controls">
+                <button class="anaya-carousel-button anaya-carousel-button-prev" type="button" data-carousel-direction="-1" aria-label="Previous ${section.title} media card"></button>
+                <span class="anaya-carousel-status">${carouselStart + 1}-${Math.min(carouselStart + carouselPageSize, items.length)} of ${items.length}</span>
+                <button class="anaya-carousel-button anaya-carousel-button-next" type="button" data-carousel-direction="1" aria-label="Next ${section.title} media card"></button>
+              </div>`
+            : `<div class="anaya-gallery-actions">
               <button class="button button-secondary button-small" type="button" data-view-more="${sectionIndex}"${items.length ? "" : " disabled"}>View More</button>
             </div>`
       }
@@ -2672,6 +2727,15 @@ function renderAnayaGalleries() {
         openMediaAlbum(Number(viewMoreButton.dataset.viewMore), anayaSections);
       });
     }
+
+    gallery.querySelectorAll("[data-carousel-direction]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const maxStart = Math.max(items.length - carouselPageSize, 0);
+        const nextStart = carouselStart + Number(button.dataset.carouselDirection);
+        gallery.dataset.carouselStart = String(nextStart > maxStart ? 0 : nextStart < 0 ? maxStart : nextStart);
+        renderAnayaGalleries();
+      });
+    });
   });
 }
 
@@ -3320,6 +3384,9 @@ renderLibrary();
 renderGallery();
 renderMediaLibraryPage();
 renderAnayaGalleries();
+if (anayaGalleries.length) {
+  window.addEventListener("resize", renderAnayaGalleries);
+}
 renderPlayingCareerCarousel();
 renderPlayingCareerAwardsStrip();
 enableDragScroll(mediaOverlayStrip);
