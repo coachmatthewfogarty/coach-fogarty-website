@@ -1510,6 +1510,13 @@ const mediaOverlayThumbNext = document.querySelector("#mediaOverlayThumbNext");
 const mediaOverlayClose = document.querySelector("#mediaOverlayClose");
 const mediaOverlayPrev = document.querySelector("#mediaOverlayPrev");
 const mediaOverlayNext = document.querySelector("#mediaOverlayNext");
+const productionProofCards = document.querySelectorAll("[data-production-proof]");
+const productionProofModal = document.querySelector("#productionProofModal");
+const productionProofClose = document.querySelector("#productionProofClose");
+const productionProofTitle = document.querySelector("#productionProofTitle");
+const productionProofStats = document.querySelector("#productionProofStats");
+const productionProofContext = document.querySelector("#productionProofContext");
+const productionProofActions = document.querySelector("#productionProofActions");
 let activeOverlayAlbums = mediaAlbums;
 let activeAlbumIndex = 0;
 let activeItemIndex = 0;
@@ -1517,6 +1524,82 @@ let activePlayingCareerIndex = 0;
 let activePlayingCareerAwardIndex = 1;
 let playingCareerResizeTimer;
 let mediaLibraryAlbums = [];
+let lastProductionProofTrigger = null;
+
+const productionProofGames = {
+  "mt-sac": {
+    title: "#1 Mt. SAC",
+    stats: "38 pts / 15-20 FG / 7 reb",
+    context: "02/28/26 | State Playoffs Rd 2",
+    links: [
+      {
+        label: "Full Game",
+        url: "https://editor-web.synergysports.com/video?playlistUrl=https:%2F%2Fbasketball.synergysportstech.com%2Fapi%2Fgames%2F69a0a37d075966c9e571d492%2Ffullgamevideo%2Fclips&title=SantaAnaCC@Mt.SanAntonioCC%20-%20Feb%2028,%202026"
+      },
+      {
+        label: "YouTube",
+        url: "https://www.youtube.com/watch?v=bhLJyeCD6TI"
+      },
+      {
+        label: "Highlight",
+        url: "https://editor-web.synergysports.com/video?inviteId=69a84986e27944a6a7ec805c"
+      }
+    ]
+  },
+  "santa-barbara": {
+    title: "#19 Santa Barbara",
+    stats: "32 pts / 10 reb",
+    context: "12/15/25 | Non Conference",
+    links: [
+      {
+        label: "Full Game",
+        url: "https://editor-web.synergysports.com/video?playlistUrl=https:%2F%2Fbasketball.synergysportstech.com%2Fapi%2Fgames%2F69a0a37d075966c9e571d492%2Ffullgamevideo%2Fclips&title=SantaAnaCC@Mt.SanAntonioCC%20-%20Feb%2028,%202026"
+      },
+      {
+        label: "Highlight",
+        url: "https://editor-web.synergysports.com/video?inviteId=69a9765f120a6913a773346e"
+      }
+    ]
+  },
+  saddleback: {
+    title: "#10 Saddleback",
+    stats: "28 pts / 9 reb / 2 stl",
+    context: "01/16/26 | Conference",
+    links: [
+      {
+        label: "Full Game",
+        url: "https://editor-web.synergysports.com/video?playlistUrl=https:%2F%2Fbasketball.synergysportstech.com%2Fapi%2Fgames%2F68c22de0a24241fe8f285f6b%2Ffullgamevideo%2Fclips&title=SaddlebackCC@SantaAnaCC%20-%20Jan%2016,%202026"
+      },
+      {
+        label: "YouTube",
+        url: "https://www.youtube.com/watch?v=dJyF8Iv4E3k&t=1268s"
+      },
+      {
+        label: "Highlight",
+        url: "https://editor-web.synergysports.com/video?inviteId=69a97e84706e414a4682cecf"
+      }
+    ]
+  },
+  "orange-coast": {
+    title: "#2 Orange Coast",
+    stats: "23 pts / 20 reb / state champ",
+    context: "02/19/25 | Conference",
+    links: [
+      {
+        label: "Full Game",
+        url: "https://editor-web.synergysports.com/video?playlistUrl=https:%2F%2Fbasketball.synergysportstech.com%2Fapi%2Fgames%2F66f74846663ca8cd3b5f84d5%2Ffullgamevideo%2Fclips&title=SantaAnaCC@OrangeCoastCC%20-%20Feb%2019,%202025"
+      },
+      {
+        label: "Hudl",
+        url: "https://fan.hudl.com/usa/ca/costa-mesa/organization/6013/orange-coast-college/team/558952/womens-varsity-basketball/watch?b=QnJvYWRjYXN0MjE5ODAxNw%3D%3D"
+      },
+      {
+        label: "Highlight",
+        url: "https://editor-web.synergysports.com/video?inviteId=69f7d12a832d43e1f910af6"
+      }
+    ]
+  }
+};
 
 function enableDragScroll(track) {
   if (!track || track.dataset.dragScrollReady === "true") {
@@ -2393,6 +2476,124 @@ function closeMediaOverlay() {
   }
 }
 
+function renderProductionProofActions(links) {
+  if (!productionProofActions) {
+    return;
+  }
+
+  productionProofActions.replaceChildren();
+  productionProofActions.hidden = !links.length;
+
+  links.forEach((link, index) => {
+    const anchor = document.createElement("a");
+    anchor.className = `button ${index === 0 ? "button-primary" : "button-secondary"}`;
+    anchor.href = link.url;
+    anchor.target = "_blank";
+    anchor.rel = "noreferrer";
+    anchor.textContent = link.label;
+    productionProofActions.append(anchor);
+  });
+}
+
+function openProductionProof(gameKey, trigger) {
+  if (
+    !productionProofModal ||
+    !productionProofClose ||
+    !productionProofTitle ||
+    !productionProofStats ||
+    !productionProofContext ||
+    !productionProofActions
+  ) {
+    return;
+  }
+
+  const game = productionProofGames[gameKey];
+
+  if (!game) {
+    return;
+  }
+
+  lastProductionProofTrigger = trigger || null;
+  productionProofTitle.textContent = game.title;
+  productionProofStats.textContent = game.stats;
+  productionProofContext.textContent = game.context;
+  productionProofContext.hidden = !game.context;
+  renderProductionProofActions(game.links);
+  productionProofModal.classList.add("is-open");
+  productionProofModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("proof-modal-open");
+  productionProofClose.focus();
+}
+
+function closeProductionProof() {
+  if (!productionProofModal) {
+    return;
+  }
+
+  productionProofModal.classList.remove("is-open");
+  productionProofModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("proof-modal-open");
+
+  if (lastProductionProofTrigger) {
+    lastProductionProofTrigger.focus();
+    lastProductionProofTrigger = null;
+  }
+}
+
+function trapProductionProofFocus(event) {
+  if (!productionProofModal || !productionProofModal.classList.contains("is-open") || event.key !== "Tab") {
+    return;
+  }
+
+  const focusableElements = productionProofModal.querySelectorAll(
+    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+  );
+  const firstFocusable = focusableElements[0];
+  const lastFocusable = focusableElements[focusableElements.length - 1];
+
+  if (!firstFocusable || !lastFocusable) {
+    return;
+  }
+
+  if (event.shiftKey && document.activeElement === firstFocusable) {
+    event.preventDefault();
+    lastFocusable.focus();
+  } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+    event.preventDefault();
+    firstFocusable.focus();
+  }
+}
+
+productionProofCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    openProductionProof(card.dataset.productionProof, card);
+  });
+});
+
+if (productionProofClose) {
+  productionProofClose.addEventListener("click", closeProductionProof);
+}
+
+if (productionProofModal) {
+  productionProofModal.addEventListener("click", (event) => {
+    if (event.target === productionProofModal) {
+      closeProductionProof();
+    }
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (!productionProofModal || !productionProofModal.classList.contains("is-open")) {
+    return;
+  }
+
+  trapProductionProofFocus(event);
+
+  if (event.key === "Escape") {
+    closeProductionProof();
+  }
+});
+
 function showMediaItem(direction) {
   const items = activeAlbumItems();
   selectMediaItem((activeItemIndex + direction + items.length) % items.length);
@@ -3041,6 +3242,10 @@ if (mediaOverlay) {
 }
 
 document.addEventListener("keydown", (event) => {
+  if (productionProofModal && productionProofModal.classList.contains("is-open")) {
+    return;
+  }
+
   if (!mediaOverlay || !mediaOverlay.classList.contains("is-open")) {
     return;
   }

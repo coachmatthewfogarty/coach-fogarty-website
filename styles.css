@@ -1418,6 +1418,10 @@ a.credential-static[href] {
   overflow: hidden;
 }
 
+.proof-modal-open {
+  overflow: hidden;
+}
+
 .media-overlay-panel {
   position: relative;
   width: min(100%, 980px);
@@ -1840,6 +1844,121 @@ a.credential-static[href] {
   border-radius: 999px;
   font-size: 1.4rem;
   line-height: 1;
+}
+
+.proof-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(14px, 4vw, 28px);
+  background: rgba(15, 12, 10, 0.82);
+}
+
+.proof-modal.is-open {
+  display: flex;
+}
+
+.proof-modal-panel {
+  position: relative;
+  width: min(100%, 560px);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: clamp(22px, 4vw, 32px);
+  border: 1px solid rgba(224, 206, 174, 0.8);
+  border-radius: 18px;
+  background: #fffaf1;
+  color: var(--text);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+}
+
+.proof-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(45, 36, 28, 0.18);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.proof-modal-close:hover,
+.proof-modal-close:focus-visible {
+  border-color: rgba(230, 85, 36, 0.5);
+  color: var(--orange);
+  outline: none;
+}
+
+.proof-modal-content {
+  display: grid;
+  gap: 12px;
+  padding-right: 24px;
+}
+
+.proof-modal-content .eyebrow {
+  margin-bottom: 0;
+}
+
+.proof-modal-content h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Palatino Linotype", serif;
+  font-size: clamp(1.8rem, 5vw, 2.45rem);
+  line-height: 1.05;
+}
+
+.proof-modal-stats,
+.proof-modal-context {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.proof-modal-stats {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.proof-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.proof-modal-actions[hidden] {
+  display: none;
+}
+
+.proof-modal-actions .button {
+  min-height: 44px;
+}
+
+@media (max-width: 543px) {
+  .proof-modal-panel {
+    padding: 22px 18px;
+  }
+
+  .proof-modal-content {
+    padding-right: 18px;
+  }
+
+  .proof-modal-actions {
+    display: grid;
+  }
+
+  .proof-modal-actions .button {
+    width: 100%;
+  }
 }
 
 .media-overlay-nav {
@@ -3332,8 +3451,11 @@ main.media-library-page #playing-awards-media .media-library-frame img {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 18px;
+  appearance: none;
   background: rgba(255, 255, 255, 0.46);
   color: inherit;
+  cursor: pointer;
+  font: inherit;
   text-decoration: none;
   box-shadow: var(--shadow);
   transition:
@@ -3341,9 +3463,15 @@ main.media-library-page #playing-awards-media .media-library-frame img {
     box-shadow 0.18s ease;
 }
 
-.production-card:hover {
+.production-card:hover,
+.production-card:focus-visible {
   transform: translateY(-3px);
   box-shadow: 0 22px 62px rgba(52, 36, 24, 0.16);
+}
+
+.production-card:focus-visible {
+  outline: 3px solid rgba(230, 85, 36, 0.68);
+  outline-offset: 4px;
 }
 
 .production-grid strong {
@@ -19475,13 +19603,14 @@ html body .page-shell main.anaya-case-study-page > #production.anaya-journey-sec
 
 html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section > .production-grid.production-link-grid {
   display: grid !important;
-  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap: 14px !important;
   align-items: stretch !important;
   grid-auto-rows: 1fr !important;
 }
 
 html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-card {
+  appearance: none !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -19489,12 +19618,16 @@ html body .page-shell main.anaya-case-study-page > #production.anaya-journey-sec
   min-width: 0 !important;
   min-height: clamp(96px, 6vw, 124px) !important;
   padding: clamp(12px, 1.1vw, 18px) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  cursor: pointer !important;
+  font: inherit !important;
   text-align: center !important;
 }
 
 html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-grid strong {
   margin-bottom: 6px !important;
-  font-size: clamp(18px, 1.03vw, 24px) !important;
+  font-size: clamp(20px, 1.03vw, 26px) !important;
   line-height: 1.08 !important;
   overflow-wrap: normal !important;
   text-align: center !important;
@@ -19503,7 +19636,7 @@ html body .page-shell main.anaya-case-study-page > #production.anaya-journey-sec
 }
 
 html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-grid span {
-  font-size: clamp(12px, 0.72vw, 16px) !important;
+  font-size: clamp(14px, 0.72vw, 18px) !important;
   line-height: 1.3 !important;
   overflow-wrap: normal !important;
   text-align: center !important;
@@ -19518,25 +19651,20 @@ html body .page-shell main.anaya-case-study-page > #production.anaya-journey-sec
   }
 
   html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section > .production-grid.production-link-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
 
   html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-card {
-    grid-column: span 2 !important;
     min-height: clamp(100px, 11vw, 122px) !important;
     padding: clamp(12px, 1.8vw, 16px) !important;
   }
 
-  html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-card:nth-child(n + 4) {
-    grid-column: span 3 !important;
-  }
-
   html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-grid strong {
-    font-size: clamp(20px, 2.05vw, 24px) !important;
+    font-size: clamp(22px, 2.05vw, 26px) !important;
   }
 
   html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-grid span {
-    font-size: clamp(13px, 1.28vw, 15px) !important;
+    font-size: clamp(15px, 1.28vw, 17px) !important;
   }
 }
 
@@ -19556,17 +19684,13 @@ html body .page-shell main.anaya-case-study-page > #production.anaya-journey-sec
     padding: clamp(8px, 2.6vw, 12px) !important;
   }
 
-  html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-card:last-child {
-    grid-column: 1 / -1 !important;
-  }
-
   html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-grid strong {
-    font-size: clamp(14px, 3.75vw, 17px) !important;
+    font-size: clamp(16px, 3.75vw, 19px) !important;
     letter-spacing: 0 !important;
   }
 
   html body .page-shell main.anaya-case-study-page > #production.anaya-journey-section .production-grid span {
-    font-size: clamp(10px, 2.9vw, 13px) !important;
+    font-size: clamp(12px, 2.9vw, 15px) !important;
     line-height: 1.24 !important;
   }
 }

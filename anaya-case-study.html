@@ -304,31 +304,22 @@
             </p>
           </div>
           <div class="production-grid production-link-grid">
-            <!-- // Add full game film link here -->
-            <a class="production-card" href="#">
+            <button class="production-card" type="button" data-production-proof="mt-sac" aria-haspopup="dialog">
               <strong>#1 Mt. SAC</strong>
               <span>38 pts / 15-20 FG / 7 reb</span>
-            </a>
-            <!-- // Add full game film link here -->
-            <a class="production-card" href="#">
+            </button>
+            <button class="production-card" type="button" data-production-proof="santa-barbara" aria-haspopup="dialog">
               <strong>#19 Santa Barbara</strong>
               <span>32 pts / 10 reb</span>
-            </a>
-            <!-- // Add full game film link here -->
-            <a class="production-card" href="#">
-              <strong>#23 LA Trade-Tech</strong>
-              <span>29 pts / 19 reb</span>
-            </a>
-            <!-- // Add full game film link here -->
-            <a class="production-card" href="#">
+            </button>
+            <button class="production-card" type="button" data-production-proof="saddleback" aria-haspopup="dialog">
               <strong>#10 Saddleback</strong>
               <span>28 pts / 9 reb / 2 stl</span>
-            </a>
-            <!-- // Add full game film link here -->
-            <a class="production-card" href="#">
+            </button>
+            <button class="production-card" type="button" data-production-proof="orange-coast" aria-haspopup="dialog">
               <strong>#2 Orange Coast</strong>
               <span>23 pts / 20 reb / state champ</span>
-            </a>
+            </button>
           </div>
           <div class="anaya-gallery-block">
             <div class="anaya-gallery" data-anaya-gallery="3"></div>
@@ -479,8 +470,21 @@
       </div>
     </div>
 
+    <div class="proof-modal" id="productionProofModal" aria-hidden="true">
+      <div class="proof-modal-panel" role="dialog" aria-modal="true" aria-labelledby="productionProofTitle">
+        <button class="proof-modal-close" id="productionProofClose" type="button" aria-label="Close proof links">&times;</button>
+        <div class="proof-modal-content">
+          <p class="eyebrow">GAME PROOF</p>
+          <h2 id="productionProofTitle"></h2>
+          <p class="proof-modal-stats" id="productionProofStats"></p>
+          <p class="proof-modal-context" id="productionProofContext"></p>
+          <div class="proof-modal-actions" id="productionProofActions"></div>
+        </div>
+      </div>
+    </div>
+
     <script src="./assets/js/image-fallbacks.js"></script>
-    <script src="./app.js?v=anaya-accolades-awards-swap-20260528"></script>
+    <script src="./app.js?v=anaya-production-proof-modal-20260530b"></script>
     <script src="./footer.js?v=mobile-featured-subnav-20260527"></script>
   </body>
 </html>
