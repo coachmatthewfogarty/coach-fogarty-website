@@ -17311,6 +17311,28 @@ html body .page-shell main#top > section.home-explore-cta.featured-final-cta + #
   }
 }
 
+@media (min-width: 1800px) {
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: clamp(24px, 1.8vw, 36px) !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions {
+    align-self: center !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+  }
+
+  html body .page-shell main#top > section.home-explore-cta.featured-final-cta .featured-actions .button {
+    height: auto !important;
+    min-height: 46px !important;
+    width: 100% !important;
+  }
+}
+
 @media (min-width: 1025px) and (max-width: 1320px) {
   html body .page-shell main#top > section.home-explore-cta.featured-final-cta {
     gap: clamp(16px, 2vw, 24px) !important;
@@ -17899,7 +17921,7 @@ body .page-shell main.archer-page.archer-page > .hero.page-hero-system.page-hero
    The hero-to-Training Tool handoff follows Featured: connected bands, no spacer border.
    Do not use margin gaps here; gaps expose the cream/black band colors at the ends. */
 body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(.archer-development-section, .archer-portfolio-section).section,
-body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(#photos, #videos).section {
+body:has(:is(main#top, main.systems-detail-page, main.featured-page, main.media-library-page, main.anaya-case-study-page, main.archer-page, main.about-cover-page, main.contact-page)) .page-shell main.archer-page.archer-page > :is(#photos, #videos, #archer-videos).section {
   margin-top: 0 !important;
   border-top: 12px solid #ffffff !important;
 }

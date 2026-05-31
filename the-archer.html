@@ -334,12 +334,12 @@
         }
 
         const playableArcherItem = (item) => item.type !== "video" || (item.src && item.src.toLowerCase().endsWith(".mp4"));
-        const fullAlbum = {
+        const imageAlbum = {
           ...archerMediaAlbum,
           eyebrow: "THE ARCHER",
           mediaLibrary: true,
           showCounter: true,
-          items: archerMediaAlbum.items.filter(playableArcherItem)
+          items: archerMediaAlbum.items.filter((item) => item.type !== "video" && playableArcherItem(item))
         };
         const videoAlbum = {
           eyebrow: "THE ARCHER",
@@ -399,8 +399,14 @@
           openMediaAlbum(0, albums, Number(itemIndex || 0));
         };
 
+        const imageAlbumIndexFor = (originalItemIndex) => {
+          const item = archerMediaAlbum.items[Number(originalItemIndex || 0)];
+          const imageIndex = imageAlbum.items.indexOf(item);
+          return imageIndex >= 0 ? imageIndex : 0;
+        };
+
         document.querySelectorAll("[data-archer-overlay-item]").forEach((trigger) => {
-          const activate = () => openTrigger(trigger, [fullAlbum], trigger.dataset.archerOverlayItem);
+          const activate = () => openTrigger(trigger, [imageAlbum], imageAlbumIndexFor(trigger.dataset.archerOverlayItem));
           trigger.addEventListener("click", activate);
           trigger.addEventListener("keydown", (event) => {
             if (event.key === "Enter" || event.key === " ") {
