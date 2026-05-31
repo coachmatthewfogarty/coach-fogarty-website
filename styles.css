@@ -21058,8 +21058,33 @@ html body .page-shell main#top > #playing-career.section {
 /* Homepage Archer-to-Program Media handoff: remove the internal bottom shelf so the only visible divider is the 11px grid rhythm. */
 html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
   --featured-archer-stack-top-offset: 0px;
+  --featured-archer-logo-art-shift: clamp(-40px, calc(-32.2px - 1.5vw), -37px);
+  --featured-archer-title-pull: -68px;
   min-height: auto !important;
-  padding-bottom: var(--home-section-grid-gap) !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer .innovation-card-copy > .section-heading.featured-archer-title {
+  margin-bottom: var(--featured-archer-title-pull) !important;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-logo-art-shift: -51px;
+    --featured-archer-title-pull: -93px;
+    padding-top: clamp(30px, 3vw, 31px) !important;
+    padding-bottom: clamp(30px, 3vw, 31px) !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-logo-art-shift: clamp(-54px, calc(-39.5px - 0.66vw), -49px);
+    --featured-archer-title-pull: clamp(-105px, calc(-73.2px - 1.45vw), -94px);
+    padding-top: clamp(43px, calc(33.5px + 0.66vw), 48px) !important;
+    padding-bottom: clamp(43px, calc(33.5px + 0.66vw), 48px) !important;
+  }
 }
 
 /* Homepage hero highlight links: keep the original contained overlay, but let links flow in one natural row. */
