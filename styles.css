@@ -21080,6 +21080,7 @@ html body .page-shell main#top > #playing-career.section {
 /* Homepage Archer-to-Program Media handoff: remove the internal bottom shelf so the only visible divider is the 11px grid rhythm. */
 html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
   --featured-archer-stack-top-offset: 0px;
+  --featured-archer-stack-balance-shift: 0.12px;
   --featured-archer-logo-art-shift: clamp(-40px, calc(-32.2px - 1.5vw), -37px);
   --featured-archer-title-pull: -68px;
   min-height: auto !important;
@@ -21087,25 +21088,91 @@ html body .page-shell main#top > #featured-work > .featured-card.featured-card--
   padding-bottom: 30px !important;
 }
 
+html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer .innovation-panel {
+  transform: translateY(calc(var(--featured-archer-stack-top-offset, 0px) + var(--featured-archer-stack-balance-shift, 0px))) !important;
+}
+
 html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer .innovation-card-copy > .section-heading.featured-archer-title {
   margin-bottom: var(--featured-archer-title-pull) !important;
+}
+
+@media (max-width: 329px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(-65.708359px + 19.986328vw);
+  }
+}
+
+@media (min-width: 330px) and (max-width: 361px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(-2.228477px + 0.75vw);
+  }
+}
+
+@media (min-width: 362px) and (max-width: 392px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(16.1px - 4.322031vw);
+  }
+}
+
+@media (min-width: 393px) and (max-width: 520px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(-3.784668px + 0.75vw);
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
     --featured-archer-logo-art-shift: -51px;
+    --featured-archer-stack-balance-shift: -0.24px;
     --featured-archer-title-pull: -93px;
     padding-top: clamp(30px, 3vw, 31px) !important;
     padding-bottom: clamp(30px, 3vw, 31px) !important;
   }
 }
 
+@media (min-width: 768px) and (max-width: 796px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(25.5px - 3.231172vw);
+  }
+}
+
+@media (min-width: 797px) and (max-width: 1024px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: -0.239844px;
+  }
+}
+
 @media (min-width: 1025px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
     --featured-archer-logo-art-shift: clamp(-54px, calc(-39.5px - 0.66vw), -49px);
+    --featured-archer-stack-balance-shift: 0.10957px;
     --featured-archer-title-pull: clamp(-105px, calc(-73.2px - 1.45vw), -94px);
     padding-top: clamp(43px, calc(33.5px + 0.66vw), 48px) !important;
     padding-bottom: clamp(43px, calc(33.5px + 0.66vw), 48px) !important;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1468px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(-4.64043px + 0.33vw);
+  }
+}
+
+@media (min-width: 1469px) and (max-width: 1625px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(19.75px - 1.330625vw);
+  }
+}
+
+@media (min-width: 1626px) and (max-width: 2197px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(-7.235156px + 0.33vw);
+  }
+}
+
+@media (min-width: 2198px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: 0.014844px;
   }
 }
 
