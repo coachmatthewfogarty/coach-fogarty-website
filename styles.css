@@ -20612,7 +20612,9 @@ html body .page-shell main#top #playing-career .playing-career-track .achievemen
 
 @media (min-width: 2200px) {
   html body .page-shell main#top #playing-career.playing-career-section {
-    --playing-career-composition-width: min(100vw, 2400px);
+    --playing-career-carousel-wall-width: var(--home-section-wall-width, min(100vw, 2560px));
+    --playing-career-awards-wall-width: var(--playing-career-carousel-wall-width);
+    --playing-career-composition-width: var(--playing-career-carousel-wall-width);
     --playing-career-slide-width: min(54%, 1300px);
     --playing-career-gap: 11px;
     --playing-career-frame-ratio: 16 / 10;
@@ -21080,7 +21082,7 @@ html body .page-shell main#top > #playing-career.section {
 /* Homepage Archer-to-Program Media handoff: remove the internal bottom shelf so the only visible divider is the 11px grid rhythm. */
 html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
   --featured-archer-stack-top-offset: 0px;
-  --featured-archer-stack-balance-shift: 0.12px;
+  --featured-archer-stack-balance-shift: 1.87px;
   --featured-archer-logo-art-shift: clamp(-40px, calc(-32.2px - 1.5vw), -37px);
   --featured-archer-title-pull: -68px;
   min-height: auto !important;
@@ -21098,32 +21100,38 @@ html body .page-shell main#top > #featured-work > .featured-card.featured-card--
 
 @media (max-width: 329px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: calc(-65.708359px + 19.986328vw);
+    --featured-archer-stack-balance-shift: calc(-2.09447px + 0.70855vw);
   }
 }
 
 @media (min-width: 330px) and (max-width: 361px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: calc(-2.228477px + 0.75vw);
+    --featured-archer-stack-balance-shift: calc(-20.857509px + 6.395161vw);
   }
 }
 
 @media (min-width: 362px) and (max-width: 392px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: calc(16.1px - 4.322031vw);
+    --featured-archer-stack-balance-shift: calc(17.915333px - 4.338698vw);
   }
 }
 
 @media (min-width: 393px) and (max-width: 520px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: calc(-3.784668px + 0.75vw);
+    --featured-archer-stack-balance-shift: calc(-2.034668px + 0.75vw);
+  }
+}
+
+@media (min-width: 521px) and (max-width: 767px) {
+  html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
+    --featured-archer-stack-balance-shift: calc(2.266px - 0.0764vw);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
     --featured-archer-logo-art-shift: -51px;
-    --featured-archer-stack-balance-shift: -0.24px;
+    --featured-archer-stack-balance-shift: 1.32px;
     --featured-archer-title-pull: -93px;
     padding-top: clamp(30px, 3vw, 31px) !important;
     padding-bottom: clamp(30px, 3vw, 31px) !important;
@@ -21132,20 +21140,20 @@ html body .page-shell main#top > #featured-work > .featured-card.featured-card--
 
 @media (min-width: 768px) and (max-width: 796px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: calc(25.5px - 3.231172vw);
+    --featured-archer-stack-balance-shift: calc(27.065px - 3.231172vw);
   }
 }
 
 @media (min-width: 797px) and (max-width: 1024px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: -0.239844px;
+    --featured-archer-stack-balance-shift: 1.320156px;
   }
 }
 
 @media (min-width: 1025px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
     --featured-archer-logo-art-shift: clamp(-54px, calc(-39.5px - 0.66vw), -49px);
-    --featured-archer-stack-balance-shift: 0.10957px;
+    --featured-archer-stack-balance-shift: 1.67457px;
     --featured-archer-title-pull: clamp(-105px, calc(-73.2px - 1.45vw), -94px);
     padding-top: clamp(43px, calc(33.5px + 0.66vw), 48px) !important;
     padding-bottom: clamp(43px, calc(33.5px + 0.66vw), 48px) !important;
@@ -21154,25 +21162,25 @@ html body .page-shell main#top > #featured-work > .featured-card.featured-card--
 
 @media (min-width: 1440px) and (max-width: 1468px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: calc(-4.64043px + 0.33vw);
+    --featured-archer-stack-balance-shift: calc(-3.337573px + 0.347857vw);
   }
 }
 
 @media (min-width: 1469px) and (max-width: 1625px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: calc(19.75px - 1.330625vw);
+    --featured-archer-stack-balance-shift: calc(21.315px - 1.330625vw);
   }
 }
 
 @media (min-width: 1626px) and (max-width: 2197px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: calc(-7.235156px + 0.33vw);
+    --featured-archer-stack-balance-shift: calc(-5.675156px + 0.33vw);
   }
 }
 
 @media (min-width: 2198px) {
   html body .page-shell main#top > #featured-work > .featured-card.featured-card--archer {
-    --featured-archer-stack-balance-shift: 0.014844px;
+    --featured-archer-stack-balance-shift: 1.574844px;
   }
 }
 
