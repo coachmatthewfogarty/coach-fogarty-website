@@ -168,6 +168,64 @@ const anayaCaseStudyImage = (section, fileBase, caption, alt = caption) => ({
   caption
 });
 const caseStudySectionPath = (playerName, sectionName) => `case-study/${playerName}/${sectionName}`;
+const anayaDevelopmentProcessPlayerGrowthItems = [
+  {
+    type: "image",
+    src: anayaPhoto("2-development-process", "dp-shooting-form-landscape-q98-2400x1800.avif"),
+    thumb: anayaPhoto("2-development-process", "dp-shooting-form-card-q98-1200x900.avif"),
+    alt: "Anaya Beard shooting form training",
+    caption: "Shooting form training"
+  },
+  {
+    type: "image",
+    src: anayaPhoto("2-development-process", "dp-catch-and-shoot-landscape-q98-2400x1800.avif"),
+    thumb: anayaPhoto("2-development-process", "dp-catch-and-shoot-card-q98-1200x900.avif"),
+    alt: "Anaya Beard catch-and-shoot training",
+    caption: "Catch-and-shoot training"
+  },
+  {
+    type: "image",
+    src: anayaPhoto("2-development-process", "dp-archer-shooting-landscape-q98-2400x1800.avif"),
+    thumb: anayaPhoto("2-development-process", "dp-archer-shooting-card-q98-1200x900.avif"),
+    alt: "Anaya Beard Archer shooting development",
+    caption: "Archer shooting development"
+  },
+  {
+    type: "image",
+    src: anayaPhoto("2-development-process", "dp-shot-repetition-landscape-q98-2400x1800.avif"),
+    thumb: anayaPhoto("2-development-process", "dp-shot-repetition-card-q98-1200x900.avif"),
+    alt: "Anaya Beard shot repetition",
+    caption: "Shot repetition"
+  },
+  {
+    type: "image",
+    src: anayaPhoto("2-development-process", "dp-shot-release-landscape-q98-2400x1800.avif"),
+    thumb: anayaPhoto("2-development-process", "dp-shot-release-card-q98-1200x900.avif"),
+    alt: "Anaya Beard shot release repetition",
+    caption: "Shot release repetition"
+  },
+  {
+    type: "image",
+    src: anayaPhoto("2-development-process", "dp-seated-shooting-landscape-q98-2400x1800.avif"),
+    thumb: anayaPhoto("2-development-process", "dp-seated-shooting-card-q98-1200x900.avif"),
+    alt: "Anaya Beard seated shooting drill",
+    caption: "Seated shooting drill"
+  },
+  {
+    type: "image",
+    src: anayaPhoto("2-development-process", "dp-coaching-feedback-landscape-q98-2400x1800.avif"),
+    thumb: anayaPhoto("2-development-process", "dp-coaching-feedback-card-q98-1200x900.avif"),
+    alt: "Coach Fogarty giving Anaya Beard development feedback",
+    caption: "Coaching feedback"
+  },
+  {
+    type: "image",
+    src: anayaPhoto("2-development-process", "dp-homepage-callout-landscape-q98-2400x1800.avif"),
+    thumb: anayaPhoto("2-development-process", "dp-homepage-callout-card-q98-1200x900.avif"),
+    alt: "Anaya Beard development process teaching moment",
+    caption: "Development teaching moment"
+  }
+];
 
 const mediaAlbums = [
   {
@@ -335,7 +393,8 @@ const mediaAlbums = [
         orientation: "portrait",
         alt: "On-court player development instruction",
         caption: "Player Development Instruction"
-      }
+      },
+      ...anayaDevelopmentProcessPlayerGrowthItems
     ]
   },
   {
