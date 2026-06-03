@@ -14067,7 +14067,7 @@ main#top #featured-work .featured-card--anaya .innovation-thumbnail {
     box-shadow: none !important;
     color: #d95a24 !important;
     -webkit-text-fill-color: #d95a24 !important;
-    font-size: clamp(12.5px, calc(11.6px + 0.1vw), 13px) !important;
+    font-size: clamp(13.5px, calc(12.5px + 0.1vw), 14px) !important;
     font-weight: 800 !important;
     line-height: 1 !important;
     white-space: nowrap !important;
@@ -15246,6 +15246,11 @@ body .page-shell main#top .credentials-card .credential-link-grid .button:not(.c
   color: #b8441b !important;
   -webkit-text-fill-color: #b8441b !important;
   box-shadow: none !important;
+}
+
+body .page-shell main#top #systems .system-card .library-actions .button:nth-child(2),
+body .page-shell main#top #systems .system-card:not([data-system-type="dpat"]) .library-actions .button:nth-child(2):not(:first-child) {
+  background: #ffffff !important;
 }
 
 body .page-shell main#top #systems .system-card .library-actions .button:first-child:is(:hover, :focus-visible),
